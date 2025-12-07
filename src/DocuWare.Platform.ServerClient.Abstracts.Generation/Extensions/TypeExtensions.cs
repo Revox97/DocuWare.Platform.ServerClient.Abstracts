@@ -1,7 +1,17 @@
-﻿namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
+﻿using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
     internal static class TypeExtensions
     {
+        // TODO implement
+        // TODO create type to contain all comments
+        public static List<object> GetDocumentationComments(this Type t)
+        {
+            DocumentationCommentsService.GetDocumentationComments(t);
+            throw new NotImplementedException();
+        }
+
         public static string GetParsedName(this Type t)
         {
             string name = t.Name;
