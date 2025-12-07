@@ -28,12 +28,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameterDefinitions = method.GetParsedParameterDefinitions();
                 string parameters = method.GetParsedParameters();
                 string async = returnTypeName.StartsWith("Task") ? "async " : string.Empty;
-                string result = $"public {async}{returnTypeName} {method.Name}({parameterDefinitions})\n\t{{\n\t\treturn SDK.ServiceConnection.{method.Name}({parameters});\n\t}}";
+                string result = $"public {async}{returnTypeName} {method.Name}({parameterDefinitions})\n\t\t{{\n\t\t\treturn SDK.ServiceConnection.{method.Name}({parameters});\n\t\t}}";
 
-                if (methodList == string.Empty)
-                    methodList += result;
-                else
-                    methodList += $"\n\n\t{result}"; 
+                methodList += $"\n\n\t\t{result}"; 
             }
 
             template = template.Replace("{0}", methodList);
@@ -58,10 +55,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
-                if (methodList == string.Empty)
-                    methodList += result;
-                else
-                    methodList += $"\n    {result}"; 
+                methodList += $"\n\t\t{result}"; 
             }
 
             template = template.Replace("{2}", methodList);

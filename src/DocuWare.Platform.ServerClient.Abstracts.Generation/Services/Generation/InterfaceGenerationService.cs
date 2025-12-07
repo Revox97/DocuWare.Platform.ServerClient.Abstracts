@@ -40,10 +40,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 bool hasSetter = property.GetSetMethod() is not null;
                 string result = $"{typeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
 
-                if (propertyList == string.Empty)
-                    propertyList += $"{result}";
-                else
-                    propertyList += $"\n    {result}"; 
+                propertyList += $"\n\t\t{result}"; 
             }
 
             return propertyList;
@@ -66,10 +63,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
-                if (methodList == string.Empty)
-                    methodList += $"    {result}";
-                else
-                    methodList += $"\n    {result}"; 
+                methodList += $"\n\t\t{result}"; 
             }
 
             return methodList;

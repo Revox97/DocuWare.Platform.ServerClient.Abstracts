@@ -37,17 +37,15 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
                 string typeName = property.PropertyType.GetParsedName();
                 string name = property.Name;
-                bool hasGetter = property.GetGetMethod() is not null;
                 bool hasSetter = property.GetSetMethod() is not null;
 
-                string getter = $"get => Obj.{name};";
-                string setter = $"set => Obj.{name} = value;";
-                string result = $"{typeName} {name} {{ {(hasGetter ? getter : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? setter : string.Empty)} }}";
+                if (propertyList != string.Empty)
+                    propertyList += "\n";
 
-                if (propertyList == string.Empty)
-                    propertyList += $"{result}";
+                if (!hasSetter)
+                    propertyList += $"\n\t\tpublic {typeName} {name} => Obj.{name};";
                 else
-                    propertyList += $"\n    {result}"; 
+                    propertyList += $"\n\t\tpublic {typeName} {name}\n\t\t{{\n\t\t\tget => Obj.{name};\n\t\t\tset => Obj.{name} = value;\n\t\t}}";
             }
 
             return propertyList;
@@ -70,10 +68,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters}) => Obj.{method.Name};";
 
-                if (methodList == string.Empty)
-                    methodList += $"    {result}";
-                else
-                    methodList += $"\n    {result}"; 
+                methodList += $"\n\t\t{result}"; 
             }
 
             return methodList;
