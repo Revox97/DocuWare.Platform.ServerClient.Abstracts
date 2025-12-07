@@ -26,6 +26,9 @@
     <None Update="Templates\InterfaceTemplate.tmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Templates\RealDocuWareTemplate.tmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
     {
         public void Generate(Type type)
         {
-            Console.WriteLine($"Generating {type.Name}");
+            Console.WriteLine($"Generating {type.Name}.cs");
 
             string template = File.ReadAllText("Templates/ImplementationTemplate.tmp");
             template = template.Replace("{0}", type.Name).Replace("{1}", $"I{type.Name}");
@@ -67,7 +67,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     continue;
 
                 string returnTypeName = method.ReturnType.GetParsedName();
-                string parameters = method.GetParsedParameters();
+                string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters}) => Obj.{method.Name};";
 
                 if (methodList == string.Empty)

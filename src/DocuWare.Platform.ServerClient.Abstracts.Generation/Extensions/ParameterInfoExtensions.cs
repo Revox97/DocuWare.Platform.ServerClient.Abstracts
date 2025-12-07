@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
     internal static class ParameterInfoExtensions
     {
-        internal static string GetParsedParameter(this ParameterInfo parameter)
+        internal static string GetParsedParameterDefinitions(this ParameterInfo parameter)
         {
             string type = parameter.ParameterType.GetParsedName();
             string defaultValue = GetDefaultValue(parameter);
@@ -34,6 +34,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             }
 
             return string.Empty;
+        }
+
+        internal static string GetParsedParameters(this ParameterInfo parameter)
+        {
+            return parameter.Name ?? string.Empty;
         }
     }
 }
