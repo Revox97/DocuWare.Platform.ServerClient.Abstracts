@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
+  </ItemGroup>
+
 </Project>
