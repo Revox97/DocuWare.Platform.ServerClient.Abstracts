@@ -11,4 +11,21 @@
     <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DocuWare.Platform.ServerClient.Abstracts\DocuWare.Platform.ServerClient.Abstracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Templates\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\ImplementationTemplate.tmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\InterfaceTemplate.tmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
