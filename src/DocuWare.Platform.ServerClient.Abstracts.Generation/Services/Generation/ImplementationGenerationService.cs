@@ -15,7 +15,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             Console.WriteLine($"Generating {type.Name}.cs");
 
-            string template = File.ReadAllText("Templates/ImplementationTemplate.tmp");
+            string template = File.ReadAllText("Templates/Implementation.template");
             template = template.Replace("{0}", type.Name).Replace("{1}", $"I{type.Name}");
 
             string propertyList = GenerateProperties(type);

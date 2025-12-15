@@ -1,0 +1,5 @@
+        public {type} {name}
+        {
+            get => Obj.{name};
+            set => Obj.{name} = value;
+        }

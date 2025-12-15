@@ -6,7 +6,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/SyncDocuWareMethodTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/SyncDocuWareMethod.template");
             }
         } = null!;
 
@@ -14,7 +14,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/AsyncDocuWareMethodTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/AsyncDocuWareMethod.template");
             }
         } = null!;
 
@@ -22,7 +22,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyGetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyGet.template");
             }
         } = null!;
 
@@ -30,7 +30,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyGetSetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyGetSet.template");
             }
         } = null!;
 
@@ -38,7 +38,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWarePropertyGetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWarePropertyGet.template");
             }
         } = null!;
 
@@ -46,7 +46,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWarePropertyGetSetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWarePropertyGetSet.template");
             }
         } = null!;
 
@@ -54,7 +54,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareListPropertyGetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareListPropertyGet.template");
             }
         } = null!;
 
@@ -62,7 +62,7 @@
         {
             get
             {
-                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareListPropertyGetSetTemplate.tmp");
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareListPropertyGetSet.template");
             }
         } = null!;
 

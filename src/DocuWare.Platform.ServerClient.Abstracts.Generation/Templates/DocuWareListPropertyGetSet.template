@@ -1,0 +1,5 @@
+        public {type} {name}
+        {
+            get => Obj.{name}.Select(x => new {targetType}(x) as {interfaceType}).ToList();
+            set => Obj.{name} = value.Select(x => (({targetType})x).Obj).ToList();
+        }

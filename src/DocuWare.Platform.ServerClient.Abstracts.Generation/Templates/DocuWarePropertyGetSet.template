@@ -1,0 +1,5 @@
+        public {type} {name}
+        {
+            get => new {targetType}(Obj.{name});
+            set => Obj.{name} = (({targetType})value).Obj;
+        }

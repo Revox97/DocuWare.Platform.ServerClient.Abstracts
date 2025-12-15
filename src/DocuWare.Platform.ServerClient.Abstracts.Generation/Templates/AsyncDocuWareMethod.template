@@ -1,0 +1,12 @@
+        public async {0} {1}({2})
+        {
+            DocuWare.Platform.ServerClient.{3} result = await Obj.{1}({4}).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new {3}(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<{3}>(temp).ConfigureAwait(false);
+        }

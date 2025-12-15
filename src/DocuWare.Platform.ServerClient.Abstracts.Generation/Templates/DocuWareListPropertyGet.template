@@ -1,0 +1,1 @@
+        public {type} {name} => Obj.{name}.Select(x => new {targetType}(x) as {interfaceType}).ToList();

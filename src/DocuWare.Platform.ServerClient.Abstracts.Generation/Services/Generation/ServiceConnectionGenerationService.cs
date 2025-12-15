@@ -17,7 +17,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             Console.WriteLine("Generating IDocuWare");
             MethodInfo[] methods = type.GetMethods(BindingFlags.Static | BindingFlags.Public);
-            string template = File.ReadAllText("Templates/InterfaceTemplate.tmp");
+            string template = File.ReadAllText("Templates/Interface.template");
             template = template.Replace("{0}", "IDocuWare").Replace("{1}", string.Empty);
             string methodList = string.Empty;
 
@@ -41,7 +41,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             Console.WriteLine("Generating RealDocuWare.cs");
             MethodInfo[] methods = type.GetMethods(BindingFlags.Static | BindingFlags.Public);
-            string template = File.ReadAllText("Templates/RealDocuWareTemplate.tmp");
+            string template = File.ReadAllText("Templates/RealDocuWare.template");
             string methodList = string.Empty;
 
             for (int i = 0; i < methods.Length; i++)

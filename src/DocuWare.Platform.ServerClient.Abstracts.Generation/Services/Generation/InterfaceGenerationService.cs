@@ -11,7 +11,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             string interfaceName = $"I{type.Name}";
             Console.WriteLine($"Generating {interfaceName}.cs");
-            string template = File.ReadAllText("Templates/InterfaceTemplate.tmp");
+            string template = File.ReadAllText("Templates/Interface.template");
             template = template.Replace("{0}", interfaceName).Replace("{1}", string.Empty);
 
             string propertyList = GenerateProperties(type);
