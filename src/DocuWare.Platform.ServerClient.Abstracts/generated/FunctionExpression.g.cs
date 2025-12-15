@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FunctionExpression Obj { get; } = obj;
 
-		public List<IAnyExpression> Parameter
-		{
-			get => Obj.Parameter.Select(x => new AnyExpression(x) as IAnyExpression).ToList();
-			set => Obj.Parameter = value.Select(x => ((AnyExpression)x).Obj).ToList();
-		}
+        public List<IAnyExpression> Parameter
+        {
+            get => Obj.Parameter.Select(x => new AnyExpression(x) as IAnyExpression).ToList();
+            set => Obj.Parameter = value.Select(x => ((AnyExpression)x).Obj).ToList();
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
     }
 }

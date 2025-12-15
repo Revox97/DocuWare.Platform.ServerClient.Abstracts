@@ -6,16 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CheckOutResult Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string ContentRelationLink => Obj.ContentRelationLink;
+        public string ContentRelationLink => Obj.ContentRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream GetStreamFromContentRelation() => Obj.GetStreamFromContentRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromContentRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromContentRelationAsync().ConfigureAwait(false);
@@ -41,6 +43,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

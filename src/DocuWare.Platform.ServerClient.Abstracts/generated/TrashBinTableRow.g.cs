@@ -6,31 +6,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TrashBinTableRow Obj { get; } = obj;
 
-		public List<Object> Items
-		{
-			get => Obj.Items;
-			set => Obj.Items = value;
-		}
+        public List<object> Items
+        {
+            get => Obj.Items;
+            set => Obj.Items = value;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string DocumentRelationLink => Obj.DocumentRelationLink;
+        public string DocumentRelationLink => Obj.DocumentRelationLink;
 
-		public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
+        public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
 
-		public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
+        public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocument GetDocumentFromDocumentRelation() => new Document(Obj.GetDocumentFromDocumentRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromDocumentRelationAsync()
@@ -60,6 +61,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLowQualityImageRelation() => Obj.GetStreamFromLowQualityImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
@@ -87,6 +89,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromAnnotationAsSvgRelation() => Obj.GetStreamFromAnnotationAsSvgRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
@@ -112,6 +115,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

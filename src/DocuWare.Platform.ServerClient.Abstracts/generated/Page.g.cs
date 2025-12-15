@@ -6,60 +6,62 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Page Obj { get; } = obj;
 
-		public IPageData Data
-		{
-			get => new PageData(Obj.Data);
-			set => Obj.Data = ((PageData)value).Obj;
-		}
+        public IPageData Data
+        {
+            get => new PageData(Obj.Data);
+            set => Obj.Data = ((PageData)value).Obj;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public int PageNum
-		{
-			get => Obj.PageNum;
-			set => Obj.PageNum = value;
-		}
+        public int PageNum
+        {
+            get => Obj.PageNum;
+            set => Obj.PageNum = value;
+        }
 
-		public bool HasAnnotation
-		{
-			get => Obj.HasAnnotation;
-			set => Obj.HasAnnotation = value;
-		}
+        public bool HasAnnotation
+        {
+            get => Obj.HasAnnotation;
+            set => Obj.HasAnnotation = value;
+        }
 
-		public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
+        public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
 
-		public string IconRelationLink => Obj.IconRelationLink;
+        public string IconRelationLink => Obj.IconRelationLink;
 
-		public string DeepZoomImageRelationLink => Obj.DeepZoomImageRelationLink;
+        public string DeepZoomImageRelationLink => Obj.DeepZoomImageRelationLink;
 
-		public string DeepZoomImageWithAnnotationRelationLink => Obj.DeepZoomImageWithAnnotationRelationLink;
+        public string DeepZoomImageWithAnnotationRelationLink => Obj.DeepZoomImageWithAnnotationRelationLink;
 
-		public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
+        public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
 
-		public string LowQualityImageWithAnnotationRelationLink => Obj.LowQualityImageWithAnnotationRelationLink;
+        public string LowQualityImageWithAnnotationRelationLink => Obj.LowQualityImageWithAnnotationRelationLink;
 
-		public string TextshotRelationLink => Obj.TextshotRelationLink;
+        public string TextshotRelationLink => Obj.TextshotRelationLink;
 
-		public string FileDownloadRelationLink => Obj.FileDownloadRelationLink;
+        public string FileDownloadRelationLink => Obj.FileDownloadRelationLink;
 
-		public string AnnotationRelationLink => Obj.AnnotationRelationLink;
+        public string AnnotationRelationLink => Obj.AnnotationRelationLink;
 
-		public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
+        public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
 
-		public string AnnotationAsXamlRelationLink => Obj.AnnotationAsXamlRelationLink;
+        public string AnnotationAsXamlRelationLink => Obj.AnnotationAsXamlRelationLink;
 
-		public string StampRelationLink => Obj.StampRelationLink;
+        public string StampRelationLink => Obj.StampRelationLink;
 
-		public string StampBestPositionRelationLink => Obj.StampBestPositionRelationLink;
+        public string StampBestPositionRelationLink => Obj.StampBestPositionRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream GetStreamFromThumbnailRelation() => Obj.GetStreamFromThumbnailRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromThumbnailRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromThumbnailRelationAsync().ConfigureAwait(false);
@@ -87,6 +89,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromIconRelation() => Obj.GetStreamFromIconRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromIconRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromIconRelationAsync().ConfigureAwait(false);
@@ -114,6 +117,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromDeepZoomImageRelation() => Obj.GetStreamFromDeepZoomImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDeepZoomImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromDeepZoomImageRelationAsync().ConfigureAwait(false);
@@ -141,6 +145,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromDeepZoomImageWithAnnotationRelation() => Obj.GetStreamFromDeepZoomImageWithAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDeepZoomImageWithAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromDeepZoomImageWithAnnotationRelationAsync().ConfigureAwait(false);
@@ -168,6 +173,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLowQualityImageRelation() => Obj.GetStreamFromLowQualityImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
@@ -195,6 +201,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLowQualityImageWithAnnotationRelation() => Obj.GetStreamFromLowQualityImageWithAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageWithAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageWithAnnotationRelationAsync().ConfigureAwait(false);
@@ -250,6 +257,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromFileDownloadRelation() => Obj.GetStreamFromFileDownloadRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromFileDownloadRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromFileDownloadRelationAsync().ConfigureAwait(false);
@@ -277,6 +285,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToFileDownloadRelationForStream(IFileDownloadPage dataToSend) => Obj.PostToFileDownloadRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToFileDownloadRelationForStreamAsync(IFileDownloadPage dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToFileDownloadRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -388,6 +397,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromAnnotationAsSvgRelation() => Obj.GetStreamFromAnnotationAsSvgRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
@@ -415,6 +425,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async XElementWrapper GetXElementWrapperFromAnnotationAsXamlRelation() => Obj.GetXElementWrapperFromAnnotationAsXamlRelation();
+
         public async Task<DeserializedHttpResponse<XElementWrapper>> GetXElementWrapperFromAnnotationAsXamlRelationAsync()
         {
             DocuWare.Platform.ServerClient.XElementWrapper result = await Obj.GetXElementWrapperFromAnnotationAsXamlRelationAsync().ConfigureAwait(false);
@@ -524,6 +535,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IPage>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -6,21 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Pages Obj { get; } = obj;
 
-		public List<IPage> Page
-		{
-			get => Obj.Page.Select(x => new Page(x) as IPage).ToList();
-			set => Obj.Page = value.Select(x => ((Page)x).Obj).ToList();
-		}
+        public List<IPage> Page
+        {
+            get => Obj.Page.Select(x => new Page(x) as IPage).ToList();
+            set => Obj.Page = value.Select(x => ((Page)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextBlockRelationLink => Obj.NextBlockRelationLink;
+        public string NextBlockRelationLink => Obj.NextBlockRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IPages GetPagesFromNextBlockRelation() => new Pages(Obj.GetPagesFromNextBlockRelation());
 
         public async Task<DeserializedHttpResponse<IPages>> GetPagesFromNextBlockRelationAsync()
@@ -48,6 +49,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IPages>(temp).ConfigureAwait(false);
         }
-
     }
 }

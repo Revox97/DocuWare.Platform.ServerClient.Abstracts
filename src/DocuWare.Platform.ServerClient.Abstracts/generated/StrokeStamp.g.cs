@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.StrokeStamp Obj { get; } = obj;
 
-		public !!!UNKNOWN_PRIMITIVE StrokeWidth
-		{
-			get => Obj.StrokeWidth;
-			set => Obj.StrokeWidth = value;
-		}
+        public uint StrokeWidth
+        {
+            get => Obj.StrokeWidth;
+            set => Obj.StrokeWidth = value;
+        }
 
-		public string StrokeColor
-		{
-			get => Obj.StrokeColor;
-			set => Obj.StrokeColor = value;
-		}
+        public string StrokeColor
+        {
+            get => Obj.StrokeColor;
+            set => Obj.StrokeColor = value;
+        }
     }
 }

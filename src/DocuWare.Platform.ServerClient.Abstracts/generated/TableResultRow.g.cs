@@ -6,71 +6,72 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TableResultRow Obj { get; } = obj;
 
-		public List<Object> Items
-		{
-			get => Obj.Items;
-			set => Obj.Items = value;
-		}
+        public List<object> Items
+        {
+            get => Obj.Items;
+            set => Obj.Items = value;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<ISuggestionField> Suggestions
-		{
-			get => Obj.Suggestions.Select(x => new SuggestionField(x) as ISuggestionField).ToList();
-			set => Obj.Suggestions = value.Select(x => ((SuggestionField)x).Obj).ToList();
-		}
+        public List<ISuggestionField> Suggestions
+        {
+            get => Obj.Suggestions.Select(x => new SuggestionField(x) as ISuggestionField).ToList();
+            set => Obj.Suggestions = value.Select(x => ((SuggestionField)x).Obj).ToList();
+        }
 
-		public List<ISuggestionTableField> TableFieldSuggestions
-		{
-			get => Obj.TableFieldSuggestions.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
-			set => Obj.TableFieldSuggestions = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
-		}
+        public List<ISuggestionTableField> TableFieldSuggestions
+        {
+            get => Obj.TableFieldSuggestions.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
+            set => Obj.TableFieldSuggestions = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
+        }
 
-		public int Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public int Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public bool AnnotationsPreview
-		{
-			get => Obj.AnnotationsPreview;
-			set => Obj.AnnotationsPreview = value;
-		}
+        public bool AnnotationsPreview
+        {
+            get => Obj.AnnotationsPreview;
+            set => Obj.AnnotationsPreview = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FieldsRelationLink => Obj.FieldsRelationLink;
+        public string FieldsRelationLink => Obj.FieldsRelationLink;
 
-		public string SuggestionsRelationLink => Obj.SuggestionsRelationLink;
+        public string SuggestionsRelationLink => Obj.SuggestionsRelationLink;
 
-		public string TableFieldsSuggestionsRelationLink => Obj.TableFieldsSuggestionsRelationLink;
+        public string TableFieldsSuggestionsRelationLink => Obj.TableFieldsSuggestionsRelationLink;
 
-		public string ClippedDocumentsRelationLink => Obj.ClippedDocumentsRelationLink;
+        public string ClippedDocumentsRelationLink => Obj.ClippedDocumentsRelationLink;
 
-		public string SectionsRelationLink => Obj.SectionsRelationLink;
+        public string SectionsRelationLink => Obj.SectionsRelationLink;
 
-		public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
+        public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
 
-		public string ThumbnailWithoutAnnotationRelationLink => Obj.ThumbnailWithoutAnnotationRelationLink;
+        public string ThumbnailWithoutAnnotationRelationLink => Obj.ThumbnailWithoutAnnotationRelationLink;
 
-		public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
+        public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
 
-		public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
+        public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
 
-		public string LockRelationLink => Obj.LockRelationLink;
+        public string LockRelationLink => Obj.LockRelationLink;
 
-		public string RightsRelationLink => Obj.RightsRelationLink;
+        public string RightsRelationLink => Obj.RightsRelationLink;
 
-		public string IntellixRelationLink => Obj.IntellixRelationLink;
+        public string IntellixRelationLink => Obj.IntellixRelationLink;
 
-		public string TextshotPreviewRelationLink => Obj.TextshotPreviewRelationLink;
+        public string TextshotPreviewRelationLink => Obj.TextshotPreviewRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocument GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync()
@@ -100,6 +101,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
@@ -379,6 +381,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromThumbnailRelation() => Obj.GetStreamFromThumbnailRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromThumbnailRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromThumbnailRelationAsync().ConfigureAwait(false);
@@ -406,6 +409,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromThumbnailWithoutAnnotationRelation() => Obj.GetStreamFromThumbnailWithoutAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromThumbnailWithoutAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromThumbnailWithoutAnnotationRelationAsync().ConfigureAwait(false);
@@ -433,6 +437,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromAnnotationAsSvgRelation() => Obj.GetStreamFromAnnotationAsSvgRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
@@ -460,6 +465,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLowQualityImageRelation() => Obj.GetStreamFromLowQualityImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
@@ -487,6 +493,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToLockRelationForString(ILockInfo dataToSend) => Obj.PostToLockRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToLockRelationForStringAsync(ILockInfo dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToLockRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -514,6 +521,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteLockRelation() => Obj.DeleteLockRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteLockRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteLockRelationAsync().ConfigureAwait(false);
@@ -569,6 +577,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string GetStringFromTextshotPreviewRelation() => Obj.GetStringFromTextshotPreviewRelation();
+
         public async Task<DeserializedHttpResponse<string>> GetStringFromTextshotPreviewRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.GetStringFromTextshotPreviewRelationAsync().ConfigureAwait(false);
@@ -594,6 +603,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
-
     }
 }

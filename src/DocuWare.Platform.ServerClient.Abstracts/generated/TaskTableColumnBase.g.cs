@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskTableColumnBase Obj { get; } = obj;
 
-		public ICommonFormField Item
-		{
-			get => new CommonFormField(Obj.Item);
-			set => Obj.Item = ((CommonFormField)value).Obj;
-		}
+        public ICommonFormField Item
+        {
+            get => new CommonFormField(Obj.Item);
+            set => Obj.Item = ((CommonFormField)value).Obj;
+        }
     }
 }

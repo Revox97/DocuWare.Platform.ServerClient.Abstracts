@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskFormField Obj { get; } = obj;
 
-		public IBaseForm Item
-		{
-			get => new BaseForm(Obj.Item);
-			set => Obj.Item = ((BaseForm)value).Obj;
-		}
+        public IBaseForm Item
+        {
+            get => new BaseForm(Obj.Item);
+            set => Obj.Item = ((BaseForm)value).Obj;
+        }
     }
 }

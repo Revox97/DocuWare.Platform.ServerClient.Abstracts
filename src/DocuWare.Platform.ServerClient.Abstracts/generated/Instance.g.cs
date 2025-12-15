@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Instance Obj { get; } = obj;
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
     }
 }

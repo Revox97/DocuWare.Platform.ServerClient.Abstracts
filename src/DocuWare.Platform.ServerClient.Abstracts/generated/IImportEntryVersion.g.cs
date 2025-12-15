@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IImportEntryVersion
     {
 		int Id { get; set; }
-		ImportEntryVersionStatus Status { get; set; }
+		DocuWare.Platform.ServerClient.ImportEntryVersionStatus Status { get; set; }
     }
 }

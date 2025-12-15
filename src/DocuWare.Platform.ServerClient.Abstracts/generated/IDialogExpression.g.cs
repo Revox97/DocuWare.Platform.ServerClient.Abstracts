@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IDialogExpressionCondition> Condition { get; set; }
 		List<string> AdditionalCabinets { get; set; }
 		string CompleteCondition { get; set; }
-		DialogExpressionOperation Operation { get; set; }
+		DocuWare.Platform.ServerClient.DialogExpressionOperation Operation { get; set; }
 		bool CompleteConditionInInvariantCulture { get; set; }
 		List<ISortedField> SortOrder { get; set; }
 		List<string> AdditionalResultFields { get; set; }

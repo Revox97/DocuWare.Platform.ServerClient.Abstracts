@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SuggestionValue Obj { get; } = obj;
 
-		public IPointAndShootInfo Source
-		{
-			get => new PointAndShootInfo(Obj.Source);
-			set => Obj.Source = ((PointAndShootInfo)value).Obj;
-		}
+        public IPointAndShootInfo Source
+        {
+            get => new PointAndShootInfo(Obj.Source);
+            set => Obj.Source = ((PointAndShootInfo)value).Obj;
+        }
 
-		public Object Item
-		{
-			get => Obj.Item;
-			set => Obj.Item = value;
-		}
+        public object Item
+        {
+            get => Obj.Item;
+            set => Obj.Item = value;
+        }
 
-		public ItemChoiceType ItemElementName
-		{
-			get => new temChoiceType(Obj.ItemElementName);
-			set => Obj.ItemElementName = ((temChoiceType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ItemChoiceType ItemElementName
+        {
+            get => Obj.ItemElementName;
+            set => Obj.ItemElementName = value;
+        }
     }
 }

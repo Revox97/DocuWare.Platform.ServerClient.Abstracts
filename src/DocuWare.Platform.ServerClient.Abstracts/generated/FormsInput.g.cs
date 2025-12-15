@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FormsInput Obj { get; } = obj;
 
-		public IFormInfo FormInfo
-		{
-			get => new FormInfo(Obj.FormInfo);
-			set => Obj.FormInfo = ((FormInfo)value).Obj;
-		}
+        public IFormInfo FormInfo
+        {
+            get => new FormInfo(Obj.FormInfo);
+            set => Obj.FormInfo = ((FormInfo)value).Obj;
+        }
 
-		public string HTML
-		{
-			get => Obj.HTML;
-			set => Obj.HTML = value;
-		}
+        public string HTML
+        {
+            get => Obj.HTML;
+            set => Obj.HTML = value;
+        }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentMergeOperationInfo Obj { get; } = obj;
 
-		public List<int> Documents
-		{
-			get => Obj.Documents;
-			set => Obj.Documents = value;
-		}
+        public List<int> Documents
+        {
+            get => Obj.Documents;
+            set => Obj.Documents = value;
+        }
 
-		public ContentMergeOperation Operation
-		{
-			get => new ontentMergeOperation(Obj.Operation);
-			set => Obj.Operation = ((ontentMergeOperation)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ContentMergeOperation Operation
+        {
+            get => Obj.Operation;
+            set => Obj.Operation = value;
+        }
 
-		public bool Force
-		{
-			get => Obj.Force;
-			set => Obj.Force = value;
-		}
+        public bool Force
+        {
+            get => Obj.Force;
+            set => Obj.Force = value;
+        }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IntellixFieldMapping Obj { get; } = obj;
 
-		public string FieldDBName
-		{
-			get => Obj.FieldDBName;
-			set => Obj.FieldDBName = value;
-		}
+        public string FieldDBName
+        {
+            get => Obj.FieldDBName;
+            set => Obj.FieldDBName = value;
+        }
 
-		public string IntellixFieldName
-		{
-			get => Obj.IntellixFieldName;
-			set => Obj.IntellixFieldName = value;
-		}
+        public string IntellixFieldName
+        {
+            get => Obj.IntellixFieldName;
+            set => Obj.IntellixFieldName = value;
+        }
     }
 }

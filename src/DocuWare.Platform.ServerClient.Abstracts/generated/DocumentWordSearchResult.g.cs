@@ -6,33 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentWordSearchResult Obj { get; } = obj;
 
-		public bool FoundInAnnotations
-		{
-			get => Obj.FoundInAnnotations;
-			set => Obj.FoundInAnnotations = value;
-		}
+        public bool FoundInAnnotations
+        {
+            get => Obj.FoundInAnnotations;
+            set => Obj.FoundInAnnotations = value;
+        }
 
-		public string Search
-		{
-			get => Obj.Search;
-			set => Obj.Search = value;
-		}
+        public string Search
+        {
+            get => Obj.Search;
+            set => Obj.Search = value;
+        }
 
-		public List<IDocumentWordSearchResultSectionHits> SectionHits
-		{
-			get => Obj.SectionHits.Select(x => new DocumentWordSearchResultSectionHits(x) as IDocumentWordSearchResultSectionHits).ToList();
-			set => Obj.SectionHits = value.Select(x => ((DocumentWordSearchResultSectionHits)x).Obj).ToList();
-		}
+        public List<IDocumentWordSearchResultSectionHits> SectionHits
+        {
+            get => Obj.SectionHits.Select(x => new DocumentWordSearchResultSectionHits(x) as IDocumentWordSearchResultSectionHits).ToList();
+            set => Obj.SectionHits = value.Select(x => ((DocumentWordSearchResultSectionHits)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentWordSearchResult GetDocumentWordSearchResultFromNextRelation() => new DocumentWordSearchResult(Obj.GetDocumentWordSearchResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentWordSearchResult>> GetDocumentWordSearchResultFromNextRelationAsync()
@@ -60,6 +61,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentWordSearchResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

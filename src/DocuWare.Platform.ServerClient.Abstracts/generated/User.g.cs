@@ -6,105 +6,106 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.User Obj { get; } = obj;
 
-		public string EMail
-		{
-			get => Obj.EMail;
-			set => Obj.EMail = value;
-		}
+        public string EMail
+        {
+            get => Obj.EMail;
+            set => Obj.EMail = value;
+        }
 
-		public string DefaultWebBasket
-		{
-			get => Obj.DefaultWebBasket;
-			set => Obj.DefaultWebBasket = value;
-		}
+        public string DefaultWebBasket
+        {
+            get => Obj.DefaultWebBasket;
+            set => Obj.DefaultWebBasket = value;
+        }
 
-		public IOutOfOffice OutOfOffice
-		{
-			get => new OutOfOffice(Obj.OutOfOffice);
-			set => Obj.OutOfOffice = ((OutOfOffice)value).Obj;
-		}
+        public IOutOfOffice OutOfOffice
+        {
+            get => new OutOfOffice(Obj.OutOfOffice);
+            set => Obj.OutOfOffice = ((OutOfOffice)value).Obj;
+        }
 
-		public IRegionalSettings RegionalSettings
-		{
-			get => new RegionalSettings(Obj.RegionalSettings);
-			set => Obj.RegionalSettings = ((RegionalSettings)value).Obj;
-		}
+        public IRegionalSettings RegionalSettings
+        {
+            get => new RegionalSettings(Obj.RegionalSettings);
+            set => Obj.RegionalSettings = ((RegionalSettings)value).Obj;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string FirstName
-		{
-			get => Obj.FirstName;
-			set => Obj.FirstName = value;
-		}
+        public string FirstName
+        {
+            get => Obj.FirstName;
+            set => Obj.FirstName = value;
+        }
 
-		public string LastName
-		{
-			get => Obj.LastName;
-			set => Obj.LastName = value;
-		}
+        public string LastName
+        {
+            get => Obj.LastName;
+            set => Obj.LastName = value;
+        }
 
-		public string Salutation
-		{
-			get => Obj.Salutation;
-			set => Obj.Salutation = value;
-		}
+        public string Salutation
+        {
+            get => Obj.Salutation;
+            set => Obj.Salutation = value;
+        }
 
-		public string DBName
-		{
-			get => Obj.DBName;
-			set => Obj.DBName = value;
-		}
+        public string DBName
+        {
+            get => Obj.DBName;
+            set => Obj.DBName = value;
+        }
 
-		public bool Active
-		{
-			get => Obj.Active;
-			set => Obj.Active = value;
-		}
+        public bool Active
+        {
+            get => Obj.Active;
+            set => Obj.Active = value;
+        }
 
-		public string NetworkId
-		{
-			get => Obj.NetworkId;
-			set => Obj.NetworkId = value;
-		}
+        public string NetworkId
+        {
+            get => Obj.NetworkId;
+            set => Obj.NetworkId = value;
+        }
 
-		public string ExternalId
-		{
-			get => Obj.ExternalId;
-			set => Obj.ExternalId = value;
-		}
+        public string ExternalId
+        {
+            get => Obj.ExternalId;
+            set => Obj.ExternalId = value;
+        }
 
-		public string ExternalProvider
-		{
-			get => Obj.ExternalProvider;
-			set => Obj.ExternalProvider = value;
-		}
+        public string ExternalProvider
+        {
+            get => Obj.ExternalProvider;
+            set => Obj.ExternalProvider = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string DefaultWebBasketRelationLink => Obj.DefaultWebBasketRelationLink;
+        public string DefaultWebBasketRelationLink => Obj.DefaultWebBasketRelationLink;
 
-		public string GroupsRelationLink => Obj.GroupsRelationLink;
+        public string GroupsRelationLink => Obj.GroupsRelationLink;
 
-		public string RolesRelationLink => Obj.RolesRelationLink;
+        public string RolesRelationLink => Obj.RolesRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IUser GetUserFromSelfRelation() => new User(Obj.GetUserFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IUser>> GetUserFromSelfRelationAsync()
@@ -218,6 +219,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PutToGroupsRelationForString(IAssignmentOperation dataToSend) => Obj.PutToGroupsRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PutToGroupsRelationForStringAsync(IAssignmentOperation dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PutToGroupsRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -273,6 +275,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PutToRolesRelationForString(IAssignmentOperation dataToSend) => Obj.PutToRolesRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PutToRolesRelationForStringAsync(IAssignmentOperation dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PutToRolesRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -298,6 +301,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
-
     }
 }

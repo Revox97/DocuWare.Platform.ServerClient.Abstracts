@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		int OriginalImageWidth { get; set; }
 		int OriginalImageSize { get; set; }
-		AlignmentType Alignment { get; set; }
+		DocuWare.Platform.ServerClient.AlignmentType Alignment { get; set; }
 		string Value { get; set; }
 		string Type { get; set; }
 		bool Hidden { get; set; }

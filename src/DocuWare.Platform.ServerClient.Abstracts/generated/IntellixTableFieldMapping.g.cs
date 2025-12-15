@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IntellixTableFieldMapping Obj { get; } = obj;
 
-		public List<IIntellixTableFieldColumnMapping> TableFieldColumnMapping
-		{
-			get => Obj.TableFieldColumnMapping.Select(x => new IntellixTableFieldColumnMapping(x) as IIntellixTableFieldColumnMapping).ToList();
-			set => Obj.TableFieldColumnMapping = value.Select(x => ((IntellixTableFieldColumnMapping)x).Obj).ToList();
-		}
+        public List<IIntellixTableFieldColumnMapping> TableFieldColumnMapping
+        {
+            get => Obj.TableFieldColumnMapping.Select(x => new IntellixTableFieldColumnMapping(x) as IIntellixTableFieldColumnMapping).ToList();
+            set => Obj.TableFieldColumnMapping = value.Select(x => ((IntellixTableFieldColumnMapping)x).Obj).ToList();
+        }
 
-		public string FieldDBName
-		{
-			get => Obj.FieldDBName;
-			set => Obj.FieldDBName = value;
-		}
+        public string FieldDBName
+        {
+            get => Obj.FieldDBName;
+            set => Obj.FieldDBName = value;
+        }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExportSettings Obj { get; } = obj;
 
-		public bool IncludeDataFiles
-		{
-			get => Obj.IncludeDataFiles;
-			set => Obj.IncludeDataFiles = value;
-		}
+        public bool IncludeDataFiles
+        {
+            get => Obj.IncludeDataFiles;
+            set => Obj.IncludeDataFiles = value;
+        }
 
-		public bool ExportHistory
-		{
-			get => Obj.ExportHistory;
-			set => Obj.ExportHistory = value;
-		}
+        public bool ExportHistory
+        {
+            get => Obj.ExportHistory;
+            set => Obj.ExportHistory = value;
+        }
 
-		public bool ExportTextshots
-		{
-			get => Obj.ExportTextshots;
-			set => Obj.ExportTextshots = value;
-		}
+        public bool ExportTextshots
+        {
+            get => Obj.ExportTextshots;
+            set => Obj.ExportTextshots = value;
+        }
     }
 }

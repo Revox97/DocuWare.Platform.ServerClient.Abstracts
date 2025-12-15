@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IdentityServiceInfoConnectionData Obj { get; } = obj;
 
-		public HttpMessageHandler HttpClientHandler
-		{
-			get => Obj.HttpClientHandler;
-			set => Obj.HttpClientHandler = value;
-		}
+        public HttpMessageHandler HttpClientHandler
+        {
+            get => Obj.HttpClientHandler;
+            set => Obj.HttpClientHandler = value;
+        }
 
-		public CancellationToken CancellationToken
-		{
-			get => Obj.CancellationToken;
-			set => Obj.CancellationToken = value;
-		}
+        public CancellationToken CancellationToken
+        {
+            get => Obj.CancellationToken;
+            set => Obj.CancellationToken = value;
+        }
     }
 }

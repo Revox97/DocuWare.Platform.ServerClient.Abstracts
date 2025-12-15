@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskFieldValueBase Obj { get; } = obj;
 
-		public Object Item
-		{
-			get => Obj.Item;
-			set => Obj.Item = value;
-		}
+        public object Item
+        {
+            get => Obj.Item;
+            set => Obj.Item = value;
+        }
 
-		public ItemChoiceType1 ItemElementName
-		{
-			get => new temChoiceType1(Obj.ItemElementName);
-			set => Obj.ItemElementName = ((temChoiceType1)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ItemChoiceType1 ItemElementName
+        {
+            get => Obj.ItemElementName;
+            set => Obj.ItemElementName = value;
+        }
     }
 }

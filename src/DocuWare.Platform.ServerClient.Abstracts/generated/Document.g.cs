@@ -6,274 +6,276 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Document Obj { get; } = obj;
 
-		public string MediaType => Obj.MediaType;
-
-		public IDocumentIndexField Item
-		{
-			get => new DocumentIndexField(Obj.Item);
-			set => Obj.Item = ((DocumentIndexField)value).Obj;
-		}
-
-		public List<IDocumentIndexField> Fields
-		{
-			get => Obj.Fields.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
-			set => Obj.Fields = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
-		}
-
-		public IChecksumInfo ChecksumInfo
-		{
-			get => new ChecksumInfo(Obj.ChecksumInfo);
-			set => Obj.ChecksumInfo = ((ChecksumInfo)value).Obj;
-		}
-
-		public List<ISuggestionField> Suggestions
-		{
-			get => Obj.Suggestions.Select(x => new SuggestionField(x) as ISuggestionField).ToList();
-			set => Obj.Suggestions = value.Select(x => ((SuggestionField)x).Obj).ToList();
-		}
-
-		public List<ISuggestionTableField> TableFieldSuggestions
-		{
-			get => Obj.TableFieldSuggestions.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
-			set => Obj.TableFieldSuggestions = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
-		}
-
-		public IDocumentFlags Flags
-		{
-			get => new DocumentFlags(Obj.Flags);
-			set => Obj.Flags = ((DocumentFlags)value).Obj;
-		}
-
-		public IDocumentVersion Version
-		{
-			get => new DocumentVersion(Obj.Version);
-			set => Obj.Version = ((DocumentVersion)value).Obj;
-		}
-
-		public List<IDocumentContent> TextShot
-		{
-			get => Obj.TextShot.Select(x => new DocumentContent(x) as IDocumentContent).ToList();
-			set => Obj.TextShot = value.Select(x => ((DocumentContent)x).Obj).ToList();
-		}
-
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
-
-		public List<ISection> Sections
-		{
-			get => Obj.Sections.Select(x => new Section(x) as ISection).ToList();
-			set => Obj.Sections = value.Select(x => ((Section)x).Obj).ToList();
-		}
-
-		public XElementWrapper Preview
-		{
-			get => Obj.Preview;
-			set => Obj.Preview = value;
-		}
-
-		public string ContentType
-		{
-			get => Obj.ContentType;
-			set => Obj.ContentType = value;
-		}
-
-		public IUploadedFileChunk FileChunk
-		{
-			get => new UploadedFileChunk(Obj.FileChunk);
-			set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
-		}
-
-		public List<IDocumentApplicationProperty> ApplicationProperties
-		{
-			get => Obj.ApplicationProperties.Select(x => new DocumentApplicationProperty(x) as IDocumentApplicationProperty).ToList();
-			set => Obj.ApplicationProperties = value.Select(x => ((DocumentApplicationProperty)x).Obj).ToList();
-		}
-
-		public string FileCabinetId
-		{
-			get => Obj.FileCabinetId;
-			set => Obj.FileCabinetId = value;
-		}
-
-		public string OrganizationGuid
-		{
-			get => Obj.OrganizationGuid;
-			set => Obj.OrganizationGuid = value;
-		}
-
-		public bool HaveMoreTotalPages
-		{
-			get => Obj.HaveMoreTotalPages;
-			set => Obj.HaveMoreTotalPages = value;
-		}
-
-		public bool HasTextAnnotation
-		{
-			get => Obj.HasTextAnnotation;
-			set => Obj.HasTextAnnotation = value;
-		}
-
-		public bool HasXmlDigitalSignatures
-		{
-			get => Obj.HasXmlDigitalSignatures;
-			set => Obj.HasXmlDigitalSignatures = value;
-		}
-
-		public bool AnnotationsPreview
-		{
-			get => Obj.AnnotationsPreview;
-			set => Obj.AnnotationsPreview = value;
-		}
-
-		public int TotalPages
-		{
-			get => Obj.TotalPages;
-			set => Obj.TotalPages = value;
-		}
+        public string MediaType => Obj.MediaType;
+
+        public IDocumentIndexField Item
+        {
+            get => new DocumentIndexField(Obj.Item);
+            set => Obj.Item = ((DocumentIndexField)value).Obj;
+        }
+
+        public List<IDocumentIndexField> Fields
+        {
+            get => Obj.Fields.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
+            set => Obj.Fields = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
+        }
+
+        public IChecksumInfo ChecksumInfo
+        {
+            get => new ChecksumInfo(Obj.ChecksumInfo);
+            set => Obj.ChecksumInfo = ((ChecksumInfo)value).Obj;
+        }
+
+        public List<ISuggestionField> Suggestions
+        {
+            get => Obj.Suggestions.Select(x => new SuggestionField(x) as ISuggestionField).ToList();
+            set => Obj.Suggestions = value.Select(x => ((SuggestionField)x).Obj).ToList();
+        }
+
+        public List<ISuggestionTableField> TableFieldSuggestions
+        {
+            get => Obj.TableFieldSuggestions.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
+            set => Obj.TableFieldSuggestions = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
+        }
+
+        public IDocumentFlags Flags
+        {
+            get => new DocumentFlags(Obj.Flags);
+            set => Obj.Flags = ((DocumentFlags)value).Obj;
+        }
+
+        public IDocumentVersion Version
+        {
+            get => new DocumentVersion(Obj.Version);
+            set => Obj.Version = ((DocumentVersion)value).Obj;
+        }
+
+        public List<IDocumentContent> TextShot
+        {
+            get => Obj.TextShot.Select(x => new DocumentContent(x) as IDocumentContent).ToList();
+            set => Obj.TextShot = value.Select(x => ((DocumentContent)x).Obj).ToList();
+        }
+
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
+
+        public List<ISection> Sections
+        {
+            get => Obj.Sections.Select(x => new Section(x) as ISection).ToList();
+            set => Obj.Sections = value.Select(x => ((Section)x).Obj).ToList();
+        }
+
+        public XElementWrapper Preview
+        {
+            get => Obj.Preview;
+            set => Obj.Preview = value;
+        }
+
+        public string ContentType
+        {
+            get => Obj.ContentType;
+            set => Obj.ContentType = value;
+        }
+
+        public IUploadedFileChunk FileChunk
+        {
+            get => new UploadedFileChunk(Obj.FileChunk);
+            set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
+        }
+
+        public List<IDocumentApplicationProperty> ApplicationProperties
+        {
+            get => Obj.ApplicationProperties.Select(x => new DocumentApplicationProperty(x) as IDocumentApplicationProperty).ToList();
+            set => Obj.ApplicationProperties = value.Select(x => ((DocumentApplicationProperty)x).Obj).ToList();
+        }
+
+        public string FileCabinetId
+        {
+            get => Obj.FileCabinetId;
+            set => Obj.FileCabinetId = value;
+        }
+
+        public string OrganizationGuid
+        {
+            get => Obj.OrganizationGuid;
+            set => Obj.OrganizationGuid = value;
+        }
+
+        public bool HaveMoreTotalPages
+        {
+            get => Obj.HaveMoreTotalPages;
+            set => Obj.HaveMoreTotalPages = value;
+        }
+
+        public bool HasTextAnnotation
+        {
+            get => Obj.HasTextAnnotation;
+            set => Obj.HasTextAnnotation = value;
+        }
+
+        public bool HasXmlDigitalSignatures
+        {
+            get => Obj.HasXmlDigitalSignatures;
+            set => Obj.HasXmlDigitalSignatures = value;
+        }
+
+        public bool AnnotationsPreview
+        {
+            get => Obj.AnnotationsPreview;
+            set => Obj.AnnotationsPreview = value;
+        }
+
+        public int TotalPages
+        {
+            get => Obj.TotalPages;
+            set => Obj.TotalPages = value;
+        }
 
-		public int Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public int Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Title
-		{
-			get => Obj.Title;
-			set => Obj.Title = value;
-		}
+        public string Title
+        {
+            get => Obj.Title;
+            set => Obj.Title = value;
+        }
 
-		public DateTime LastModified
-		{
-			get => Obj.LastModified;
-			set => Obj.LastModified = value;
-		}
+        public DateTime LastModified
+        {
+            get => Obj.LastModified;
+            set => Obj.LastModified = value;
+        }
 
-		public bool LastModifiedSpecified
-		{
-			get => Obj.LastModifiedSpecified;
-			set => Obj.LastModifiedSpecified = value;
-		}
+        public bool LastModifiedSpecified
+        {
+            get => Obj.LastModifiedSpecified;
+            set => Obj.LastModifiedSpecified = value;
+        }
 
-		public DateTime CreatedAt
-		{
-			get => Obj.CreatedAt;
-			set => Obj.CreatedAt = value;
-		}
+        public DateTime CreatedAt
+        {
+            get => Obj.CreatedAt;
+            set => Obj.CreatedAt = value;
+        }
 
-		public bool CreatedAtSpecified
-		{
-			get => Obj.CreatedAtSpecified;
-			set => Obj.CreatedAtSpecified = value;
-		}
+        public bool CreatedAtSpecified
+        {
+            get => Obj.CreatedAtSpecified;
+            set => Obj.CreatedAtSpecified = value;
+        }
 
-		public long FileSize
-		{
-			get => Obj.FileSize;
-			set => Obj.FileSize = value;
-		}
+        public long FileSize
+        {
+            get => Obj.FileSize;
+            set => Obj.FileSize = value;
+        }
 
-		public int SectionCount
-		{
-			get => Obj.SectionCount;
-			set => Obj.SectionCount = value;
-		}
+        public int SectionCount
+        {
+            get => Obj.SectionCount;
+            set => Obj.SectionCount = value;
+        }
 
-		public IntellixTrust IntellixTrust
-		{
-			get => new ntellixTrust(Obj.IntellixTrust);
-			set => Obj.IntellixTrust = ((ntellixTrust)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.IntellixTrust IntellixTrust
+        {
+            get => Obj.IntellixTrust;
+            set => Obj.IntellixTrust = value;
+        }
 
-		public VersionManagementStatus VersionStatus
-		{
-			get => new ersionManagementStatus(Obj.VersionStatus);
-			set => Obj.VersionStatus = ((ersionManagementStatus)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.VersionManagementStatus VersionStatus
+        {
+            get => Obj.VersionStatus;
+            set => Obj.VersionStatus = value;
+        }
 
-		public string ExternalContentLocation
-		{
-			get => Obj.ExternalContentLocation;
-			set => Obj.ExternalContentLocation = value;
-		}
+        public string ExternalContentLocation
+        {
+            get => Obj.ExternalContentLocation;
+            set => Obj.ExternalContentLocation = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string ContentDivideOperationRelationLink => Obj.ContentDivideOperationRelationLink;
+        public string ContentDivideOperationRelationLink => Obj.ContentDivideOperationRelationLink;
 
-		public string ClippedDocumentsRelationLink => Obj.ClippedDocumentsRelationLink;
+        public string ClippedDocumentsRelationLink => Obj.ClippedDocumentsRelationLink;
 
-		public string UnclipRelationLink => Obj.UnclipRelationLink;
+        public string UnclipRelationLink => Obj.UnclipRelationLink;
 
-		public string PositionsRelationLink => Obj.PositionsRelationLink;
+        public string PositionsRelationLink => Obj.PositionsRelationLink;
 
-		public string LockRelationLink => Obj.LockRelationLink;
+        public string LockRelationLink => Obj.LockRelationLink;
 
-		public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
+        public string ThumbnailRelationLink => Obj.ThumbnailRelationLink;
 
-		public string ThumbnailWithoutAnnotationRelationLink => Obj.ThumbnailWithoutAnnotationRelationLink;
+        public string ThumbnailWithoutAnnotationRelationLink => Obj.ThumbnailWithoutAnnotationRelationLink;
 
-		public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
+        public string AnnotationAsSvgRelationLink => Obj.AnnotationAsSvgRelationLink;
 
-		public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
+        public string LowQualityImageRelationLink => Obj.LowQualityImageRelationLink;
 
-		public string DeepZoomImageRelationLink => Obj.DeepZoomImageRelationLink;
+        public string DeepZoomImageRelationLink => Obj.DeepZoomImageRelationLink;
 
-		public string DeepZoomImageWithAnnotationRelationLink => Obj.DeepZoomImageWithAnnotationRelationLink;
+        public string DeepZoomImageWithAnnotationRelationLink => Obj.DeepZoomImageWithAnnotationRelationLink;
 
-		public string ResultListIconRelationLink => Obj.ResultListIconRelationLink;
+        public string ResultListIconRelationLink => Obj.ResultListIconRelationLink;
 
-		public string FieldsRelationLink => Obj.FieldsRelationLink;
+        public string FieldsRelationLink => Obj.FieldsRelationLink;
 
-		public string SuggestionsRelationLink => Obj.SuggestionsRelationLink;
+        public string SuggestionsRelationLink => Obj.SuggestionsRelationLink;
 
-		public string TableFieldsSuggestionsRelationLink => Obj.TableFieldsSuggestionsRelationLink;
+        public string TableFieldsSuggestionsRelationLink => Obj.TableFieldsSuggestionsRelationLink;
 
-		public string SectionsRelationLink => Obj.SectionsRelationLink;
+        public string SectionsRelationLink => Obj.SectionsRelationLink;
 
-		public string ContentRelationLink => Obj.ContentRelationLink;
+        public string ContentRelationLink => Obj.ContentRelationLink;
 
-		public string FileDownloadRelationLink => Obj.FileDownloadRelationLink;
+        public string FileDownloadRelationLink => Obj.FileDownloadRelationLink;
 
-		public string TextAnnotationRelationLink => Obj.TextAnnotationRelationLink;
+        public string TextAnnotationRelationLink => Obj.TextAnnotationRelationLink;
 
-		public string ChecksumStatusRelationLink => Obj.ChecksumStatusRelationLink;
+        public string ChecksumStatusRelationLink => Obj.ChecksumStatusRelationLink;
 
-		public string XmlDSigContentRelationLink => Obj.XmlDSigContentRelationLink;
+        public string XmlDSigContentRelationLink => Obj.XmlDSigContentRelationLink;
 
-		public string RightsRelationLink => Obj.RightsRelationLink;
+        public string RightsRelationLink => Obj.RightsRelationLink;
 
-		public string ProcessDocumentActionRelationLink => Obj.ProcessDocumentActionRelationLink;
+        public string ProcessDocumentActionRelationLink => Obj.ProcessDocumentActionRelationLink;
 
-		public string AppPropertiesRelationLink => Obj.AppPropertiesRelationLink;
+        public string AppPropertiesRelationLink => Obj.AppPropertiesRelationLink;
 
-		public string DocumentLinksRelationLink => Obj.DocumentLinksRelationLink;
+        public string DocumentLinksRelationLink => Obj.DocumentLinksRelationLink;
 
-		public string LatestVersionRelationLink => Obj.LatestVersionRelationLink;
+        public string LatestVersionRelationLink => Obj.LatestVersionRelationLink;
 
-		public string VersionHistoryRelationLink => Obj.VersionHistoryRelationLink;
+        public string VersionHistoryRelationLink => Obj.VersionHistoryRelationLink;
 
-		public string IntellixRelationLink => Obj.IntellixRelationLink;
+        public string IntellixRelationLink => Obj.IntellixRelationLink;
 
-		public string CheckoutDocumentRelationLink => Obj.CheckoutDocumentRelationLink;
+        public string CheckoutDocumentRelationLink => Obj.CheckoutDocumentRelationLink;
 
-		public string CheckoutToFileSystemRelationLink => Obj.CheckoutToFileSystemRelationLink;
+        public string CheckoutToFileSystemRelationLink => Obj.CheckoutToFileSystemRelationLink;
 
-		public string CheckInFromFileSystemRelationLink => Obj.CheckInFromFileSystemRelationLink;
+        public string CheckInFromFileSystemRelationLink => Obj.CheckInFromFileSystemRelationLink;
 
-		public string DownloadAsArchiveRelationLink => Obj.DownloadAsArchiveRelationLink;
+        public string DownloadAsArchiveRelationLink => Obj.DownloadAsArchiveRelationLink;
 
-		public string AnnotationRelationLink => Obj.AnnotationRelationLink;
+        public string AnnotationRelationLink => Obj.AnnotationRelationLink;
 
-		public string WorkflowHistoryRelationLink => Obj.WorkflowHistoryRelationLink;
+        public string WorkflowHistoryRelationLink => Obj.WorkflowHistoryRelationLink;
 
-		public string AuditInformationRelationLink => Obj.AuditInformationRelationLink;
+        public string AuditInformationRelationLink => Obj.AuditInformationRelationLink;
 
 		public async string ToString() => Obj.ToString();
+
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocument GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync()
@@ -303,6 +305,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
@@ -470,6 +473,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToLockRelationForString(ILockInfo dataToSend) => Obj.PostToLockRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToLockRelationForStringAsync(ILockInfo dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToLockRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -497,6 +501,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteLockRelation() => Obj.DeleteLockRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteLockRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteLockRelationAsync().ConfigureAwait(false);
@@ -524,6 +529,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromThumbnailRelation() => Obj.GetStreamFromThumbnailRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromThumbnailRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromThumbnailRelationAsync().ConfigureAwait(false);
@@ -551,6 +557,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromThumbnailWithoutAnnotationRelation() => Obj.GetStreamFromThumbnailWithoutAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromThumbnailWithoutAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromThumbnailWithoutAnnotationRelationAsync().ConfigureAwait(false);
@@ -578,6 +585,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromAnnotationAsSvgRelation() => Obj.GetStreamFromAnnotationAsSvgRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
@@ -605,6 +613,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLowQualityImageRelation() => Obj.GetStreamFromLowQualityImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
@@ -632,6 +641,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromDeepZoomImageRelation() => Obj.GetStreamFromDeepZoomImageRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDeepZoomImageRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromDeepZoomImageRelationAsync().ConfigureAwait(false);
@@ -659,6 +669,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromDeepZoomImageWithAnnotationRelation() => Obj.GetStreamFromDeepZoomImageWithAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDeepZoomImageWithAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromDeepZoomImageWithAnnotationRelationAsync().ConfigureAwait(false);
@@ -686,6 +697,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromResultListIconRelation() => Obj.GetStreamFromResultListIconRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResultListIconRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromResultListIconRelationAsync().ConfigureAwait(false);
@@ -909,6 +921,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromContentRelation() => Obj.GetStreamFromContentRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromContentRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromContentRelationAsync().ConfigureAwait(false);
@@ -936,6 +949,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToContentRelationForStream(IIntegerList dataToSend) => Obj.PostToContentRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToContentRelationForStreamAsync(IIntegerList dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToContentRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -963,6 +977,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromFileDownloadRelation() => Obj.GetStreamFromFileDownloadRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromFileDownloadRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromFileDownloadRelationAsync().ConfigureAwait(false);
@@ -990,6 +1005,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToFileDownloadRelationForStream(IFileDownload dataToSend) => Obj.PostToFileDownloadRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToFileDownloadRelationForStreamAsync(IFileDownload dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToFileDownloadRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1017,6 +1033,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromTextAnnotationRelation() => Obj.GetStreamFromTextAnnotationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTextAnnotationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromTextAnnotationRelationAsync().ConfigureAwait(false);
@@ -1044,6 +1061,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToTextAnnotationRelationForStream(Stream dataToSend) => Obj.PostToTextAnnotationRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToTextAnnotationRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToTextAnnotationRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1071,6 +1089,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string GetStringFromChecksumStatusRelation() => Obj.GetStringFromChecksumStatusRelation();
+
         public async Task<DeserializedHttpResponse<string>> GetStringFromChecksumStatusRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.GetStringFromChecksumStatusRelationAsync().ConfigureAwait(false);
@@ -1350,6 +1369,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToCheckoutDocumentRelationForStream(ICheckOutToFileSystemInfo dataToSend) => Obj.PostToCheckoutDocumentRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToCheckoutDocumentRelationForStreamAsync(ICheckOutToFileSystemInfo dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToCheckoutDocumentRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1377,6 +1397,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToCheckoutToFileSystemRelationForStream(ICheckOutToFileSystemInfo dataToSend) => Obj.PostToCheckoutToFileSystemRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToCheckoutToFileSystemRelationForStreamAsync(ICheckOutToFileSystemInfo dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToCheckoutToFileSystemRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1432,6 +1453,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToDownloadAsArchiveRelationForStream(IExportSettings dataToSend) => Obj.PostToDownloadAsArchiveRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToDownloadAsArchiveRelationForStreamAsync(IExportSettings dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToDownloadAsArchiveRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1597,6 +1619,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -6,45 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TrashBinDocumentsTableResult Obj { get; } = obj;
 
-		public ICountPlusValue Count
-		{
-			get => new CountPlusValue(Obj.Count);
-			set => Obj.Count = ((CountPlusValue)value).Obj;
-		}
+        public ICountPlusValue Count
+        {
+            get => new CountPlusValue(Obj.Count);
+            set => Obj.Count = ((CountPlusValue)value).Obj;
+        }
 
-		public List<ITrashBinTableHeader> Headers
-		{
-			get => Obj.Headers.Select(x => new TrashBinTableHeader(x) as ITrashBinTableHeader).ToList();
-			set => Obj.Headers = value.Select(x => ((TrashBinTableHeader)x).Obj).ToList();
-		}
+        public List<ITrashBinTableHeader> Headers
+        {
+            get => Obj.Headers.Select(x => new TrashBinTableHeader(x) as ITrashBinTableHeader).ToList();
+            set => Obj.Headers = value.Select(x => ((TrashBinTableHeader)x).Obj).ToList();
+        }
 
-		public List<ITrashBinTableRow> Rows
-		{
-			get => Obj.Rows.Select(x => new TrashBinTableRow(x) as ITrashBinTableRow).ToList();
-			set => Obj.Rows = value.Select(x => ((TrashBinTableRow)x).Obj).ToList();
-		}
+        public List<ITrashBinTableRow> Rows
+        {
+            get => Obj.Rows.Select(x => new TrashBinTableRow(x) as ITrashBinTableRow).ToList();
+            set => Obj.Rows = value.Select(x => ((TrashBinTableRow)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromNextRelationAsync()
@@ -156,6 +157,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

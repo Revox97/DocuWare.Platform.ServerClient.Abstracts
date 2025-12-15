@@ -6,16 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceDescriptionStatistics Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string CfsRelationLink => Obj.CfsRelationLink;
+        public string CfsRelationLink => Obj.CfsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream PostToCfsRelationForStream(ICFSStatisticGeneral dataToSend) => Obj.PostToCfsRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(ICFSStatisticGeneral dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToCfsRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -41,6 +43,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

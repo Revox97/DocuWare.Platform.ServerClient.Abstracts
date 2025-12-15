@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		int LowQualitySize { get; set; }
 		int TileSize { get; set; }
-		PlatformImageFormat RenderedImageFormat { get; set; }
+		DocuWare.Platform.ServerClient.PlatformImageFormat RenderedImageFormat { get; set; }
 		IDWRectangle ContentArea { get; set; }
 		int DpiX { get; set; }
 		int DpiY { get; set; }

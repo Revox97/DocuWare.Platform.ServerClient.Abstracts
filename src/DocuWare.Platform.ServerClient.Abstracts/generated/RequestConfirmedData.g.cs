@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestConfirmedData Obj { get; } = obj;
 
-		public int DecisionId
-		{
-			get => Obj.DecisionId;
-			set => Obj.DecisionId = value;
-		}
+        public int DecisionId
+        {
+            get => Obj.DecisionId;
+            set => Obj.DecisionId = value;
+        }
 
-		public string Comment
-		{
-			get => Obj.Comment;
-			set => Obj.Comment = value;
-		}
+        public string Comment
+        {
+            get => Obj.Comment;
+            set => Obj.Comment = value;
+        }
     }
 }

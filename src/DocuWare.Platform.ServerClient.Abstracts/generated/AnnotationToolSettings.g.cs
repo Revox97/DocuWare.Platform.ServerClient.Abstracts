@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AnnotationToolSettings Obj { get; } = obj;
 
-		public AnnotationTools Type
-		{
-			get => new nnotationTools(Obj.Type);
-			set => Obj.Type = ((nnotationTools)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.AnnotationTools Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public string Color
-		{
-			get => Obj.Color;
-			set => Obj.Color = value;
-		}
+        public string Color
+        {
+            get => Obj.Color;
+            set => Obj.Color = value;
+        }
     }
 }

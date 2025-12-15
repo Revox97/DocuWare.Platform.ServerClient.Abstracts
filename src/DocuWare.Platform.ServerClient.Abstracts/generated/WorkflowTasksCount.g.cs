@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WorkflowTasksCount Obj { get; } = obj;
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
     }
 }

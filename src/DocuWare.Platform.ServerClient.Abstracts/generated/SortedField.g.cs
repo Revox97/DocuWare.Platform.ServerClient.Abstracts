@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SortedField Obj { get; } = obj;
 
-		public string Field
-		{
-			get => Obj.Field;
-			set => Obj.Field = value;
-		}
+        public string Field
+        {
+            get => Obj.Field;
+            set => Obj.Field = value;
+        }
 
-		public SortDirection Direction
-		{
-			get => new ortDirection(Obj.Direction);
-			set => Obj.Direction = ((ortDirection)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.SortDirection Direction
+        {
+            get => Obj.Direction;
+            set => Obj.Direction = value;
+        }
     }
 }

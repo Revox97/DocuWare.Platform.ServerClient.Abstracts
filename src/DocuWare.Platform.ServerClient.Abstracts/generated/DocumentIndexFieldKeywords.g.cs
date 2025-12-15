@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentIndexFieldKeywords Obj { get; } = obj;
 
-		public List<string> Keyword
-		{
-			get => Obj.Keyword;
-			set => Obj.Keyword = value;
-		}
+        public List<string> Keyword
+        {
+            get => Obj.Keyword;
+            set => Obj.Keyword = value;
+        }
     }
 }

@@ -6,45 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DesignerInstance Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string WorkflowVersionId
-		{
-			get => Obj.WorkflowVersionId;
-			set => Obj.WorkflowVersionId = value;
-		}
+        public string WorkflowVersionId
+        {
+            get => Obj.WorkflowVersionId;
+            set => Obj.WorkflowVersionId = value;
+        }
 
-		public InstanceExecutionStateEnum ExecutionState
-		{
-			get => new nstanceExecutionStateEnum(Obj.ExecutionState);
-			set => Obj.ExecutionState = ((nstanceExecutionStateEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.InstanceExecutionStateEnum ExecutionState
+        {
+            get => Obj.ExecutionState;
+            set => Obj.ExecutionState = value;
+        }
 
-		public int DocId
-		{
-			get => Obj.DocId;
-			set => Obj.DocId = value;
-		}
+        public int DocId
+        {
+            get => Obj.DocId;
+            set => Obj.DocId = value;
+        }
 
-		public DateTime CreateDate
-		{
-			get => Obj.CreateDate;
-			set => Obj.CreateDate = value;
-		}
+        public DateTime CreateDate
+        {
+            get => Obj.CreateDate;
+            set => Obj.CreateDate = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDesignerInstance GetDesignerInstanceFromSelfRelation() => new DesignerInstance(Obj.GetDesignerInstanceFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerInstance>> GetDesignerInstanceFromSelfRelationAsync()
@@ -74,6 +75,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
@@ -99,6 +101,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
-
     }
 }

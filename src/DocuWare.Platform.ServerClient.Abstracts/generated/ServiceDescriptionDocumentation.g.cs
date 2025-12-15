@@ -6,24 +6,26 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceDescriptionDocumentation Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string LinkModelOverviewRelationLink => Obj.LinkModelOverviewRelationLink;
+        public string LinkModelOverviewRelationLink => Obj.LinkModelOverviewRelationLink;
 
-		public string SchemasRelationLink => Obj.SchemasRelationLink;
+        public string SchemasRelationLink => Obj.SchemasRelationLink;
 
-		public string FunctionDescriptionsRelationLink => Obj.FunctionDescriptionsRelationLink;
+        public string FunctionDescriptionsRelationLink => Obj.FunctionDescriptionsRelationLink;
 
-		public string SchemaSearchRelationLink => Obj.SchemaSearchRelationLink;
+        public string SchemaSearchRelationLink => Obj.SchemaSearchRelationLink;
 
-		public string UriTemplatesDocumentationRelationLink => Obj.UriTemplatesDocumentationRelationLink;
+        public string UriTemplatesDocumentationRelationLink => Obj.UriTemplatesDocumentationRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream GetStreamFromLinkModelOverviewRelation() => Obj.GetStreamFromLinkModelOverviewRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLinkModelOverviewRelationAsync().ConfigureAwait(false);
@@ -107,6 +109,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromSchemaSearchRelation() => Obj.GetStreamFromSchemaSearchRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaSearchRelationAsync().ConfigureAwait(false);
@@ -134,6 +137,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromUriTemplatesDocumentationRelation() => Obj.GetStreamFromUriTemplatesDocumentationRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync().ConfigureAwait(false);
@@ -159,6 +163,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

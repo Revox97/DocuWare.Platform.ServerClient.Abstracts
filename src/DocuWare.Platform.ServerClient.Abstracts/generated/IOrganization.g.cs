@@ -8,7 +8,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		ICalendar Calendar { get; set; }
 		IOrganizationCulture Culture { get; set; }
 		Link[] Links { get; set; }
-		List<ConfigurationRight> ConfigurationRights { get; set; }
+		List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRights { get; set; }
 		IExtendedConfigurationRights ExtendedConfigurationRights { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }

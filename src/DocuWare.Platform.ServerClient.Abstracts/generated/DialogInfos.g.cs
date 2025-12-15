@@ -6,21 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogInfos Obj { get; } = obj;
 
-		public List<IDialogInfo> Dialog
-		{
-			get => Obj.Dialog.Select(x => new DialogInfo(x) as IDialogInfo).ToList();
-			set => Obj.Dialog = value.Select(x => ((DialogInfo)x).Obj).ToList();
-		}
+        public List<IDialogInfo> Dialog
+        {
+            get => Obj.Dialog.Select(x => new DialogInfo(x) as IDialogInfo).ToList();
+            set => Obj.Dialog = value.Select(x => ((DialogInfo)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDialogInfos GetDialogInfosFromSelfRelation() => new DialogInfos(Obj.GetDialogInfosFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromSelfRelationAsync()
@@ -48,6 +49,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
         }
-
     }
 }

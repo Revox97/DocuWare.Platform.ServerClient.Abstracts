@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ThrottleDelegatingHandler Obj { get; } = obj;
 
-		public HttpMessageHandler InnerHandler
-		{
-			get => Obj.InnerHandler;
-			set => Obj.InnerHandler = value;
-		}
+        public HttpMessageHandler InnerHandler
+        {
+            get => Obj.InnerHandler;
+            set => Obj.InnerHandler = value;
+        }
     }
 }

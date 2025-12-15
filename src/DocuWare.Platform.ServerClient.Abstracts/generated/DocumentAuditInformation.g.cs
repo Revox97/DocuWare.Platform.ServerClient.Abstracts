@@ -6,25 +6,26 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentAuditInformation Obj { get; } = obj;
 
-		public List<IDocumentAuditEvent> Events
-		{
-			get => Obj.Events.Select(x => new DocumentAuditEvent(x) as IDocumentAuditEvent).ToList();
-			set => Obj.Events = value.Select(x => ((DocumentAuditEvent)x).Obj).ToList();
-		}
+        public List<IDocumentAuditEvent> Events
+        {
+            get => Obj.Events.Select(x => new DocumentAuditEvent(x) as IDocumentAuditEvent).ToList();
+            set => Obj.Events = value.Select(x => ((DocumentAuditEvent)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentAuditInformation GetDocumentAuditInformationFromNextRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromNextRelationAsync()
@@ -108,6 +109,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
         }
-
     }
 }

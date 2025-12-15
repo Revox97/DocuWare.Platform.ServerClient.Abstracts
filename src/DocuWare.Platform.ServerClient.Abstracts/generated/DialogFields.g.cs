@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogFields Obj { get; } = obj;
 
-		public List<IDialogField> Field
-		{
-			get => Obj.Field.Select(x => new DialogField(x) as IDialogField).ToList();
-			set => Obj.Field = value.Select(x => ((DialogField)x).Obj).ToList();
-		}
+        public List<IDialogField> Field
+        {
+            get => Obj.Field.Select(x => new DialogField(x) as IDialogField).ToList();
+            set => Obj.Field = value.Select(x => ((DialogField)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

@@ -19,7 +19,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             if (name == "T")
                 return name;
 
-            if (t.IsPrimitive || t == typeof(string) || t == typeof(void))
+            if (t.IsEnum)
+            {
+                return t.IsDocuWareType()
+                    ? $"DocuWare.Platform.ServerClient.{name}"
+                    : name;
+            }
+
+            if (t.IsPrimitive || t == typeof(string) || t == typeof(void) || t == typeof(object))
                 return t.GetParsedPrimitiveType();
 
             if (t.IsGenericType)
@@ -59,26 +66,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
         {
             return t.GenericTypeArguments;
         }
-        internal static bool IsDocuWareType(this Type t)
+
+        internal static bool IsDocuWareType(this Type t, bool checkForEnum = false)
         {
-            return t.Namespace is not null && t.Namespace.StartsWith("DocuWare.Platform.ServerClient");
+            return t.Namespace is not null && t.Namespace.StartsWith("DocuWare.Platform.ServerClient") && (!checkForEnum || !t.IsEnum);
         }
 
         private static string GetParsedPrimitiveType(this Type t)
         {
-            if (t == typeof(string) || t == typeof(void))
-                return t.Name.ToLower();
-
-            string name = t.Name.ToLower();
-
-            return name.ToLower() switch
+            return t.Name.ToLower() switch
             {
                 "boolean" => "bool",
                 "int16" => "byte",
                 "int32" => "int",
                 "int64" => "long",
+                "uint16" => "ubyte",
+                "uint32" => "uint",
+                "uint64" => "ulong",
                 "double" => "double",
-                "float" => "float",
+                "single" => "float",
+                "object" => "object",
+                "void" => "void",
+                "string" => "string",
                 _ => "!!!UNKNOWN_PRIMITIVE" // TODO Fallback during development -> Change to return name
             };
         }

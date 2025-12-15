@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ChecksumInfo Obj { get; } = obj;
 
-		public string ChecksumValue
-		{
-			get => Obj.ChecksumValue;
-			set => Obj.ChecksumValue = value;
-		}
+        public string ChecksumValue
+        {
+            get => Obj.ChecksumValue;
+            set => Obj.ChecksumValue = value;
+        }
 
-		public string ChecksumAlgorithm
-		{
-			get => Obj.ChecksumAlgorithm;
-			set => Obj.ChecksumAlgorithm = value;
-		}
+        public string ChecksumAlgorithm
+        {
+            get => Obj.ChecksumAlgorithm;
+            set => Obj.ChecksumAlgorithm = value;
+        }
     }
 }

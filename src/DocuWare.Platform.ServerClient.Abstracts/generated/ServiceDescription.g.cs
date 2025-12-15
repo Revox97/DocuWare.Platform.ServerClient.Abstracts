@@ -6,79 +6,80 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceDescription Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public IServiceDescriptionTests Tests
-		{
-			get => new ServiceDescriptionTests(Obj.Tests);
-			set => Obj.Tests = ((ServiceDescriptionTests)value).Obj;
-		}
+        public IServiceDescriptionTests Tests
+        {
+            get => new ServiceDescriptionTests(Obj.Tests);
+            set => Obj.Tests = ((ServiceDescriptionTests)value).Obj;
+        }
 
-		public IServiceDescriptionDocumentation Documentation
-		{
-			get => new ServiceDescriptionDocumentation(Obj.Documentation);
-			set => Obj.Documentation = ((ServiceDescriptionDocumentation)value).Obj;
-		}
+        public IServiceDescriptionDocumentation Documentation
+        {
+            get => new ServiceDescriptionDocumentation(Obj.Documentation);
+            set => Obj.Documentation = ((ServiceDescriptionDocumentation)value).Obj;
+        }
 
-		public List<UriTemplateDescription> Resources
-		{
-			get => Obj.Resources;
-			set => Obj.Resources = value;
-		}
+        public List<UriTemplateDescription> Resources
+        {
+            get => Obj.Resources;
+            set => Obj.Resources = value;
+        }
 
-		public IServiceDescriptionStatistics Statistics
-		{
-			get => new ServiceDescriptionStatistics(Obj.Statistics);
-			set => Obj.Statistics = ((ServiceDescriptionStatistics)value).Obj;
-		}
+        public IServiceDescriptionStatistics Statistics
+        {
+            get => new ServiceDescriptionStatistics(Obj.Statistics);
+            set => Obj.Statistics = ((ServiceDescriptionStatistics)value).Obj;
+        }
 
-		public string Version
-		{
-			get => Obj.Version;
-			set => Obj.Version = value;
-		}
+        public string Version
+        {
+            get => Obj.Version;
+            set => Obj.Version = value;
+        }
 
-		public string OrganizationsRelationLink => Obj.OrganizationsRelationLink;
+        public string OrganizationsRelationLink => Obj.OrganizationsRelationLink;
 
-		public string LoginRelationLink => Obj.LoginRelationLink;
+        public string LoginRelationLink => Obj.LoginRelationLink;
 
-		public string GuestLoginRelationLink => Obj.GuestLoginRelationLink;
+        public string GuestLoginRelationLink => Obj.GuestLoginRelationLink;
 
-		public string WindowsLoginRelationLink => Obj.WindowsLoginRelationLink;
+        public string WindowsLoginRelationLink => Obj.WindowsLoginRelationLink;
 
-		public string ChangePasswordRelationLink => Obj.ChangePasswordRelationLink;
+        public string ChangePasswordRelationLink => Obj.ChangePasswordRelationLink;
 
-		public string ResetPasswordRelationLink => Obj.ResetPasswordRelationLink;
+        public string ResetPasswordRelationLink => Obj.ResetPasswordRelationLink;
 
-		public string TokenLoginRelationLink => Obj.TokenLoginRelationLink;
+        public string TokenLoginRelationLink => Obj.TokenLoginRelationLink;
 
-		public string TrustedLoginRelationLink => Obj.TrustedLoginRelationLink;
+        public string TrustedLoginRelationLink => Obj.TrustedLoginRelationLink;
 
-		public string JwtLoginRelationLink => Obj.JwtLoginRelationLink;
+        public string JwtLoginRelationLink => Obj.JwtLoginRelationLink;
 
-		public string LogoutRelationLink => Obj.LogoutRelationLink;
+        public string LogoutRelationLink => Obj.LogoutRelationLink;
 
-		public string DisconnectRelationLink => Obj.DisconnectRelationLink;
+        public string DisconnectRelationLink => Obj.DisconnectRelationLink;
 
-		public string LoginCookieRelationLink => Obj.LoginCookieRelationLink;
+        public string LoginCookieRelationLink => Obj.LoginCookieRelationLink;
 
-		public string UriTemplatesRelationLink => Obj.UriTemplatesRelationLink;
+        public string UriTemplatesRelationLink => Obj.UriTemplatesRelationLink;
 
-		public string AdhocRenderingRelationLink => Obj.AdhocRenderingRelationLink;
+        public string AdhocRenderingRelationLink => Obj.AdhocRenderingRelationLink;
 
-		public string RootSchemaRelationLink => Obj.RootSchemaRelationLink;
+        public string RootSchemaRelationLink => Obj.RootSchemaRelationLink;
 
-		public string LogRelationLink => Obj.LogRelationLink;
+        public string LogRelationLink => Obj.LogRelationLink;
 
-		public string PermanentUrlRelationLink => Obj.PermanentUrlRelationLink;
+        public string PermanentUrlRelationLink => Obj.PermanentUrlRelationLink;
 
-		public string IdentityServiceInfoRelationLink => Obj.IdentityServiceInfoRelationLink;
+        public string IdentityServiceInfoRelationLink => Obj.IdentityServiceInfoRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IOrganizations GetOrganizationsFromOrganizationsRelation() => new Organizations(Obj.GetOrganizationsFromOrganizationsRelation());
 
         public async Task<DeserializedHttpResponse<IOrganizations>> GetOrganizationsFromOrganizationsRelationAsync()
@@ -108,6 +109,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLoginRelation() => Obj.GetStreamFromLoginRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLoginRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLoginRelationAsync().ConfigureAwait(false);
@@ -135,6 +137,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToLoginRelationForStream(Stream dataToSend) => Obj.PostToLoginRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToLoginRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -162,6 +165,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromGuestLoginRelation() => Obj.GetStreamFromGuestLoginRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromGuestLoginRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromGuestLoginRelationAsync().ConfigureAwait(false);
@@ -189,6 +193,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToGuestLoginRelationForStream(Stream dataToSend) => Obj.PostToGuestLoginRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToGuestLoginRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToGuestLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -216,6 +221,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string GetStringFromWindowsLoginRelation() => Obj.GetStringFromWindowsLoginRelation();
+
         public async Task<DeserializedHttpResponse<string>> GetStringFromWindowsLoginRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.GetStringFromWindowsLoginRelationAsync().ConfigureAwait(false);
@@ -243,6 +249,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToWindowsLoginRelationForString(Stream dataToSend) => Obj.PostToWindowsLoginRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToWindowsLoginRelationForStringAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToWindowsLoginRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -270,6 +277,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromChangePasswordRelation() => Obj.GetStreamFromChangePasswordRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromChangePasswordRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromChangePasswordRelationAsync().ConfigureAwait(false);
@@ -297,6 +305,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToChangePasswordRelationForStream(Stream dataToSend) => Obj.PostToChangePasswordRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToChangePasswordRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToChangePasswordRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -324,6 +333,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromResetPasswordRelation() => Obj.GetStreamFromResetPasswordRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResetPasswordRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromResetPasswordRelationAsync().ConfigureAwait(false);
@@ -351,6 +361,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToResetPasswordRelationForStream(Stream dataToSend) => Obj.PostToResetPasswordRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToResetPasswordRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToResetPasswordRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -378,6 +389,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromTokenLoginRelation() => Obj.GetStreamFromTokenLoginRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTokenLoginRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromTokenLoginRelationAsync().ConfigureAwait(false);
@@ -405,6 +417,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToTokenLoginRelationForStream(Stream dataToSend) => Obj.PostToTokenLoginRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToTokenLoginRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToTokenLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -432,6 +445,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromTrustedLoginRelation() => Obj.GetStreamFromTrustedLoginRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTrustedLoginRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromTrustedLoginRelationAsync().ConfigureAwait(false);
@@ -459,6 +473,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToTrustedLoginRelationForStream(Stream dataToSend) => Obj.PostToTrustedLoginRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToTrustedLoginRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToTrustedLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -486,6 +501,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToJwtLoginRelationForStream(Stream dataToSend) => Obj.PostToJwtLoginRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToJwtLoginRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToJwtLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -513,6 +529,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromLogoutRelation() => Obj.GetStreamFromLogoutRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLogoutRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLogoutRelationAsync().ConfigureAwait(false);
@@ -540,6 +557,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromDisconnectRelation() => Obj.GetStreamFromDisconnectRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDisconnectRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromDisconnectRelationAsync().ConfigureAwait(false);
@@ -567,6 +585,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string GetStringFromLoginCookieRelation() => Obj.GetStringFromLoginCookieRelation();
+
         public async Task<DeserializedHttpResponse<string>> GetStringFromLoginCookieRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.GetStringFromLoginCookieRelationAsync().ConfigureAwait(false);
@@ -650,6 +669,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromRootSchemaRelation() => Obj.GetStreamFromRootSchemaRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromRootSchemaRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromRootSchemaRelationAsync().ConfigureAwait(false);
@@ -677,6 +697,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string GetStringFromPermanentUrlRelation() => Obj.GetStringFromPermanentUrlRelation();
+
         public async Task<DeserializedHttpResponse<string>> GetStringFromPermanentUrlRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.GetStringFromPermanentUrlRelationAsync().ConfigureAwait(false);
@@ -730,6 +751,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IIdentityServiceInfo>(temp).ConfigureAwait(false);
         }
-
     }
 }

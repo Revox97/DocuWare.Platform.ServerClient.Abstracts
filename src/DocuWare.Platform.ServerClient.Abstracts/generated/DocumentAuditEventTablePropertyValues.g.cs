@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentAuditEventTablePropertyValues Obj { get; } = obj;
 
-		public List<List<string>> Row
-		{
-			get => Obj.Row;
-			set => Obj.Row = value;
-		}
+        public List<List<string>> Row
+        {
+            get => Obj.Row;
+            set => Obj.Row = value;
+        }
     }
 }

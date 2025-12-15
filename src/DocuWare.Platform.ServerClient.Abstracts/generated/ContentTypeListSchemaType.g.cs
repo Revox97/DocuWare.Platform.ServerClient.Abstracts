@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentTypeListSchemaType Obj { get; } = obj;
 
-		public string IntroducedIn
-		{
-			get => Obj.IntroducedIn;
-			set => Obj.IntroducedIn = value;
-		}
+        public string IntroducedIn
+        {
+            get => Obj.IntroducedIn;
+            set => Obj.IntroducedIn = value;
+        }
 
-		public XmlQualifiedName Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public XmlQualifiedName Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
     }
 }

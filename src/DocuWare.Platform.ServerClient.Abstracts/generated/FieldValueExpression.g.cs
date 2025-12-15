@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FieldValueExpression Obj { get; } = obj;
 
-		public string FieldName
-		{
-			get => Obj.FieldName;
-			set => Obj.FieldName = value;
-		}
+        public string FieldName
+        {
+            get => Obj.FieldName;
+            set => Obj.FieldName = value;
+        }
     }
 }

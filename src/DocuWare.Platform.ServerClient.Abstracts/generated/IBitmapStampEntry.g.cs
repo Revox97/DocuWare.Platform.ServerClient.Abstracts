@@ -9,7 +9,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int DpiY { get; set; }
 		IAnnotationRectangle Location { get; set; }
 		IFont HeadFont { get; set; }
-		StampSignatureType Signature { get; set; }
+		DocuWare.Platform.ServerClient.StampSignatureType Signature { get; set; }
 		string UserName { get; set; }
 		bool Visible { get; set; }
 		bool Frame { get; set; }

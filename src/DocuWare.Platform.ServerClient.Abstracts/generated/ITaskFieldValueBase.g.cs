@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITaskFieldValueBase
     {
-		Object Item { get; set; }
-		ItemChoiceType1 ItemElementName { get; set; }
+		object Item { get; set; }
+		DocuWare.Platform.ServerClient.ItemChoiceType1 ItemElementName { get; set; }
     }
 }

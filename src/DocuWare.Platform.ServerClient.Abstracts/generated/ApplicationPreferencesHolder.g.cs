@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ApplicationPreferencesHolder Obj { get; } = obj;
 
-		public IApplicationPreferences AppPrefs
-		{
-			get => new ApplicationPreferences(Obj.AppPrefs);
-			set => Obj.AppPrefs = ((ApplicationPreferences)value).Obj;
-		}
+        public IApplicationPreferences AppPrefs
+        {
+            get => new ApplicationPreferences(Obj.AppPrefs);
+            set => Obj.AppPrefs = ((ApplicationPreferences)value).Obj;
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ImportTemplateResult Obj { get; } = obj;
 
-		public string ConfigJSON
-		{
-			get => Obj.ConfigJSON;
-			set => Obj.ConfigJSON = value;
-		}
+        public string ConfigJSON
+        {
+            get => Obj.ConfigJSON;
+            set => Obj.ConfigJSON = value;
+        }
     }
 }

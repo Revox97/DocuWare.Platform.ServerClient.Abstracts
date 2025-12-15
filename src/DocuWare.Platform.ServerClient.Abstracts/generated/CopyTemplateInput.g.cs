@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CopyTemplateInput Obj { get; } = obj;
 
-		public string TemplateGUID
-		{
-			get => Obj.TemplateGUID;
-			set => Obj.TemplateGUID = value;
-		}
+        public string TemplateGUID
+        {
+            get => Obj.TemplateGUID;
+            set => Obj.TemplateGUID = value;
+        }
     }
 }

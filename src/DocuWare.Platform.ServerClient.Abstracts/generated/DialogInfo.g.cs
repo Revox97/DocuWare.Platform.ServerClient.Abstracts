@@ -6,84 +6,86 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogInfo Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string FileCabinetId
-		{
-			get => Obj.FileCabinetId;
-			set => Obj.FileCabinetId = value;
-		}
+        public string FileCabinetId
+        {
+            get => Obj.FileCabinetId;
+            set => Obj.FileCabinetId = value;
+        }
 
-		public string FileCabinetName
-		{
-			get => Obj.FileCabinetName;
-			set => Obj.FileCabinetName = value;
-		}
+        public string FileCabinetName
+        {
+            get => Obj.FileCabinetName;
+            set => Obj.FileCabinetName = value;
+        }
 
-		public string DisplayName
-		{
-			get => Obj.DisplayName;
-			set => Obj.DisplayName = value;
-		}
+        public string DisplayName
+        {
+            get => Obj.DisplayName;
+            set => Obj.DisplayName = value;
+        }
 
-		public bool IsForMobile
-		{
-			get => Obj.IsForMobile;
-			set => Obj.IsForMobile = value;
-		}
+        public bool IsForMobile
+        {
+            get => Obj.IsForMobile;
+            set => Obj.IsForMobile = value;
+        }
 
-		public string AssignedDialogId
-		{
-			get => Obj.AssignedDialogId;
-			set => Obj.AssignedDialogId = value;
-		}
+        public string AssignedDialogId
+        {
+            get => Obj.AssignedDialogId;
+            set => Obj.AssignedDialogId = value;
+        }
 
-		public string Color
-		{
-			get => Obj.Color;
-			set => Obj.Color = value;
-		}
+        public string Color
+        {
+            get => Obj.Color;
+            set => Obj.Color = value;
+        }
 
-		public bool IsDefault
-		{
-			get => Obj.IsDefault;
-			set => Obj.IsDefault = value;
-		}
+        public bool IsDefault
+        {
+            get => Obj.IsDefault;
+            set => Obj.IsDefault = value;
+        }
 
-		public DialogTypes Type
-		{
-			get => new ialogTypes(Obj.Type);
-			set => Obj.Type = ((ialogTypes)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DialogTypes Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string AssignedDialogRelationLink => Obj.AssignedDialogRelationLink;
+        public string AssignedDialogRelationLink => Obj.AssignedDialogRelationLink;
 
-		public string CountRelationLink => Obj.CountRelationLink;
+        public string CountRelationLink => Obj.CountRelationLink;
 
-		public string SelectListRelationLink => Obj.SelectListRelationLink;
+        public string SelectListRelationLink => Obj.SelectListRelationLink;
 
-		public string StoreDocumentRelationLink => Obj.StoreDocumentRelationLink;
+        public string StoreDocumentRelationLink => Obj.StoreDocumentRelationLink;
 
-		public string TransferRelationLink => Obj.TransferRelationLink;
+        public string TransferRelationLink => Obj.TransferRelationLink;
 
-		public string CreateUserDefinedSearchRelationLink => Obj.CreateUserDefinedSearchRelationLink;
+        public string CreateUserDefinedSearchRelationLink => Obj.CreateUserDefinedSearchRelationLink;
 
-		public string ClientSideValidationRelationLink => Obj.ClientSideValidationRelationLink;
+        public string ClientSideValidationRelationLink => Obj.ClientSideValidationRelationLink;
 
 		public async string ToString() => Obj.ToString();
+
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDialog GetDialogFromSelfRelation() => new Dialog(Obj.GetDialogFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromSelfRelationAsync()
@@ -113,6 +115,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
@@ -364,6 +367,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToClientSideValidationRelationForString(IDocumentIndexFields dataToSend) => Obj.PostToClientSideValidationRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToClientSideValidationRelationForStringAsync(IDocumentIndexFields dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToClientSideValidationRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -389,6 +393,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -6,25 +6,26 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TrashBin Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string DocumentsRelationLink => Obj.DocumentsRelationLink;
+        public string DocumentsRelationLink => Obj.DocumentsRelationLink;
 
-		public string QueryDocumentsRelationLink => Obj.QueryDocumentsRelationLink;
+        public string QueryDocumentsRelationLink => Obj.QueryDocumentsRelationLink;
 
-		public string CountDocumentsRelationLink => Obj.CountDocumentsRelationLink;
+        public string CountDocumentsRelationLink => Obj.CountDocumentsRelationLink;
 
-		public string SelectListsRelationLink => Obj.SelectListsRelationLink;
+        public string SelectListsRelationLink => Obj.SelectListsRelationLink;
 
-		public string BatchRestoreRelationLink => Obj.BatchRestoreRelationLink;
+        public string BatchRestoreRelationLink => Obj.BatchRestoreRelationLink;
 
-		public string BatchDeleteRelationLink => Obj.BatchDeleteRelationLink;
+        public string BatchDeleteRelationLink => Obj.BatchDeleteRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromDocumentsRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromDocumentsRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromDocumentsRelationAsync()
@@ -220,6 +221,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IBatchDeleteResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -9,7 +9,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IKeyValuePair> metadata { get; set; }
 		List<ICandidateInfo> Candidates { get; set; }
 		string Lang { get; set; }
-		LanguageDetection LanguageDetection { get; set; }
+		DocuWare.Platform.ServerClient.LanguageDetection LanguageDetection { get; set; }
 		int CandidateDetectionVersion { get; set; }
 		int Version { get; set; }
 		double HorizontalDpi { get; set; }
@@ -17,7 +17,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int SizeX { get; set; }
 		int SizeY { get; set; }
 		double SkewAngle { get; set; }
-		Rotation Rotation { get; set; }
+		DocuWare.Platform.ServerClient.Rotation Rotation { get; set; }
 		string FileTag { get; set; }
     }
 }

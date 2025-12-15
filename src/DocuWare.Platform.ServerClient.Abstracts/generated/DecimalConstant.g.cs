@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DecimalConstant Obj { get; } = obj;
 
-		public Decimal? Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public Decimal? Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ResultDialogFunction Obj { get; } = obj;
 
-		public ResultDialogFunctionType Type
-		{
-			get => new esultDialogFunctionType(Obj.Type);
-			set => Obj.Type = ((esultDialogFunctionType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ResultDialogFunctionType Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public bool InToolBar
-		{
-			get => Obj.InToolBar;
-			set => Obj.InToolBar = value;
-		}
+        public bool InToolBar
+        {
+            get => Obj.InToolBar;
+            set => Obj.InToolBar = value;
+        }
 
-		public bool AsButton
-		{
-			get => Obj.AsButton;
-			set => Obj.AsButton = value;
-		}
+        public bool AsButton
+        {
+            get => Obj.AsButton;
+            set => Obj.AsButton = value;
+        }
     }
 }

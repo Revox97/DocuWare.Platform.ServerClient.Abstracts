@@ -6,27 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Notifications Obj { get; } = obj;
 
-		public List<INotification> Notification
-		{
-			get => Obj.Notification.Select(x => new Notification(x) as INotification).ToList();
-			set => Obj.Notification = value.Select(x => ((Notification)x).Obj).ToList();
-		}
+        public List<INotification> Notification
+        {
+            get => Obj.Notification.Select(x => new Notification(x) as INotification).ToList();
+            set => Obj.Notification = value.Select(x => ((Notification)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public int Timeout
-		{
-			get => Obj.Timeout;
-			set => Obj.Timeout = value;
-		}
+        public int Timeout
+        {
+            get => Obj.Timeout;
+            set => Obj.Timeout = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public INotifications GetNotificationsFromSelfRelation() => new Notifications(Obj.GetNotificationsFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromSelfRelationAsync()
@@ -54,6 +55,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
         }
-
     }
 }

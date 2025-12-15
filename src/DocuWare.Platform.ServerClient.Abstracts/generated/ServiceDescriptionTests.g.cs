@@ -6,22 +6,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceDescriptionTests Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string HtmlTestClientRelationLink => Obj.HtmlTestClientRelationLink;
+        public string HtmlTestClientRelationLink => Obj.HtmlTestClientRelationLink;
 
-		public string ReflectStampPlacementRelationLink => Obj.ReflectStampPlacementRelationLink;
+        public string ReflectStampPlacementRelationLink => Obj.ReflectStampPlacementRelationLink;
 
-		public string ReflectDialogQueryRelationLink => Obj.ReflectDialogQueryRelationLink;
+        public string ReflectDialogQueryRelationLink => Obj.ReflectDialogQueryRelationLink;
 
-		public string QueryStringRelationLink => Obj.QueryStringRelationLink;
+        public string QueryStringRelationLink => Obj.QueryStringRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream GetStreamFromHtmlTestClientRelation() => Obj.GetStreamFromHtmlTestClientRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromHtmlTestClientRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromHtmlTestClientRelationAsync().ConfigureAwait(false);
@@ -105,6 +107,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromQueryStringRelation() => Obj.GetStreamFromQueryStringRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromQueryStringRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromQueryStringRelationAsync().ConfigureAwait(false);
@@ -130,6 +133,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

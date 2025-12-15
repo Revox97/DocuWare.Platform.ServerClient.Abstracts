@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.gridTable Obj { get; } = obj;
 
-		public List<int> gridCol
-		{
-			get => Obj.gridCol;
-			set => Obj.gridCol = value;
-		}
+        public List<int> gridCol
+        {
+            get => Obj.gridCol;
+            set => Obj.gridCol = value;
+        }
 
-		public List<int> gridRow
-		{
-			get => Obj.gridRow;
-			set => Obj.gridRow = value;
-		}
+        public List<int> gridRow
+        {
+            get => Obj.gridRow;
+            set => Obj.gridRow = value;
+        }
     }
 }

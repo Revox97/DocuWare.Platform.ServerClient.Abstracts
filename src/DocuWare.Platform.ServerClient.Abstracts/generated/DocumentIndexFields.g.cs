@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentIndexFields Obj { get; } = obj;
 
-		public IDocumentIndexField Item
-		{
-			get => new DocumentIndexField(Obj.Item);
-			set => Obj.Item = ((DocumentIndexField)value).Obj;
-		}
+        public IDocumentIndexField Item
+        {
+            get => new DocumentIndexField(Obj.Item);
+            set => Obj.Item = ((DocumentIndexField)value).Obj;
+        }
 
-		public List<IDocumentIndexField> Field
-		{
-			get => Obj.Field.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
-			set => Obj.Field = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
-		}
+        public List<IDocumentIndexField> Field
+        {
+            get => Obj.Field.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
+            set => Obj.Field = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
+        }
     }
 }

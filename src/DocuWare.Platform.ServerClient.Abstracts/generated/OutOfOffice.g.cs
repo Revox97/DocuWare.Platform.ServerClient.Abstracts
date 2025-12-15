@@ -6,34 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.OutOfOffice Obj { get; } = obj;
 
-		public bool IsOutOfOffice
-		{
-			get => Obj.IsOutOfOffice;
-			set => Obj.IsOutOfOffice = value;
-		}
+        public bool IsOutOfOffice
+        {
+            get => Obj.IsOutOfOffice;
+            set => Obj.IsOutOfOffice = value;
+        }
 
-		public DateTime StartDateTime
-		{
-			get => Obj.StartDateTime;
-			set => Obj.StartDateTime = value;
-		}
+        public DateTime StartDateTime
+        {
+            get => Obj.StartDateTime;
+            set => Obj.StartDateTime = value;
+        }
 
-		public bool StartDateTimeSpecified
-		{
-			get => Obj.StartDateTimeSpecified;
-			set => Obj.StartDateTimeSpecified = value;
-		}
+        public bool StartDateTimeSpecified
+        {
+            get => Obj.StartDateTimeSpecified;
+            set => Obj.StartDateTimeSpecified = value;
+        }
 
-		public DateTime EndDateTime
-		{
-			get => Obj.EndDateTime;
-			set => Obj.EndDateTime = value;
-		}
+        public DateTime EndDateTime
+        {
+            get => Obj.EndDateTime;
+            set => Obj.EndDateTime = value;
+        }
 
-		public bool EndDateTimeSpecified
-		{
-			get => Obj.EndDateTimeSpecified;
-			set => Obj.EndDateTimeSpecified = value;
-		}
+        public bool EndDateTimeSpecified
+        {
+            get => Obj.EndDateTimeSpecified;
+            set => Obj.EndDateTimeSpecified = value;
+        }
     }
 }

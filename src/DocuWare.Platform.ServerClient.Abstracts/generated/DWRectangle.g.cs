@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DWRectangle Obj { get; } = obj;
 
-		public double Left
-		{
-			get => Obj.Left;
-			set => Obj.Left = value;
-		}
+        public double Left
+        {
+            get => Obj.Left;
+            set => Obj.Left = value;
+        }
 
-		public double Top
-		{
-			get => Obj.Top;
-			set => Obj.Top = value;
-		}
+        public double Top
+        {
+            get => Obj.Top;
+            set => Obj.Top = value;
+        }
 
-		public double Width
-		{
-			get => Obj.Width;
-			set => Obj.Width = value;
-		}
+        public double Width
+        {
+            get => Obj.Width;
+            set => Obj.Width = value;
+        }
 
-		public double Height
-		{
-			get => Obj.Height;
-			set => Obj.Height = value;
-		}
+        public double Height
+        {
+            get => Obj.Height;
+            set => Obj.Height = value;
+        }
     }
 }

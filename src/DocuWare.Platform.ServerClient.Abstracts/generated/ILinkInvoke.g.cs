@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		IContentTypeList Accepts { get; set; }
 		IContentTypeList Produces { get; set; }
-		HttpMethod Verb { get; set; }
+		DocuWare.Platform.ServerClient.HttpMethod Verb { get; set; }
     }
 }

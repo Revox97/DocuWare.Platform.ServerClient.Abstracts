@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Behaviors Obj { get; } = obj;
 
-		public List<IBehavior> Behavior
-		{
-			get => Obj.Behavior.Select(x => new Behavior(x) as IBehavior).ToList();
-			set => Obj.Behavior = value.Select(x => ((Behavior)x).Obj).ToList();
-		}
+        public List<IBehavior> Behavior
+        {
+            get => Obj.Behavior.Select(x => new Behavior(x) as IBehavior).ToList();
+            set => Obj.Behavior = value.Select(x => ((Behavior)x).Obj).ToList();
+        }
     }
 }

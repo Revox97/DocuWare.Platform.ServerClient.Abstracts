@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.HistoryStepInfo Obj { get; } = obj;
 
-		public Object Item
-		{
-			get => Obj.Item;
-			set => Obj.Item = value;
-		}
+        public object Item
+        {
+            get => Obj.Item;
+            set => Obj.Item = value;
+        }
     }
 }

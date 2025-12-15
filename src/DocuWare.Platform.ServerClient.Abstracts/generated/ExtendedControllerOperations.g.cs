@@ -6,16 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExtendedControllerOperations Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string InstanceRelationLink => Obj.InstanceRelationLink;
+        public string InstanceRelationLink => Obj.InstanceRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async string DeleteInstanceRelation() => Obj.DeleteInstanceRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteInstanceRelationAsync().ConfigureAwait(false);
@@ -43,6 +45,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromInstanceRelation() => Obj.GetStreamFromInstanceRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromInstanceRelationAsync().ConfigureAwait(false);
@@ -68,6 +71,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

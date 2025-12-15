@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.InputFlags Obj { get; } = obj;
 
-		public bool IsEmail
-		{
-			get => Obj.IsEmail;
-			set => Obj.IsEmail = value;
-		}
+        public bool IsEmail
+        {
+            get => Obj.IsEmail;
+            set => Obj.IsEmail = value;
+        }
     }
 }

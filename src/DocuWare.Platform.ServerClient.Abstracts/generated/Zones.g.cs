@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Zones Obj { get; } = obj;
 
-		public List<IZone> Zone
-		{
-			get => Obj.Zone.Select(x => new Zone(x) as IZone).ToList();
-			set => Obj.Zone = value.Select(x => ((Zone)x).Obj).ToList();
-		}
+        public List<IZone> Zone
+        {
+            get => Obj.Zone.Select(x => new Zone(x) as IZone).ToList();
+            set => Obj.Zone = value.Select(x => ((Zone)x).Obj).ToList();
+        }
     }
 }

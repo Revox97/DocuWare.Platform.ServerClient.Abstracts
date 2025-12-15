@@ -6,41 +6,42 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AdhocRenderingFile Obj { get; } = obj;
 
-		public List<IKeyValuePair> MetaData
-		{
-			get => Obj.MetaData.Select(x => new KeyValuePair(x) as IKeyValuePair).ToList();
-			set => Obj.MetaData = value.Select(x => ((KeyValuePair)x).Obj).ToList();
-		}
+        public List<IKeyValuePair> MetaData
+        {
+            get => Obj.MetaData.Select(x => new KeyValuePair(x) as IKeyValuePair).ToList();
+            set => Obj.MetaData = value.Select(x => ((KeyValuePair)x).Obj).ToList();
+        }
 
-		public IPages Pages
-		{
-			get => new Pages(Obj.Pages);
-			set => Obj.Pages = ((Pages)value).Obj;
-		}
+        public IPages Pages
+        {
+            get => new Pages(Obj.Pages);
+            set => Obj.Pages = ((Pages)value).Obj;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public int PageCount
-		{
-			get => Obj.PageCount;
-			set => Obj.PageCount = value;
-		}
+        public int PageCount
+        {
+            get => Obj.PageCount;
+            set => Obj.PageCount = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string RenderingRelationLink => Obj.RenderingRelationLink;
+        public string RenderingRelationLink => Obj.RenderingRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IAdhocRenderingFile GetAdhocRenderingFileFromSelfRelation() => new AdhocRenderingFile(Obj.GetAdhocRenderingFileFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> GetAdhocRenderingFileFromSelfRelationAsync()
@@ -70,6 +71,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToRenderingRelationForStream(IAdhocRenderingQuery dataToSend) => Obj.PostToRenderingRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(IAdhocRenderingQuery dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToRenderingRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -95,6 +97,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

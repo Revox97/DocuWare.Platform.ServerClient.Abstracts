@@ -6,34 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TableColumnsDefinition Obj { get; } = obj;
 
-		public ITableColumnOptions ColumnOptions
-		{
-			get => new TableColumnOptions(Obj.ColumnOptions);
-			set => Obj.ColumnOptions = ((TableColumnOptions)value).Obj;
-		}
+        public ITableColumnOptions ColumnOptions
+        {
+            get => new TableColumnOptions(Obj.ColumnOptions);
+            set => Obj.ColumnOptions = ((TableColumnOptions)value).Obj;
+        }
 
-		public string Label
-		{
-			get => Obj.Label;
-			set => Obj.Label = value;
-		}
+        public string Label
+        {
+            get => Obj.Label;
+            set => Obj.Label = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public TableColumnValueTypeEnum ColumnValueType
-		{
-			get => new ableColumnValueTypeEnum(Obj.ColumnValueType);
-			set => Obj.ColumnValueType = ((ableColumnValueTypeEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.TableColumnValueTypeEnum ColumnValueType
+        {
+            get => Obj.ColumnValueType;
+            set => Obj.ColumnValueType = value;
+        }
 
-		public bool Mandatory
-		{
-			get => Obj.Mandatory;
-			set => Obj.Mandatory = value;
-		}
+        public bool Mandatory
+        {
+            get => Obj.Mandatory;
+            set => Obj.Mandatory = value;
+        }
     }
 }

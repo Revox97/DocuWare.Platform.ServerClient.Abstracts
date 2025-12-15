@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PageHits Obj { get; } = obj;
 
-		public List<IWordSearchResultPageHit> PageHit
-		{
-			get => Obj.PageHit.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();
-			set => Obj.PageHit = value.Select(x => ((WordSearchResultPageHit)x).Obj).ToList();
-		}
+        public List<IWordSearchResultPageHit> PageHit
+        {
+            get => Obj.PageHit.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();
+            set => Obj.PageHit = value.Select(x => ((WordSearchResultPageHit)x).Obj).ToList();
+        }
     }
 }

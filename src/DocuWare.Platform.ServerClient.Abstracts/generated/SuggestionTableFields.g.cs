@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SuggestionTableFields Obj { get; } = obj;
 
-		public List<ISuggestionTableField> TableField
-		{
-			get => Obj.TableField.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
-			set => Obj.TableField = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
-		}
+        public List<ISuggestionTableField> TableField
+        {
+            get => Obj.TableField.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
+            set => Obj.TableField = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
+        }
     }
 }

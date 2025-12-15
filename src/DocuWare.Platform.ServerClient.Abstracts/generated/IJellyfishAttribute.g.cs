@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IJellyfishAttribute
     {
 		string MinumumVersion { get; set; }
-		Object TypeId { get; }
+		object TypeId { get; }
     }
 }

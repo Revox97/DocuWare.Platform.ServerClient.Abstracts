@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TokenDescription Obj { get; } = obj;
 
-		public List<DWProductTypes> TargetProducts
-		{
-			get => Obj.TargetProducts.Select(x => new WProductTypes(x) as DWProductTypes).ToList();
-			set => Obj.TargetProducts = value.Select(x => ((WProductTypes)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.DWProductTypes> TargetProducts
+        {
+            get => Obj.TargetProducts;
+            set => Obj.TargetProducts = value;
+        }
 
-		public TokenUsage Usage
-		{
-			get => new okenUsage(Obj.Usage);
-			set => Obj.Usage = ((okenUsage)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.TokenUsage Usage
+        {
+            get => Obj.Usage;
+            set => Obj.Usage = value;
+        }
 
-		public string Lifetime
-		{
-			get => Obj.Lifetime;
-			set => Obj.Lifetime = value;
-		}
+        public string Lifetime
+        {
+            get => Obj.Lifetime;
+            set => Obj.Lifetime = value;
+        }
     }
 }

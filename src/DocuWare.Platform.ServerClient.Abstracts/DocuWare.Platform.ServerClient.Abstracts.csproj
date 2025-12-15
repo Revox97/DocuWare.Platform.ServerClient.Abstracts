@@ -10,4 +10,10 @@
     <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Using Include="DocuWare.Services.Http" />
+    <Using Include="DocuWare.Services.Http.Client" />
+    <Using Include="Net.Http.Json" />
+  </ItemGroup>
+
 </Project>

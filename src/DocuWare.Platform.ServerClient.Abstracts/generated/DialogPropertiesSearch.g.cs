@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogPropertiesSearch Obj { get; } = obj;
 
-		public ILogicalOperator LogicalOperator
-		{
-			get => new LogicalOperator(Obj.LogicalOperator);
-			set => Obj.LogicalOperator = ((LogicalOperator)value).Obj;
-		}
+        public ILogicalOperator LogicalOperator
+        {
+            get => new LogicalOperator(Obj.LogicalOperator);
+            set => Obj.LogicalOperator = ((LogicalOperator)value).Obj;
+        }
     }
 }

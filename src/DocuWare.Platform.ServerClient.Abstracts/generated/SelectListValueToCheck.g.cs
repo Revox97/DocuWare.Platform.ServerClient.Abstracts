@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SelectListValueToCheck Obj { get; } = obj;
 
-		public string Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public string Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
 
-		public string Type
-		{
-			get => Obj.Type;
-			set => Obj.Type = value;
-		}
+        public string Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExtendedConfigurationRights Obj { get; } = obj;
 
-		public bool Forms
-		{
-			get => Obj.Forms;
-			set => Obj.Forms = value;
-		}
+        public bool Forms
+        {
+            get => Obj.Forms;
+            set => Obj.Forms = value;
+        }
     }
 }

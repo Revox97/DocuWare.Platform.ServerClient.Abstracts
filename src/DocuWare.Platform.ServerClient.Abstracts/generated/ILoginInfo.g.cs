@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ILoginInfo
     {
 		string PasswordExpireNotification { get; set; }
-		DWProductTypes BookedLicense { get; set; }
-		DWProductTypes ProductType { get; set; }
+		DocuWare.Platform.ServerClient.DWProductTypes BookedLicense { get; set; }
+		DocuWare.Platform.ServerClient.DWProductTypes ProductType { get; set; }
     }
 }

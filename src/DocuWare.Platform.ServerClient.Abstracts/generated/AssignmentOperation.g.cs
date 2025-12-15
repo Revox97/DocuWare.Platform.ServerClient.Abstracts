@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AssignmentOperation Obj { get; } = obj;
 
-		public List<string> Ids
-		{
-			get => Obj.Ids;
-			set => Obj.Ids = value;
-		}
+        public List<string> Ids
+        {
+            get => Obj.Ids;
+            set => Obj.Ids = value;
+        }
 
-		public AssignmentOperationType OperationType
-		{
-			get => new ssignmentOperationType(Obj.OperationType);
-			set => Obj.OperationType = ((ssignmentOperationType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.AssignmentOperationType OperationType
+        {
+            get => Obj.OperationType;
+            set => Obj.OperationType = value;
+        }
     }
 }

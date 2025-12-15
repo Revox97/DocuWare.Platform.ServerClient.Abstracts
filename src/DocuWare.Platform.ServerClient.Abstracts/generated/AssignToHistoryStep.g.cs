@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AssignToHistoryStep Obj { get; } = obj;
 
-		public List<string> AssignedUsers
-		{
-			get => Obj.AssignedUsers;
-			set => Obj.AssignedUsers = value;
-		}
+        public List<string> AssignedUsers
+        {
+            get => Obj.AssignedUsers;
+            set => Obj.AssignedUsers = value;
+        }
     }
 }

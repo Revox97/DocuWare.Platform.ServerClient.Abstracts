@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BatchUpdateDialogExpressionSource Obj { get; } = obj;
 
-		public IDialogExpression Expression
-		{
-			get => new DialogExpression(Obj.Expression);
-			set => Obj.Expression = ((DialogExpression)value).Obj;
-		}
+        public IDialogExpression Expression
+        {
+            get => new DialogExpression(Obj.Expression);
+            set => Obj.Expression = ((DialogExpression)value).Obj;
+        }
     }
 }

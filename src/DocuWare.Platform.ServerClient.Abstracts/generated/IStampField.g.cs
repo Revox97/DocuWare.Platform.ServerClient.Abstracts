@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		IDocumentIndexFieldValue Value { get; set; }
 		string Name { get; set; }
-		DWFieldType DWType { get; set; }
+		DocuWare.Platform.ServerClient.DWFieldType DWType { get; set; }
 		int Length { get; set; }
 		bool HasFixedEntry { get; set; }
     }

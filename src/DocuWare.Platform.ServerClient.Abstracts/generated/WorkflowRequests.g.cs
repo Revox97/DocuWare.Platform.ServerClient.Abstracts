@@ -6,21 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WorkflowRequests Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string MyTasksRelationLink => Obj.MyTasksRelationLink;
+        public string MyTasksRelationLink => Obj.MyTasksRelationLink;
 
-		public string MyTasksCountRelationLink => Obj.MyTasksCountRelationLink;
+        public string MyTasksCountRelationLink => Obj.MyTasksCountRelationLink;
 
-		public string CreatedWorkflowsRelationLink => Obj.CreatedWorkflowsRelationLink;
+        public string CreatedWorkflowsRelationLink => Obj.CreatedWorkflowsRelationLink;
 
-		public string CreatedWorkflowsCountRelationLink => Obj.CreatedWorkflowsCountRelationLink;
+        public string CreatedWorkflowsCountRelationLink => Obj.CreatedWorkflowsCountRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IRequestTasks GetRequestTasksFromMyTasksRelation() => new RequestTasks(Obj.GetRequestTasksFromMyTasksRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromMyTasksRelationAsync()
@@ -188,6 +189,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
         }
-
     }
 }

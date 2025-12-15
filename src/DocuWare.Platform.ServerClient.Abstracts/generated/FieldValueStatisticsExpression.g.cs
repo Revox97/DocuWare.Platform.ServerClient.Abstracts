@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FieldValueStatisticsExpression Obj { get; } = obj;
 
-		public string FieldName
-		{
-			get => Obj.FieldName;
-			set => Obj.FieldName = value;
-		}
+        public string FieldName
+        {
+            get => Obj.FieldName;
+            set => Obj.FieldName = value;
+        }
 
-		public int Limit
-		{
-			get => Obj.Limit;
-			set => Obj.Limit = value;
-		}
+        public int Limit
+        {
+            get => Obj.Limit;
+            set => Obj.Limit = value;
+        }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExportTemplateInput Obj { get; } = obj;
 
-		public string ConfigGUID
-		{
-			get => Obj.ConfigGUID;
-			set => Obj.ConfigGUID = value;
-		}
+        public string ConfigGUID
+        {
+            get => Obj.ConfigGUID;
+            set => Obj.ConfigGUID = value;
+        }
 
-		public string TemplateGUID
-		{
-			get => Obj.TemplateGUID;
-			set => Obj.TemplateGUID = value;
-		}
+        public string TemplateGUID
+        {
+            get => Obj.TemplateGUID;
+            set => Obj.TemplateGUID = value;
+        }
 
-		public string OrganizationID
-		{
-			get => Obj.OrganizationID;
-			set => Obj.OrganizationID = value;
-		}
+        public string OrganizationID
+        {
+            get => Obj.OrganizationID;
+            set => Obj.OrganizationID = value;
+        }
     }
 }

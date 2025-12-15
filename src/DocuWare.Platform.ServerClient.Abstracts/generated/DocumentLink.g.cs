@@ -6,47 +6,48 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentLink Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public bool IsInvalid
-		{
-			get => Obj.IsInvalid;
-			set => Obj.IsInvalid = value;
-		}
+        public bool IsInvalid
+        {
+            get => Obj.IsInvalid;
+            set => Obj.IsInvalid = value;
+        }
 
-		public string TargetFileCabinet
-		{
-			get => Obj.TargetFileCabinet;
-			set => Obj.TargetFileCabinet = value;
-		}
+        public string TargetFileCabinet
+        {
+            get => Obj.TargetFileCabinet;
+            set => Obj.TargetFileCabinet = value;
+        }
 
-		public string TargetResultList
-		{
-			get => Obj.TargetResultList;
-			set => Obj.TargetResultList = value;
-		}
+        public string TargetResultList
+        {
+            get => Obj.TargetResultList;
+            set => Obj.TargetResultList = value;
+        }
 
-		public string ResultRelationLink => Obj.ResultRelationLink;
+        public string ResultRelationLink => Obj.ResultRelationLink;
 
-		public string ResultDialogRelationLink => Obj.ResultDialogRelationLink;
+        public string ResultDialogRelationLink => Obj.ResultDialogRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentsQueryResult GetDocumentsQueryResultFromResultRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromResultRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromResultRelationAsync()
@@ -158,6 +159,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
         }
-
     }
 }

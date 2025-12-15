@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentAuditEventProperty Obj { get; } = obj;
 
-		public string PropertyName
-		{
-			get => Obj.PropertyName;
-			set => Obj.PropertyName = value;
-		}
+        public string PropertyName
+        {
+            get => Obj.PropertyName;
+            set => Obj.PropertyName = value;
+        }
 
-		public string OldValue
-		{
-			get => Obj.OldValue;
-			set => Obj.OldValue = value;
-		}
+        public string OldValue
+        {
+            get => Obj.OldValue;
+            set => Obj.OldValue = value;
+        }
 
-		public string NewValue
-		{
-			get => Obj.NewValue;
-			set => Obj.NewValue = value;
-		}
+        public string NewValue
+        {
+            get => Obj.NewValue;
+            set => Obj.NewValue = value;
+        }
 
-		public DWFieldType DWFieldType
-		{
-			get => new WFieldType(Obj.DWFieldType);
-			set => Obj.DWFieldType = ((WFieldType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DWFieldType DWFieldType
+        {
+            get => Obj.DWFieldType;
+            set => Obj.DWFieldType = value;
+        }
     }
 }

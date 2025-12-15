@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IAssignedItem
     {
 		string Id { get; set; }
-		AssignedItemTypeEnum ItemType { get; set; }
+		DocuWare.Platform.ServerClient.AssignedItemTypeEnum ItemType { get; set; }
     }
 }

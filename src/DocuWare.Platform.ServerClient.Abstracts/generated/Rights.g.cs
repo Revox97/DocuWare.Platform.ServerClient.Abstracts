@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Rights Obj { get; } = obj;
 
-		public List<Right> Right
-		{
-			get => Obj.Right.Select(x => new ight(x) as Right).ToList();
-			set => Obj.Right = value.Select(x => ((ight)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.Right> Right
+        {
+            get => Obj.Right;
+            set => Obj.Right = value;
+        }
     }
 }

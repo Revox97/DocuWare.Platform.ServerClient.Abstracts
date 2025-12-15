@@ -6,23 +6,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BaseTaskOperations Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string MaintenanceSelfRelationLink => Obj.MaintenanceSelfRelationLink;
+        public string MaintenanceSelfRelationLink => Obj.MaintenanceSelfRelationLink;
 
-		public string ReassignedTaskRelationLink => Obj.ReassignedTaskRelationLink;
+        public string ReassignedTaskRelationLink => Obj.ReassignedTaskRelationLink;
 
-		public string HistoryRelationLink => Obj.HistoryRelationLink;
+        public string HistoryRelationLink => Obj.HistoryRelationLink;
 
-		public string StampSettingsRelationLink => Obj.StampSettingsRelationLink;
+        public string StampSettingsRelationLink => Obj.StampSettingsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IWorkflowTask GetWorkflowTaskFromSelfRelation() => new WorkflowTask(Obj.GetWorkflowTaskFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTask>> GetWorkflowTaskFromSelfRelationAsync()
@@ -80,6 +81,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToReassignedTaskRelationForString(IReassignmentData dataToSend) => Obj.PostToReassignedTaskRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToReassignedTaskRelationForStringAsync(IReassignmentData dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToReassignedTaskRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -161,6 +163,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDecisionsStampSettings>(temp).ConfigureAwait(false);
         }
-
     }
 }

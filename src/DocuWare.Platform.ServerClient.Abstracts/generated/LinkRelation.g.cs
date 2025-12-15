@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.LinkRelation Obj { get; } = obj;
 
-		public List<ILinkInvoke> Invoke
-		{
-			get => Obj.Invoke.Select(x => new LinkInvoke(x) as ILinkInvoke).ToList();
-			set => Obj.Invoke = value.Select(x => ((LinkInvoke)x).Obj).ToList();
-		}
+        public List<ILinkInvoke> Invoke
+        {
+            get => Obj.Invoke.Select(x => new LinkInvoke(x) as ILinkInvoke).ToList();
+            set => Obj.Invoke = value.Select(x => ((LinkInvoke)x).Obj).ToList();
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string IntroducedIn
-		{
-			get => Obj.IntroducedIn;
-			set => Obj.IntroducedIn = value;
-		}
+        public string IntroducedIn
+        {
+            get => Obj.IntroducedIn;
+            set => Obj.IntroducedIn = value;
+        }
     }
 }

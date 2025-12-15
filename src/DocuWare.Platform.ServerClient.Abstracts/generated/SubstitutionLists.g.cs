@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SubstitutionLists Obj { get; } = obj;
 
-		public List<ISubstitutionList> Item
-		{
-			get => Obj.Item.Select(x => new SubstitutionList(x) as ISubstitutionList).ToList();
-			set => Obj.Item = value.Select(x => ((SubstitutionList)x).Obj).ToList();
-		}
+        public List<ISubstitutionList> Item
+        {
+            get => Obj.Item.Select(x => new SubstitutionList(x) as ISubstitutionList).ToList();
+            set => Obj.Item = value.Select(x => ((SubstitutionList)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

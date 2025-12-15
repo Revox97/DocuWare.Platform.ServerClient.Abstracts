@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DesignerInstances Obj { get; } = obj;
 
-		public List<IDesignerInstance> DesignerInstance
-		{
-			get => Obj.DesignerInstance.Select(x => new DesignerInstance(x) as IDesignerInstance).ToList();
-			set => Obj.DesignerInstance = value.Select(x => ((DesignerInstance)x).Obj).ToList();
-		}
+        public List<IDesignerInstance> DesignerInstance
+        {
+            get => Obj.DesignerInstance.Select(x => new DesignerInstance(x) as IDesignerInstance).ToList();
+            set => Obj.DesignerInstance = value.Select(x => ((DesignerInstance)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

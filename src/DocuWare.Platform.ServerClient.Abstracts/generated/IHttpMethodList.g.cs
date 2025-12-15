@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IHttpMethodList
     {
-		List<HttpMethod> Method { get; set; }
+		List<DocuWare.Platform.ServerClient.HttpMethod> Method { get; set; }
 		bool IsComplete { get; set; }
     }
 }

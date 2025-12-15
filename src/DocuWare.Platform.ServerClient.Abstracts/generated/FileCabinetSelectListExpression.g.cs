@@ -6,46 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FileCabinetSelectListExpression Obj { get; } = obj;
 
-		public string ValuePrefix
-		{
-			get => Obj.ValuePrefix;
-			set => Obj.ValuePrefix = value;
-		}
+        public string ValuePrefix
+        {
+            get => Obj.ValuePrefix;
+            set => Obj.ValuePrefix = value;
+        }
 
-		public string FieldName
-		{
-			get => Obj.FieldName;
-			set => Obj.FieldName = value;
-		}
+        public string FieldName
+        {
+            get => Obj.FieldName;
+            set => Obj.FieldName = value;
+        }
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
 
-		public int Start
-		{
-			get => Obj.Start;
-			set => Obj.Start = value;
-		}
+        public int Start
+        {
+            get => Obj.Start;
+            set => Obj.Start = value;
+        }
 
-		public int Limit
-		{
-			get => Obj.Limit;
-			set => Obj.Limit = value;
-		}
+        public int Limit
+        {
+            get => Obj.Limit;
+            set => Obj.Limit = value;
+        }
 
-		public SortDirection SortDirection
-		{
-			get => new ortDirection(Obj.SortDirection);
-			set => Obj.SortDirection = ((ortDirection)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.SortDirection SortDirection
+        {
+            get => Obj.SortDirection;
+            set => Obj.SortDirection = value;
+        }
 
-		public bool Typed
-		{
-			get => Obj.Typed;
-			set => Obj.Typed = value;
-		}
+        public bool Typed
+        {
+            get => Obj.Typed;
+            set => Obj.Typed = value;
+        }
     }
 }

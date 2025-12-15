@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Users Obj { get; } = obj;
 
-		public List<IUser> User
-		{
-			get => Obj.User.Select(x => new User(x) as IUser).ToList();
-			set => Obj.User = value.Select(x => ((User)x).Obj).ToList();
-		}
+        public List<IUser> User
+        {
+            get => Obj.User.Select(x => new User(x) as IUser).ToList();
+            set => Obj.User = value.Select(x => ((User)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

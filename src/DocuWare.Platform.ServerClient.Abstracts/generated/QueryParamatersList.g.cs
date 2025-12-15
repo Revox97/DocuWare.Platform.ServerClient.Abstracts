@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.QueryParamatersList Obj { get; } = obj;
 
-		public List<IQueryParamater> Parameter
-		{
-			get => Obj.Parameter.Select(x => new QueryParamater(x) as IQueryParamater).ToList();
-			set => Obj.Parameter = value.Select(x => ((QueryParamater)x).Obj).ToList();
-		}
+        public List<IQueryParamater> Parameter
+        {
+            get => Obj.Parameter.Select(x => new QueryParamater(x) as IQueryParamater).ToList();
+            set => Obj.Parameter = value.Select(x => ((QueryParamater)x).Obj).ToList();
+        }
     }
 }

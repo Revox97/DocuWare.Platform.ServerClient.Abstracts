@@ -6,58 +6,58 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SearchPositionQuery Obj { get; } = obj;
 
-		public string Phrase
-		{
-			get => Obj.Phrase;
-			set => Obj.Phrase = value;
-		}
+        public string Phrase
+        {
+            get => Obj.Phrase;
+            set => Obj.Phrase = value;
+        }
 
-		public bool IgnoreCase
-		{
-			get => Obj.IgnoreCase;
-			set => Obj.IgnoreCase = value;
-		}
+        public bool IgnoreCase
+        {
+            get => Obj.IgnoreCase;
+            set => Obj.IgnoreCase = value;
+        }
 
-		public bool WholeWord
-		{
-			get => Obj.WholeWord;
-			set => Obj.WholeWord = value;
-		}
+        public bool WholeWord
+        {
+            get => Obj.WholeWord;
+            set => Obj.WholeWord = value;
+        }
 
-		public int StartPage
-		{
-			get => Obj.StartPage;
-			set => Obj.StartPage = value;
-		}
+        public int StartPage
+        {
+            get => Obj.StartPage;
+            set => Obj.StartPage = value;
+        }
 
-		public int StartSectionNumber
-		{
-			get => Obj.StartSectionNumber;
-			set => Obj.StartSectionNumber = value;
-		}
+        public int StartSectionNumber
+        {
+            get => Obj.StartSectionNumber;
+            set => Obj.StartSectionNumber = value;
+        }
 
-		public int PageCount
-		{
-			get => Obj.PageCount;
-			set => Obj.PageCount = value;
-		}
+        public int PageCount
+        {
+            get => Obj.PageCount;
+            set => Obj.PageCount = value;
+        }
 
-		public bool Backward
-		{
-			get => Obj.Backward;
-			set => Obj.Backward = value;
-		}
+        public bool Backward
+        {
+            get => Obj.Backward;
+            set => Obj.Backward = value;
+        }
 
-		public bool RangeSearch
-		{
-			get => Obj.RangeSearch;
-			set => Obj.RangeSearch = value;
-		}
+        public bool RangeSearch
+        {
+            get => Obj.RangeSearch;
+            set => Obj.RangeSearch = value;
+        }
 
-		public bool Normalize
-		{
-			get => Obj.Normalize;
-			set => Obj.Normalize = value;
-		}
+        public bool Normalize
+        {
+            get => Obj.Normalize;
+            set => Obj.Normalize = value;
+        }
     }
 }

@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ReassignmentData Obj { get; } = obj;
 
-		public List<IAssignedItem> ReassignmentList
-		{
-			get => Obj.ReassignmentList.Select(x => new AssignedItem(x) as IAssignedItem).ToList();
-			set => Obj.ReassignmentList = value.Select(x => ((AssignedItem)x).Obj).ToList();
-		}
+        public List<IAssignedItem> ReassignmentList
+        {
+            get => Obj.ReassignmentList.Select(x => new AssignedItem(x) as IAssignedItem).ToList();
+            set => Obj.ReassignmentList = value.Select(x => ((AssignedItem)x).Obj).ToList();
+        }
 
-		public string Subject
-		{
-			get => Obj.Subject;
-			set => Obj.Subject = value;
-		}
+        public string Subject
+        {
+            get => Obj.Subject;
+            set => Obj.Subject = value;
+        }
 
-		public string Body
-		{
-			get => Obj.Body;
-			set => Obj.Body = value;
-		}
+        public string Body
+        {
+            get => Obj.Body;
+            set => Obj.Body = value;
+        }
 
-		public bool SendEmail
-		{
-			get => Obj.SendEmail;
-			set => Obj.SendEmail = value;
-		}
+        public bool SendEmail
+        {
+            get => Obj.SendEmail;
+            set => Obj.SendEmail = value;
+        }
     }
 }

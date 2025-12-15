@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FileDownloadPage Obj { get; } = obj;
 
-		public bool AutoPrint
-		{
-			get => Obj.AutoPrint;
-			set => Obj.AutoPrint = value;
-		}
+        public bool AutoPrint
+        {
+            get => Obj.AutoPrint;
+            set => Obj.AutoPrint = value;
+        }
 
-		public bool SendByEmail
-		{
-			get => Obj.SendByEmail;
-			set => Obj.SendByEmail = value;
-		}
+        public bool SendByEmail
+        {
+            get => Obj.SendByEmail;
+            set => Obj.SendByEmail = value;
+        }
 
-		public List<int> Layers
-		{
-			get => Obj.Layers;
-			set => Obj.Layers = value;
-		}
+        public List<int> Layers
+        {
+            get => Obj.Layers;
+            set => Obj.Layers = value;
+        }
 
-		public bool KeepAnnotations
-		{
-			get => Obj.KeepAnnotations;
-			set => Obj.KeepAnnotations = value;
-		}
+        public bool KeepAnnotations
+        {
+            get => Obj.KeepAnnotations;
+            set => Obj.KeepAnnotations = value;
+        }
     }
 }

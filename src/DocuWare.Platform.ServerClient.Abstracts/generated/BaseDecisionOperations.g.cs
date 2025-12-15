@@ -6,15 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BaseDecisionOperations Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDecision GetDecisionFromSelfRelation() => new Decision(Obj.GetDecisionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDecision>> GetDecisionFromSelfRelationAsync()
@@ -42,6 +43,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDecision>(temp).ConfigureAwait(false);
         }
-
     }
 }

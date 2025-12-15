@@ -6,67 +6,68 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentsQueryTableResult Obj { get; } = obj;
 
-		public ICountPlusValue Count
-		{
-			get => new CountPlusValue(Obj.Count);
-			set => Obj.Count = ((CountPlusValue)value).Obj;
-		}
+        public ICountPlusValue Count
+        {
+            get => new CountPlusValue(Obj.Count);
+            set => Obj.Count = ((CountPlusValue)value).Obj;
+        }
 
-		public List<ITableResultHeader> Headers
-		{
-			get => Obj.Headers.Select(x => new TableResultHeader(x) as ITableResultHeader).ToList();
-			set => Obj.Headers = value.Select(x => ((TableResultHeader)x).Obj).ToList();
-		}
+        public List<ITableResultHeader> Headers
+        {
+            get => Obj.Headers.Select(x => new TableResultHeader(x) as ITableResultHeader).ToList();
+            set => Obj.Headers = value.Select(x => ((TableResultHeader)x).Obj).ToList();
+        }
 
-		public List<ITableResultRow> Rows
-		{
-			get => Obj.Rows.Select(x => new TableResultRow(x) as ITableResultRow).ToList();
-			set => Obj.Rows = value.Select(x => ((TableResultRow)x).Obj).ToList();
-		}
+        public List<ITableResultRow> Rows
+        {
+            get => Obj.Rows.Select(x => new TableResultRow(x) as ITableResultRow).ToList();
+            set => Obj.Rows = value.Select(x => ((TableResultRow)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string FileCabinetId
-		{
-			get => Obj.FileCabinetId;
-			set => Obj.FileCabinetId = value;
-		}
+        public string FileCabinetId
+        {
+            get => Obj.FileCabinetId;
+            set => Obj.FileCabinetId = value;
+        }
 
-		public string OrganizationGuid
-		{
-			get => Obj.OrganizationGuid;
-			set => Obj.OrganizationGuid = value;
-		}
+        public string OrganizationGuid
+        {
+            get => Obj.OrganizationGuid;
+            set => Obj.OrganizationGuid = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
-		public string FeedRelationLink => Obj.FeedRelationLink;
+        public string FeedRelationLink => Obj.FeedRelationLink;
 
-		public string DownloadRelationLink => Obj.DownloadRelationLink;
+        public string DownloadRelationLink => Obj.DownloadRelationLink;
 
-		public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
+        public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
 
-		public string CreateUserDefinedSearchRelationLink => Obj.CreateUserDefinedSearchRelationLink;
+        public string CreateUserDefinedSearchRelationLink => Obj.CreateUserDefinedSearchRelationLink;
 
-		public string ExportDocumentsRelationLink => Obj.ExportDocumentsRelationLink;
+        public string ExportDocumentsRelationLink => Obj.ExportDocumentsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentsQueryTableResult GetDocumentsQueryTableResultFromNextRelation() => new DocumentsQueryTableResult(Obj.GetDocumentsQueryTableResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> GetDocumentsQueryTableResultFromNextRelationAsync()
@@ -180,6 +181,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async XElementWrapper GetXElementWrapperFromFeedRelation() => Obj.GetXElementWrapperFromFeedRelation();
+
         public async Task<DeserializedHttpResponse<XElementWrapper>> GetXElementWrapperFromFeedRelationAsync()
         {
             DocuWare.Platform.ServerClient.XElementWrapper result = await Obj.GetXElementWrapperFromFeedRelationAsync().ConfigureAwait(false);
@@ -291,6 +293,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToExportDocumentsRelationForStream(IExportSettings dataToSend) => Obj.PostToExportDocumentsRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToExportDocumentsRelationForStreamAsync(IExportSettings dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToExportDocumentsRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -316,6 +319,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

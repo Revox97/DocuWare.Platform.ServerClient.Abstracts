@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.NumericHistoryFieldOptions Obj { get; } = obj;
 
-		public int Precision
-		{
-			get => Obj.Precision;
-			set => Obj.Precision = value;
-		}
+        public int Precision
+        {
+            get => Obj.Precision;
+            set => Obj.Precision = value;
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ConfigurationRights Obj { get; } = obj;
 
-		public List<ConfigurationRight> ConfigurationRight
-		{
-			get => Obj.ConfigurationRight.Select(x => new onfigurationRight(x) as ConfigurationRight).ToList();
-			set => Obj.ConfigurationRight = value.Select(x => ((onfigurationRight)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRight
+        {
+            get => Obj.ConfigurationRight;
+            set => Obj.ConfigurationRight = value;
+        }
     }
 }

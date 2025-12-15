@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IRights
     {
-		List<Right> Right { get; set; }
+		List<DocuWare.Platform.ServerClient.Right> Right { get; set; }
     }
 }

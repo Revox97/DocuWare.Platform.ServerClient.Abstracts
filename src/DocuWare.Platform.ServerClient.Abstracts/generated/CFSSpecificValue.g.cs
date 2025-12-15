@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CFSSpecificValue Obj { get; } = obj;
 
-		public string ValueName
-		{
-			get => Obj.ValueName;
-			set => Obj.ValueName = value;
-		}
+        public string ValueName
+        {
+            get => Obj.ValueName;
+            set => Obj.ValueName = value;
+        }
 
-		public string Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public string Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
     }
 }

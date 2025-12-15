@@ -9,6 +9,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DateTime StepDate { get; set; }
 		string ActivityName { get; set; }
 		string ActivityType { get; set; }
-		StepTypeEnum StepType { get; set; }
+		DocuWare.Platform.ServerClient.StepTypeEnum StepType { get; set; }
     }
 }

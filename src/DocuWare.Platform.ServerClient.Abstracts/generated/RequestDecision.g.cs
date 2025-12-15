@@ -6,29 +6,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestDecision Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Label
-		{
-			get => Obj.Label;
-			set => Obj.Label = value;
-		}
+        public string Label
+        {
+            get => Obj.Label;
+            set => Obj.Label = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string ConfirmRelationLink => Obj.ConfirmRelationLink;
+        public string ConfirmRelationLink => Obj.ConfirmRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IRequestDecision GetRequestDecisionFromSelfRelation() => new RequestDecision(Obj.GetRequestDecisionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRequestDecision>> GetRequestDecisionFromSelfRelationAsync()
@@ -58,6 +59,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToConfirmRelationForString(IRequestConfirmedData dataToSend) => Obj.PostToConfirmRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(IRequestConfirmedData dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToConfirmRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -83,6 +85,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
-
     }
 }

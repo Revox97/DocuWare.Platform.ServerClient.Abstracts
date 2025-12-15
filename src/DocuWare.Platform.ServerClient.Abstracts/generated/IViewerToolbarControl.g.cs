@@ -4,8 +4,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IViewerToolbarControl
     {
-		ToolbarControlType Type { get; set; }
+		DocuWare.Platform.ServerClient.ToolbarControlType Type { get; set; }
 		bool Checked { get; set; }
-		ToolbarControlState State { get; set; }
+		DocuWare.Platform.ServerClient.ToolbarControlState State { get; set; }
     }
 }

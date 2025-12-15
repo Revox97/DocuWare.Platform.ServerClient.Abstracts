@@ -6,93 +6,94 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestTask Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IRequestDecision> Decisions
-		{
-			get => Obj.Decisions.Select(x => new RequestDecision(x) as IRequestDecision).ToList();
-			set => Obj.Decisions = value.Select(x => ((RequestDecision)x).Obj).ToList();
-		}
+        public List<IRequestDecision> Decisions
+        {
+            get => Obj.Decisions.Select(x => new RequestDecision(x) as IRequestDecision).ToList();
+            set => Obj.Decisions = value.Select(x => ((RequestDecision)x).Obj).ToList();
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string WorkflowId
-		{
-			get => Obj.WorkflowId;
-			set => Obj.WorkflowId = value;
-		}
+        public string WorkflowId
+        {
+            get => Obj.WorkflowId;
+            set => Obj.WorkflowId = value;
+        }
 
-		public int DocId
-		{
-			get => Obj.DocId;
-			set => Obj.DocId = value;
-		}
+        public int DocId
+        {
+            get => Obj.DocId;
+            set => Obj.DocId = value;
+        }
 
-		public string FcGuid
-		{
-			get => Obj.FcGuid;
-			set => Obj.FcGuid = value;
-		}
+        public string FcGuid
+        {
+            get => Obj.FcGuid;
+            set => Obj.FcGuid = value;
+        }
 
-		public DateTime CreateDate
-		{
-			get => Obj.CreateDate;
-			set => Obj.CreateDate = value;
-		}
+        public DateTime CreateDate
+        {
+            get => Obj.CreateDate;
+            set => Obj.CreateDate = value;
+        }
 
-		public string Owner
-		{
-			get => Obj.Owner;
-			set => Obj.Owner = value;
-		}
+        public string Owner
+        {
+            get => Obj.Owner;
+            set => Obj.Owner = value;
+        }
 
-		public string WorkflowName
-		{
-			get => Obj.WorkflowName;
-			set => Obj.WorkflowName = value;
-		}
+        public string WorkflowName
+        {
+            get => Obj.WorkflowName;
+            set => Obj.WorkflowName = value;
+        }
 
-		public string DocumentName
-		{
-			get => Obj.DocumentName;
-			set => Obj.DocumentName = value;
-		}
+        public string DocumentName
+        {
+            get => Obj.DocumentName;
+            set => Obj.DocumentName = value;
+        }
 
-		public bool IsRead
-		{
-			get => Obj.IsRead;
-			set => Obj.IsRead = value;
-		}
+        public bool IsRead
+        {
+            get => Obj.IsRead;
+            set => Obj.IsRead = value;
+        }
 
-		public string Description
-		{
-			get => Obj.Description;
-			set => Obj.Description = value;
-		}
+        public string Description
+        {
+            get => Obj.Description;
+            set => Obj.Description = value;
+        }
 
-		public bool AllowDecisionStamp
-		{
-			get => Obj.AllowDecisionStamp;
-			set => Obj.AllowDecisionStamp = value;
-		}
+        public bool AllowDecisionStamp
+        {
+            get => Obj.AllowDecisionStamp;
+            set => Obj.AllowDecisionStamp = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string ReadStatusRelationLink => Obj.ReadStatusRelationLink;
+        public string ReadStatusRelationLink => Obj.ReadStatusRelationLink;
 
-		public string HistoryRelationLink => Obj.HistoryRelationLink;
+        public string HistoryRelationLink => Obj.HistoryRelationLink;
 
-		public string StampSettingsRelationLink => Obj.StampSettingsRelationLink;
+        public string StampSettingsRelationLink => Obj.StampSettingsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IRequestTask GetRequestTaskFromSelfRelation() => new RequestTask(Obj.GetRequestTaskFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTask>> GetRequestTaskFromSelfRelationAsync()
@@ -122,6 +123,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PutToReadStatusRelationForString(Stream dataToSend) => Obj.PutToReadStatusRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PutToReadStatusRelationForStringAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PutToReadStatusRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -203,6 +205,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IRequestDecisionsStampSettings>(temp).ConfigureAwait(false);
         }
-
     }
 }

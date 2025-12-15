@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IGeneralSettings
     {
-		WorkAreaType StartWith { get; set; }
+		DocuWare.Platform.ServerClient.WorkAreaType StartWith { get; set; }
 		string CreatedVersion { get; set; }
     }
 }

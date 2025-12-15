@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BehaviorAction Obj { get; } = obj;
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
     }
 }

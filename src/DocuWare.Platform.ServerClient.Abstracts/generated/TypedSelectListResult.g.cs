@@ -6,27 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TypedSelectListResult Obj { get; } = obj;
 
-		public List<IDocumentIndexFieldValue> Value
-		{
-			get => Obj.Value.Select(x => new DocumentIndexFieldValue(x) as IDocumentIndexFieldValue).ToList();
-			set => Obj.Value = value.Select(x => ((DocumentIndexFieldValue)x).Obj).ToList();
-		}
+        public List<IDocumentIndexFieldValue> Value
+        {
+            get => Obj.Value.Select(x => new DocumentIndexFieldValue(x) as IDocumentIndexFieldValue).ToList();
+            set => Obj.Value = value.Select(x => ((DocumentIndexFieldValue)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ITypedSelectListResult GetTypedSelectListResultFromNextRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromNextRelationAsync()
@@ -138,6 +139,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

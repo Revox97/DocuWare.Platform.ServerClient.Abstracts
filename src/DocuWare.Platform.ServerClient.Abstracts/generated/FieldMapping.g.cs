@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FieldMapping Obj { get; } = obj;
 
-		public string Source
-		{
-			get => Obj.Source;
-			set => Obj.Source = value;
-		}
+        public string Source
+        {
+            get => Obj.Source;
+            set => Obj.Source = value;
+        }
 
-		public string Destination
-		{
-			get => Obj.Destination;
-			set => Obj.Destination = value;
-		}
+        public string Destination
+        {
+            get => Obj.Destination;
+            set => Obj.Destination = value;
+        }
     }
 }

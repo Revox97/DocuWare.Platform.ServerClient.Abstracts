@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RotatePageParameters Obj { get; } = obj;
 
-		public int SectionNumber
-		{
-			get => Obj.SectionNumber;
-			set => Obj.SectionNumber = value;
-		}
+        public int SectionNumber
+        {
+            get => Obj.SectionNumber;
+            set => Obj.SectionNumber = value;
+        }
 
-		public int PageNumber
-		{
-			get => Obj.PageNumber;
-			set => Obj.PageNumber = value;
-		}
+        public int PageNumber
+        {
+            get => Obj.PageNumber;
+            set => Obj.PageNumber = value;
+        }
 
-		public int Rotation
-		{
-			get => Obj.Rotation;
-			set => Obj.Rotation = value;
-		}
+        public int Rotation
+        {
+            get => Obj.Rotation;
+            set => Obj.Rotation = value;
+        }
     }
 }

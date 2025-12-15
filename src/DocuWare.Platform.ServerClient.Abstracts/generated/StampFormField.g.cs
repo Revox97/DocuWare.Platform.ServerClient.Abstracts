@@ -6,77 +6,78 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.StampFormField Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string Label
-		{
-			get => Obj.Label;
-			set => Obj.Label = value;
-		}
+        public string Label
+        {
+            get => Obj.Label;
+            set => Obj.Label = value;
+        }
 
-		public int Length
-		{
-			get => Obj.Length;
-			set => Obj.Length = value;
-		}
+        public int Length
+        {
+            get => Obj.Length;
+            set => Obj.Length = value;
+        }
 
-		public int Precision
-		{
-			get => Obj.Precision;
-			set => Obj.Precision = value;
-		}
+        public int Precision
+        {
+            get => Obj.Precision;
+            set => Obj.Precision = value;
+        }
 
-		public DWFieldType DWFieldType
-		{
-			get => new WFieldType(Obj.DWFieldType);
-			set => Obj.DWFieldType = ((WFieldType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DWFieldType DWFieldType
+        {
+            get => Obj.DWFieldType;
+            set => Obj.DWFieldType = value;
+        }
 
-		public string Mask
-		{
-			get => Obj.Mask;
-			set => Obj.Mask = value;
-		}
+        public string Mask
+        {
+            get => Obj.Mask;
+            set => Obj.Mask = value;
+        }
 
-		public string MaskErrorText
-		{
-			get => Obj.MaskErrorText;
-			set => Obj.MaskErrorText = value;
-		}
+        public string MaskErrorText
+        {
+            get => Obj.MaskErrorText;
+            set => Obj.MaskErrorText = value;
+        }
 
-		public string SampleEditText
-		{
-			get => Obj.SampleEditText;
-			set => Obj.SampleEditText = value;
-		}
+        public string SampleEditText
+        {
+            get => Obj.SampleEditText;
+            set => Obj.SampleEditText = value;
+        }
 
-		public bool SelectListsAssigned
-		{
-			get => Obj.SelectListsAssigned;
-			set => Obj.SelectListsAssigned = value;
-		}
+        public bool SelectListsAssigned
+        {
+            get => Obj.SelectListsAssigned;
+            set => Obj.SelectListsAssigned = value;
+        }
 
-		public bool NotEmpty
-		{
-			get => Obj.NotEmpty;
-			set => Obj.NotEmpty = value;
-		}
+        public bool NotEmpty
+        {
+            get => Obj.NotEmpty;
+            set => Obj.NotEmpty = value;
+        }
 
-		public string SelectListValuesRelationLink => Obj.SelectListValuesRelationLink;
+        public string SelectListValuesRelationLink => Obj.SelectListValuesRelationLink;
 
-		public string SimpleSelectListRelationLink => Obj.SimpleSelectListRelationLink;
+        public string SimpleSelectListRelationLink => Obj.SimpleSelectListRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ISelectListResult GetSelectListResultFromSelectListValuesRelation() => new SelectListResult(Obj.GetSelectListResultFromSelectListValuesRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromSelectListValuesRelationAsync()
@@ -188,6 +189,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

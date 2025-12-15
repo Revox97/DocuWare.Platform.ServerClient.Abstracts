@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		IDWSize Size { get; set; }
 		int Page { get; set; }
-		!!!UNKNOWN_PRIMITIVE Dpi { get; set; }
+		float Dpi { get; set; }
 		string ApiKey { get; set; }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentVersion Obj { get; } = obj;
 
-		public int Major
-		{
-			get => Obj.Major;
-			set => Obj.Major = value;
-		}
+        public int Major
+        {
+            get => Obj.Major;
+            set => Obj.Major = value;
+        }
 
-		public int Minor
-		{
-			get => Obj.Minor;
-			set => Obj.Minor = value;
-		}
+        public int Minor
+        {
+            get => Obj.Minor;
+            set => Obj.Minor = value;
+        }
     }
 }

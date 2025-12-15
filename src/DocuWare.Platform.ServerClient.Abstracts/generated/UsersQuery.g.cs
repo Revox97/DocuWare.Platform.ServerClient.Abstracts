@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UsersQuery Obj { get; } = obj;
 
-		public bool Active
-		{
-			get => Obj.Active;
-			set => Obj.Active = value;
-		}
+        public bool Active
+        {
+            get => Obj.Active;
+            set => Obj.Active = value;
+        }
 
-		public bool ActiveSpecified
-		{
-			get => Obj.ActiveSpecified;
-			set => Obj.ActiveSpecified = value;
-		}
+        public bool ActiveSpecified
+        {
+            get => Obj.ActiveSpecified;
+            set => Obj.ActiveSpecified = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Space Obj { get; } = obj;
 
-		public int W
-		{
-			get => Obj.W;
-			set => Obj.W = value;
-		}
+        public int W
+        {
+            get => Obj.W;
+            set => Obj.W = value;
+        }
     }
 }

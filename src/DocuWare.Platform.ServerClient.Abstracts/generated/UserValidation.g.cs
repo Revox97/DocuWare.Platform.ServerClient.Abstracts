@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UserValidation Obj { get; } = obj;
 
-		public string Password
-		{
-			get => Obj.Password;
-			set => Obj.Password = value;
-		}
+        public string Password
+        {
+            get => Obj.Password;
+            set => Obj.Password = value;
+        }
     }
 }

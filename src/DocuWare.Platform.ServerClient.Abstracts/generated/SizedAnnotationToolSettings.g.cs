@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SizedAnnotationToolSettings Obj { get; } = obj;
 
-		public int LineSize
-		{
-			get => Obj.LineSize;
-			set => Obj.LineSize = value;
-		}
+        public int LineSize
+        {
+            get => Obj.LineSize;
+            set => Obj.LineSize = value;
+        }
 
-		public AnnotationTools Type
-		{
-			get => new nnotationTools(Obj.Type);
-			set => Obj.Type = ((nnotationTools)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.AnnotationTools Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public string Color
-		{
-			get => Obj.Color;
-			set => Obj.Color = value;
-		}
+        public string Color
+        {
+            get => Obj.Color;
+            set => Obj.Color = value;
+        }
     }
 }

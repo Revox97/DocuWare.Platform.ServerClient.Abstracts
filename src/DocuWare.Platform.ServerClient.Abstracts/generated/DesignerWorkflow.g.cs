@@ -6,45 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DesignerWorkflow Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public int InstanceCount
-		{
-			get => Obj.InstanceCount;
-			set => Obj.InstanceCount = value;
-		}
+        public int InstanceCount
+        {
+            get => Obj.InstanceCount;
+            set => Obj.InstanceCount = value;
+        }
 
-		public bool InstanceCountSpecified
-		{
-			get => Obj.InstanceCountSpecified;
-			set => Obj.InstanceCountSpecified = value;
-		}
+        public bool InstanceCountSpecified
+        {
+            get => Obj.InstanceCountSpecified;
+            set => Obj.InstanceCountSpecified = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string InstancesRelationLink => Obj.InstancesRelationLink;
+        public string InstancesRelationLink => Obj.InstancesRelationLink;
 
-		public string WaitingInstancesRelationLink => Obj.WaitingInstancesRelationLink;
+        public string WaitingInstancesRelationLink => Obj.WaitingInstancesRelationLink;
 
-		public string VersionsRelationLink => Obj.VersionsRelationLink;
+        public string VersionsRelationLink => Obj.VersionsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDesignerWorkflow GetDesignerWorkflowFromSelfRelation() => new DesignerWorkflow(Obj.GetDesignerWorkflowFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflow>> GetDesignerWorkflowFromSelfRelationAsync()
@@ -156,6 +157,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersions>(temp).ConfigureAwait(false);
         }
-
     }
 }

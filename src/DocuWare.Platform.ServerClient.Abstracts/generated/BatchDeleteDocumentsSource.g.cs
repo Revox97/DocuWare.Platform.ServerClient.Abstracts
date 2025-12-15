@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BatchDeleteDocumentsSource Obj { get; } = obj;
 
-		public List<string> Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public List<string> Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
     }
 }

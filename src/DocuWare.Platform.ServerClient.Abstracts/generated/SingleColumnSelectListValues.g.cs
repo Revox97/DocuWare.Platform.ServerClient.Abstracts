@@ -6,33 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SingleColumnSelectListValues Obj { get; } = obj;
 
-		public List<string> Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public List<string> Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
 
-		public List<IDocumentIndexFieldValue> TypedValue
-		{
-			get => Obj.TypedValue.Select(x => new DocumentIndexFieldValue(x) as IDocumentIndexFieldValue).ToList();
-			set => Obj.TypedValue = value.Select(x => ((DocumentIndexFieldValue)x).Obj).ToList();
-		}
+        public List<IDocumentIndexFieldValue> TypedValue
+        {
+            get => Obj.TypedValue.Select(x => new DocumentIndexFieldValue(x) as IDocumentIndexFieldValue).ToList();
+            set => Obj.TypedValue = value.Select(x => ((DocumentIndexFieldValue)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromNextRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromNextRelationAsync()
@@ -144,6 +145,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
-
     }
 }

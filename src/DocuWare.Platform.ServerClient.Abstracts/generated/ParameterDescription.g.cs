@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ParameterDescription Obj { get; } = obj;
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string Description
-		{
-			get => Obj.Description;
-			set => Obj.Description = value;
-		}
+        public string Description
+        {
+            get => Obj.Description;
+            set => Obj.Description = value;
+        }
     }
 }

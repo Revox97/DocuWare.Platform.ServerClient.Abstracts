@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FieldValueStatisticsResult Obj { get; } = obj;
 
-		public List<IFieldValueStatistics> Item
-		{
-			get => Obj.Item.Select(x => new FieldValueStatistics(x) as IFieldValueStatistics).ToList();
-			set => Obj.Item = value.Select(x => ((FieldValueStatistics)x).Obj).ToList();
-		}
+        public List<IFieldValueStatistics> Item
+        {
+            get => Obj.Item.Select(x => new FieldValueStatistics(x) as IFieldValueStatistics).ToList();
+            set => Obj.Item = value.Select(x => ((FieldValueStatistics)x).Obj).ToList();
+        }
     }
 }

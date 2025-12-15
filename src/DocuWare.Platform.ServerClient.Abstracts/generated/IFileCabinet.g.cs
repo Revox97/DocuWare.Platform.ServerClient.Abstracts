@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		Link[] Links { get; set; }
 		List<IFileCabinetField> Fields { get; set; }
-		List<Right> Rights { get; set; }
+		List<DocuWare.Platform.ServerClient.Right> Rights { get; set; }
 		IExtendedUserRights ExtendedUserRights { get; set; }
 		string Color { get; set; }
 		string Name { get; set; }
@@ -16,7 +16,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Default { get; set; }
 		string AssignedCabinetId { get; set; }
 		string IntellixDialogId { get; set; }
-		VersionManagementMode VersionManagement { get; set; }
+		DocuWare.Platform.ServerClient.VersionManagementMode VersionManagement { get; set; }
 		string VersionHistoryResultListId { get; set; }
 		bool WindowsExplorerClientAccess { get; set; }
 		bool AddIndexEntriesInUpperCase { get; set; }

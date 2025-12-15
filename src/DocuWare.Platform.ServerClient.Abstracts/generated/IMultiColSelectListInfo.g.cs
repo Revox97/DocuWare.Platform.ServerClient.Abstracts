@@ -8,7 +8,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<string> Columns { get; set; }
 		string Guid { get; set; }
 		string Name { get; set; }
-		SelectListKind Kind { get; set; }
+		DocuWare.Platform.ServerClient.SelectListKind Kind { get; set; }
 		string ValuesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);

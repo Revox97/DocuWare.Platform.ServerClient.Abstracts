@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TextTableColumnOptions Obj { get; } = obj;
 
-		public int Length
-		{
-			get => Obj.Length;
-			set => Obj.Length = value;
-		}
+        public int Length
+        {
+            get => Obj.Length;
+            set => Obj.Length = value;
+        }
     }
 }

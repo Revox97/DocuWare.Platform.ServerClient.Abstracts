@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BaseForm Obj { get; } = obj;
 
-		public FormTypeEnum FormFieldType
-		{
-			get => new ormTypeEnum(Obj.FormFieldType);
-			set => Obj.FormFieldType = ((ormTypeEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType
+        {
+            get => Obj.FormFieldType;
+            set => Obj.FormFieldType = value;
+        }
 
-		public string Label
-		{
-			get => Obj.Label;
-			set => Obj.Label = value;
-		}
+        public string Label
+        {
+            get => Obj.Label;
+            set => Obj.Label = value;
+        }
 
-		public int Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public int Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
     }
 }

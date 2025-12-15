@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestEndHistoryStep Obj { get; } = obj;
 
-		public string UserName
-		{
-			get => Obj.UserName;
-			set => Obj.UserName = value;
-		}
+        public string UserName
+        {
+            get => Obj.UserName;
+            set => Obj.UserName = value;
+        }
 
-		public bool DocumentDeleted
-		{
-			get => Obj.DocumentDeleted;
-			set => Obj.DocumentDeleted = value;
-		}
+        public bool DocumentDeleted
+        {
+            get => Obj.DocumentDeleted;
+            set => Obj.DocumentDeleted = value;
+        }
     }
 }

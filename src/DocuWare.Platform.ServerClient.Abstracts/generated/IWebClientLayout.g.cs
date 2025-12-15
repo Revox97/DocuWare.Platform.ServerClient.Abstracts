@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IWebClientLayout
     {
-		LayoutMode Mode { get; set; }
+		DocuWare.Platform.ServerClient.LayoutMode Mode { get; set; }
     }
 }

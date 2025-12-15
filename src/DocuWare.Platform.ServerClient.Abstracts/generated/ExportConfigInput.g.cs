@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExportConfigInput Obj { get; } = obj;
 
-		public string ConfigGUID
-		{
-			get => Obj.ConfigGUID;
-			set => Obj.ConfigGUID = value;
-		}
+        public string ConfigGUID
+        {
+            get => Obj.ConfigGUID;
+            set => Obj.ConfigGUID = value;
+        }
 
-		public string OrganizationID
-		{
-			get => Obj.OrganizationID;
-			set => Obj.OrganizationID = value;
-		}
+        public string OrganizationID
+        {
+            get => Obj.OrganizationID;
+            set => Obj.OrganizationID = value;
+        }
     }
 }

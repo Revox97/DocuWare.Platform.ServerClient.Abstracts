@@ -6,17 +6,17 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BatchUpdateResultItem Obj { get; } = obj;
 
-		public IDocument Document
-		{
-			get => new Document(Obj.Document);
-			set => Obj.Document = ((Document)value).Obj;
-		}
+        public IDocument Document
+        {
+            get => new Document(Obj.Document);
+            set => Obj.Document = ((Document)value).Obj;
+        }
 
-		public string ErrorMessage
-		{
-			get => Obj.ErrorMessage;
-			set => Obj.ErrorMessage = value;
-		}
+        public string ErrorMessage
+        {
+            get => Obj.ErrorMessage;
+            set => Obj.ErrorMessage = value;
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

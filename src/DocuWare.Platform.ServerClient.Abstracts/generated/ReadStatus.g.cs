@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ReadStatus Obj { get; } = obj;
 
-		public bool IsRead
-		{
-			get => Obj.IsRead;
-			set => Obj.IsRead = value;
-		}
+        public bool IsRead
+        {
+            get => Obj.IsRead;
+            set => Obj.IsRead = value;
+        }
     }
 }

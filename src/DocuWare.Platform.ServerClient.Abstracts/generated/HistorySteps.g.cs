@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.HistorySteps Obj { get; } = obj;
 
-		public List<IHistoryStep> HistoryStep
-		{
-			get => Obj.HistoryStep.Select(x => new HistoryStep(x) as IHistoryStep).ToList();
-			set => Obj.HistoryStep = value.Select(x => ((HistoryStep)x).Obj).ToList();
-		}
+        public List<IHistoryStep> HistoryStep
+        {
+            get => Obj.HistoryStep.Select(x => new HistoryStep(x) as IHistoryStep).ToList();
+            set => Obj.HistoryStep = value.Select(x => ((HistoryStep)x).Obj).ToList();
+        }
     }
 }

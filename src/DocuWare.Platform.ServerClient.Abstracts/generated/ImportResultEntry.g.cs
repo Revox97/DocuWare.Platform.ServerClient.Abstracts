@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ImportResultEntry Obj { get; } = obj;
 
-		public List<IImportEntryVersion> EntryVersions
-		{
-			get => Obj.EntryVersions.Select(x => new ImportEntryVersion(x) as IImportEntryVersion).ToList();
-			set => Obj.EntryVersions = value.Select(x => ((ImportEntryVersion)x).Obj).ToList();
-		}
+        public List<IImportEntryVersion> EntryVersions
+        {
+            get => Obj.EntryVersions.Select(x => new ImportEntryVersion(x) as IImportEntryVersion).ToList();
+            set => Obj.EntryVersions = value.Select(x => ((ImportEntryVersion)x).Obj).ToList();
+        }
 
-		public string ErrorMessage
-		{
-			get => Obj.ErrorMessage;
-			set => Obj.ErrorMessage = value;
-		}
+        public string ErrorMessage
+        {
+            get => Obj.ErrorMessage;
+            set => Obj.ErrorMessage = value;
+        }
 
-		public ImportEntryStatus Status
-		{
-			get => new mportEntryStatus(Obj.Status);
-			set => Obj.Status = ((mportEntryStatus)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ImportEntryStatus Status
+        {
+            get => Obj.Status;
+            set => Obj.Status = value;
+        }
     }
 }

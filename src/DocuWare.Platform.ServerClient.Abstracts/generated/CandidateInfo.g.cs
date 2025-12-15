@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CandidateInfo Obj { get; } = obj;
 
-		public string Type
-		{
-			get => Obj.Type;
-			set => Obj.Type = value;
-		}
+        public string Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public List<ICandidate> Candidates
-		{
-			get => Obj.Candidates.Select(x => new Candidate(x) as ICandidate).ToList();
-			set => Obj.Candidates = value.Select(x => ((Candidate)x).Obj).ToList();
-		}
+        public List<ICandidate> Candidates
+        {
+            get => Obj.Candidates.Select(x => new Candidate(x) as ICandidate).ToList();
+            set => Obj.Candidates = value.Select(x => ((Candidate)x).Obj).ToList();
+        }
     }
 }

@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDateField
     {
 		string LocalValue { get; set; }
-		PredefinedEntryType PredefinedEntry { get; set; }
+		DocuWare.Platform.ServerClient.PredefinedEntryType PredefinedEntry { get; set; }
 		string PredefinedCustomEntry { get; set; }
 		string Value { get; set; }
 		string Type { get; set; }

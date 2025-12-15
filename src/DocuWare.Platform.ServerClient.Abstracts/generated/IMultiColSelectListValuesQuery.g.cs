@@ -9,6 +9,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string StartsWithValue { get; set; }
 		int Start { get; set; }
 		int Count { get; set; }
-		DialogExpressionOperation Operation { get; set; }
+		DocuWare.Platform.ServerClient.DialogExpressionOperation Operation { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool MinValueSpecified { get; set; }
 		double? MaxValue { get; set; }
 		bool MaxValueSpecified { get; set; }
-		PredefinedEntryType PredefinedEntry { get; set; }
+		DocuWare.Platform.ServerClient.PredefinedEntryType PredefinedEntry { get; set; }
 		double? PredefinedCustomEntry { get; set; }
 		bool PredefinedCustomEntrySpecified { get; set; }
 		string Value { get; set; }

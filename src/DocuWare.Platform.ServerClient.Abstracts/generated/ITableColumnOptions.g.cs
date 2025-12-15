@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITableColumnOptions
     {
-		Object Item { get; set; }
+		object Item { get; set; }
     }
 }

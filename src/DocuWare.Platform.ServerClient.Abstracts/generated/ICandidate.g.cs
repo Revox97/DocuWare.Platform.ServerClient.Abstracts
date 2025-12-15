@@ -14,7 +14,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int Line { get; set; }
 		int Index { get; set; }
 		int Length { get; set; }
-		Object Item { get; set; }
+		object Item { get; set; }
 		List<string> FoundWithLanguages { get; set; }
 		List<string> CorrectLanguageTo { get; set; }
 		List<string> ImpliesCultures { get; set; }

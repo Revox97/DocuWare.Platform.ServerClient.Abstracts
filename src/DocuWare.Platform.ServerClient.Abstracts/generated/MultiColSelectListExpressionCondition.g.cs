@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.MultiColSelectListExpressionCondition Obj { get; } = obj;
 
-		public string Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public string Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
 
-		public string ColumnName
-		{
-			get => Obj.ColumnName;
-			set => Obj.ColumnName = value;
-		}
+        public string ColumnName
+        {
+            get => Obj.ColumnName;
+            set => Obj.ColumnName = value;
+        }
 
-		public string Type
-		{
-			get => Obj.Type;
-			set => Obj.Type = value;
-		}
+        public string Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
     }
 }

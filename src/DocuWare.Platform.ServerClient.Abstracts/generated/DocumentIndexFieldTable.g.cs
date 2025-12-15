@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentIndexFieldTable Obj { get; } = obj;
 
-		public List<IDocumentIndexFieldTableRow> Row
-		{
-			get => Obj.Row.Select(x => new DocumentIndexFieldTableRow(x) as IDocumentIndexFieldTableRow).ToList();
-			set => Obj.Row = value.Select(x => ((DocumentIndexFieldTableRow)x).Obj).ToList();
-		}
+        public List<IDocumentIndexFieldTableRow> Row
+        {
+            get => Obj.Row.Select(x => new DocumentIndexFieldTableRow(x) as IDocumentIndexFieldTableRow).ToList();
+            set => Obj.Row = value.Select(x => ((DocumentIndexFieldTableRow)x).Obj).ToList();
+        }
     }
 }

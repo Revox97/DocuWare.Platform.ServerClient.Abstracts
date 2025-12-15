@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IMultiColSelectListRow
     {
-		List<Object> Items { get; set; }
+		List<object> Items { get; set; }
     }
 }

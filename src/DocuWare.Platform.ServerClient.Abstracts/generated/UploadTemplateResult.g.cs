@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UploadTemplateResult Obj { get; } = obj;
 
-		public string TemplateGUID
-		{
-			get => Obj.TemplateGUID;
-			set => Obj.TemplateGUID = value;
-		}
+        public string TemplateGUID
+        {
+            get => Obj.TemplateGUID;
+            set => Obj.TemplateGUID = value;
+        }
 
-		public int TotalNumberOfPages
-		{
-			get => Obj.TotalNumberOfPages;
-			set => Obj.TotalNumberOfPages = value;
-		}
+        public int TotalNumberOfPages
+        {
+            get => Obj.TotalNumberOfPages;
+            set => Obj.TotalNumberOfPages = value;
+        }
     }
 }

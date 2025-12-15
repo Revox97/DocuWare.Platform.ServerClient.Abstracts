@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IViewerDialog
     {
-		ViewerDialogModes Mode { get; set; }
+		DocuWare.Platform.ServerClient.ViewerDialogModes Mode { get; set; }
 		bool MarkFulltextSearchHits { get; set; }
     }
 }

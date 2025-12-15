@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FlagConditions Obj { get; } = obj;
 
-		public bool IncludeCheckedOut
-		{
-			get => Obj.IncludeCheckedOut;
-			set => Obj.IncludeCheckedOut = value;
-		}
+        public bool IncludeCheckedOut
+        {
+            get => Obj.IncludeCheckedOut;
+            set => Obj.IncludeCheckedOut = value;
+        }
 
-		public bool IncludeAppended
-		{
-			get => Obj.IncludeAppended;
-			set => Obj.IncludeAppended = value;
-		}
+        public bool IncludeAppended
+        {
+            get => Obj.IncludeAppended;
+            set => Obj.IncludeAppended = value;
+        }
     }
 }

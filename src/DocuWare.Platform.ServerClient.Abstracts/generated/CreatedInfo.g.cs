@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CreatedInfo Obj { get; } = obj;
 
-		public string User
-		{
-			get => Obj.User;
-			set => Obj.User = value;
-		}
+        public string User
+        {
+            get => Obj.User;
+            set => Obj.User = value;
+        }
 
-		public DateTime Time
-		{
-			get => Obj.Time;
-			set => Obj.Time = value;
-		}
+        public DateTime Time
+        {
+            get => Obj.Time;
+            set => Obj.Time = value;
+        }
     }
 }

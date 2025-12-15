@@ -6,39 +6,40 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.OwnWorkflows Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IOwnWorkflow> Workflow
-		{
-			get => Obj.Workflow.Select(x => new OwnWorkflow(x) as IOwnWorkflow).ToList();
-			set => Obj.Workflow = value.Select(x => ((OwnWorkflow)x).Obj).ToList();
-		}
+        public List<IOwnWorkflow> Workflow
+        {
+            get => Obj.Workflow.Select(x => new OwnWorkflow(x) as IOwnWorkflow).ToList();
+            set => Obj.Workflow = value.Select(x => ((OwnWorkflow)x).Obj).ToList();
+        }
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IOwnWorkflows GetOwnWorkflowsFromNextRelation() => new OwnWorkflows(Obj.GetOwnWorkflowsFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IOwnWorkflows>> GetOwnWorkflowsFromNextRelationAsync()
@@ -150,6 +151,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IOwnWorkflows>(temp).ConfigureAwait(false);
         }
-
     }
 }

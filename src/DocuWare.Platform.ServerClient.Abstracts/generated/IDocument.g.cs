@@ -34,8 +34,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool CreatedAtSpecified { get; set; }
 		long FileSize { get; set; }
 		int SectionCount { get; set; }
-		IntellixTrust IntellixTrust { get; set; }
-		VersionManagementStatus VersionStatus { get; set; }
+		DocuWare.Platform.ServerClient.IntellixTrust IntellixTrust { get; set; }
+		DocuWare.Platform.ServerClient.VersionManagementStatus VersionStatus { get; set; }
 		string ExternalContentLocation { get; set; }
 		string SelfRelationLink { get; }
 		string ContentDivideOperationRelationLink { get; }

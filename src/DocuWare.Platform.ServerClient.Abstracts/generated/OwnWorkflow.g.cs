@@ -6,71 +6,72 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.OwnWorkflow Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IRequestDataDecision> TakenDecision
-		{
-			get => Obj.TakenDecision.Select(x => new RequestDataDecision(x) as IRequestDataDecision).ToList();
-			set => Obj.TakenDecision = value.Select(x => ((RequestDataDecision)x).Obj).ToList();
-		}
+        public List<IRequestDataDecision> TakenDecision
+        {
+            get => Obj.TakenDecision.Select(x => new RequestDataDecision(x) as IRequestDataDecision).ToList();
+            set => Obj.TakenDecision = value.Select(x => ((RequestDataDecision)x).Obj).ToList();
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public int DocId
-		{
-			get => Obj.DocId;
-			set => Obj.DocId = value;
-		}
+        public int DocId
+        {
+            get => Obj.DocId;
+            set => Obj.DocId = value;
+        }
 
-		public string FcGuid
-		{
-			get => Obj.FcGuid;
-			set => Obj.FcGuid = value;
-		}
+        public string FcGuid
+        {
+            get => Obj.FcGuid;
+            set => Obj.FcGuid = value;
+        }
 
-		public DateTime CreateDate
-		{
-			get => Obj.CreateDate;
-			set => Obj.CreateDate = value;
-		}
+        public DateTime CreateDate
+        {
+            get => Obj.CreateDate;
+            set => Obj.CreateDate = value;
+        }
 
-		public string WorkflowName
-		{
-			get => Obj.WorkflowName;
-			set => Obj.WorkflowName = value;
-		}
+        public string WorkflowName
+        {
+            get => Obj.WorkflowName;
+            set => Obj.WorkflowName = value;
+        }
 
-		public string DocumentName
-		{
-			get => Obj.DocumentName;
-			set => Obj.DocumentName = value;
-		}
+        public string DocumentName
+        {
+            get => Obj.DocumentName;
+            set => Obj.DocumentName = value;
+        }
 
-		public RequestExecutionStateEnum ExecutionState
-		{
-			get => new equestExecutionStateEnum(Obj.ExecutionState);
-			set => Obj.ExecutionState = ((equestExecutionStateEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.RequestExecutionStateEnum ExecutionState
+        {
+            get => Obj.ExecutionState;
+            set => Obj.ExecutionState = value;
+        }
 
-		public string TakenDecisionName
-		{
-			get => Obj.TakenDecisionName;
-			set => Obj.TakenDecisionName = value;
-		}
+        public string TakenDecisionName
+        {
+            get => Obj.TakenDecisionName;
+            set => Obj.TakenDecisionName = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string HistoryRelationLink => Obj.HistoryRelationLink;
+        public string HistoryRelationLink => Obj.HistoryRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IOwnWorkflow GetOwnWorkflowFromSelfRelation() => new OwnWorkflow(Obj.GetOwnWorkflowFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IOwnWorkflow>> GetOwnWorkflowFromSelfRelationAsync()
@@ -100,6 +101,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
+
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
             DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
@@ -153,6 +155,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
         }
-
     }
 }

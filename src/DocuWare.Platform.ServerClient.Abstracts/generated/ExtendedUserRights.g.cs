@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExtendedUserRights Obj { get; } = obj;
 
-		public bool AllowViewAuditData
-		{
-			get => Obj.AllowViewAuditData;
-			set => Obj.AllowViewAuditData = value;
-		}
+        public bool AllowViewAuditData
+        {
+            get => Obj.AllowViewAuditData;
+            set => Obj.AllowViewAuditData = value;
+        }
     }
 }

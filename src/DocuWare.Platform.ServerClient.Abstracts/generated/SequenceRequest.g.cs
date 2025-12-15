@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SequenceRequest Obj { get; } = obj;
 
-		public string SequenceId
-		{
-			get => Obj.SequenceId;
-			set => Obj.SequenceId = value;
-		}
+        public string SequenceId
+        {
+            get => Obj.SequenceId;
+            set => Obj.SequenceId = value;
+        }
     }
 }

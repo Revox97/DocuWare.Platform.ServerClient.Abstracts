@@ -6,21 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentAuditEvent Obj { get; } = obj;
 
-		public IAuditEvent AuditEvent
-		{
-			get => new AuditEvent(Obj.AuditEvent);
-			set => Obj.AuditEvent = ((AuditEvent)value).Obj;
-		}
+        public IAuditEvent AuditEvent
+        {
+            get => new AuditEvent(Obj.AuditEvent);
+            set => Obj.AuditEvent = ((AuditEvent)value).Obj;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string AuditEventInformationRelationLink => Obj.AuditEventInformationRelationLink;
+        public string AuditEventInformationRelationLink => Obj.AuditEventInformationRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentAuditEventInformation GetDocumentAuditEventInformationFromAuditEventInformationRelation() => new DocumentAuditEventInformation(Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditEventInformation>> GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync()
@@ -48,6 +49,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentAuditEventInformation>(temp).ConfigureAwait(false);
         }
-
     }
 }

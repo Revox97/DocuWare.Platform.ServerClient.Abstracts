@@ -12,7 +12,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DateTime CreateDate { get; set; }
 		string WorkflowName { get; set; }
 		string DocumentName { get; set; }
-		RequestExecutionStateEnum ExecutionState { get; set; }
+		DocuWare.Platform.ServerClient.RequestExecutionStateEnum ExecutionState { get; set; }
 		string TakenDecisionName { get; set; }
 		string SelfRelationLink { get; }
 		string HistoryRelationLink { get; }

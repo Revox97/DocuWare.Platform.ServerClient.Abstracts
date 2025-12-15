@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestDialogQuery Obj { get; } = obj;
 
-		public List<DialogTypes> DialogTypes
-		{
-			get => Obj.DialogTypes.Select(x => new ialogTypes(x) as DialogTypes).ToList();
-			set => Obj.DialogTypes = value.Select(x => ((ialogTypes)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.DialogTypes> DialogTypes
+        {
+            get => Obj.DialogTypes;
+            set => Obj.DialogTypes = value;
+        }
     }
 }

@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ILogicalOperator
     {
-		DialogExpressionOperation DefaultOperator { get; set; }
+		DocuWare.Platform.ServerClient.DialogExpressionOperation DefaultOperator { get; set; }
 		bool Show { get; set; }
     }
 }

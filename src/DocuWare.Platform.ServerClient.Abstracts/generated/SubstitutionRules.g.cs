@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SubstitutionRules Obj { get; } = obj;
 
-		public List<ISubstitutionRule> Item
-		{
-			get => Obj.Item.Select(x => new SubstitutionRule(x) as ISubstitutionRule).ToList();
-			set => Obj.Item = value.Select(x => ((SubstitutionRule)x).Obj).ToList();
-		}
+        public List<ISubstitutionRule> Item
+        {
+            get => Obj.Item.Select(x => new SubstitutionRule(x) as ISubstitutionRule).ToList();
+            set => Obj.Item = value.Select(x => ((SubstitutionRule)x).Obj).ToList();
+        }
     }
 }

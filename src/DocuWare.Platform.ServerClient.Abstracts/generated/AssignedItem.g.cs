@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AssignedItem Obj { get; } = obj;
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public AssignedItemTypeEnum ItemType
-		{
-			get => new ssignedItemTypeEnum(Obj.ItemType);
-			set => Obj.ItemType = ((ssignedItemTypeEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.AssignedItemTypeEnum ItemType
+        {
+            get => Obj.ItemType;
+            set => Obj.ItemType = value;
+        }
     }
 }

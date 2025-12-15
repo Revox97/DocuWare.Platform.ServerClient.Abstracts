@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IWFFormFieldValue
     {
-		Object Item { get; set; }
-		ItemChoiceType ItemElementName { get; set; }
+		object Item { get; set; }
+		DocuWare.Platform.ServerClient.ItemChoiceType ItemElementName { get; set; }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WorkflowBehaviorOptions Obj { get; } = obj;
 
-		public bool AllowReassign
-		{
-			get => Obj.AllowReassign;
-			set => Obj.AllowReassign = value;
-		}
+        public bool AllowReassign
+        {
+            get => Obj.AllowReassign;
+            set => Obj.AllowReassign = value;
+        }
 
-		public bool AllowWorkflowHistory
-		{
-			get => Obj.AllowWorkflowHistory;
-			set => Obj.AllowWorkflowHistory = value;
-		}
+        public bool AllowWorkflowHistory
+        {
+            get => Obj.AllowWorkflowHistory;
+            set => Obj.AllowWorkflowHistory = value;
+        }
 
-		public bool AllowMarkAsReadUnread
-		{
-			get => Obj.AllowMarkAsReadUnread;
-			set => Obj.AllowMarkAsReadUnread = value;
-		}
+        public bool AllowMarkAsReadUnread
+        {
+            get => Obj.AllowMarkAsReadUnread;
+            set => Obj.AllowMarkAsReadUnread = value;
+        }
     }
 }

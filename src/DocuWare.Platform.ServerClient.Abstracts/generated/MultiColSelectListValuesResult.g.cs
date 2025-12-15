@@ -6,33 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.MultiColSelectListValuesResult Obj { get; } = obj;
 
-		public List<IMultiColSelectListColumn> Columns
-		{
-			get => Obj.Columns.Select(x => new MultiColSelectListColumn(x) as IMultiColSelectListColumn).ToList();
-			set => Obj.Columns = value.Select(x => ((MultiColSelectListColumn)x).Obj).ToList();
-		}
+        public List<IMultiColSelectListColumn> Columns
+        {
+            get => Obj.Columns.Select(x => new MultiColSelectListColumn(x) as IMultiColSelectListColumn).ToList();
+            set => Obj.Columns = value.Select(x => ((MultiColSelectListColumn)x).Obj).ToList();
+        }
 
-		public List<IMultiColSelectListRow> Rows
-		{
-			get => Obj.Rows.Select(x => new MultiColSelectListRow(x) as IMultiColSelectListRow).ToList();
-			set => Obj.Rows = value.Select(x => ((MultiColSelectListRow)x).Obj).ToList();
-		}
+        public List<IMultiColSelectListRow> Rows
+        {
+            get => Obj.Rows.Select(x => new MultiColSelectListRow(x) as IMultiColSelectListRow).ToList();
+            set => Obj.Rows = value.Select(x => ((MultiColSelectListRow)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromNextRelationAsync()
@@ -144,6 +145,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

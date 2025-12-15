@@ -6,12 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.GeckoAttribute Obj { get; } = obj;
 
-		public string MinumumVersion
-		{
-			get => Obj.MinumumVersion;
-			set => Obj.MinumumVersion = value;
-		}
+        public string MinumumVersion
+        {
+            get => Obj.MinumumVersion;
+            set => Obj.MinumumVersion = value;
+        }
 
-		public Object TypeId => Obj.TypeId;
+        public object TypeId => Obj.TypeId;
     }
 }

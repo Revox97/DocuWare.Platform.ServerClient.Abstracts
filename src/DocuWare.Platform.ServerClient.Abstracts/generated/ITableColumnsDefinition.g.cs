@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		ITableColumnOptions ColumnOptions { get; set; }
 		string Label { get; set; }
 		string Id { get; set; }
-		TableColumnValueTypeEnum ColumnValueType { get; set; }
+		DocuWare.Platform.ServerClient.TableColumnValueTypeEnum ColumnValueType { get; set; }
 		bool Mandatory { get; set; }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.MultiColSelectListColumn Obj { get; } = obj;
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string Type
-		{
-			get => Obj.Type;
-			set => Obj.Type = value;
-		}
+        public string Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
     }
 }

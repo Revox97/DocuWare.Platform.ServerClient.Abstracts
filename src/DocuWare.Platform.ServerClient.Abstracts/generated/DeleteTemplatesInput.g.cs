@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DeleteTemplatesInput Obj { get; } = obj;
 
-		public List<string> TemplateGUIDS
-		{
-			get => Obj.TemplateGUIDS;
-			set => Obj.TemplateGUIDS = value;
-		}
+        public List<string> TemplateGUIDS
+        {
+            get => Obj.TemplateGUIDS;
+            set => Obj.TemplateGUIDS = value;
+        }
     }
 }

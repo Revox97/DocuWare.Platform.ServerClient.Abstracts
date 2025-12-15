@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AreValuesInSelectListsResult Obj { get; } = obj;
 
-		public bool Result
-		{
-			get => Obj.Result;
-			set => Obj.Result = value;
-		}
+        public bool Result
+        {
+            get => Obj.Result;
+            set => Obj.Result = value;
+        }
 
-		public List<ISelectListValueToCheck> IncorrectValues
-		{
-			get => Obj.IncorrectValues.Select(x => new SelectListValueToCheck(x) as ISelectListValueToCheck).ToList();
-			set => Obj.IncorrectValues = value.Select(x => ((SelectListValueToCheck)x).Obj).ToList();
-		}
+        public List<ISelectListValueToCheck> IncorrectValues
+        {
+            get => Obj.IncorrectValues.Select(x => new SelectListValueToCheck(x) as ISelectListValueToCheck).ToList();
+            set => Obj.IncorrectValues = value.Select(x => ((SelectListValueToCheck)x).Obj).ToList();
+        }
     }
 }

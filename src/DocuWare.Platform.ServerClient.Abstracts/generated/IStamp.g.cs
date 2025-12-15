@@ -7,10 +7,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IStampFormField> FormField { get; set; }
 		List<IStampField> Fields { get; set; }
 		IFont HeadFont { get; set; }
-		Object Item { get; set; }
+		object Item { get; set; }
 		Link[] Links { get; set; }
 		bool PasswordProtected { get; set; }
-		StampSignatureType Signature { get; set; }
+		DocuWare.Platform.ServerClient.StampSignatureType Signature { get; set; }
 		string Color { get; set; }
 		string Name { get; set; }
 		string DisplayName { get; set; }

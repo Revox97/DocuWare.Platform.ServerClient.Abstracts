@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IAssignmentOperation
     {
 		List<string> Ids { get; set; }
-		AssignmentOperationType OperationType { get; set; }
+		DocuWare.Platform.ServerClient.AssignmentOperationType OperationType { get; set; }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SimplePageContent Obj { get; } = obj;
 
-		public List<ISimpleWord> W
-		{
-			get => Obj.W.Select(x => new SimpleWord(x) as ISimpleWord).ToList();
-			set => Obj.W = value.Select(x => ((SimpleWord)x).Obj).ToList();
-		}
+        public List<ISimpleWord> W
+        {
+            get => Obj.W.Select(x => new SimpleWord(x) as ISimpleWord).ToList();
+            set => Obj.W = value.Select(x => ((SimpleWord)x).Obj).ToList();
+        }
     }
 }

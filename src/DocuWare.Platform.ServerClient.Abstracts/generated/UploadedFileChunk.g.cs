@@ -6,33 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UploadedFileChunk Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public bool Finished
-		{
-			get => Obj.Finished;
-			set => Obj.Finished = value;
-		}
+        public bool Finished
+        {
+            get => Obj.Finished;
+            set => Obj.Finished = value;
+        }
 
-		public string LastChunkId
-		{
-			get => Obj.LastChunkId;
-			set => Obj.LastChunkId = value;
-		}
+        public string LastChunkId
+        {
+            get => Obj.LastChunkId;
+            set => Obj.LastChunkId = value;
+        }
 
-		public long BytesWritten
-		{
-			get => Obj.BytesWritten;
-			set => Obj.BytesWritten = value;
-		}
+        public long BytesWritten
+        {
+            get => Obj.BytesWritten;
+            set => Obj.BytesWritten = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IUploadedFileChunk GetUploadedFileChunkFromNextRelation() => new UploadedFileChunk(Obj.GetUploadedFileChunkFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IUploadedFileChunk>> GetUploadedFileChunkFromNextRelationAsync()
@@ -60,6 +61,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IUploadedFileChunk>(temp).ConfigureAwait(false);
         }
-
     }
 }

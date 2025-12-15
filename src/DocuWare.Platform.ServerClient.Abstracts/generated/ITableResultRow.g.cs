@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITableResultRow
     {
-		List<Object> Items { get; set; }
+		List<object> Items { get; set; }
 		Link[] Links { get; set; }
 		List<ISuggestionField> Suggestions { get; set; }
 		List<ISuggestionTableField> TableFieldSuggestions { get; set; }

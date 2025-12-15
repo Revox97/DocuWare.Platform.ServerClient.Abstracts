@@ -6,34 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CellZone Obj { get; } = obj;
 
-		public ITextZone TextZone
-		{
-			get => new TextZone(Obj.TextZone);
-			set => Obj.TextZone = ((TextZone)value).Obj;
-		}
+        public ITextZone TextZone
+        {
+            get => new TextZone(Obj.TextZone);
+            set => Obj.TextZone = ((TextZone)value).Obj;
+        }
 
-		public int L
-		{
-			get => Obj.L;
-			set => Obj.L = value;
-		}
+        public int L
+        {
+            get => Obj.L;
+            set => Obj.L = value;
+        }
 
-		public int T
-		{
-			get => Obj.T;
-			set => Obj.T = value;
-		}
+        public int T
+        {
+            get => Obj.T;
+            set => Obj.T = value;
+        }
 
-		public int W
-		{
-			get => Obj.W;
-			set => Obj.W = value;
-		}
+        public int W
+        {
+            get => Obj.W;
+            set => Obj.W = value;
+        }
 
-		public int H
-		{
-			get => Obj.H;
-			set => Obj.H = value;
-		}
+        public int H
+        {
+            get => Obj.H;
+            set => Obj.H = value;
+        }
     }
 }

@@ -6,35 +6,36 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Group Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public bool Active
-		{
-			get => Obj.Active;
-			set => Obj.Active = value;
-		}
+        public bool Active
+        {
+            get => Obj.Active;
+            set => Obj.Active = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string UsersRelationLink => Obj.UsersRelationLink;
+        public string UsersRelationLink => Obj.UsersRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IGroup GetGroupFromSelfRelation() => new Group(Obj.GetGroupFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IGroup>> GetGroupFromSelfRelationAsync()
@@ -90,6 +91,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IUsers>(temp).ConfigureAwait(false);
         }
-
     }
 }

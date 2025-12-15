@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.LogicalOperator Obj { get; } = obj;
 
-		public DialogExpressionOperation DefaultOperator
-		{
-			get => new ialogExpressionOperation(Obj.DefaultOperator);
-			set => Obj.DefaultOperator = ((ialogExpressionOperation)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DialogExpressionOperation DefaultOperator
+        {
+            get => Obj.DefaultOperator;
+            set => Obj.DefaultOperator = value;
+        }
 
-		public bool Show
-		{
-			get => Obj.Show;
-			set => Obj.Show = value;
-		}
+        public bool Show
+        {
+            get => Obj.Show;
+            set => Obj.Show = value;
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string AssignedDialogId { get; set; }
 		string Color { get; set; }
 		bool IsDefault { get; set; }
-		DialogTypes Type { get; set; }
+		DocuWare.Platform.ServerClient.DialogTypes Type { get; set; }
 		string SelfRelationLink { get; }
 		string AssignedDialogRelationLink { get; }
 		string CountRelationLink { get; }

@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ILine
     {
-		List<Object> Items { get; set; }
+		List<object> Items { get; set; }
 		bool bold { get; set; }
 		bool boldSpecified { get; set; }
 		int fontSize { get; set; }

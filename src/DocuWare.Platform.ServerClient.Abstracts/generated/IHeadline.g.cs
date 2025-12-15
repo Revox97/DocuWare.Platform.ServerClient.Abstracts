@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IHeadline
     {
 		double FontSize { get; set; }
-		AlignmentType Alignment { get; set; }
+		DocuWare.Platform.ServerClient.AlignmentType Alignment { get; set; }
 		string Subtitle { get; set; }
 		string Value { get; set; }
 		string Type { get; set; }

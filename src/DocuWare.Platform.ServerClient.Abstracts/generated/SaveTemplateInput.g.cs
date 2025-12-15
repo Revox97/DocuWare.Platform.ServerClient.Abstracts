@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SaveTemplateInput Obj { get; } = obj;
 
-		public List<IFormTemplate> Templates
-		{
-			get => Obj.Templates.Select(x => new FormTemplate(x) as IFormTemplate).ToList();
-			set => Obj.Templates = value.Select(x => ((FormTemplate)x).Obj).ToList();
-		}
+        public List<IFormTemplate> Templates
+        {
+            get => Obj.Templates.Select(x => new FormTemplate(x) as IFormTemplate).ToList();
+            set => Obj.Templates = value.Select(x => ((FormTemplate)x).Obj).ToList();
+        }
     }
 }

@@ -5,9 +5,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ICheckGroup
     {
 		List<IWebFormOption> Options { get; set; }
-		OrientationType Orientation { get; set; }
+		DocuWare.Platform.ServerClient.OrientationType Orientation { get; set; }
 		int NumberOfColumns { get; set; }
-		ColumnWidthType ColumnWidth { get; set; }
+		DocuWare.Platform.ServerClient.ColumnWidthType ColumnWidth { get; set; }
 		string SortOrder { get; set; }
 		List<List<IWebFormOption>> OptionsRows { get; set; }
 		List<string> PredefinedValues { get; set; }

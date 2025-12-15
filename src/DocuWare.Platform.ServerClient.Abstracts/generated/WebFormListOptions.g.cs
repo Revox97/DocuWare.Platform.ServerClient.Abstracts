@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WebFormListOptions Obj { get; } = obj;
 
-		public List<string> WebFormListOption
-		{
-			get => Obj.WebFormListOption;
-			set => Obj.WebFormListOption = value;
-		}
+        public List<string> WebFormListOption
+        {
+            get => Obj.WebFormListOption;
+            set => Obj.WebFormListOption = value;
+        }
     }
 }

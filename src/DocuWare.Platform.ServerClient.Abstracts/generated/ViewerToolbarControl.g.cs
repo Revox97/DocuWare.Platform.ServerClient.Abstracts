@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ViewerToolbarControl Obj { get; } = obj;
 
-		public ToolbarControlType Type
-		{
-			get => new oolbarControlType(Obj.Type);
-			set => Obj.Type = ((oolbarControlType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ToolbarControlType Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public bool Checked
-		{
-			get => Obj.Checked;
-			set => Obj.Checked = value;
-		}
+        public bool Checked
+        {
+            get => Obj.Checked;
+            set => Obj.Checked = value;
+        }
 
-		public ToolbarControlState State
-		{
-			get => new oolbarControlState(Obj.State);
-			set => Obj.State = ((oolbarControlState)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ToolbarControlState State
+        {
+            get => Obj.State;
+            set => Obj.State = value;
+        }
     }
 }

@@ -9,8 +9,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string FieldLabel { get; set; }
 		bool IsNull { get; set; }
 		bool ReadOnly { get; set; }
-		Object Item { get; set; }
-		ItemChoiceType ItemElementName { get; set; }
+		object Item { get; set; }
+		DocuWare.Platform.ServerClient.ItemChoiceType ItemElementName { get; set; }
 
 		string ToString();
     }

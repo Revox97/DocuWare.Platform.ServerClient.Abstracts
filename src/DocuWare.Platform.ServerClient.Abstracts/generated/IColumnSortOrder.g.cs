@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IColumnSortOrder
     {
 		string ColumnId { get; set; }
-		SortDirection Direction { get; set; }
+		DocuWare.Platform.ServerClient.SortDirection Direction { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool FontWeightBold { get; set; }
 		bool FontWeightItalic { get; set; }
 		bool FontWeightUnderlined { get; set; }
-		AlignmentType TextAlignment { get; set; }
+		DocuWare.Platform.ServerClient.AlignmentType TextAlignment { get; set; }
 		int OriginalImageWidth { get; set; }
 		bool WrapText { get; set; }
     }

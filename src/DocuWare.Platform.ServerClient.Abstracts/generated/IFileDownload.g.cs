@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IFileDownload
     {
-		FileDownloadType TargetFileType { get; set; }
+		DocuWare.Platform.ServerClient.FileDownloadType TargetFileType { get; set; }
 		bool DirectDownload { get; set; }
 		bool AutoPrint { get; set; }
 		bool SendByEmail { get; set; }

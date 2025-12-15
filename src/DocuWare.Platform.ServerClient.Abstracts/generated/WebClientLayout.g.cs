@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WebClientLayout Obj { get; } = obj;
 
-		public LayoutMode Mode
-		{
-			get => new ayoutMode(Obj.Mode);
-			set => Obj.Mode = ((ayoutMode)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.LayoutMode Mode
+        {
+            get => Obj.Mode;
+            set => Obj.Mode = value;
+        }
     }
 }

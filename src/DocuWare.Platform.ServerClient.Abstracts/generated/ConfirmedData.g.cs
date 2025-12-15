@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ConfirmedData Obj { get; } = obj;
 
-		public List<IConfirmedField> ConfirmedFields
-		{
-			get => Obj.ConfirmedFields.Select(x => new ConfirmedField(x) as IConfirmedField).ToList();
-			set => Obj.ConfirmedFields = value.Select(x => ((ConfirmedField)x).Obj).ToList();
-		}
+        public List<IConfirmedField> ConfirmedFields
+        {
+            get => Obj.ConfirmedFields.Select(x => new ConfirmedField(x) as IConfirmedField).ToList();
+            set => Obj.ConfirmedFields = value.Select(x => ((ConfirmedField)x).Obj).ToList();
+        }
     }
 }

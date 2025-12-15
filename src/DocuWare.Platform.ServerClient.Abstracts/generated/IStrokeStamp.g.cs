@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IStrokeStamp
     {
-		!!!UNKNOWN_PRIMITIVE StrokeWidth { get; set; }
+		uint StrokeWidth { get; set; }
 		string StrokeColor { get; set; }
     }
 }

@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CountPlusValue Obj { get; } = obj;
 
-		public bool HasMore
-		{
-			get => Obj.HasMore;
-			set => Obj.HasMore = value;
-		}
+        public bool HasMore
+        {
+            get => Obj.HasMore;
+            set => Obj.HasMore = value;
+        }
 
-		public bool ExceedLimit
-		{
-			get => Obj.ExceedLimit;
-			set => Obj.ExceedLimit = value;
-		}
+        public bool ExceedLimit
+        {
+            get => Obj.ExceedLimit;
+            set => Obj.ExceedLimit = value;
+        }
 
-		public int Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public int Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
     }
 }

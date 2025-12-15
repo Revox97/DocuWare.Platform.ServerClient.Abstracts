@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PagesBlockQuery Obj { get; } = obj;
 
-		public int FirstPage
-		{
-			get => Obj.FirstPage;
-			set => Obj.FirstPage = value;
-		}
+        public int FirstPage
+        {
+            get => Obj.FirstPage;
+            set => Obj.FirstPage = value;
+        }
 
-		public int PageCount
-		{
-			get => Obj.PageCount;
-			set => Obj.PageCount = value;
-		}
+        public int PageCount
+        {
+            get => Obj.PageCount;
+            set => Obj.PageCount = value;
+        }
     }
 }

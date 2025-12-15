@@ -6,46 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FileDownload Obj { get; } = obj;
 
-		public FileDownloadType TargetFileType
-		{
-			get => new ileDownloadType(Obj.TargetFileType);
-			set => Obj.TargetFileType = ((ileDownloadType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.FileDownloadType TargetFileType
+        {
+            get => Obj.TargetFileType;
+            set => Obj.TargetFileType = value;
+        }
 
-		public bool DirectDownload
-		{
-			get => Obj.DirectDownload;
-			set => Obj.DirectDownload = value;
-		}
+        public bool DirectDownload
+        {
+            get => Obj.DirectDownload;
+            set => Obj.DirectDownload = value;
+        }
 
-		public bool AutoPrint
-		{
-			get => Obj.AutoPrint;
-			set => Obj.AutoPrint = value;
-		}
+        public bool AutoPrint
+        {
+            get => Obj.AutoPrint;
+            set => Obj.AutoPrint = value;
+        }
 
-		public bool SendByEmail
-		{
-			get => Obj.SendByEmail;
-			set => Obj.SendByEmail = value;
-		}
+        public bool SendByEmail
+        {
+            get => Obj.SendByEmail;
+            set => Obj.SendByEmail = value;
+        }
 
-		public bool Fillable
-		{
-			get => Obj.Fillable;
-			set => Obj.Fillable = value;
-		}
+        public bool Fillable
+        {
+            get => Obj.Fillable;
+            set => Obj.Fillable = value;
+        }
 
-		public List<int> Layers
-		{
-			get => Obj.Layers;
-			set => Obj.Layers = value;
-		}
+        public List<int> Layers
+        {
+            get => Obj.Layers;
+            set => Obj.Layers = value;
+        }
 
-		public bool KeepAnnotations
-		{
-			get => Obj.KeepAnnotations;
-			set => Obj.KeepAnnotations = value;
-		}
+        public bool KeepAnnotations
+        {
+            get => Obj.KeepAnnotations;
+            set => Obj.KeepAnnotations = value;
+        }
     }
 }

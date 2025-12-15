@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.LoginInfo Obj { get; } = obj;
 
-		public string PasswordExpireNotification
-		{
-			get => Obj.PasswordExpireNotification;
-			set => Obj.PasswordExpireNotification = value;
-		}
+        public string PasswordExpireNotification
+        {
+            get => Obj.PasswordExpireNotification;
+            set => Obj.PasswordExpireNotification = value;
+        }
 
-		public DWProductTypes BookedLicense
-		{
-			get => new WProductTypes(Obj.BookedLicense);
-			set => Obj.BookedLicense = ((WProductTypes)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DWProductTypes BookedLicense
+        {
+            get => Obj.BookedLicense;
+            set => Obj.BookedLicense = value;
+        }
 
-		public DWProductTypes ProductType
-		{
-			get => new WProductTypes(Obj.ProductType);
-			set => Obj.ProductType = ((WProductTypes)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DWProductTypes ProductType
+        {
+            get => Obj.ProductType;
+            set => Obj.ProductType = value;
+        }
     }
 }

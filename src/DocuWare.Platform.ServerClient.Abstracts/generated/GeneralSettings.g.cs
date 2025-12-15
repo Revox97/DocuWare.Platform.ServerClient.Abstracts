@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.GeneralSettings Obj { get; } = obj;
 
-		public WorkAreaType StartWith
-		{
-			get => new orkAreaType(Obj.StartWith);
-			set => Obj.StartWith = ((orkAreaType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.WorkAreaType StartWith
+        {
+            get => Obj.StartWith;
+            set => Obj.StartWith = value;
+        }
 
-		public string CreatedVersion
-		{
-			get => Obj.CreatedVersion;
-			set => Obj.CreatedVersion = value;
-		}
+        public string CreatedVersion
+        {
+            get => Obj.CreatedVersion;
+            set => Obj.CreatedVersion = value;
+        }
     }
 }

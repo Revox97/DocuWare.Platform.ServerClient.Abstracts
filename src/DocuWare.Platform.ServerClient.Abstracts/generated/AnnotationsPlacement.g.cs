@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AnnotationsPlacement Obj { get; } = obj;
 
-		public List<Object> Items
-		{
-			get => Obj.Items;
-			set => Obj.Items = value;
-		}
+        public List<object> Items
+        {
+            get => Obj.Items;
+            set => Obj.Items = value;
+        }
     }
 }

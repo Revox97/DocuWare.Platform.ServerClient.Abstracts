@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.MergeAnnotationsParameters Obj { get; } = obj;
 
-		public int SectionNumber
-		{
-			get => Obj.SectionNumber;
-			set => Obj.SectionNumber = value;
-		}
+        public int SectionNumber
+        {
+            get => Obj.SectionNumber;
+            set => Obj.SectionNumber = value;
+        }
     }
 }

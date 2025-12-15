@@ -6,33 +6,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SubstitutionList Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public bool Active
-		{
-			get => Obj.Active;
-			set => Obj.Active = value;
-		}
+        public bool Active
+        {
+            get => Obj.Active;
+            set => Obj.Active = value;
+        }
 
-		public string Guid
-		{
-			get => Obj.Guid;
-			set => Obj.Guid = value;
-		}
+        public string Guid
+        {
+            get => Obj.Guid;
+            set => Obj.Guid = value;
+        }
 
-		public string SubstitutionRulesRelationLink => Obj.SubstitutionRulesRelationLink;
+        public string SubstitutionRulesRelationLink => Obj.SubstitutionRulesRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ISubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation() => new SubstitutionRules(Obj.GetSubstitutionRulesFromSubstitutionRulesRelation());
 
         public async Task<DeserializedHttpResponse<ISubstitutionRules>> GetSubstitutionRulesFromSubstitutionRulesRelationAsync()
@@ -60,6 +61,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ISubstitutionRules>(temp).ConfigureAwait(false);
         }
-
     }
 }

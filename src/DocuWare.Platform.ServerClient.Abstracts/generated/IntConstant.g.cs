@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IntConstant Obj { get; } = obj;
 
-		public int? Value
-		{
-			get => Obj.Value;
-			set => Obj.Value = value;
-		}
+        public int? Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
     }
 }

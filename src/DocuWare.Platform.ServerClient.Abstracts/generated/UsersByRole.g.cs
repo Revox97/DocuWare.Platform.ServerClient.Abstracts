@@ -6,29 +6,29 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UsersByRole Obj { get; } = obj;
 
-		public List<IUser> User
-		{
-			get => Obj.User.Select(x => new User(x) as IUser).ToList();
-			set => Obj.User = value.Select(x => ((User)x).Obj).ToList();
-		}
+        public List<IUser> User
+        {
+            get => Obj.User.Select(x => new User(x) as IUser).ToList();
+            set => Obj.User = value.Select(x => ((User)x).Obj).ToList();
+        }
 
-		public string RoleId
-		{
-			get => Obj.RoleId;
-			set => Obj.RoleId = value;
-		}
+        public string RoleId
+        {
+            get => Obj.RoleId;
+            set => Obj.RoleId = value;
+        }
 
-		public bool IncludeGroupUsers
-		{
-			get => Obj.IncludeGroupUsers;
-			set => Obj.IncludeGroupUsers = value;
-		}
+        public bool IncludeGroupUsers
+        {
+            get => Obj.IncludeGroupUsers;
+            set => Obj.IncludeGroupUsers = value;
+        }
 
-		public bool IncludeGroupUsersSpecified
-		{
-			get => Obj.IncludeGroupUsersSpecified;
-			set => Obj.IncludeGroupUsersSpecified = value;
-		}
+        public bool IncludeGroupUsersSpecified
+        {
+            get => Obj.IncludeGroupUsersSpecified;
+            set => Obj.IncludeGroupUsersSpecified = value;
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentAuditEventTablePropertyColumn Obj { get; } = obj;
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public DWFieldType Type
-		{
-			get => new WFieldType(Obj.Type);
-			set => Obj.Type = ((WFieldType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.DWFieldType Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
     }
 }

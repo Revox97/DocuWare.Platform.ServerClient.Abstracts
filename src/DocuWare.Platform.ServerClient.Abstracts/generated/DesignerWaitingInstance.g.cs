@@ -6,53 +6,54 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DesignerWaitingInstance Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string WorkflowVersionId
-		{
-			get => Obj.WorkflowVersionId;
-			set => Obj.WorkflowVersionId = value;
-		}
+        public string WorkflowVersionId
+        {
+            get => Obj.WorkflowVersionId;
+            set => Obj.WorkflowVersionId = value;
+        }
 
-		public WaitInstanceActivityType WaitInstanceActivityType
-		{
-			get => new aitInstanceActivityType(Obj.WaitInstanceActivityType);
-			set => Obj.WaitInstanceActivityType = ((aitInstanceActivityType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.WaitInstanceActivityType WaitInstanceActivityType
+        {
+            get => Obj.WaitInstanceActivityType;
+            set => Obj.WaitInstanceActivityType = value;
+        }
 
-		public string ActivityName
-		{
-			get => Obj.ActivityName;
-			set => Obj.ActivityName = value;
-		}
+        public string ActivityName
+        {
+            get => Obj.ActivityName;
+            set => Obj.ActivityName = value;
+        }
 
-		public int DocId
-		{
-			get => Obj.DocId;
-			set => Obj.DocId = value;
-		}
+        public int DocId
+        {
+            get => Obj.DocId;
+            set => Obj.DocId = value;
+        }
 
-		public DateTime TimeoutDate
-		{
-			get => Obj.TimeoutDate;
-			set => Obj.TimeoutDate = value;
-		}
+        public DateTime TimeoutDate
+        {
+            get => Obj.TimeoutDate;
+            set => Obj.TimeoutDate = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string ContinueRelationLink => Obj.ContinueRelationLink;
+        public string ContinueRelationLink => Obj.ContinueRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation() => new DesignerWaitingInstance(Obj.GetDesignerWaitingInstanceFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstance>> GetDesignerWaitingInstanceFromSelfRelationAsync()
@@ -80,6 +81,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstance>(temp).ConfigureAwait(false);
         }
-
     }
 }

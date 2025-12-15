@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SectionAnnotation Obj { get; } = obj;
 
-		public List<ILayer> Annotation
-		{
-			get => Obj.Annotation.Select(x => new Layer(x) as ILayer).ToList();
-			set => Obj.Annotation = value.Select(x => ((Layer)x).Obj).ToList();
-		}
+        public List<ILayer> Annotation
+        {
+            get => Obj.Annotation.Select(x => new Layer(x) as ILayer).ToList();
+            set => Obj.Annotation = value.Select(x => ((Layer)x).Obj).ToList();
+        }
 
-		public int SectionNumber
-		{
-			get => Obj.SectionNumber;
-			set => Obj.SectionNumber = value;
-		}
+        public int SectionNumber
+        {
+            get => Obj.SectionNumber;
+            set => Obj.SectionNumber = value;
+        }
 
-		public int PageNumber
-		{
-			get => Obj.PageNumber;
-			set => Obj.PageNumber = value;
-		}
+        public int PageNumber
+        {
+            get => Obj.PageNumber;
+            set => Obj.PageNumber = value;
+        }
     }
 }

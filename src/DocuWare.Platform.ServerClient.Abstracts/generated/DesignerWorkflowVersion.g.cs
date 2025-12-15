@@ -6,29 +6,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DesignerWorkflowVersion Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public int InstanceCount
-		{
-			get => Obj.InstanceCount;
-			set => Obj.InstanceCount = value;
-		}
+        public int InstanceCount
+        {
+            get => Obj.InstanceCount;
+            set => Obj.InstanceCount = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string InstancesRelationLink => Obj.InstancesRelationLink;
+        public string InstancesRelationLink => Obj.InstancesRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDesignerWorkflowVersion GetDesignerWorkflowVersionFromSelfRelation() => new DesignerWorkflowVersion(Obj.GetDesignerWorkflowVersionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflowVersion>> GetDesignerWorkflowVersionFromSelfRelationAsync()
@@ -84,6 +85,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ViewerToolbar Obj { get; } = obj;
 
-		public List<IViewerToolbarControl> Controls
-		{
-			get => Obj.Controls.Select(x => new ViewerToolbarControl(x) as IViewerToolbarControl).ToList();
-			set => Obj.Controls = value.Select(x => ((ViewerToolbarControl)x).Obj).ToList();
-		}
+        public List<IViewerToolbarControl> Controls
+        {
+            get => Obj.Controls.Select(x => new ViewerToolbarControl(x) as IViewerToolbarControl).ToList();
+            set => Obj.Controls = value.Select(x => ((ViewerToolbarControl)x).Obj).ToList();
+        }
 
-		public ViewerToolbarType Type
-		{
-			get => new iewerToolbarType(Obj.Type);
-			set => Obj.Type = ((iewerToolbarType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ViewerToolbarType Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public ToolbarPosition Position
-		{
-			get => new oolbarPosition(Obj.Position);
-			set => Obj.Position = ((oolbarPosition)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ToolbarPosition Position
+        {
+            get => Obj.Position;
+            set => Obj.Position = value;
+        }
 
-		public ToolbarVisibility Visibility
-		{
-			get => new oolbarVisibility(Obj.Visibility);
-			set => Obj.Visibility = ((oolbarVisibility)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.ToolbarVisibility Visibility
+        {
+            get => Obj.Visibility;
+            set => Obj.Visibility = value;
+        }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IdentityServiceInfo Obj { get; } = obj;
 
-		public string IdentityServiceUrl
-		{
-			get => Obj.IdentityServiceUrl;
-			set => Obj.IdentityServiceUrl = value;
-		}
+        public string IdentityServiceUrl
+        {
+            get => Obj.IdentityServiceUrl;
+            set => Obj.IdentityServiceUrl = value;
+        }
 
-		public bool RefreshTokenSupported
-		{
-			get => Obj.RefreshTokenSupported;
-			set => Obj.RefreshTokenSupported = value;
-		}
+        public bool RefreshTokenSupported
+        {
+            get => Obj.RefreshTokenSupported;
+            set => Obj.RefreshTokenSupported = value;
+        }
     }
 }

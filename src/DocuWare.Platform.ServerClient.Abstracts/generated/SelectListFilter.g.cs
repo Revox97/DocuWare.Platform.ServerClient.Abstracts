@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SelectListFilter Obj { get; } = obj;
 
-		public string ColumnName
-		{
-			get => Obj.ColumnName;
-			set => Obj.ColumnName = value;
-		}
+        public string ColumnName
+        {
+            get => Obj.ColumnName;
+            set => Obj.ColumnName = value;
+        }
 
-		public int WorkflowFieldId
-		{
-			get => Obj.WorkflowFieldId;
-			set => Obj.WorkflowFieldId = value;
-		}
+        public int WorkflowFieldId
+        {
+            get => Obj.WorkflowFieldId;
+            set => Obj.WorkflowFieldId = value;
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IntellixTableFieldColumnMapping Obj { get; } = obj;
 
-		public string ColumnDBName
-		{
-			get => Obj.ColumnDBName;
-			set => Obj.ColumnDBName = value;
-		}
+        public string ColumnDBName
+        {
+            get => Obj.ColumnDBName;
+            set => Obj.ColumnDBName = value;
+        }
     }
 }

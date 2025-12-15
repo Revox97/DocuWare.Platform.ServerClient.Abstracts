@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SelectListInfos Obj { get; } = obj;
 
-		public List<ISelectListInfo> SelectLists
-		{
-			get => Obj.SelectLists.Select(x => new SelectListInfo(x) as ISelectListInfo).ToList();
-			set => Obj.SelectLists = value.Select(x => ((SelectListInfo)x).Obj).ToList();
-		}
+        public List<ISelectListInfo> SelectLists
+        {
+            get => Obj.SelectLists.Select(x => new SelectListInfo(x) as ISelectListInfo).ToList();
+            set => Obj.SelectLists = value.Select(x => ((SelectListInfo)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

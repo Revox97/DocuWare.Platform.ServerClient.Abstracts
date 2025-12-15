@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AdhocRenderingQuery Obj { get; } = obj;
 
-		public IDWSize Size
-		{
-			get => new DWSize(Obj.Size);
-			set => Obj.Size = ((DWSize)value).Obj;
-		}
+        public IDWSize Size
+        {
+            get => new DWSize(Obj.Size);
+            set => Obj.Size = ((DWSize)value).Obj;
+        }
 
-		public int Page
-		{
-			get => Obj.Page;
-			set => Obj.Page = value;
-		}
+        public int Page
+        {
+            get => Obj.Page;
+            set => Obj.Page = value;
+        }
 
-		public !!!UNKNOWN_PRIMITIVE Dpi
-		{
-			get => Obj.Dpi;
-			set => Obj.Dpi = value;
-		}
+        public float Dpi
+        {
+            get => Obj.Dpi;
+            set => Obj.Dpi = value;
+        }
 
-		public string ApiKey
-		{
-			get => Obj.ApiKey;
-			set => Obj.ApiKey = value;
-		}
+        public string ApiKey
+        {
+            get => Obj.ApiKey;
+            set => Obj.ApiKey = value;
+        }
     }
 }

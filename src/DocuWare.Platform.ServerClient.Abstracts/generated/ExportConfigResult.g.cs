@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExportConfigResult Obj { get; } = obj;
 
-		public string FileName
-		{
-			get => Obj.FileName;
-			set => Obj.FileName = value;
-		}
+        public string FileName
+        {
+            get => Obj.FileName;
+            set => Obj.FileName = value;
+        }
 
-		public string FileData
-		{
-			get => Obj.FileData;
-			set => Obj.FileData = value;
-		}
+        public string FileData
+        {
+            get => Obj.FileData;
+            set => Obj.FileData = value;
+        }
     }
 }

@@ -6,32 +6,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AuthenticationServiceCommunicationException Obj { get; } = obj;
 
-		public MethodBase TargetSite => Obj.TargetSite;
+        public MethodBase TargetSite => Obj.TargetSite;
 
-		public string Message => Obj.Message;
+        public string Message => Obj.Message;
 
-		public IDictionary Data => Obj.Data;
+        public IDictionary Data => Obj.Data;
 
-		public Exception InnerException => Obj.InnerException;
+        public Exception InnerException => Obj.InnerException;
 
-		public string HelpLink
-		{
-			get => Obj.HelpLink;
-			set => Obj.HelpLink = value;
-		}
+        public string HelpLink
+        {
+            get => Obj.HelpLink;
+            set => Obj.HelpLink = value;
+        }
 
-		public string Source
-		{
-			get => Obj.Source;
-			set => Obj.Source = value;
-		}
+        public string Source
+        {
+            get => Obj.Source;
+            set => Obj.Source = value;
+        }
 
-		public int HResult
-		{
-			get => Obj.HResult;
-			set => Obj.HResult = value;
-		}
+        public int HResult
+        {
+            get => Obj.HResult;
+            set => Obj.HResult = value;
+        }
 
-		public string StackTrace => Obj.StackTrace;
+        public string StackTrace => Obj.StackTrace;
     }
 }

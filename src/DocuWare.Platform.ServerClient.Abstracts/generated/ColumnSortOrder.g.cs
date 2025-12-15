@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ColumnSortOrder Obj { get; } = obj;
 
-		public string ColumnId
-		{
-			get => Obj.ColumnId;
-			set => Obj.ColumnId = value;
-		}
+        public string ColumnId
+        {
+            get => Obj.ColumnId;
+            set => Obj.ColumnId = value;
+        }
 
-		public SortDirection Direction
-		{
-			get => new ortDirection(Obj.Direction);
-			set => Obj.Direction = ((ortDirection)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.SortDirection Direction
+        {
+            get => Obj.Direction;
+            set => Obj.Direction = value;
+        }
     }
 }

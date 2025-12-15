@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentType Obj { get; } = obj;
 
-		public List<string> Text
-		{
-			get => Obj.Text;
-			set => Obj.Text = value;
-		}
+        public List<string> Text
+        {
+            get => Obj.Text;
+            set => Obj.Text = value;
+        }
     }
 }

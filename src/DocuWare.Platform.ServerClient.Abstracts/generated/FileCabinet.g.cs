@@ -6,165 +6,166 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FileCabinet Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IFileCabinetField> Fields
-		{
-			get => Obj.Fields.Select(x => new FileCabinetField(x) as IFileCabinetField).ToList();
-			set => Obj.Fields = value.Select(x => ((FileCabinetField)x).Obj).ToList();
-		}
+        public List<IFileCabinetField> Fields
+        {
+            get => Obj.Fields.Select(x => new FileCabinetField(x) as IFileCabinetField).ToList();
+            set => Obj.Fields = value.Select(x => ((FileCabinetField)x).Obj).ToList();
+        }
 
-		public List<Right> Rights
-		{
-			get => Obj.Rights.Select(x => new ight(x) as Right).ToList();
-			set => Obj.Rights = value.Select(x => ((ight)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.Right> Rights
+        {
+            get => Obj.Rights;
+            set => Obj.Rights = value;
+        }
 
-		public IExtendedUserRights ExtendedUserRights
-		{
-			get => new ExtendedUserRights(Obj.ExtendedUserRights);
-			set => Obj.ExtendedUserRights = ((ExtendedUserRights)value).Obj;
-		}
+        public IExtendedUserRights ExtendedUserRights
+        {
+            get => new ExtendedUserRights(Obj.ExtendedUserRights);
+            set => Obj.ExtendedUserRights = ((ExtendedUserRights)value).Obj;
+        }
 
-		public string Color
-		{
-			get => Obj.Color;
-			set => Obj.Color = value;
-		}
+        public string Color
+        {
+            get => Obj.Color;
+            set => Obj.Color = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public bool IsBasket
-		{
-			get => Obj.IsBasket;
-			set => Obj.IsBasket = value;
-		}
+        public bool IsBasket
+        {
+            get => Obj.IsBasket;
+            set => Obj.IsBasket = value;
+        }
 
-		public bool Usable
-		{
-			get => Obj.Usable;
-			set => Obj.Usable = value;
-		}
+        public bool Usable
+        {
+            get => Obj.Usable;
+            set => Obj.Usable = value;
+        }
 
-		public bool Default
-		{
-			get => Obj.Default;
-			set => Obj.Default = value;
-		}
+        public bool Default
+        {
+            get => Obj.Default;
+            set => Obj.Default = value;
+        }
 
-		public string AssignedCabinetId
-		{
-			get => Obj.AssignedCabinetId;
-			set => Obj.AssignedCabinetId = value;
-		}
+        public string AssignedCabinetId
+        {
+            get => Obj.AssignedCabinetId;
+            set => Obj.AssignedCabinetId = value;
+        }
 
-		public string IntellixDialogId
-		{
-			get => Obj.IntellixDialogId;
-			set => Obj.IntellixDialogId = value;
-		}
+        public string IntellixDialogId
+        {
+            get => Obj.IntellixDialogId;
+            set => Obj.IntellixDialogId = value;
+        }
 
-		public VersionManagementMode VersionManagement
-		{
-			get => new ersionManagementMode(Obj.VersionManagement);
-			set => Obj.VersionManagement = ((ersionManagementMode)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.VersionManagementMode VersionManagement
+        {
+            get => Obj.VersionManagement;
+            set => Obj.VersionManagement = value;
+        }
 
-		public string VersionHistoryResultListId
-		{
-			get => Obj.VersionHistoryResultListId;
-			set => Obj.VersionHistoryResultListId = value;
-		}
+        public string VersionHistoryResultListId
+        {
+            get => Obj.VersionHistoryResultListId;
+            set => Obj.VersionHistoryResultListId = value;
+        }
 
-		public bool WindowsExplorerClientAccess
-		{
-			get => Obj.WindowsExplorerClientAccess;
-			set => Obj.WindowsExplorerClientAccess = value;
-		}
+        public bool WindowsExplorerClientAccess
+        {
+            get => Obj.WindowsExplorerClientAccess;
+            set => Obj.WindowsExplorerClientAccess = value;
+        }
 
-		public bool AddIndexEntriesInUpperCase
-		{
-			get => Obj.AddIndexEntriesInUpperCase;
-			set => Obj.AddIndexEntriesInUpperCase = value;
-		}
+        public bool AddIndexEntriesInUpperCase
+        {
+            get => Obj.AddIndexEntriesInUpperCase;
+            set => Obj.AddIndexEntriesInUpperCase = value;
+        }
 
-		public bool DocumentAuditingEnabled
-		{
-			get => Obj.DocumentAuditingEnabled;
-			set => Obj.DocumentAuditingEnabled = value;
-		}
+        public bool DocumentAuditingEnabled
+        {
+            get => Obj.DocumentAuditingEnabled;
+            set => Obj.DocumentAuditingEnabled = value;
+        }
 
-		public bool HasFullTextSupport
-		{
-			get => Obj.HasFullTextSupport;
-			set => Obj.HasFullTextSupport = value;
-		}
+        public bool HasFullTextSupport
+        {
+            get => Obj.HasFullTextSupport;
+            set => Obj.HasFullTextSupport = value;
+        }
 
-		public string DocumentsRelationLink => Obj.DocumentsRelationLink;
+        public string DocumentsRelationLink => Obj.DocumentsRelationLink;
 
-		public string DocumentsTableRelationLink => Obj.DocumentsTableRelationLink;
+        public string DocumentsTableRelationLink => Obj.DocumentsTableRelationLink;
 
-		public string ContentMergeOperationRelationLink => Obj.ContentMergeOperationRelationLink;
+        public string ContentMergeOperationRelationLink => Obj.ContentMergeOperationRelationLink;
 
-		public string AdvancedDocumentUploadRelationLink => Obj.AdvancedDocumentUploadRelationLink;
+        public string AdvancedDocumentUploadRelationLink => Obj.AdvancedDocumentUploadRelationLink;
 
-		public string ImportDocumentsRelationLink => Obj.ImportDocumentsRelationLink;
+        public string ImportDocumentsRelationLink => Obj.ImportDocumentsRelationLink;
 
-		public string UnprocessedDocumentUploadRelationLink => Obj.UnprocessedDocumentUploadRelationLink;
+        public string UnprocessedDocumentUploadRelationLink => Obj.UnprocessedDocumentUploadRelationLink;
 
-		public string QueryRelationLink => Obj.QueryRelationLink;
+        public string QueryRelationLink => Obj.QueryRelationLink;
 
-		public string DialogsRelationLink => Obj.DialogsRelationLink;
+        public string DialogsRelationLink => Obj.DialogsRelationLink;
 
-		public string SearchesRelationLink => Obj.SearchesRelationLink;
+        public string SearchesRelationLink => Obj.SearchesRelationLink;
 
-		public string CustomSearchRelationLink => Obj.CustomSearchRelationLink;
+        public string CustomSearchRelationLink => Obj.CustomSearchRelationLink;
 
-		public string ResultTreesRelationLink => Obj.ResultTreesRelationLink;
+        public string ResultTreesRelationLink => Obj.ResultTreesRelationLink;
 
-		public string StoresRelationLink => Obj.StoresRelationLink;
+        public string StoresRelationLink => Obj.StoresRelationLink;
 
-		public string TaskListsRelationLink => Obj.TaskListsRelationLink;
+        public string TaskListsRelationLink => Obj.TaskListsRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string StampsRelationLink => Obj.StampsRelationLink;
+        public string StampsRelationLink => Obj.StampsRelationLink;
 
-		public string NotificationsRelationLink => Obj.NotificationsRelationLink;
+        public string NotificationsRelationLink => Obj.NotificationsRelationLink;
 
-		public string TransferRelationLink => Obj.TransferRelationLink;
+        public string TransferRelationLink => Obj.TransferRelationLink;
 
-		public string VersionHistoryResultListRelationLink => Obj.VersionHistoryResultListRelationLink;
+        public string VersionHistoryResultListRelationLink => Obj.VersionHistoryResultListRelationLink;
 
-		public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
+        public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
 
-		public string FieldValueStatisticsRelationLink => Obj.FieldValueStatisticsRelationLink;
+        public string FieldValueStatisticsRelationLink => Obj.FieldValueStatisticsRelationLink;
 
-		public string ReplicationDataRelationLink => Obj.ReplicationDataRelationLink;
+        public string ReplicationDataRelationLink => Obj.ReplicationDataRelationLink;
 
-		public string ReplicationDeleteDataRelationLink => Obj.ReplicationDeleteDataRelationLink;
+        public string ReplicationDeleteDataRelationLink => Obj.ReplicationDeleteDataRelationLink;
 
-		public string SetupReplicationRelationLink => Obj.SetupReplicationRelationLink;
+        public string SetupReplicationRelationLink => Obj.SetupReplicationRelationLink;
 
-		public string ReplicationInfoRelationLink => Obj.ReplicationInfoRelationLink;
+        public string ReplicationInfoRelationLink => Obj.ReplicationInfoRelationLink;
 
-		public string NextSequenceElementRelationLink => Obj.NextSequenceElementRelationLink;
+        public string NextSequenceElementRelationLink => Obj.NextSequenceElementRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentsQueryResult GetDocumentsQueryResultFromDocumentsRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromDocumentsRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromDocumentsRelationAsync()
@@ -950,6 +951,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToReplicationDataRelationForStream(Stream dataToSend) => Obj.PostToReplicationDataRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDataRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -977,6 +979,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream PostToReplicationDeleteDataRelationForStream(Stream dataToSend) => Obj.PostToReplicationDeleteDataRelationForStream(dataToSend);
+
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDeleteDataRelationForStreamAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDeleteDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
@@ -1004,6 +1007,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToSetupReplicationRelationForString(Stream dataToSend) => Obj.PostToSetupReplicationRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToSetupReplicationRelationForStringAsync(Stream dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToSetupReplicationRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -1031,6 +1035,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async Stream GetStreamFromReplicationInfoRelation() => Obj.GetStreamFromReplicationInfoRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromReplicationInfoRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromReplicationInfoRelationAsync().ConfigureAwait(false);
@@ -1084,6 +1089,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ISequenceResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

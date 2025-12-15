@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Calendar Obj { get; } = obj;
 
-		public string TimeZoneId
-		{
-			get => Obj.TimeZoneId;
-			set => Obj.TimeZoneId = value;
-		}
+        public string TimeZoneId
+        {
+            get => Obj.TimeZoneId;
+            set => Obj.TimeZoneId = value;
+        }
     }
 }

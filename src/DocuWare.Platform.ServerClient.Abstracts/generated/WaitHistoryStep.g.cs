@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WaitHistoryStep Obj { get; } = obj;
 
-		public List<IConditionHistoryStep> Conditions
-		{
-			get => Obj.Conditions.Select(x => new ConditionHistoryStep(x) as IConditionHistoryStep).ToList();
-			set => Obj.Conditions = value.Select(x => ((ConditionHistoryStep)x).Obj).ToList();
-		}
+        public List<IConditionHistoryStep> Conditions
+        {
+            get => Obj.Conditions.Select(x => new ConditionHistoryStep(x) as IConditionHistoryStep).ToList();
+            set => Obj.Conditions = value.Select(x => ((ConditionHistoryStep)x).Obj).ToList();
+        }
 
-		public string Status
-		{
-			get => Obj.Status;
-			set => Obj.Status = value;
-		}
+        public string Status
+        {
+            get => Obj.Status;
+            set => Obj.Status = value;
+        }
     }
 }

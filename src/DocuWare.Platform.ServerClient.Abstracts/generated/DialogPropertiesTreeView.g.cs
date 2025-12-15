@@ -6,27 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogPropertiesTreeView Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string StoreDialogId
-		{
-			get => Obj.StoreDialogId;
-			set => Obj.StoreDialogId = value;
-		}
+        public string StoreDialogId
+        {
+            get => Obj.StoreDialogId;
+            set => Obj.StoreDialogId = value;
+        }
 
-		public string Icon
-		{
-			get => Obj.Icon;
-			set => Obj.Icon = value;
-		}
+        public string Icon
+        {
+            get => Obj.Icon;
+            set => Obj.Icon = value;
+        }
 
-		public string StoreDialogRelationLink => Obj.StoreDialogRelationLink;
+        public string StoreDialogRelationLink => Obj.StoreDialogRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDialog GetDialogFromStoreDialogRelation() => new Dialog(Obj.GetDialogFromStoreDialogRelation());
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromStoreDialogRelationAsync()
@@ -54,6 +55,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
         }
-
     }
 }

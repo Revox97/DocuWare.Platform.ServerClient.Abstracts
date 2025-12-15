@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FileDownloadBase Obj { get; } = obj;
 
-		public List<int> Layers
-		{
-			get => Obj.Layers;
-			set => Obj.Layers = value;
-		}
+        public List<int> Layers
+        {
+            get => Obj.Layers;
+            set => Obj.Layers = value;
+        }
 
-		public bool KeepAnnotations
-		{
-			get => Obj.KeepAnnotations;
-			set => Obj.KeepAnnotations = value;
-		}
+        public bool KeepAnnotations
+        {
+            get => Obj.KeepAnnotations;
+            set => Obj.KeepAnnotations = value;
+        }
     }
 }

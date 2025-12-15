@@ -6,73 +6,74 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Workflow Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public IColumnsDefinition ColumnDefinition
-		{
-			get => new ColumnsDefinition(Obj.ColumnDefinition);
-			set => Obj.ColumnDefinition = ((ColumnsDefinition)value).Obj;
-		}
+        public IColumnsDefinition ColumnDefinition
+        {
+            get => new ColumnsDefinition(Obj.ColumnDefinition);
+            set => Obj.ColumnDefinition = ((ColumnsDefinition)value).Obj;
+        }
 
-		public IWorkflowBehaviorOptions WorkflowBehaviorOptions
-		{
-			get => new WorkflowBehaviorOptions(Obj.WorkflowBehaviorOptions);
-			set => Obj.WorkflowBehaviorOptions = ((WorkflowBehaviorOptions)value).Obj;
-		}
+        public IWorkflowBehaviorOptions WorkflowBehaviorOptions
+        {
+            get => new WorkflowBehaviorOptions(Obj.WorkflowBehaviorOptions);
+            set => Obj.WorkflowBehaviorOptions = ((WorkflowBehaviorOptions)value).Obj;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public int TaskCount
-		{
-			get => Obj.TaskCount;
-			set => Obj.TaskCount = value;
-		}
+        public int TaskCount
+        {
+            get => Obj.TaskCount;
+            set => Obj.TaskCount = value;
+        }
 
-		public string FileCabinetId
-		{
-			get => Obj.FileCabinetId;
-			set => Obj.FileCabinetId = value;
-		}
+        public string FileCabinetId
+        {
+            get => Obj.FileCabinetId;
+            set => Obj.FileCabinetId = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public string ResultListId
-		{
-			get => Obj.ResultListId;
-			set => Obj.ResultListId = value;
-		}
+        public string ResultListId
+        {
+            get => Obj.ResultListId;
+            set => Obj.ResultListId = value;
+        }
 
-		public bool HasDocumentFields
-		{
-			get => Obj.HasDocumentFields;
-			set => Obj.HasDocumentFields = value;
-		}
+        public bool HasDocumentFields
+        {
+            get => Obj.HasDocumentFields;
+            set => Obj.HasDocumentFields = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string TasksRelationLink => Obj.TasksRelationLink;
+        public string TasksRelationLink => Obj.TasksRelationLink;
 
-		public string CountRelationLink => Obj.CountRelationLink;
+        public string CountRelationLink => Obj.CountRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IWorkflow GetWorkflowFromSelfRelation() => new Workflow(Obj.GetWorkflowFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflow>> GetWorkflowFromSelfRelationAsync()
@@ -184,6 +185,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
         }
-
     }
 }

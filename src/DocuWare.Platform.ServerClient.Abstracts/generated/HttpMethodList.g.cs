@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.HttpMethodList Obj { get; } = obj;
 
-		public List<HttpMethod> Method
-		{
-			get => Obj.Method.Select(x => new ttpMethod(x) as HttpMethod).ToList();
-			set => Obj.Method = value.Select(x => ((ttpMethod)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.HttpMethod> Method
+        {
+            get => Obj.Method;
+            set => Obj.Method = value;
+        }
 
-		public bool IsComplete
-		{
-			get => Obj.IsComplete;
-			set => Obj.IsComplete = value;
-		}
+        public bool IsComplete
+        {
+            get => Obj.IsComplete;
+            set => Obj.IsComplete = value;
+        }
     }
 }

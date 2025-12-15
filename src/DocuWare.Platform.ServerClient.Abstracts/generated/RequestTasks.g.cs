@@ -6,39 +6,40 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestTasks Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IRequestTask> Task
-		{
-			get => Obj.Task.Select(x => new RequestTask(x) as IRequestTask).ToList();
-			set => Obj.Task = value.Select(x => ((RequestTask)x).Obj).ToList();
-		}
+        public List<IRequestTask> Task
+        {
+            get => Obj.Task.Select(x => new RequestTask(x) as IRequestTask).ToList();
+            set => Obj.Task = value.Select(x => ((RequestTask)x).Obj).ToList();
+        }
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IRequestTasks GetRequestTasksFromNextRelation() => new RequestTasks(Obj.GetRequestTasksFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromNextRelationAsync()
@@ -150,6 +151,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
         }
-
     }
 }

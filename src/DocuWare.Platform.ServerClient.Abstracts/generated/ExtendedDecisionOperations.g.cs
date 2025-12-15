@@ -6,18 +6,20 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ExtendedDecisionOperations Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string ConfirmRelationLink => Obj.ConfirmRelationLink;
+        public string ConfirmRelationLink => Obj.ConfirmRelationLink;
 
-		public string StampBestPositionRelationLink => Obj.StampBestPositionRelationLink;
+        public string StampBestPositionRelationLink => Obj.StampBestPositionRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async string PostToConfirmRelationForString(IConfirmedData dataToSend) => Obj.PostToConfirmRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(IConfirmedData dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToConfirmRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -71,6 +73,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDWPoint>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -14,7 +14,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int RowNumber { get; set; }
 		bool Mapped { get; set; }
 		IPointAndShootInfo Source { get; set; }
-		Object Item { get; set; }
-		ItemChoiceType ItemElementName { get; set; }
+		object Item { get; set; }
+		DocuWare.Platform.ServerClient.ItemChoiceType ItemElementName { get; set; }
     }
 }

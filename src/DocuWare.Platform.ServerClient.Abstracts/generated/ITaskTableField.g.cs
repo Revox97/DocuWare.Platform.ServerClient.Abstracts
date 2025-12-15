@@ -9,7 +9,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string FieldName { get; set; }
 		bool Mandatory { get; set; }
 		bool IsReadOnly { get; set; }
-		FormTypeEnum FormFieldType { get; set; }
+		DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType { get; set; }
 		string Label { get; set; }
 		int Id { get; set; }
     }

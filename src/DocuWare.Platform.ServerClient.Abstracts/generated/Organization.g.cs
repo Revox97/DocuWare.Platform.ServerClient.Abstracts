@@ -6,95 +6,96 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Organization Obj { get; } = obj;
 
-		public IAdditionalOrganizationInfo AdditionalInfo
-		{
-			get => new AdditionalOrganizationInfo(Obj.AdditionalInfo);
-			set => Obj.AdditionalInfo = ((AdditionalOrganizationInfo)value).Obj;
-		}
+        public IAdditionalOrganizationInfo AdditionalInfo
+        {
+            get => new AdditionalOrganizationInfo(Obj.AdditionalInfo);
+            set => Obj.AdditionalInfo = ((AdditionalOrganizationInfo)value).Obj;
+        }
 
-		public ICalendar Calendar
-		{
-			get => new Calendar(Obj.Calendar);
-			set => Obj.Calendar = ((Calendar)value).Obj;
-		}
+        public ICalendar Calendar
+        {
+            get => new Calendar(Obj.Calendar);
+            set => Obj.Calendar = ((Calendar)value).Obj;
+        }
 
-		public IOrganizationCulture Culture
-		{
-			get => new OrganizationCulture(Obj.Culture);
-			set => Obj.Culture = ((OrganizationCulture)value).Obj;
-		}
+        public IOrganizationCulture Culture
+        {
+            get => new OrganizationCulture(Obj.Culture);
+            set => Obj.Culture = ((OrganizationCulture)value).Obj;
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<ConfigurationRight> ConfigurationRights
-		{
-			get => Obj.ConfigurationRights.Select(x => new onfigurationRight(x) as ConfigurationRight).ToList();
-			set => Obj.ConfigurationRights = value.Select(x => ((onfigurationRight)x).Obj).ToList();
-		}
+        public List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRights
+        {
+            get => Obj.ConfigurationRights;
+            set => Obj.ConfigurationRights = value;
+        }
 
-		public IExtendedConfigurationRights ExtendedConfigurationRights
-		{
-			get => new ExtendedConfigurationRights(Obj.ExtendedConfigurationRights);
-			set => Obj.ExtendedConfigurationRights = ((ExtendedConfigurationRights)value).Obj;
-		}
+        public IExtendedConfigurationRights ExtendedConfigurationRights
+        {
+            get => new ExtendedConfigurationRights(Obj.ExtendedConfigurationRights);
+            set => Obj.ExtendedConfigurationRights = ((ExtendedConfigurationRights)value).Obj;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Guid
-		{
-			get => Obj.Guid;
-			set => Obj.Guid = value;
-		}
+        public string Guid
+        {
+            get => Obj.Guid;
+            set => Obj.Guid = value;
+        }
 
-		public string FilecabinetsRelationLink => Obj.FilecabinetsRelationLink;
+        public string FilecabinetsRelationLink => Obj.FilecabinetsRelationLink;
 
-		public string UsersRelationLink => Obj.UsersRelationLink;
+        public string UsersRelationLink => Obj.UsersRelationLink;
 
-		public string RolesRelationLink => Obj.RolesRelationLink;
+        public string RolesRelationLink => Obj.RolesRelationLink;
 
-		public string GroupsRelationLink => Obj.GroupsRelationLink;
+        public string GroupsRelationLink => Obj.GroupsRelationLink;
 
-		public string CreateGroupRelationLink => Obj.CreateGroupRelationLink;
+        public string CreateGroupRelationLink => Obj.CreateGroupRelationLink;
 
-		public string SelectListInfosRelationLink => Obj.SelectListInfosRelationLink;
+        public string SelectListInfosRelationLink => Obj.SelectListInfosRelationLink;
 
-		public string MultiColSelectListInfosRelationLink => Obj.MultiColSelectListInfosRelationLink;
+        public string MultiColSelectListInfosRelationLink => Obj.MultiColSelectListInfosRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string LoginTokenRelationLink => Obj.LoginTokenRelationLink;
+        public string LoginTokenRelationLink => Obj.LoginTokenRelationLink;
 
-		public string DialogsRelationLink => Obj.DialogsRelationLink;
+        public string DialogsRelationLink => Obj.DialogsRelationLink;
 
-		public string UserInfoRelationLink => Obj.UserInfoRelationLink;
+        public string UserInfoRelationLink => Obj.UserInfoRelationLink;
 
-		public string WorkflowsRelationLink => Obj.WorkflowsRelationLink;
+        public string WorkflowsRelationLink => Obj.WorkflowsRelationLink;
 
-		public string ControllerWorkflowsRelationLink => Obj.ControllerWorkflowsRelationLink;
+        public string ControllerWorkflowsRelationLink => Obj.ControllerWorkflowsRelationLink;
 
-		public string DesignerWorkflowsRelationLink => Obj.DesignerWorkflowsRelationLink;
+        public string DesignerWorkflowsRelationLink => Obj.DesignerWorkflowsRelationLink;
 
-		public string WorkflowRequestsRelationLink => Obj.WorkflowRequestsRelationLink;
+        public string WorkflowRequestsRelationLink => Obj.WorkflowRequestsRelationLink;
 
-		public string SubstitutionListsRelationLink => Obj.SubstitutionListsRelationLink;
+        public string SubstitutionListsRelationLink => Obj.SubstitutionListsRelationLink;
 
-		public string TrashBinRelationLink => Obj.TrashBinRelationLink;
+        public string TrashBinRelationLink => Obj.TrashBinRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IFileCabinets GetFileCabinetsFromFilecabinetsRelation() => new FileCabinets(Obj.GetFileCabinetsFromFilecabinetsRelation());
 
         public async Task<DeserializedHttpResponse<IFileCabinets>> GetFileCabinetsFromFilecabinetsRelationAsync()
@@ -488,6 +489,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToLoginTokenRelationForString(ITokenDescription dataToSend) => Obj.PostToLoginTokenRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToLoginTokenRelationForStringAsync(ITokenDescription dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToLoginTokenRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -767,6 +769,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         }
 
 		public async string PostToWorkflowRequestsRelationForString(IRequestSettings dataToSend) => Obj.PostToWorkflowRequestsRelationForString(dataToSend);
+
         public async Task<DeserializedHttpResponse<string>> PostToWorkflowRequestsRelationForStringAsync(IRequestSettings dataToSend)
         {
             DocuWare.Platform.ServerClient.string result = await Obj.PostToWorkflowRequestsRelationForStringAsync(dataToSend).ConfigureAwait(false);
@@ -848,6 +851,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<ITrashBin>(temp).ConfigureAwait(false);
         }
-
     }
 }

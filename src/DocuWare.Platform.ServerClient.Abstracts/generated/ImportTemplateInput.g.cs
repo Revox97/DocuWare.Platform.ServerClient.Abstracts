@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ImportTemplateInput Obj { get; } = obj;
 
-		public string FileName
-		{
-			get => Obj.FileName;
-			set => Obj.FileName = value;
-		}
+        public string FileName
+        {
+            get => Obj.FileName;
+            set => Obj.FileName = value;
+        }
 
-		public string FileData
-		{
-			get => Obj.FileData;
-			set => Obj.FileData = value;
-		}
+        public string FileData
+        {
+            get => Obj.FileData;
+            set => Obj.FileData = value;
+        }
 
-		public string OrganizationID
-		{
-			get => Obj.OrganizationID;
-			set => Obj.OrganizationID = value;
-		}
+        public string OrganizationID
+        {
+            get => Obj.OrganizationID;
+            set => Obj.OrganizationID = value;
+        }
     }
 }

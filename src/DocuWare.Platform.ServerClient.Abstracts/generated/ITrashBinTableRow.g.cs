@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITrashBinTableRow
     {
-		List<Object> Items { get; set; }
+		List<object> Items { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		string DocumentRelationLink { get; }

@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<ISortedField> SortOrder { get; set; }
 		List<string> ResultFields { get; set; }
 		List<IDialogExpressionCondition> Condition { get; set; }
-		DialogExpressionOperation Operation { get; set; }
+		DocuWare.Platform.ServerClient.DialogExpressionOperation Operation { get; set; }
 		int Start { get; set; }
 		int Count { get; set; }
 		bool CalculateTotalCount { get; set; }

@@ -6,67 +6,68 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentsQuery Obj { get; } = obj;
 
-		public bool ForceRefresh
-		{
-			get => Obj.ForceRefresh;
-			set => Obj.ForceRefresh = value;
-		}
+        public bool ForceRefresh
+        {
+            get => Obj.ForceRefresh;
+            set => Obj.ForceRefresh = value;
+        }
 
-		public string Expression
-		{
-			get => Obj.Expression;
-			set => Obj.Expression = value;
-		}
+        public string Expression
+        {
+            get => Obj.Expression;
+            set => Obj.Expression = value;
+        }
 
-		public List<string> Fields
-		{
-			get => Obj.Fields;
-			set => Obj.Fields = value;
-		}
+        public List<string> Fields
+        {
+            get => Obj.Fields;
+            set => Obj.Fields = value;
+        }
 
-		public List<ISortedField> SortOrder
-		{
-			get => Obj.SortOrder.Select(x => new SortedField(x) as ISortedField).ToList();
-			set => Obj.SortOrder = value.Select(x => ((SortedField)x).Obj).ToList();
-		}
+        public List<ISortedField> SortOrder
+        {
+            get => Obj.SortOrder.Select(x => new SortedField(x) as ISortedField).ToList();
+            set => Obj.SortOrder = value.Select(x => ((SortedField)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public bool ExcludeSystemFields
-		{
-			get => Obj.ExcludeSystemFields;
-			set => Obj.ExcludeSystemFields = value;
-		}
+        public bool ExcludeSystemFields
+        {
+            get => Obj.ExcludeSystemFields;
+            set => Obj.ExcludeSystemFields = value;
+        }
 
-		public bool IncludeSuggestions
-		{
-			get => Obj.IncludeSuggestions;
-			set => Obj.IncludeSuggestions = value;
-		}
+        public bool IncludeSuggestions
+        {
+            get => Obj.IncludeSuggestions;
+            set => Obj.IncludeSuggestions = value;
+        }
 
-		public bool CalculateTotalCount
-		{
-			get => Obj.CalculateTotalCount;
-			set => Obj.CalculateTotalCount = value;
-		}
+        public bool CalculateTotalCount
+        {
+            get => Obj.CalculateTotalCount;
+            set => Obj.CalculateTotalCount = value;
+        }
 
-		public string ResultRelationLink => Obj.ResultRelationLink;
+        public string ResultRelationLink => Obj.ResultRelationLink;
 
-		public string DialogExpressionRelationLink => Obj.DialogExpressionRelationLink;
+        public string DialogExpressionRelationLink => Obj.DialogExpressionRelationLink;
 
-		public string TableResultRelationLink => Obj.TableResultRelationLink;
+        public string TableResultRelationLink => Obj.TableResultRelationLink;
 
-		public string TableDialogExpressionRelationLink => Obj.TableDialogExpressionRelationLink;
+        public string TableDialogExpressionRelationLink => Obj.TableDialogExpressionRelationLink;
 
-		public string IdsResultRelationLink => Obj.IdsResultRelationLink;
+        public string IdsResultRelationLink => Obj.IdsResultRelationLink;
 
-		public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
+        public string BatchUpdateRelationLink => Obj.BatchUpdateRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IDocumentsQueryResult GetDocumentsQueryResultFromResultRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromResultRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromResultRelationAsync()
@@ -234,6 +235,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IBatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string DocId { get; set; }
 		IWFFormFieldValue Value { get; set; }
 		IHistoryFieldOptions Options { get; set; }
-		AssignmentType AssignmentType { get; set; }
+		DocuWare.Platform.ServerClient.AssignmentType AssignmentType { get; set; }
 		string Label { get; set; }
-		HistoryFormTypeEnum Type { get; set; }
+		DocuWare.Platform.ServerClient.HistoryFormTypeEnum Type { get; set; }
     }
 }

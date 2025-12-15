@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FormTemplate Obj { get; } = obj;
 
-		public string TemplateGUID
-		{
-			get => Obj.TemplateGUID;
-			set => Obj.TemplateGUID = value;
-		}
+        public string TemplateGUID
+        {
+            get => Obj.TemplateGUID;
+            set => Obj.TemplateGUID = value;
+        }
 
-		public string FileName
-		{
-			get => Obj.FileName;
-			set => Obj.FileName = value;
-		}
+        public string FileName
+        {
+            get => Obj.FileName;
+            set => Obj.FileName = value;
+        }
 
-		public List<IZone> Zones
-		{
-			get => Obj.Zones.Select(x => new Zone(x) as IZone).ToList();
-			set => Obj.Zones = value.Select(x => ((Zone)x).Obj).ToList();
-		}
+        public List<IZone> Zones
+        {
+            get => Obj.Zones.Select(x => new Zone(x) as IZone).ToList();
+            set => Obj.Zones = value.Select(x => ((Zone)x).Obj).ToList();
+        }
 
-		public List<string> ExcludedFileAttachments
-		{
-			get => Obj.ExcludedFileAttachments;
-			set => Obj.ExcludedFileAttachments = value;
-		}
+        public List<string> ExcludedFileAttachments
+        {
+            get => Obj.ExcludedFileAttachments;
+            set => Obj.ExcludedFileAttachments = value;
+        }
     }
 }

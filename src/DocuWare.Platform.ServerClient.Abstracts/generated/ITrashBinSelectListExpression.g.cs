@@ -9,6 +9,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string FieldName { get; set; }
 		int Count { get; set; }
 		int Start { get; set; }
-		SortDirection SortDirection { get; set; }
+		DocuWare.Platform.ServerClient.SortDirection SortDirection { get; set; }
     }
 }

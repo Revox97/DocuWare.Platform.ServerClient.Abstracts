@@ -6,39 +6,40 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Role Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Id
-		{
-			get => Obj.Id;
-			set => Obj.Id = value;
-		}
+        public string Id
+        {
+            get => Obj.Id;
+            set => Obj.Id = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public bool Active
-		{
-			get => Obj.Active;
-			set => Obj.Active = value;
-		}
+        public bool Active
+        {
+            get => Obj.Active;
+            set => Obj.Active = value;
+        }
 
-		public RoleTypes Type
-		{
-			get => new oleTypes(Obj.Type);
-			set => Obj.Type = ((oleTypes)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.RoleTypes Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IRole GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync()
@@ -66,6 +67,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
         }
-
     }
 }

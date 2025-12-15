@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TextStamp Obj { get; } = obj;
 
-		public IFont Font
-		{
-			get => new Font(Obj.Font);
-			set => Obj.Font = ((Font)value).Obj;
-		}
+        public IFont Font
+        {
+            get => new Font(Obj.Font);
+            set => Obj.Font = ((Font)value).Obj;
+        }
 
-		public string Content
-		{
-			get => Obj.Content;
-			set => Obj.Content = value;
-		}
+        public string Content
+        {
+            get => Obj.Content;
+            set => Obj.Content = value;
+        }
     }
 }

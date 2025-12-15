@@ -6,28 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentAreaPreferences Obj { get; } = obj;
 
-		public List<IWorkInstance> Instances
-		{
-			get => Obj.Instances.Select(x => new WorkInstance(x) as IWorkInstance).ToList();
-			set => Obj.Instances = value.Select(x => ((WorkInstance)x).Obj).ToList();
-		}
+        public List<IWorkInstance> Instances
+        {
+            get => Obj.Instances.Select(x => new WorkInstance(x) as IWorkInstance).ToList();
+            set => Obj.Instances = value.Select(x => ((WorkInstance)x).Obj).ToList();
+        }
 
-		public WorkAreaType AreaType
-		{
-			get => new orkAreaType(Obj.AreaType);
-			set => Obj.AreaType = ((orkAreaType)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.WorkAreaType AreaType
+        {
+            get => Obj.AreaType;
+            set => Obj.AreaType = value;
+        }
 
-		public int SelectedInstanceIndex
-		{
-			get => Obj.SelectedInstanceIndex;
-			set => Obj.SelectedInstanceIndex = value;
-		}
+        public int SelectedInstanceIndex
+        {
+            get => Obj.SelectedInstanceIndex;
+            set => Obj.SelectedInstanceIndex = value;
+        }
 
-		public bool SelectedInstanceIndexSpecified
-		{
-			get => Obj.SelectedInstanceIndexSpecified;
-			set => Obj.SelectedInstanceIndexSpecified = value;
-		}
+        public bool SelectedInstanceIndexSpecified
+        {
+            get => Obj.SelectedInstanceIndexSpecified;
+            set => Obj.SelectedInstanceIndexSpecified = value;
+        }
     }
 }

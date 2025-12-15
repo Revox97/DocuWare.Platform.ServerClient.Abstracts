@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SystemVariableExpression Obj { get; } = obj;
 
-		public string VariableName
-		{
-			get => Obj.VariableName;
-			set => Obj.VariableName = value;
-		}
+        public string VariableName
+        {
+            get => Obj.VariableName;
+            set => Obj.VariableName = value;
+        }
     }
 }

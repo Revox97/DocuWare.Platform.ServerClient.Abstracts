@@ -6,28 +6,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.XmlSchema Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public string TargetNamespace
-		{
-			get => Obj.TargetNamespace;
-			set => Obj.TargetNamespace = value;
-		}
+        public string TargetNamespace
+        {
+            get => Obj.TargetNamespace;
+            set => Obj.TargetNamespace = value;
+        }
 
-		public string SchemaRelationLink => Obj.SchemaRelationLink;
+        public string SchemaRelationLink => Obj.SchemaRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
 		public async Stream GetStreamFromSchemaRelation() => Obj.GetStreamFromSchemaRelation();
+
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync()
         {
             DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaRelationAsync().ConfigureAwait(false);
@@ -53,6 +55,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
-
     }
 }

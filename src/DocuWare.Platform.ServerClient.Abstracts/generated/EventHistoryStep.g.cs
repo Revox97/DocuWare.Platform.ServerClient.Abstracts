@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.EventHistoryStep Obj { get; } = obj;
 
-		public string FCName
-		{
-			get => Obj.FCName;
-			set => Obj.FCName = value;
-		}
+        public string FCName
+        {
+            get => Obj.FCName;
+            set => Obj.FCName = value;
+        }
 
-		public string DocId
-		{
-			get => Obj.DocId;
-			set => Obj.DocId = value;
-		}
+        public string DocId
+        {
+            get => Obj.DocId;
+            set => Obj.DocId = value;
+        }
 
-		public string Status
-		{
-			get => Obj.Status;
-			set => Obj.Status = value;
-		}
+        public string Status
+        {
+            get => Obj.Status;
+            set => Obj.Status = value;
+        }
     }
 }

@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string Name { get; set; }
 		string FormattedSize { get; set; }
-		FileSource Source { get; set; }
+		DocuWare.Platform.ServerClient.FileSource Source { get; set; }
     }
 }

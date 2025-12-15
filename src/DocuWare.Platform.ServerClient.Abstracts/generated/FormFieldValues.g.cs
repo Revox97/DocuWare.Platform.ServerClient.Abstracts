@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FormFieldValues Obj { get; } = obj;
 
-		public List<IFormFieldValue> Field
-		{
-			get => Obj.Field.Select(x => new FormFieldValue(x) as IFormFieldValue).ToList();
-			set => Obj.Field = value.Select(x => ((FormFieldValue)x).Obj).ToList();
-		}
+        public List<IFormFieldValue> Field
+        {
+            get => Obj.Field.Select(x => new FormFieldValue(x) as IFormFieldValue).ToList();
+            set => Obj.Field = value.Select(x => ((FormFieldValue)x).Obj).ToList();
+        }
     }
 }

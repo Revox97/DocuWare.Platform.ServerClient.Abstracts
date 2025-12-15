@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskTableFieldInitialValues Obj { get; } = obj;
 
-		public IDocumentIndexFieldTable DocumentIndexFieldTable
-		{
-			get => new DocumentIndexFieldTable(Obj.DocumentIndexFieldTable);
-			set => Obj.DocumentIndexFieldTable = ((DocumentIndexFieldTable)value).Obj;
-		}
+        public IDocumentIndexFieldTable DocumentIndexFieldTable
+        {
+            get => new DocumentIndexFieldTable(Obj.DocumentIndexFieldTable);
+            set => Obj.DocumentIndexFieldTable = ((DocumentIndexFieldTable)value).Obj;
+        }
 
-		public TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
-		{
-			get => new askTableFieldJoinTypeEnum(Obj.TaskTableFieldJoinType);
-			set => Obj.TaskTableFieldJoinType = ((askTableFieldJoinTypeEnum)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
+        {
+            get => Obj.TaskTableFieldJoinType;
+            set => Obj.TaskTableFieldJoinType = value;
+        }
     }
 }

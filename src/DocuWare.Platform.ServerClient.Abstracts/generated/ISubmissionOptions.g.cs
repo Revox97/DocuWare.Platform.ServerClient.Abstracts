@@ -11,7 +11,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Redirect { get; set; }
 		bool RedirectImmediately { get; set; }
 		int RedirectDelaySeconds { get; set; }
-		RedirectType RedirectType { get; set; }
+		DocuWare.Platform.ServerClient.RedirectType RedirectType { get; set; }
 		bool ShowSubmissionMessage { get; set; }
     }
 }

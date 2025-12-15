@@ -6,22 +6,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SuggestionTableField Obj { get; } = obj;
 
-		public List<ISuggestionTable> Table
-		{
-			get => Obj.Table.Select(x => new SuggestionTable(x) as ISuggestionTable).ToList();
-			set => Obj.Table = value.Select(x => ((SuggestionTable)x).Obj).ToList();
-		}
+        public List<ISuggestionTable> Table
+        {
+            get => Obj.Table.Select(x => new SuggestionTable(x) as ISuggestionTable).ToList();
+            set => Obj.Table = value.Select(x => ((SuggestionTable)x).Obj).ToList();
+        }
 
-		public string DBName
-		{
-			get => Obj.DBName;
-			set => Obj.DBName = value;
-		}
+        public string DBName
+        {
+            get => Obj.DBName;
+            set => Obj.DBName = value;
+        }
 
-		public IntellixFieldTrust Confidence
-		{
-			get => new ntellixFieldTrust(Obj.Confidence);
-			set => Obj.Confidence = ((ntellixFieldTrust)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.IntellixFieldTrust Confidence
+        {
+            get => Obj.Confidence;
+            set => Obj.Confidence = value;
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool AllowDecisionStamp { get; set; }
 		string ActivityDescription { get; set; }
 		int DocId { get; set; }
-		ActivityTypeEnum ActivityType { get; set; }
+		DocuWare.Platform.ServerClient.ActivityTypeEnum ActivityType { get; set; }
 		int NodeId { get; set; }
 		string WorkflowVersionId { get; set; }
 		bool LockDocument { get; set; }

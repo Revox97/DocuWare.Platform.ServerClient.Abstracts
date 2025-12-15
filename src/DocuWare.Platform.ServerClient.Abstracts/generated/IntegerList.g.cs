@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.IntegerList Obj { get; } = obj;
 
-		public List<int> Int
-		{
-			get => Obj.Int;
-			set => Obj.Int = value;
-		}
+        public List<int> Int
+        {
+            get => Obj.Int;
+            set => Obj.Int = value;
+        }
     }
 }

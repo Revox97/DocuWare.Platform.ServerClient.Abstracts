@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.InputSections Obj { get; } = obj;
 
-		public List<IInputSection> Section
-		{
-			get => Obj.Section.Select(x => new InputSection(x) as IInputSection).ToList();
-			set => Obj.Section = value.Select(x => ((InputSection)x).Obj).ToList();
-		}
+        public List<IInputSection> Section
+        {
+            get => Obj.Section.Select(x => new InputSection(x) as IInputSection).ToList();
+            set => Obj.Section = value.Select(x => ((InputSection)x).Obj).ToList();
+        }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TimeoutHistoryStep Obj { get; } = obj;
 
-		public string OutputName
-		{
-			get => Obj.OutputName;
-			set => Obj.OutputName = value;
-		}
+        public string OutputName
+        {
+            get => Obj.OutputName;
+            set => Obj.OutputName = value;
+        }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentTypeListComplexType Obj { get; } = obj;
 
-		public XElementWrapper Any
-		{
-			get => Obj.Any;
-			set => Obj.Any = value;
-		}
+        public XElementWrapper Any
+        {
+            get => Obj.Any;
+            set => Obj.Any = value;
+        }
 
-		public string IntroducedIn
-		{
-			get => Obj.IntroducedIn;
-			set => Obj.IntroducedIn = value;
-		}
+        public string IntroducedIn
+        {
+            get => Obj.IntroducedIn;
+            set => Obj.IntroducedIn = value;
+        }
     }
 }

@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceConnectionTokenLoginData Obj { get; } = obj;
 
-		public IServiceConnectionTransportData Transport
-		{
-			get => new ServiceConnectionTransportData(Obj.Transport);
-			set => Obj.Transport = ((ServiceConnectionTransportData)value).Obj;
-		}
+        public IServiceConnectionTransportData Transport
+        {
+            get => new ServiceConnectionTransportData(Obj.Transport);
+            set => Obj.Transport = ((ServiceConnectionTransportData)value).Obj;
+        }
 
-		public DWProductTypes? LicenseType
-		{
-			get => Obj.LicenseType;
-			set => Obj.LicenseType = value;
-		}
+        public DocuWare.Platform.ServerClient.DWProductTypes? LicenseType
+        {
+            get => Obj.LicenseType;
+            set => Obj.LicenseType = value;
+        }
     }
 }

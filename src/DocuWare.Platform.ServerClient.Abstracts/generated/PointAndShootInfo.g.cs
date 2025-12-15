@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PointAndShootInfo Obj { get; } = obj;
 
-		public List<IDWRectangle> Box
-		{
-			get => Obj.Box.Select(x => new DWRectangle(x) as IDWRectangle).ToList();
-			set => Obj.Box = value.Select(x => ((DWRectangle)x).Obj).ToList();
-		}
+        public List<IDWRectangle> Box
+        {
+            get => Obj.Box.Select(x => new DWRectangle(x) as IDWRectangle).ToList();
+            set => Obj.Box = value.Select(x => ((DWRectangle)x).Obj).ToList();
+        }
 
-		public int PageNumber
-		{
-			get => Obj.PageNumber;
-			set => Obj.PageNumber = value;
-		}
+        public int PageNumber
+        {
+            get => Obj.PageNumber;
+            set => Obj.PageNumber = value;
+        }
     }
 }

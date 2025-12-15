@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CountResultItem Obj { get; } = obj;
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
     }
 }

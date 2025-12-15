@@ -6,45 +6,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WorkflowTasks Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public List<IWorkflowTask> Task
-		{
-			get => Obj.Task.Select(x => new WorkflowTask(x) as IWorkflowTask).ToList();
-			set => Obj.Task = value.Select(x => ((WorkflowTask)x).Obj).ToList();
-		}
+        public List<IWorkflowTask> Task
+        {
+            get => Obj.Task.Select(x => new WorkflowTask(x) as IWorkflowTask).ToList();
+            set => Obj.Task = value.Select(x => ((WorkflowTask)x).Obj).ToList();
+        }
 
-		public int Count
-		{
-			get => Obj.Count;
-			set => Obj.Count = value;
-		}
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
 
-		public DateTime TimeStamp
-		{
-			get => Obj.TimeStamp;
-			set => Obj.TimeStamp = value;
-		}
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
 
-		public bool HasDocumentFields
-		{
-			get => Obj.HasDocumentFields;
-			set => Obj.HasDocumentFields = value;
-		}
+        public bool HasDocumentFields
+        {
+            get => Obj.HasDocumentFields;
+            set => Obj.HasDocumentFields = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
-		public string PrevRelationLink => Obj.PrevRelationLink;
+        public string PrevRelationLink => Obj.PrevRelationLink;
 
-		public string SelfRelationLink => Obj.SelfRelationLink;
+        public string SelfRelationLink => Obj.SelfRelationLink;
 
-		public string FirstRelationLink => Obj.FirstRelationLink;
+        public string FirstRelationLink => Obj.FirstRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IWorkflowTasks GetWorkflowTasksFromNextRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromNextRelationAsync()
@@ -156,6 +157,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
-
     }
 }

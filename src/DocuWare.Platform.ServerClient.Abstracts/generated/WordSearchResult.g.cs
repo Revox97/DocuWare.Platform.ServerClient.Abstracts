@@ -6,27 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WordSearchResult Obj { get; } = obj;
 
-		public string Search
-		{
-			get => Obj.Search;
-			set => Obj.Search = value;
-		}
+        public string Search
+        {
+            get => Obj.Search;
+            set => Obj.Search = value;
+        }
 
-		public List<IWordSearchResultPageHit> PageHits
-		{
-			get => Obj.PageHits.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();
-			set => Obj.PageHits = value.Select(x => ((WordSearchResultPageHit)x).Obj).ToList();
-		}
+        public List<IWordSearchResultPageHit> PageHits
+        {
+            get => Obj.PageHits.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();
+            set => Obj.PageHits = value.Select(x => ((WordSearchResultPageHit)x).Obj).ToList();
+        }
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string NextRelationLink => Obj.NextRelationLink;
+        public string NextRelationLink => Obj.NextRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public IWordSearchResult GetWordSearchResultFromNextRelation() => new WordSearchResult(Obj.GetWordSearchResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IWordSearchResult>> GetWordSearchResultFromNextRelationAsync()
@@ -54,6 +55,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IWordSearchResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

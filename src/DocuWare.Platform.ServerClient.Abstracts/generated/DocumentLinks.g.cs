@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentLinks Obj { get; } = obj;
 
-		public List<IDocumentLink> Items
-		{
-			get => Obj.Items.Select(x => new DocumentLink(x) as IDocumentLink).ToList();
-			set => Obj.Items = value.Select(x => ((DocumentLink)x).Obj).ToList();
-		}
+        public List<IDocumentLink> Items
+        {
+            get => Obj.Items.Select(x => new DocumentLink(x) as IDocumentLink).ToList();
+            set => Obj.Items = value.Select(x => ((DocumentLink)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

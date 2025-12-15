@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DWSize Obj { get; } = obj;
 
-		public double Width
-		{
-			get => Obj.Width;
-			set => Obj.Width = value;
-		}
+        public double Width
+        {
+            get => Obj.Width;
+            set => Obj.Width = value;
+        }
 
-		public double Height
-		{
-			get => Obj.Height;
-			set => Obj.Height = value;
-		}
+        public double Height
+        {
+            get => Obj.Height;
+            set => Obj.Height = value;
+        }
     }
 }

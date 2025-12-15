@@ -6,35 +6,36 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SelectListInfo Obj { get; } = obj;
 
-		public Link[] Links
-		{
-			get => Obj.Links;
-			set => Obj.Links = value;
-		}
+        public Link[] Links
+        {
+            get => Obj.Links;
+            set => Obj.Links = value;
+        }
 
-		public string Guid
-		{
-			get => Obj.Guid;
-			set => Obj.Guid = value;
-		}
+        public string Guid
+        {
+            get => Obj.Guid;
+            set => Obj.Guid = value;
+        }
 
-		public string Name
-		{
-			get => Obj.Name;
-			set => Obj.Name = value;
-		}
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
 
-		public SelectListKind Kind
-		{
-			get => new electListKind(Obj.Kind);
-			set => Obj.Kind = ((electListKind)value).Obj;
-		}
+        public DocuWare.Platform.ServerClient.SelectListKind Kind
+        {
+            get => Obj.Kind;
+            set => Obj.Kind = value;
+        }
 
-		public string ValuesRelationLink => Obj.ValuesRelationLink;
+        public string ValuesRelationLink => Obj.ValuesRelationLink;
 
-		public string ContainsRelationLink => Obj.ContainsRelationLink;
+        public string ContainsRelationLink => Obj.ContainsRelationLink;
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+
         public ISelectListValuesResult GetSelectListValuesResultFromValuesRelation() => new SelectListValuesResult(Obj.GetSelectListValuesResultFromValuesRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListValuesResult>> GetSelectListValuesResultFromValuesRelationAsync()
@@ -118,6 +119,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IAreValuesInSelectListsResult>(temp).ConfigureAwait(false);
         }
-
     }
 }

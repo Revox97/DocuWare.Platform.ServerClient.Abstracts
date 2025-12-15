@@ -6,11 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.Workflows Obj { get; } = obj;
 
-		public List<IWorkflow> Workflow
-		{
-			get => Obj.Workflow.Select(x => new Workflow(x) as IWorkflow).ToList();
-			set => Obj.Workflow = value.Select(x => ((Workflow)x).Obj).ToList();
-		}
+        public List<IWorkflow> Workflow
+        {
+            get => Obj.Workflow.Select(x => new Workflow(x) as IWorkflow).ToList();
+            set => Obj.Workflow = value.Select(x => ((Workflow)x).Obj).ToList();
+        }
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }

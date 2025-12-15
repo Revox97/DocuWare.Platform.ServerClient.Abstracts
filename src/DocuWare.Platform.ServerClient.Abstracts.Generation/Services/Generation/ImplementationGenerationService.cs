@@ -21,7 +21,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
 
-            string result = propertyList + (methodList != string.Empty ? StringConstants.LineEnding : string.Empty) + methodList;
+            string result = propertyList + methodList;
 
             template = template.Replace("{2}", result);
             using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{type.Name}.g.cs"));
@@ -42,52 +42,52 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         private static void GenerateProperty(PropertyInfo property, ref string propertyList)
         {
             string typeName = property.PropertyType.GetParsedName();
+            bool isList = typeName.StartsWith("List<");
             bool isDocuWareType;
 
-            if (typeName.StartsWith("List<"))
+            if (isList)
             {
                 Type[] subTypes = property.PropertyType.GetSubTypes();
-                isDocuWareType = subTypes[0].IsDocuWareType();
+                isDocuWareType = subTypes[0].IsDocuWareType(true);
             }
             else
             {
-                isDocuWareType = property.PropertyType.IsDocuWareType();
+                isDocuWareType = property.PropertyType.IsDocuWareType(true);
             }
 
             string name = property.Name;
             bool hasSetter = property.GetSetMethod() is not null;
-            propertyList += $"{StringConstants.LineEnding}{StringConstants.LineEndingWithTwoTabs}";
+            propertyList += $"{StringConstants.LineEnding}{StringConstants.LineEnding}";
 
             if (isDocuWareType)
             {
-                if (!hasSetter)
+                if (hasSetter)
                 {
-                    if (typeName.StartsWith("List<"))
-                        propertyList += $"public {typeName} {name} => Obj.{name}.Select(x => new {typeName[6..^1]}(x) as {typeName[5..^1]}).ToList();";
-                    else 
-                        propertyList += $"public {typeName} {name} => new {typeName[1..]}(Obj.{name});";
+                    if (isList)
+                        propertyList += TemplateService.GetDocuWareListGetSetPropertyImplementation(typeName, name);
+                    else
+                        propertyList += TemplateService.GetDocuWareGetSetPropertyImplementation(typeName, name);
                 }
                 else
                 {
-                    if (typeName.StartsWith("List<"))
-                        propertyList += $"public {typeName} {name}{StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}get => Obj.{name}.Select(x => new {typeName[6..^1]}(x) as {typeName[5..^1]}).ToList();{StringConstants.LineEndingWithThreeTabs}set => Obj.{name} = value.Select(x => (({typeName[6..^1]})x).Obj).ToList();{StringConstants.LineEndingWithTwoTabs}}}";
-                    else 
-                        propertyList += $"public {typeName} {name}{StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}get => new {typeName[1..]}(Obj.{name});{StringConstants.LineEndingWithThreeTabs}set => Obj.{name} = (({typeName[1..]})value).Obj;{StringConstants.LineEndingWithTwoTabs}}}";
+                    if (isList)
+                        propertyList += TemplateService.GetDocuWareListGetPropertyImplementation(typeName, name);
+                    else
+                        propertyList += TemplateService.GetDocuWareGetPropertyImplementation(typeName, name);
                 }
+
+                return;
             }
+
+            if (hasSetter)
+                propertyList += TemplateService.GetNormalGetSetPropertyImplementation(typeName, name);
             else
-            {
-                if (!hasSetter)
-                    propertyList += $"public {typeName} {name} => Obj.{name};";
-                else
-                    propertyList += $"public {typeName} {name}{StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}get => Obj.{name};{StringConstants.LineEndingWithThreeTabs}set => Obj.{name} = value;{StringConstants.LineEndingWithTwoTabs}}}";
-            }
+                propertyList += TemplateService.GetNormalGetPropertyImplementation(typeName, name);
         }
 
         private static string GenerateMethods(Type type)
         {
             MethodInfo[] methods = [.. type.GetMethods(BindingFlags.Instance | BindingFlags.Public).Where(m => !m.IsSpecialName)];
-
             string methodList = string.Empty;
 
             for (int i = 0; i < methods.Length; i++)
@@ -98,11 +98,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     continue;
 
                 string returnTypeName = method.ReturnType.GetParsedName();
+                methodList += $"{StringConstants.LineEnding}{StringConstants.LineEnding}";
 
                 if (returnTypeName.StartsWith("Task"))
-                    methodList += $"{StringConstants.LineEnding}{GenerateAsynchronous(method)}";
+                    methodList += $"{GenerateAsynchronous(method)}";
                 else
-                    methodList += $"{StringConstants.LineEnding}{GenerateSynchronous(method)}";
+                    methodList += $"{GenerateSynchronous(method)}";
             }
 
             return methodList;
@@ -111,7 +112,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         private static string GenerateSynchronous(MethodInfo method)
         {
             string returnTypeName = method.ReturnType.GetParsedName();
-            bool isDocuWareType = method.ReturnType.IsDocuWareType();
+            bool isDocuWareType = method.ReturnType.IsDocuWareType(true);
             string parameters = method.GetParsedParameterDefinitions();
             string paramsToSent = method.GetParsedParameters();
 
@@ -131,7 +132,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 : returnTypeName;
 
             // TODO Find a working and better way to handle nested dw types
-            bool isDocuWareType = Type.GetType($"DocuWare.Platform.ServerClient.{baseName[1..]}")?.IsDocuWareType() ?? false;
+            bool isDocuWareType = Type.GetType($"DocuWare.Platform.ServerClient.{baseName[1..]}")?.IsDocuWareType(true) ?? false;
             baseName = isDocuWareType ? baseName[1..] : baseName;
 
             return returnTypeName.Contains("DeserializedHttpResponse<")
