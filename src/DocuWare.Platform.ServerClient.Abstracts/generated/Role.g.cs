@@ -1,0 +1,71 @@
+using SDK = DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public class Role(SDK.Role obj) : IRole
+    {
+        internal SDK.Role Obj { get; } = obj;
+
+		public Link[] Links
+		{
+			get => Obj.Links;
+			set => Obj.Links = value;
+		}
+
+		public string Id
+		{
+			get => Obj.Id;
+			set => Obj.Id = value;
+		}
+
+		public string Name
+		{
+			get => Obj.Name;
+			set => Obj.Name = value;
+		}
+
+		public bool Active
+		{
+			get => Obj.Active;
+			set => Obj.Active = value;
+		}
+
+		public RoleTypes Type
+		{
+			get => new oleTypes(Obj.Type);
+			set => Obj.Type = ((oleTypes)value).Obj;
+		}
+
+		public string SelfRelationLink => Obj.SelfRelationLink;
+
+		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+        public IRole GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
+
+        public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync()
+        {
+            DocuWare.Platform.ServerClient.IRole result = await Obj.GetRoleFromSelfRelationAsync().ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new IRole(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync(CancellationToken cancellationToken)
+        {
+            DocuWare.Platform.ServerClient.IRole result = await Obj.GetRoleFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new IRole(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
+        }
+
+    }
+}

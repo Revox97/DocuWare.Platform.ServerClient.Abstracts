@@ -16,10 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Templates\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <None Update="Templates\AsyncDocuWareMethodTemplate.tmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\ImplementationTemplate.tmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -27,6 +26,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Templates\RealDocuWareTemplate.tmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\SyncDocuWareMethodTemplate.tmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

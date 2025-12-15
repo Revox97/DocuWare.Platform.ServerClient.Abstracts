@@ -39,7 +39,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 : name;
         }
 
-        private static string GetParsedSubTypes(this Type t)
+        internal static string GetParsedSubTypes(this Type t)
         {
             string result = string.Empty;
             Type[] subTypes = t.GenericTypeArguments;
@@ -55,7 +55,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             return result;
         }
 
-        private static bool IsDocuWareType(this Type t)
+        internal static Type[] GetSubTypes(this Type t)
+        {
+            return t.GenericTypeArguments;
+        }
+        internal static bool IsDocuWareType(this Type t)
         {
             return t.Namespace is not null && t.Namespace.StartsWith("DocuWare.Platform.ServerClient");
         }
@@ -73,6 +77,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 "int16" => "byte",
                 "int32" => "int",
                 "int64" => "long",
+                "double" => "double",
+                "float" => "float",
                 _ => "!!!UNKNOWN_PRIMITIVE" // TODO Fallback during development -> Change to return name
             };
         }

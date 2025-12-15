@@ -1,0 +1,38 @@
+using DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public interface ITrashBin
+    {
+		Link[] Links { get; set; }
+		string DocumentsRelationLink { get; }
+		string QueryDocumentsRelationLink { get; }
+		string CountDocumentsRelationLink { get; }
+		string SelectListsRelationLink { get; }
+		string BatchRestoreRelationLink { get; }
+		string BatchDeleteRelationLink { get; }
+
+		void SetProxy(HttpClientProxy proxy);
+		ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromDocumentsRelation();
+		Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromDocumentsRelationAsync();
+		Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromDocumentsRelationAsync(CancellationToken cancellationToken);
+		ITrashBinDocumentsTableResult PostToQueryDocumentsRelationForTrashBinDocumentsTableResult(ITrashBinQuery dataToSend);
+		Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(ITrashBinQuery dataToSend);
+		Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(CancellationToken cancellationToken, ITrashBinQuery dataToSend);
+		ICountResult GetCountResultFromCountDocumentsRelation();
+		Task<DeserializedHttpResponse<ICountResult>> GetCountResultFromCountDocumentsRelationAsync();
+		Task<DeserializedHttpResponse<ICountResult>> GetCountResultFromCountDocumentsRelationAsync(CancellationToken cancellationToken);
+		ITypedSelectListResult GetTypedSelectListResultFromSelectListsRelation();
+		Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelectListsRelationAsync();
+		Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelectListsRelationAsync(CancellationToken cancellationToken);
+		ITypedSelectListResult PostToSelectListsRelationForTypedSelectListResult(ITrashBinSelectListExpression dataToSend);
+		Task<DeserializedHttpResponse<ITypedSelectListResult>> PostToSelectListsRelationForTypedSelectListResultAsync(ITrashBinSelectListExpression dataToSend);
+		Task<DeserializedHttpResponse<ITypedSelectListResult>> PostToSelectListsRelationForTypedSelectListResultAsync(CancellationToken cancellationToken, ITrashBinSelectListExpression dataToSend);
+		IBatchRestoreResult PostToBatchRestoreRelationForBatchRestoreResult(IBatchRestoreDocumentsSource dataToSend);
+		Task<DeserializedHttpResponse<IBatchRestoreResult>> PostToBatchRestoreRelationForBatchRestoreResultAsync(IBatchRestoreDocumentsSource dataToSend);
+		Task<DeserializedHttpResponse<IBatchRestoreResult>> PostToBatchRestoreRelationForBatchRestoreResultAsync(CancellationToken cancellationToken, IBatchRestoreDocumentsSource dataToSend);
+		IBatchDeleteResult PostToBatchDeleteRelationForBatchDeleteResult(IBatchDeleteDocumentsSource dataToSend);
+		Task<DeserializedHttpResponse<IBatchDeleteResult>> PostToBatchDeleteRelationForBatchDeleteResultAsync(IBatchDeleteDocumentsSource dataToSend);
+		Task<DeserializedHttpResponse<IBatchDeleteResult>> PostToBatchDeleteRelationForBatchDeleteResultAsync(CancellationToken cancellationToken, IBatchDeleteDocumentsSource dataToSend);
+    }
+}

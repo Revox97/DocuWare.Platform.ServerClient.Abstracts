@@ -17,11 +17,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
 
-            string result = propertyList + (methodList != string.Empty ? "\n" : string.Empty) + methodList;
+            string result = propertyList + (methodList != string.Empty ? StringConstants.LineEnding : string.Empty) + methodList;
 
             template = template.Replace("{2}", result);
-            Directory.CreateDirectory("Generated");
-            using FileStream fStream = File.Create($"Generated/{interfaceName}.g.cs");
+            using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{interfaceName}.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
 
@@ -40,7 +39,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 bool hasSetter = property.GetSetMethod() is not null;
                 string result = $"{typeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
 
-                propertyList += $"\n\t\t{result}"; 
+                propertyList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }
 
             return propertyList;
@@ -63,7 +62,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
-                methodList += $"\n\t\t{result}"; 
+                methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }
 
             return methodList;

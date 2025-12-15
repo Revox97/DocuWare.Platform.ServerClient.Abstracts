@@ -33,6 +33,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 ParameterInfo parameter = parameters[i];
                 string parsedParameter = parameter.GetParsedParameters();
 
+                // TODO Handle docuware interface parameters in actual calls
                 if (i == 0)
                     result += parsedParameter;
                 else

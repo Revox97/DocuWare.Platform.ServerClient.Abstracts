@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.0.11222.15 d18.0
+VisualStudioVersion = 18.0.11222.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuWare.Platform.ServerClient.Abstracts", "src\DocuWare.Platform.ServerClient.Abstracts\DocuWare.Platform.ServerClient.Abstracts.csproj", "{939A3CDB-8C25-4315-90CF-DFE8ED1812AF}"
 EndProject
@@ -14,7 +14,6 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{939A3CDB-8C25-4315-90CF-DFE8ED1812AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{939A3CDB-8C25-4315-90CF-DFE8ED1812AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{939A3CDB-8C25-4315-90CF-DFE8ED1812AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{939A3CDB-8C25-4315-90CF-DFE8ED1812AF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1E30073D-E22E-D5CA-065F-B4BDCA3F96CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

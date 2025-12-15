@@ -28,14 +28,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameterDefinitions = method.GetParsedParameterDefinitions();
                 string parameters = method.GetParsedParameters();
                 string async = returnTypeName.StartsWith("Task") ? "async " : string.Empty;
-                string result = $"public {async}{returnTypeName} {method.Name}({parameterDefinitions})\n\t\t{{\n\t\t\treturn SDK.ServiceConnection.{method.Name}({parameters});\n\t\t}}";
+                string result = $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}){StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}return SDK.ServiceConnection.{method.Name}({parameters});{StringConstants.LineEndingWithTwoTabs}}}";
 
-                methodList += $"\n\n\t\t{result}"; 
+                methodList += $"{StringConstants.LineEnding}{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }
 
             template = template.Replace("{0}", methodList);
             Directory.CreateDirectory("Generated");
-            using FileStream fStream = File.Create("Generated/RealDocuWare.g.cs");
+            using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, "RealDocuWare.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
 
@@ -55,12 +55,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
-                methodList += $"\n\t\t{result}"; 
+                methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }
 
             template = template.Replace("{2}", methodList);
-            Directory.CreateDirectory("Generated");
-            using FileStream fStream = File.Create("Generated/IDocuWare.g.cs");
+            using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, "IDocuWare.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
     }

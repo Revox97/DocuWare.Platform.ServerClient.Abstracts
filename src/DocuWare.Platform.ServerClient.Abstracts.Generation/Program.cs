@@ -5,11 +5,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
 {
     internal class Program
     {
-        // TODO add handling of async methods
-        // TODO add handling of Task<DeserializedHttpResponse<T>> methods
-        // TODO add handling of enums
         static void Main()
         {
+            Console.WriteLine("Deleting existing files.");
+            Directory.EnumerateFiles(Paths.GenerationFolder).ToList().ForEach(File.Delete);
+
             Console.WriteLine("Starting generation of DocuWare.Platform.ServerClient.Abstracts");
             Console.WriteLine("Generating static types interface.");
             new ServiceConnectionGenerationService().Generate(typeof(ServiceConnection));
@@ -24,8 +24,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
             for (int i = 0; i < types.Length; i++)
                 instanceGenerationService.Generate(types[i]);
 
-            Console.WriteLine("Generating enumerations.");
-            // TODO generate enums
+            Console.WriteLine("Finished generation.");
         }
     }
 }

@@ -1,0 +1,25 @@
+using DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public interface IFileCabinetField
+    {
+		List<IFileCabinetFieldBase> TableFieldColumns { get; set; }
+		bool UsedAsDocumentName { get; set; }
+		Link[] Links { get; set; }
+		string FixedEntry { get; set; }
+		string FieldInfoText { get; set; }
+		FileCabinetFieldScope Scope { get; set; }
+		DWFieldType DWFieldType { get; set; }
+		int Length { get; set; }
+		string DBFieldName { get; set; }
+		string DisplayName { get; set; }
+		bool DropLeadingZero { get; set; }
+		bool DropLeadingBlanks { get; set; }
+		bool NotEmpty { get; set; }
+		int Precision { get; set; }
+		string SelectListRelationLink { get; }
+
+		void SetProxy(HttpClientProxy proxy);
+    }
+}

@@ -1,0 +1,33 @@
+using SDK = DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public class LinkForm(SDK.LinkForm obj) : ILinkForm
+    {
+        internal SDK.LinkForm Obj { get; } = obj;
+
+		public string Url
+		{
+			get => Obj.Url;
+			set => Obj.Url = value;
+		}
+
+		public FormTypeEnum FormFieldType
+		{
+			get => new ormTypeEnum(Obj.FormFieldType);
+			set => Obj.FormFieldType = ((ormTypeEnum)value).Obj;
+		}
+
+		public string Label
+		{
+			get => Obj.Label;
+			set => Obj.Label = value;
+		}
+
+		public int Id
+		{
+			get => Obj.Id;
+			set => Obj.Id = value;
+		}
+    }
+}

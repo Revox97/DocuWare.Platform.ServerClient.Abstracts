@@ -1,0 +1,27 @@
+using SDK = DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public class ImportResultEntry(SDK.ImportResultEntry obj) : IImportResultEntry
+    {
+        internal SDK.ImportResultEntry Obj { get; } = obj;
+
+		public List<IImportEntryVersion> EntryVersions
+		{
+			get => Obj.EntryVersions.Select(x => new ImportEntryVersion(x) as IImportEntryVersion).ToList();
+			set => Obj.EntryVersions = value.Select(x => ((ImportEntryVersion)x).Obj).ToList();
+		}
+
+		public string ErrorMessage
+		{
+			get => Obj.ErrorMessage;
+			set => Obj.ErrorMessage = value;
+		}
+
+		public ImportEntryStatus Status
+		{
+			get => new mportEntryStatus(Obj.Status);
+			set => Obj.Status = ((mportEntryStatus)value).Obj;
+		}
+    }
+}
