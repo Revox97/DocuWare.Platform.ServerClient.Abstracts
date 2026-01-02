@@ -22,32 +22,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocumentAuditEventInformation GetDocumentAuditEventInformationFromAuditEventInformationRelation() => new DocumentAuditEventInformation(Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelation());
+        public DocumentAuditEventInformation GetDocumentAuditEventInformationFromAuditEventInformationRelation() => new DocumentAuditEventInformation(Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditEventInformation>> GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditEventInformation result = await Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditEventInformation> result = await Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditEventInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditEventInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditEventInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditEventInformation>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentAuditEventInformation>> GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditEventInformation result = await Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditEventInformation> result = await Obj.GetDocumentAuditEventInformationFromAuditEventInformationRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditEventInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditEventInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditEventInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditEventInformation>(temp).ConfigureAwait(false);
         }
     }
 }

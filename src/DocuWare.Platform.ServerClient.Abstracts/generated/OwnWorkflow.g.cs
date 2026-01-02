@@ -72,39 +72,39 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IOwnWorkflow GetOwnWorkflowFromSelfRelation() => new OwnWorkflow(Obj.GetOwnWorkflowFromSelfRelation());
+        public OwnWorkflow GetOwnWorkflowFromSelfRelation() => new OwnWorkflow(Obj.GetOwnWorkflowFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IOwnWorkflow>> GetOwnWorkflowFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflow result = await Obj.GetOwnWorkflowFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflow> result = await Obj.GetOwnWorkflowFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflow(result)),
+                Content = JsonContent.Create(new OwnWorkflow(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflow>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflow>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IOwnWorkflow>> GetOwnWorkflowFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflow result = await Obj.GetOwnWorkflowFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflow> result = await Obj.GetOwnWorkflowFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflow(result)),
+                Content = JsonContent.Create(new OwnWorkflow(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflow>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflow>(temp).ConfigureAwait(false);
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
 
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -117,7 +117,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -128,32 +128,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
 
-        public IInstanceHistory GetInstanceHistoryFromHistoryRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromHistoryRelation());
+        public InstanceHistory GetInstanceHistoryFromHistoryRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromHistoryRelation());
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromHistoryRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IInstanceHistory result = await Obj.GetInstanceHistoryFromHistoryRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.InstanceHistory> result = await Obj.GetInstanceHistoryFromHistoryRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IInstanceHistory(result)),
+                Content = JsonContent.Create(new InstanceHistory(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromHistoryRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IInstanceHistory result = await Obj.GetInstanceHistoryFromHistoryRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.InstanceHistory> result = await Obj.GetInstanceHistoryFromHistoryRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IInstanceHistory(result)),
+                Content = JsonContent.Create(new InstanceHistory(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
         }
     }
 }

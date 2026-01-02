@@ -64,32 +64,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IInstanceHistory GetInstanceHistoryFromSelfRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromSelfRelation());
+        public InstanceHistory GetInstanceHistoryFromSelfRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IInstanceHistory result = await Obj.GetInstanceHistoryFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.InstanceHistory> result = await Obj.GetInstanceHistoryFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IInstanceHistory(result)),
+                Content = JsonContent.Create(new InstanceHistory(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IInstanceHistory result = await Obj.GetInstanceHistoryFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.InstanceHistory> result = await Obj.GetInstanceHistoryFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IInstanceHistory(result)),
+                Content = JsonContent.Create(new InstanceHistory(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
         }
     }
 }

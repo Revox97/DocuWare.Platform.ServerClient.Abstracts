@@ -1,6 +1,6 @@
         public async {0} {1}({2})
         {
-            DocuWare.Platform.ServerClient.{3} result = await Obj.{1}({4}).ConfigureAwait(false);
+            {5} result = await Obj.{1}({4}).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

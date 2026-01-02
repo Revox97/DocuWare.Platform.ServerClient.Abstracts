@@ -34,32 +34,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public ISubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation() => new SubstitutionRules(Obj.GetSubstitutionRulesFromSubstitutionRulesRelation());
+        public SubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation() => new SubstitutionRules(Obj.GetSubstitutionRulesFromSubstitutionRulesRelation());
 
         public async Task<DeserializedHttpResponse<ISubstitutionRules>> GetSubstitutionRulesFromSubstitutionRulesRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISubstitutionRules result = await Obj.GetSubstitutionRulesFromSubstitutionRulesRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SubstitutionRules> result = await Obj.GetSubstitutionRulesFromSubstitutionRulesRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISubstitutionRules(result)),
+                Content = JsonContent.Create(new SubstitutionRules(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISubstitutionRules>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SubstitutionRules>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISubstitutionRules>> GetSubstitutionRulesFromSubstitutionRulesRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISubstitutionRules result = await Obj.GetSubstitutionRulesFromSubstitutionRulesRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SubstitutionRules> result = await Obj.GetSubstitutionRulesFromSubstitutionRulesRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISubstitutionRules(result)),
+                Content = JsonContent.Create(new SubstitutionRules(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISubstitutionRules>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SubstitutionRules>(temp).ConfigureAwait(false);
         }
     }
 }

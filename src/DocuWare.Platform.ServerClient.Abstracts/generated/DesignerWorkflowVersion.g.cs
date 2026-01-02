@@ -30,60 +30,60 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDesignerWorkflowVersion GetDesignerWorkflowVersionFromSelfRelation() => new DesignerWorkflowVersion(Obj.GetDesignerWorkflowVersionFromSelfRelation());
+        public DesignerWorkflowVersion GetDesignerWorkflowVersionFromSelfRelation() => new DesignerWorkflowVersion(Obj.GetDesignerWorkflowVersionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflowVersion>> GetDesignerWorkflowVersionFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDesignerWorkflowVersion result = await Obj.GetDesignerWorkflowVersionFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWorkflowVersion> result = await Obj.GetDesignerWorkflowVersionFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerWorkflowVersion(result)),
+                Content = JsonContent.Create(new DesignerWorkflowVersion(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersion>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflowVersion>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflowVersion>> GetDesignerWorkflowVersionFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDesignerWorkflowVersion result = await Obj.GetDesignerWorkflowVersionFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWorkflowVersion> result = await Obj.GetDesignerWorkflowVersionFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerWorkflowVersion(result)),
+                Content = JsonContent.Create(new DesignerWorkflowVersion(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersion>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflowVersion>(temp).ConfigureAwait(false);
         }
 
-        public IDesignerInstances GetDesignerInstancesFromInstancesRelation() => new DesignerInstances(Obj.GetDesignerInstancesFromInstancesRelation());
+        public DesignerInstances GetDesignerInstancesFromInstancesRelation() => new DesignerInstances(Obj.GetDesignerInstancesFromInstancesRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerInstances>> GetDesignerInstancesFromInstancesRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDesignerInstances result = await Obj.GetDesignerInstancesFromInstancesRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstances> result = await Obj.GetDesignerInstancesFromInstancesRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerInstances(result)),
+                Content = JsonContent.Create(new DesignerInstances(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerInstances>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerInstances>> GetDesignerInstancesFromInstancesRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDesignerInstances result = await Obj.GetDesignerInstancesFromInstancesRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstances> result = await Obj.GetDesignerInstancesFromInstancesRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerInstances(result)),
+                Content = JsonContent.Create(new DesignerInstances(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerInstances>(temp).ConfigureAwait(false);
         }
     }
 }

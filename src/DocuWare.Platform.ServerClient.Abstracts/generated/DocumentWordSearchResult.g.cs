@@ -34,32 +34,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocumentWordSearchResult GetDocumentWordSearchResultFromNextRelation() => new DocumentWordSearchResult(Obj.GetDocumentWordSearchResultFromNextRelation());
+        public DocumentWordSearchResult GetDocumentWordSearchResultFromNextRelation() => new DocumentWordSearchResult(Obj.GetDocumentWordSearchResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentWordSearchResult>> GetDocumentWordSearchResultFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentWordSearchResult result = await Obj.GetDocumentWordSearchResultFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentWordSearchResult> result = await Obj.GetDocumentWordSearchResultFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentWordSearchResult(result)),
+                Content = JsonContent.Create(new DocumentWordSearchResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentWordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentWordSearchResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentWordSearchResult>> GetDocumentWordSearchResultFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentWordSearchResult result = await Obj.GetDocumentWordSearchResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentWordSearchResult> result = await Obj.GetDocumentWordSearchResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentWordSearchResult(result)),
+                Content = JsonContent.Create(new DocumentWordSearchResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentWordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentWordSearchResult>(temp).ConfigureAwait(false);
         }
     }
 }

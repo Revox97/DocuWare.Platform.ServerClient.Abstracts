@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ResultlistTransformer Obj { get; } = obj;
 
-        public IDocumentsQueryResult ToQueryResult(IDocumentsQueryTableResult resultTable) => new DocumentsQueryResult(Obj.ToQueryResult(resultTable));
+        public DocumentsQueryResult ToQueryResult(IDocumentsQueryTableResult resultTable) => new DocumentsQueryResult(Obj.ToQueryResult(resultTable));
     }
 }

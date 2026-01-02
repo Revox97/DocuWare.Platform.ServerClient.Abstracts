@@ -22,7 +22,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(IConfirmedData dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PostToConfirmRelationForStringAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PostToConfirmRelationForStringAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -35,7 +35,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(CancellationToken cancellationToken, IConfirmedData dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PostToConfirmRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PostToConfirmRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -46,32 +46,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
         }
 
-        public IDWPoint PostToStampBestPositionRelationForDWPoint(IStampPositionData dataToSend) => new DWPoint(Obj.PostToStampBestPositionRelationForDWPoint(dataToSend));
+        public DWPoint PostToStampBestPositionRelationForDWPoint(IStampPositionData dataToSend) => new DWPoint(Obj.PostToStampBestPositionRelationForDWPoint(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDWPoint>> PostToStampBestPositionRelationForDWPointAsync(IStampPositionData dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDWPoint result = await Obj.PostToStampBestPositionRelationForDWPointAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DWPoint> result = await Obj.PostToStampBestPositionRelationForDWPointAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDWPoint(result)),
+                Content = JsonContent.Create(new DWPoint(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDWPoint>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DWPoint>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDWPoint>> PostToStampBestPositionRelationForDWPointAsync(CancellationToken cancellationToken, IStampPositionData dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDWPoint result = await Obj.PostToStampBestPositionRelationForDWPointAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DWPoint> result = await Obj.PostToStampBestPositionRelationForDWPointAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDWPoint(result)),
+                Content = JsonContent.Create(new DWPoint(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDWPoint>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DWPoint>(temp).ConfigureAwait(false);
         }
     }
 }

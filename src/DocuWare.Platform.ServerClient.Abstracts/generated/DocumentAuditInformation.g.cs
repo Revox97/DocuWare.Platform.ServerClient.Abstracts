@@ -26,88 +26,88 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocumentAuditInformation GetDocumentAuditInformationFromNextRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromNextRelation());
+        public DocumentAuditInformation GetDocumentAuditInformationFromNextRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentAuditInformation GetDocumentAuditInformationFromPrevRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromPrevRelation());
+        public DocumentAuditInformation GetDocumentAuditInformationFromPrevRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromPrevRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromPrevRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromPrevRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromPrevRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentAuditInformation GetDocumentAuditInformationFromFirstRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromFirstRelation());
+        public DocumentAuditInformation GetDocumentAuditInformationFromFirstRelation() => new DocumentAuditInformation(Obj.GetDocumentAuditInformationFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromFirstRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromFirstRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromFirstRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentAuditInformation>> GetDocumentAuditInformationFromFirstRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentAuditInformation result = await Obj.GetDocumentAuditInformationFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentAuditInformation> result = await Obj.GetDocumentAuditInformationFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentAuditInformation(result)),
+                Content = JsonContent.Create(new DocumentAuditInformation(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentAuditInformation>(temp).ConfigureAwait(false);
         }
     }
 }

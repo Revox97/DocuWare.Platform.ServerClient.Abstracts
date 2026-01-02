@@ -20,7 +20,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PutToReadStatusRelationForStringAsync(Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PutToReadStatusRelationForStringAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PutToReadStatusRelationForStringAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -33,7 +33,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PutToReadStatusRelationForStringAsync(CancellationToken cancellationToken, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PutToReadStatusRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PutToReadStatusRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

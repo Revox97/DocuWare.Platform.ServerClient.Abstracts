@@ -22,172 +22,172 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IRequestTasks GetRequestTasksFromMyTasksRelation() => new RequestTasks(Obj.GetRequestTasksFromMyTasksRelation());
+        public RequestTasks GetRequestTasksFromMyTasksRelation() => new RequestTasks(Obj.GetRequestTasksFromMyTasksRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromMyTasksRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromMyTasksRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromMyTasksRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromMyTasksRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromMyTasksRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromMyTasksRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
-        public IRequestTasks PostToMyTasksRelationForRequestTasks(ITasksQuery dataToSend) => new RequestTasks(Obj.PostToMyTasksRelationForRequestTasks(dataToSend));
+        public RequestTasks PostToMyTasksRelationForRequestTasks(ITasksQuery dataToSend) => new RequestTasks(Obj.PostToMyTasksRelationForRequestTasks(dataToSend));
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> PostToMyTasksRelationForRequestTasksAsync(ITasksQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.PostToMyTasksRelationForRequestTasksAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.PostToMyTasksRelationForRequestTasksAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> PostToMyTasksRelationForRequestTasksAsync(CancellationToken cancellationToken, ITasksQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.PostToMyTasksRelationForRequestTasksAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.PostToMyTasksRelationForRequestTasksAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
-        public IWorkflowTasksCount GetWorkflowTasksCountFromMyTasksCountRelation() => new WorkflowTasksCount(Obj.GetWorkflowTasksCountFromMyTasksCountRelation());
+        public WorkflowTasksCount GetWorkflowTasksCountFromMyTasksCountRelation() => new WorkflowTasksCount(Obj.GetWorkflowTasksCountFromMyTasksCountRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasksCount>> GetWorkflowTasksCountFromMyTasksCountRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IWorkflowTasksCount result = await Obj.GetWorkflowTasksCountFromMyTasksCountRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowTasksCount> result = await Obj.GetWorkflowTasksCountFromMyTasksCountRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IWorkflowTasksCount(result)),
+                Content = JsonContent.Create(new WorkflowTasksCount(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<WorkflowTasksCount>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasksCount>> GetWorkflowTasksCountFromMyTasksCountRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IWorkflowTasksCount result = await Obj.GetWorkflowTasksCountFromMyTasksCountRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowTasksCount> result = await Obj.GetWorkflowTasksCountFromMyTasksCountRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IWorkflowTasksCount(result)),
+                Content = JsonContent.Create(new WorkflowTasksCount(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<WorkflowTasksCount>(temp).ConfigureAwait(false);
         }
 
-        public IOwnWorkflows GetOwnWorkflowsFromCreatedWorkflowsRelation() => new OwnWorkflows(Obj.GetOwnWorkflowsFromCreatedWorkflowsRelation());
+        public OwnWorkflows GetOwnWorkflowsFromCreatedWorkflowsRelation() => new OwnWorkflows(Obj.GetOwnWorkflowsFromCreatedWorkflowsRelation());
 
         public async Task<DeserializedHttpResponse<IOwnWorkflows>> GetOwnWorkflowsFromCreatedWorkflowsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflows result = await Obj.GetOwnWorkflowsFromCreatedWorkflowsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflows> result = await Obj.GetOwnWorkflowsFromCreatedWorkflowsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflows(result)),
+                Content = JsonContent.Create(new OwnWorkflows(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflows>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflows>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IOwnWorkflows>> GetOwnWorkflowsFromCreatedWorkflowsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflows result = await Obj.GetOwnWorkflowsFromCreatedWorkflowsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflows> result = await Obj.GetOwnWorkflowsFromCreatedWorkflowsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflows(result)),
+                Content = JsonContent.Create(new OwnWorkflows(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflows>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflows>(temp).ConfigureAwait(false);
         }
 
-        public IOwnWorkflows PostToCreatedWorkflowsRelationForOwnWorkflows(ITasksQuery dataToSend) => new OwnWorkflows(Obj.PostToCreatedWorkflowsRelationForOwnWorkflows(dataToSend));
+        public OwnWorkflows PostToCreatedWorkflowsRelationForOwnWorkflows(ITasksQuery dataToSend) => new OwnWorkflows(Obj.PostToCreatedWorkflowsRelationForOwnWorkflows(dataToSend));
 
         public async Task<DeserializedHttpResponse<IOwnWorkflows>> PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(ITasksQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflows result = await Obj.PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflows> result = await Obj.PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflows(result)),
+                Content = JsonContent.Create(new OwnWorkflows(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflows>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflows>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IOwnWorkflows>> PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(CancellationToken cancellationToken, ITasksQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IOwnWorkflows result = await Obj.PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.OwnWorkflows> result = await Obj.PostToCreatedWorkflowsRelationForOwnWorkflowsAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IOwnWorkflows(result)),
+                Content = JsonContent.Create(new OwnWorkflows(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IOwnWorkflows>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<OwnWorkflows>(temp).ConfigureAwait(false);
         }
 
-        public IWorkflowTasksCount GetWorkflowTasksCountFromCreatedWorkflowsCountRelation() => new WorkflowTasksCount(Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelation());
+        public WorkflowTasksCount GetWorkflowTasksCountFromCreatedWorkflowsCountRelation() => new WorkflowTasksCount(Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasksCount>> GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IWorkflowTasksCount result = await Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowTasksCount> result = await Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IWorkflowTasksCount(result)),
+                Content = JsonContent.Create(new WorkflowTasksCount(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<WorkflowTasksCount>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasksCount>> GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IWorkflowTasksCount result = await Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowTasksCount> result = await Obj.GetWorkflowTasksCountFromCreatedWorkflowsCountRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IWorkflowTasksCount(result)),
+                Content = JsonContent.Create(new WorkflowTasksCount(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasksCount>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<WorkflowTasksCount>(temp).ConfigureAwait(false);
         }
     }
 }

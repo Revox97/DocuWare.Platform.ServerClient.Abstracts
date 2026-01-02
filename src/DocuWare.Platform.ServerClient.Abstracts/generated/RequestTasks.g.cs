@@ -40,116 +40,116 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IRequestTasks GetRequestTasksFromNextRelation() => new RequestTasks(Obj.GetRequestTasksFromNextRelation());
+        public RequestTasks GetRequestTasksFromNextRelation() => new RequestTasks(Obj.GetRequestTasksFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
-        public IRequestTasks GetRequestTasksFromPrevRelation() => new RequestTasks(Obj.GetRequestTasksFromPrevRelation());
+        public RequestTasks GetRequestTasksFromPrevRelation() => new RequestTasks(Obj.GetRequestTasksFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromPrevRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromPrevRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromPrevRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromPrevRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
-        public IRequestTasks GetRequestTasksFromSelfRelation() => new RequestTasks(Obj.GetRequestTasksFromSelfRelation());
+        public RequestTasks GetRequestTasksFromSelfRelation() => new RequestTasks(Obj.GetRequestTasksFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
-        public IRequestTasks GetRequestTasksFromFirstRelation() => new RequestTasks(Obj.GetRequestTasksFromFirstRelation());
+        public RequestTasks GetRequestTasksFromFirstRelation() => new RequestTasks(Obj.GetRequestTasksFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromFirstRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromFirstRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromFirstRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestTasks>> GetRequestTasksFromFirstRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRequestTasks result = await Obj.GetRequestTasksFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.RequestTasks> result = await Obj.GetRequestTasksFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRequestTasks(result)),
+                Content = JsonContent.Create(new RequestTasks(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRequestTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<RequestTasks>(temp).ConfigureAwait(false);
         }
     }
 }

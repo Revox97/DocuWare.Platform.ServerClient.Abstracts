@@ -20,7 +20,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromContentRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromContentRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromContentRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -33,7 +33,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromContentRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromContentRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromContentRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

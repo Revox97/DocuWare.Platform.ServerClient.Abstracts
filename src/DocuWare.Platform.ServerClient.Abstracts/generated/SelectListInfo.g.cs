@@ -36,88 +36,88 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public ISelectListValuesResult GetSelectListValuesResultFromValuesRelation() => new SelectListValuesResult(Obj.GetSelectListValuesResultFromValuesRelation());
+        public SelectListValuesResult GetSelectListValuesResultFromValuesRelation() => new SelectListValuesResult(Obj.GetSelectListValuesResultFromValuesRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListValuesResult>> GetSelectListValuesResultFromValuesRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISelectListValuesResult result = await Obj.GetSelectListValuesResultFromValuesRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListValuesResult> result = await Obj.GetSelectListValuesResultFromValuesRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListValuesResult(result)),
+                Content = JsonContent.Create(new SelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListValuesResult>> GetSelectListValuesResultFromValuesRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISelectListValuesResult result = await Obj.GetSelectListValuesResultFromValuesRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListValuesResult> result = await Obj.GetSelectListValuesResultFromValuesRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListValuesResult(result)),
+                Content = JsonContent.Create(new SelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public ISelectListValuesResult PostToValuesRelationForSelectListValuesResult(ISelectListValuesQuery dataToSend) => new SelectListValuesResult(Obj.PostToValuesRelationForSelectListValuesResult(dataToSend));
+        public SelectListValuesResult PostToValuesRelationForSelectListValuesResult(ISelectListValuesQuery dataToSend) => new SelectListValuesResult(Obj.PostToValuesRelationForSelectListValuesResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<ISelectListValuesResult>> PostToValuesRelationForSelectListValuesResultAsync(ISelectListValuesQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.ISelectListValuesResult result = await Obj.PostToValuesRelationForSelectListValuesResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListValuesResult> result = await Obj.PostToValuesRelationForSelectListValuesResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListValuesResult(result)),
+                Content = JsonContent.Create(new SelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListValuesResult>> PostToValuesRelationForSelectListValuesResultAsync(CancellationToken cancellationToken, ISelectListValuesQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.ISelectListValuesResult result = await Obj.PostToValuesRelationForSelectListValuesResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListValuesResult> result = await Obj.PostToValuesRelationForSelectListValuesResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListValuesResult(result)),
+                Content = JsonContent.Create(new SelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public IAreValuesInSelectListsResult PostToContainsRelationForAreValuesInSelectListsResult(ISelectListValuesToCheck dataToSend) => new AreValuesInSelectListsResult(Obj.PostToContainsRelationForAreValuesInSelectListsResult(dataToSend));
+        public AreValuesInSelectListsResult PostToContainsRelationForAreValuesInSelectListsResult(ISelectListValuesToCheck dataToSend) => new AreValuesInSelectListsResult(Obj.PostToContainsRelationForAreValuesInSelectListsResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IAreValuesInSelectListsResult>> PostToContainsRelationForAreValuesInSelectListsResultAsync(ISelectListValuesToCheck dataToSend)
         {
-            DocuWare.Platform.ServerClient.IAreValuesInSelectListsResult result = await Obj.PostToContainsRelationForAreValuesInSelectListsResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.AreValuesInSelectListsResult> result = await Obj.PostToContainsRelationForAreValuesInSelectListsResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IAreValuesInSelectListsResult(result)),
+                Content = JsonContent.Create(new AreValuesInSelectListsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IAreValuesInSelectListsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<AreValuesInSelectListsResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IAreValuesInSelectListsResult>> PostToContainsRelationForAreValuesInSelectListsResultAsync(CancellationToken cancellationToken, ISelectListValuesToCheck dataToSend)
         {
-            DocuWare.Platform.ServerClient.IAreValuesInSelectListsResult result = await Obj.PostToContainsRelationForAreValuesInSelectListsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.AreValuesInSelectListsResult> result = await Obj.PostToContainsRelationForAreValuesInSelectListsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IAreValuesInSelectListsResult(result)),
+                Content = JsonContent.Create(new AreValuesInSelectListsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IAreValuesInSelectListsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<AreValuesInSelectListsResult>(temp).ConfigureAwait(false);
         }
     }
 }

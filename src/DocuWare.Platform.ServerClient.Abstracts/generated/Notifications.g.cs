@@ -28,32 +28,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public INotifications GetNotificationsFromSelfRelation() => new Notifications(Obj.GetNotificationsFromSelfRelation());
+        public Notifications GetNotificationsFromSelfRelation() => new Notifications(Obj.GetNotificationsFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.GetNotificationsFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.GetNotificationsFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.GetNotificationsFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.GetNotificationsFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
     }
 }

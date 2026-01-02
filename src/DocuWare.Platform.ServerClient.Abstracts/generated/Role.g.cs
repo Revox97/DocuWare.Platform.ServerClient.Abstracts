@@ -40,32 +40,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IRole GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
+        public Role GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IRole result = await Obj.GetRoleFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Role> result = await Obj.GetRoleFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRole(result)),
+                Content = JsonContent.Create(new Role(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Role>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IRole result = await Obj.GetRoleFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Role> result = await Obj.GetRoleFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IRole(result)),
+                Content = JsonContent.Create(new Role(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Role>(temp).ConfigureAwait(false);
         }
     }
 }

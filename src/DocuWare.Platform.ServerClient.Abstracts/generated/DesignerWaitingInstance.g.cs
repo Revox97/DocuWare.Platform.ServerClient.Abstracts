@@ -54,32 +54,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation() => new DesignerWaitingInstance(Obj.GetDesignerWaitingInstanceFromSelfRelation());
+        public DesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation() => new DesignerWaitingInstance(Obj.GetDesignerWaitingInstanceFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstance>> GetDesignerWaitingInstanceFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDesignerWaitingInstance result = await Obj.GetDesignerWaitingInstanceFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWaitingInstance> result = await Obj.GetDesignerWaitingInstanceFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerWaitingInstance(result)),
+                Content = JsonContent.Create(new DesignerWaitingInstance(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstance>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstance>> GetDesignerWaitingInstanceFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDesignerWaitingInstance result = await Obj.GetDesignerWaitingInstanceFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWaitingInstance> result = await Obj.GetDesignerWaitingInstanceFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerWaitingInstance(result)),
+                Content = JsonContent.Create(new DesignerWaitingInstance(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstance>(temp).ConfigureAwait(false);
         }
     }
 }

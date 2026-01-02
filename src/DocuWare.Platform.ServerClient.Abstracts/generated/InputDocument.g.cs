@@ -42,32 +42,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocument GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
+        public Document GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.GetDocumentFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.GetDocumentFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.GetDocumentFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.GetDocumentFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
     }
 }

@@ -28,32 +28,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDialog GetDialogFromStoreDialogRelation() => new Dialog(Obj.GetDialogFromStoreDialogRelation());
+        public Dialog GetDialogFromStoreDialogRelation() => new Dialog(Obj.GetDialogFromStoreDialogRelation());
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromStoreDialogRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialog result = await Obj.GetDialogFromStoreDialogRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromStoreDialogRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialog(result)),
+                Content = JsonContent.Create(new Dialog(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Dialog>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromStoreDialogRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialog result = await Obj.GetDialogFromStoreDialogRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromStoreDialogRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialog(result)),
+                Content = JsonContent.Create(new Dialog(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Dialog>(temp).ConfigureAwait(false);
         }
     }
 }

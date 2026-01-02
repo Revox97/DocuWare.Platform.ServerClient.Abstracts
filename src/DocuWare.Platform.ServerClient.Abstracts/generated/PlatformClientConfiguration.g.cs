@@ -20,7 +20,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async HttpClientHandler CreateHandlerForNTLMAuthentication(ICredentials credentials) => Obj.CreateHandlerForNTLMAuthentication(credentials);
 
-		public async HttpClientHandler CreateHandlerForNTLMAuthentication(Uri serviceUri, string userName, string password, string? domain = null) => Obj.CreateHandlerForNTLMAuthentication(serviceUri, userName, password, domain);
+		public async HttpClientHandler CreateHandlerForNTLMAuthentication(Uri serviceUri, string userName, string password, string domain) => Obj.CreateHandlerForNTLMAuthentication(serviceUri, userName, password, domain);
 
 		public async int? GetRequestTimeout() => Obj.GetRequestTimeout();
     }

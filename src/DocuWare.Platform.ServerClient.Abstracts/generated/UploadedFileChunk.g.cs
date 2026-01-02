@@ -34,32 +34,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IUploadedFileChunk GetUploadedFileChunkFromNextRelation() => new UploadedFileChunk(Obj.GetUploadedFileChunkFromNextRelation());
+        public UploadedFileChunk GetUploadedFileChunkFromNextRelation() => new UploadedFileChunk(Obj.GetUploadedFileChunkFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IUploadedFileChunk>> GetUploadedFileChunkFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IUploadedFileChunk result = await Obj.GetUploadedFileChunkFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.UploadedFileChunk> result = await Obj.GetUploadedFileChunkFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IUploadedFileChunk(result)),
+                Content = JsonContent.Create(new UploadedFileChunk(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IUploadedFileChunk>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<UploadedFileChunk>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IUploadedFileChunk>> GetUploadedFileChunkFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IUploadedFileChunk result = await Obj.GetUploadedFileChunkFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.UploadedFileChunk> result = await Obj.GetUploadedFileChunkFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IUploadedFileChunk(result)),
+                Content = JsonContent.Create(new UploadedFileChunk(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IUploadedFileChunk>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<UploadedFileChunk>(temp).ConfigureAwait(false);
         }
     }
 }

@@ -46,116 +46,116 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromNextRelation());
+        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromPrevRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromPrevRelation());
+        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromPrevRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromPrevRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromPrevRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromPrevRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromPrevRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromSelfRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromSelfRelation());
+        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromSelfRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromFirstRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromFirstRelation());
+        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromFirstRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromFirstRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromFirstRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromFirstRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromFirstRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ITrashBinDocumentsTableResult result = await Obj.GetTrashBinDocumentsTableResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.GetTrashBinDocumentsTableResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ITrashBinDocumentsTableResult(result)),
+                Content = JsonContent.Create(new TrashBinDocumentsTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
     }
 }

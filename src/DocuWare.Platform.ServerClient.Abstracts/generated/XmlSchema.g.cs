@@ -32,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -45,7 +45,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

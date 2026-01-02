@@ -22,32 +22,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IPages GetPagesFromNextBlockRelation() => new Pages(Obj.GetPagesFromNextBlockRelation());
+        public Pages GetPagesFromNextBlockRelation() => new Pages(Obj.GetPagesFromNextBlockRelation());
 
         public async Task<DeserializedHttpResponse<IPages>> GetPagesFromNextBlockRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IPages result = await Obj.GetPagesFromNextBlockRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Pages> result = await Obj.GetPagesFromNextBlockRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IPages(result)),
+                Content = JsonContent.Create(new Pages(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IPages>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Pages>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IPages>> GetPagesFromNextBlockRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IPages result = await Obj.GetPagesFromNextBlockRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Pages> result = await Obj.GetPagesFromNextBlockRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IPages(result)),
+                Content = JsonContent.Create(new Pages(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IPages>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Pages>(temp).ConfigureAwait(false);
         }
     }
 }

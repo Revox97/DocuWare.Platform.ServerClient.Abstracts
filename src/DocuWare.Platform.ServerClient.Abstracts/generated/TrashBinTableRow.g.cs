@@ -32,39 +32,39 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocument GetDocumentFromDocumentRelation() => new Document(Obj.GetDocumentFromDocumentRelation());
+        public Document GetDocumentFromDocumentRelation() => new Document(Obj.GetDocumentFromDocumentRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromDocumentRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.GetDocumentFromDocumentRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.GetDocumentFromDocumentRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromDocumentRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.GetDocumentFromDocumentRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.GetDocumentFromDocumentRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
 		public async Stream GetStreamFromLowQualityImageRelation() => Obj.GetStreamFromLowQualityImageRelation();
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLowQualityImageRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -77,7 +77,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLowQualityImageRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLowQualityImageRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLowQualityImageRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -92,7 +92,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -105,7 +105,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAnnotationAsSvgRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAnnotationAsSvgRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

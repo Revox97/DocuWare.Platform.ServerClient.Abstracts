@@ -22,32 +22,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDialogInfos GetDialogInfosFromSelfRelation() => new DialogInfos(Obj.GetDialogInfosFromSelfRelation());
+        public DialogInfos GetDialogInfosFromSelfRelation() => new DialogInfos(Obj.GetDialogInfosFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
     }
 }

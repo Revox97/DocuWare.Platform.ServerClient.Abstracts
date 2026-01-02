@@ -34,116 +34,116 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromNextRelation());
+        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromPrevRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromPrevRelation());
+        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromPrevRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromPrevRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromPrevRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromPrevRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromPrevRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromSelfRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromSelfRelation());
+        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromSelfRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromFirstRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromFirstRelation());
+        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromFirstRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromFirstRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromFirstRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromFirstRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromFirstRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IMultiColSelectListValuesResult result = await Obj.GetMultiColSelectListValuesResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.GetMultiColSelectListValuesResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IMultiColSelectListValuesResult(result)),
+                Content = JsonContent.Create(new MultiColSelectListValuesResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
     }
 }

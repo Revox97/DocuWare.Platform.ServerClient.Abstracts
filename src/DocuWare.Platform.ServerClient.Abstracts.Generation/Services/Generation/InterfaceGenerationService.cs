@@ -2,6 +2,7 @@
 using System.Text;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Contracts;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
+using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
@@ -33,11 +34,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             {
                 PropertyInfo property = properties[i];
 
-                string typeName = property.PropertyType.GetParsedName();
+                TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
+                string returnTypeName = typeDefinition.GetReturnTypeName();
                 string name = property.Name;
                 bool hasGetter = property.GetGetMethod() is not null;
                 bool hasSetter = property.GetSetMethod() is not null;
-                string result = $"{typeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
+                string result = $"{returnTypeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
 
                 propertyList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }
@@ -58,7 +60,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 if (method.DeclaringType != type)
                     continue;
 
-                string returnTypeName = method.ReturnType.GetParsedName();
+                string returnTypeName = method.ReturnType.GetTypeDefinition().GetReturnTypeName();
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 

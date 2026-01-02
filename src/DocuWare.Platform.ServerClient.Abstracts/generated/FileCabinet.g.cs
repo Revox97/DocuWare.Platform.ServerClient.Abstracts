@@ -166,795 +166,795 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDocumentsQueryResult GetDocumentsQueryResultFromDocumentsRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromDocumentsRelation());
+        public DocumentsQueryResult GetDocumentsQueryResultFromDocumentsRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromDocumentsRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromDocumentsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.GetDocumentsQueryResultFromDocumentsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.GetDocumentsQueryResultFromDocumentsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromDocumentsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.GetDocumentsQueryResultFromDocumentsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.GetDocumentsQueryResultFromDocumentsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocument PostToDocumentsRelationForDocument(IDocument dataToSend) => new Document(Obj.PostToDocumentsRelationForDocument(dataToSend));
+        public Document PostToDocumentsRelationForDocument(IDocument dataToSend) => new Document(Obj.PostToDocumentsRelationForDocument(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToDocumentsRelationForDocumentAsync(IDocument dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToDocumentsRelationForDocumentAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToDocumentsRelationForDocumentAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToDocumentsRelationForDocumentAsync(CancellationToken cancellationToken, IDocument dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToDocumentsRelationForDocumentAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToDocumentsRelationForDocumentAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryTableResult GetDocumentsQueryTableResultFromDocumentsTableRelation() => new DocumentsQueryTableResult(Obj.GetDocumentsQueryTableResultFromDocumentsTableRelation());
+        public DocumentsQueryTableResult GetDocumentsQueryTableResultFromDocumentsTableRelation() => new DocumentsQueryTableResult(Obj.GetDocumentsQueryTableResultFromDocumentsTableRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> GetDocumentsQueryTableResultFromDocumentsTableRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.GetDocumentsQueryTableResultFromDocumentsTableRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.GetDocumentsQueryTableResultFromDocumentsTableRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> GetDocumentsQueryTableResultFromDocumentsTableRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.GetDocumentsQueryTableResultFromDocumentsTableRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.GetDocumentsQueryTableResultFromDocumentsTableRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocument PutToContentMergeOperationRelationForDocument(IContentMergeOperationInfo dataToSend) => new Document(Obj.PutToContentMergeOperationRelationForDocument(dataToSend));
+        public Document PutToContentMergeOperationRelationForDocument(IContentMergeOperationInfo dataToSend) => new Document(Obj.PutToContentMergeOperationRelationForDocument(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocument>> PutToContentMergeOperationRelationForDocumentAsync(IContentMergeOperationInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PutToContentMergeOperationRelationForDocumentAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PutToContentMergeOperationRelationForDocumentAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> PutToContentMergeOperationRelationForDocumentAsync(CancellationToken cancellationToken, IContentMergeOperationInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PutToContentMergeOperationRelationForDocumentAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PutToContentMergeOperationRelationForDocumentAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
-        public IDocument PostToAdvancedDocumentUploadRelationForDocument(string requestedContentType, Stream dataToSend) => new Document(Obj.PostToAdvancedDocumentUploadRelationForDocument(requestedContentType, dataToSend));
+        public Document PostToAdvancedDocumentUploadRelationForDocument(string requestedContentType, Stream dataToSend) => new Document(Obj.PostToAdvancedDocumentUploadRelationForDocument(requestedContentType, dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToAdvancedDocumentUploadRelationForDocumentAsync(string requestedContentType, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToAdvancedDocumentUploadRelationForDocumentAsync(requestedContentType, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToAdvancedDocumentUploadRelationForDocumentAsync(requestedContentType, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToAdvancedDocumentUploadRelationForDocumentAsync(CancellationToken cancellationToken, string requestedContentType, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToAdvancedDocumentUploadRelationForDocumentAsync(cancellationToken, requestedContentType, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToAdvancedDocumentUploadRelationForDocumentAsync(cancellationToken, requestedContentType, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
-        public IImportResult PostToImportDocumentsRelationForImportResult(IImportSettings dataToSend) => new ImportResult(Obj.PostToImportDocumentsRelationForImportResult(dataToSend));
+        public ImportResult PostToImportDocumentsRelationForImportResult(IImportSettings dataToSend) => new ImportResult(Obj.PostToImportDocumentsRelationForImportResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IImportResult>> PostToImportDocumentsRelationForImportResultAsync(IImportSettings dataToSend)
         {
-            DocuWare.Platform.ServerClient.IImportResult result = await Obj.PostToImportDocumentsRelationForImportResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.ImportResult> result = await Obj.PostToImportDocumentsRelationForImportResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IImportResult(result)),
+                Content = JsonContent.Create(new ImportResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IImportResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ImportResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IImportResult>> PostToImportDocumentsRelationForImportResultAsync(CancellationToken cancellationToken, IImportSettings dataToSend)
         {
-            DocuWare.Platform.ServerClient.IImportResult result = await Obj.PostToImportDocumentsRelationForImportResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.ImportResult> result = await Obj.PostToImportDocumentsRelationForImportResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IImportResult(result)),
+                Content = JsonContent.Create(new ImportResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IImportResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ImportResult>(temp).ConfigureAwait(false);
         }
 
-        public IImportResult PostToImportDocumentsRelationForImportResult(ISynchronizationSettings dataToSend) => new ImportResult(Obj.PostToImportDocumentsRelationForImportResult(dataToSend));
+        public ImportResult PostToImportDocumentsRelationForImportResult(ISynchronizationSettings dataToSend) => new ImportResult(Obj.PostToImportDocumentsRelationForImportResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IImportResult>> PostToImportDocumentsRelationForImportResultAsync(ISynchronizationSettings dataToSend)
         {
-            DocuWare.Platform.ServerClient.IImportResult result = await Obj.PostToImportDocumentsRelationForImportResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.ImportResult> result = await Obj.PostToImportDocumentsRelationForImportResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IImportResult(result)),
+                Content = JsonContent.Create(new ImportResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IImportResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ImportResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IImportResult>> PostToImportDocumentsRelationForImportResultAsync(CancellationToken cancellationToken, ISynchronizationSettings dataToSend)
         {
-            DocuWare.Platform.ServerClient.IImportResult result = await Obj.PostToImportDocumentsRelationForImportResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.ImportResult> result = await Obj.PostToImportDocumentsRelationForImportResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IImportResult(result)),
+                Content = JsonContent.Create(new ImportResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IImportResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ImportResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocument PostToUnprocessedDocumentUploadRelationForDocument(string requestedContentType, Stream dataToSend) => new Document(Obj.PostToUnprocessedDocumentUploadRelationForDocument(requestedContentType, dataToSend));
+        public Document PostToUnprocessedDocumentUploadRelationForDocument(string requestedContentType, Stream dataToSend) => new Document(Obj.PostToUnprocessedDocumentUploadRelationForDocument(requestedContentType, dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToUnprocessedDocumentUploadRelationForDocumentAsync(string requestedContentType, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToUnprocessedDocumentUploadRelationForDocumentAsync(requestedContentType, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToUnprocessedDocumentUploadRelationForDocumentAsync(requestedContentType, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> PostToUnprocessedDocumentUploadRelationForDocumentAsync(CancellationToken cancellationToken, string requestedContentType, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocument result = await Obj.PostToUnprocessedDocumentUploadRelationForDocumentAsync(cancellationToken, requestedContentType, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Document> result = await Obj.PostToUnprocessedDocumentUploadRelationForDocumentAsync(cancellationToken, requestedContentType, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocument(result)),
+                Content = JsonContent.Create(new Document(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryTableResult GetDocumentsQueryTableResultFromQueryRelation() => new DocumentsQueryTableResult(Obj.GetDocumentsQueryTableResultFromQueryRelation());
+        public DocumentsQueryTableResult GetDocumentsQueryTableResultFromQueryRelation() => new DocumentsQueryTableResult(Obj.GetDocumentsQueryTableResultFromQueryRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> GetDocumentsQueryTableResultFromQueryRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.GetDocumentsQueryTableResultFromQueryRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.GetDocumentsQueryTableResultFromQueryRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> GetDocumentsQueryTableResultFromQueryRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.GetDocumentsQueryTableResultFromQueryRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.GetDocumentsQueryTableResultFromQueryRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryResult GetDocumentsQueryResultFromQueryRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromQueryRelation());
+        public DocumentsQueryResult GetDocumentsQueryResultFromQueryRelation() => new DocumentsQueryResult(Obj.GetDocumentsQueryResultFromQueryRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromQueryRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.GetDocumentsQueryResultFromQueryRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.GetDocumentsQueryResultFromQueryRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> GetDocumentsQueryResultFromQueryRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.GetDocumentsQueryResultFromQueryRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.GetDocumentsQueryResultFromQueryRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryResult PostToQueryRelationForDocumentsQueryResult(IFunctionExpressionQuery dataToSend) => new DocumentsQueryResult(Obj.PostToQueryRelationForDocumentsQueryResult(dataToSend));
+        public DocumentsQueryResult PostToQueryRelationForDocumentsQueryResult(IFunctionExpressionQuery dataToSend) => new DocumentsQueryResult(Obj.PostToQueryRelationForDocumentsQueryResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToQueryRelationForDocumentsQueryResultAsync(IFunctionExpressionQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToQueryRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToQueryRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToQueryRelationForDocumentsQueryResultAsync(CancellationToken cancellationToken, IFunctionExpressionQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToQueryRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToQueryRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryTableResult PostToQueryRelationForDocumentsQueryTableResult(IFunctionExpressionQuery dataToSend) => new DocumentsQueryTableResult(Obj.PostToQueryRelationForDocumentsQueryTableResult(dataToSend));
+        public DocumentsQueryTableResult PostToQueryRelationForDocumentsQueryTableResult(IFunctionExpressionQuery dataToSend) => new DocumentsQueryTableResult(Obj.PostToQueryRelationForDocumentsQueryTableResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> PostToQueryRelationForDocumentsQueryTableResultAsync(IFunctionExpressionQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.PostToQueryRelationForDocumentsQueryTableResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.PostToQueryRelationForDocumentsQueryTableResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryTableResult>> PostToQueryRelationForDocumentsQueryTableResultAsync(CancellationToken cancellationToken, IFunctionExpressionQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryTableResult result = await Obj.PostToQueryRelationForDocumentsQueryTableResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryTableResult> result = await Obj.PostToQueryRelationForDocumentsQueryTableResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryTableResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryTableResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryTableResult>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfos GetDialogInfosFromDialogsRelation() => new DialogInfos(Obj.GetDialogInfosFromDialogsRelation());
+        public DialogInfos GetDialogInfosFromDialogsRelation() => new DialogInfos(Obj.GetDialogInfosFromDialogsRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromDialogsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromDialogsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromDialogsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromDialogsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromDialogsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromDialogsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfos GetDialogInfosFromSearchesRelation() => new DialogInfos(Obj.GetDialogInfosFromSearchesRelation());
+        public DialogInfos GetDialogInfosFromSearchesRelation() => new DialogInfos(Obj.GetDialogInfosFromSearchesRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromSearchesRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromSearchesRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromSearchesRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromSearchesRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromSearchesRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromSearchesRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
-        public IDialog GetDialogFromCustomSearchRelation() => new Dialog(Obj.GetDialogFromCustomSearchRelation());
+        public Dialog GetDialogFromCustomSearchRelation() => new Dialog(Obj.GetDialogFromCustomSearchRelation());
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomSearchRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialog result = await Obj.GetDialogFromCustomSearchRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomSearchRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialog(result)),
+                Content = JsonContent.Create(new Dialog(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Dialog>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomSearchRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialog result = await Obj.GetDialogFromCustomSearchRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomSearchRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialog(result)),
+                Content = JsonContent.Create(new Dialog(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Dialog>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfos GetDialogInfosFromResultTreesRelation() => new DialogInfos(Obj.GetDialogInfosFromResultTreesRelation());
+        public DialogInfos GetDialogInfosFromResultTreesRelation() => new DialogInfos(Obj.GetDialogInfosFromResultTreesRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromResultTreesRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromResultTreesRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromResultTreesRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromResultTreesRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromResultTreesRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromResultTreesRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfos GetDialogInfosFromStoresRelation() => new DialogInfos(Obj.GetDialogInfosFromStoresRelation());
+        public DialogInfos GetDialogInfosFromStoresRelation() => new DialogInfos(Obj.GetDialogInfosFromStoresRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromStoresRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromStoresRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromStoresRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromStoresRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromStoresRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromStoresRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfos GetDialogInfosFromTaskListsRelation() => new DialogInfos(Obj.GetDialogInfosFromTaskListsRelation());
+        public DialogInfos GetDialogInfosFromTaskListsRelation() => new DialogInfos(Obj.GetDialogInfosFromTaskListsRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromTaskListsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromTaskListsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromTaskListsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromTaskListsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfos result = await Obj.GetDialogInfosFromTaskListsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfos> result = await Obj.GetDialogInfosFromTaskListsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfos(result)),
+                Content = JsonContent.Create(new DialogInfos(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfos>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfos>(temp).ConfigureAwait(false);
         }
 
-        public IFileCabinet GetFileCabinetFromSelfRelation() => new FileCabinet(Obj.GetFileCabinetFromSelfRelation());
+        public FileCabinet GetFileCabinetFromSelfRelation() => new FileCabinet(Obj.GetFileCabinetFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IFileCabinet>> GetFileCabinetFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IFileCabinet result = await Obj.GetFileCabinetFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FileCabinet> result = await Obj.GetFileCabinetFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFileCabinet(result)),
+                Content = JsonContent.Create(new FileCabinet(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFileCabinet>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FileCabinet>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IFileCabinet>> GetFileCabinetFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IFileCabinet result = await Obj.GetFileCabinetFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FileCabinet> result = await Obj.GetFileCabinetFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFileCabinet(result)),
+                Content = JsonContent.Create(new FileCabinet(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFileCabinet>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FileCabinet>(temp).ConfigureAwait(false);
         }
 
-        public IStamps GetStampsFromStampsRelation() => new Stamps(Obj.GetStampsFromStampsRelation());
+        public Stamps GetStampsFromStampsRelation() => new Stamps(Obj.GetStampsFromStampsRelation());
 
         public async Task<DeserializedHttpResponse<IStamps>> GetStampsFromStampsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IStamps result = await Obj.GetStampsFromStampsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Stamps> result = await Obj.GetStampsFromStampsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IStamps(result)),
+                Content = JsonContent.Create(new Stamps(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IStamps>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Stamps>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IStamps>> GetStampsFromStampsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IStamps result = await Obj.GetStampsFromStampsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Stamps> result = await Obj.GetStampsFromStampsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IStamps(result)),
+                Content = JsonContent.Create(new Stamps(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IStamps>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Stamps>(temp).ConfigureAwait(false);
         }
 
-        public INotifications GetNotificationsFromNotificationsRelation() => new Notifications(Obj.GetNotificationsFromNotificationsRelation());
+        public Notifications GetNotificationsFromNotificationsRelation() => new Notifications(Obj.GetNotificationsFromNotificationsRelation());
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromNotificationsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.GetNotificationsFromNotificationsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.GetNotificationsFromNotificationsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromNotificationsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.GetNotificationsFromNotificationsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.GetNotificationsFromNotificationsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
 
-        public INotifications PostToNotificationsRelationForNotifications(INotifications dataToSend) => new Notifications(Obj.PostToNotificationsRelationForNotifications(dataToSend));
+        public Notifications PostToNotificationsRelationForNotifications(INotifications dataToSend) => new Notifications(Obj.PostToNotificationsRelationForNotifications(dataToSend));
 
         public async Task<DeserializedHttpResponse<INotifications>> PostToNotificationsRelationForNotificationsAsync(INotifications dataToSend)
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.PostToNotificationsRelationForNotificationsAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.PostToNotificationsRelationForNotificationsAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<INotifications>> PostToNotificationsRelationForNotificationsAsync(CancellationToken cancellationToken, INotifications dataToSend)
         {
-            DocuWare.Platform.ServerClient.INotifications result = await Obj.PostToNotificationsRelationForNotificationsAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Notifications> result = await Obj.PostToNotificationsRelationForNotificationsAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new INotifications(result)),
+                Content = JsonContent.Create(new Notifications(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryResult PostToTransferRelationForDocumentsQueryResult(IFileCabinetTransferInfo dataToSend) => new DocumentsQueryResult(Obj.PostToTransferRelationForDocumentsQueryResult(dataToSend));
+        public DocumentsQueryResult PostToTransferRelationForDocumentsQueryResult(IFileCabinetTransferInfo dataToSend) => new DocumentsQueryResult(Obj.PostToTransferRelationForDocumentsQueryResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToTransferRelationForDocumentsQueryResultAsync(IFileCabinetTransferInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToTransferRelationForDocumentsQueryResultAsync(CancellationToken cancellationToken, IFileCabinetTransferInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
-        public IDocumentsQueryResult PostToTransferRelationForDocumentsQueryResult(IDocumentsTransferInfo dataToSend) => new DocumentsQueryResult(Obj.PostToTransferRelationForDocumentsQueryResult(dataToSend));
+        public DocumentsQueryResult PostToTransferRelationForDocumentsQueryResult(IDocumentsTransferInfo dataToSend) => new DocumentsQueryResult(Obj.PostToTransferRelationForDocumentsQueryResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToTransferRelationForDocumentsQueryResultAsync(IDocumentsTransferInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentsQueryResult>> PostToTransferRelationForDocumentsQueryResultAsync(CancellationToken cancellationToken, IDocumentsTransferInfo dataToSend)
         {
-            DocuWare.Platform.ServerClient.IDocumentsQueryResult result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentsQueryResult> result = await Obj.PostToTransferRelationForDocumentsQueryResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDocumentsQueryResult(result)),
+                Content = JsonContent.Create(new DocumentsQueryResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDocumentsQueryResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DocumentsQueryResult>(temp).ConfigureAwait(false);
         }
 
-        public IDialogInfo GetDialogInfoFromVersionHistoryResultListRelation() => new DialogInfo(Obj.GetDialogInfoFromVersionHistoryResultListRelation());
+        public DialogInfo GetDialogInfoFromVersionHistoryResultListRelation() => new DialogInfo(Obj.GetDialogInfoFromVersionHistoryResultListRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfo>> GetDialogInfoFromVersionHistoryResultListRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDialogInfo result = await Obj.GetDialogInfoFromVersionHistoryResultListRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfo> result = await Obj.GetDialogInfoFromVersionHistoryResultListRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfo(result)),
+                Content = JsonContent.Create(new DialogInfo(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfo>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfo>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDialogInfo>> GetDialogInfoFromVersionHistoryResultListRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDialogInfo result = await Obj.GetDialogInfoFromVersionHistoryResultListRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DialogInfo> result = await Obj.GetDialogInfoFromVersionHistoryResultListRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDialogInfo(result)),
+                Content = JsonContent.Create(new DialogInfo(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDialogInfo>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DialogInfo>(temp).ConfigureAwait(false);
         }
 
-        public IBatchUpdateIndexFieldsResult PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(IBatchUpdateProcess dataToSend) => new BatchUpdateIndexFieldsResult(Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(dataToSend));
+        public BatchUpdateIndexFieldsResult PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(IBatchUpdateProcess dataToSend) => new BatchUpdateIndexFieldsResult(Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IBatchUpdateIndexFieldsResult>> PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(IBatchUpdateProcess dataToSend)
         {
-            DocuWare.Platform.ServerClient.IBatchUpdateIndexFieldsResult result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult> result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IBatchUpdateIndexFieldsResult(result)),
+                Content = JsonContent.Create(new BatchUpdateIndexFieldsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IBatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<BatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IBatchUpdateIndexFieldsResult>> PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(CancellationToken cancellationToken, IBatchUpdateProcess dataToSend)
         {
-            DocuWare.Platform.ServerClient.IBatchUpdateIndexFieldsResult result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult> result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IBatchUpdateIndexFieldsResult(result)),
+                Content = JsonContent.Create(new BatchUpdateIndexFieldsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IBatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<BatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
         }
 
-        public IBatchUpdateIndexFieldsResult PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(IBatchAppendKeywordValues dataToSend) => new BatchUpdateIndexFieldsResult(Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(dataToSend));
+        public BatchUpdateIndexFieldsResult PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(IBatchAppendKeywordValues dataToSend) => new BatchUpdateIndexFieldsResult(Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IBatchUpdateIndexFieldsResult>> PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(IBatchAppendKeywordValues dataToSend)
         {
-            DocuWare.Platform.ServerClient.IBatchUpdateIndexFieldsResult result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult> result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IBatchUpdateIndexFieldsResult(result)),
+                Content = JsonContent.Create(new BatchUpdateIndexFieldsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IBatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<BatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IBatchUpdateIndexFieldsResult>> PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(CancellationToken cancellationToken, IBatchAppendKeywordValues dataToSend)
         {
-            DocuWare.Platform.ServerClient.IBatchUpdateIndexFieldsResult result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult> result = await Obj.PostToBatchUpdateRelationForBatchUpdateIndexFieldsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IBatchUpdateIndexFieldsResult(result)),
+                Content = JsonContent.Create(new BatchUpdateIndexFieldsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IBatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<BatchUpdateIndexFieldsResult>(temp).ConfigureAwait(false);
         }
 
-        public IFieldValueStatisticsResult PostToFieldValueStatisticsRelationForFieldValueStatisticsResult(IFieldValueStatisticsExpression dataToSend) => new FieldValueStatisticsResult(Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResult(dataToSend));
+        public FieldValueStatisticsResult PostToFieldValueStatisticsRelationForFieldValueStatisticsResult(IFieldValueStatisticsExpression dataToSend) => new FieldValueStatisticsResult(Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<IFieldValueStatisticsResult>> PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(IFieldValueStatisticsExpression dataToSend)
         {
-            DocuWare.Platform.ServerClient.IFieldValueStatisticsResult result = await Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FieldValueStatisticsResult> result = await Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFieldValueStatisticsResult(result)),
+                Content = JsonContent.Create(new FieldValueStatisticsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFieldValueStatisticsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FieldValueStatisticsResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IFieldValueStatisticsResult>> PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(CancellationToken cancellationToken, IFieldValueStatisticsExpression dataToSend)
         {
-            DocuWare.Platform.ServerClient.IFieldValueStatisticsResult result = await Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FieldValueStatisticsResult> result = await Obj.PostToFieldValueStatisticsRelationForFieldValueStatisticsResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFieldValueStatisticsResult(result)),
+                Content = JsonContent.Create(new FieldValueStatisticsResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFieldValueStatisticsResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FieldValueStatisticsResult>(temp).ConfigureAwait(false);
         }
 
 		public async Stream PostToReplicationDataRelationForStream(Stream dataToSend) => Obj.PostToReplicationDataRelationForStream(dataToSend);
 
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDataRelationForStreamAsync(Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToReplicationDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -967,7 +967,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDataRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDataRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToReplicationDataRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -982,7 +982,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDeleteDataRelationForStreamAsync(Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDeleteDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToReplicationDeleteDataRelationForStreamAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -995,7 +995,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToReplicationDeleteDataRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToReplicationDeleteDataRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToReplicationDeleteDataRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -1010,7 +1010,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PostToSetupReplicationRelationForStringAsync(Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PostToSetupReplicationRelationForStringAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PostToSetupReplicationRelationForStringAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -1023,7 +1023,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> PostToSetupReplicationRelationForStringAsync(CancellationToken cancellationToken, Stream dataToSend)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.PostToSetupReplicationRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.PostToSetupReplicationRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -1038,7 +1038,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromReplicationInfoRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromReplicationInfoRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromReplicationInfoRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -1051,7 +1051,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromReplicationInfoRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromReplicationInfoRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromReplicationInfoRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -1062,32 +1062,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
 
-        public ISequenceResult PostToNextSequenceElementRelationForSequenceResult(ISequenceRequest dataToSend) => new SequenceResult(Obj.PostToNextSequenceElementRelationForSequenceResult(dataToSend));
+        public SequenceResult PostToNextSequenceElementRelationForSequenceResult(ISequenceRequest dataToSend) => new SequenceResult(Obj.PostToNextSequenceElementRelationForSequenceResult(dataToSend));
 
         public async Task<DeserializedHttpResponse<ISequenceResult>> PostToNextSequenceElementRelationForSequenceResultAsync(ISequenceRequest dataToSend)
         {
-            DocuWare.Platform.ServerClient.ISequenceResult result = await Obj.PostToNextSequenceElementRelationForSequenceResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SequenceResult> result = await Obj.PostToNextSequenceElementRelationForSequenceResultAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISequenceResult(result)),
+                Content = JsonContent.Create(new SequenceResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISequenceResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SequenceResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISequenceResult>> PostToNextSequenceElementRelationForSequenceResultAsync(CancellationToken cancellationToken, ISequenceRequest dataToSend)
         {
-            DocuWare.Platform.ServerClient.ISequenceResult result = await Obj.PostToNextSequenceElementRelationForSequenceResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SequenceResult> result = await Obj.PostToNextSequenceElementRelationForSequenceResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISequenceResult(result)),
+                Content = JsonContent.Create(new SequenceResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISequenceResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SequenceResult>(temp).ConfigureAwait(false);
         }
     }
 }

@@ -16,37 +16,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Templates\AsyncDocuWareMethodTemplate.tmp">
+    <None Update="Templates\AsyncDocuWareMethod.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\DocuWareListPropertyGetSetTemplate.tmp">
+    <None Update="Templates\DocuWareListPropertyGetSet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\DocuWareListPropertyGetTemplate.tmp">
+    <None Update="Templates\DocuWareListPropertyGet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\ImplementationTemplate.tmp">
+    <None Update="Templates\Implementation.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\InterfaceTemplate.tmp">
+    <None Update="Templates\Interface.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\DocuWarePropertyGetSetTemplate.tmp">
+    <None Update="Templates\DocuWarePropertyGetSet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\DocuWarePropertyGetTemplate.tmp">
+    <None Update="Templates\DocuWarePropertyGet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\PropertyGetSetTemplate.tmp">
+    <None Update="Templates\PropertyGetSet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\PropertyGetTemplate.tmp">
+    <None Update="Templates\PropertyGet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\RealDocuWareTemplate.tmp">
+    <None Update="Templates\RealDocuWare.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\SyncDocuWareMethodTemplate.tmp">
+    <None Update="Templates\SyncDocuWareMethod.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

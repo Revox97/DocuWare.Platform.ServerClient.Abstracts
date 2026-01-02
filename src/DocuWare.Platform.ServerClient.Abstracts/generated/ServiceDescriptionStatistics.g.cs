@@ -20,7 +20,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(ICFSStatisticGeneral dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToCfsRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToCfsRelationForStreamAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -33,7 +33,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(CancellationToken cancellationToken, ICFSStatisticGeneral dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToCfsRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToCfsRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

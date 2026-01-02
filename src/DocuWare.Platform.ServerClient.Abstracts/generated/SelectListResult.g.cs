@@ -34,116 +34,116 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public ISelectListResult GetSelectListResultFromNextRelation() => new SelectListResult(Obj.GetSelectListResultFromNextRelation());
+        public SelectListResult GetSelectListResultFromNextRelation() => new SelectListResult(Obj.GetSelectListResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromNextRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromNextRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromNextRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromNextRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromNextRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public ISelectListResult GetSelectListResultFromPrevRelation() => new SelectListResult(Obj.GetSelectListResultFromPrevRelation());
+        public SelectListResult GetSelectListResultFromPrevRelation() => new SelectListResult(Obj.GetSelectListResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromPrevRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromPrevRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromPrevRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromPrevRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromPrevRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public ISelectListResult GetSelectListResultFromSelfRelation() => new SelectListResult(Obj.GetSelectListResultFromSelfRelation());
+        public SelectListResult GetSelectListResultFromSelfRelation() => new SelectListResult(Obj.GetSelectListResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public ISelectListResult GetSelectListResultFromFirstRelation() => new SelectListResult(Obj.GetSelectListResultFromFirstRelation());
+        public SelectListResult GetSelectListResultFromFirstRelation() => new SelectListResult(Obj.GetSelectListResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromFirstRelationAsync()
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromFirstRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromFirstRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISelectListResult>> GetSelectListResultFromFirstRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.ISelectListResult result = await Obj.GetSelectListResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.SelectListResult> result = await Obj.GetSelectListResultFromFirstRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new ISelectListResult(result)),
+                Content = JsonContent.Create(new SelectListResult(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<ISelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<SelectListResult>(temp).ConfigureAwait(false);
         }
     }
 }

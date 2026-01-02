@@ -16,7 +16,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Task DisconnectAsync();
 		Task DisconnectAsync(CancellationToken token);
 		Task<IOrganization[]> GetOrganizationsAsync();
-		T GetXml(string uri);
-		Task<DeserializedHttpResponse<T>> GetXmlAsync(string uri);
+		IT GetXml(string uri);
+		Task<DeserializedHttpResponse<IT>> GetXmlAsync(string uri);
     }
 }

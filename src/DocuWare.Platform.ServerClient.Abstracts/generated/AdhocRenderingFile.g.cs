@@ -42,39 +42,39 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IAdhocRenderingFile GetAdhocRenderingFileFromSelfRelation() => new AdhocRenderingFile(Obj.GetAdhocRenderingFileFromSelfRelation());
+        public AdhocRenderingFile GetAdhocRenderingFileFromSelfRelation() => new AdhocRenderingFile(Obj.GetAdhocRenderingFileFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> GetAdhocRenderingFileFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IAdhocRenderingFile result = await Obj.GetAdhocRenderingFileFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.AdhocRenderingFile> result = await Obj.GetAdhocRenderingFileFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IAdhocRenderingFile(result)),
+                Content = JsonContent.Create(new AdhocRenderingFile(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> GetAdhocRenderingFileFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IAdhocRenderingFile result = await Obj.GetAdhocRenderingFileFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.AdhocRenderingFile> result = await Obj.GetAdhocRenderingFileFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IAdhocRenderingFile(result)),
+                Content = JsonContent.Create(new AdhocRenderingFile(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
 		public async Stream PostToRenderingRelationForStream(IAdhocRenderingQuery dataToSend) => Obj.PostToRenderingRelationForStream(dataToSend);
 
         public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(IAdhocRenderingQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToRenderingRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToRenderingRelationForStreamAsync(dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -87,7 +87,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(CancellationToken cancellationToken, IAdhocRenderingQuery dataToSend)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.PostToRenderingRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.PostToRenderingRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

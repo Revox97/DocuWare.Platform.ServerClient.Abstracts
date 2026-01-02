@@ -46,39 +46,39 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDesignerInstance GetDesignerInstanceFromSelfRelation() => new DesignerInstance(Obj.GetDesignerInstanceFromSelfRelation());
+        public DesignerInstance GetDesignerInstanceFromSelfRelation() => new DesignerInstance(Obj.GetDesignerInstanceFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerInstance>> GetDesignerInstanceFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDesignerInstance result = await Obj.GetDesignerInstanceFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstance> result = await Obj.GetDesignerInstanceFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerInstance(result)),
+                Content = JsonContent.Create(new DesignerInstance(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerInstance>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerInstance>> GetDesignerInstanceFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDesignerInstance result = await Obj.GetDesignerInstanceFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstance> result = await Obj.GetDesignerInstanceFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDesignerInstance(result)),
+                Content = JsonContent.Create(new DesignerInstance(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDesignerInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<DesignerInstance>(temp).ConfigureAwait(false);
         }
 
 		public async string DeleteSelfRelation() => Obj.DeleteSelfRelation();
 
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -91,7 +91,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> DeleteSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

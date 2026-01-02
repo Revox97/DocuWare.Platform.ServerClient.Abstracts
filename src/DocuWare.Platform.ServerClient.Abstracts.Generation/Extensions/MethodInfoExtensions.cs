@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
@@ -12,7 +13,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             for (int i = 0; i < parameters.Length; i++)
             {
                 ParameterInfo parameter = parameters[i];
-                string parsedParameter = parameter.GetParsedParameterDefinitions();
+                TypeDef paramTypeDef = parameter.ParameterType.GetTypeDefinition();
+                string parsedParameter = $"{paramTypeDef.GetReturnTypeName()} {parameter.Name}";
 
                 if (i == 0)
                     result += parsedParameter;

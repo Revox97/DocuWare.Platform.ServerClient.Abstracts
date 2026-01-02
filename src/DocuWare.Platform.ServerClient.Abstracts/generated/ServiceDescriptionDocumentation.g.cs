@@ -28,7 +28,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLinkModelOverviewRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLinkModelOverviewRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -41,7 +41,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromLinkModelOverviewRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLinkModelOverviewRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -52,67 +52,67 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
         }
 
-        public IXmlSchemas GetXmlSchemasFromSchemasRelation() => new XmlSchemas(Obj.GetXmlSchemasFromSchemasRelation());
+        public XmlSchemas GetXmlSchemasFromSchemasRelation() => new XmlSchemas(Obj.GetXmlSchemasFromSchemasRelation());
 
         public async Task<DeserializedHttpResponse<IXmlSchemas>> GetXmlSchemasFromSchemasRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IXmlSchemas result = await Obj.GetXmlSchemasFromSchemasRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.XmlSchemas> result = await Obj.GetXmlSchemasFromSchemasRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IXmlSchemas(result)),
+                Content = JsonContent.Create(new XmlSchemas(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IXmlSchemas>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<XmlSchemas>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IXmlSchemas>> GetXmlSchemasFromSchemasRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IXmlSchemas result = await Obj.GetXmlSchemasFromSchemasRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.XmlSchemas> result = await Obj.GetXmlSchemasFromSchemasRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IXmlSchemas(result)),
+                Content = JsonContent.Create(new XmlSchemas(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IXmlSchemas>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<XmlSchemas>(temp).ConfigureAwait(false);
         }
 
-        public IFunctionDescriptions GetFunctionDescriptionsFromFunctionDescriptionsRelation() => new FunctionDescriptions(Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelation());
+        public FunctionDescriptions GetFunctionDescriptionsFromFunctionDescriptionsRelation() => new FunctionDescriptions(Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelation());
 
         public async Task<DeserializedHttpResponse<IFunctionDescriptions>> GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IFunctionDescriptions result = await Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FunctionDescriptions> result = await Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFunctionDescriptions(result)),
+                Content = JsonContent.Create(new FunctionDescriptions(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFunctionDescriptions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FunctionDescriptions>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IFunctionDescriptions>> GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IFunctionDescriptions result = await Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.FunctionDescriptions> result = await Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IFunctionDescriptions(result)),
+                Content = JsonContent.Create(new FunctionDescriptions(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IFunctionDescriptions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<FunctionDescriptions>(temp).ConfigureAwait(false);
         }
 
 		public async Stream GetStreamFromSchemaSearchRelation() => Obj.GetStreamFromSchemaSearchRelation();
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaSearchRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaSearchRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -125,7 +125,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromSchemaSearchRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaSearchRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -140,7 +140,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -153,7 +153,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

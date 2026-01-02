@@ -20,7 +20,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync()
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteInstanceRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteInstanceRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -33,7 +33,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.string result = await Obj.DeleteInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<string> result = await Obj.DeleteInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -48,7 +48,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync()
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromInstanceRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromInstanceRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -61,7 +61,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.Stream result = await Obj.GetStreamFromInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

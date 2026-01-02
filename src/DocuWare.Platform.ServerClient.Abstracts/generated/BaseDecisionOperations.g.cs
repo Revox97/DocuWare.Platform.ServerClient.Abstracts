@@ -16,32 +16,32 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public IDecision GetDecisionFromSelfRelation() => new Decision(Obj.GetDecisionFromSelfRelation());
+        public Decision GetDecisionFromSelfRelation() => new Decision(Obj.GetDecisionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDecision>> GetDecisionFromSelfRelationAsync()
         {
-            DocuWare.Platform.ServerClient.IDecision result = await Obj.GetDecisionFromSelfRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Decision> result = await Obj.GetDecisionFromSelfRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDecision(result)),
+                Content = JsonContent.Create(new Decision(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDecision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Decision>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDecision>> GetDecisionFromSelfRelationAsync(CancellationToken cancellationToken)
         {
-            DocuWare.Platform.ServerClient.IDecision result = await Obj.GetDecisionFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Decision> result = await Obj.GetDecisionFromSelfRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
-                Content = JsonContent.Create(new IDecision(result)),
+                Content = JsonContent.Create(new Decision(result)),
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IDecision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<Decision>(temp).ConfigureAwait(false);
         }
     }
 }

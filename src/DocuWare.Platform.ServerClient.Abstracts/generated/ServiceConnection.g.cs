@@ -28,11 +28,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<IOrganization[]> GetOrganizationsAsync() => await Obj.GetOrganizationsAsync();
 
-        public T GetXml(string uri) => new (Obj.GetXml(uri));
+        public T GetXml(string uri) => new T(Obj.GetXml(uri));
 
-        public async Task<DeserializedHttpResponse<T>> GetXmlAsync(string uri)
+        public async Task<DeserializedHttpResponse<IT>> GetXmlAsync(string uri)
         {
-            DocuWare.Platform.ServerClient.T result = await Obj.GetXmlAsync(uri).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.T> result = await Obj.GetXmlAsync(uri).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

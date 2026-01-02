@@ -1,4 +1,7 @@
-﻿using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
+using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
@@ -10,6 +13,51 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
         {
             DocumentationCommentsService.GetDocumentationComments(t);
             throw new NotImplementedException();
+        }
+
+        internal static TypeDef GetTypeDefinition(this Type t, TypeDef? parent = null)
+        {
+            TypeDef typeDef = new()
+            {
+                Name = t.GetParsedName(),
+                FullName = t.FullName ?? string.Empty,
+                Parent = parent
+            };
+
+            if (t.IsEnum)
+            {
+                typeDef.Category = TypeCategory.Enum;
+            }
+            else if (t.IsPrimitive || t == typeof(string) || t == typeof(void) || t == typeof(object))
+            {
+                typeDef.Category = TypeCategory.Primitive;
+            }
+            else if (t.IsGenericType)
+            {
+                if (t.Name.StartsWith("Nullable"))
+                {
+                    typeDef = t.GenericTypeArguments[0].GetTypeDefinition();
+                    typeDef.Name = $"{t.GenericTypeArguments[0].GetParsedName()}?";
+                }
+                else
+                {
+                    typeDef.Category = t.Name.StartsWith("List") ? TypeCategory.List : TypeCategory.Generic;
+
+                    typeDef.NestedType = t.GetSubTypes()
+                        .Select(subType => subType.GetTypeDefinition(typeDef))
+                        .FirstOrDefault();
+                }
+            }
+            else if (t.IsDocuWareType())
+            {
+                typeDef.Category = TypeCategory.DocuWare;
+            }
+            else if (t.IsInterface)
+            {
+                typeDef.Category = TypeCategory.Interface;
+            }
+
+            return typeDef;
         }
 
         public static string GetParsedName(this Type t)
@@ -37,13 +85,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                     return $"{subTypeName}?";
                 }
 
-                string subType = t.GetParsedSubTypes();
-                return $"{name[..name.IndexOf('`')]}<{subType}>";
+                return $"{name[..name.IndexOf('`')]}<T>";
             }
 
-            return t.IsClass && t.IsDocuWareType()
-                ? $"I{name}"
-                : name;
+            return name;
         }
 
         internal static string GetParsedSubTypes(this Type t)
