@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerWorkflowVersions(SDK.DesignerWorkflowVersions obj) : IDesignerWorkflowVersions
+    public class DesignerWorkflowVersions(DocuWare.Platform.ServerClient.DesignerWorkflowVersions obj) : IDesignerWorkflowVersions
     {
-        internal SDK.DesignerWorkflowVersions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DesignerWorkflowVersions Obj { get; } = obj;
 
         public List<IDesignerWorkflowVersion> DesignerWorkflowVersion
         {

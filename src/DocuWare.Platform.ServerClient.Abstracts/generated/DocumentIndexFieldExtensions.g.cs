@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldExtensions(SDK.DocumentIndexFieldExtensions obj) : IDocumentIndexFieldExtensions
+    public class DocumentIndexFieldExtensions(DocuWare.Platform.ServerClient.DocumentIndexFieldExtensions obj) : IDocumentIndexFieldExtensions
     {
-        internal SDK.DocumentIndexFieldExtensions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentIndexFieldExtensions Obj { get; } = obj;
     }
 }

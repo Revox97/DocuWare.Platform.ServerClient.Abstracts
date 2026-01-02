@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CommonFormField(SDK.CommonFormField obj) : ICommonFormField
+    public class CommonFormField(DocuWare.Platform.ServerClient.CommonFormField obj) : ICommonFormField
     {
-        internal SDK.CommonFormField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CommonFormField Obj { get; } = obj;
 
         public List<ISelectListFilter> SelectListFilters
         {

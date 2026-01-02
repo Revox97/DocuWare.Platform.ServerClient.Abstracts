@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinTableHeader(SDK.TrashBinTableHeader obj) : ITrashBinTableHeader
+    public class TrashBinTableHeader(DocuWare.Platform.ServerClient.TrashBinTableHeader obj) : ITrashBinTableHeader
     {
-        internal SDK.TrashBinTableHeader Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBinTableHeader Obj { get; } = obj;
 
         public string FieldName
         {

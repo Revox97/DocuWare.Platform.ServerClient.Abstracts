@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LineEntry(SDK.LineEntry obj) : ILineEntry
+    public class LineEntry(DocuWare.Platform.ServerClient.LineEntry obj) : ILineEntry
     {
-        internal SDK.LineEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LineEntry Obj { get; } = obj;
 
         public bool Arrow
         {

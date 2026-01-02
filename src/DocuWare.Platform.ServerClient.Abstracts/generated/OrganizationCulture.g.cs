@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class OrganizationCulture(SDK.OrganizationCulture obj) : IOrganizationCulture
+    public class OrganizationCulture(DocuWare.Platform.ServerClient.OrganizationCulture obj) : IOrganizationCulture
     {
-        internal SDK.OrganizationCulture Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.OrganizationCulture Obj { get; } = obj;
 
         public string Language
         {

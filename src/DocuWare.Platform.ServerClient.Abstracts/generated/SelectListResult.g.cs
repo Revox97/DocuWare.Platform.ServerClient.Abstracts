@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListResult(SDK.SelectListResult obj) : ISelectListResult
+    public class SelectListResult(DocuWare.Platform.ServerClient.SelectListResult obj) : ISelectListResult
     {
-        internal SDK.SelectListResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SelectListResult Obj { get; } = obj;
 
         public List<string> Value
         {

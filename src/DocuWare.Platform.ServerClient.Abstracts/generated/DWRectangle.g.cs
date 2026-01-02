@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DWRectangle(SDK.DWRectangle obj) : IDWRectangle
+    public class DWRectangle(DocuWare.Platform.ServerClient.DWRectangle obj) : IDWRectangle
     {
-        internal SDK.DWRectangle Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DWRectangle Obj { get; } = obj;
 
         public double Left
         {

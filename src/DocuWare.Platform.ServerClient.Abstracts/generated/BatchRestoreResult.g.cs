@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchRestoreResult(SDK.BatchRestoreResult obj) : IBatchRestoreResult
+    public class BatchRestoreResult(DocuWare.Platform.ServerClient.BatchRestoreResult obj) : IBatchRestoreResult
     {
-        internal SDK.BatchRestoreResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchRestoreResult Obj { get; } = obj;
 
         public List<Link> Links
         {

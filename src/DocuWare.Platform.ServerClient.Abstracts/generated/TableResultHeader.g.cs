@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableResultHeader(SDK.TableResultHeader obj) : ITableResultHeader
+    public class TableResultHeader(DocuWare.Platform.ServerClient.TableResultHeader obj) : ITableResultHeader
     {
-        internal SDK.TableResultHeader Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TableResultHeader Obj { get; } = obj;
 
         public string FieldName
         {

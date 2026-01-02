@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileDownloadBase(SDK.FileDownloadBase obj) : IFileDownloadBase
+    public class FileDownloadBase(DocuWare.Platform.ServerClient.FileDownloadBase obj) : IFileDownloadBase
     {
-        internal SDK.FileDownloadBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileDownloadBase Obj { get; } = obj;
 
         public List<int> Layers
         {

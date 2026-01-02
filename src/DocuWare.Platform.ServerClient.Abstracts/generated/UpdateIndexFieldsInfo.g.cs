@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UpdateIndexFieldsInfo(SDK.UpdateIndexFieldsInfo obj) : IUpdateIndexFieldsInfo
+    public class UpdateIndexFieldsInfo(DocuWare.Platform.ServerClient.UpdateIndexFieldsInfo obj) : IUpdateIndexFieldsInfo
     {
-        internal SDK.UpdateIndexFieldsInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UpdateIndexFieldsInfo Obj { get; } = obj;
 
         public string DialogId
         {

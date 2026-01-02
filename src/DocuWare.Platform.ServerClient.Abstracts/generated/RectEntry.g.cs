@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RectEntry(SDK.RectEntry obj) : IRectEntry
+    public class RectEntry(DocuWare.Platform.ServerClient.RectEntry obj) : IRectEntry
     {
-        internal SDK.RectEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RectEntry Obj { get; } = obj;
 
         public bool Filled
         {

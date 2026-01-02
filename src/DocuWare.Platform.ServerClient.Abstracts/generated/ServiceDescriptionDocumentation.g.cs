@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceDescriptionDocumentation(SDK.ServiceDescriptionDocumentation obj) : IServiceDescriptionDocumentation
+    public class ServiceDescriptionDocumentation(DocuWare.Platform.ServerClient.ServiceDescriptionDocumentation obj) : IServiceDescriptionDocumentation
     {
-        internal SDK.ServiceDescriptionDocumentation Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ServiceDescriptionDocumentation Obj { get; } = obj;
 
         public Link[] Links
         {

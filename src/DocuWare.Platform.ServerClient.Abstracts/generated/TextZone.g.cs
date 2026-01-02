@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextZone(SDK.TextZone obj) : ITextZone
+    public class TextZone(DocuWare.Platform.ServerClient.Content.TextZone obj) : ITextZone
     {
-        internal SDK.TextZone Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.TextZone Obj { get; } = obj;
 
         public List<ILine> Ln
         {

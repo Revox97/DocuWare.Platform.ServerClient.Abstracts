@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebClientLayout(SDK.WebClientLayout obj) : IWebClientLayout
+    public class WebClientLayout(DocuWare.Platform.ServerClient.WebClient.WebClientLayout obj) : IWebClientLayout
     {
-        internal SDK.WebClientLayout Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.WebClientLayout Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.LayoutMode Mode
         {

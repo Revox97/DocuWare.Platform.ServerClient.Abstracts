@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BooleanConstant(SDK.BooleanConstant obj) : IBooleanConstant
+    public class BooleanConstant(DocuWare.Platform.ServerClient.BooleanConstant obj) : IBooleanConstant
     {
-        internal SDK.BooleanConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BooleanConstant Obj { get; } = obj;
 
         public bool? Value
         {

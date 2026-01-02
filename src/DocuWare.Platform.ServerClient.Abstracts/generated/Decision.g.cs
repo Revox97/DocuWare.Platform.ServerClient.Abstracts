@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Decision(SDK.Decision obj) : IDecision
+    public class Decision(DocuWare.Platform.ServerClient.Decision obj) : IDecision
     {
-        internal SDK.Decision Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Decision Obj { get; } = obj;
 
         public List<ITaskFormField> TaskFormField
         {

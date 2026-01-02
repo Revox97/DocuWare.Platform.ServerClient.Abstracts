@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinTableRow(SDK.TrashBinTableRow obj) : ITrashBinTableRow
+    public class TrashBinTableRow(DocuWare.Platform.ServerClient.TrashBinTableRow obj) : ITrashBinTableRow
     {
-        internal SDK.TrashBinTableRow Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBinTableRow Obj { get; } = obj;
 
         public List<object> Items
         {

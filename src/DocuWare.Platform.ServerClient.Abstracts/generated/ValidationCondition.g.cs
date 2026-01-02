@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ValidationCondition(SDK.ValidationCondition obj) : IValidationCondition
+    public class ValidationCondition(DocuWare.Platform.ServerClient.ValidationCondition obj) : IValidationCondition
     {
-        internal SDK.ValidationCondition Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ValidationCondition Obj { get; } = obj;
     }
 }

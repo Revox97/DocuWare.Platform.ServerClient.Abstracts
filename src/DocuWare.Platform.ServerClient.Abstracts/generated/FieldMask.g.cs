@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldMask(SDK.FieldMask obj) : IFieldMask
+    public class FieldMask(DocuWare.Platform.ServerClient.FieldMask obj) : IFieldMask
     {
-        internal SDK.FieldMask Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FieldMask Obj { get; } = obj;
 
         public string ErrorText
         {

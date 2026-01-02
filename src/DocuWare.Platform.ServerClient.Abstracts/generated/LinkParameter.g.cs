@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkParameter(SDK.LinkParameter obj) : ILinkParameter
+    public class LinkParameter(DocuWare.Platform.ServerClient.LinkParameter obj) : ILinkParameter
     {
-        internal SDK.LinkParameter Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LinkParameter Obj { get; } = obj;
 
         public string Url
         {

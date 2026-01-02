@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableFieldInitialValues(SDK.TaskTableFieldInitialValues obj) : ITaskTableFieldInitialValues
+    public class TaskTableFieldInitialValues(DocuWare.Platform.ServerClient.TaskTableFieldInitialValues obj) : ITaskTableFieldInitialValues
     {
-        internal SDK.TaskTableFieldInitialValues Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskTableFieldInitialValues Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
         {

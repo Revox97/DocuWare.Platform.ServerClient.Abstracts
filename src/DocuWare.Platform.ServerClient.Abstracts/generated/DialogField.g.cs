@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogField(SDK.DialogField obj) : IDialogField
+    public class DialogField(DocuWare.Platform.ServerClient.DialogField obj) : IDialogField
     {
-        internal SDK.DialogField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogField Obj { get; } = obj;
 
         public List<IDialogFieldBase> DialogTableFieldColumns
         {

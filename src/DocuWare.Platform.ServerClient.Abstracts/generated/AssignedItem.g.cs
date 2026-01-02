@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AssignedItem(SDK.AssignedItem obj) : IAssignedItem
+    public class AssignedItem(DocuWare.Platform.ServerClient.AssignedItem obj) : IAssignedItem
     {
-        internal SDK.AssignedItem Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AssignedItem Obj { get; } = obj;
 
         public string Id
         {

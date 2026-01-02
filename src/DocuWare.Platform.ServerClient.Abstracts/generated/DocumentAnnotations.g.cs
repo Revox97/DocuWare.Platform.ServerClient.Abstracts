@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentAnnotations(SDK.DocumentAnnotations obj) : IDocumentAnnotations
+    public class DocumentAnnotations(DocuWare.Platform.ServerClient.DocumentAnnotations obj) : IDocumentAnnotations
     {
-        internal SDK.DocumentAnnotations Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentAnnotations Obj { get; } = obj;
 
         public List<ISectionAnnotation> Annotations
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ClientTimeoutException(SDK.ClientTimeoutException obj) : IClientTimeoutException
+    public class ClientTimeoutException(DocuWare.Platform.ServerClient.Exceptions.ClientTimeoutException obj) : IClientTimeoutException
     {
-        internal SDK.ClientTimeoutException Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Exceptions.ClientTimeoutException Obj { get; } = obj;
 
         public string Message => Obj.Message;
 

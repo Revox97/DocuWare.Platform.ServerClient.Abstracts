@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PagesBlockQuery(SDK.PagesBlockQuery obj) : IPagesBlockQuery
+    public class PagesBlockQuery(DocuWare.Platform.ServerClient.PagesBlockQuery obj) : IPagesBlockQuery
     {
-        internal SDK.PagesBlockQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PagesBlockQuery Obj { get; } = obj;
 
         public int FirstPage
         {

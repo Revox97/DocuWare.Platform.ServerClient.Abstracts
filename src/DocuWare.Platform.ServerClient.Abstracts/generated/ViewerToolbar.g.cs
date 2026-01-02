@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ViewerToolbar(SDK.ViewerToolbar obj) : IViewerToolbar
+    public class ViewerToolbar(DocuWare.Platform.ServerClient.WebClient.ViewerToolbar obj) : IViewerToolbar
     {
-        internal SDK.ViewerToolbar Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.ViewerToolbar Obj { get; } = obj;
 
         public List<IViewerToolbarControl> Controls
         {

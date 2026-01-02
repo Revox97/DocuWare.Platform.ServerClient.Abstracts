@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PlatformClientConfiguration(SDK.PlatformClientConfiguration obj) : IPlatformClientConfiguration
+    public class PlatformClientConfiguration(DocuWare.Platform.ServerClient.PlatformClientConfiguration obj) : IPlatformClientConfiguration
     {
-        internal SDK.PlatformClientConfiguration Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PlatformClientConfiguration Obj { get; } = obj;
 
 		public string GetHostId() => Obj.GetHostId();
 

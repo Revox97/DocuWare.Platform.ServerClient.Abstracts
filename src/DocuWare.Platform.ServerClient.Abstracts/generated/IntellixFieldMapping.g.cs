@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IntellixFieldMapping(SDK.IntellixFieldMapping obj) : IIntellixFieldMapping
+    public class IntellixFieldMapping(DocuWare.Platform.ServerClient.IntellixFieldMapping obj) : IIntellixFieldMapping
     {
-        internal SDK.IntellixFieldMapping Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.IntellixFieldMapping Obj { get; } = obj;
 
         public string FieldDBName
         {

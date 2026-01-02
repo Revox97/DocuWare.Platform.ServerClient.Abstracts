@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinet(SDK.FileCabinet obj) : IFileCabinet
+    public class FileCabinet(DocuWare.Platform.ServerClient.FileCabinet obj) : IFileCabinet
     {
-        internal SDK.FileCabinet Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileCabinet Obj { get; } = obj;
 
         public Link[] Links
         {

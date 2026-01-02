@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HawkAttribute(SDK.HawkAttribute obj) : IHawkAttribute
+    public class HawkAttribute(DocuWare.Platform.ServerClient.HawkAttribute obj) : IHawkAttribute
     {
-        internal SDK.HawkAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.HawkAttribute Obj { get; } = obj;
     }
 }

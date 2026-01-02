@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RoleField(SDK.RoleField obj) : IRoleField
+    public class RoleField(DocuWare.Platform.ServerClient.RoleField obj) : IRoleField
     {
-        internal SDK.RoleField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RoleField Obj { get; } = obj;
 
         public bool IsMultiselect
         {

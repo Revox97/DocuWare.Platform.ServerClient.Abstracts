@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumberTableColumnOptions(SDK.NumberTableColumnOptions obj) : INumberTableColumnOptions
+    public class NumberTableColumnOptions(DocuWare.Platform.ServerClient.NumberTableColumnOptions obj) : INumberTableColumnOptions
     {
-        internal SDK.NumberTableColumnOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.NumberTableColumnOptions Obj { get; } = obj;
 
         public int Precision
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextStampEntry(SDK.TextStampEntry obj) : ITextStampEntry
+    public class TextStampEntry(DocuWare.Platform.ServerClient.TextStampEntry obj) : ITextStampEntry
     {
-        internal SDK.TextStampEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextStampEntry Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.StampSignatureType Signature
         {

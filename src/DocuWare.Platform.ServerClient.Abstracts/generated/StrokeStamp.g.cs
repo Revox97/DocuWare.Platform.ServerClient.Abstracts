@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StrokeStamp(SDK.StrokeStamp obj) : IStrokeStamp
+    public class StrokeStamp(DocuWare.Platform.ServerClient.StrokeStamp obj) : IStrokeStamp
     {
-        internal SDK.StrokeStamp Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StrokeStamp Obj { get; } = obj;
 
         public uint StrokeWidth
         {

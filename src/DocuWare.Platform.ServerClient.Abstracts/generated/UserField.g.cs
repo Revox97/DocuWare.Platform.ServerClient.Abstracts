@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserField(SDK.UserField obj) : IUserField
+    public class UserField(DocuWare.Platform.ServerClient.UserField obj) : IUserField
     {
-        internal SDK.UserField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserField Obj { get; } = obj;
 
         public bool IsMultiselect
         {

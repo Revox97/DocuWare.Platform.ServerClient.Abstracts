@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentAuditEventProperty(SDK.DocumentAuditEventProperty obj) : IDocumentAuditEventProperty
+    public class DocumentAuditEventProperty(DocuWare.Platform.ServerClient.DocumentAuditEventProperty obj) : IDocumentAuditEventProperty
     {
-        internal SDK.DocumentAuditEventProperty Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentAuditEventProperty Obj { get; } = obj;
 
         public string PropertyName
         {

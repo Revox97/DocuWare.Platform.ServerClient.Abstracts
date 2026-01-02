@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CheckOutResult(SDK.CheckOutResult obj) : ICheckOutResult
+    public class CheckOutResult(DocuWare.Platform.ServerClient.CheckOutResult obj) : ICheckOutResult
     {
-        internal SDK.CheckOutResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CheckOutResult Obj { get; } = obj;
 
         public Link[] Links
         {

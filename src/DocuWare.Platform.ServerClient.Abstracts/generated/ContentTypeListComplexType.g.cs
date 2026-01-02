@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentTypeListComplexType(SDK.ContentTypeListComplexType obj) : IContentTypeListComplexType
+    public class ContentTypeListComplexType(DocuWare.Platform.ServerClient.ContentTypeListComplexType obj) : IContentTypeListComplexType
     {
-        internal SDK.ContentTypeListComplexType Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ContentTypeListComplexType Obj { get; } = obj;
 
         public XElementWrapper Any
         {

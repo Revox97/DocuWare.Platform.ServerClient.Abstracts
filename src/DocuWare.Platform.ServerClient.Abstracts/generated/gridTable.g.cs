@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class gridTable(SDK.gridTable obj) : IgridTable
+    public class gridTable(DocuWare.Platform.ServerClient.Content.gridTable obj) : IgridTable
     {
-        internal SDK.gridTable Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.gridTable Obj { get; } = obj;
 
         public List<int> gridCol
         {

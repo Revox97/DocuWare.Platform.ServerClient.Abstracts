@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileDownload(SDK.FileDownload obj) : IFileDownload
+    public class FileDownload(DocuWare.Platform.ServerClient.FileDownload obj) : IFileDownload
     {
-        internal SDK.FileDownload Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileDownload Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.FileDownloadType TargetFileType
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AnnotationRectangle(SDK.AnnotationRectangle obj) : IAnnotationRectangle
+    public class AnnotationRectangle(DocuWare.Platform.ServerClient.AnnotationRectangle obj) : IAnnotationRectangle
     {
-        internal SDK.AnnotationRectangle Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AnnotationRectangle Obj { get; } = obj;
 
         public double Left
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionExpression(SDK.FunctionExpression obj) : IFunctionExpression
+    public class FunctionExpression(DocuWare.Platform.ServerClient.FunctionExpression obj) : IFunctionExpression
     {
-        internal SDK.FunctionExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FunctionExpression Obj { get; } = obj;
 
         public List<IAnyExpression> Parameter
         {

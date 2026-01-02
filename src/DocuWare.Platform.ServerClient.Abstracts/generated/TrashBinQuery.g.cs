@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinQuery(SDK.TrashBinQuery obj) : ITrashBinQuery
+    public class TrashBinQuery(DocuWare.Platform.ServerClient.TrashBinQuery obj) : ITrashBinQuery
     {
-        internal SDK.TrashBinQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBinQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

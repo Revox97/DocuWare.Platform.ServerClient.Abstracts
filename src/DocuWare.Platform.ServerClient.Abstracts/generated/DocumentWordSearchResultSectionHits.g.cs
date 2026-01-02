@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentWordSearchResultSectionHits(SDK.DocumentWordSearchResultSectionHits obj) : IDocumentWordSearchResultSectionHits
+    public class DocumentWordSearchResultSectionHits(DocuWare.Platform.ServerClient.DocumentWordSearchResultSectionHits obj) : IDocumentWordSearchResultSectionHits
     {
-        internal SDK.DocumentWordSearchResultSectionHits Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentWordSearchResultSectionHits Obj { get; } = obj;
 
         public List<IWordSearchResultPageHit> PageHits
         {

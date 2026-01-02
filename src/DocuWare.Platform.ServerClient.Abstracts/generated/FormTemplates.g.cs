@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormTemplates(SDK.FormTemplates obj) : IFormTemplates
+    public class FormTemplates(DocuWare.Platform.ServerClient.FormTemplates obj) : IFormTemplates
     {
-        internal SDK.FormTemplates Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormTemplates Obj { get; } = obj;
 
         public List<IFormTemplate> Template
         {

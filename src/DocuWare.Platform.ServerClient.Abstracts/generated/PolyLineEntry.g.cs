@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PolyLineEntry(SDK.PolyLineEntry obj) : IPolyLineEntry
+    public class PolyLineEntry(DocuWare.Platform.ServerClient.PolyLineEntry obj) : IPolyLineEntry
     {
-        internal SDK.PolyLineEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PolyLineEntry Obj { get; } = obj;
 
         public string Type
         {

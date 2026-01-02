@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubstitutionLists(SDK.SubstitutionLists obj) : ISubstitutionLists
+    public class SubstitutionLists(DocuWare.Platform.ServerClient.SubstitutionLists obj) : ISubstitutionLists
     {
-        internal SDK.SubstitutionLists Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SubstitutionLists Obj { get; } = obj;
 
         public List<ISubstitutionList> Item
         {

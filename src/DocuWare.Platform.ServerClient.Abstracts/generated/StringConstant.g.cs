@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StringConstant(SDK.StringConstant obj) : IStringConstant
+    public class StringConstant(DocuWare.Platform.ServerClient.StringConstant obj) : IStringConstant
     {
-        internal SDK.StringConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StringConstant Obj { get; } = obj;
 
         public string Value
         {

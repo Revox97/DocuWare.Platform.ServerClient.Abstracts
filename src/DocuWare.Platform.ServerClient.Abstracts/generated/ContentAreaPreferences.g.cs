@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentAreaPreferences(SDK.ContentAreaPreferences obj) : IContentAreaPreferences
+    public class ContentAreaPreferences(DocuWare.Platform.ServerClient.WebClient.ContentAreaPreferences obj) : IContentAreaPreferences
     {
-        internal SDK.ContentAreaPreferences Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.ContentAreaPreferences Obj { get; } = obj;
 
         public List<IWorkInstance> Instances
         {

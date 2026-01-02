@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateColumn(SDK.DateColumn obj) : IDateColumn
+    public class DateColumn(DocuWare.Platform.ServerClient.DateColumn obj) : IDateColumn
     {
-        internal SDK.DateColumn Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DateColumn Obj { get; } = obj;
     }
 }

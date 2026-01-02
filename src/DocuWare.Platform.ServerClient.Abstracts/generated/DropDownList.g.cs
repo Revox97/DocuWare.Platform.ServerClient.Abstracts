@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DropDownList(SDK.DropDownList obj) : IDropDownList
+    public class DropDownList(DocuWare.Platform.ServerClient.DropDownList obj) : IDropDownList
     {
-        internal SDK.DropDownList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DropDownList Obj { get; } = obj;
 
         public List<string> Options
         {

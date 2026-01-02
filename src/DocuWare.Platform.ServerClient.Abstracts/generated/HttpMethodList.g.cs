@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HttpMethodList(SDK.HttpMethodList obj) : IHttpMethodList
+    public class HttpMethodList(DocuWare.Platform.ServerClient.HttpMethodList obj) : IHttpMethodList
     {
-        internal SDK.HttpMethodList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.HttpMethodList Obj { get; } = obj;
 
         public List<DocuWare.Platform.ServerClient.HttpMethod> Method
         {

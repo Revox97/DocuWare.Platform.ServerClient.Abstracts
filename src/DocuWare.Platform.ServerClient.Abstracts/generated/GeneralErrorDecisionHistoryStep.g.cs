@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GeneralErrorDecisionHistoryStep(SDK.GeneralErrorDecisionHistoryStep obj) : IGeneralErrorDecisionHistoryStep
+    public class GeneralErrorDecisionHistoryStep(DocuWare.Platform.ServerClient.GeneralErrorDecisionHistoryStep obj) : IGeneralErrorDecisionHistoryStep
     {
-        internal SDK.GeneralErrorDecisionHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.GeneralErrorDecisionHistoryStep Obj { get; } = obj;
 
         public string UserName
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DolphinAttribute(SDK.DolphinAttribute obj) : IDolphinAttribute
+    public class DolphinAttribute(DocuWare.Platform.ServerClient.DolphinAttribute obj) : IDolphinAttribute
     {
-        internal SDK.DolphinAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DolphinAttribute Obj { get; } = obj;
     }
 }

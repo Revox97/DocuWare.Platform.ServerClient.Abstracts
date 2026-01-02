@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestDecision(SDK.RequestDecision obj) : IRequestDecision
+    public class RequestDecision(DocuWare.Platform.ServerClient.RequestDecision obj) : IRequestDecision
     {
-        internal SDK.RequestDecision Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestDecision Obj { get; } = obj;
 
         public Link[] Links
         {

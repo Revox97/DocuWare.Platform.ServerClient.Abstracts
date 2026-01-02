@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AttachFileInfo(SDK.AttachFileInfo obj) : IAttachFileInfo
+    public class AttachFileInfo(DocuWare.Platform.ServerClient.AttachFileInfo obj) : IAttachFileInfo
     {
-        internal SDK.AttachFileInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AttachFileInfo Obj { get; } = obj;
     }
 }

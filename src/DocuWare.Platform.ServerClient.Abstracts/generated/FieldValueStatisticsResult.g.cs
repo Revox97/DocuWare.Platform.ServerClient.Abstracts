@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldValueStatisticsResult(SDK.FieldValueStatisticsResult obj) : IFieldValueStatisticsResult
+    public class FieldValueStatisticsResult(DocuWare.Platform.ServerClient.FieldValueStatisticsResult obj) : IFieldValueStatisticsResult
     {
-        internal SDK.FieldValueStatisticsResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FieldValueStatisticsResult Obj { get; } = obj;
 
         public List<IFieldValueStatistics> Item
         {

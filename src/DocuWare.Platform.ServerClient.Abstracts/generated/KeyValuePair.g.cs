@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class KeyValuePair(SDK.KeyValuePair obj) : IKeyValuePair
+    public class KeyValuePair(DocuWare.Platform.ServerClient.Content.KeyValuePair obj) : IKeyValuePair
     {
-        internal SDK.KeyValuePair Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.KeyValuePair Obj { get; } = obj;
     }
 }

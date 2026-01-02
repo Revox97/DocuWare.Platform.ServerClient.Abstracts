@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class QuokkaAttribute(SDK.QuokkaAttribute obj) : IQuokkaAttribute
+    public class QuokkaAttribute(DocuWare.Platform.ServerClient.QuokkaAttribute obj) : IQuokkaAttribute
     {
-        internal SDK.QuokkaAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.QuokkaAttribute Obj { get; } = obj;
     }
 }

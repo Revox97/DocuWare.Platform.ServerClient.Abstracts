@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesTaskList(SDK.DialogPropertiesTaskList obj) : IDialogPropertiesTaskList
+    public class DialogPropertiesTaskList(DocuWare.Platform.ServerClient.DialogPropertiesTaskList obj) : IDialogPropertiesTaskList
     {
-        internal SDK.DialogPropertiesTaskList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogPropertiesTaskList Obj { get; } = obj;
 
         public string ConditionString
         {

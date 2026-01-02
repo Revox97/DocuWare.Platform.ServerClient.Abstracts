@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceConnectionTokenLoginData(SDK.ServiceConnectionTokenLoginData obj) : IServiceConnectionTokenLoginData
+    public class ServiceConnectionTokenLoginData(DocuWare.Platform.ServerClient.ServiceConnectionTokenLoginData obj) : IServiceConnectionTokenLoginData
     {
-        internal SDK.ServiceConnectionTokenLoginData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ServiceConnectionTokenLoginData Obj { get; } = obj;
     }
 }

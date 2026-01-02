@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PageData(SDK.PageData obj) : IPageData
+    public class PageData(DocuWare.Platform.ServerClient.PageData obj) : IPageData
     {
-        internal SDK.PageData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PageData Obj { get; } = obj;
 
         public IDWRectangle ContentArea
         {

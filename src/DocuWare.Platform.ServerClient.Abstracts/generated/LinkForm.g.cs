@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkForm(SDK.LinkForm obj) : ILinkForm
+    public class LinkForm(DocuWare.Platform.ServerClient.LinkForm obj) : ILinkForm
     {
-        internal SDK.LinkForm Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LinkForm Obj { get; } = obj;
 
         public string Url
         {

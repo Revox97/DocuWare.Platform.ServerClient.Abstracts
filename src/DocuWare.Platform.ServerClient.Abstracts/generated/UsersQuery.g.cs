@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UsersQuery(SDK.UsersQuery obj) : IUsersQuery
+    public class UsersQuery(DocuWare.Platform.ServerClient.UsersQuery obj) : IUsersQuery
     {
-        internal SDK.UsersQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UsersQuery Obj { get; } = obj;
 
         public bool Active
         {

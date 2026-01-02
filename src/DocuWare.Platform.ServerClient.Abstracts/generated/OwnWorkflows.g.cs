@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class OwnWorkflows(SDK.OwnWorkflows obj) : IOwnWorkflows
+    public class OwnWorkflows(DocuWare.Platform.ServerClient.OwnWorkflows obj) : IOwnWorkflows
     {
-        internal SDK.OwnWorkflows Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.OwnWorkflows Obj { get; } = obj;
 
         public Link[] Links
         {

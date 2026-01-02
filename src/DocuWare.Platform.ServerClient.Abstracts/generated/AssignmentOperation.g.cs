@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AssignmentOperation(SDK.AssignmentOperation obj) : IAssignmentOperation
+    public class AssignmentOperation(DocuWare.Platform.ServerClient.AssignmentOperation obj) : IAssignmentOperation
     {
-        internal SDK.AssignmentOperation Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AssignmentOperation Obj { get; } = obj;
 
         public List<string> Ids
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Rights(SDK.Rights obj) : IRights
+    public class Rights(DocuWare.Platform.ServerClient.Rights obj) : IRights
     {
-        internal SDK.Rights Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Rights Obj { get; } = obj;
 
         public List<DocuWare.Platform.ServerClient.Right> Right
         {

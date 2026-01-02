@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebFormField(SDK.WebFormField obj) : IWebFormField
+    public class WebFormField(DocuWare.Platform.ServerClient.WebFormField obj) : IWebFormField
     {
-        internal SDK.WebFormField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebFormField Obj { get; } = obj;
     }
 }

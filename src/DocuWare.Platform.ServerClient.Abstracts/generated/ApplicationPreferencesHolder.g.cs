@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ApplicationPreferencesHolder(SDK.ApplicationPreferencesHolder obj) : IApplicationPreferencesHolder
+    public class ApplicationPreferencesHolder(DocuWare.Platform.ServerClient.WebClient.ApplicationPreferencesHolder obj) : IApplicationPreferencesHolder
     {
-        internal SDK.ApplicationPreferencesHolder Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.ApplicationPreferencesHolder Obj { get; } = obj;
     }
 }

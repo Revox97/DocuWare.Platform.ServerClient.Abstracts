@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class QueryParamatersList(SDK.QueryParamatersList obj) : IQueryParamatersList
+    public class QueryParamatersList(DocuWare.Platform.ServerClient.QueryParamatersList obj) : IQueryParamatersList
     {
-        internal SDK.QueryParamatersList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.QueryParamatersList Obj { get; } = obj;
 
         public List<IQueryParamater> Parameter
         {

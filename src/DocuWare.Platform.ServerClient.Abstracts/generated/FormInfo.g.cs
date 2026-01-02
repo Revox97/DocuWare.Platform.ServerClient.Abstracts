@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormInfo(SDK.FormInfo obj) : IFormInfo
+    public class FormInfo(DocuWare.Platform.ServerClient.FormInfo obj) : IFormInfo
     {
-        internal SDK.FormInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormInfo Obj { get; } = obj;
 
         public List<IWebFormControl> Fields
         {

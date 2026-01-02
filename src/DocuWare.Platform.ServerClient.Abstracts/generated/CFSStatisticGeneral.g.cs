@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CFSStatisticGeneral(SDK.CFSStatisticGeneral obj) : ICFSStatisticGeneral
+    public class CFSStatisticGeneral(DocuWare.Platform.ServerClient.CFSStatisticGeneral obj) : ICFSStatisticGeneral
     {
-        internal SDK.CFSStatisticGeneral Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CFSStatisticGeneral Obj { get; } = obj;
 
         public List<ICFSStatisticSpecific> StatisticSpecific
         {

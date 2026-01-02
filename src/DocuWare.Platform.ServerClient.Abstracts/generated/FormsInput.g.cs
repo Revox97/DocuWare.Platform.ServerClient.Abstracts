@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormsInput(SDK.FormsInput obj) : IFormsInput
+    public class FormsInput(DocuWare.Platform.ServerClient.FormsInput obj) : IFormsInput
     {
-        internal SDK.FormsInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormsInput Obj { get; } = obj;
     }
 }

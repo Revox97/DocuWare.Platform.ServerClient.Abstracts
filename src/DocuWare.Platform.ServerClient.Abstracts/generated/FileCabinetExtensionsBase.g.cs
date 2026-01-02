@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetExtensionsBase(SDK.FileCabinetExtensionsBase obj) : IFileCabinetExtensionsBase
+    public class FileCabinetExtensionsBase(DocuWare.Platform.ServerClient.FileCabinetExtensionsBase obj) : IFileCabinetExtensionsBase
     {
-        internal SDK.FileCabinetExtensionsBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileCabinetExtensionsBase Obj { get; } = obj;
     }
 }

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class XmlSchema(SDK.XmlSchema obj) : IXmlSchema
+    public class XmlSchema(DocuWare.Platform.ServerClient.XmlSchema obj) : IXmlSchema
     {
-        internal SDK.XmlSchema Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.XmlSchema Obj { get; } = obj;
 
         public Link[] Links
         {

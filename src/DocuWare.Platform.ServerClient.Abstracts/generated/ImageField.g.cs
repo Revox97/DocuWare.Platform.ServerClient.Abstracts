@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImageField(SDK.ImageField obj) : IImageField
+    public class ImageField(DocuWare.Platform.ServerClient.ImageField obj) : IImageField
     {
-        internal SDK.ImageField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImageField Obj { get; } = obj;
     }
 }

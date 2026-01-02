@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportEntryVersion(SDK.ImportEntryVersion obj) : IImportEntryVersion
+    public class ImportEntryVersion(DocuWare.Platform.ServerClient.ImportEntryVersion obj) : IImportEntryVersion
     {
-        internal SDK.ImportEntryVersion Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImportEntryVersion Obj { get; } = obj;
 
         public int Id
         {

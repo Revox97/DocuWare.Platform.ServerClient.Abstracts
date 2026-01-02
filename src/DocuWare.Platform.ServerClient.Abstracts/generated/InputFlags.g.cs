@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class InputFlags(SDK.InputFlags obj) : IInputFlags
+    public class InputFlags(DocuWare.Platform.ServerClient.InputFlags obj) : IInputFlags
     {
-        internal SDK.InputFlags Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.InputFlags Obj { get; } = obj;
 
         public bool IsEmail
         {

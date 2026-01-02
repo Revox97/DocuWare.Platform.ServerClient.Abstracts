@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Annotation(SDK.Annotation obj) : IAnnotation
+    public class Annotation(DocuWare.Platform.ServerClient.Annotation obj) : IAnnotation
     {
-        internal SDK.Annotation Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Annotation Obj { get; } = obj;
 
         public List<ILayer> Layer
         {

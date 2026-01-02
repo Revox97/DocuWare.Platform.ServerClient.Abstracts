@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class OutOfOffice(SDK.OutOfOffice obj) : IOutOfOffice
+    public class OutOfOffice(DocuWare.Platform.ServerClient.OutOfOffice obj) : IOutOfOffice
     {
-        internal SDK.OutOfOffice Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.OutOfOffice Obj { get; } = obj;
 
         public bool IsOutOfOffice
         {

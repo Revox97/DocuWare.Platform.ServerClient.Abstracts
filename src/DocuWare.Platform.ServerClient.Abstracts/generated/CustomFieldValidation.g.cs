@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CustomFieldValidation(SDK.CustomFieldValidation obj) : ICustomFieldValidation
+    public class CustomFieldValidation(DocuWare.Platform.ServerClient.CustomFieldValidation obj) : ICustomFieldValidation
     {
-        internal SDK.CustomFieldValidation Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CustomFieldValidation Obj { get; } = obj;
 
         public List<IValidationCondition> Conditions
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GeckoAttribute(SDK.GeckoAttribute obj) : IGeckoAttribute
+    public class GeckoAttribute(DocuWare.Platform.ServerClient.GeckoAttribute obj) : IGeckoAttribute
     {
-        internal SDK.GeckoAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.GeckoAttribute Obj { get; } = obj;
     }
 }

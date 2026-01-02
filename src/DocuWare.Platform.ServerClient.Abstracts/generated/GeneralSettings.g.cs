@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GeneralSettings(SDK.GeneralSettings obj) : IGeneralSettings
+    public class GeneralSettings(DocuWare.Platform.ServerClient.WebClient.GeneralSettings obj) : IGeneralSettings
     {
-        internal SDK.GeneralSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.GeneralSettings Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.WorkAreaType StartWith
         {

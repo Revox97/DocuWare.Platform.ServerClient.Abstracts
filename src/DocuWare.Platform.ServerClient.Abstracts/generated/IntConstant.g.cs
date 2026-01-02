@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IntConstant(SDK.IntConstant obj) : IIntConstant
+    public class IntConstant(DocuWare.Platform.ServerClient.IntConstant obj) : IIntConstant
     {
-        internal SDK.IntConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.IntConstant Obj { get; } = obj;
 
         public int? Value
         {

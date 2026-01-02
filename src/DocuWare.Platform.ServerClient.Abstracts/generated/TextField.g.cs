@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextField(SDK.TextField obj) : ITextField
+    public class TextField(DocuWare.Platform.ServerClient.TextField obj) : ITextField
     {
-        internal SDK.TextField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextField Obj { get; } = obj;
 
         public int? MinLength
         {

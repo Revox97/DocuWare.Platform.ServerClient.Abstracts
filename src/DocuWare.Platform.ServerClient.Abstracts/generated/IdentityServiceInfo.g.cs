@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IdentityServiceInfo(SDK.IdentityServiceInfo obj) : IIdentityServiceInfo
+    public class IdentityServiceInfo(DocuWare.Platform.ServerClient.IdentityServiceInfo obj) : IIdentityServiceInfo
     {
-        internal SDK.IdentityServiceInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.IdentityServiceInfo Obj { get; } = obj;
     }
 }

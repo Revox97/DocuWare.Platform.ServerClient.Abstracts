@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Favorites(SDK.Favorites obj) : IFavorites
+    public class Favorites(DocuWare.Platform.ServerClient.WebClient.Favorites obj) : IFavorites
     {
-        internal SDK.Favorites Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.Favorites Obj { get; } = obj;
     }
 }

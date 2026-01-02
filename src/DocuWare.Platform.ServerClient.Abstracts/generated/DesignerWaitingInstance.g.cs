@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerWaitingInstance(SDK.DesignerWaitingInstance obj) : IDesignerWaitingInstance
+    public class DesignerWaitingInstance(DocuWare.Platform.ServerClient.DesignerWaitingInstance obj) : IDesignerWaitingInstance
     {
-        internal SDK.DesignerWaitingInstance Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DesignerWaitingInstance Obj { get; } = obj;
 
         public Link[] Links
         {

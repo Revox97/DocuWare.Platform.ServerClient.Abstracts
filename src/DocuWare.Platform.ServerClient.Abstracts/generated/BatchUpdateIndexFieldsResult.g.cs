@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchUpdateIndexFieldsResult(SDK.BatchUpdateIndexFieldsResult obj) : IBatchUpdateIndexFieldsResult
+    public class BatchUpdateIndexFieldsResult(DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult obj) : IBatchUpdateIndexFieldsResult
     {
-        internal SDK.BatchUpdateIndexFieldsResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchUpdateIndexFieldsResult Obj { get; } = obj;
 
         public List<IBatchUpdateResultItem> Item
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldMapping(SDK.FieldMapping obj) : IFieldMapping
+    public class FieldMapping(DocuWare.Platform.ServerClient.FieldMapping obj) : IFieldMapping
     {
-        internal SDK.FieldMapping Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FieldMapping Obj { get; } = obj;
 
         public string Source
         {

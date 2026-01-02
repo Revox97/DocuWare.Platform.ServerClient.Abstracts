@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AnyExpression(SDK.AnyExpression obj) : IAnyExpression
+    public class AnyExpression(DocuWare.Platform.ServerClient.AnyExpression obj) : IAnyExpression
     {
-        internal SDK.AnyExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AnyExpression Obj { get; } = obj;
 
         public object Item
         {

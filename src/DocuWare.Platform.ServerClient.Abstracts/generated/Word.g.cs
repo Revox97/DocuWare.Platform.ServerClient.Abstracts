@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Word(SDK.Word obj) : IWord
+    public class Word(DocuWare.Platform.ServerClient.Content.Word obj) : IWord
     {
-        internal SDK.Word Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Word Obj { get; } = obj;
 
         public bool bold
         {

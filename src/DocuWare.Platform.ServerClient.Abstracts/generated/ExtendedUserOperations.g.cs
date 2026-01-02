@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExtendedUserOperations(SDK.ExtendedUserOperations obj) : IExtendedUserOperations
+    public class ExtendedUserOperations(DocuWare.Platform.ServerClient.ExtendedUserOperations obj) : IExtendedUserOperations
     {
-        internal SDK.ExtendedUserOperations Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExtendedUserOperations Obj { get; } = obj;
 
         public Link[] Links
         {

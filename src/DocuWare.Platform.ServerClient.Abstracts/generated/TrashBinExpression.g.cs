@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinExpression(SDK.TrashBinExpression obj) : ITrashBinExpression
+    public class TrashBinExpression(DocuWare.Platform.ServerClient.TrashBinExpression obj) : ITrashBinExpression
     {
-        internal SDK.TrashBinExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBinExpression Obj { get; } = obj;
 
         public List<ITrashBinCondition> Condition
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EntryBase(SDK.EntryBase obj) : IEntryBase
+    public class EntryBase(DocuWare.Platform.ServerClient.EntryBase obj) : IEntryBase
     {
-        internal SDK.EntryBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.EntryBase Obj { get; } = obj;
 
         public string Type
         {

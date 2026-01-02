@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchUpdateProcessData(SDK.BatchUpdateProcessData obj) : IBatchUpdateProcessData
+    public class BatchUpdateProcessData(DocuWare.Platform.ServerClient.BatchUpdateProcessData obj) : IBatchUpdateProcessData
     {
-        internal SDK.BatchUpdateProcessData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchUpdateProcessData Obj { get; } = obj;
 
         public List<IDocumentIndexField> Field
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceDescriptionTests(SDK.ServiceDescriptionTests obj) : IServiceDescriptionTests
+    public class ServiceDescriptionTests(DocuWare.Platform.ServerClient.ServiceDescriptionTests obj) : IServiceDescriptionTests
     {
-        internal SDK.ServiceDescriptionTests Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ServiceDescriptionTests Obj { get; } = obj;
 
         public Link[] Links
         {

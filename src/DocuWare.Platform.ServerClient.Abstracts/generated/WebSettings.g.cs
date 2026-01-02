@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebSettings(SDK.WebSettings obj) : IWebSettings
+    public class WebSettings(DocuWare.Platform.ServerClient.WebClient.WebSettings obj) : IWebSettings
     {
-        internal SDK.WebSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.WebSettings Obj { get; } = obj;
 
         public List<IApplicationPreferences> ApplicationPreferences
         {

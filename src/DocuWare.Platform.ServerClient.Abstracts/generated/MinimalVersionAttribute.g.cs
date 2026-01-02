@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MinimalVersionAttribute(SDK.MinimalVersionAttribute obj) : IMinimalVersionAttribute
+    public class MinimalVersionAttribute(DocuWare.Platform.ServerClient.MinimalVersionAttribute obj) : IMinimalVersionAttribute
     {
-        internal SDK.MinimalVersionAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MinimalVersionAttribute Obj { get; } = obj;
     }
 }

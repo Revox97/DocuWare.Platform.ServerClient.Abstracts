@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldKeywords(SDK.DocumentIndexFieldKeywords obj) : IDocumentIndexFieldKeywords
+    public class DocumentIndexFieldKeywords(DocuWare.Platform.ServerClient.DocumentIndexFieldKeywords obj) : IDocumentIndexFieldKeywords
     {
-        internal SDK.DocumentIndexFieldKeywords Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentIndexFieldKeywords Obj { get; } = obj;
 
         public List<string> Keyword
         {

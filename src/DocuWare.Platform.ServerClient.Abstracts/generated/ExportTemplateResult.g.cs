@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportTemplateResult(SDK.ExportTemplateResult obj) : IExportTemplateResult
+    public class ExportTemplateResult(DocuWare.Platform.ServerClient.ExportTemplateResult obj) : IExportTemplateResult
     {
-        internal SDK.ExportTemplateResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExportTemplateResult Obj { get; } = obj;
 
         public string FileName
         {

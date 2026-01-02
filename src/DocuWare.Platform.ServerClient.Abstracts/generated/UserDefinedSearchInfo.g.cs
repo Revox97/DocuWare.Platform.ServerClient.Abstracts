@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserDefinedSearchInfo(SDK.UserDefinedSearchInfo obj) : IUserDefinedSearchInfo
+    public class UserDefinedSearchInfo(DocuWare.Platform.ServerClient.UserDefinedSearchInfo obj) : IUserDefinedSearchInfo
     {
-        internal SDK.UserDefinedSearchInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserDefinedSearchInfo Obj { get; } = obj;
 
         public IDialogExpression DialogExpression
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StarfishAttribute(SDK.StarfishAttribute obj) : IStarfishAttribute
+    public class StarfishAttribute(DocuWare.Platform.ServerClient.StarfishAttribute obj) : IStarfishAttribute
     {
-        internal SDK.StarfishAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StarfishAttribute Obj { get; } = obj;
     }
 }

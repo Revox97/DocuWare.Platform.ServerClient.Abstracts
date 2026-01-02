@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiColumnSelectListExpressionCondition(SDK.MultiColumnSelectListExpressionCondition obj) : IMultiColumnSelectListExpressionCondition
+    public class MultiColumnSelectListExpressionCondition(DocuWare.Platform.ServerClient.MultiColumnSelectListExpressionCondition obj) : IMultiColumnSelectListExpressionCondition
     {
-        internal SDK.MultiColumnSelectListExpressionCondition Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MultiColumnSelectListExpressionCondition Obj { get; } = obj;
 
         public string Type
         {

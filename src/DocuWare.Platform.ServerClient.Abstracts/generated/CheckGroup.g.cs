@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CheckGroup(SDK.CheckGroup obj) : ICheckGroup
+    public class CheckGroup(DocuWare.Platform.ServerClient.CheckGroup obj) : ICheckGroup
     {
-        internal SDK.CheckGroup Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CheckGroup Obj { get; } = obj;
 
         public List<IWebFormOption> Options
         {

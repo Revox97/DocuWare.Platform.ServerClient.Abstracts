@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Notification(SDK.Notification obj) : INotification
+    public class Notification(DocuWare.Platform.ServerClient.Notification obj) : INotification
     {
-        internal SDK.Notification Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Notification Obj { get; } = obj;
 
         public DateTime? TimeStamp
         {

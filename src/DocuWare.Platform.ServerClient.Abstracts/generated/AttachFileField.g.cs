@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AttachFileField(SDK.AttachFileField obj) : IAttachFileField
+    public class AttachFileField(DocuWare.Platform.ServerClient.AttachFileField obj) : IAttachFileField
     {
-        internal SDK.AttachFileField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AttachFileField Obj { get; } = obj;
 
         public List<IAttachFileInfo> AttachFileInfos
         {

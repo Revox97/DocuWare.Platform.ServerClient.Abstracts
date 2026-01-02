@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateTimeConstant(SDK.DateTimeConstant obj) : IDateTimeConstant
+    public class DateTimeConstant(DocuWare.Platform.ServerClient.DateTimeConstant obj) : IDateTimeConstant
     {
-        internal SDK.DateTimeConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DateTimeConstant Obj { get; } = obj;
 
         public DateTime? Value
         {

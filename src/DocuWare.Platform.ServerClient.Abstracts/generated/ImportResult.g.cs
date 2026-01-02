@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportResult(SDK.ImportResult obj) : IImportResult
+    public class ImportResult(DocuWare.Platform.ServerClient.ImportResult obj) : IImportResult
     {
-        internal SDK.ImportResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImportResult Obj { get; } = obj;
 
         public List<IImportResultEntry> Results
         {

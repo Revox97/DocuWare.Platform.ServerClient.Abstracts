@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ChecksumInfo(SDK.ChecksumInfo obj) : IChecksumInfo
+    public class ChecksumInfo(DocuWare.Platform.ServerClient.ChecksumInfo obj) : IChecksumInfo
     {
-        internal SDK.ChecksumInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ChecksumInfo Obj { get; } = obj;
 
         public string ChecksumValue
         {

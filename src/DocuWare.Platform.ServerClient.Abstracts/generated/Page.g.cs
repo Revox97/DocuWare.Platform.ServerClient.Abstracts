@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Page(SDK.Page obj) : IPage
+    public class Page(DocuWare.Platform.ServerClient.Page obj) : IPage
     {
-        internal SDK.Page Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Page Obj { get; } = obj;
 
         public Link[] Links
         {

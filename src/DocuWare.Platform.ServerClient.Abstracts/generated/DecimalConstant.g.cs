@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecimalConstant(SDK.DecimalConstant obj) : IDecimalConstant
+    public class DecimalConstant(DocuWare.Platform.ServerClient.DecimalConstant obj) : IDecimalConstant
     {
-        internal SDK.DecimalConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DecimalConstant Obj { get; } = obj;
 
         public Decimal? Value
         {

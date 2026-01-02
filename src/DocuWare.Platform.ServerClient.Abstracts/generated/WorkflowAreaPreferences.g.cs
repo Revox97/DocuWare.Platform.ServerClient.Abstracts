@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowAreaPreferences(SDK.WorkflowAreaPreferences obj) : IWorkflowAreaPreferences
+    public class WorkflowAreaPreferences(DocuWare.Platform.ServerClient.WebClient.WorkflowAreaPreferences obj) : IWorkflowAreaPreferences
     {
-        internal SDK.WorkflowAreaPreferences Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.WorkflowAreaPreferences Obj { get; } = obj;
 
         public List<IWorkInstance> ControllerInstances
         {

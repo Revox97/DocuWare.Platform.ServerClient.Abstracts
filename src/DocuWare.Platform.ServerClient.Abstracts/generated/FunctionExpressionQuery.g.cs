@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionExpressionQuery(SDK.FunctionExpressionQuery obj) : IFunctionExpressionQuery
+    public class FunctionExpressionQuery(DocuWare.Platform.ServerClient.FunctionExpressionQuery obj) : IFunctionExpressionQuery
     {
-        internal SDK.FunctionExpressionQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FunctionExpressionQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

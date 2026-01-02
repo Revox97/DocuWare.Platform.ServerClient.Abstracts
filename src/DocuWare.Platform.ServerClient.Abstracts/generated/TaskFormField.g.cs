@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskFormField(SDK.TaskFormField obj) : ITaskFormField
+    public class TaskFormField(DocuWare.Platform.ServerClient.TaskFormField obj) : ITaskFormField
     {
-        internal SDK.TaskFormField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskFormField Obj { get; } = obj;
 
         public IBaseForm Item
         {

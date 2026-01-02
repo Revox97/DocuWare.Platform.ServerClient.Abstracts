@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentContent(SDK.DocumentContent obj) : IDocumentContent
+    public class DocumentContent(DocuWare.Platform.ServerClient.Content.DocumentContent obj) : IDocumentContent
     {
-        internal SDK.DocumentContent Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.DocumentContent Obj { get; } = obj;
 
         public List<IKeyValuePair> metadata
         {

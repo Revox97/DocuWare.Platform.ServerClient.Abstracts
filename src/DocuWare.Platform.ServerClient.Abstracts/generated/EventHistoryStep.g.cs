@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EventHistoryStep(SDK.EventHistoryStep obj) : IEventHistoryStep
+    public class EventHistoryStep(DocuWare.Platform.ServerClient.EventHistoryStep obj) : IEventHistoryStep
     {
-        internal SDK.EventHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.EventHistoryStep Obj { get; } = obj;
 
         public string FCName
         {

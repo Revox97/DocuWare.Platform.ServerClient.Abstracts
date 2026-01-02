@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SaveTemplateResult(SDK.SaveTemplateResult obj) : ISaveTemplateResult
+    public class SaveTemplateResult(DocuWare.Platform.ServerClient.SaveTemplateResult obj) : ISaveTemplateResult
     {
-        internal SDK.SaveTemplateResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SaveTemplateResult Obj { get; } = obj;
     }
 }

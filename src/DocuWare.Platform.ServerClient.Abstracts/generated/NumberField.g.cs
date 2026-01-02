@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumberField(SDK.NumberField obj) : INumberField
+    public class NumberField(DocuWare.Platform.ServerClient.NumberField obj) : INumberField
     {
-        internal SDK.NumberField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.NumberField Obj { get; } = obj;
 
         public double? MinValue
         {

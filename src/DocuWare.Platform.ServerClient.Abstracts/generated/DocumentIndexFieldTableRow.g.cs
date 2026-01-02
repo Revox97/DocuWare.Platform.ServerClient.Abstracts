@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldTableRow(SDK.DocumentIndexFieldTableRow obj) : IDocumentIndexFieldTableRow
+    public class DocumentIndexFieldTableRow(DocuWare.Platform.ServerClient.DocumentIndexFieldTableRow obj) : IDocumentIndexFieldTableRow
     {
-        internal SDK.DocumentIndexFieldTableRow Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentIndexFieldTableRow Obj { get; } = obj;
 
         public List<IDocumentIndexField> ColumnValue
         {

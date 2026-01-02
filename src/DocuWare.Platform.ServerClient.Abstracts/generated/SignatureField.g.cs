@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SignatureField(SDK.SignatureField obj) : ISignatureField
+    public class SignatureField(DocuWare.Platform.ServerClient.SignatureField obj) : ISignatureField
     {
-        internal SDK.SignatureField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SignatureField Obj { get; } = obj;
     }
 }

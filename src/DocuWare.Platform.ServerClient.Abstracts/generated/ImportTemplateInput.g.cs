@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportTemplateInput(SDK.ImportTemplateInput obj) : IImportTemplateInput
+    public class ImportTemplateInput(DocuWare.Platform.ServerClient.ImportTemplateInput obj) : IImportTemplateInput
     {
-        internal SDK.ImportTemplateInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImportTemplateInput Obj { get; } = obj;
 
         public string FileName
         {

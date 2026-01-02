@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Organization(SDK.Organization obj) : IOrganization
+    public class Organization(DocuWare.Platform.ServerClient.Organization obj) : IOrganization
     {
-        internal SDK.Organization Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Organization Obj { get; } = obj;
 
         public Link[] Links
         {

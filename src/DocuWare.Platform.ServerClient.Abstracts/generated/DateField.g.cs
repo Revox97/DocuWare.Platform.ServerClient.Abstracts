@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateField(SDK.DateField obj) : IDateField
+    public class DateField(DocuWare.Platform.ServerClient.DateField obj) : IDateField
     {
-        internal SDK.DateField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DateField Obj { get; } = obj;
     }
 }

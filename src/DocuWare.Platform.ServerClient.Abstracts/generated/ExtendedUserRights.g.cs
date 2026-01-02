@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExtendedUserRights(SDK.ExtendedUserRights obj) : IExtendedUserRights
+    public class ExtendedUserRights(DocuWare.Platform.ServerClient.ExtendedUserRights obj) : IExtendedUserRights
     {
-        internal SDK.ExtendedUserRights Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExtendedUserRights Obj { get; } = obj;
 
         public bool AllowViewAuditData
         {

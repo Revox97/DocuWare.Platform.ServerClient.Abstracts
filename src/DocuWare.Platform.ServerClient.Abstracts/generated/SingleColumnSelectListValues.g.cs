@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SingleColumnSelectListValues(SDK.SingleColumnSelectListValues obj) : ISingleColumnSelectListValues
+    public class SingleColumnSelectListValues(DocuWare.Platform.ServerClient.SingleColumnSelectListValues obj) : ISingleColumnSelectListValues
     {
-        internal SDK.SingleColumnSelectListValues Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SingleColumnSelectListValues Obj { get; } = obj;
 
         public List<string> Value
         {

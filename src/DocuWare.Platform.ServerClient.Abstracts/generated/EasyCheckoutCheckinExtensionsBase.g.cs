@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EasyCheckoutCheckinExtensionsBase(SDK.EasyCheckoutCheckinExtensionsBase obj) : IEasyCheckoutCheckinExtensionsBase
+    public class EasyCheckoutCheckinExtensionsBase(DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensionsBase obj) : IEasyCheckoutCheckinExtensionsBase
     {
-        internal SDK.EasyCheckoutCheckinExtensionsBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.EasyCheckoutCheckinExtensionsBase Obj { get; } = obj;
     }
 }

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdhocRenderingFile(SDK.AdhocRenderingFile obj) : IAdhocRenderingFile
+    public class AdhocRenderingFile(DocuWare.Platform.ServerClient.AdhocRenderingFile obj) : IAdhocRenderingFile
     {
-        internal SDK.AdhocRenderingFile Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AdhocRenderingFile Obj { get; } = obj;
 
         public List<IKeyValuePair> MetaData
         {

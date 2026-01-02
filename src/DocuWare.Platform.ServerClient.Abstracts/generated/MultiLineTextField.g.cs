@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiLineTextField(SDK.MultiLineTextField obj) : IMultiLineTextField
+    public class MultiLineTextField(DocuWare.Platform.ServerClient.MultiLineTextField obj) : IMultiLineTextField
     {
-        internal SDK.MultiLineTextField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MultiLineTextField Obj { get; } = obj;
 
         public int? MinLength
         {

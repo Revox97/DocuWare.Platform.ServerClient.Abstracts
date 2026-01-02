@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentLinkExpressionQuery(SDK.DocumentLinkExpressionQuery obj) : IDocumentLinkExpressionQuery
+    public class DocumentLinkExpressionQuery(DocuWare.Platform.ServerClient.DocumentLinkExpressionQuery obj) : IDocumentLinkExpressionQuery
     {
-        internal SDK.DocumentLinkExpressionQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentLinkExpressionQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

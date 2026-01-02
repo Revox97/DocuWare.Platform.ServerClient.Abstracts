@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiFCSearchConfiguration(SDK.MultiFCSearchConfiguration obj) : IMultiFCSearchConfiguration
+    public class MultiFCSearchConfiguration(DocuWare.Platform.ServerClient.WebClient.MultiFCSearchConfiguration obj) : IMultiFCSearchConfiguration
     {
-        internal SDK.MultiFCSearchConfiguration Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.MultiFCSearchConfiguration Obj { get; } = obj;
 
         public List<string> FcIds
         {

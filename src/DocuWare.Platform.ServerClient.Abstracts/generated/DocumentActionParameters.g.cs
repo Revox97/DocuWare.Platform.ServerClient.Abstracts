@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentActionParameters(SDK.DocumentActionParameters obj) : IDocumentActionParameters
+    public class DocumentActionParameters(DocuWare.Platform.ServerClient.DocumentActionParameters obj) : IDocumentActionParameters
     {
-        internal SDK.DocumentActionParameters Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentActionParameters Obj { get; } = obj;
     }
 }

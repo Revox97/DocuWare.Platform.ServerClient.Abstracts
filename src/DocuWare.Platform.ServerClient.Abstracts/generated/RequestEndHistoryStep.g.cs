@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestEndHistoryStep(SDK.RequestEndHistoryStep obj) : IRequestEndHistoryStep
+    public class RequestEndHistoryStep(DocuWare.Platform.ServerClient.RequestEndHistoryStep obj) : IRequestEndHistoryStep
     {
-        internal SDK.RequestEndHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestEndHistoryStep Obj { get; } = obj;
 
         public string UserName
         {

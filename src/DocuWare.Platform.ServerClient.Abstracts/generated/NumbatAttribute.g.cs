@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumbatAttribute(SDK.NumbatAttribute obj) : INumbatAttribute
+    public class NumbatAttribute(DocuWare.Platform.ServerClient.NumbatAttribute obj) : INumbatAttribute
     {
-        internal SDK.NumbatAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.NumbatAttribute Obj { get; } = obj;
     }
 }

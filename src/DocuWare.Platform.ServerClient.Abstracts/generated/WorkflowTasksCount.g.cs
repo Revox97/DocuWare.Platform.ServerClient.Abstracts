@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowTasksCount(SDK.WorkflowTasksCount obj) : IWorkflowTasksCount
+    public class WorkflowTasksCount(DocuWare.Platform.ServerClient.WorkflowTasksCount obj) : IWorkflowTasksCount
     {
-        internal SDK.WorkflowTasksCount Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WorkflowTasksCount Obj { get; } = obj;
 
         public int Count
         {

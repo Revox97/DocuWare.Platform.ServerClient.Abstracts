@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetSelectListExpression(SDK.FileCabinetSelectListExpression obj) : IFileCabinetSelectListExpression
+    public class FileCabinetSelectListExpression(DocuWare.Platform.ServerClient.FileCabinetSelectListExpression obj) : IFileCabinetSelectListExpression
     {
-        internal SDK.FileCabinetSelectListExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileCabinetSelectListExpression Obj { get; } = obj;
 
         public string FieldName
         {

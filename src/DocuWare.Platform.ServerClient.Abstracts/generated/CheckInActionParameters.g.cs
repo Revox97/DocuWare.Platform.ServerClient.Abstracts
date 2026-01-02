@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CheckInActionParameters(SDK.CheckInActionParameters obj) : ICheckInActionParameters
+    public class CheckInActionParameters(DocuWare.Platform.ServerClient.CheckInActionParameters obj) : ICheckInActionParameters
     {
-        internal SDK.CheckInActionParameters Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CheckInActionParameters Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.CheckInReturnDocument CheckInReturnDocument
         {

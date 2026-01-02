@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ColumnOptions(SDK.ColumnOptions obj) : IColumnOptions
+    public class ColumnOptions(DocuWare.Platform.ServerClient.ColumnOptions obj) : IColumnOptions
     {
-        internal SDK.ColumnOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ColumnOptions Obj { get; } = obj;
 
         public object Item
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MergeAnnotationsParameters(SDK.MergeAnnotationsParameters obj) : IMergeAnnotationsParameters
+    public class MergeAnnotationsParameters(DocuWare.Platform.ServerClient.MergeAnnotationsParameters obj) : IMergeAnnotationsParameters
     {
-        internal SDK.MergeAnnotationsParameters Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MergeAnnotationsParameters Obj { get; } = obj;
 
         public int SectionNumber
         {

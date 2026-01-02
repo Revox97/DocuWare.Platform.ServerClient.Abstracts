@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class User(SDK.User obj) : IUser
+    public class User(DocuWare.Platform.ServerClient.User obj) : IUser
     {
-        internal SDK.User Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.User Obj { get; } = obj;
 
         public string DefaultWebBasket
         {

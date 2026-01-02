@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetFields(SDK.FileCabinetFields obj) : IFileCabinetFields
+    public class FileCabinetFields(DocuWare.Platform.ServerClient.FileCabinetFields obj) : IFileCabinetFields
     {
-        internal SDK.FileCabinetFields Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileCabinetFields Obj { get; } = obj;
 
         public List<IFileCabinetField> Field
         {

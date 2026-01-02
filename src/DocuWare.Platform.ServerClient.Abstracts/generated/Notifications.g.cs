@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Notifications(SDK.Notifications obj) : INotifications
+    public class Notifications(DocuWare.Platform.ServerClient.Notifications obj) : INotifications
     {
-        internal SDK.Notifications Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Notifications Obj { get; } = obj;
 
         public List<INotification> Notification
         {

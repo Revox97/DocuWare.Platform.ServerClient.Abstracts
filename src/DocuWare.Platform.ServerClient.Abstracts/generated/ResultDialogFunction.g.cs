@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ResultDialogFunction(SDK.ResultDialogFunction obj) : IResultDialogFunction
+    public class ResultDialogFunction(DocuWare.Platform.ServerClient.ResultDialogFunction obj) : IResultDialogFunction
     {
-        internal SDK.ResultDialogFunction Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ResultDialogFunction Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.ResultDialogFunctionType Type
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionCellValue(SDK.SuggestionCellValue obj) : ISuggestionCellValue
+    public class SuggestionCellValue(DocuWare.Platform.ServerClient.SuggestionCellValue obj) : ISuggestionCellValue
     {
-        internal SDK.SuggestionCellValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SuggestionCellValue Obj { get; } = obj;
 
         public string TextFallback
         {

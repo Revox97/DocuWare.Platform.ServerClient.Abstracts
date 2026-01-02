@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SaveTemplateInput(SDK.SaveTemplateInput obj) : ISaveTemplateInput
+    public class SaveTemplateInput(DocuWare.Platform.ServerClient.SaveTemplateInput obj) : ISaveTemplateInput
     {
-        internal SDK.SaveTemplateInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SaveTemplateInput Obj { get; } = obj;
 
         public List<IFormTemplate> Templates
         {

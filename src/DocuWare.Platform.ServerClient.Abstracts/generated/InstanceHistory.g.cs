@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class InstanceHistory(SDK.InstanceHistory obj) : IInstanceHistory
+    public class InstanceHistory(DocuWare.Platform.ServerClient.InstanceHistory obj) : IInstanceHistory
     {
-        internal SDK.InstanceHistory Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.InstanceHistory Obj { get; } = obj;
 
         public Link[] Links
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumericHistoryFieldOptions(SDK.NumericHistoryFieldOptions obj) : INumericHistoryFieldOptions
+    public class NumericHistoryFieldOptions(DocuWare.Platform.ServerClient.NumericHistoryFieldOptions obj) : INumericHistoryFieldOptions
     {
-        internal SDK.NumericHistoryFieldOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.NumericHistoryFieldOptions Obj { get; } = obj;
 
         public int Precision
         {

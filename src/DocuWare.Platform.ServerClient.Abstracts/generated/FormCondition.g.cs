@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormCondition(SDK.FormCondition obj) : IFormCondition
+    public class FormCondition(DocuWare.Platform.ServerClient.FormCondition obj) : IFormCondition
     {
-        internal SDK.FormCondition Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormCondition Obj { get; } = obj;
     }
 }

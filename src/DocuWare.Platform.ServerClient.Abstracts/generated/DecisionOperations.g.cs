@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionOperations(SDK.DecisionOperations obj) : IDecisionOperations
+    public class DecisionOperations(DocuWare.Platform.ServerClient.DecisionOperations obj) : IDecisionOperations
     {
-        internal SDK.DecisionOperations Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DecisionOperations Obj { get; } = obj;
 
         public Link[] Links
         {

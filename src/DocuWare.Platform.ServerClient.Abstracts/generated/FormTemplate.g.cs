@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormTemplate(SDK.FormTemplate obj) : IFormTemplate
+    public class FormTemplate(DocuWare.Platform.ServerClient.FormTemplate obj) : IFormTemplate
     {
-        internal SDK.FormTemplate Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormTemplate Obj { get; } = obj;
 
         public List<IZone> Zones
         {

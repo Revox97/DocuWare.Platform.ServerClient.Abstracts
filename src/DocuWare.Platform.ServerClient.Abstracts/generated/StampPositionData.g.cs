@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampPositionData(SDK.StampPositionData obj) : IStampPositionData
+    public class StampPositionData(DocuWare.Platform.ServerClient.StampPositionData obj) : IStampPositionData
     {
-        internal SDK.StampPositionData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampPositionData Obj { get; } = obj;
 
         public List<IConfirmedField> ConfirmedFields
         {

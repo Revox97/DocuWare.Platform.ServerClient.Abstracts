@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UploadTemplateInput(SDK.UploadTemplateInput obj) : IUploadTemplateInput
+    public class UploadTemplateInput(DocuWare.Platform.ServerClient.UploadTemplateInput obj) : IUploadTemplateInput
     {
-        internal SDK.UploadTemplateInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UploadTemplateInput Obj { get; } = obj;
 
         public string TemplateGUID
         {

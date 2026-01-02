@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListInfos(SDK.SelectListInfos obj) : ISelectListInfos
+    public class SelectListInfos(DocuWare.Platform.ServerClient.SelectListInfos obj) : ISelectListInfos
     {
-        internal SDK.SelectListInfos Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SelectListInfos Obj { get; } = obj;
 
         public List<ISelectListInfo> SelectLists
         {

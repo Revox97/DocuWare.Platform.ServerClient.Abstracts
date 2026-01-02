@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportConfigInput(SDK.ImportConfigInput obj) : IImportConfigInput
+    public class ImportConfigInput(DocuWare.Platform.ServerClient.ImportConfigInput obj) : IImportConfigInput
     {
-        internal SDK.ImportConfigInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImportConfigInput Obj { get; } = obj;
 
         public string FileName
         {

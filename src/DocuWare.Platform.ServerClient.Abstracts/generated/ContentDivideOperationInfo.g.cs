@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentDivideOperationInfo(SDK.ContentDivideOperationInfo obj) : IContentDivideOperationInfo
+    public class ContentDivideOperationInfo(DocuWare.Platform.ServerClient.ContentDivideOperationInfo obj) : IContentDivideOperationInfo
     {
-        internal SDK.ContentDivideOperationInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ContentDivideOperationInfo Obj { get; } = obj;
 
         public List<int> Pages
         {

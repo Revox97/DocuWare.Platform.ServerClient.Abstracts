@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserPropertyQuery(SDK.UserPropertyQuery obj) : IUserPropertyQuery
+    public class UserPropertyQuery(DocuWare.Platform.ServerClient.UserPropertyQuery obj) : IUserPropertyQuery
     {
-        internal SDK.UserPropertyQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserPropertyQuery Obj { get; } = obj;
 
         public string Id
         {

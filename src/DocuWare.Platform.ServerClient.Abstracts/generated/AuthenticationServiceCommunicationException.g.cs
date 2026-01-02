@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AuthenticationServiceCommunicationException(SDK.AuthenticationServiceCommunicationException obj) : IAuthenticationServiceCommunicationException
+    public class AuthenticationServiceCommunicationException(DocuWare.Platform.ServerClient.Exceptions.AuthenticationServiceCommunicationException obj) : IAuthenticationServiceCommunicationException
     {
-        internal SDK.AuthenticationServiceCommunicationException Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Exceptions.AuthenticationServiceCommunicationException Obj { get; } = obj;
 
         public string Message => Obj.Message;
 

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ResultListQuery(SDK.ResultListQuery obj) : IResultListQuery
+    public class ResultListQuery(DocuWare.Platform.ServerClient.ResultListQuery obj) : IResultListQuery
     {
-        internal SDK.ResultListQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ResultListQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

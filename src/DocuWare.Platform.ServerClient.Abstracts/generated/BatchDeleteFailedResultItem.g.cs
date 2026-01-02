@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchDeleteFailedResultItem(SDK.BatchDeleteFailedResultItem obj) : IBatchDeleteFailedResultItem
+    public class BatchDeleteFailedResultItem(DocuWare.Platform.ServerClient.BatchDeleteFailedResultItem obj) : IBatchDeleteFailedResultItem
     {
-        internal SDK.BatchDeleteFailedResultItem Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchDeleteFailedResultItem Obj { get; } = obj;
     }
 }

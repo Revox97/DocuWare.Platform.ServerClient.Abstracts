@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestStartHistoryStep(SDK.RequestStartHistoryStep obj) : IRequestStartHistoryStep
+    public class RequestStartHistoryStep(DocuWare.Platform.ServerClient.RequestStartHistoryStep obj) : IRequestStartHistoryStep
     {
-        internal SDK.RequestStartHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestStartHistoryStep Obj { get; } = obj;
 
         public string RequestText
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableSelectListFilter(SDK.TableSelectListFilter obj) : ITableSelectListFilter
+    public class TableSelectListFilter(DocuWare.Platform.ServerClient.TableSelectListFilter obj) : ITableSelectListFilter
     {
-        internal SDK.TableSelectListFilter Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TableSelectListFilter Obj { get; } = obj;
 
         public string TableFieldColumnName
         {

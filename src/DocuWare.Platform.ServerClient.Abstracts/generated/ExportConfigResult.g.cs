@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportConfigResult(SDK.ExportConfigResult obj) : IExportConfigResult
+    public class ExportConfigResult(DocuWare.Platform.ServerClient.ExportConfigResult obj) : IExportConfigResult
     {
-        internal SDK.ExportConfigResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExportConfigResult Obj { get; } = obj;
 
         public string FileName
         {

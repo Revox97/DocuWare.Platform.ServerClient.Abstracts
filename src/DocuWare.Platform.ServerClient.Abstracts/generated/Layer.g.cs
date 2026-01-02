@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Layer(SDK.Layer obj) : ILayer
+    public class Layer(DocuWare.Platform.ServerClient.Layer obj) : ILayer
     {
-        internal SDK.Layer Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Layer Obj { get; } = obj;
 
         public List<IEntryBase> Items
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampField(SDK.StampField obj) : IStampField
+    public class StampField(DocuWare.Platform.ServerClient.StampField obj) : IStampField
     {
-        internal SDK.StampField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampField Obj { get; } = obj;
 
         public string Name
         {

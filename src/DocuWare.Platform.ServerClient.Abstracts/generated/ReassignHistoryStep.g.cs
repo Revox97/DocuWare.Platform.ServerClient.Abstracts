@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ReassignHistoryStep(SDK.ReassignHistoryStep obj) : IReassignHistoryStep
+    public class ReassignHistoryStep(DocuWare.Platform.ServerClient.ReassignHistoryStep obj) : IReassignHistoryStep
     {
-        internal SDK.ReassignHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ReassignHistoryStep Obj { get; } = obj;
 
         public List<string> RecipientsName
         {

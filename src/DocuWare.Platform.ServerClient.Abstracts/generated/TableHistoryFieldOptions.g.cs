@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableHistoryFieldOptions(SDK.TableHistoryFieldOptions obj) : ITableHistoryFieldOptions
+    public class TableHistoryFieldOptions(DocuWare.Platform.ServerClient.TableHistoryFieldOptions obj) : ITableHistoryFieldOptions
     {
-        internal SDK.TableHistoryFieldOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TableHistoryFieldOptions Obj { get; } = obj;
 
         public List<ITableColumnsDefinition> TableColumnsDefinitions
         {

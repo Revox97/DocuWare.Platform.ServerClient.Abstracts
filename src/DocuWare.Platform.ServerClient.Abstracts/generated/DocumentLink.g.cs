@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentLink(SDK.DocumentLink obj) : IDocumentLink
+    public class DocumentLink(DocuWare.Platform.ServerClient.DocumentLink obj) : IDocumentLink
     {
-        internal SDK.DocumentLink Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentLink Obj { get; } = obj;
 
         public Link[] Links
         {

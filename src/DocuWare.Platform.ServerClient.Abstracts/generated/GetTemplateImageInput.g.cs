@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GetTemplateImageInput(SDK.GetTemplateImageInput obj) : IGetTemplateImageInput
+    public class GetTemplateImageInput(DocuWare.Platform.ServerClient.GetTemplateImageInput obj) : IGetTemplateImageInput
     {
-        internal SDK.GetTemplateImageInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.GetTemplateImageInput Obj { get; } = obj;
 
         public string TemplateGUID
         {

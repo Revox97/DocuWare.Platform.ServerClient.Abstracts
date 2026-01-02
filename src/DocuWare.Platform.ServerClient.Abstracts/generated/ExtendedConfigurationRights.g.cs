@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExtendedConfigurationRights(SDK.ExtendedConfigurationRights obj) : IExtendedConfigurationRights
+    public class ExtendedConfigurationRights(DocuWare.Platform.ServerClient.ExtendedConfigurationRights obj) : IExtendedConfigurationRights
     {
-        internal SDK.ExtendedConfigurationRights Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExtendedConfigurationRights Obj { get; } = obj;
 
         public bool Forms
         {

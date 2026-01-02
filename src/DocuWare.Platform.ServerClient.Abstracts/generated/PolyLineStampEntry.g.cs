@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PolyLineStampEntry(SDK.PolyLineStampEntry obj) : IPolyLineStampEntry
+    public class PolyLineStampEntry(DocuWare.Platform.ServerClient.PolyLineStampEntry obj) : IPolyLineStampEntry
     {
-        internal SDK.PolyLineStampEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PolyLineStampEntry Obj { get; } = obj;
 
         public List<IStroke> Stroke
         {

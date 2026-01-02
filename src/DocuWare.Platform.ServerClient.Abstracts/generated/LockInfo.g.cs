@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LockInfo(SDK.LockInfo obj) : ILockInfo
+    public class LockInfo(DocuWare.Platform.ServerClient.LockInfo obj) : ILockInfo
     {
-        internal SDK.LockInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LockInfo Obj { get; } = obj;
 
         public string Interval
         {

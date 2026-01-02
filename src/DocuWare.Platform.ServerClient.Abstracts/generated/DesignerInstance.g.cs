@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerInstance(SDK.DesignerInstance obj) : IDesignerInstance
+    public class DesignerInstance(DocuWare.Platform.ServerClient.DesignerInstance obj) : IDesignerInstance
     {
-        internal SDK.DesignerInstance Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DesignerInstance Obj { get; } = obj;
 
         public Link[] Links
         {

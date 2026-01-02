@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionFormFieldValue(SDK.DecisionFormFieldValue obj) : IDecisionFormFieldValue
+    public class DecisionFormFieldValue(DocuWare.Platform.ServerClient.DecisionFormFieldValue obj) : IDecisionFormFieldValue
     {
-        internal SDK.DecisionFormFieldValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DecisionFormFieldValue Obj { get; } = obj;
 
         public int Id
         {

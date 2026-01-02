@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableNumberField(SDK.TaskTableNumberField obj) : ITaskTableNumberField
+    public class TaskTableNumberField(DocuWare.Platform.ServerClient.TaskTableNumberField obj) : ITaskTableNumberField
     {
-        internal SDK.TaskTableNumberField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskTableNumberField Obj { get; } = obj;
 
         public bool PrefillWithBalance
         {

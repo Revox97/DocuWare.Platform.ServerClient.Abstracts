@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdhocRenderingQuery(SDK.AdhocRenderingQuery obj) : IAdhocRenderingQuery
+    public class AdhocRenderingQuery(DocuWare.Platform.ServerClient.AdhocRenderingQuery obj) : IAdhocRenderingQuery
     {
-        internal SDK.AdhocRenderingQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AdhocRenderingQuery Obj { get; } = obj;
 
         public int Page
         {

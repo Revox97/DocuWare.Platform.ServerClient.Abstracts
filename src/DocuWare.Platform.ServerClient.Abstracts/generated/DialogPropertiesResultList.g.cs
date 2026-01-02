@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesResultList(SDK.DialogPropertiesResultList obj) : IDialogPropertiesResultList
+    public class DialogPropertiesResultList(DocuWare.Platform.ServerClient.DialogPropertiesResultList obj) : IDialogPropertiesResultList
     {
-        internal SDK.DialogPropertiesResultList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogPropertiesResultList Obj { get; } = obj;
 
         public List<IResultDialogFunction> Functions
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UsersByRole(SDK.UsersByRole obj) : IUsersByRole
+    public class UsersByRole(DocuWare.Platform.ServerClient.UsersByRole obj) : IUsersByRole
     {
-        internal SDK.UsersByRole Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UsersByRole Obj { get; } = obj;
 
         public List<IUser> User
         {

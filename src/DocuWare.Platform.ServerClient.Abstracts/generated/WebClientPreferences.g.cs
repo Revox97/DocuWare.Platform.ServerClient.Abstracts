@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebClientPreferences(SDK.WebClientPreferences obj) : IWebClientPreferences
+    public class WebClientPreferences(DocuWare.Platform.ServerClient.WebClient.WebClientPreferences obj) : IWebClientPreferences
     {
-        internal SDK.WebClientPreferences Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.WebClientPreferences Obj { get; } = obj;
 
         public List<IWorkAreaPreferences> WorkAreas
         {

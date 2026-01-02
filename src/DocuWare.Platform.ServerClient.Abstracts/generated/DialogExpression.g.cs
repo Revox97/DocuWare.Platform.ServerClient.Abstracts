@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogExpression(SDK.DialogExpression obj) : IDialogExpression
+    public class DialogExpression(DocuWare.Platform.ServerClient.DialogExpression obj) : IDialogExpression
     {
-        internal SDK.DialogExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogExpression Obj { get; } = obj;
 
         public List<IDialogExpressionCondition> Condition
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Zones(SDK.Zones obj) : IZones
+    public class Zones(DocuWare.Platform.ServerClient.Zones obj) : IZones
     {
-        internal SDK.Zones Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Zones Obj { get; } = obj;
 
         public List<IZone> Zone
         {

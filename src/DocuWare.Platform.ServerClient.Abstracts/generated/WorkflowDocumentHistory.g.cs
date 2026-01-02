@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowDocumentHistory(SDK.WorkflowDocumentHistory obj) : IWorkflowDocumentHistory
+    public class WorkflowDocumentHistory(DocuWare.Platform.ServerClient.WorkflowDocumentHistory obj) : IWorkflowDocumentHistory
     {
-        internal SDK.WorkflowDocumentHistory Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WorkflowDocumentHistory Obj { get; } = obj;
 
         public List<IInstanceHistory> InstanceHistory
         {

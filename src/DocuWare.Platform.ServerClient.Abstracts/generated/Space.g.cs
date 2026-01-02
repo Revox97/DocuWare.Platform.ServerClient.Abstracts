@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Space(SDK.Space obj) : ISpace
+    public class Space(DocuWare.Platform.ServerClient.Content.Space obj) : ISpace
     {
-        internal SDK.Space Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Space Obj { get; } = obj;
 
         public int W
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestSettings(SDK.RequestSettings obj) : IRequestSettings
+    public class RequestSettings(DocuWare.Platform.ServerClient.RequestSettings obj) : IRequestSettings
     {
-        internal SDK.RequestSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestSettings Obj { get; } = obj;
 
         public List<IRequestDecisionSettings> Decisions
         {

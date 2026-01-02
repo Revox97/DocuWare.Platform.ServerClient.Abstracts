@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DeleteEntry(SDK.DeleteEntry obj) : IDeleteEntry
+    public class DeleteEntry(DocuWare.Platform.ServerClient.DeleteEntry obj) : IDeleteEntry
     {
-        internal SDK.DeleteEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DeleteEntry Obj { get; } = obj;
 
         public string Type
         {

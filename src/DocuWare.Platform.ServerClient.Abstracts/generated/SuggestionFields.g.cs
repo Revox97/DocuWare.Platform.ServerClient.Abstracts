@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionFields(SDK.SuggestionFields obj) : ISuggestionFields
+    public class SuggestionFields(DocuWare.Platform.ServerClient.SuggestionFields obj) : ISuggestionFields
     {
-        internal SDK.SuggestionFields Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SuggestionFields Obj { get; } = obj;
 
         public List<ISuggestionField> Field
         {

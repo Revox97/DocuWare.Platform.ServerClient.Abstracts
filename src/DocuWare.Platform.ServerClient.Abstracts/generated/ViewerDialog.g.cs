@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ViewerDialog(SDK.ViewerDialog obj) : IViewerDialog
+    public class ViewerDialog(DocuWare.Platform.ServerClient.ViewerDialog obj) : IViewerDialog
     {
-        internal SDK.ViewerDialog Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ViewerDialog Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.ViewerDialogModes Mode
         {

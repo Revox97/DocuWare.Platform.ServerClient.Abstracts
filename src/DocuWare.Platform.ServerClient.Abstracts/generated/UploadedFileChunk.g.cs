@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UploadedFileChunk(SDK.UploadedFileChunk obj) : IUploadedFileChunk
+    public class UploadedFileChunk(DocuWare.Platform.ServerClient.UploadedFileChunk obj) : IUploadedFileChunk
     {
-        internal SDK.UploadedFileChunk Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UploadedFileChunk Obj { get; } = obj;
 
         public Link[] Links
         {

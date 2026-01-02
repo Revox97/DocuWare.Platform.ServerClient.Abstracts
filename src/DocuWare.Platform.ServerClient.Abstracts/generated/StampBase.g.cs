@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampBase(SDK.StampBase obj) : IStampBase
+    public class StampBase(DocuWare.Platform.ServerClient.StampBase obj) : IStampBase
     {
-        internal SDK.StampBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampBase Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.StampSignatureType Signature
         {

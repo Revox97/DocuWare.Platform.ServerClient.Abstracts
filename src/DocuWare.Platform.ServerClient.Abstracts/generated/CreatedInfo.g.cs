@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CreatedInfo(SDK.CreatedInfo obj) : ICreatedInfo
+    public class CreatedInfo(DocuWare.Platform.ServerClient.CreatedInfo obj) : ICreatedInfo
     {
-        internal SDK.CreatedInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CreatedInfo Obj { get; } = obj;
 
         public string User
         {

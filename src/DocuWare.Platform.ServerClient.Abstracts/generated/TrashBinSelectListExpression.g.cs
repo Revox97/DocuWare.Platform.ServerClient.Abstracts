@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinSelectListExpression(SDK.TrashBinSelectListExpression obj) : ITrashBinSelectListExpression
+    public class TrashBinSelectListExpression(DocuWare.Platform.ServerClient.TrashBinSelectListExpression obj) : ITrashBinSelectListExpression
     {
-        internal SDK.TrashBinSelectListExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBinSelectListExpression Obj { get; } = obj;
 
         public string FieldName
         {

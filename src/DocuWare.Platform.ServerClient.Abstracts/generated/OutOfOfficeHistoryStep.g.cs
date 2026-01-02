@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class OutOfOfficeHistoryStep(SDK.OutOfOfficeHistoryStep obj) : IOutOfOfficeHistoryStep
+    public class OutOfOfficeHistoryStep(DocuWare.Platform.ServerClient.OutOfOfficeHistoryStep obj) : IOutOfOfficeHistoryStep
     {
-        internal SDK.OutOfOfficeHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.OutOfOfficeHistoryStep Obj { get; } = obj;
 
         public string NewUser
         {

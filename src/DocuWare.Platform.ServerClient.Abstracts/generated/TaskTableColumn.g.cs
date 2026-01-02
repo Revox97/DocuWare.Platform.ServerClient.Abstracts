@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableColumn(SDK.TaskTableColumn obj) : ITaskTableColumn
+    public class TaskTableColumn(DocuWare.Platform.ServerClient.TaskTableColumn obj) : ITaskTableColumn
     {
-        internal SDK.TaskTableColumn Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskTableColumn Obj { get; } = obj;
 
         public bool IsHidden
         {

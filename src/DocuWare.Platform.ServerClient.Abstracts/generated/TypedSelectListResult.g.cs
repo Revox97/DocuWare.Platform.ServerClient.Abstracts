@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TypedSelectListResult(SDK.TypedSelectListResult obj) : ITypedSelectListResult
+    public class TypedSelectListResult(DocuWare.Platform.ServerClient.TypedSelectListResult obj) : ITypedSelectListResult
     {
-        internal SDK.TypedSelectListResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TypedSelectListResult Obj { get; } = obj;
 
         public List<IDocumentIndexFieldValue> Value
         {

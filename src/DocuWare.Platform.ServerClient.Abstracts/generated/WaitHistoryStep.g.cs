@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WaitHistoryStep(SDK.WaitHistoryStep obj) : IWaitHistoryStep
+    public class WaitHistoryStep(DocuWare.Platform.ServerClient.WaitHistoryStep obj) : IWaitHistoryStep
     {
-        internal SDK.WaitHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WaitHistoryStep Obj { get; } = obj;
 
         public List<IConditionHistoryStep> Conditions
         {

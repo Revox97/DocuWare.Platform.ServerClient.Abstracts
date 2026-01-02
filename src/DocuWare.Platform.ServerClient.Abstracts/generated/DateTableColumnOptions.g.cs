@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateTableColumnOptions(SDK.DateTableColumnOptions obj) : IDateTableColumnOptions
+    public class DateTableColumnOptions(DocuWare.Platform.ServerClient.DateTableColumnOptions obj) : IDateTableColumnOptions
     {
-        internal SDK.DateTableColumnOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DateTableColumnOptions Obj { get; } = obj;
     }
 }

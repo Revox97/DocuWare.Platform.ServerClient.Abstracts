@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EagleAttribute(SDK.EagleAttribute obj) : IEagleAttribute
+    public class EagleAttribute(DocuWare.Platform.ServerClient.EagleAttribute obj) : IEagleAttribute
     {
-        internal SDK.EagleAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.EagleAttribute Obj { get; } = obj;
     }
 }

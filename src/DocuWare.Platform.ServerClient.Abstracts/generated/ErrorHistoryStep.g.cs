@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ErrorHistoryStep(SDK.ErrorHistoryStep obj) : IErrorHistoryStep
+    public class ErrorHistoryStep(DocuWare.Platform.ServerClient.ErrorHistoryStep obj) : IErrorHistoryStep
     {
-        internal SDK.ErrorHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ErrorHistoryStep Obj { get; } = obj;
 
         public string ErrorMessage
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextEntry(SDK.TextEntry obj) : ITextEntry
+    public class TextEntry(DocuWare.Platform.ServerClient.TextEntry obj) : ITextEntry
     {
-        internal SDK.TextEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextEntry Obj { get; } = obj;
 
         public string Type
         {

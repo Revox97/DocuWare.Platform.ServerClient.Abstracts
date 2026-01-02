@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableResultRow(SDK.TableResultRow obj) : ITableResultRow
+    public class TableResultRow(DocuWare.Platform.ServerClient.TableResultRow obj) : ITableResultRow
     {
-        internal SDK.TableResultRow Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TableResultRow Obj { get; } = obj;
 
         public List<object> Items
         {

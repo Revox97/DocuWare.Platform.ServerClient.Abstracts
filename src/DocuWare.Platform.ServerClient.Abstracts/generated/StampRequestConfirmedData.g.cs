@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampRequestConfirmedData(SDK.StampRequestConfirmedData obj) : IStampRequestConfirmedData
+    public class StampRequestConfirmedData(DocuWare.Platform.ServerClient.StampRequestConfirmedData obj) : IStampRequestConfirmedData
     {
-        internal SDK.StampRequestConfirmedData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampRequestConfirmedData Obj { get; } = obj;
 
         public int DecisionId
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestDecisionHistoryStep(SDK.RequestDecisionHistoryStep obj) : IRequestDecisionHistoryStep
+    public class RequestDecisionHistoryStep(DocuWare.Platform.ServerClient.RequestDecisionHistoryStep obj) : IRequestDecisionHistoryStep
     {
-        internal SDK.RequestDecisionHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestDecisionHistoryStep Obj { get; } = obj;
 
         public List<IHistoryField> InputFields
         {

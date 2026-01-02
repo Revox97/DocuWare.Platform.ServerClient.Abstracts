@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskDateTimeField(SDK.TaskDateTimeField obj) : ITaskDateTimeField
+    public class TaskDateTimeField(DocuWare.Platform.ServerClient.TaskDateTimeField obj) : ITaskDateTimeField
     {
-        internal SDK.TaskDateTimeField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskDateTimeField Obj { get; } = obj;
 
         public List<ISelectListFilter> SelectListFilters
         {

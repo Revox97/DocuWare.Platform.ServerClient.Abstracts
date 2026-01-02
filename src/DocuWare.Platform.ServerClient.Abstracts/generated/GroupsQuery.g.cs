@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GroupsQuery(SDK.GroupsQuery obj) : IGroupsQuery
+    public class GroupsQuery(DocuWare.Platform.ServerClient.GroupsQuery obj) : IGroupsQuery
     {
-        internal SDK.GroupsQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.GroupsQuery Obj { get; } = obj;
 
         public bool Active
         {

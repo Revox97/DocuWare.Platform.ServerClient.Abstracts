@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionsStampSettings(SDK.DecisionsStampSettings obj) : IDecisionsStampSettings
+    public class DecisionsStampSettings(DocuWare.Platform.ServerClient.DecisionsStampSettings obj) : IDecisionsStampSettings
     {
-        internal SDK.DecisionsStampSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DecisionsStampSettings Obj { get; } = obj;
 
         public List<IDecision> DecisionStamps
         {

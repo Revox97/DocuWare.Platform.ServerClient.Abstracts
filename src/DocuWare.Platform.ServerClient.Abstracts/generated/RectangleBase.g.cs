@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RectangleBase(SDK.RectangleBase obj) : IRectangleBase
+    public class RectangleBase(DocuWare.Platform.ServerClient.Content.RectangleBase obj) : IRectangleBase
     {
-        internal SDK.RectangleBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.RectangleBase Obj { get; } = obj;
 
         public int L
         {

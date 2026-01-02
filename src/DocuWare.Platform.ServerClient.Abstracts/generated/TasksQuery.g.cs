@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TasksQuery(SDK.TasksQuery obj) : ITasksQuery
+    public class TasksQuery(DocuWare.Platform.ServerClient.TasksQuery obj) : ITasksQuery
     {
-        internal SDK.TasksQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TasksQuery Obj { get; } = obj;
 
         public List<string> Instances
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BehaviorAction(SDK.BehaviorAction obj) : IBehaviorAction
+    public class BehaviorAction(DocuWare.Platform.ServerClient.BehaviorAction obj) : IBehaviorAction
     {
-        internal SDK.BehaviorAction Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BehaviorAction Obj { get; } = obj;
     }
 }

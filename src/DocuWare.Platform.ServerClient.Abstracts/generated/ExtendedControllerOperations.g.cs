@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExtendedControllerOperations(SDK.ExtendedControllerOperations obj) : IExtendedControllerOperations
+    public class ExtendedControllerOperations(DocuWare.Platform.ServerClient.ExtendedControllerOperations obj) : IExtendedControllerOperations
     {
-        internal SDK.ExtendedControllerOperations Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExtendedControllerOperations Obj { get; } = obj;
 
         public Link[] Links
         {

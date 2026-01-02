@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchUpdateDialogExpressionSource(SDK.BatchUpdateDialogExpressionSource obj) : IBatchUpdateDialogExpressionSource
+    public class BatchUpdateDialogExpressionSource(DocuWare.Platform.ServerClient.BatchUpdateDialogExpressionSource obj) : IBatchUpdateDialogExpressionSource
     {
-        internal SDK.BatchUpdateDialogExpressionSource Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchUpdateDialogExpressionSource Obj { get; } = obj;
     }
 }

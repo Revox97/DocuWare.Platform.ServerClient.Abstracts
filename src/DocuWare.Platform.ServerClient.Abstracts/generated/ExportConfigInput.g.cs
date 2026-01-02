@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportConfigInput(SDK.ExportConfigInput obj) : IExportConfigInput
+    public class ExportConfigInput(DocuWare.Platform.ServerClient.ExportConfigInput obj) : IExportConfigInput
     {
-        internal SDK.ExportConfigInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExportConfigInput Obj { get; } = obj;
 
         public string ConfigGUID
         {

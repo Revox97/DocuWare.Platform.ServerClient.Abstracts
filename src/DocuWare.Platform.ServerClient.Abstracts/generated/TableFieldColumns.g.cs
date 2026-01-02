@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableFieldColumns(SDK.TableFieldColumns obj) : ITableFieldColumns
+    public class TableFieldColumns(DocuWare.Platform.ServerClient.TableFieldColumns obj) : ITableFieldColumns
     {
-        internal SDK.TableFieldColumns Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TableFieldColumns Obj { get; } = obj;
 
         public List<IFileCabinetFieldBase> TableFieldColumn
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubstitutionRuleField(SDK.SubstitutionRuleField obj) : ISubstitutionRuleField
+    public class SubstitutionRuleField(DocuWare.Platform.ServerClient.SubstitutionRuleField obj) : ISubstitutionRuleField
     {
-        internal SDK.SubstitutionRuleField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SubstitutionRuleField Obj { get; } = obj;
 
         public bool IsMultiselect
         {

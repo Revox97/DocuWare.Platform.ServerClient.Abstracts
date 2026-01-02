@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserInfo(SDK.UserInfo obj) : IUserInfo
+    public class UserInfo(DocuWare.Platform.ServerClient.UserInfo obj) : IUserInfo
     {
-        internal SDK.UserInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserInfo Obj { get; } = obj;
 
         public Link[] Links
         {

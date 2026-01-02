@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionDescriptions(SDK.FunctionDescriptions obj) : IFunctionDescriptions
+    public class FunctionDescriptions(DocuWare.Platform.ServerClient.FunctionDescriptions obj) : IFunctionDescriptions
     {
-        internal SDK.FunctionDescriptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FunctionDescriptions Obj { get; } = obj;
 
         public List<IFunctionDescription> Function
         {

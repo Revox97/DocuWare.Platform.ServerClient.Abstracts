@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerWorkflow(SDK.DesignerWorkflow obj) : IDesignerWorkflow
+    public class DesignerWorkflow(DocuWare.Platform.ServerClient.DesignerWorkflow obj) : IDesignerWorkflow
     {
-        internal SDK.DesignerWorkflow Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DesignerWorkflow Obj { get; } = obj;
 
         public Link[] Links
         {

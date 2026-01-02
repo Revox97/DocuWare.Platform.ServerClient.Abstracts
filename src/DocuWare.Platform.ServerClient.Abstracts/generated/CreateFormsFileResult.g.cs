@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CreateFormsFileResult(SDK.CreateFormsFileResult obj) : ICreateFormsFileResult
+    public class CreateFormsFileResult(DocuWare.Platform.ServerClient.CreateFormsFileResult obj) : ICreateFormsFileResult
     {
-        internal SDK.CreateFormsFileResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CreateFormsFileResult Obj { get; } = obj;
 
         public string FilePath
         {

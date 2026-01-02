@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdditionalOrganizationInfo(SDK.AdditionalOrganizationInfo obj) : IAdditionalOrganizationInfo
+    public class AdditionalOrganizationInfo(DocuWare.Platform.ServerClient.AdditionalOrganizationInfo obj) : IAdditionalOrganizationInfo
     {
-        internal SDK.AdditionalOrganizationInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AdditionalOrganizationInfo Obj { get; } = obj;
 
         public List<string> CompanyNames
         {

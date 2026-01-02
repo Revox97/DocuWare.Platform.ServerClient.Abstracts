@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQueryResult(SDK.DocumentsQueryResult obj) : IDocumentsQueryResult
+    public class DocumentsQueryResult(DocuWare.Platform.ServerClient.DocumentsQueryResult obj) : IDocumentsQueryResult
     {
-        internal SDK.DocumentsQueryResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentsQueryResult Obj { get; } = obj;
 
         public List<IDocument> Items
         {

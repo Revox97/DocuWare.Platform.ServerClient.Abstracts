@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormInfoHeader(SDK.FormInfoHeader obj) : IFormInfoHeader
+    public class FormInfoHeader(DocuWare.Platform.ServerClient.FormInfoHeader obj) : IFormInfoHeader
     {
-        internal SDK.FormInfoHeader Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormInfoHeader Obj { get; } = obj;
     }
 }

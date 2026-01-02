@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextStamp(SDK.TextStamp obj) : ITextStamp
+    public class TextStamp(DocuWare.Platform.ServerClient.TextStamp obj) : ITextStamp
     {
-        internal SDK.TextStamp Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextStamp Obj { get; } = obj;
     }
 }

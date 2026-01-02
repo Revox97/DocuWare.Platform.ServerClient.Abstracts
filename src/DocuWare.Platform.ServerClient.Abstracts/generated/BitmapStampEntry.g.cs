@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BitmapStampEntry(SDK.BitmapStampEntry obj) : IBitmapStampEntry
+    public class BitmapStampEntry(DocuWare.Platform.ServerClient.BitmapStampEntry obj) : IBitmapStampEntry
     {
-        internal SDK.BitmapStampEntry Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BitmapStampEntry Obj { get; } = obj;
 
         public Byte[] PngData
         {

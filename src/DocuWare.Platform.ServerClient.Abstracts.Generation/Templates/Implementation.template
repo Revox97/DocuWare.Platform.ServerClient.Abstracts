@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class {0}(SDK.{0} obj) : {1}
+    public class {0}({3} obj) : {1}
     {
-        internal SDK.{0} Obj { get; } = obj;{2}
+        internal {3} Obj { get; } = obj;{2}
     }
 }

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IntellixFieldAssignments(SDK.IntellixFieldAssignments obj) : IIntellixFieldAssignments
+    public class IntellixFieldAssignments(DocuWare.Platform.ServerClient.IntellixFieldAssignments obj) : IIntellixFieldAssignments
     {
-        internal SDK.IntellixFieldAssignments Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.IntellixFieldAssignments Obj { get; } = obj;
 
         public List<IIntellixFieldMapping> Items
         {

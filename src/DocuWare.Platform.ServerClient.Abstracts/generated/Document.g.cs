@@ -1,11 +1,10 @@
-using System.Net.Http.Json;
 using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Document(SDK.Document obj) : IDocument
+    public class Document(DocuWare.Platform.ServerClient.Document obj) : IDocument
     {
-        internal SDK.Document Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Document Obj { get; } = obj;
 
         public List<IDocumentIndexField> Fields
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CheckOutActionParameters(SDK.CheckOutActionParameters obj) : ICheckOutActionParameters
+    public class CheckOutActionParameters(DocuWare.Platform.ServerClient.CheckOutActionParameters obj) : ICheckOutActionParameters
     {
-        internal SDK.CheckOutActionParameters Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CheckOutActionParameters Obj { get; } = obj;
 
         public string FileCabinetId
         {

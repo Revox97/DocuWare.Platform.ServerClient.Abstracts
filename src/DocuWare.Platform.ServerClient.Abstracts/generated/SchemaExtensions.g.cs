@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SchemaExtensions(SDK.SchemaExtensions obj) : ISchemaExtensions
+    public class SchemaExtensions(DocuWare.Platform.ServerClient.SchemaExtensions obj) : ISchemaExtensions
     {
-        internal SDK.SchemaExtensions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SchemaExtensions Obj { get; } = obj;
     }
 }

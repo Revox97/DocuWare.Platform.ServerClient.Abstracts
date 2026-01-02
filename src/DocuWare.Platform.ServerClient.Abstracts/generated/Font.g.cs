@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Font(SDK.Font obj) : IFont
+    public class Font(DocuWare.Platform.ServerClient.Font obj) : IFont
     {
-        internal SDK.Font Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Font Obj { get; } = obj;
 
         public string FontName
         {

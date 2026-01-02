@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BarCodeZone(SDK.BarCodeZone obj) : IBarCodeZone
+    public class BarCodeZone(DocuWare.Platform.ServerClient.Content.BarCodeZone obj) : IBarCodeZone
     {
-        internal SDK.BarCodeZone Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.BarCodeZone Obj { get; } = obj;
 
         public string BarcodeType
         {

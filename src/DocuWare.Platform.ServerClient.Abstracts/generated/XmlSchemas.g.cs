@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class XmlSchemas(SDK.XmlSchemas obj) : IXmlSchemas
+    public class XmlSchemas(DocuWare.Platform.ServerClient.XmlSchemas obj) : IXmlSchemas
     {
-        internal SDK.XmlSchemas Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.XmlSchemas Obj { get; } = obj;
 
         public List<IXmlSchema> Schema
         {

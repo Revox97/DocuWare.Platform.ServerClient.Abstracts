@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskOperations(SDK.TaskOperations obj) : ITaskOperations
+    public class TaskOperations(DocuWare.Platform.ServerClient.TaskOperations obj) : ITaskOperations
     {
-        internal SDK.TaskOperations Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskOperations Obj { get; } = obj;
 
         public Link[] Links
         {

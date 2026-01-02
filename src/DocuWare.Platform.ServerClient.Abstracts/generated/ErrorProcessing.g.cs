@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ErrorProcessing(SDK.ErrorProcessing obj) : IErrorProcessing
+    public class ErrorProcessing(DocuWare.Services.Http.Client.ErrorProcessing obj) : ErrorProcessing
     {
-        internal SDK.ErrorProcessing Obj { get; } = obj;
+        internal DocuWare.Services.Http.Client.ErrorProcessing Obj { get; } = obj;
     }
 }

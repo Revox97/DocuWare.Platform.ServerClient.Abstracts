@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQueryTableResult(SDK.DocumentsQueryTableResult obj) : IDocumentsQueryTableResult
+    public class DocumentsQueryTableResult(DocuWare.Platform.ServerClient.DocumentsQueryTableResult obj) : IDocumentsQueryTableResult
     {
-        internal SDK.DocumentsQueryTableResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentsQueryTableResult Obj { get; } = obj;
 
         public List<ITableResultHeader> Headers
         {

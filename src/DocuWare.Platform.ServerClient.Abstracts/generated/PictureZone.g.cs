@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PictureZone(SDK.PictureZone obj) : IPictureZone
+    public class PictureZone(DocuWare.Platform.ServerClient.Content.PictureZone obj) : IPictureZone
     {
-        internal SDK.PictureZone Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.PictureZone Obj { get; } = obj;
 
         public int L
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileNameExtensions(SDK.FileNameExtensions obj) : IFileNameExtensions
+    public class FileNameExtensions(DocuWare.Platform.ServerClient.FileNameExtensions obj) : IFileNameExtensions
     {
-        internal SDK.FileNameExtensions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileNameExtensions Obj { get; } = obj;
     }
 }

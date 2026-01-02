@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DoubleConstant(SDK.DoubleConstant obj) : IDoubleConstant
+    public class DoubleConstant(DocuWare.Platform.ServerClient.DoubleConstant obj) : IDoubleConstant
     {
-        internal SDK.DoubleConstant Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DoubleConstant Obj { get; } = obj;
 
         public double? Value
         {

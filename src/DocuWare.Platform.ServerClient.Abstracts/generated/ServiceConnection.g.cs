@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceConnection(SDK.ServiceConnection obj) : IServiceConnection
+    public class ServiceConnection(DocuWare.Platform.ServerClient.ServiceConnection obj) : IServiceConnection
     {
-        internal SDK.ServiceConnection Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ServiceConnection Obj { get; } = obj;
 
 		public void ReplaceHttpClient(IServiceConnection otherServiceConnection) => Obj.ReplaceHttpClient(((ServiceConnection)otherServiceConnection).Obj);
 

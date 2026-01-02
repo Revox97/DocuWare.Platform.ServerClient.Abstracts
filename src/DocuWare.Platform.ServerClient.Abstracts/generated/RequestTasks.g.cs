@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestTasks(SDK.RequestTasks obj) : IRequestTasks
+    public class RequestTasks(DocuWare.Platform.ServerClient.RequestTasks obj) : IRequestTasks
     {
-        internal SDK.RequestTasks Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestTasks Obj { get; } = obj;
 
         public Link[] Links
         {

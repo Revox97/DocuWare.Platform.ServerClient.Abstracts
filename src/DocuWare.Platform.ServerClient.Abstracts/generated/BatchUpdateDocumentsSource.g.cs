@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchUpdateDocumentsSource(SDK.BatchUpdateDocumentsSource obj) : IBatchUpdateDocumentsSource
+    public class BatchUpdateDocumentsSource(DocuWare.Platform.ServerClient.BatchUpdateDocumentsSource obj) : IBatchUpdateDocumentsSource
     {
-        internal SDK.BatchUpdateDocumentsSource Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchUpdateDocumentsSource Obj { get; } = obj;
 
         public List<int> Id
         {

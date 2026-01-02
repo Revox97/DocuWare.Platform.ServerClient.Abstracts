@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionTable(SDK.SuggestionTable obj) : ISuggestionTable
+    public class SuggestionTable(DocuWare.Platform.ServerClient.SuggestionTable obj) : ISuggestionTable
     {
-        internal SDK.SuggestionTable Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SuggestionTable Obj { get; } = obj;
 
         public List<ISuggestionCellValue> Cell
         {

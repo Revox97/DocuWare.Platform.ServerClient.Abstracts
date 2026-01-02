@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormFieldValues(SDK.FormFieldValues obj) : IFormFieldValues
+    public class FormFieldValues(DocuWare.Platform.ServerClient.FormFieldValues obj) : IFormFieldValues
     {
-        internal SDK.FormFieldValues Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormFieldValues Obj { get; } = obj;
 
         public List<IFormFieldValue> Field
         {

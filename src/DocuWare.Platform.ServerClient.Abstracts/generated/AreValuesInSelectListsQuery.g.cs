@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AreValuesInSelectListsQuery(SDK.AreValuesInSelectListsQuery obj) : IAreValuesInSelectListsQuery
+    public class AreValuesInSelectListsQuery(DocuWare.Platform.ServerClient.AreValuesInSelectListsQuery obj) : IAreValuesInSelectListsQuery
     {
-        internal SDK.AreValuesInSelectListsQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AreValuesInSelectListsQuery Obj { get; } = obj;
 
         public List<ISelectListValueToCheck> Values
         {

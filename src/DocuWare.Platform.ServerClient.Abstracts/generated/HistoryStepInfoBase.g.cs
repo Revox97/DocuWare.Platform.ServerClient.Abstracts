@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HistoryStepInfoBase(SDK.HistoryStepInfoBase obj) : IHistoryStepInfoBase
+    public class HistoryStepInfoBase(DocuWare.Platform.ServerClient.HistoryStepInfoBase obj) : IHistoryStepInfoBase
     {
-        internal SDK.HistoryStepInfoBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.HistoryStepInfoBase Obj { get; } = obj;
 
         public object Item
         {

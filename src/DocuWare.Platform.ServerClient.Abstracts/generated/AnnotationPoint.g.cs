@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AnnotationPoint(SDK.AnnotationPoint obj) : IAnnotationPoint
+    public class AnnotationPoint(DocuWare.Platform.ServerClient.AnnotationPoint obj) : IAnnotationPoint
     {
-        internal SDK.AnnotationPoint Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AnnotationPoint Obj { get; } = obj;
 
         public double X
         {

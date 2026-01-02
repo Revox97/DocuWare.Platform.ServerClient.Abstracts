@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskFieldValueBase(SDK.TaskFieldValueBase obj) : ITaskFieldValueBase
+    public class TaskFieldValueBase(DocuWare.Platform.ServerClient.TaskFieldValueBase obj) : ITaskFieldValueBase
     {
-        internal SDK.TaskFieldValueBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskFieldValueBase Obj { get; } = obj;
 
         public object Item
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SizedAnnotationToolSettings(SDK.SizedAnnotationToolSettings obj) : ISizedAnnotationToolSettings
+    public class SizedAnnotationToolSettings(DocuWare.Platform.ServerClient.WebClient.SizedAnnotationToolSettings obj) : ISizedAnnotationToolSettings
     {
-        internal SDK.SizedAnnotationToolSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.SizedAnnotationToolSettings Obj { get; } = obj;
 
         public int LineSize
         {

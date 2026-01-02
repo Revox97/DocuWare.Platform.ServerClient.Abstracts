@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PointAndShootInfo(SDK.PointAndShootInfo obj) : IPointAndShootInfo
+    public class PointAndShootInfo(DocuWare.Platform.ServerClient.PointAndShootInfo obj) : IPointAndShootInfo
     {
-        internal SDK.PointAndShootInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.PointAndShootInfo Obj { get; } = obj;
 
         public List<IDWRectangle> Box
         {

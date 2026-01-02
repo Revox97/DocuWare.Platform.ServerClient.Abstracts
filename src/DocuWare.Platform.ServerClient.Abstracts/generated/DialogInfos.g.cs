@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogInfos(SDK.DialogInfos obj) : IDialogInfos
+    public class DialogInfos(DocuWare.Platform.ServerClient.DialogInfos obj) : IDialogInfos
     {
-        internal SDK.DialogInfos Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogInfos Obj { get; } = obj;
 
         public List<IDialogInfo> Dialog
         {

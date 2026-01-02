@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SequenceResult(SDK.SequenceResult obj) : ISequenceResult
+    public class SequenceResult(DocuWare.Platform.ServerClient.SequenceResult obj) : ISequenceResult
     {
-        internal SDK.SequenceResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SequenceResult Obj { get; } = obj;
 
         public string NextElement
         {

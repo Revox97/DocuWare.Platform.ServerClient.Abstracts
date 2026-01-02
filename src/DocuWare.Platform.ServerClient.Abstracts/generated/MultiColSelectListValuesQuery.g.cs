@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiColSelectListValuesQuery(SDK.MultiColSelectListValuesQuery obj) : IMultiColSelectListValuesQuery
+    public class MultiColSelectListValuesQuery(DocuWare.Platform.ServerClient.MultiColSelectListValuesQuery obj) : IMultiColSelectListValuesQuery
     {
-        internal SDK.MultiColSelectListValuesQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MultiColSelectListValuesQuery Obj { get; } = obj;
 
         public List<IMultiColSelectListExpressionCondition> Condition
         {

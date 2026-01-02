@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchAppendKeywordValues(SDK.BatchAppendKeywordValues obj) : IBatchAppendKeywordValues
+    public class BatchAppendKeywordValues(DocuWare.Platform.ServerClient.BatchAppendKeywordValues obj) : IBatchAppendKeywordValues
     {
-        internal SDK.BatchAppendKeywordValues Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchAppendKeywordValues Obj { get; } = obj;
 
         public List<int> DocId
         {

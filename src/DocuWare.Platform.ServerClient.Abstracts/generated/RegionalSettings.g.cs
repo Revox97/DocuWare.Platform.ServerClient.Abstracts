@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RegionalSettings(SDK.RegionalSettings obj) : IRegionalSettings
+    public class RegionalSettings(DocuWare.Platform.ServerClient.RegionalSettings obj) : IRegionalSettings
     {
-        internal SDK.RegionalSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RegionalSettings Obj { get; } = obj;
 
         public string Language
         {

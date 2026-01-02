@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentFlags(SDK.DocumentFlags obj) : IDocumentFlags
+    public class DocumentFlags(DocuWare.Platform.ServerClient.DocumentFlags obj) : IDocumentFlags
     {
-        internal SDK.DocumentFlags Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentFlags Obj { get; } = obj;
 
         public bool IsCold
         {

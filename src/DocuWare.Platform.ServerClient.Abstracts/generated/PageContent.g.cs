@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PageContent(SDK.PageContent obj) : IPageContent
+    public class PageContent(DocuWare.Platform.ServerClient.Content.PageContent obj) : IPageContent
     {
-        internal SDK.PageContent Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.PageContent Obj { get; } = obj;
 
         public List<IRectangleBase> Items
         {

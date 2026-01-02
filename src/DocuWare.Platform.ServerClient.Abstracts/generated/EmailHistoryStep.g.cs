@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EmailHistoryStep(SDK.EmailHistoryStep obj) : IEmailHistoryStep
+    public class EmailHistoryStep(DocuWare.Platform.ServerClient.EmailHistoryStep obj) : IEmailHistoryStep
     {
-        internal SDK.EmailHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.EmailHistoryStep Obj { get; } = obj;
 
         public List<string> Recipients
         {

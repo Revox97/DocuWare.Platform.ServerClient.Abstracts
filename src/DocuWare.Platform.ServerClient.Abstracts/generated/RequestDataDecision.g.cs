@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestDataDecision(SDK.RequestDataDecision obj) : IRequestDataDecision
+    public class RequestDataDecision(DocuWare.Platform.ServerClient.RequestDataDecision obj) : IRequestDataDecision
     {
-        internal SDK.RequestDataDecision Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestDataDecision Obj { get; } = obj;
 
         public string UserName
         {

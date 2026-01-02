@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Groups(SDK.Groups obj) : IGroups
+    public class Groups(DocuWare.Platform.ServerClient.Groups obj) : IGroups
     {
-        internal SDK.Groups Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Groups Obj { get; } = obj;
 
         public List<IGroup> Item
         {

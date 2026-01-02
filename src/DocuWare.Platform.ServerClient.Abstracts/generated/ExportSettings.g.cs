@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportSettings(SDK.ExportSettings obj) : IExportSettings
+    public class ExportSettings(DocuWare.Platform.ServerClient.ExportSettings obj) : IExportSettings
     {
-        internal SDK.ExportSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExportSettings Obj { get; } = obj;
 
         public bool IncludeDataFiles
         {

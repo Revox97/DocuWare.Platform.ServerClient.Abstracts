@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesSearch(SDK.DialogPropertiesSearch obj) : IDialogPropertiesSearch
+    public class DialogPropertiesSearch(DocuWare.Platform.ServerClient.DialogPropertiesSearch obj) : IDialogPropertiesSearch
     {
-        internal SDK.DialogPropertiesSearch Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogPropertiesSearch Obj { get; } = obj;
     }
 }

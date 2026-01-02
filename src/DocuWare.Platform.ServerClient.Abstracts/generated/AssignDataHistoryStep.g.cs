@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AssignDataHistoryStep(SDK.AssignDataHistoryStep obj) : IAssignDataHistoryStep
+    public class AssignDataHistoryStep(DocuWare.Platform.ServerClient.AssignDataHistoryStep obj) : IAssignDataHistoryStep
     {
-        internal SDK.AssignDataHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AssignDataHistoryStep Obj { get; } = obj;
 
         public List<IHistoryField> Fields
         {

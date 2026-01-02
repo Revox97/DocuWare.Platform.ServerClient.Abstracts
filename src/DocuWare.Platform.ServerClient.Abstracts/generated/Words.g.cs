@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Words(SDK.Words obj) : IWords
+    public class Words(DocuWare.Platform.ServerClient.Content.Words obj) : IWords
     {
-        internal SDK.Words Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Words Obj { get; } = obj;
 
         public List<IWord> Wd
         {

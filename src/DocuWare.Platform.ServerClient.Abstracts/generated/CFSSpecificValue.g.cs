@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CFSSpecificValue(SDK.CFSSpecificValue obj) : ICFSSpecificValue
+    public class CFSSpecificValue(DocuWare.Platform.ServerClient.CFSSpecificValue obj) : ICFSSpecificValue
     {
-        internal SDK.CFSSpecificValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CFSSpecificValue Obj { get; } = obj;
 
         public string ValueName
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LoginInfo(SDK.LoginInfo obj) : ILoginInfo
+    public class LoginInfo(DocuWare.Platform.ServerClient.LoginInfo obj) : ILoginInfo
     {
-        internal SDK.LoginInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LoginInfo Obj { get; } = obj;
 
         public string PasswordExpireNotification
         {

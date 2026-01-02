@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LogicalOperator(SDK.LogicalOperator obj) : ILogicalOperator
+    public class LogicalOperator(DocuWare.Platform.ServerClient.LogicalOperator obj) : ILogicalOperator
     {
-        internal SDK.LogicalOperator Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LogicalOperator Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.DialogExpressionOperation DefaultOperator
         {

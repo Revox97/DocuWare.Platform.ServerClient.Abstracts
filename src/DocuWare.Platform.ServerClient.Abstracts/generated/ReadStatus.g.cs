@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ReadStatus(SDK.ReadStatus obj) : IReadStatus
+    public class ReadStatus(DocuWare.Platform.ServerClient.ReadStatus obj) : IReadStatus
     {
-        internal SDK.ReadStatus Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ReadStatus Obj { get; } = obj;
 
         public bool IsRead
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BaseForm(SDK.BaseForm obj) : IBaseForm
+    public class BaseForm(DocuWare.Platform.ServerClient.BaseForm obj) : IBaseForm
     {
-        internal SDK.BaseForm Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BaseForm Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType
         {

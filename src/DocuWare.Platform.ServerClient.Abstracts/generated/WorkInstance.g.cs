@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkInstance(SDK.WorkInstance obj) : IWorkInstance
+    public class WorkInstance(DocuWare.Platform.ServerClient.WebClient.WorkInstance obj) : IWorkInstance
     {
-        internal SDK.WorkInstance Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.WorkInstance Obj { get; } = obj;
 
         public string ID
         {

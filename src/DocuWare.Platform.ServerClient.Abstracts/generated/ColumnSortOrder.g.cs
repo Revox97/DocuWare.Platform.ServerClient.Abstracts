@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ColumnSortOrder(SDK.ColumnSortOrder obj) : IColumnSortOrder
+    public class ColumnSortOrder(DocuWare.Platform.ServerClient.ColumnSortOrder obj) : IColumnSortOrder
     {
-        internal SDK.ColumnSortOrder Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ColumnSortOrder Obj { get; } = obj;
 
         public string ColumnId
         {

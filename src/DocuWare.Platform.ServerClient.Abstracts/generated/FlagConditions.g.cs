@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FlagConditions(SDK.FlagConditions obj) : IFlagConditions
+    public class FlagConditions(DocuWare.Platform.ServerClient.FlagConditions obj) : IFlagConditions
     {
-        internal SDK.FlagConditions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FlagConditions Obj { get; } = obj;
 
         public bool IncludeCheckedOut
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FixedText(SDK.FixedText obj) : IFixedText
+    public class FixedText(DocuWare.Platform.ServerClient.FixedText obj) : IFixedText
     {
-        internal SDK.FixedText Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FixedText Obj { get; } = obj;
     }
 }

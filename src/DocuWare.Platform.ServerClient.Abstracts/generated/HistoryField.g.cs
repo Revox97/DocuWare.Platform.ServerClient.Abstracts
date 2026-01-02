@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HistoryField(SDK.HistoryField obj) : IHistoryField
+    public class HistoryField(DocuWare.Platform.ServerClient.HistoryField obj) : IHistoryField
     {
-        internal SDK.HistoryField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.HistoryField Obj { get; } = obj;
 
         public string Label
         {

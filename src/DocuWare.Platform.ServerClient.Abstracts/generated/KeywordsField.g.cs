@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class KeywordsField(SDK.KeywordsField obj) : IKeywordsField
+    public class KeywordsField(DocuWare.Platform.ServerClient.KeywordsField obj) : IKeywordsField
     {
-        internal SDK.KeywordsField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.KeywordsField Obj { get; } = obj;
 
         public int Length
         {

@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AutoNumberField(SDK.AutoNumberField obj) : IAutoNumberField
+    public class AutoNumberField(DocuWare.Platform.ServerClient.AutoNumberField obj) : IAutoNumberField
     {
-        internal SDK.AutoNumberField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AutoNumberField Obj { get; } = obj;
     }
 }

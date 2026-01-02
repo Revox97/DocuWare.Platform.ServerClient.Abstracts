@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountPlusValue(SDK.CountPlusValue obj) : ICountPlusValue
+    public class CountPlusValue(DocuWare.Platform.ServerClient.CountPlusValue obj) : ICountPlusValue
     {
-        internal SDK.CountPlusValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CountPlusValue Obj { get; } = obj;
 
         public bool HasMore
         {

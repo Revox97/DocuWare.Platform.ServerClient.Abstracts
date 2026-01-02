@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableField(SDK.TaskTableField obj) : ITaskTableField
+    public class TaskTableField(DocuWare.Platform.ServerClient.TaskTableField obj) : ITaskTableField
     {
-        internal SDK.TaskTableField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskTableField Obj { get; } = obj;
 
         public List<ITaskTableColumn> Columns
         {

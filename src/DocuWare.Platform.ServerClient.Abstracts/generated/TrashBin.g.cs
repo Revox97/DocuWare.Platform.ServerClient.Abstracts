@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBin(SDK.TrashBin obj) : ITrashBin
+    public class TrashBin(DocuWare.Platform.ServerClient.TrashBin obj) : ITrashBin
     {
-        internal SDK.TrashBin Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TrashBin Obj { get; } = obj;
 
         public Link[] Links
         {

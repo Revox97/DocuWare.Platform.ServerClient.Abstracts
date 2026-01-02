@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NewUser(SDK.NewUser obj) : INewUser
+    public class NewUser(DocuWare.Platform.ServerClient.NewUser obj) : INewUser
     {
-        internal SDK.NewUser Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.NewUser Obj { get; } = obj;
 
         public string Name
         {

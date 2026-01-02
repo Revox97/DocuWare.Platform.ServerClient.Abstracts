@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserRolesQuery(SDK.UserRolesQuery obj) : IUserRolesQuery
+    public class UserRolesQuery(DocuWare.Platform.ServerClient.UserRolesQuery obj) : IUserRolesQuery
     {
-        internal SDK.UserRolesQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserRolesQuery Obj { get; } = obj;
 
         public string UserId
         {

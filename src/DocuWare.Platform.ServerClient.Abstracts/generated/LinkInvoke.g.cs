@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkInvoke(SDK.LinkInvoke obj) : ILinkInvoke
+    public class LinkInvoke(DocuWare.Platform.ServerClient.LinkInvoke obj) : ILinkInvoke
     {
-        internal SDK.LinkInvoke Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.LinkInvoke Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.HttpMethod Verb
         {

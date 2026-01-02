@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentTypeList(SDK.ContentTypeList obj) : IContentTypeList
+    public class ContentTypeList(DocuWare.Platform.ServerClient.ContentTypeList obj) : IContentTypeList
     {
-        internal SDK.ContentTypeList Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ContentTypeList Obj { get; } = obj;
 
         public List<object> Items
         {

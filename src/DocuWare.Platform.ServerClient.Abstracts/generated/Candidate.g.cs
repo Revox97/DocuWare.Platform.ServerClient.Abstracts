@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Candidate(SDK.Candidate obj) : ICandidate
+    public class Candidate(DocuWare.Platform.ServerClient.Content.Candidate obj) : ICandidate
     {
-        internal SDK.Candidate Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Candidate Obj { get; } = obj;
 
         public object Item
         {

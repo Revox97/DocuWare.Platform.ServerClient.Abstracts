@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserGroupsQuery(SDK.UserGroupsQuery obj) : IUserGroupsQuery
+    public class UserGroupsQuery(DocuWare.Platform.ServerClient.UserGroupsQuery obj) : IUserGroupsQuery
     {
-        internal SDK.UserGroupsQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.UserGroupsQuery Obj { get; } = obj;
 
         public string UserId
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampFormField(SDK.StampFormField obj) : IStampFormField
+    public class StampFormField(DocuWare.Platform.ServerClient.StampFormField obj) : IStampFormField
     {
-        internal SDK.StampFormField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampFormField Obj { get; } = obj;
 
         public Link[] Links
         {

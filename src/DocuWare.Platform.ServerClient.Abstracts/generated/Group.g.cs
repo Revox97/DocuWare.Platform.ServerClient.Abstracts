@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Group(SDK.Group obj) : IGroup
+    public class Group(DocuWare.Platform.ServerClient.Group obj) : IGroup
     {
-        internal SDK.Group Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Group Obj { get; } = obj;
 
         public Link[] Links
         {

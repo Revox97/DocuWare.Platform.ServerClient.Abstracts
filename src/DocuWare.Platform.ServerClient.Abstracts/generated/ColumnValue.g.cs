@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ColumnValue(SDK.ColumnValue obj) : IColumnValue
+    public class ColumnValue(DocuWare.Platform.ServerClient.ColumnValue obj) : IColumnValue
     {
-        internal SDK.ColumnValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ColumnValue Obj { get; } = obj;
 
         public string Id
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WordSearchResultWordHit(SDK.WordSearchResultWordHit obj) : IWordSearchResultWordHit
+    public class WordSearchResultWordHit(DocuWare.Platform.ServerClient.WordSearchResultWordHit obj) : IWordSearchResultWordHit
     {
-        internal SDK.WordSearchResultWordHit Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WordSearchResultWordHit Obj { get; } = obj;
 
         public int L
         {

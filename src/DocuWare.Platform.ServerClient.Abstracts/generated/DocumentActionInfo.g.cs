@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentActionInfo(SDK.DocumentActionInfo obj) : IDocumentActionInfo
+    public class DocumentActionInfo(DocuWare.Platform.ServerClient.DocumentActionInfo obj) : IDocumentActionInfo
     {
-        internal SDK.DocumentActionInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentActionInfo Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.DocumentAction DocumentAction
         {

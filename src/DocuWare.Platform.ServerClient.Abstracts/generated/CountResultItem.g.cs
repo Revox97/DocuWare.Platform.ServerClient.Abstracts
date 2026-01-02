@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountResultItem(SDK.CountResultItem obj) : ICountResultItem
+    public class CountResultItem(DocuWare.Platform.ServerClient.CountResultItem obj) : ICountResultItem
     {
-        internal SDK.CountResultItem Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CountResultItem Obj { get; } = obj;
 
         public string Name
         {

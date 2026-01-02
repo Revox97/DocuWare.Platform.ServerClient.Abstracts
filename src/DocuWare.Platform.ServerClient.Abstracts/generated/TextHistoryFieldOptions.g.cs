@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextHistoryFieldOptions(SDK.TextHistoryFieldOptions obj) : ITextHistoryFieldOptions
+    public class TextHistoryFieldOptions(DocuWare.Platform.ServerClient.TextHistoryFieldOptions obj) : ITextHistoryFieldOptions
     {
-        internal SDK.TextHistoryFieldOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextHistoryFieldOptions Obj { get; } = obj;
 
         public int Length
         {

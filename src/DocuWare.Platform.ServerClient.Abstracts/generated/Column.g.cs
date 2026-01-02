@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Column(SDK.Column obj) : IColumn
+    public class Column(DocuWare.Platform.ServerClient.Column obj) : IColumn
     {
-        internal SDK.Column Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Column Obj { get; } = obj;
 
         public string Label
         {

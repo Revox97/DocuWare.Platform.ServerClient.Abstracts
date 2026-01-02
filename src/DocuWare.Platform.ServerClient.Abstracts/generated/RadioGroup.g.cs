@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RadioGroup(SDK.RadioGroup obj) : IRadioGroup
+    public class RadioGroup(DocuWare.Platform.ServerClient.RadioGroup obj) : IRadioGroup
     {
-        internal SDK.RadioGroup Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RadioGroup Obj { get; } = obj;
 
         public List<IWebFormOption> Options
         {

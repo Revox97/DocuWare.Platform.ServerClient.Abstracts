@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BasketAreaPreferences(SDK.BasketAreaPreferences obj) : IBasketAreaPreferences
+    public class BasketAreaPreferences(DocuWare.Platform.ServerClient.WebClient.BasketAreaPreferences obj) : IBasketAreaPreferences
     {
-        internal SDK.BasketAreaPreferences Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.BasketAreaPreferences Obj { get; } = obj;
 
         public bool StoreDialogsBarLocked
         {

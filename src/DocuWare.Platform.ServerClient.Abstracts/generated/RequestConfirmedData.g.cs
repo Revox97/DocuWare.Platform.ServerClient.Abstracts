@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestConfirmedData(SDK.RequestConfirmedData obj) : IRequestConfirmedData
+    public class RequestConfirmedData(DocuWare.Platform.ServerClient.RequestConfirmedData obj) : IRequestConfirmedData
     {
-        internal SDK.RequestConfirmedData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestConfirmedData Obj { get; } = obj;
 
         public int DecisionId
         {

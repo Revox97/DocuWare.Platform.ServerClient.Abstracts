@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Behavior(SDK.Behavior obj) : IBehavior
+    public class Behavior(DocuWare.Platform.ServerClient.Behavior obj) : IBehavior
     {
-        internal SDK.Behavior Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Behavior Obj { get; } = obj;
 
         public List<IBehaviorCondition> Conditions
         {

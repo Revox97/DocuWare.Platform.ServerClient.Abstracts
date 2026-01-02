@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Stroke(SDK.Stroke obj) : IStroke
+    public class Stroke(DocuWare.Platform.ServerClient.Stroke obj) : IStroke
     {
-        internal SDK.Stroke Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Stroke Obj { get; } = obj;
 
         public List<IAnnotationPoint> Point
         {

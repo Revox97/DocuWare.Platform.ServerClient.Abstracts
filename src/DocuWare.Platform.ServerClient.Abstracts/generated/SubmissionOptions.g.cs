@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubmissionOptions(SDK.SubmissionOptions obj) : ISubmissionOptions
+    public class SubmissionOptions(DocuWare.Platform.ServerClient.SubmissionOptions obj) : ISubmissionOptions
     {
-        internal SDK.SubmissionOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SubmissionOptions Obj { get; } = obj;
     }
 }

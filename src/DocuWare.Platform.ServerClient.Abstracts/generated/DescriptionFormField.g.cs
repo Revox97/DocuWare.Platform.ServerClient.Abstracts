@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DescriptionFormField(SDK.DescriptionFormField obj) : IDescriptionFormField
+    public class DescriptionFormField(DocuWare.Platform.ServerClient.DescriptionFormField obj) : IDescriptionFormField
     {
-        internal SDK.DescriptionFormField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DescriptionFormField Obj { get; } = obj;
 
         public List<ILinkParameter> LinkParameters
         {

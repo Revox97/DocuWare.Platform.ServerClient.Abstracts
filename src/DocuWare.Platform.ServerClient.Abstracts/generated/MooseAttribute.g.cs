@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MooseAttribute(SDK.MooseAttribute obj) : IMooseAttribute
+    public class MooseAttribute(DocuWare.Platform.ServerClient.MooseAttribute obj) : IMooseAttribute
     {
-        internal SDK.MooseAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MooseAttribute Obj { get; } = obj;
     }
 }

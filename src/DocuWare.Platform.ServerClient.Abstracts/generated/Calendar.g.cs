@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Calendar(SDK.Calendar obj) : ICalendar
+    public class Calendar(DocuWare.Platform.ServerClient.Calendar obj) : ICalendar
     {
-        internal SDK.Calendar Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Calendar Obj { get; } = obj;
 
         public string TimeZoneId
         {

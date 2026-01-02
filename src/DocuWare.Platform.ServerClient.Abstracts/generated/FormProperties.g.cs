@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormProperties(SDK.FormProperties obj) : IFormProperties
+    public class FormProperties(DocuWare.Platform.ServerClient.FormProperties obj) : IFormProperties
     {
-        internal SDK.FormProperties Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FormProperties Obj { get; } = obj;
     }
 }

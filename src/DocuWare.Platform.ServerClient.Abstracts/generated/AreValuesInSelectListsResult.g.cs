@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AreValuesInSelectListsResult(SDK.AreValuesInSelectListsResult obj) : IAreValuesInSelectListsResult
+    public class AreValuesInSelectListsResult(DocuWare.Platform.ServerClient.AreValuesInSelectListsResult obj) : IAreValuesInSelectListsResult
     {
-        internal SDK.AreValuesInSelectListsResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AreValuesInSelectListsResult Obj { get; } = obj;
 
         public bool Result
         {

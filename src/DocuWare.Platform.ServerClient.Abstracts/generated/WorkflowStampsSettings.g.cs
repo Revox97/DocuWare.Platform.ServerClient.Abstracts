@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowStampsSettings(SDK.WorkflowStampsSettings obj) : IWorkflowStampsSettings
+    public class WorkflowStampsSettings(DocuWare.Platform.ServerClient.WorkflowStampsSettings obj) : IWorkflowStampsSettings
     {
-        internal SDK.WorkflowStampsSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WorkflowStampsSettings Obj { get; } = obj;
 
         public bool UseFrame
         {

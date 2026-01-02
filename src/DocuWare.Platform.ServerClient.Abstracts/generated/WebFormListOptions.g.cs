@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebFormListOptions(SDK.WebFormListOptions obj) : IWebFormListOptions
+    public class WebFormListOptions(DocuWare.Platform.ServerClient.WebFormListOptions obj) : IWebFormListOptions
     {
-        internal SDK.WebFormListOptions Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebFormListOptions Obj { get; } = obj;
 
         public List<string> WebFormListOption
         {

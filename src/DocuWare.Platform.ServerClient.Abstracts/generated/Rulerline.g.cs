@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Rulerline(SDK.Rulerline obj) : IRulerline
+    public class Rulerline(DocuWare.Platform.ServerClient.Content.Rulerline obj) : IRulerline
     {
-        internal SDK.Rulerline Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Rulerline Obj { get; } = obj;
 
         public int lineWidth
         {

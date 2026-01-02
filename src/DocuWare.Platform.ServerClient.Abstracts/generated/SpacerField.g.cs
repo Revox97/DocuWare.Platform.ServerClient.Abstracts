@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SpacerField(SDK.SpacerField obj) : ISpacerField
+    public class SpacerField(DocuWare.Platform.ServerClient.SpacerField obj) : ISpacerField
     {
-        internal SDK.SpacerField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SpacerField Obj { get; } = obj;
     }
 }

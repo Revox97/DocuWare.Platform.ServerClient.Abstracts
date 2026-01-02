@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Stamp(SDK.Stamp obj) : IStamp
+    public class Stamp(DocuWare.Platform.ServerClient.Stamp obj) : IStamp
     {
-        internal SDK.Stamp Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Stamp Obj { get; } = obj;
 
         public List<IStampFormField> FormField
         {

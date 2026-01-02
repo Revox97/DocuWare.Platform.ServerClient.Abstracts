@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentAuditQuery(SDK.DocumentAuditQuery obj) : IDocumentAuditQuery
+    public class DocumentAuditQuery(DocuWare.Platform.ServerClient.DocumentAuditQuery obj) : IDocumentAuditQuery
     {
-        internal SDK.DocumentAuditQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentAuditQuery Obj { get; } = obj;
 
         public int Start
         {

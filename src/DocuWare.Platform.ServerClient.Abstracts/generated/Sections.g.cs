@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Sections(SDK.Sections obj) : ISections
+    public class Sections(DocuWare.Platform.ServerClient.Sections obj) : ISections
     {
-        internal SDK.Sections Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Sections Obj { get; } = obj;
 
         public List<ISection> Section
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentMergeOperationInfo(SDK.ContentMergeOperationInfo obj) : IContentMergeOperationInfo
+    public class ContentMergeOperationInfo(DocuWare.Platform.ServerClient.ContentMergeOperationInfo obj) : IContentMergeOperationInfo
     {
-        internal SDK.ContentMergeOperationInfo Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ContentMergeOperationInfo Obj { get; } = obj;
 
         public List<int> Documents
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentVersion(SDK.DocumentVersion obj) : IDocumentVersion
+    public class DocumentVersion(DocuWare.Platform.ServerClient.DocumentVersion obj) : IDocumentVersion
     {
-        internal SDK.DocumentVersion Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentVersion Obj { get; } = obj;
 
         public int Major
         {

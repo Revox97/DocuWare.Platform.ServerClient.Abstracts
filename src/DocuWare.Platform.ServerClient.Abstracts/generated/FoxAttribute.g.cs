@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FoxAttribute(SDK.FoxAttribute obj) : IFoxAttribute
+    public class FoxAttribute(DocuWare.Platform.ServerClient.FoxAttribute obj) : IFoxAttribute
     {
-        internal SDK.FoxAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FoxAttribute Obj { get; } = obj;
     }
 }

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DWSize(SDK.DWSize obj) : IDWSize
+    public class DWSize(DocuWare.Platform.ServerClient.DWSize obj) : IDWSize
     {
-        internal SDK.DWSize Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DWSize Obj { get; } = obj;
 
         public double Width
         {

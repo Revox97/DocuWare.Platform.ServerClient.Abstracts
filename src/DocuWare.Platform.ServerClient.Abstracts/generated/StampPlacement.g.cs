@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampPlacement(SDK.StampPlacement obj) : IStampPlacement
+    public class StampPlacement(DocuWare.Platform.ServerClient.StampPlacement obj) : IStampPlacement
     {
-        internal SDK.StampPlacement Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.StampPlacement Obj { get; } = obj;
 
         public List<IFormFieldValue> Field
         {

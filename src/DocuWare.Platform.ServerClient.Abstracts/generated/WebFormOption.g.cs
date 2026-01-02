@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebFormOption(SDK.WebFormOption obj) : IWebFormOption
+    public class WebFormOption(DocuWare.Platform.ServerClient.WebFormOption obj) : IWebFormOption
     {
-        internal SDK.WebFormOption Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebFormOption Obj { get; } = obj;
 
         public string Label
         {

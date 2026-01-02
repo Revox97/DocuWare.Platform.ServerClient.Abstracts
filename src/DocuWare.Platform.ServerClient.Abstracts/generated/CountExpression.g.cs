@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountExpression(SDK.CountExpression obj) : ICountExpression
+    public class CountExpression(DocuWare.Platform.ServerClient.CountExpression obj) : ICountExpression
     {
-        internal SDK.CountExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CountExpression Obj { get; } = obj;
 
         public string FieldName
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestDialogQuery(SDK.RequestDialogQuery obj) : IRequestDialogQuery
+    public class RequestDialogQuery(DocuWare.Platform.ServerClient.RequestDialogQuery obj) : IRequestDialogQuery
     {
-        internal SDK.RequestDialogQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RequestDialogQuery Obj { get; } = obj;
 
         public List<DocuWare.Platform.ServerClient.DialogTypes> DialogTypes
         {

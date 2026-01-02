@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldValueExpression(SDK.FieldValueExpression obj) : IFieldValueExpression
+    public class FieldValueExpression(DocuWare.Platform.ServerClient.FieldValueExpression obj) : IFieldValueExpression
     {
-        internal SDK.FieldValueExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FieldValueExpression Obj { get; } = obj;
 
         public string FieldName
         {

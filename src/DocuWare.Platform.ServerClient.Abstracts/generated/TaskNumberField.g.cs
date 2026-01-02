@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskNumberField(SDK.TaskNumberField obj) : ITaskNumberField
+    public class TaskNumberField(DocuWare.Platform.ServerClient.TaskNumberField obj) : ITaskNumberField
     {
-        internal SDK.TaskNumberField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskNumberField Obj { get; } = obj;
 
         public int Precision
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextAnnotationToolSettings(SDK.TextAnnotationToolSettings obj) : ITextAnnotationToolSettings
+    public class TextAnnotationToolSettings(DocuWare.Platform.ServerClient.WebClient.TextAnnotationToolSettings obj) : ITextAnnotationToolSettings
     {
-        internal SDK.TextAnnotationToolSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.TextAnnotationToolSettings Obj { get; } = obj;
 
         public DocuWare.Platform.ServerClient.AnnotationTools Type
         {

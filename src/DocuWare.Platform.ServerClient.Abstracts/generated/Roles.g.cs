@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Roles(SDK.Roles obj) : IRoles
+    public class Roles(DocuWare.Platform.ServerClient.Roles obj) : IRoles
     {
-        internal SDK.Roles Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Roles Obj { get; } = obj;
 
         public List<IRole> Item
         {

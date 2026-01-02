@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DeleteTemplatesResult(SDK.DeleteTemplatesResult obj) : IDeleteTemplatesResult
+    public class DeleteTemplatesResult(DocuWare.Platform.ServerClient.DeleteTemplatesResult obj) : IDeleteTemplatesResult
     {
-        internal SDK.DeleteTemplatesResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DeleteTemplatesResult Obj { get; } = obj;
     }
 }

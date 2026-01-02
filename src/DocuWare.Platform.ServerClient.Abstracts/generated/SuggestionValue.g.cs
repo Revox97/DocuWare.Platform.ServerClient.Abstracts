@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionValue(SDK.SuggestionValue obj) : ISuggestionValue
+    public class SuggestionValue(DocuWare.Platform.ServerClient.SuggestionValue obj) : ISuggestionValue
     {
-        internal SDK.SuggestionValue Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SuggestionValue Obj { get; } = obj;
 
         public object Item
         {

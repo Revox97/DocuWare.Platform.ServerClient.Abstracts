@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetFieldBase(SDK.FileCabinetFieldBase obj) : IFileCabinetFieldBase
+    public class FileCabinetFieldBase(DocuWare.Platform.ServerClient.FileCabinetFieldBase obj) : IFileCabinetFieldBase
     {
-        internal SDK.FileCabinetFieldBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.FileCabinetFieldBase Obj { get; } = obj;
 
         public Link[] Links
         {

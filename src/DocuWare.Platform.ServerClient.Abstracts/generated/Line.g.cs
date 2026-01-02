@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Line(SDK.Line obj) : ILine
+    public class Line(DocuWare.Platform.ServerClient.Content.Line obj) : ILine
     {
-        internal SDK.Line Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.Line Obj { get; } = obj;
 
         public List<object> Items
         {

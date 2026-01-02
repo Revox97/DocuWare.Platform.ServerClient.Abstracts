@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RolesQuery(SDK.RolesQuery obj) : IRolesQuery
+    public class RolesQuery(DocuWare.Platform.ServerClient.RolesQuery obj) : IRolesQuery
     {
-        internal SDK.RolesQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RolesQuery Obj { get; } = obj;
 
         public bool Active
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListExpression(SDK.SelectListExpression obj) : ISelectListExpression
+    public class SelectListExpression(DocuWare.Platform.ServerClient.SelectListExpression obj) : ISelectListExpression
     {
-        internal SDK.SelectListExpression Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SelectListExpression Obj { get; } = obj;
 
         public string FieldName
         {

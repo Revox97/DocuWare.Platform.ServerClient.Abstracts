@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldValueBase(SDK.DocumentIndexFieldValueBase obj) : IDocumentIndexFieldValueBase
+    public class DocumentIndexFieldValueBase(DocuWare.Platform.ServerClient.DocumentIndexFieldValueBase obj) : IDocumentIndexFieldValueBase
     {
-        internal SDK.DocumentIndexFieldValueBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentIndexFieldValueBase Obj { get; } = obj;
 
         public object Item
         {

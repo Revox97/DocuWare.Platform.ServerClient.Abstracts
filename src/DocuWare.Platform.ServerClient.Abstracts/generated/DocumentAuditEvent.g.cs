@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentAuditEvent(SDK.DocumentAuditEvent obj) : IDocumentAuditEvent
+    public class DocumentAuditEvent(DocuWare.Platform.ServerClient.DocumentAuditEvent obj) : IDocumentAuditEvent
     {
-        internal SDK.DocumentAuditEvent Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentAuditEvent Obj { get; } = obj;
 
         public Link[] Links
         {

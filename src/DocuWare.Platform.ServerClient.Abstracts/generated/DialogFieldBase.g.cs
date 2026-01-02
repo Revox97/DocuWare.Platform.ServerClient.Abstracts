@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogFieldBase(SDK.DialogFieldBase obj) : IDialogFieldBase
+    public class DialogFieldBase(DocuWare.Platform.ServerClient.DialogFieldBase obj) : IDialogFieldBase
     {
-        internal SDK.DialogFieldBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogFieldBase Obj { get; } = obj;
 
         public string SampleEditText
         {

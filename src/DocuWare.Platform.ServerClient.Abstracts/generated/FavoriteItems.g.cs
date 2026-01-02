@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FavoriteItems(SDK.FavoriteItems obj) : IFavoriteItems
+    public class FavoriteItems(DocuWare.Platform.ServerClient.WebClient.FavoriteItems obj) : IFavoriteItems
     {
-        internal SDK.FavoriteItems Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.FavoriteItems Obj { get; } = obj;
 
         public List<string> Disabled
         {

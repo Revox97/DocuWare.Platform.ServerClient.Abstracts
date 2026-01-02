@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQueryExtensionsBase(SDK.DocumentsQueryExtensionsBase obj) : IDocumentsQueryExtensionsBase
+    public class DocumentsQueryExtensionsBase(DocuWare.Platform.ServerClient.DocumentsQueryExtensionsBase obj) : IDocumentsQueryExtensionsBase
     {
-        internal SDK.DocumentsQueryExtensionsBase Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DocumentsQueryExtensionsBase Obj { get; } = obj;
     }
 }

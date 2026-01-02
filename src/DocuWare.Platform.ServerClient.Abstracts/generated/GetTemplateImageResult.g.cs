@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GetTemplateImageResult(SDK.GetTemplateImageResult obj) : IGetTemplateImageResult
+    public class GetTemplateImageResult(DocuWare.Platform.ServerClient.GetTemplateImageResult obj) : IGetTemplateImageResult
     {
-        internal SDK.GetTemplateImageResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.GetTemplateImageResult Obj { get; } = obj;
 
         public string FileName
         {

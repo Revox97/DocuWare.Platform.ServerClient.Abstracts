@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountResult(SDK.CountResult obj) : ICountResult
+    public class CountResult(DocuWare.Platform.ServerClient.CountResult obj) : ICountResult
     {
-        internal SDK.CountResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.CountResult Obj { get; } = obj;
 
         public List<ICountResultItem> Group
         {

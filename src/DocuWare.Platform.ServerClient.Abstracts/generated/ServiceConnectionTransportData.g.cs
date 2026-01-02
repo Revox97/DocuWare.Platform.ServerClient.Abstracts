@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceConnectionTransportData(SDK.ServiceConnectionTransportData obj) : IServiceConnectionTransportData
+    public class ServiceConnectionTransportData(DocuWare.Platform.ServerClient.ServiceConnectionTransportData obj) : IServiceConnectionTransportData
     {
-        internal SDK.ServiceConnectionTransportData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ServiceConnectionTransportData Obj { get; } = obj;
     }
 }

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubstitutionRule(SDK.SubstitutionRule obj) : ISubstitutionRule
+    public class SubstitutionRule(DocuWare.Platform.ServerClient.SubstitutionRule obj) : ISubstitutionRule
     {
-        internal SDK.SubstitutionRule Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SubstitutionRule Obj { get; } = obj;
 
         public string Name
         {

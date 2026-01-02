@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BitmapStamp(SDK.BitmapStamp obj) : IBitmapStamp
+    public class BitmapStamp(DocuWare.Platform.ServerClient.BitmapStamp obj) : IBitmapStamp
     {
-        internal SDK.BitmapStamp Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BitmapStamp Obj { get; } = obj;
 
         public Link[] Links
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportSettings(SDK.ImportSettings obj) : IImportSettings
+    public class ImportSettings(DocuWare.Platform.ServerClient.ImportSettings obj) : IImportSettings
     {
-        internal SDK.ImportSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ImportSettings Obj { get; } = obj;
 
         public List<IFieldMapping> FieldMappings
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ViewerPreferences(SDK.ViewerPreferences obj) : IViewerPreferences
+    public class ViewerPreferences(DocuWare.Platform.ServerClient.WebClient.ViewerPreferences obj) : IViewerPreferences
     {
-        internal SDK.ViewerPreferences Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.WebClient.ViewerPreferences Obj { get; } = obj;
 
         public List<IAnnotationToolSettings> Annotations
         {

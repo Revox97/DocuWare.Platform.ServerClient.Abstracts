@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiColSelectListRow(SDK.MultiColSelectListRow obj) : IMultiColSelectListRow
+    public class MultiColSelectListRow(DocuWare.Platform.ServerClient.MultiColSelectListRow obj) : IMultiColSelectListRow
     {
-        internal SDK.MultiColSelectListRow Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.MultiColSelectListRow Obj { get; } = obj;
 
         public List<object> Items
         {

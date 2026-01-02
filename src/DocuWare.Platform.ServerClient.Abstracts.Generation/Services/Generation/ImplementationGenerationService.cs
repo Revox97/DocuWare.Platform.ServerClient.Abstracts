@@ -18,7 +18,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             Console.WriteLine($"Generating {type.Name}.cs");
 
             string template = File.ReadAllText("Templates/Implementation.template");
-            template = template.Replace("{0}", type.Name).Replace("{1}", $"I{type.Name}");
+            TypeDef typeDefinition = type.GetTypeDefinition();
+            template = template.Replace("{0}", typeDefinition.GetTypeName()).Replace("{1}", typeDefinition.GetReturnTypeName()).Replace("{3}", typeDefinition.FullName);
 
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);

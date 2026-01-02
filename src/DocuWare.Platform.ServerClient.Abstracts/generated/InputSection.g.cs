@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class InputSection(SDK.InputSection obj) : IInputSection
+    public class InputSection(DocuWare.Platform.ServerClient.InputSection obj) : IInputSection
     {
-        internal SDK.InputSection Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.InputSection Obj { get; } = obj;
 
         public List<IApplicationProperty> ApplicationProperties
         {

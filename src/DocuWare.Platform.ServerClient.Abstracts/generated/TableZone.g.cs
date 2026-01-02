@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableZone(SDK.TableZone obj) : ITableZone
+    public class TableZone(DocuWare.Platform.ServerClient.Content.TableZone obj) : ITableZone
     {
-        internal SDK.TableZone Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.TableZone Obj { get; } = obj;
 
         public List<ICellZone> Cz
         {

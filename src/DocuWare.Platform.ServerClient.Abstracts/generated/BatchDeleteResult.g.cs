@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchDeleteResult(SDK.BatchDeleteResult obj) : IBatchDeleteResult
+    public class BatchDeleteResult(DocuWare.Platform.ServerClient.BatchDeleteResult obj) : IBatchDeleteResult
     {
-        internal SDK.BatchDeleteResult Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.BatchDeleteResult Obj { get; } = obj;
 
         public List<Link> Links
         {

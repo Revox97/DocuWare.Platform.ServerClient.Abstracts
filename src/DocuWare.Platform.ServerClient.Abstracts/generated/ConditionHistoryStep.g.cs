@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ConditionHistoryStep(SDK.ConditionHistoryStep obj) : IConditionHistoryStep
+    public class ConditionHistoryStep(DocuWare.Platform.ServerClient.ConditionHistoryStep obj) : IConditionHistoryStep
     {
-        internal SDK.ConditionHistoryStep Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ConditionHistoryStep Obj { get; } = obj;
 
         public string OutputName
         {

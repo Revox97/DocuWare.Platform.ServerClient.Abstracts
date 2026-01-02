@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportTemplateInput(SDK.ExportTemplateInput obj) : IExportTemplateInput
+    public class ExportTemplateInput(DocuWare.Platform.ServerClient.ExportTemplateInput obj) : IExportTemplateInput
     {
-        internal SDK.ExportTemplateInput Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ExportTemplateInput Obj { get; } = obj;
 
         public string ConfigGUID
         {

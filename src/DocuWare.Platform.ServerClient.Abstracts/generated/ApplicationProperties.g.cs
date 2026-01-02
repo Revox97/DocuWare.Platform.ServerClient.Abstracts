@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ApplicationProperties(SDK.ApplicationProperties obj) : IApplicationProperties
+    public class ApplicationProperties(DocuWare.Platform.ServerClient.ApplicationProperties obj) : IApplicationProperties
     {
-        internal SDK.ApplicationProperties Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ApplicationProperties Obj { get; } = obj;
 
         public List<IApplicationProperty> ApplicationProperties1
         {

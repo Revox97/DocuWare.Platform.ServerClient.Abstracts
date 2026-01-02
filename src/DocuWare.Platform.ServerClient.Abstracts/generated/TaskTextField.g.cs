@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTextField(SDK.TaskTextField obj) : ITaskTextField
+    public class TaskTextField(DocuWare.Platform.ServerClient.TaskTextField obj) : ITaskTextField
     {
-        internal SDK.TaskTextField Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TaskTextField Obj { get; } = obj;
 
         public int Length
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentTypeListSchemaType(SDK.ContentTypeListSchemaType obj) : IContentTypeListSchemaType
+    public class ContentTypeListSchemaType(DocuWare.Platform.ServerClient.ContentTypeListSchemaType obj) : IContentTypeListSchemaType
     {
-        internal SDK.ContentTypeListSchemaType Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ContentTypeListSchemaType Obj { get; } = obj;
 
         public string IntroducedIn
         {

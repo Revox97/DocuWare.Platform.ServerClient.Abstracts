@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesTreeView(SDK.DialogPropertiesTreeView obj) : IDialogPropertiesTreeView
+    public class DialogPropertiesTreeView(DocuWare.Platform.ServerClient.DialogPropertiesTreeView obj) : IDialogPropertiesTreeView
     {
-        internal SDK.DialogPropertiesTreeView Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DialogPropertiesTreeView Obj { get; } = obj;
 
         public Link[] Links
         {

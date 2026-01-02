@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ConfirmedData(SDK.ConfirmedData obj) : IConfirmedData
+    public class ConfirmedData(DocuWare.Platform.ServerClient.ConfirmedData obj) : IConfirmedData
     {
-        internal SDK.ConfirmedData Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ConfirmedData Obj { get; } = obj;
 
         public List<IConfirmedField> ConfirmedFields
         {

@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Users(SDK.Users obj) : IUsers
+    public class Users(DocuWare.Platform.ServerClient.Users obj) : IUsers
     {
-        internal SDK.Users Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Users Obj { get; } = obj;
 
         public List<IUser> User
         {

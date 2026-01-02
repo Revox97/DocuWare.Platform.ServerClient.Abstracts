@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ResultlistTransformer(SDK.ResultlistTransformer obj) : IResultlistTransformer
+    public class ResultlistTransformer(DocuWare.Platform.ServerClient.ResultlistTransformer obj) : IResultlistTransformer
     {
-        internal SDK.ResultlistTransformer Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.ResultlistTransformer Obj { get; } = obj;
 
         public IDocumentsQueryResult ToQueryResult(IDocumentsQueryTableResult resultTable) => new DocumentsQueryResult(Obj.ToQueryResult(((DocumentsQueryTableResult)resultTable).Obj));
     }

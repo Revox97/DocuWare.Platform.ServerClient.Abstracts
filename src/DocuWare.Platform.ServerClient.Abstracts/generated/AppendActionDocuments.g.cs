@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AppendActionDocuments(SDK.AppendActionDocuments obj) : IAppendActionDocuments
+    public class AppendActionDocuments(DocuWare.Platform.ServerClient.AppendActionDocuments obj) : IAppendActionDocuments
     {
-        internal SDK.AppendActionDocuments Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.AppendActionDocuments Obj { get; } = obj;
 
         public List<int> Documents
         {

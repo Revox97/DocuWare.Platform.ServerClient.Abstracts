@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextColumn(SDK.TextColumn obj) : ITextColumn
+    public class TextColumn(DocuWare.Platform.ServerClient.TextColumn obj) : ITextColumn
     {
-        internal SDK.TextColumn Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.TextColumn Obj { get; } = obj;
 
         public int Length
         {

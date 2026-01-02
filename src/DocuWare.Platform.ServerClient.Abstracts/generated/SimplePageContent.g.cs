@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SimplePageContent(SDK.SimplePageContent obj) : ISimplePageContent
+    public class SimplePageContent(DocuWare.Platform.ServerClient.Content.SimplePageContent obj) : ISimplePageContent
     {
-        internal SDK.SimplePageContent Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.Content.SimplePageContent Obj { get; } = obj;
 
         public List<ISimpleWord> W
         {

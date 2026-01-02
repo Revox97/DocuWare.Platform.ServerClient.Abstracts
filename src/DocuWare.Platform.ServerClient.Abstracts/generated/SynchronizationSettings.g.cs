@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SynchronizationSettings(SDK.SynchronizationSettings obj) : ISynchronizationSettings
+    public class SynchronizationSettings(DocuWare.Platform.ServerClient.SynchronizationSettings obj) : ISynchronizationSettings
     {
-        internal SDK.SynchronizationSettings Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SynchronizationSettings Obj { get; } = obj;
 
         public List<IFieldMapping> FieldMappings
         {

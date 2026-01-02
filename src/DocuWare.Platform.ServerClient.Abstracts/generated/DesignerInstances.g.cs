@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerInstances(SDK.DesignerInstances obj) : IDesignerInstances
+    public class DesignerInstances(DocuWare.Platform.ServerClient.DesignerInstances obj) : IDesignerInstances
     {
-        internal SDK.DesignerInstances Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.DesignerInstances Obj { get; } = obj;
 
         public List<IDesignerInstance> DesignerInstance
         {

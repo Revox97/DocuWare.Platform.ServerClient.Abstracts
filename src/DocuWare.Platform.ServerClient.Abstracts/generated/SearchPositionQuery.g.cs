@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SearchPositionQuery(SDK.SearchPositionQuery obj) : ISearchPositionQuery
+    public class SearchPositionQuery(DocuWare.Platform.ServerClient.SearchPositionQuery obj) : ISearchPositionQuery
     {
-        internal SDK.SearchPositionQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SearchPositionQuery Obj { get; } = obj;
 
         public bool IgnoreCase
         {

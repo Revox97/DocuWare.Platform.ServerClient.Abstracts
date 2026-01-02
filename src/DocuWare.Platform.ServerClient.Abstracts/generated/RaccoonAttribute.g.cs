@@ -2,8 +2,8 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RaccoonAttribute(SDK.RaccoonAttribute obj) : IRaccoonAttribute
+    public class RaccoonAttribute(DocuWare.Platform.ServerClient.RaccoonAttribute obj) : IRaccoonAttribute
     {
-        internal SDK.RaccoonAttribute Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.RaccoonAttribute Obj { get; } = obj;
     }
 }

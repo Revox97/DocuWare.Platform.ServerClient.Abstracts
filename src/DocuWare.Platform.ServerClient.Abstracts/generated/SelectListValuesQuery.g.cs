@@ -2,9 +2,9 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListValuesQuery(SDK.SelectListValuesQuery obj) : ISelectListValuesQuery
+    public class SelectListValuesQuery(DocuWare.Platform.ServerClient.SelectListValuesQuery obj) : ISelectListValuesQuery
     {
-        internal SDK.SelectListValuesQuery Obj { get; } = obj;
+        internal DocuWare.Platform.ServerClient.SelectListValuesQuery Obj { get; } = obj;
 
         public int Start
         {
