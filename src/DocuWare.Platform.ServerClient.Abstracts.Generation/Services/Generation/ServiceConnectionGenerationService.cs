@@ -52,10 +52,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
                 TypeDef returnTypeDefinition = method.ReturnType.GetTypeDefinition();
                 string returnTypeName = returnTypeDefinition.GetReturnTypeName();
+
+                string typeName = returnTypeDefinition.NestedType is not null
+                    ? returnTypeDefinition.NestedType.GetTypeName()
+                    : returnTypeDefinition.GetTypeName();
+
                 string parameterDefinitions = method.GetParsedParameterDefinitions();
                 string parameters = method.GetParsedParameters();
                 string async = returnTypeName.StartsWith("Task") ? "async " : string.Empty;
-                string result = $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}){StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}return SDK.ServiceConnection.{method.Name}({parameters});{StringConstants.LineEndingWithTwoTabs}}}";
+
+                string result = returnTypeDefinition.Category == TypeCategory.Primitive
+                    ? $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}) => {(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters});"
+                    : $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}){StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}return new {typeName}({(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters}));{StringConstants.LineEndingWithTwoTabs}}}";
 
                 methodList += $"{StringConstants.LineEnding}{StringConstants.LineEndingWithTwoTabs}{result}"; 
             }

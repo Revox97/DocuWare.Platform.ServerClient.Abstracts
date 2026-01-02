@@ -1,5 +1,3 @@
-using System.Net;
-using System.Net.Http.Headers;
 using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
