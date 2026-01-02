@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public DocuWare.Platform.ServerClient.AssignedItemTypeEnum ItemType
+        public AssignedItemTypeEnum ItemType
         {
-            get => Obj.ItemType;
-            set => Obj.ItemType = value;
+            get => (AssignedItemTypeEnum)Obj.ItemType;
+            set => Obj.ItemType = (DocuWare.Platform.ServerClient.AssignedItemTypeEnum)value;
         }
     }
 }

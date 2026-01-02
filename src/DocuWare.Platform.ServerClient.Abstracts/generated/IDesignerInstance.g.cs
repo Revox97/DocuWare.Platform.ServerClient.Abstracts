@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		string WorkflowVersionId { get; set; }
-		DocuWare.Platform.ServerClient.InstanceExecutionStateEnum ExecutionState { get; set; }
+		InstanceExecutionStateEnum ExecutionState { get; set; }
 		int DocId { get; set; }
 		DateTime CreateDate { get; set; }
 

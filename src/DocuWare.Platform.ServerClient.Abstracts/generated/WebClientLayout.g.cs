@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WebClient.WebClientLayout Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.LayoutMode Mode
+        public LayoutMode Mode
         {
-            get => Obj.Mode;
-            set => Obj.Mode = value;
+            get => (LayoutMode)Obj.Mode;
+            set => Obj.Mode = (DocuWare.Platform.ServerClient.WebClient.LayoutMode)value;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IRulerline
     {
 		int lineWidth { get; set; }
-		DocuWare.Platform.ServerClient.LineStyle style { get; set; }
+		LineStyle style { get; set; }
 		int L { get; set; }
 		int T { get; set; }
 		int W { get; set; }

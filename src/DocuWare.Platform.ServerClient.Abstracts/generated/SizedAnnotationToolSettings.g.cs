@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.LineSize = value;
         }
 
-        public DocuWare.Platform.ServerClient.AnnotationTools Type
+        public AnnotationTools Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (AnnotationTools)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.WebClient.AnnotationTools)value;
         }
 
         public string Color

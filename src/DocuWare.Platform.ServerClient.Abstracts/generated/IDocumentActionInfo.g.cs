@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocumentActionInfo
     {
-		DocuWare.Platform.ServerClient.DocumentAction DocumentAction { get; set; }
+		DocumentAction DocumentAction { get; set; }
     }
 }

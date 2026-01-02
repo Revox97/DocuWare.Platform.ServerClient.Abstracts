@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<ILinkParameter> LinkParameters { get; set; }
 		string DescriptionText { get; set; }
-		DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType { get; set; }
+		FormTypeEnum FormFieldType { get; set; }
 		string Label { get; set; }
 		int Id { get; set; }
     }

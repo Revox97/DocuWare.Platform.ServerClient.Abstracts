@@ -30,10 +30,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Active = value;
         }
 
-        public DocuWare.Platform.ServerClient.RoleTypes Type
+        public RoleTypes Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (RoleTypes)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.RoleTypes)value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

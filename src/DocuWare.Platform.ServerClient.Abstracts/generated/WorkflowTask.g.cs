@@ -66,10 +66,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DocId = value;
         }
 
-        public DocuWare.Platform.ServerClient.ActivityTypeEnum ActivityType
+        public ActivityTypeEnum ActivityType
         {
-            get => Obj.ActivityType;
-            set => Obj.ActivityType = value;
+            get => (ActivityTypeEnum)Obj.ActivityType;
+            set => Obj.ActivityType = (DocuWare.Platform.ServerClient.ActivityTypeEnum)value;
         }
 
         public int NodeId

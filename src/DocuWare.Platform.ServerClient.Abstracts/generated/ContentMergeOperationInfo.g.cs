@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Documents = value;
         }
 
-        public DocuWare.Platform.ServerClient.ContentMergeOperation Operation
+        public ContentMergeOperation Operation
         {
-            get => Obj.Operation;
-            set => Obj.Operation = value;
+            get => (ContentMergeOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.ContentMergeOperation)value;
         }
 
         public bool Force

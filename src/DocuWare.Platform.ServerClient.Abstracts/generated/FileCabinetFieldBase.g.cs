@@ -12,16 +12,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public DocuWare.Platform.ServerClient.FileCabinetFieldScope Scope
+        public FileCabinetFieldScope Scope
         {
-            get => Obj.Scope;
-            set => Obj.Scope = value;
+            get => (FileCabinetFieldScope)Obj.Scope;
+            set => Obj.Scope = (DocuWare.Platform.ServerClient.FileCabinetFieldScope)value;
         }
 
-        public DocuWare.Platform.ServerClient.DWFieldType DWFieldType
+        public DWFieldType DWFieldType
         {
-            get => Obj.DWFieldType;
-            set => Obj.DWFieldType = value;
+            get => (DWFieldType)Obj.DWFieldType;
+            set => Obj.DWFieldType = (DocuWare.Platform.ServerClient.DWFieldType)value;
         }
 
         public int Length

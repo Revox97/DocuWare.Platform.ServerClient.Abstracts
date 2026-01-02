@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SpecificValue = value.Select(x => ((CFSSpecificValue)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.CFSTableNames Category
+        public CFSTableNames Category
         {
-            get => Obj.Category;
-            set => Obj.Category = value;
+            get => (CFSTableNames)Obj.Category;
+            set => Obj.Category = (DocuWare.Platform.ServerClient.CFSTableNames)value;
         }
 
         public string ObjectID

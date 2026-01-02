@@ -7,6 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<ISuggestionValue> Value { get; set; }
 		string Name { get; set; }
 		string DBName { get; set; }
-		DocuWare.Platform.ServerClient.IntellixFieldTrust Confidence { get; set; }
+		IntellixFieldTrust Confidence { get; set; }
     }
 }

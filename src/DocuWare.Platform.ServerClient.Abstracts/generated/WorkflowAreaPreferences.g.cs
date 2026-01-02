@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Instances = value.Select(x => ((WorkInstance)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.WorkAreaType AreaType
+        public WorkAreaType AreaType
         {
-            get => Obj.AreaType;
-            set => Obj.AreaType = value;
+            get => (WorkAreaType)Obj.AreaType;
+            set => Obj.AreaType = (DocuWare.Platform.ServerClient.WebClient.WorkAreaType)value;
         }
 
         public int SelectedInstanceIndex

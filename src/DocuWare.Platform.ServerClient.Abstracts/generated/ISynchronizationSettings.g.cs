@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ISynchronizationSettings
     {
 		List<IFieldMapping> FieldMappings { get; set; }
-		DocuWare.Platform.ServerClient.SynchronizationOperation SynchronizationOperation { get; set; }
+		SynchronizationOperation SynchronizationOperation { get; set; }
 		int Id { get; set; }
 		bool PreserveSystemFields { get; set; }
 		bool ImportNotMappedFields { get; set; }

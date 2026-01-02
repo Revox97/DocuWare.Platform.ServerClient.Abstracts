@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DBName = value;
         }
 
-        public DocuWare.Platform.ServerClient.IntellixFieldTrust Confidence
+        public IntellixFieldTrust Confidence
         {
-            get => Obj.Confidence;
-            set => Obj.Confidence = value;
+            get => (IntellixFieldTrust)Obj.Confidence;
+            set => Obj.Confidence = (DocuWare.Platform.ServerClient.IntellixFieldTrust)value;
         }
     }
 }

@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FieldMappings = value.Select(x => ((FieldMapping)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.SynchronizationOperation SynchronizationOperation
+        public SynchronizationOperation SynchronizationOperation
         {
-            get => Obj.SynchronizationOperation;
-            set => Obj.SynchronizationOperation = value;
+            get => (SynchronizationOperation)Obj.SynchronizationOperation;
+            set => Obj.SynchronizationOperation = (DocuWare.Platform.ServerClient.SynchronizationOperation)value;
         }
 
         public int Id

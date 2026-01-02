@@ -24,16 +24,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public DocuWare.Platform.ServerClient.ToolbarVisibility LeftToolbarState
+        public ToolbarVisibility LeftToolbarState
         {
-            get => Obj.LeftToolbarState;
-            set => Obj.LeftToolbarState = value;
+            get => (ToolbarVisibility)Obj.LeftToolbarState;
+            set => Obj.LeftToolbarState = (DocuWare.Platform.ServerClient.WebClient.ToolbarVisibility)value;
         }
 
-        public DocuWare.Platform.ServerClient.ToolbarVisibility RightToolbarState
+        public ToolbarVisibility RightToolbarState
         {
-            get => Obj.RightToolbarState;
-            set => Obj.RightToolbarState = value;
+            get => (ToolbarVisibility)Obj.RightToolbarState;
+            set => Obj.RightToolbarState = (DocuWare.Platform.ServerClient.WebClient.ToolbarVisibility)value;
         }
 
         public bool ExpandStatusbar

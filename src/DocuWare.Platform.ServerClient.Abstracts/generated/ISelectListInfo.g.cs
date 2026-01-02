@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string Guid { get; set; }
 		string Name { get; set; }
-		DocuWare.Platform.ServerClient.SelectListKind Kind { get; set; }
+		SelectListKind Kind { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ISelectListValuesResult GetSelectListValuesResultFromValuesRelation();

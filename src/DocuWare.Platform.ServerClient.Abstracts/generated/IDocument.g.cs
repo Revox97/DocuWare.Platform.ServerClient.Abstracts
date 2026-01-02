@@ -24,8 +24,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DateTime CreatedAt { get; set; }
 		long FileSize { get; set; }
 		int SectionCount { get; set; }
-		DocuWare.Platform.ServerClient.IntellixTrust IntellixTrust { get; set; }
-		DocuWare.Platform.ServerClient.VersionManagementStatus VersionStatus { get; set; }
+		IntellixTrust IntellixTrust { get; set; }
+		VersionManagementStatus VersionStatus { get; set; }
 		string ExternalContentLocation { get; set; }
 
 		string ToString();

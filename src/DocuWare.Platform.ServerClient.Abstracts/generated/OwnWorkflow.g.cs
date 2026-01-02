@@ -54,10 +54,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DocumentName = value;
         }
 
-        public DocuWare.Platform.ServerClient.RequestExecutionStateEnum ExecutionState
+        public RequestExecutionStateEnum ExecutionState
         {
-            get => Obj.ExecutionState;
-            set => Obj.ExecutionState = value;
+            get => (RequestExecutionStateEnum)Obj.ExecutionState;
+            set => Obj.ExecutionState = (DocuWare.Platform.ServerClient.RequestExecutionStateEnum)value;
         }
 
         public string TakenDecisionName

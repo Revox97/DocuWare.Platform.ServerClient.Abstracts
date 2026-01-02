@@ -46,6 +46,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
             string typeName = typeDefinition.GetReturnTypeName();
 
+            if (typeName.Contains("AnnotationTools"))
+                Console.WriteLine();
+
             // TODO improve to a more general approach
             if (typeName.Equals("IDictionary"))
                 typeName = "System.Collections.IDictionary";
@@ -76,6 +79,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     else
                         propertyList += TemplateService.GetDocuWareGetPropertyImplementation(typeName, name);
                 }
+
+                return;
+            }
+
+            if (typeDefinition.Category is TypeCategory.Enum && typeDefinition.FullName.StartsWith("DocuWare.Platform"))
+            {
+                if (hasSetter)
+                    propertyList += TemplateService.GetDocuWareEnumGetSetPropertyImplementation(typeName, typeDefinition.FullName, name);
+                else
+                    propertyList += TemplateService.GetDocuWareEnumGetPropertyImplementation(typeName, name);
 
                 return;
             }

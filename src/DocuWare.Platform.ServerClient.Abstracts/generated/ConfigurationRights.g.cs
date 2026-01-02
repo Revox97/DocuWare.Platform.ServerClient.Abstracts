@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ConfigurationRights Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRight
+        public List<ConfigurationRight> ConfigurationRight
         {
             get => Obj.ConfigurationRight;
             set => Obj.ConfigurationRight = value;

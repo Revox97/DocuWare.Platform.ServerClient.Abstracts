@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.WorkflowVersionId = value;
         }
 
-        public DocuWare.Platform.ServerClient.WaitInstanceActivityType WaitInstanceActivityType
+        public WaitInstanceActivityType WaitInstanceActivityType
         {
-            get => Obj.WaitInstanceActivityType;
-            set => Obj.WaitInstanceActivityType = value;
+            get => (WaitInstanceActivityType)Obj.WaitInstanceActivityType;
+            set => Obj.WaitInstanceActivityType = (DocuWare.Platform.ServerClient.WaitInstanceActivityType)value;
         }
 
         public string ActivityName

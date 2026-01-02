@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.CompleteCondition = value;
         }
 
-        public DocuWare.Platform.ServerClient.DialogExpressionOperation Operation
+        public DialogExpressionOperation Operation
         {
-            get => Obj.Operation;
-            set => Obj.Operation = value;
+            get => (DialogExpressionOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.DialogExpressionOperation)value;
         }
 
         public bool CompleteConditionInInvariantCulture

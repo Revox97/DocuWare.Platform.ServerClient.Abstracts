@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.FileDownload Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.FileDownloadType TargetFileType
+        public FileDownloadType TargetFileType
         {
-            get => Obj.TargetFileType;
-            set => Obj.TargetFileType = value;
+            get => (FileDownloadType)Obj.TargetFileType;
+            set => Obj.TargetFileType = (DocuWare.Platform.ServerClient.FileDownloadType)value;
         }
 
         public bool DirectDownload

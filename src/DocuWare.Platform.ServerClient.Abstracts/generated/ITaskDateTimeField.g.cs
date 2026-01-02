@@ -13,7 +13,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SelectListGuid { get; set; }
 		string SelectListColumn { get; set; }
 		bool IsHiddenInStamp { get; set; }
-		DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType { get; set; }
+		FormTypeEnum FormFieldType { get; set; }
 		string Label { get; set; }
 		int Id { get; set; }
     }

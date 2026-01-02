@@ -66,10 +66,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IntellixDialogId = value;
         }
 
-        public DocuWare.Platform.ServerClient.VersionManagementMode VersionManagement
+        public VersionManagementMode VersionManagement
         {
-            get => Obj.VersionManagement;
-            set => Obj.VersionManagement = value;
+            get => (VersionManagementMode)Obj.VersionManagement;
+            set => Obj.VersionManagement = (DocuWare.Platform.ServerClient.VersionManagementMode)value;
         }
 
         public string VersionHistoryResultListId

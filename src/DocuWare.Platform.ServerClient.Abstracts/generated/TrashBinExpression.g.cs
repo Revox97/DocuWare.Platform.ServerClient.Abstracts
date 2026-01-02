@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Condition = value.Select(x => ((TrashBinCondition)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.TrashBinExpressionOperation Operation
+        public TrashBinExpressionOperation Operation
         {
-            get => Obj.Operation;
-            set => Obj.Operation = value;
+            get => (TrashBinExpressionOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.TrashBinExpressionOperation)value;
         }
     }
 }

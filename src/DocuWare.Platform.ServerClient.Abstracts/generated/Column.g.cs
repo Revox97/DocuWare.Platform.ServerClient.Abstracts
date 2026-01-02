@@ -18,16 +18,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public DocuWare.Platform.ServerClient.ColumnValueTypeEnum ColumnValueType
+        public ColumnValueTypeEnum ColumnValueType
         {
-            get => Obj.ColumnValueType;
-            set => Obj.ColumnValueType = value;
+            get => (ColumnValueTypeEnum)Obj.ColumnValueType;
+            set => Obj.ColumnValueType = (DocuWare.Platform.ServerClient.ColumnValueTypeEnum)value;
         }
 
-        public DocuWare.Platform.ServerClient.ColumnTypeEnum ColumnType
+        public ColumnTypeEnum ColumnType
         {
-            get => Obj.ColumnType;
-            set => Obj.ColumnType = value;
+            get => (ColumnTypeEnum)Obj.ColumnType;
+            set => Obj.ColumnType = (DocuWare.Platform.ServerClient.ColumnTypeEnum)value;
         }
     }
 }

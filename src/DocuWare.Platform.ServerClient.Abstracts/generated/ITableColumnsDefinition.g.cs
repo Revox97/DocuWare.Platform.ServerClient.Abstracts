@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string Label { get; set; }
 		string Id { get; set; }
-		DocuWare.Platform.ServerClient.TableColumnValueTypeEnum ColumnValueType { get; set; }
+		TableColumnValueTypeEnum ColumnValueType { get; set; }
 		bool Mandatory { get; set; }
     }
 }

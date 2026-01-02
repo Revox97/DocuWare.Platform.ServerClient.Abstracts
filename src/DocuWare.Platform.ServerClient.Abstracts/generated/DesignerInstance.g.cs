@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.WorkflowVersionId = value;
         }
 
-        public DocuWare.Platform.ServerClient.InstanceExecutionStateEnum ExecutionState
+        public InstanceExecutionStateEnum ExecutionState
         {
-            get => Obj.ExecutionState;
-            set => Obj.ExecutionState = value;
+            get => (InstanceExecutionStateEnum)Obj.ExecutionState;
+            set => Obj.ExecutionState = (DocuWare.Platform.ServerClient.InstanceExecutionStateEnum)value;
         }
 
         public int DocId

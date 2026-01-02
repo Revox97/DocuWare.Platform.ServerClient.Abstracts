@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ErrorMessage = value;
         }
 
-        public DocuWare.Platform.ServerClient.ImportEntryStatus Status
+        public ImportEntryStatus Status
         {
-            get => Obj.Status;
-            set => Obj.Status = value;
+            get => (ImportEntryStatus)Obj.Status;
+            set => Obj.Status = (DocuWare.Platform.ServerClient.ImportEntryStatus)value;
         }
     }
 }

@@ -7,10 +7,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string FieldName { get; set; }
 		string Type { get; set; }
 		string FieldLabel { get; set; }
-		DocuWare.Platform.ServerClient.TableResultFieldKind Kind { get; set; }
+		TableResultFieldKind Kind { get; set; }
 		bool IsDocumentName { get; set; }
 
 		string ToString();
-		DocuWare.Platform.ServerClient.ItemChoiceType GetItemChoiceType();
+		ItemChoiceType GetItemChoiceType();
     }
 }

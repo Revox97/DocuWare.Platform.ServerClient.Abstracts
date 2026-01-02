@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.LinkInvoke Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.HttpMethod Verb
+        public HttpMethod Verb
         {
-            get => Obj.Verb;
-            set => Obj.Verb = value;
+            get => (HttpMethod)Obj.Verb;
+            set => Obj.Verb = (DocuWare.Platform.ServerClient.HttpMethod)value;
         }
     }
 }

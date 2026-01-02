@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.TaskTableFieldInitialValues Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
+        public TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
         {
-            get => Obj.TaskTableFieldJoinType;
-            set => Obj.TaskTableFieldJoinType = value;
+            get => (TaskTableFieldJoinTypeEnum)Obj.TaskTableFieldJoinType;
+            set => Obj.TaskTableFieldJoinType = (DocuWare.Platform.ServerClient.TaskTableFieldJoinTypeEnum)value;
         }
     }
 }

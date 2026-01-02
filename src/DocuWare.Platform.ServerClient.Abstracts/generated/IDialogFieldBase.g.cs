@@ -6,12 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string SampleEditText { get; set; }
 		List<IDocumentIndexFieldValue> PrefillValue { get; set; }
-		List<DocuWare.Platform.ServerClient.DynamicValueType> DynamicPrefillValue { get; set; }
+		List<DynamicValueType> DynamicPrefillValue { get; set; }
 		List<ISelectListInfo> SelectListInfos { get; set; }
 		Link[] Links { get; set; }
 		string DBFieldName { get; set; }
 		string DlgLabel { get; set; }
-		DocuWare.Platform.ServerClient.DWFieldType DWFieldType { get; set; }
+		DWFieldType DWFieldType { get; set; }
 		bool Locked { get; set; }
 		bool ReadOnly { get; set; }
 		bool NotEmpty { get; set; }
@@ -21,7 +21,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool AllowExtendedSearch { get; set; }
 		bool AllowFiltering { get; set; }
 		bool SelectListOnly { get; set; }
-		DocuWare.Platform.ServerClient.SelectListType SelectListType { get; set; }
+		SelectListType SelectListType { get; set; }
 		bool AssignedInternalSelectList { get; set; }
 		string SequenceId { get; set; }
 		bool SelectListsAssigned { get; set; }

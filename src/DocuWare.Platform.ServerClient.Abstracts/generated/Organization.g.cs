@@ -12,7 +12,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRights
+        public List<ConfigurationRight> ConfigurationRights
         {
             get => Obj.ConfigurationRights;
             set => Obj.ConfigurationRights = value;

@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ISection
     {
-		List<DocuWare.Platform.ServerClient.SignatureStatus> SignatureStatus { get; set; }
+		List<SignatureStatus> SignatureStatus { get; set; }
 		IUploadedFileChunk FileChunk { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }

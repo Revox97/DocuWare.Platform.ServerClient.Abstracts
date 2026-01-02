@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<IResultDialogFunction> Functions { get; set; }
 		List<ISortedField> SortOrder { get; set; }
-		DocuWare.Platform.ServerClient.LetterCase DefaultListTextLetterCase { get; set; }
+		LetterCase DefaultListTextLetterCase { get; set; }
 		bool DisplayFirstDocument { get; set; }
 		bool ShowCheckedOutDocumens { get; set; }
     }

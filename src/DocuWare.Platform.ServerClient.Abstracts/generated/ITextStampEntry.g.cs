@@ -4,7 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITextStampEntry
     {
-		DocuWare.Platform.ServerClient.StampSignatureType Signature { get; set; }
+		StampSignatureType Signature { get; set; }
 		string UserName { get; set; }
 		bool Visible { get; set; }
 		bool Frame { get; set; }

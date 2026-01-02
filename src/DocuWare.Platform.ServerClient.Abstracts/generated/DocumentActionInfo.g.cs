@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentActionInfo Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.DocumentAction DocumentAction
+        public DocumentAction DocumentAction
         {
-            get => Obj.DocumentAction;
-            set => Obj.DocumentAction = value;
+            get => (DocumentAction)Obj.DocumentAction;
+            set => Obj.DocumentAction = (DocuWare.Platform.ServerClient.DocumentAction)value;
         }
     }
 }

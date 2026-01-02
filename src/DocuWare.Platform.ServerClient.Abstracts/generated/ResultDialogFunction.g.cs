@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ResultDialogFunction Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.ResultDialogFunctionType Type
+        public ResultDialogFunctionType Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (ResultDialogFunctionType)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.ResultDialogFunctionType)value;
         }
 
         public bool InToolBar

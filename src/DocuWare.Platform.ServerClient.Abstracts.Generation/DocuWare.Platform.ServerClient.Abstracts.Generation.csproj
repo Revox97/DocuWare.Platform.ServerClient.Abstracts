@@ -19,6 +19,12 @@
     <None Update="Templates\AsyncDocuWareMethod.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Templates\DocuWareEnumPropertyGet.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\DocuWareEnumPropertyGetSet.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\DocuWareListPropertyGetSet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

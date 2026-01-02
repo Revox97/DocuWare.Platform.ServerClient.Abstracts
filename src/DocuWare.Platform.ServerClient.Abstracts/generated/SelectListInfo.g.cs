@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Name = value;
         }
 
-        public DocuWare.Platform.ServerClient.SelectListKind Kind
+        public SelectListKind Kind
         {
-            get => Obj.Kind;
-            set => Obj.Kind = value;
+            get => (SelectListKind)Obj.Kind;
+            set => Obj.Kind = (DocuWare.Platform.ServerClient.SelectListKind)value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

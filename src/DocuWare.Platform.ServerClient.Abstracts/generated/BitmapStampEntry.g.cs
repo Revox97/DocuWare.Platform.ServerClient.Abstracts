@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DpiY = value;
         }
 
-        public DocuWare.Platform.ServerClient.StampSignatureType Signature
+        public StampSignatureType Signature
         {
-            get => Obj.Signature;
-            set => Obj.Signature = value;
+            get => (StampSignatureType)Obj.Signature;
+            set => Obj.Signature = (DocuWare.Platform.ServerClient.StampSignatureType)value;
         }
 
         public string UserName

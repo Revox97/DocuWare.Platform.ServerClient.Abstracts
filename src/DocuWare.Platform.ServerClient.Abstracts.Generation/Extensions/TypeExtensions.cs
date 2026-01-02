@@ -27,6 +27,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             if (t.IsEnum)
             {
                 typeDef.Category = TypeCategory.Enum;
+                typeDef.Name = t.Name;
             }
             else if (t.IsPrimitive || t == typeof(string) || t == typeof(void) || t == typeof(object))
             {

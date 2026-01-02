@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public DocuWare.Platform.ServerClient.ImportEntryVersionStatus Status
+        public ImportEntryVersionStatus Status
         {
-            get => Obj.Status;
-            set => Obj.Status = value;
+            get => (ImportEntryVersionStatus)Obj.Status;
+            set => Obj.Status = (DocuWare.Platform.ServerClient.ImportEntryVersionStatus)value;
         }
     }
 }

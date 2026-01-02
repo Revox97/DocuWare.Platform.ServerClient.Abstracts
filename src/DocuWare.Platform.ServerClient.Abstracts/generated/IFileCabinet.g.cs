@@ -14,7 +14,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Default { get; set; }
 		string AssignedCabinetId { get; set; }
 		string IntellixDialogId { get; set; }
-		DocuWare.Platform.ServerClient.VersionManagementMode VersionManagement { get; set; }
+		VersionManagementMode VersionManagement { get; set; }
 		string VersionHistoryResultListId { get; set; }
 		bool WindowsExplorerClientAccess { get; set; }
 		bool AddIndexEntriesInUpperCase { get; set; }

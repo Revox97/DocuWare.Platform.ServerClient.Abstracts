@@ -30,10 +30,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ActivityType = value;
         }
 
-        public DocuWare.Platform.ServerClient.StepTypeEnum StepType
+        public StepTypeEnum StepType
         {
-            get => Obj.StepType;
-            set => Obj.StepType = value;
+            get => (StepTypeEnum)Obj.StepType;
+            set => Obj.StepType = (DocuWare.Platform.ServerClient.StepTypeEnum)value;
         }
     }
 }

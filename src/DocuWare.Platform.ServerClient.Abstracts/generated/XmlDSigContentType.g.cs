@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Nodes = value.Select(x => ((XmlDSigContentType)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.XmlDSigStatusType Status
+        public XmlDSigStatusType Status
         {
-            get => Obj.Status;
-            set => Obj.Status = value;
+            get => (XmlDSigStatusType)Obj.Status;
+            set => Obj.Status = (DocuWare.Platform.ServerClient.XmlDSigStatusType)value;
         }
 
         public string Description

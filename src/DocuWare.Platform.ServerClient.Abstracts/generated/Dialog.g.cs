@@ -72,10 +72,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsDefault = value;
         }
 
-        public DocuWare.Platform.ServerClient.DialogTypes Type
+        public DialogTypes Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (DialogTypes)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.DialogTypes)value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

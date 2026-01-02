@@ -5,7 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IOrganization
     {
 		Link[] Links { get; set; }
-		List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRights { get; set; }
+		List<ConfigurationRight> ConfigurationRights { get; set; }
 		IExtendedConfigurationRights ExtendedConfigurationRights { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }

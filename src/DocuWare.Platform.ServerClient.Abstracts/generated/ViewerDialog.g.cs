@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ViewerDialog Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.ViewerDialogModes Mode
+        public ViewerDialogModes Mode
         {
-            get => Obj.Mode;
-            set => Obj.Mode = value;
+            get => (ViewerDialogModes)Obj.Mode;
+            set => Obj.Mode = (DocuWare.Platform.ServerClient.ViewerDialogModes)value;
         }
 
         public bool MarkFulltextSearchHits

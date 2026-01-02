@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ResultNames = value;
         }
 
-        public DocuWare.Platform.ServerClient.ContentDivideOperation Operation
+        public ContentDivideOperation Operation
         {
-            get => Obj.Operation;
-            set => Obj.Operation = value;
+            get => (ContentDivideOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.ContentDivideOperation)value;
         }
 
         public bool Force

@@ -36,7 +36,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.PrefillValue = value.Select(x => ((DocumentIndexFieldValue)x).Obj).ToList();
         }
 
-        public List<DocuWare.Platform.ServerClient.DynamicValueType> DynamicPrefillValue
+        public List<DynamicValueType> DynamicPrefillValue
         {
             get => Obj.DynamicPrefillValue;
             set => Obj.DynamicPrefillValue = value;
@@ -66,10 +66,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DlgLabel = value;
         }
 
-        public DocuWare.Platform.ServerClient.DWFieldType DWFieldType
+        public DWFieldType DWFieldType
         {
-            get => Obj.DWFieldType;
-            set => Obj.DWFieldType = value;
+            get => (DWFieldType)Obj.DWFieldType;
+            set => Obj.DWFieldType = (DocuWare.Platform.ServerClient.DWFieldType)value;
         }
 
         public bool Locked
@@ -126,10 +126,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SelectListOnly = value;
         }
 
-        public DocuWare.Platform.ServerClient.SelectListType SelectListType
+        public SelectListType SelectListType
         {
-            get => Obj.SelectListType;
-            set => Obj.SelectListType = value;
+            get => (SelectListType)Obj.SelectListType;
+            set => Obj.SelectListType = (DocuWare.Platform.ServerClient.SelectListType)value;
         }
 
         public bool AssignedInternalSelectList

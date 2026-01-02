@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.NewValue = value;
         }
 
-        public DocuWare.Platform.ServerClient.DWFieldType DWFieldType
+        public DWFieldType DWFieldType
         {
-            get => Obj.DWFieldType;
-            set => Obj.DWFieldType = value;
+            get => (DWFieldType)Obj.DWFieldType;
+            set => Obj.DWFieldType = (DocuWare.Platform.ServerClient.DWFieldType)value;
         }
     }
 }

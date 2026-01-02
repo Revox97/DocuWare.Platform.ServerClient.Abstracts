@@ -42,10 +42,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SortOrder = value.Select(x => ((SortedField)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.LetterCase DefaultListTextLetterCase
+        public LetterCase DefaultListTextLetterCase
         {
-            get => Obj.DefaultListTextLetterCase;
-            set => Obj.DefaultListTextLetterCase = value;
+            get => (LetterCase)Obj.DefaultListTextLetterCase;
+            set => Obj.DefaultListTextLetterCase = (DocuWare.Platform.ServerClient.LetterCase)value;
         }
 
         public bool DisplayFirstDocument

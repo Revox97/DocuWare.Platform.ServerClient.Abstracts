@@ -8,7 +8,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int Count { get; set; }
 		int Start { get; set; }
 		int Limit { get; set; }
-		DocuWare.Platform.ServerClient.SortDirection SortDirection { get; set; }
+		SortDirection SortDirection { get; set; }
 		bool ExcludeExternal { get; set; }
 		bool Typed { get; set; }
     }

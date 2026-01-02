@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.CheckInActionParameters Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.CheckInReturnDocument CheckInReturnDocument
+        public CheckInReturnDocument CheckInReturnDocument
         {
-            get => Obj.CheckInReturnDocument;
-            set => Obj.CheckInReturnDocument = value;
+            get => (CheckInReturnDocument)Obj.CheckInReturnDocument;
+            set => Obj.CheckInReturnDocument = (DocuWare.Platform.ServerClient.CheckInReturnDocument)value;
         }
 
         public string Comments

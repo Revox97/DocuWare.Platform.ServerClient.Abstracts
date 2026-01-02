@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Field = value;
         }
 
-        public DocuWare.Platform.ServerClient.SortDirection Direction
+        public SortDirection Direction
         {
-            get => Obj.Direction;
-            set => Obj.Direction = value;
+            get => (SortDirection)Obj.Direction;
+            set => Obj.Direction = (DocuWare.Platform.ServerClient.SortDirection)value;
         }
     }
 }

@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Section Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.SignatureStatus> SignatureStatus
+        public List<SignatureStatus> SignatureStatus
         {
             get => Obj.SignatureStatus;
             set => Obj.SignatureStatus = value;

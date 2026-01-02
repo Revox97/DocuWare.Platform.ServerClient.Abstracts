@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WebClient.GeneralSettings Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.WorkAreaType StartWith
+        public WorkAreaType StartWith
         {
-            get => Obj.StartWith;
-            set => Obj.StartWith = value;
+            get => (WorkAreaType)Obj.StartWith;
+            set => Obj.StartWith = (DocuWare.Platform.ServerClient.WebClient.WorkAreaType)value;
         }
 
         public string CreatedVersion

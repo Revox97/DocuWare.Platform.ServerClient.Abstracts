@@ -126,16 +126,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SectionCount = value;
         }
 
-        public DocuWare.Platform.ServerClient.IntellixTrust IntellixTrust
+        public IntellixTrust IntellixTrust
         {
-            get => Obj.IntellixTrust;
-            set => Obj.IntellixTrust = value;
+            get => (IntellixTrust)Obj.IntellixTrust;
+            set => Obj.IntellixTrust = (DocuWare.Platform.ServerClient.IntellixTrust)value;
         }
 
-        public DocuWare.Platform.ServerClient.VersionManagementStatus VersionStatus
+        public VersionManagementStatus VersionStatus
         {
-            get => Obj.VersionStatus;
-            set => Obj.VersionStatus = value;
+            get => (VersionManagementStatus)Obj.VersionStatus;
+            set => Obj.VersionStatus = (DocuWare.Platform.ServerClient.VersionManagementStatus)value;
         }
 
         public string ExternalContentLocation

@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.HttpMethodList Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.HttpMethod> Method
+        public List<HttpMethod> Method
         {
             get => Obj.Method;
             set => Obj.Method = value;

@@ -9,7 +9,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Label { get; set; }
 		int Length { get; set; }
 		int Precision { get; set; }
-		DocuWare.Platform.ServerClient.DWFieldType DWFieldType { get; set; }
+		DWFieldType DWFieldType { get; set; }
 		string Mask { get; set; }
 		string MaskErrorText { get; set; }
 		string SampleEditText { get; set; }

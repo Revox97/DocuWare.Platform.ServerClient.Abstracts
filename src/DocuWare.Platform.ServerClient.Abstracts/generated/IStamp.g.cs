@@ -9,7 +9,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		object Item { get; set; }
 		Link[] Links { get; set; }
 		bool PasswordProtected { get; set; }
-		DocuWare.Platform.ServerClient.StampSignatureType Signature { get; set; }
+		StampSignatureType Signature { get; set; }
 		string Color { get; set; }
 		string Name { get; set; }
 		string DisplayName { get; set; }

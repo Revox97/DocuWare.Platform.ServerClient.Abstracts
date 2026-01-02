@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Label = value;
         }
 
-        public DocuWare.Platform.ServerClient.HistoryFormTypeEnum Type
+        public HistoryFormTypeEnum Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (HistoryFormTypeEnum)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.HistoryFormTypeEnum)value;
         }
     }
 }

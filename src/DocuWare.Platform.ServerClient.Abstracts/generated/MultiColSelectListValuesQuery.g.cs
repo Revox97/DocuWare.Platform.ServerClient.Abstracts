@@ -36,10 +36,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Count = value;
         }
 
-        public DocuWare.Platform.ServerClient.DialogExpressionOperation Operation
+        public DialogExpressionOperation Operation
         {
-            get => Obj.Operation;
-            set => Obj.Operation = value;
+            get => (DialogExpressionOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.DialogExpressionOperation)value;
         }
     }
 }

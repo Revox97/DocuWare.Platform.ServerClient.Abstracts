@@ -5,8 +5,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IFileCabinetFieldBase
     {
 		Link[] Links { get; set; }
-		DocuWare.Platform.ServerClient.FileCabinetFieldScope Scope { get; set; }
-		DocuWare.Platform.ServerClient.DWFieldType DWFieldType { get; set; }
+		FileCabinetFieldScope Scope { get; set; }
+		DWFieldType DWFieldType { get; set; }
 		int Length { get; set; }
 		string DBFieldName { get; set; }
 		string DisplayName { get; set; }

@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ILinkInvoke
     {
-		DocuWare.Platform.ServerClient.HttpMethod Verb { get; set; }
+		HttpMethod Verb { get; set; }
     }
 }

@@ -6,10 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WebClient.ViewerToolbarControl Obj { get; } = obj;
 
-        public DocuWare.Platform.ServerClient.ToolbarControlType Type
+        public ToolbarControlType Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (ToolbarControlType)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.WebClient.ToolbarControlType)value;
         }
 
         public bool Checked
@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Checked = value;
         }
 
-        public DocuWare.Platform.ServerClient.ToolbarControlState State
+        public ToolbarControlState State
         {
-            get => Obj.State;
-            set => Obj.State = value;
+            get => (ToolbarControlState)Obj.State;
+            set => Obj.State = (DocuWare.Platform.ServerClient.WebClient.ToolbarControlState)value;
         }
     }
 }

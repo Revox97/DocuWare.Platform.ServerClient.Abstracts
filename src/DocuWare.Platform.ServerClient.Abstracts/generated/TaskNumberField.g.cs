@@ -72,10 +72,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsHiddenInStamp = value;
         }
 
-        public DocuWare.Platform.ServerClient.FormTypeEnum FormFieldType
+        public FormTypeEnum FormFieldType
         {
-            get => Obj.FormFieldType;
-            set => Obj.FormFieldType = value;
+            get => (FormTypeEnum)Obj.FormFieldType;
+            set => Obj.FormFieldType = (DocuWare.Platform.ServerClient.FormTypeEnum)value;
         }
 
         public string Label

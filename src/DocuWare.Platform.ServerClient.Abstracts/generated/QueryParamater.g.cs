@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsRequired = value;
         }
 
-        public DocuWare.Platform.ServerClient.QueryParamaterType Type
+        public QueryParamaterType Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (QueryParamaterType)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.QueryParamaterType)value;
         }
     }
 }

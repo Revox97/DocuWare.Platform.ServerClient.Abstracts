@@ -8,7 +8,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Id { get; set; }
 		string Name { get; set; }
 		bool Active { get; set; }
-		DocuWare.Platform.ServerClient.RoleTypes Type { get; set; }
+		RoleTypes Type { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IRole GetRoleFromSelfRelation();

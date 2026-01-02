@@ -12,16 +12,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.PasswordExpireNotification = value;
         }
 
-        public DocuWare.Platform.ServerClient.DWProductTypes BookedLicense
+        public DWProductTypes BookedLicense
         {
-            get => Obj.BookedLicense;
-            set => Obj.BookedLicense = value;
+            get => (DWProductTypes)Obj.BookedLicense;
+            set => Obj.BookedLicense = (DocuWare.Platform.ServerClient.DWProductTypes)value;
         }
 
-        public DocuWare.Platform.ServerClient.DWProductTypes ProductType
+        public DWProductTypes ProductType
         {
-            get => Obj.ProductType;
-            set => Obj.ProductType = value;
+            get => (DWProductTypes)Obj.ProductType;
+            set => Obj.ProductType = (DocuWare.Platform.ServerClient.DWProductTypes)value;
         }
     }
 }

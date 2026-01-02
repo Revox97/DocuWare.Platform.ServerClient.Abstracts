@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.RequestDialogQuery Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.DialogTypes> DialogTypes
+        public List<DialogTypes> DialogTypes
         {
             get => Obj.DialogTypes;
             set => Obj.DialogTypes = value;

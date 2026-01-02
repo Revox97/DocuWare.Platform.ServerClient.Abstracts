@@ -12,22 +12,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Controls = value.Select(x => ((ViewerToolbarControl)x).Obj).ToList();
         }
 
-        public DocuWare.Platform.ServerClient.ViewerToolbarType Type
+        public ViewerToolbarType Type
         {
-            get => Obj.Type;
-            set => Obj.Type = value;
+            get => (ViewerToolbarType)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.WebClient.ViewerToolbarType)value;
         }
 
-        public DocuWare.Platform.ServerClient.ToolbarPosition Position
+        public ToolbarPosition Position
         {
-            get => Obj.Position;
-            set => Obj.Position = value;
+            get => (ToolbarPosition)Obj.Position;
+            set => Obj.Position = (DocuWare.Platform.ServerClient.WebClient.ToolbarPosition)value;
         }
 
-        public DocuWare.Platform.ServerClient.ToolbarVisibility Visibility
+        public ToolbarVisibility Visibility
         {
-            get => Obj.Visibility;
-            set => Obj.Visibility = value;
+            get => (ToolbarVisibility)Obj.Visibility;
+            set => Obj.Visibility = (DocuWare.Platform.ServerClient.WebClient.ToolbarVisibility)value;
         }
     }
 }

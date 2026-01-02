@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<IImportEntryVersion> EntryVersions { get; set; }
 		string ErrorMessage { get; set; }
-		DocuWare.Platform.ServerClient.ImportEntryStatus Status { get; set; }
+		ImportEntryStatus Status { get; set; }
     }
 }

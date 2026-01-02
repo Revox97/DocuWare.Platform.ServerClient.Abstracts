@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.lineWidth = value;
         }
 
-        public DocuWare.Platform.ServerClient.LineStyle style
+        public LineStyle style
         {
-            get => Obj.style;
-            set => Obj.style = value;
+            get => (LineStyle)Obj.style;
+            set => Obj.style = (DocuWare.Platform.ServerClient.Content.LineStyle)value;
         }
 
         public int L

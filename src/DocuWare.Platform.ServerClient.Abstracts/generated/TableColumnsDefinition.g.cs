@@ -18,10 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public DocuWare.Platform.ServerClient.TableColumnValueTypeEnum ColumnValueType
+        public TableColumnValueTypeEnum ColumnValueType
         {
-            get => Obj.ColumnValueType;
-            set => Obj.ColumnValueType = value;
+            get => (TableColumnValueTypeEnum)Obj.ColumnValueType;
+            set => Obj.ColumnValueType = (DocuWare.Platform.ServerClient.TableColumnValueTypeEnum)value;
         }
 
         public bool Mandatory

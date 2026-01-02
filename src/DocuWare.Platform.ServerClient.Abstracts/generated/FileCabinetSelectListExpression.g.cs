@@ -30,10 +30,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Limit = value;
         }
 
-        public DocuWare.Platform.ServerClient.SortDirection SortDirection
+        public SortDirection SortDirection
         {
-            get => Obj.SortDirection;
-            set => Obj.SortDirection = value;
+            get => (SortDirection)Obj.SortDirection;
+            set => Obj.SortDirection = (DocuWare.Platform.ServerClient.SortDirection)value;
         }
 
         public bool Typed

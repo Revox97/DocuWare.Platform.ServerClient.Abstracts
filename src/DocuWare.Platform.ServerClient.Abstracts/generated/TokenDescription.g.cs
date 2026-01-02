@@ -6,16 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.TokenDescription Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.DWProductTypes> TargetProducts
+        public List<DWProductTypes> TargetProducts
         {
             get => Obj.TargetProducts;
             set => Obj.TargetProducts = value;
         }
 
-        public DocuWare.Platform.ServerClient.TokenUsage Usage
+        public TokenUsage Usage
         {
-            get => Obj.Usage;
-            set => Obj.Usage = value;
+            get => (TokenUsage)Obj.Usage;
+            set => Obj.Usage = (DocuWare.Platform.ServerClient.TokenUsage)value;
         }
 
         public string Lifetime

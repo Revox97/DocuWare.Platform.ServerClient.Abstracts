@@ -36,10 +36,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Lang = value;
         }
 
-        public DocuWare.Platform.ServerClient.LanguageDetection LanguageDetection
+        public LanguageDetection LanguageDetection
         {
-            get => Obj.LanguageDetection;
-            set => Obj.LanguageDetection = value;
+            get => (LanguageDetection)Obj.LanguageDetection;
+            set => Obj.LanguageDetection = (DocuWare.Platform.ServerClient.Content.LanguageDetection)value;
         }
 
         public int CandidateDetectionVersion
@@ -84,10 +84,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SkewAngle = value;
         }
 
-        public DocuWare.Platform.ServerClient.Rotation Rotation
+        public Rotation Rotation
         {
-            get => Obj.Rotation;
-            set => Obj.Rotation = value;
+            get => (Rotation)Obj.Rotation;
+            set => Obj.Rotation = (DocuWare.Platform.ServerClient.Content.Rotation)value;
         }
 
         public string FileTag

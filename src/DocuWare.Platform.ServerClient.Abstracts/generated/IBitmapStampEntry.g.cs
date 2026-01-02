@@ -7,7 +7,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Byte[] PngData { get; set; }
 		int DpiX { get; set; }
 		int DpiY { get; set; }
-		DocuWare.Platform.ServerClient.StampSignatureType Signature { get; set; }
+		StampSignatureType Signature { get; set; }
 		string UserName { get; set; }
 		bool Visible { get; set; }
 		bool Frame { get; set; }

@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Ids = value;
         }
 
-        public DocuWare.Platform.ServerClient.AssignmentOperationType OperationType
+        public AssignmentOperationType OperationType
         {
-            get => Obj.OperationType;
-            set => Obj.OperationType = value;
+            get => (AssignmentOperationType)Obj.OperationType;
+            set => Obj.OperationType = (DocuWare.Platform.ServerClient.AssignmentOperationType)value;
         }
     }
 }

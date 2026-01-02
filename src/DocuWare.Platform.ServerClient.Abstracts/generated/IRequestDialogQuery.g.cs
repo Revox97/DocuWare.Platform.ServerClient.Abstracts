@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IRequestDialogQuery
     {
-		List<DocuWare.Platform.ServerClient.DialogTypes> DialogTypes { get; set; }
+		List<DialogTypes> DialogTypes { get; set; }
     }
 }

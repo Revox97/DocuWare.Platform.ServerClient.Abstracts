@@ -24,10 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FieldLabel = value;
         }
 
-        public DocuWare.Platform.ServerClient.TableResultFieldKind Kind
+        public TableResultFieldKind Kind
         {
-            get => Obj.Kind;
-            set => Obj.Kind = value;
+            get => (TableResultFieldKind)Obj.Kind;
+            set => Obj.Kind = (DocuWare.Platform.ServerClient.TableResultFieldKind)value;
         }
 
         public bool IsDocumentName
@@ -38,6 +38,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public string ToString() => Obj.ToString();
 
-		public DocuWare.Platform.ServerClient.ItemChoiceType GetItemChoiceType() => Obj.GetItemChoiceType();
+		public ItemChoiceType GetItemChoiceType() => Obj.GetItemChoiceType();
     }
 }

@@ -6,7 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Rights Obj { get; } = obj;
 
-        public List<DocuWare.Platform.ServerClient.Right> Right
+        public List<Right> Right
         {
             get => Obj.Right;
             set => Obj.Right = value;

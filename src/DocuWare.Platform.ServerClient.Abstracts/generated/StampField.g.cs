@@ -12,10 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Name = value;
         }
 
-        public DocuWare.Platform.ServerClient.DWFieldType DWType
+        public DWFieldType DWType
         {
-            get => Obj.DWType;
-            set => Obj.DWType = value;
+            get => (DWFieldType)Obj.DWType;
+            set => Obj.DWType = (DocuWare.Platform.ServerClient.DWFieldType)value;
         }
 
         public int Length

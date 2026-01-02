@@ -7,6 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string PropertyName { get; set; }
 		string OldValue { get; set; }
 		string NewValue { get; set; }
-		DocuWare.Platform.ServerClient.DWFieldType DWFieldType { get; set; }
+		DWFieldType DWFieldType { get; set; }
     }
 }

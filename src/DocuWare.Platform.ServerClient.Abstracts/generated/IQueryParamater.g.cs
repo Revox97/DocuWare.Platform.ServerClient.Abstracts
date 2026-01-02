@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string Name { get; set; }
 		string IsRequired { get; set; }
-		DocuWare.Platform.ServerClient.QueryParamaterType Type { get; set; }
+		QueryParamaterType Type { get; set; }
     }
 }
