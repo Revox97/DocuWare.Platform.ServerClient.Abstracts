@@ -6,8 +6,7 @@ using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Templates;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
-// TODO Handle interface parameters in actual calls
-// TODO Handle actual type instead of interface
+// TODO HANDLE ENUMS
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
@@ -46,6 +45,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
             string typeName = typeDefinition.GetReturnTypeName();
+
+            // TODO improve to a more general approach
+            if (typeName.Equals("IDictionary"))
+                typeName = "System.Collections.IDictionary";
+
             bool isList = typeDefinition.Category is TypeCategory.List;
 
             bool isDocuWareType = isList

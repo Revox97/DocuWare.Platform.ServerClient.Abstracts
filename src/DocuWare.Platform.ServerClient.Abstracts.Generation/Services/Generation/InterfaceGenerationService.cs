@@ -37,6 +37,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
                 TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
                 string returnTypeName = typeDefinition.GetReturnTypeName();
+
+                // TODO improve to a more general approach
+                if (returnTypeName.Equals("IDictionary"))
+                    returnTypeName = "System.Collections.IDictionary";
+
                 string name = property.Name;
                 bool hasGetter = property.GetGetMethod() is not null;
                 bool hasSetter = property.GetSetMethod() is not null;

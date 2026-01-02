@@ -18,6 +18,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
             Assembly assembly = Assembly.GetAssembly(typeof(ServiceConnection))
                 ?? throw new Exception("Assembly could not be loaded.");
 
+            EnumGenerationService enumGenerationService = new();
+            Type[] enumTypes = [.. assembly.GetExportedTypes().Where(t => t.IsEnum)];
+
+            for (int i = 0; i < enumTypes.Length; i++)
+                enumGenerationService.Generate(enumTypes[i]);
+
             InstanceGenerationService instanceGenerationService = new();
             Type[] types = [.. assembly.GetExportedTypes().Where(t => t.IsClass)];
 

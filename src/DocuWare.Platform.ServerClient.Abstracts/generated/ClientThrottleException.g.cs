@@ -6,6 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Exceptions.ClientThrottleException Obj { get; } = obj;
 
-        public IDictionary Data => Obj.Data;
+        public System.Collections.IDictionary Data => Obj.Data;
     }
 }

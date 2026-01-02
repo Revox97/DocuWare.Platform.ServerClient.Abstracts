@@ -4,6 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IClientThrottleException
     {
-		IDictionary Data { get; }
+		System.Collections.IDictionary Data { get; }
     }
 }

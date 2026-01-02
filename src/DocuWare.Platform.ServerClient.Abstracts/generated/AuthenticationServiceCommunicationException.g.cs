@@ -8,6 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public string Message => Obj.Message;
 
-        public IDictionary Data => Obj.Data;
+        public System.Collections.IDictionary Data => Obj.Data;
     }
 }

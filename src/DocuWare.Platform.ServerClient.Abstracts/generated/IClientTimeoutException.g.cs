@@ -5,6 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IClientTimeoutException
     {
 		string Message { get; }
-		IDictionary Data { get; }
+		System.Collections.IDictionary Data { get; }
     }
 }
