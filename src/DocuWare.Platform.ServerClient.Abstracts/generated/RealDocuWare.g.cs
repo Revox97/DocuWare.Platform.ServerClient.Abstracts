@@ -12,7 +12,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateAsync(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionData)
 		{
-			return SDK.ServiceConnection.CreateAsync(serviceUri, userName, password, serviceConnectionData);
+			return SDK.ServiceConnection.CreateAsync(serviceUri, userName, password, ((ServiceConnectionLoginData)serviceConnectionData).Obj);
 		}
 
 		public async Task<T> CreateTrustedAsync(Uri serviceUri, string impersonatedUser, string trustedUser, string password, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -22,7 +22,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateTrustedAsync(Uri serviceUri, string impersonatedUser, string trustedUser, string password, IServiceConnectionLoginData serviceConnectionData)
 		{
-			return SDK.ServiceConnection.CreateTrustedAsync(serviceUri, impersonatedUser, trustedUser, password, serviceConnectionData);
+			return SDK.ServiceConnection.CreateTrustedAsync(serviceUri, impersonatedUser, trustedUser, password, ((ServiceConnectionLoginData)serviceConnectionData).Obj);
 		}
 
 		public async Task<T> CreateAsync(Uri serviceUri, string token, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -32,12 +32,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateAsync(Uri serviceUri, string token, IServiceConnectionTokenLoginData serviceConnectionTokenLoginData)
 		{
-			return SDK.ServiceConnection.CreateAsync(serviceUri, token, serviceConnectionTokenLoginData);
+			return SDK.ServiceConnection.CreateAsync(serviceUri, token, ((ServiceConnectionTokenLoginData)serviceConnectionTokenLoginData).Obj);
 		}
 
 		public async Task<T> GetIdentityServiceInfoAsync(Uri serviceUri, IIdentityServiceInfoConnectionData serviceConnectionData)
 		{
-			return SDK.ServiceConnection.GetIdentityServiceInfoAsync(serviceUri, serviceConnectionData);
+			return SDK.ServiceConnection.GetIdentityServiceInfoAsync(serviceUri, ((IdentityServiceInfoConnectionData)serviceConnectionData).Obj);
 		}
 
 		public async Task<T> CreateWithJwtAsync(Uri serviceUri, string accessToken, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -47,7 +47,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateWithJwtAsync(Uri serviceUri, string accessToken, IServiceConnectionTokenLoginData serviceConnectionTokenLoginData)
 		{
-			return SDK.ServiceConnection.CreateWithJwtAsync(serviceUri, accessToken, serviceConnectionTokenLoginData);
+			return SDK.ServiceConnection.CreateWithJwtAsync(serviceUri, accessToken, ((ServiceConnectionTokenLoginData)serviceConnectionTokenLoginData).Obj);
 		}
 
 		public async Task<T> CreateWithJwtAsync(Uri serviceUri, string accessToken, Func<Task<string>> refreshTokenCallback, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -57,7 +57,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateWithJwtAsync(Uri serviceUri, string accessToken, IServiceConnectionTokenLoginData serviceConnectionTokenLoginData, Func<Task<string>> refreshTokenCallback)
 		{
-			return SDK.ServiceConnection.CreateWithJwtAsync(serviceUri, accessToken, serviceConnectionTokenLoginData, refreshTokenCallback);
+			return SDK.ServiceConnection.CreateWithJwtAsync(serviceUri, accessToken, ((ServiceConnectionTokenLoginData)serviceConnectionTokenLoginData).Obj, refreshTokenCallback);
 		}
 
 		public async Task<T> CreateAsync(Uri serviceUri, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -67,7 +67,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateAsync(Uri serviceUri, IServiceConnectionTransportData serviceConnectionTransportData)
 		{
-			return SDK.ServiceConnection.CreateAsync(serviceUri, serviceConnectionTransportData);
+			return SDK.ServiceConnection.CreateAsync(serviceUri, ((ServiceConnectionTransportData)serviceConnectionTransportData).Obj);
 		}
 
 		public async Task<T> CreateWithWindowsAuthenticationAsync(Uri serviceUri, ICredentials credentials, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpClientHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -77,7 +77,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateWithWindowsAuthenticationAsync(Uri serviceUri, ICredentials credentials, IServiceConnectionLoginData serviceConnectionLoginData)
 		{
-			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, credentials, serviceConnectionLoginData);
+			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, credentials, ((ServiceConnectionLoginData)serviceConnectionLoginData).Obj);
 		}
 
 		public async Task<T> CreateWithWindowsAuthenticationAsync(Uri serviceUri, string userName, string password, string domain, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpClientHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
@@ -87,12 +87,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<T> CreateWithWindowsAuthenticationAsync(Uri serviceUri, string userName, string password, string domain, IServiceConnectionLoginData serviceConnectionLoginData)
 		{
-			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, userName, password, domain, serviceConnectionLoginData);
+			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, userName, password, domain, ((ServiceConnectionLoginData)serviceConnectionLoginData).Obj);
 		}
 
 		public async Task<T> CreateWithWindowsAuthenticationAsync(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionLoginData)
 		{
-			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, userName, password, serviceConnectionLoginData);
+			return SDK.ServiceConnection.CreateWithWindowsAuthenticationAsync(serviceUri, userName, password, ((ServiceConnectionLoginData)serviceConnectionLoginData).Obj);
 		}
 
 		public ServiceConnection Create(Uri serviceUri, string userName, string password, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)

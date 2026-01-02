@@ -4,10 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IUser
     {
-		string EMail { get; set; }
 		string DefaultWebBasket { get; set; }
-		IOutOfOffice OutOfOffice { get; set; }
-		IRegionalSettings RegionalSettings { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		string Name { get; set; }
@@ -19,10 +16,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string NetworkId { get; set; }
 		string ExternalId { get; set; }
 		string ExternalProvider { get; set; }
-		string SelfRelationLink { get; }
-		string DefaultWebBasketRelationLink { get; }
-		string GroupsRelationLink { get; }
-		string RolesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IUser GetUserFromSelfRelation();

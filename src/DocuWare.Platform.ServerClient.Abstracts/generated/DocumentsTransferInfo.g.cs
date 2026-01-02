@@ -36,6 +36,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FillIntellix = value;
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

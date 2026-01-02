@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.AppendActionParameters Obj { get; } = obj;
 
-        public bool RemoveSourceDocuments
-        {
-            get => Obj.RemoveSourceDocuments;
-            set => Obj.RemoveSourceDocuments = value;
-        }
-
         public List<IAppendActionDocuments> DocumentsInFront
         {
             get => Obj.DocumentsInFront.Select(x => new AppendActionDocuments(x) as IAppendActionDocuments).ToList();

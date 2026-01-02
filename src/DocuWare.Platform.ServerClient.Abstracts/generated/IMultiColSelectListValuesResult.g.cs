@@ -7,10 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IMultiColSelectListColumn> Columns { get; set; }
 		List<IMultiColSelectListRow> Rows { get; set; }
 		Link[] Links { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation();

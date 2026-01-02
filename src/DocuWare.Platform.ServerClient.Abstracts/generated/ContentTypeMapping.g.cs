@@ -6,8 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ContentTypeMapping Obj { get; } = obj;
 
-        public IContentTypeMapping Default => new ContentTypeMapping(Obj.Default);
-
-		public async string GetContentTypeFromFileExtension(string fileExt) => Obj.GetContentTypeFromFileExtension(fileExt);
+		public string GetContentTypeFromFileExtension(string fileExt) => Obj.GetContentTypeFromFileExtension(fileExt);
     }
 }

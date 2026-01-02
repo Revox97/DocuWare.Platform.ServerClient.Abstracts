@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CellZone Obj { get; } = obj;
 
-        public ITextZone TextZone
-        {
-            get => new TextZone(Obj.TextZone);
-            set => Obj.TextZone = ((TextZone)value).Obj;
-        }
-
         public int L
         {
             get => Obj.L;

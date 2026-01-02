@@ -18,11 +18,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextBlockRelationLink => Obj.NextBlockRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Pages GetPagesFromNextBlockRelation() => new Pages(Obj.GetPagesFromNextBlockRelation());
+        public IPages GetPagesFromNextBlockRelation() => new Pages(Obj.GetPagesFromNextBlockRelation());
 
         public async Task<DeserializedHttpResponse<IPages>> GetPagesFromNextBlockRelationAsync()
         {
@@ -34,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Pages>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IPages>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IPages>> GetPagesFromNextBlockRelationAsync(CancellationToken cancellationToken)
@@ -47,7 +45,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Pages>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IPages>(temp).ConfigureAwait(false);
         }
     }
 }

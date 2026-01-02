@@ -6,7 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<IDialogInfo> Dialog { get; set; }
 		Link[] Links { get; set; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDialogInfos GetDialogInfosFromSelfRelation();

@@ -6,7 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<IPage> Page { get; set; }
 		Link[] Links { get; set; }
-		string NextBlockRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IPages GetPagesFromNextBlockRelation();

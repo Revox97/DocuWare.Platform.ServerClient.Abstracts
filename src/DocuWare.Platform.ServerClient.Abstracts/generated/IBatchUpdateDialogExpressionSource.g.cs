@@ -4,6 +4,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IBatchUpdateDialogExpressionSource
     {
-		IDialogExpression Expression { get; set; }
     }
 }

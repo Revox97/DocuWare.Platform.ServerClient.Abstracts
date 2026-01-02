@@ -6,10 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.EasyCheckoutResult Obj { get; } = obj;
 
-        public string EncodedFileName => Obj.EncodedFileName;
-
-        public DeserializedHttpResponse<Stream> Response => Obj.Response;
-
-		public async void Dispose() => Obj.Dispose();
+		public void Dispose() => Obj.Dispose();
     }
 }

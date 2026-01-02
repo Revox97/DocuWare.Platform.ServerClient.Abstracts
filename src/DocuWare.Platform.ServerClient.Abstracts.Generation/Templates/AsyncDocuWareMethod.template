@@ -8,5 +8,5 @@
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<{3}>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<{6}>(temp).ConfigureAwait(false);
         }

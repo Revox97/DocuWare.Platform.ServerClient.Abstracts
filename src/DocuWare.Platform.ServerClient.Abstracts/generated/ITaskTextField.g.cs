@@ -4,9 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITaskTextField
     {
-		IFieldMask FieldMask { get; set; }
 		int Length { get; set; }
-		IWFFormFieldValue PrefillValue { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }
 		string Description { get; set; }

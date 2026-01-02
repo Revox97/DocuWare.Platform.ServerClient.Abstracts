@@ -30,23 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.InstanceCount = value;
         }
 
-        public bool InstanceCountSpecified
-        {
-            get => Obj.InstanceCountSpecified;
-            set => Obj.InstanceCountSpecified = value;
-        }
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string InstancesRelationLink => Obj.InstancesRelationLink;
-
-        public string WaitingInstancesRelationLink => Obj.WaitingInstancesRelationLink;
-
-        public string VersionsRelationLink => Obj.VersionsRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public DesignerWorkflow GetDesignerWorkflowFromSelfRelation() => new DesignerWorkflow(Obj.GetDesignerWorkflowFromSelfRelation());
+        public IDesignerWorkflow GetDesignerWorkflowFromSelfRelation() => new DesignerWorkflow(Obj.GetDesignerWorkflowFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflow>> GetDesignerWorkflowFromSelfRelationAsync()
         {
@@ -58,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflow>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflow>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflow>> GetDesignerWorkflowFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -71,10 +57,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflow>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflow>(temp).ConfigureAwait(false);
         }
 
-        public DesignerInstances GetDesignerInstancesFromInstancesRelation() => new DesignerInstances(Obj.GetDesignerInstancesFromInstancesRelation());
+        public IDesignerInstances GetDesignerInstancesFromInstancesRelation() => new DesignerInstances(Obj.GetDesignerInstancesFromInstancesRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerInstances>> GetDesignerInstancesFromInstancesRelationAsync()
         {
@@ -86,7 +72,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerInstances>> GetDesignerInstancesFromInstancesRelationAsync(CancellationToken cancellationToken)
@@ -99,10 +85,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
         }
 
-        public DesignerWaitingInstances GetDesignerWaitingInstancesFromWaitingInstancesRelation() => new DesignerWaitingInstances(Obj.GetDesignerWaitingInstancesFromWaitingInstancesRelation());
+        public IDesignerWaitingInstances GetDesignerWaitingInstancesFromWaitingInstancesRelation() => new DesignerWaitingInstances(Obj.GetDesignerWaitingInstancesFromWaitingInstancesRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstances>> GetDesignerWaitingInstancesFromWaitingInstancesRelationAsync()
         {
@@ -114,7 +100,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstances>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstances>> GetDesignerWaitingInstancesFromWaitingInstancesRelationAsync(CancellationToken cancellationToken)
@@ -127,10 +113,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstances>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstances>(temp).ConfigureAwait(false);
         }
 
-        public DesignerWorkflowVersions GetDesignerWorkflowVersionsFromVersionsRelation() => new DesignerWorkflowVersions(Obj.GetDesignerWorkflowVersionsFromVersionsRelation());
+        public IDesignerWorkflowVersions GetDesignerWorkflowVersionsFromVersionsRelation() => new DesignerWorkflowVersions(Obj.GetDesignerWorkflowVersionsFromVersionsRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflowVersions>> GetDesignerWorkflowVersionsFromVersionsRelationAsync()
         {
@@ -142,7 +128,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflowVersions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersions>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWorkflowVersions>> GetDesignerWorkflowVersionsFromVersionsRelationAsync(CancellationToken cancellationToken)
@@ -155,7 +141,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWorkflowVersions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersions>(temp).ConfigureAwait(false);
         }
     }
 }

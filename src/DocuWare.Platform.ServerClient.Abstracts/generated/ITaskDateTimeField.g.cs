@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITaskDateTimeField
     {
-		IWFFormFieldValue PrefillValue { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }
 		string Description { get; set; }

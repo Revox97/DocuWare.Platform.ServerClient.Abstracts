@@ -15,8 +15,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SampleEditText { get; set; }
 		bool SelectListsAssigned { get; set; }
 		bool NotEmpty { get; set; }
-		string SelectListValuesRelationLink { get; }
-		string SimpleSelectListRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ISelectListResult GetSelectListResultFromSelectListValuesRelation();

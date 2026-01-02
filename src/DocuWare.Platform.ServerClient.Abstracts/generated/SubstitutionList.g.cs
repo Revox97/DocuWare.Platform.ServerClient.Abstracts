@@ -30,11 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Guid = value;
         }
 
-        public string SubstitutionRulesRelationLink => Obj.SubstitutionRulesRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public SubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation() => new SubstitutionRules(Obj.GetSubstitutionRulesFromSubstitutionRulesRelation());
+        public ISubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation() => new SubstitutionRules(Obj.GetSubstitutionRulesFromSubstitutionRulesRelation());
 
         public async Task<DeserializedHttpResponse<ISubstitutionRules>> GetSubstitutionRulesFromSubstitutionRulesRelationAsync()
         {
@@ -46,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SubstitutionRules>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISubstitutionRules>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISubstitutionRules>> GetSubstitutionRulesFromSubstitutionRulesRelationAsync(CancellationToken cancellationToken)
@@ -59,7 +57,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SubstitutionRules>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISubstitutionRules>(temp).ConfigureAwait(false);
         }
     }
 }

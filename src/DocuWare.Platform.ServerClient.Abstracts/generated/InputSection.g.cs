@@ -6,8 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.InputSection Obj { get; } = obj;
 
-        public IFileUploadInfo FileUpload => Obj.FileUpload;
-
         public List<IApplicationProperty> ApplicationProperties
         {
             get => Obj.ApplicationProperties.Select(x => new ApplicationProperty(x) as IApplicationProperty).ToList();

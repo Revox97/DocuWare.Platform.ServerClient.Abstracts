@@ -13,7 +13,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool WorkflowRequest { get; set; }
 		DateTime StartedAt { get; set; }
 		int DocId { get; set; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IInstanceHistory GetInstanceHistoryFromSelfRelation();

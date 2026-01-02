@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.MetaData = value.Select(x => ((KeyValuePair)x).Obj).ToList();
         }
 
-        public IPages Pages
-        {
-            get => new Pages(Obj.Pages);
-            set => Obj.Pages = ((Pages)value).Obj;
-        }
-
         public Link[] Links
         {
             get => Obj.Links;
@@ -36,13 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.PageCount = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string RenderingRelationLink => Obj.RenderingRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public AdhocRenderingFile GetAdhocRenderingFileFromSelfRelation() => new AdhocRenderingFile(Obj.GetAdhocRenderingFileFromSelfRelation());
+        public IAdhocRenderingFile GetAdhocRenderingFileFromSelfRelation() => new AdhocRenderingFile(Obj.GetAdhocRenderingFileFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> GetAdhocRenderingFileFromSelfRelationAsync()
         {
@@ -54,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> GetAdhocRenderingFileFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -67,35 +57,13 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
-		public async Stream PostToRenderingRelationForStream(IAdhocRenderingQuery dataToSend) => Obj.PostToRenderingRelationForStream(dataToSend);
+		public Stream PostToRenderingRelationForStream(IAdhocRenderingQuery dataToSend) => Obj.PostToRenderingRelationForStream(((AdhocRenderingQuery)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(IAdhocRenderingQuery dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToRenderingRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(IAdhocRenderingQuery dataToSend) => await Obj.PostToRenderingRelationForStreamAsync(((AdhocRenderingQuery)dataToSend).Obj);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(CancellationToken cancellationToken, IAdhocRenderingQuery dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToRenderingRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToRenderingRelationForStreamAsync(CancellationToken cancellationToken, IAdhocRenderingQuery dataToSend) => await Obj.PostToRenderingRelationForStreamAsync(cancellationToken, ((AdhocRenderingQuery)dataToSend).Obj);
     }
 }

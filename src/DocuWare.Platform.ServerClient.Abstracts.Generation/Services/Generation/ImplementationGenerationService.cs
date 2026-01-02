@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Text;
+using System.Xml.Serialization;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Contracts;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Templates;
@@ -31,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateProperties(Type type)
         {
-            PropertyInfo[] properties = type.GetProperties();
+            PropertyInfo[] properties = [.. type.GetProperties(BindingFlags.Instance | BindingFlags.Public).Where(p => p.CustomAttributes.Any(a => a.AttributeType != typeof(XmlIgnoreAttribute)))];
             string propertyList = string.Empty;
 
             for (int i = 0; i < properties.Length; i++)
@@ -106,14 +107,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateSynchronous(MethodInfo method)
         {
-            string returnTypeName = method.ReturnType.GetParsedName();
-            bool isDocuWareType = method.ReturnType.IsDocuWareType(true);
+            TypeDef typeDef = method.ReturnType.GetTypeDefinition();
+            string returnTypeName = typeDef.GetReturnTypeName();
+            string typeName = typeDef.GetTypeName();
+            bool isDocuWareType = typeDef.Category is TypeCategory.DocuWare;
             string parameters = method.GetParsedParameterDefinitions();
             string paramsToSent = method.GetParsedParameters();
 
             return isDocuWareType
-                ? TemplateService.SyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{3}", returnTypeName).Replace("{4}", paramsToSent)
-                : $"\t\tpublic async {returnTypeName} {method.Name}({parameters}) => Obj.{method.Name}({paramsToSent});";
+                ? TemplateService.SyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{3}", typeName).Replace("{4}", paramsToSent)
+                : $"\t\tpublic {returnTypeName} {method.Name}({parameters}) => Obj.{method.Name}({paramsToSent});";
         }
 
         private static string GenerateAsynchronous(MethodInfo method)
@@ -125,12 +128,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string typeName = returnType.GetTypeName();
             string returnTypeName = returnType.GetReturnTypeName();
 
-            return returnTypeName.Contains("DeserializedHttpResponse<")
-                ? CreateDeserializedHttpResponseMethod(returnType, typeName, returnTypeName, method, parameters, paramsToSent)
+            TypeDef? innerMostChild = returnType.NestedType;
+            while (innerMostChild is not null && innerMostChild.NestedType is not null)
+                innerMostChild = innerMostChild.NestedType;
+
+            bool isDwType = innerMostChild is not null && innerMostChild.Category is TypeCategory.DocuWare;
+
+            return isDwType && returnTypeName.Contains("DeserializedHttpResponse<")
+                ? GenerateAsyncDeserializedHttpResponseMethod(returnType, typeName, returnTypeName, method, parameters, paramsToSent)
                 : $"\t\tpublic async {returnTypeName} {method.Name}({parameters}) => await Obj.{method.Name}({paramsToSent});";
         }
 
-        private static string CreateDeserializedHttpResponseMethod(TypeDef returnType, string typeName, string returnTypeName, MethodInfo method, string parameters, string paramsToSent)
+        private static string GenerateAsyncDeserializedHttpResponseMethod(TypeDef returnType, string typeName, string returnTypeName, MethodInfo method, string parameters, string paramsToSent)
         {
             string result = TemplateService.AsyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{4}", paramsToSent);
 
@@ -141,14 +150,23 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             if (innerMostChild is not null)
             {
                 result = result.Replace("{3}", innerMostChild.GetTypeName());
-                result = innerMostChild.Category is TypeCategory.DocuWare
-                    ? result.Replace("{5}", $"DeserializedHttpResponse<DocuWare.Platform.ServerClient.{innerMostChild.GetTypeName()}>")
-                    : result.Replace("{5}", $"DeserializedHttpResponse<{innerMostChild.GetTypeName()}>");
+
+                if (innerMostChild.Category is TypeCategory.DocuWare)
+                {
+                    result = result.Replace("{5}", $"DeserializedHttpResponse<DocuWare.Platform.ServerClient.{innerMostChild.GetTypeName()}>");
+                    result = result.Replace("{6}", $"I{innerMostChild.GetTypeName()}");
+                }
+                else
+                {
+                    result = result.Replace("{5}", $"DeserializedHttpResponse<{innerMostChild.GetTypeName()}>");
+                    result = result.Replace("{6}", innerMostChild.GetTypeName());
+                }
             }
             else
             {
                 result = result.Replace("{3}", typeName);
                 result = result.Replace("{5}", $"DeserializedHttpResponse<{returnType.GetTypeName()}>");
+                result = result.Replace("{6}", returnType.GetTypeName());
             }
 
             return result;

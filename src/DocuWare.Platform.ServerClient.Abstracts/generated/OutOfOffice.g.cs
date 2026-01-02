@@ -18,22 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.StartDateTime = value;
         }
 
-        public bool StartDateTimeSpecified
-        {
-            get => Obj.StartDateTimeSpecified;
-            set => Obj.StartDateTimeSpecified = value;
-        }
-
         public DateTime EndDateTime
         {
             get => Obj.EndDateTime;
             set => Obj.EndDateTime = value;
-        }
-
-        public bool EndDateTimeSpecified
-        {
-            get => Obj.EndDateTimeSpecified;
-            set => Obj.EndDateTimeSpecified = value;
         }
     }
 }

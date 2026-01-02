@@ -5,11 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IServiceDescriptionDocumentation
     {
 		Link[] Links { get; set; }
-		string LinkModelOverviewRelationLink { get; }
-		string SchemasRelationLink { get; }
-		string FunctionDescriptionsRelationLink { get; }
-		string SchemaSearchRelationLink { get; }
-		string UriTemplatesDocumentationRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromLinkModelOverviewRelation();

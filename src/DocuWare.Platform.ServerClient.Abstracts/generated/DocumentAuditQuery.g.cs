@@ -24,22 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FromDate = value;
         }
 
-        public bool FromDateSpecified
-        {
-            get => Obj.FromDateSpecified;
-            set => Obj.FromDateSpecified = value;
-        }
-
         public DateTime ToDate
         {
             get => Obj.ToDate;
             set => Obj.ToDate = value;
-        }
-
-        public bool ToDateSpecified
-        {
-            get => Obj.ToDateSpecified;
-            set => Obj.ToDateSpecified = value;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string BalanceField { get; set; }
 		int Precision { get; set; }
 		bool CalculateSum { get; set; }
-		IWFFormFieldValue PrefillValue { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }
 		string Description { get; set; }

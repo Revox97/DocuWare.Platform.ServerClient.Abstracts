@@ -24,18 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsHierarchy = value;
         }
 
-        public string Mask
-        {
-            get => Obj.Mask;
-            set => Obj.Mask = value;
-        }
-
-        public string MaskErrorText
-        {
-            get => Obj.MaskErrorText;
-            set => Obj.MaskErrorText = value;
-        }
-
         public string SampleEditText
         {
             get => Obj.SampleEditText;
@@ -168,8 +156,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.CalculateSum = value;
         }
 
-        public string SimpleSelectListRelationLink => Obj.SimpleSelectListRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

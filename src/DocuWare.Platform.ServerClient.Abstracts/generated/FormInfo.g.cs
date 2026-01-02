@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.FormInfo Obj { get; } = obj;
 
-        public string ConfigId
-        {
-            get => Obj.ConfigId;
-            set => Obj.ConfigId = value;
-        }
-
-        public string Name
-        {
-            get => Obj.Name;
-            set => Obj.Name = value;
-        }
-
         public List<IWebFormControl> Fields
         {
             get => Obj.Fields.Select(x => new WebFormControl(x) as IWebFormControl).ToList();
@@ -36,28 +24,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FieldValidations = value.Select(x => ((CustomFieldValidation)x).Obj).ToList();
         }
 
-        public IFormProperties FormProperties
-        {
-            get => new FormProperties(Obj.FormProperties);
-            set => Obj.FormProperties = ((FormProperties)value).Obj;
-        }
-
-        public ISubmissionOptions SubmissionOptions
-        {
-            get => new SubmissionOptions(Obj.SubmissionOptions);
-            set => Obj.SubmissionOptions = ((SubmissionOptions)value).Obj;
-        }
-
         public bool Public
         {
             get => Obj.Public;
             set => Obj.Public = value;
-        }
-
-        public bool PublicSpecified
-        {
-            get => Obj.PublicSpecified;
-            set => Obj.PublicSpecified = value;
         }
     }
 }

@@ -8,7 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Name { get; set; }
 		bool Active { get; set; }
 		string Guid { get; set; }
-		string SubstitutionRulesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ISubstitutionRules GetSubstitutionRulesFromSubstitutionRulesRelation();

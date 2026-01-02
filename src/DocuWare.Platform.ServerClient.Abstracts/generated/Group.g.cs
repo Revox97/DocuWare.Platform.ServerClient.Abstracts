@@ -30,13 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Active = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string UsersRelationLink => Obj.UsersRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Group GetGroupFromSelfRelation() => new Group(Obj.GetGroupFromSelfRelation());
+        public IGroup GetGroupFromSelfRelation() => new Group(Obj.GetGroupFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IGroup>> GetGroupFromSelfRelationAsync()
         {
@@ -48,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Group>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IGroup>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IGroup>> GetGroupFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -61,10 +57,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Group>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IGroup>(temp).ConfigureAwait(false);
         }
 
-        public Users GetUsersFromUsersRelation() => new Users(Obj.GetUsersFromUsersRelation());
+        public IUsers GetUsersFromUsersRelation() => new Users(Obj.GetUsersFromUsersRelation());
 
         public async Task<DeserializedHttpResponse<IUsers>> GetUsersFromUsersRelationAsync()
         {
@@ -76,7 +72,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Users>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IUsers>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IUsers>> GetUsersFromUsersRelationAsync(CancellationToken cancellationToken)
@@ -89,7 +85,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Users>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IUsers>(temp).ConfigureAwait(false);
         }
     }
 }

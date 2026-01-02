@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RequestDecisionsStampSettings Obj { get; } = obj;
 
-        public IWorkflowStampsSettings StampsSettings
-        {
-            get => new WorkflowStampsSettings(Obj.StampsSettings);
-            set => Obj.StampsSettings = ((WorkflowStampsSettings)value).Obj;
-        }
-
         public List<IDecision> DecisionStamps
         {
             get => Obj.DecisionStamps.Select(x => new Decision(x) as IDecision).ToList();
@@ -30,6 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.TaskId = value;
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

@@ -36,17 +36,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.HasDocumentFields = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string PrevRelationLink => Obj.PrevRelationLink;
-
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string FirstRelationLink => Obj.FirstRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public WorkflowTasks GetWorkflowTasksFromNextRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromNextRelation());
+        public IWorkflowTasks GetWorkflowTasksFromNextRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromNextRelationAsync()
         {
@@ -58,7 +50,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromNextRelationAsync(CancellationToken cancellationToken)
@@ -71,10 +63,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
-        public WorkflowTasks GetWorkflowTasksFromPrevRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromPrevRelation());
+        public IWorkflowTasks GetWorkflowTasksFromPrevRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromPrevRelationAsync()
         {
@@ -86,7 +78,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromPrevRelationAsync(CancellationToken cancellationToken)
@@ -99,10 +91,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
-        public WorkflowTasks GetWorkflowTasksFromSelfRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromSelfRelation());
+        public IWorkflowTasks GetWorkflowTasksFromSelfRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromSelfRelationAsync()
         {
@@ -114,7 +106,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -127,10 +119,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
-        public WorkflowTasks GetWorkflowTasksFromFirstRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromFirstRelation());
+        public IWorkflowTasks GetWorkflowTasksFromFirstRelation() => new WorkflowTasks(Obj.GetWorkflowTasksFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromFirstRelationAsync()
         {
@@ -142,7 +134,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWorkflowTasks>> GetWorkflowTasksFromFirstRelationAsync(CancellationToken cancellationToken)
@@ -155,7 +147,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WorkflowTasks>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowTasks>(temp).ConfigureAwait(false);
         }
     }
 }

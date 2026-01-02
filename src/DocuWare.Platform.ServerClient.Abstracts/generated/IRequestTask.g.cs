@@ -17,10 +17,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool IsRead { get; set; }
 		string Description { get; set; }
 		bool AllowDecisionStamp { get; set; }
-		string SelfRelationLink { get; }
-		string ReadStatusRelationLink { get; }
-		string HistoryRelationLink { get; }
-		string StampSettingsRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IRequestTask GetRequestTaskFromSelfRelation();

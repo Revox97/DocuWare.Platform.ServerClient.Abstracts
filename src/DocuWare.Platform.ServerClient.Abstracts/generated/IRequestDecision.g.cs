@@ -7,8 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		string Label { get; set; }
-		string SelfRelationLink { get; }
-		string ConfirmRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IRequestDecision GetRequestDecisionFromSelfRelation();

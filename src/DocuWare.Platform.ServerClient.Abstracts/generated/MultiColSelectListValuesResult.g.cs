@@ -24,17 +24,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string PrevRelationLink => Obj.PrevRelationLink;
-
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string FirstRelationLink => Obj.FirstRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromNextRelation());
+        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromNextRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromNextRelationAsync()
         {
@@ -46,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromNextRelationAsync(CancellationToken cancellationToken)
@@ -59,10 +51,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromPrevRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromPrevRelation());
+        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromPrevRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromPrevRelationAsync()
         {
@@ -74,7 +66,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromPrevRelationAsync(CancellationToken cancellationToken)
@@ -87,10 +79,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromSelfRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromSelfRelation());
+        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromSelfRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromSelfRelationAsync()
         {
@@ -102,7 +94,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -115,10 +107,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromFirstRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromFirstRelation());
+        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromFirstRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromFirstRelationAsync()
         {
@@ -130,7 +122,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromFirstRelationAsync(CancellationToken cancellationToken)
@@ -143,7 +135,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
     }
 }

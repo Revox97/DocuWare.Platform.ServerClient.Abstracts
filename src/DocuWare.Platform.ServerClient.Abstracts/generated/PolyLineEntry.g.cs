@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PolyLineEntry Obj { get; } = obj;
 
-        public IStroke Stroke
-        {
-            get => new Stroke(Obj.Stroke);
-            set => Obj.Stroke = ((Stroke)value).Obj;
-        }
-
-        public ICreatedInfo Created
-        {
-            get => new CreatedInfo(Obj.Created);
-            set => Obj.Created = ((CreatedInfo)value).Obj;
-        }
-
         public string Type
         {
             get => Obj.Type;

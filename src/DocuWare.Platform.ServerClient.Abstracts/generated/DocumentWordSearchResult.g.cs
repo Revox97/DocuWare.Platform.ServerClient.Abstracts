@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DocumentWordSearchResult Obj { get; } = obj;
 
-        public bool FoundInAnnotations
-        {
-            get => Obj.FoundInAnnotations;
-            set => Obj.FoundInAnnotations = value;
-        }
-
-        public string Search
-        {
-            get => Obj.Search;
-            set => Obj.Search = value;
-        }
-
         public List<IDocumentWordSearchResultSectionHits> SectionHits
         {
             get => Obj.SectionHits.Select(x => new DocumentWordSearchResultSectionHits(x) as IDocumentWordSearchResultSectionHits).ToList();
@@ -30,11 +18,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public DocumentWordSearchResult GetDocumentWordSearchResultFromNextRelation() => new DocumentWordSearchResult(Obj.GetDocumentWordSearchResultFromNextRelation());
+        public IDocumentWordSearchResult GetDocumentWordSearchResultFromNextRelation() => new DocumentWordSearchResult(Obj.GetDocumentWordSearchResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IDocumentWordSearchResult>> GetDocumentWordSearchResultFromNextRelationAsync()
         {
@@ -46,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DocumentWordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDocumentWordSearchResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocumentWordSearchResult>> GetDocumentWordSearchResultFromNextRelationAsync(CancellationToken cancellationToken)
@@ -59,7 +45,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DocumentWordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDocumentWordSearchResult>(temp).ConfigureAwait(false);
         }
     }
 }

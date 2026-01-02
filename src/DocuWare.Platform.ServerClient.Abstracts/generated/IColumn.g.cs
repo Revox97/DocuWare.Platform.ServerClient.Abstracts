@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IColumn
     {
-		IColumnOptions ColumnOptions { get; set; }
 		string Label { get; set; }
 		string Id { get; set; }
 		DocuWare.Platform.ServerClient.ColumnValueTypeEnum ColumnValueType { get; set; }

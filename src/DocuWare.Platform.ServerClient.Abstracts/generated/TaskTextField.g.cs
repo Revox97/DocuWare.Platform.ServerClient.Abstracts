@@ -6,22 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskTextField Obj { get; } = obj;
 
-        public IFieldMask FieldMask
-        {
-            get => new FieldMask(Obj.FieldMask);
-            set => Obj.FieldMask = ((FieldMask)value).Obj;
-        }
-
         public int Length
         {
             get => Obj.Length;
             set => Obj.Length = value;
-        }
-
-        public IWFFormFieldValue PrefillValue
-        {
-            get => new WFFormFieldValue(Obj.PrefillValue);
-            set => Obj.PrefillValue = ((WFFormFieldValue)value).Obj;
         }
 
         public List<ISelectListFilter> SelectListFilters

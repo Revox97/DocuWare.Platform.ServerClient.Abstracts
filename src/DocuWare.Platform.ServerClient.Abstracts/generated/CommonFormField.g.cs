@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CommonFormField Obj { get; } = obj;
 
-        public IWFFormFieldValue PrefillValue
-        {
-            get => new WFFormFieldValue(Obj.PrefillValue);
-            set => Obj.PrefillValue = ((WFFormFieldValue)value).Obj;
-        }
-
         public List<ISelectListFilter> SelectListFilters
         {
             get => Obj.SelectListFilters.Select(x => new SelectListFilter(x) as ISelectListFilter).ToList();

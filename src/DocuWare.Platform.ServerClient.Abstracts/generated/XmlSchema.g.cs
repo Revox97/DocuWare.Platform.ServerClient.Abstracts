@@ -24,36 +24,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.TargetNamespace = value;
         }
 
-        public string SchemaRelationLink => Obj.SchemaRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public Stream GetStreamFromSchemaRelation() => Obj.GetStreamFromSchemaRelation();
 
-		public async Stream GetStreamFromSchemaRelation() => Obj.GetStreamFromSchemaRelation();
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync() => await Obj.GetStreamFromSchemaRelationAsync();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromSchemaRelationAsync(cancellationToken);
     }
 }

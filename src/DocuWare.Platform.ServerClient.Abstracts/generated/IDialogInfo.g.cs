@@ -14,14 +14,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Color { get; set; }
 		bool IsDefault { get; set; }
 		DocuWare.Platform.ServerClient.DialogTypes Type { get; set; }
-		string SelfRelationLink { get; }
-		string AssignedDialogRelationLink { get; }
-		string CountRelationLink { get; }
-		string SelectListRelationLink { get; }
-		string StoreDocumentRelationLink { get; }
-		string TransferRelationLink { get; }
-		string CreateUserDefinedSearchRelationLink { get; }
-		string ClientSideValidationRelationLink { get; }
 
 		string ToString();
 		void SetProxy(HttpClientProxy proxy);

@@ -4,8 +4,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IFormProperties
     {
-		int FormWidth { get; set; }
-		DocuWare.Platform.ServerClient.AlignmentType FormAlignment { get; set; }
-		string WebPageBackgroundColor { get; set; }
     }
 }

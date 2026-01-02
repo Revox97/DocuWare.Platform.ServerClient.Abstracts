@@ -18,12 +18,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Fields = value.Select(x => ((StampField)x).Obj).ToList();
         }
 
-        public IFont HeadFont
-        {
-            get => new Font(Obj.HeadFont);
-            set => Obj.HeadFont = ((Font)value).Obj;
-        }
-
         public object Item
         {
             get => Obj.Item;
@@ -108,122 +102,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.KeepStampActive = value;
         }
 
-        public string AsBitmapRelationLink => Obj.AsBitmapRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string AsSvgRelationLink => Obj.AsSvgRelationLink;
+		public Stream GetStreamFromAsBitmapRelation() => Obj.GetStreamFromAsBitmapRelation();
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsBitmapRelationAsync() => await Obj.GetStreamFromAsBitmapRelationAsync();
 
-		public async Stream GetStreamFromAsBitmapRelation() => Obj.GetStreamFromAsBitmapRelation();
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsBitmapRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromAsBitmapRelationAsync(cancellationToken);
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsBitmapRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAsBitmapRelationAsync().ConfigureAwait(false);
+		public Stream PostToAsBitmapRelationForStream(IFormFieldValues dataToSend) => Obj.PostToAsBitmapRelationForStream(((FormFieldValues)dataToSend).Obj);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> PostToAsBitmapRelationForStreamAsync(IFormFieldValues dataToSend) => await Obj.PostToAsBitmapRelationForStreamAsync(((FormFieldValues)dataToSend).Obj);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToAsBitmapRelationForStreamAsync(CancellationToken cancellationToken, IFormFieldValues dataToSend) => await Obj.PostToAsBitmapRelationForStreamAsync(cancellationToken, ((FormFieldValues)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsBitmapRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAsBitmapRelationAsync(cancellationToken).ConfigureAwait(false);
+		public Stream GetStreamFromAsSvgRelation() => Obj.GetStreamFromAsSvgRelation();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsSvgRelationAsync() => await Obj.GetStreamFromAsSvgRelationAsync();
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsSvgRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromAsSvgRelationAsync(cancellationToken);
 
-		public async Stream PostToAsBitmapRelationForStream(IFormFieldValues dataToSend) => Obj.PostToAsBitmapRelationForStream(dataToSend);
+		public Stream PostToAsSvgRelationForStream(IFormFieldValues dataToSend) => Obj.PostToAsSvgRelationForStream(((FormFieldValues)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToAsBitmapRelationForStreamAsync(IFormFieldValues dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToAsBitmapRelationForStreamAsync(dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> PostToAsSvgRelationForStreamAsync(IFormFieldValues dataToSend) => await Obj.PostToAsSvgRelationForStreamAsync(((FormFieldValues)dataToSend).Obj);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToAsBitmapRelationForStreamAsync(CancellationToken cancellationToken, IFormFieldValues dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToAsBitmapRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream GetStreamFromAsSvgRelation() => Obj.GetStreamFromAsSvgRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsSvgRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAsSvgRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromAsSvgRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromAsSvgRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream PostToAsSvgRelationForStream(IFormFieldValues dataToSend) => Obj.PostToAsSvgRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToAsSvgRelationForStreamAsync(IFormFieldValues dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToAsSvgRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToAsSvgRelationForStreamAsync(CancellationToken cancellationToken, IFormFieldValues dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToAsSvgRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToAsSvgRelationForStreamAsync(CancellationToken cancellationToken, IFormFieldValues dataToSend) => await Obj.PostToAsSvgRelationForStreamAsync(cancellationToken, ((FormFieldValues)dataToSend).Obj);
     }
 }

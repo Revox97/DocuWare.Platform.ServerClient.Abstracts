@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SelectListExpression Obj { get; } = obj;
 
-        public IDialogExpression DialogExpression
-        {
-            get => new DialogExpression(Obj.DialogExpression);
-            set => Obj.DialogExpression = ((DialogExpression)value).Obj;
-        }
-
-        public string ValuePrefix
-        {
-            get => Obj.ValuePrefix;
-            set => Obj.ValuePrefix = value;
-        }
-
         public string FieldName
         {
             get => Obj.FieldName;

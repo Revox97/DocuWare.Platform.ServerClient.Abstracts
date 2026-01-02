@@ -6,22 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PlatformClientConfiguration Obj { get; } = obj;
 
-        public ProductInfoHeaderValue DefaultProductInfoHeader
-        {
-            get => Obj.DefaultProductInfoHeader;
-            set => Obj.DefaultProductInfoHeader = value;
-        }
+		public string GetHostId() => Obj.GetHostId();
 
-		public async string GetHostId() => Obj.GetHostId();
+		public void AddProductInfoHeaderValueOfExecutingApplication(HttpHeaderValueCollection<ProductInfoHeaderValue> userAgent) => Obj.AddProductInfoHeaderValueOfExecutingApplication(userAgent);
 
-		public async void AddProductInfoHeaderValueOfExecutingApplication(HttpHeaderValueCollection<ProductInfoHeaderValue> userAgent) => Obj.AddProductInfoHeaderValueOfExecutingApplication(userAgent);
+		public HttpMessageHandler CreateDefaultHttpMessageHandler() => Obj.CreateDefaultHttpMessageHandler();
 
-		public async HttpMessageHandler CreateDefaultHttpMessageHandler() => Obj.CreateDefaultHttpMessageHandler();
+		public HttpClientHandler CreateHandlerForNTLMAuthentication(ICredentials credentials) => Obj.CreateHandlerForNTLMAuthentication(credentials);
 
-		public async HttpClientHandler CreateHandlerForNTLMAuthentication(ICredentials credentials) => Obj.CreateHandlerForNTLMAuthentication(credentials);
+		public HttpClientHandler CreateHandlerForNTLMAuthentication(Uri serviceUri, string userName, string password, string domain) => Obj.CreateHandlerForNTLMAuthentication(serviceUri, userName, password, domain);
 
-		public async HttpClientHandler CreateHandlerForNTLMAuthentication(Uri serviceUri, string userName, string password, string domain) => Obj.CreateHandlerForNTLMAuthentication(serviceUri, userName, password, domain);
-
-		public async int? GetRequestTimeout() => Obj.GetRequestTimeout();
+		public int? GetRequestTimeout() => Obj.GetRequestTimeout();
     }
 }

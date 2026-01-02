@@ -17,11 +17,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.Checked;
             set => Obj.Checked = value;
         }
-
-        public bool CheckedSpecified
-        {
-            get => Obj.CheckedSpecified;
-            set => Obj.CheckedSpecified = value;
-        }
     }
 }

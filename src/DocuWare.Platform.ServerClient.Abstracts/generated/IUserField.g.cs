@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IUserField
     {
 		bool IsMultiselect { get; set; }
-		IWFFormFieldValue PrefillValue { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }
 		string Description { get; set; }

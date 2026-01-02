@@ -10,7 +10,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DocuWare.Platform.ServerClient.InstanceExecutionStateEnum ExecutionState { get; set; }
 		int DocId { get; set; }
 		DateTime CreateDate { get; set; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDesignerInstance GetDesignerInstanceFromSelfRelation();

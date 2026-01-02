@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CsvExpression Obj { get; } = obj;
 
-        public IDialogExpression DialogExpression
-        {
-            get => new DialogExpression(Obj.DialogExpression);
-            set => Obj.DialogExpression = ((DialogExpression)value).Obj;
-        }
-
         public string Delimiter
         {
             get => Obj.Delimiter;

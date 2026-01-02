@@ -4,20 +4,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocument
     {
-		string MediaType { get; }
-		IDocumentIndexField Item { get; set; }
 		List<IDocumentIndexField> Fields { get; set; }
-		IChecksumInfo ChecksumInfo { get; set; }
 		List<ISuggestionField> Suggestions { get; set; }
 		List<ISuggestionTableField> TableFieldSuggestions { get; set; }
-		IDocumentFlags Flags { get; set; }
-		IDocumentVersion Version { get; set; }
 		List<IDocumentContent> TextShot { get; set; }
 		Link[] Links { get; set; }
 		List<ISection> Sections { get; set; }
-		XElementWrapper Preview { get; set; }
-		string ContentType { get; set; }
-		IUploadedFileChunk FileChunk { get; set; }
 		List<IDocumentApplicationProperty> ApplicationProperties { get; set; }
 		string FileCabinetId { get; set; }
 		string OrganizationGuid { get; set; }
@@ -29,50 +21,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int Id { get; set; }
 		string Title { get; set; }
 		DateTime LastModified { get; set; }
-		bool LastModifiedSpecified { get; set; }
 		DateTime CreatedAt { get; set; }
-		bool CreatedAtSpecified { get; set; }
 		long FileSize { get; set; }
 		int SectionCount { get; set; }
 		DocuWare.Platform.ServerClient.IntellixTrust IntellixTrust { get; set; }
 		DocuWare.Platform.ServerClient.VersionManagementStatus VersionStatus { get; set; }
 		string ExternalContentLocation { get; set; }
-		string SelfRelationLink { get; }
-		string ContentDivideOperationRelationLink { get; }
-		string ClippedDocumentsRelationLink { get; }
-		string UnclipRelationLink { get; }
-		string PositionsRelationLink { get; }
-		string LockRelationLink { get; }
-		string ThumbnailRelationLink { get; }
-		string ThumbnailWithoutAnnotationRelationLink { get; }
-		string AnnotationAsSvgRelationLink { get; }
-		string LowQualityImageRelationLink { get; }
-		string DeepZoomImageRelationLink { get; }
-		string DeepZoomImageWithAnnotationRelationLink { get; }
-		string ResultListIconRelationLink { get; }
-		string FieldsRelationLink { get; }
-		string SuggestionsRelationLink { get; }
-		string TableFieldsSuggestionsRelationLink { get; }
-		string SectionsRelationLink { get; }
-		string ContentRelationLink { get; }
-		string FileDownloadRelationLink { get; }
-		string TextAnnotationRelationLink { get; }
-		string ChecksumStatusRelationLink { get; }
-		string XmlDSigContentRelationLink { get; }
-		string RightsRelationLink { get; }
-		string ProcessDocumentActionRelationLink { get; }
-		string AppPropertiesRelationLink { get; }
-		string DocumentLinksRelationLink { get; }
-		string LatestVersionRelationLink { get; }
-		string VersionHistoryRelationLink { get; }
-		string IntellixRelationLink { get; }
-		string CheckoutDocumentRelationLink { get; }
-		string CheckoutToFileSystemRelationLink { get; }
-		string CheckInFromFileSystemRelationLink { get; }
-		string DownloadAsArchiveRelationLink { get; }
-		string AnnotationRelationLink { get; }
-		string WorkflowHistoryRelationLink { get; }
-		string AuditInformationRelationLink { get; }
 
 		string ToString();
 		void SetProxy(HttpClientProxy proxy);

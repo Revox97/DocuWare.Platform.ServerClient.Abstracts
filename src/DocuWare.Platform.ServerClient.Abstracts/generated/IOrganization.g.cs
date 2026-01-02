@@ -4,32 +4,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IOrganization
     {
-		IAdditionalOrganizationInfo AdditionalInfo { get; set; }
-		ICalendar Calendar { get; set; }
-		IOrganizationCulture Culture { get; set; }
 		Link[] Links { get; set; }
 		List<DocuWare.Platform.ServerClient.ConfigurationRight> ConfigurationRights { get; set; }
 		IExtendedConfigurationRights ExtendedConfigurationRights { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }
 		string Guid { get; set; }
-		string FilecabinetsRelationLink { get; }
-		string UsersRelationLink { get; }
-		string RolesRelationLink { get; }
-		string GroupsRelationLink { get; }
-		string CreateGroupRelationLink { get; }
-		string SelectListInfosRelationLink { get; }
-		string MultiColSelectListInfosRelationLink { get; }
-		string SelfRelationLink { get; }
-		string LoginTokenRelationLink { get; }
-		string DialogsRelationLink { get; }
-		string UserInfoRelationLink { get; }
-		string WorkflowsRelationLink { get; }
-		string ControllerWorkflowsRelationLink { get; }
-		string DesignerWorkflowsRelationLink { get; }
-		string WorkflowRequestsRelationLink { get; }
-		string SubstitutionListsRelationLink { get; }
-		string TrashBinRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IFileCabinets GetFileCabinetsFromFilecabinetsRelation();

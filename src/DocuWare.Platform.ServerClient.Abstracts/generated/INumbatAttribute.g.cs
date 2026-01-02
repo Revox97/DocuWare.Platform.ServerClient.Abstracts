@@ -4,7 +4,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface INumbatAttribute
     {
-		string MinumumVersion { get; set; }
-		object TypeId { get; }
     }
 }

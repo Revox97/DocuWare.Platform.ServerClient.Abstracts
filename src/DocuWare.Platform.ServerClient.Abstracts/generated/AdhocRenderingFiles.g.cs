@@ -12,6 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Item = value.Select(x => ((AdhocRenderingFile)x).Obj).ToList();
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

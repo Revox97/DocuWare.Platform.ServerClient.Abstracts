@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.BarCodeZone Obj { get; } = obj;
 
-        public string Value
-        {
-            get => Obj.Value;
-            set => Obj.Value = value;
-        }
-
         public string BarcodeType
         {
             get => Obj.BarcodeType;

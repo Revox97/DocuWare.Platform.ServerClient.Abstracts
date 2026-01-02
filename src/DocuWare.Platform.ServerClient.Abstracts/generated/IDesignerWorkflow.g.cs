@@ -8,11 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Id { get; set; }
 		string Name { get; set; }
 		int InstanceCount { get; set; }
-		bool InstanceCountSpecified { get; set; }
-		string SelfRelationLink { get; }
-		string InstancesRelationLink { get; }
-		string WaitingInstancesRelationLink { get; }
-		string VersionsRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDesignerWorkflow GetDesignerWorkflowFromSelfRelation();

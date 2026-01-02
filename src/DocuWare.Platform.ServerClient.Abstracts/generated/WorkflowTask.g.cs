@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public ITaskOperations TaskOperations
-        {
-            get => new TaskOperations(Obj.TaskOperations);
-            set => Obj.TaskOperations = ((TaskOperations)value).Obj;
-        }
-
         public List<IColumnValue> ColumnValues
         {
             get => Obj.ColumnValues.Select(x => new ColumnValue(x) as IColumnValue).ToList();
@@ -102,6 +96,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.HasDocumentFields = value;
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

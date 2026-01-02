@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SortOrder = value.Select(x => ((SortedField)x).Obj).ToList();
         }
 
-        public ITrashBinExpression Expression
-        {
-            get => new TrashBinExpression(Obj.Expression);
-            set => Obj.Expression = ((TrashBinExpression)value).Obj;
-        }
-
         public int Start
         {
             get => Obj.Start;

@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.SuggestionCellValue Obj { get; } = obj;
 
-        public IPointAndShootInfo HighlightRectangle
-        {
-            get => new PointAndShootInfo(Obj.HighlightRectangle);
-            set => Obj.HighlightRectangle = ((PointAndShootInfo)value).Obj;
-        }
-
         public string TextFallback
         {
             get => Obj.TextFallback;
@@ -24,22 +18,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DecimalFallback = value;
         }
 
-        public bool DecimalFallbackSpecified
-        {
-            get => Obj.DecimalFallbackSpecified;
-            set => Obj.DecimalFallbackSpecified = value;
-        }
-
         public DateTime DateFallback
         {
             get => Obj.DateFallback;
             set => Obj.DateFallback = value;
-        }
-
-        public bool DateFallbackSpecified
-        {
-            get => Obj.DateFallbackSpecified;
-            set => Obj.DateFallbackSpecified = value;
         }
 
         public string ColumnName
@@ -60,22 +42,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Mapped = value;
         }
 
-        public IPointAndShootInfo Source
-        {
-            get => new PointAndShootInfo(Obj.Source);
-            set => Obj.Source = ((PointAndShootInfo)value).Obj;
-        }
-
         public object Item
         {
             get => Obj.Item;
             set => Obj.Item = value;
-        }
-
-        public DocuWare.Platform.ServerClient.ItemChoiceType ItemElementName
-        {
-            get => Obj.ItemElementName;
-            set => Obj.ItemElementName = value;
         }
     }
 }

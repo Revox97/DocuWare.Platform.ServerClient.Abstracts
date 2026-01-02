@@ -5,10 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IWorkflowRequests
     {
 		Link[] Links { get; set; }
-		string MyTasksRelationLink { get; }
-		string MyTasksCountRelationLink { get; }
-		string CreatedWorkflowsRelationLink { get; }
-		string CreatedWorkflowsCountRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IRequestTasks GetRequestTasksFromMyTasksRelation();

@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IBaseDecisionOperations
     {
 		Link[] Links { get; set; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDecision GetDecisionFromSelfRelation();

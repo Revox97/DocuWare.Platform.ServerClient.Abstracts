@@ -33,9 +33,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             for (int i = 0; i < parameters.Length; i++)
             {
                 ParameterInfo parameter = parameters[i];
-                string parsedParameter = parameter.GetParsedParameters();
+                TypeDef paramType = parameter.ParameterType.GetTypeDefinition();
 
-                // TODO Handle docuware interface parameters in actual calls
+                string parsedParameter = paramType.Category == TypeCategory.DocuWare
+                    ? $"(({paramType.GetTypeName()}){parameter.Name}).Obj"
+                    : parameter.GetParsedParameters();
+
                 if (i == 0)
                     result += parsedParameter;
                 else

@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.StampBase Obj { get; } = obj;
 
-        public IAnnotationRectangle Location
-        {
-            get => new AnnotationRectangle(Obj.Location);
-            set => Obj.Location = ((AnnotationRectangle)value).Obj;
-        }
-
-        public IFont HeadFont
-        {
-            get => new Font(Obj.HeadFont);
-            set => Obj.HeadFont = ((Font)value).Obj;
-        }
-
         public DocuWare.Platform.ServerClient.StampSignatureType Signature
         {
             get => Obj.Signature;
@@ -64,12 +52,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.SigScopeInfo;
             set => Obj.SigScopeInfo = value;
-        }
-
-        public ICreatedInfo Created
-        {
-            get => new CreatedInfo(Obj.Created);
-            set => Obj.Created = ((CreatedInfo)value).Obj;
         }
 
         public string Type

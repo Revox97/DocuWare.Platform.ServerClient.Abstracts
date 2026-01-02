@@ -5,11 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IBaseTaskOperations
     {
 		Link[] Links { get; set; }
-		string SelfRelationLink { get; }
-		string MaintenanceSelfRelationLink { get; }
-		string ReassignedTaskRelationLink { get; }
-		string HistoryRelationLink { get; }
-		string StampSettingsRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IWorkflowTask GetWorkflowTaskFromSelfRelation();

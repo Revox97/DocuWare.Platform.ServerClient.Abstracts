@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IInputSection
     {
-		IFileUploadInfo FileUpload { get; }
 		List<IApplicationProperty> ApplicationProperties { get; set; }
     }
 }

@@ -6,8 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ImportSettings Obj { get; } = obj;
 
-        public string MediaType => Obj.MediaType;
-
         public List<IFieldMapping> FieldMappings
         {
             get => Obj.FieldMappings.Select(x => new FieldMapping(x) as IFieldMapping).ToList();

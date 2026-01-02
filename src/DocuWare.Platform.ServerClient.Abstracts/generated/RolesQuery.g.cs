@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Active = value;
         }
 
-        public bool ActiveSpecified
-        {
-            get => Obj.ActiveSpecified;
-            set => Obj.ActiveSpecified = value;
-        }
-
         public string Name
         {
             get => Obj.Name;

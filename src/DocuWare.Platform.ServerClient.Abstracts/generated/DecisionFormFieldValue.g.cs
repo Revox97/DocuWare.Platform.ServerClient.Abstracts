@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Id = value;
         }
 
-        public IDocumentIndexFieldValue TypedValue
-        {
-            get => new DocumentIndexFieldValue(Obj.TypedValue);
-            set => Obj.TypedValue = ((DocumentIndexFieldValue)value).Obj;
-        }
-
         public string Name
         {
             get => Obj.Name;

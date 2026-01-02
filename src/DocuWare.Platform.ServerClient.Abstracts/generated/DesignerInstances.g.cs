@@ -12,6 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DesignerInstance = value.Select(x => ((DesignerInstance)x).Obj).ToList();
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

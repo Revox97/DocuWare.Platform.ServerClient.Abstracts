@@ -36,11 +36,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Type = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Role GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
+        public IRole GetRoleFromSelfRelation() => new Role(Obj.GetRoleFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync()
         {
@@ -52,7 +50,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Role>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRole>> GetRoleFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -65,7 +63,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Role>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IRole>(temp).ConfigureAwait(false);
         }
     }
 }

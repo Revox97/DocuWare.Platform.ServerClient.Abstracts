@@ -48,13 +48,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.TimeoutDate = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string ContinueRelationLink => Obj.ContinueRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public DesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation() => new DesignerWaitingInstance(Obj.GetDesignerWaitingInstanceFromSelfRelation());
+        public IDesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation() => new DesignerWaitingInstance(Obj.GetDesignerWaitingInstanceFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstance>> GetDesignerWaitingInstanceFromSelfRelationAsync()
         {
@@ -66,7 +62,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstance>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDesignerWaitingInstance>> GetDesignerWaitingInstanceFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -79,7 +75,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<DesignerWaitingInstance>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWaitingInstance>(temp).ConfigureAwait(false);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Finished { get; set; }
 		string LastChunkId { get; set; }
 		long BytesWritten { get; set; }
-		string NextRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IUploadedFileChunk GetUploadedFileChunkFromNextRelation();

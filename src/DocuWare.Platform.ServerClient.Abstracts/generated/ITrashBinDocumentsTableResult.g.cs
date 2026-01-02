@@ -4,15 +4,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITrashBinDocumentsTableResult
     {
-		ICountPlusValue Count { get; set; }
 		List<ITrashBinTableHeader> Headers { get; set; }
 		List<ITrashBinTableRow> Rows { get; set; }
 		Link[] Links { get; set; }
 		DateTime TimeStamp { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation();

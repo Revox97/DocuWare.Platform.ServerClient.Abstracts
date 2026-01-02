@@ -18,17 +18,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string PrevRelationLink => Obj.PrevRelationLink;
-
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string FirstRelationLink => Obj.FirstRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public TypedSelectListResult GetTypedSelectListResultFromNextRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromNextRelation());
+        public ITypedSelectListResult GetTypedSelectListResultFromNextRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromNextRelationAsync()
         {
@@ -40,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromNextRelationAsync(CancellationToken cancellationToken)
@@ -53,10 +45,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public TypedSelectListResult GetTypedSelectListResultFromPrevRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromPrevRelation());
+        public ITypedSelectListResult GetTypedSelectListResultFromPrevRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromPrevRelationAsync()
         {
@@ -68,7 +60,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromPrevRelationAsync(CancellationToken cancellationToken)
@@ -81,10 +73,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public TypedSelectListResult GetTypedSelectListResultFromSelfRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromSelfRelation());
+        public ITypedSelectListResult GetTypedSelectListResultFromSelfRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelfRelationAsync()
         {
@@ -96,7 +88,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -109,10 +101,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public TypedSelectListResult GetTypedSelectListResultFromFirstRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromFirstRelation());
+        public ITypedSelectListResult GetTypedSelectListResultFromFirstRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromFirstRelationAsync()
         {
@@ -124,7 +116,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromFirstRelationAsync(CancellationToken cancellationToken)
@@ -137,7 +129,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
     }
 }

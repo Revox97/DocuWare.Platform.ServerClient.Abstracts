@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Text;
+using System.Xml.Serialization;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Contracts;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
@@ -27,7 +28,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateProperties(Type type)
         {
-            PropertyInfo[] properties = type.GetProperties();
+            PropertyInfo[] properties = [.. type.GetProperties(BindingFlags.Instance | BindingFlags.Public).Where(p => p.CustomAttributes.Any(a => a.AttributeType != typeof(XmlIgnoreAttribute)))];
             string propertyList = string.Empty;
 
             for (int i = 0; i < properties.Length; i++)

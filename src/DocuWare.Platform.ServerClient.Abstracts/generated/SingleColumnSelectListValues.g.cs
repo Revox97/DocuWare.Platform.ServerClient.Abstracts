@@ -32,9 +32,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public string FirstRelationLink => Obj.FirstRelationLink;
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public SingleColumnSelectListValues GetSingleColumnSelectListValuesFromNextRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromNextRelation());
+        public ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromNextRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromNextRelationAsync()
         {
@@ -46,7 +46,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromNextRelationAsync(CancellationToken cancellationToken)
@@ -59,10 +59,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
-        public SingleColumnSelectListValues GetSingleColumnSelectListValuesFromPrevRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromPrevRelation());
+        public ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromPrevRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromPrevRelationAsync()
         {
@@ -74,7 +74,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromPrevRelationAsync(CancellationToken cancellationToken)
@@ -87,10 +87,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
-        public SingleColumnSelectListValues GetSingleColumnSelectListValuesFromSelfRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromSelfRelation());
+        public ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromSelfRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromSelfRelationAsync()
         {
@@ -102,7 +102,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -115,10 +115,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
-        public SingleColumnSelectListValues GetSingleColumnSelectListValuesFromFirstRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromFirstRelation());
+        public ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromFirstRelation() => new SingleColumnSelectListValues(Obj.GetSingleColumnSelectListValuesFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromFirstRelationAsync()
         {
@@ -130,7 +130,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ISingleColumnSelectListValues>> GetSingleColumnSelectListValuesFromFirstRelationAsync(CancellationToken cancellationToken)
@@ -143,7 +143,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<SingleColumnSelectListValues>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ISingleColumnSelectListValues>(temp).ConfigureAwait(false);
         }
     }
 }

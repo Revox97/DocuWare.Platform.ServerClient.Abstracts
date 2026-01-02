@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.RectEntry Obj { get; } = obj;
 
-        public IAnnotationRectangle Location
-        {
-            get => new AnnotationRectangle(Obj.Location);
-            set => Obj.Location = ((AnnotationRectangle)value).Obj;
-        }
-
         public bool Filled
         {
             get => Obj.Filled;
@@ -22,12 +16,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Ellipse;
             set => Obj.Ellipse = value;
-        }
-
-        public ICreatedInfo Created
-        {
-            get => new CreatedInfo(Obj.Created);
-            set => Obj.Created = ((CreatedInfo)value).Obj;
         }
 
         public string Type

@@ -9,10 +9,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		int Count { get; set; }
 		DateTime TimeStamp { get; set; }
 		bool HasDocumentFields { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IWorkflowTasks GetWorkflowTasksFromNextRelation();

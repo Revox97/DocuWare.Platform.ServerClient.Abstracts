@@ -12,47 +12,15 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string LinkModelOverviewRelationLink => Obj.LinkModelOverviewRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string SchemasRelationLink => Obj.SchemasRelationLink;
+		public Stream GetStreamFromLinkModelOverviewRelation() => Obj.GetStreamFromLinkModelOverviewRelation();
 
-        public string FunctionDescriptionsRelationLink => Obj.FunctionDescriptionsRelationLink;
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync() => await Obj.GetStreamFromLinkModelOverviewRelationAsync();
 
-        public string SchemaSearchRelationLink => Obj.SchemaSearchRelationLink;
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromLinkModelOverviewRelationAsync(cancellationToken);
 
-        public string UriTemplatesDocumentationRelationLink => Obj.UriTemplatesDocumentationRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-		public async Stream GetStreamFromLinkModelOverviewRelation() => Obj.GetStreamFromLinkModelOverviewRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLinkModelOverviewRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLinkModelOverviewRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLinkModelOverviewRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public XmlSchemas GetXmlSchemasFromSchemasRelation() => new XmlSchemas(Obj.GetXmlSchemasFromSchemasRelation());
+        public IXmlSchemas GetXmlSchemasFromSchemasRelation() => new XmlSchemas(Obj.GetXmlSchemasFromSchemasRelation());
 
         public async Task<DeserializedHttpResponse<IXmlSchemas>> GetXmlSchemasFromSchemasRelationAsync()
         {
@@ -64,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<XmlSchemas>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IXmlSchemas>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IXmlSchemas>> GetXmlSchemasFromSchemasRelationAsync(CancellationToken cancellationToken)
@@ -77,10 +45,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<XmlSchemas>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IXmlSchemas>(temp).ConfigureAwait(false);
         }
 
-        public FunctionDescriptions GetFunctionDescriptionsFromFunctionDescriptionsRelation() => new FunctionDescriptions(Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelation());
+        public IFunctionDescriptions GetFunctionDescriptionsFromFunctionDescriptionsRelation() => new FunctionDescriptions(Obj.GetFunctionDescriptionsFromFunctionDescriptionsRelation());
 
         public async Task<DeserializedHttpResponse<IFunctionDescriptions>> GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync()
         {
@@ -92,7 +60,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<FunctionDescriptions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IFunctionDescriptions>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IFunctionDescriptions>> GetFunctionDescriptionsFromFunctionDescriptionsRelationAsync(CancellationToken cancellationToken)
@@ -105,63 +73,19 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<FunctionDescriptions>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IFunctionDescriptions>(temp).ConfigureAwait(false);
         }
 
-		public async Stream GetStreamFromSchemaSearchRelation() => Obj.GetStreamFromSchemaSearchRelation();
+		public Stream GetStreamFromSchemaSearchRelation() => Obj.GetStreamFromSchemaSearchRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaSearchRelationAsync().ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync() => await Obj.GetStreamFromSchemaSearchRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromSchemaSearchRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream GetStreamFromUriTemplatesDocumentationRelation() => Obj.GetStreamFromUriTemplatesDocumentationRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromSchemaSearchRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromSchemaSearchRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync() => await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream GetStreamFromUriTemplatesDocumentationRelation() => Obj.GetStreamFromUriTemplatesDocumentationRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromUriTemplatesDocumentationRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromUriTemplatesDocumentationRelationAsync(cancellationToken);
     }
 }

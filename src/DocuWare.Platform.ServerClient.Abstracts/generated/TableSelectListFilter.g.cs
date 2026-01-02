@@ -11,17 +11,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.TableFieldColumnName;
             set => Obj.TableFieldColumnName = value;
         }
-
-        public string ColumnName
-        {
-            get => Obj.ColumnName;
-            set => Obj.ColumnName = value;
-        }
-
-        public int WorkflowFieldId
-        {
-            get => Obj.WorkflowFieldId;
-            set => Obj.WorkflowFieldId = value;
-        }
     }
 }

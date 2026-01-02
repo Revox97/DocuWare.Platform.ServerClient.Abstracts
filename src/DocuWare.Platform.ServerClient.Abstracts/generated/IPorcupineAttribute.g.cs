@@ -4,7 +4,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IPorcupineAttribute
     {
-		string MinumumVersion { get; set; }
-		object TypeId { get; }
     }
 }

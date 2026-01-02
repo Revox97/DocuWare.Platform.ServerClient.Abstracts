@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IWorkflowTask
     {
 		Link[] Links { get; set; }
-		ITaskOperations TaskOperations { get; set; }
 		List<IColumnValue> ColumnValues { get; set; }
 		List<IDecision> Decisions { get; set; }
 		int? DefaultDecisionId { get; set; }

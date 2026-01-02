@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IExtendedUserOperations
     {
 		Link[] Links { get; set; }
-		string ReadStatusRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		string PutToReadStatusRelationForString(Stream dataToSend);

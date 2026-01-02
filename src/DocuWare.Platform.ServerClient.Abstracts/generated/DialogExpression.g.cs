@@ -48,12 +48,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.AdditionalResultFields = value;
         }
 
-        public IFlagConditions FlagConditions
-        {
-            get => new FlagConditions(Obj.FlagConditions);
-            set => Obj.FlagConditions = ((FlagConditions)value).Obj;
-        }
-
         public int Start
         {
             get => Obj.Start;

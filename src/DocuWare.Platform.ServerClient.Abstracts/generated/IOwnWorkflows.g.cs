@@ -8,10 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IOwnWorkflow> Workflow { get; set; }
 		int Count { get; set; }
 		DateTime TimeStamp { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IOwnWorkflows GetOwnWorkflowsFromNextRelation();

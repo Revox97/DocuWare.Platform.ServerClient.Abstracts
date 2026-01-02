@@ -6,24 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.PageData Obj { get; } = obj;
 
-        public int LowQualitySize
-        {
-            get => Obj.LowQualitySize;
-            set => Obj.LowQualitySize = value;
-        }
-
-        public int TileSize
-        {
-            get => Obj.TileSize;
-            set => Obj.TileSize = value;
-        }
-
-        public DocuWare.Platform.ServerClient.PlatformImageFormat RenderedImageFormat
-        {
-            get => Obj.RenderedImageFormat;
-            set => Obj.RenderedImageFormat = value;
-        }
-
         public IDWRectangle ContentArea
         {
             get => new DWRectangle(Obj.ContentArea);

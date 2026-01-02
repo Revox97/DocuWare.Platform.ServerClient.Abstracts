@@ -6,8 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		Link[] Links { get; set; }
 		List<IFileCabinetField> Fields { get; set; }
-		List<DocuWare.Platform.ServerClient.Right> Rights { get; set; }
-		IExtendedUserRights ExtendedUserRights { get; set; }
 		string Color { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }
@@ -22,31 +20,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool AddIndexEntriesInUpperCase { get; set; }
 		bool DocumentAuditingEnabled { get; set; }
 		bool HasFullTextSupport { get; set; }
-		string DocumentsRelationLink { get; }
-		string DocumentsTableRelationLink { get; }
-		string ContentMergeOperationRelationLink { get; }
-		string AdvancedDocumentUploadRelationLink { get; }
-		string ImportDocumentsRelationLink { get; }
-		string UnprocessedDocumentUploadRelationLink { get; }
-		string QueryRelationLink { get; }
-		string DialogsRelationLink { get; }
-		string SearchesRelationLink { get; }
-		string CustomSearchRelationLink { get; }
-		string ResultTreesRelationLink { get; }
-		string StoresRelationLink { get; }
-		string TaskListsRelationLink { get; }
-		string SelfRelationLink { get; }
-		string StampsRelationLink { get; }
-		string NotificationsRelationLink { get; }
-		string TransferRelationLink { get; }
-		string VersionHistoryResultListRelationLink { get; }
-		string BatchUpdateRelationLink { get; }
-		string FieldValueStatisticsRelationLink { get; }
-		string ReplicationDataRelationLink { get; }
-		string ReplicationDeleteDataRelationLink { get; }
-		string SetupReplicationRelationLink { get; }
-		string ReplicationInfoRelationLink { get; }
-		string NextSequenceElementRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocumentsQueryResult GetDocumentsQueryResultFromDocumentsRelation();

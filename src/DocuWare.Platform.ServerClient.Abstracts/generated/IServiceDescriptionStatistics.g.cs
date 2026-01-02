@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IServiceDescriptionStatistics
     {
 		Link[] Links { get; set; }
-		string CfsRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream PostToCfsRelationForStream(ICFSStatisticGeneral dataToSend);

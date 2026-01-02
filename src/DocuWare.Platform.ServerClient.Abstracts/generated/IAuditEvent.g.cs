@@ -10,6 +10,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Name { get; set; }
 		string User { get; set; }
 		DateTime Date { get; set; }
-		bool DateSpecified { get; set; }
     }
 }

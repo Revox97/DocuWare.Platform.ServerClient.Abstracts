@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string DialogId { get; set; }
 		bool NormalizeCoordinates { get; set; }
 		bool ForceUpdate { get; set; }
-		IDocumentIndexField Item { get; set; }
 		List<IDocumentIndexField> Field { get; set; }
     }
 }

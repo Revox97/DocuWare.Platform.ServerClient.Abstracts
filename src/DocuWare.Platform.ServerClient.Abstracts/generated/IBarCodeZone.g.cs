@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IBarCodeZone
     {
-		string Value { get; set; }
 		string BarcodeType { get; set; }
 		int L { get; set; }
 		int T { get; set; }

@@ -12,11 +12,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Decision GetDecisionFromSelfRelation() => new Decision(Obj.GetDecisionFromSelfRelation());
+        public IDecision GetDecisionFromSelfRelation() => new Decision(Obj.GetDecisionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDecision>> GetDecisionFromSelfRelationAsync()
         {
@@ -28,7 +26,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Decision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDecision>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDecision>> GetDecisionFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -41,7 +39,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Decision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDecision>(temp).ConfigureAwait(false);
         }
     }
 }

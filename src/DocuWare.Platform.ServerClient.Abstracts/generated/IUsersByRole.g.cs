@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IUser> User { get; set; }
 		string RoleId { get; set; }
 		bool IncludeGroupUsers { get; set; }
-		bool IncludeGroupUsersSpecified { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
     }

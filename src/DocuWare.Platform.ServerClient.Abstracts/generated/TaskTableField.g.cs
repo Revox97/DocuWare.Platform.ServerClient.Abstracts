@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Columns = value.Select(x => ((TaskTableColumn)x).Obj).ToList();
         }
 
-        public ITaskTableFieldInitialValues InitialValues
-        {
-            get => new TaskTableFieldInitialValues(Obj.InitialValues);
-            set => Obj.InitialValues = ((TaskTableFieldInitialValues)value).Obj;
-        }
-
         public string FieldName
         {
             get => Obj.FieldName;

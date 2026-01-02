@@ -11,8 +11,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string ActivityName { get; set; }
 		int DocId { get; set; }
 		DateTime TimeoutDate { get; set; }
-		string SelfRelationLink { get; }
-		string ContinueRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDesignerWaitingInstance GetDesignerWaitingInstanceFromSelfRelation();

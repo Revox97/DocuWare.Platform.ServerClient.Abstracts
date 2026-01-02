@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IExtendedControllerOperations
     {
 		Link[] Links { get; set; }
-		string InstanceRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		string DeleteInstanceRelation();

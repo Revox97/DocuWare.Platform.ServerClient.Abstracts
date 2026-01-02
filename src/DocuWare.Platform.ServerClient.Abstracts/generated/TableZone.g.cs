@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TableZone Obj { get; } = obj;
 
-        public IgridTable gridT
-        {
-            get => new gridTable(Obj.gridT);
-            set => Obj.gridT = ((gridTable)value).Obj;
-        }
-
         public List<ICellZone> Cz
         {
             get => Obj.Cz.Select(x => new CellZone(x) as ICellZone).ToList();

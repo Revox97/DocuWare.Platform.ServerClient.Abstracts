@@ -6,21 +6,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.ServiceConnection Obj { get; } = obj;
 
-        public HttpClient HttpClient => Obj.HttpClient;
+		public void ReplaceHttpClient(IServiceConnection otherServiceConnection) => Obj.ReplaceHttpClient(((ServiceConnection)otherServiceConnection).Obj);
 
-        public HttpClientProxy Proxy => Obj.Proxy;
+		public void ReplaceHttpClient(HttpClient httpClient) => Obj.ReplaceHttpClient(httpClient);
 
-        public IServiceDescription ServiceDescription => new ServiceDescription(Obj.ServiceDescription);
-
-        public IOrganization[] Organizations => new Organization[](Obj.Organizations);
-
-        public Task<IOrganization[]> OrganizationsAsync => Obj.OrganizationsAsync;
-
-		public async void ReplaceHttpClient(IServiceConnection otherServiceConnection) => Obj.ReplaceHttpClient(otherServiceConnection);
-
-		public async void ReplaceHttpClient(HttpClient httpClient) => Obj.ReplaceHttpClient(httpClient);
-
-		public async void Disconnect() => Obj.Disconnect();
+		public void Disconnect() => Obj.Disconnect();
 
 		public async Task DisconnectAsync() => await Obj.DisconnectAsync();
 
@@ -28,7 +18,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<IOrganization[]> GetOrganizationsAsync() => await Obj.GetOrganizationsAsync();
 
-        public T GetXml(string uri) => new T(Obj.GetXml(uri));
+        public IT GetXml(string uri) => new T(Obj.GetXml(uri));
 
         public async Task<DeserializedHttpResponse<IT>> GetXmlAsync(string uri)
         {
@@ -40,7 +30,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<T>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IT>(temp).ConfigureAwait(false);
         }
     }
 }

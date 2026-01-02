@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UserPropertyQuery Obj { get; } = obj;
 
-        public IOutOfOffice OutOfOffice
-        {
-            get => new OutOfOffice(Obj.OutOfOffice);
-            set => Obj.OutOfOffice = ((OutOfOffice)value).Obj;
-        }
-
         public string Id
         {
             get => Obj.Id;
@@ -22,12 +16,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Active;
             set => Obj.Active = value;
-        }
-
-        public bool ActiveSpecified
-        {
-            get => Obj.ActiveSpecified;
-            set => Obj.ActiveSpecified = value;
         }
 
         public string FirstName

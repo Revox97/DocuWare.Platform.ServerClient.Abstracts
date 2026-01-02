@@ -4,24 +4,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IPage
     {
-		IPageData Data { get; set; }
 		Link[] Links { get; set; }
 		int PageNum { get; set; }
 		bool HasAnnotation { get; set; }
-		string ThumbnailRelationLink { get; }
-		string IconRelationLink { get; }
-		string DeepZoomImageRelationLink { get; }
-		string DeepZoomImageWithAnnotationRelationLink { get; }
-		string LowQualityImageRelationLink { get; }
-		string LowQualityImageWithAnnotationRelationLink { get; }
-		string TextshotRelationLink { get; }
-		string FileDownloadRelationLink { get; }
-		string AnnotationRelationLink { get; }
-		string AnnotationAsSvgRelationLink { get; }
-		string AnnotationAsXamlRelationLink { get; }
-		string StampRelationLink { get; }
-		string StampBestPositionRelationLink { get; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromThumbnailRelation();

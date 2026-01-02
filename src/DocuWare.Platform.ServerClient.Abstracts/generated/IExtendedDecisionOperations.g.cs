@@ -5,8 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IExtendedDecisionOperations
     {
 		Link[] Links { get; set; }
-		string ConfirmRelationLink { get; }
-		string StampBestPositionRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		string PostToConfirmRelationForString(IConfirmedData dataToSend);

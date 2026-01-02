@@ -9,7 +9,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Guid { get; set; }
 		string Name { get; set; }
 		DocuWare.Platform.ServerClient.SelectListKind Kind { get; set; }
-		string ValuesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromValuesRelation();

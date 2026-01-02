@@ -60,11 +60,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DocId = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public InstanceHistory GetInstanceHistoryFromSelfRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromSelfRelation());
+        public IInstanceHistory GetInstanceHistoryFromSelfRelation() => new InstanceHistory(Obj.GetInstanceHistoryFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromSelfRelationAsync()
         {
@@ -76,7 +74,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IInstanceHistory>> GetInstanceHistoryFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -89,7 +87,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<InstanceHistory>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IInstanceHistory>(temp).ConfigureAwait(false);
         }
     }
 }

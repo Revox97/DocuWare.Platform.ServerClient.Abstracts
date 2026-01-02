@@ -6,7 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<ISortedField> SortOrder { get; set; }
 		List<string> AdditionalResultFields { get; set; }
-		IFlagConditions FlagConditions { get; set; }
 		int Start { get; set; }
 		int Count { get; set; }
 		bool ExcludeDefaultSystemFields { get; set; }

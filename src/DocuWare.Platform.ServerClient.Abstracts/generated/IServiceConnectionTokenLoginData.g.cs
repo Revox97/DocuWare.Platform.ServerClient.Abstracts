@@ -4,7 +4,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IServiceConnectionTokenLoginData
     {
-		IServiceConnectionTransportData Transport { get; set; }
-		DocuWare.Platform.ServerClient.DWProductTypes? LicenseType { get; set; }
     }
 }

@@ -12,64 +12,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string InstanceRelationLink => Obj.InstanceRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public string DeleteInstanceRelation() => Obj.DeleteInstanceRelation();
 
-		public async string DeleteInstanceRelation() => Obj.DeleteInstanceRelation();
+		public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync() => await Obj.DeleteInstanceRelationAsync();
 
-        public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync()
-        {
-            DeserializedHttpResponse<string> result = await Obj.DeleteInstanceRelationAsync().ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync(CancellationToken cancellationToken) => await Obj.DeleteInstanceRelationAsync(cancellationToken);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
+		public Stream GetStreamFromInstanceRelation() => Obj.GetStreamFromInstanceRelation();
 
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync() => await Obj.GetStreamFromInstanceRelationAsync();
 
-        public async Task<DeserializedHttpResponse<string>> DeleteInstanceRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<string> result = await Obj.DeleteInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream GetStreamFromInstanceRelation() => Obj.GetStreamFromInstanceRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromInstanceRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromInstanceRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromInstanceRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromInstanceRelationAsync(cancellationToken);
     }
 }

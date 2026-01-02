@@ -24,18 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string FixedEntry
-        {
-            get => Obj.FixedEntry;
-            set => Obj.FixedEntry = value;
-        }
-
-        public string FieldInfoText
-        {
-            get => Obj.FieldInfoText;
-            set => Obj.FieldInfoText = value;
-        }
-
         public DocuWare.Platform.ServerClient.FileCabinetFieldScope Scope
         {
             get => Obj.Scope;
@@ -90,8 +78,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Precision = value;
         }
 
-        public string SelectListRelationLink => Obj.SelectListRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

@@ -24,12 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ForceUpdate = value;
         }
 
-        public IDocumentIndexField Item
-        {
-            get => new DocumentIndexField(Obj.Item);
-            set => Obj.Item = ((DocumentIndexField)value).Obj;
-        }
-
         public List<IDocumentIndexField> Field
         {
             get => Obj.Field.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();

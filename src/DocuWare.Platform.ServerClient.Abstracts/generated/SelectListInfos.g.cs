@@ -12,6 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SelectLists = value.Select(x => ((SelectListInfo)x).Obj).ToList();
         }
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

@@ -12,36 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string CfsRelationLink => Obj.CfsRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public Stream PostToCfsRelationForStream(ICFSStatisticGeneral dataToSend) => Obj.PostToCfsRelationForStream(((CFSStatisticGeneral)dataToSend).Obj);
 
-		public async Stream PostToCfsRelationForStream(ICFSStatisticGeneral dataToSend) => Obj.PostToCfsRelationForStream(dataToSend);
+		public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(ICFSStatisticGeneral dataToSend) => await Obj.PostToCfsRelationForStreamAsync(((CFSStatisticGeneral)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(ICFSStatisticGeneral dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToCfsRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(CancellationToken cancellationToken, ICFSStatisticGeneral dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToCfsRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToCfsRelationForStreamAsync(CancellationToken cancellationToken, ICFSStatisticGeneral dataToSend) => await Obj.PostToCfsRelationForStreamAsync(cancellationToken, ((CFSStatisticGeneral)dataToSend).Obj);
     }
 }

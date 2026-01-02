@@ -24,13 +24,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Label = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string ConfirmRelationLink => Obj.ConfirmRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public RequestDecision GetRequestDecisionFromSelfRelation() => new RequestDecision(Obj.GetRequestDecisionFromSelfRelation());
+        public IRequestDecision GetRequestDecisionFromSelfRelation() => new RequestDecision(Obj.GetRequestDecisionFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IRequestDecision>> GetRequestDecisionFromSelfRelationAsync()
         {
@@ -42,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<RequestDecision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IRequestDecision>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IRequestDecision>> GetRequestDecisionFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -55,35 +51,13 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<RequestDecision>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IRequestDecision>(temp).ConfigureAwait(false);
         }
 
-		public async string PostToConfirmRelationForString(IRequestConfirmedData dataToSend) => Obj.PostToConfirmRelationForString(dataToSend);
+		public string PostToConfirmRelationForString(IRequestConfirmedData dataToSend) => Obj.PostToConfirmRelationForString(((RequestConfirmedData)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(IRequestConfirmedData dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToConfirmRelationForStringAsync(dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(IRequestConfirmedData dataToSend) => await Obj.PostToConfirmRelationForStringAsync(((RequestConfirmedData)dataToSend).Obj);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(CancellationToken cancellationToken, IRequestConfirmedData dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToConfirmRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<string>> PostToConfirmRelationForStringAsync(CancellationToken cancellationToken, IRequestConfirmedData dataToSend) => await Obj.PostToConfirmRelationForStringAsync(cancellationToken, ((RequestConfirmedData)dataToSend).Obj);
     }
 }

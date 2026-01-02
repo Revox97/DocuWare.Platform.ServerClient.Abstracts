@@ -24,12 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IncludeGroupUsers = value;
         }
 
-        public bool IncludeGroupUsersSpecified
-        {
-            get => Obj.IncludeGroupUsersSpecified;
-            set => Obj.IncludeGroupUsersSpecified = value;
-        }
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

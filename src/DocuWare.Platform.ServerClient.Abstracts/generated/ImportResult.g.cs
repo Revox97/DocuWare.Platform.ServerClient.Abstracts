@@ -12,12 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Results = value.Select(x => ((ImportResultEntry)x).Obj).ToList();
         }
 
-        public IUploadedFileChunk FileChunk
-        {
-            get => new UploadedFileChunk(Obj.FileChunk);
-            set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
-        }
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

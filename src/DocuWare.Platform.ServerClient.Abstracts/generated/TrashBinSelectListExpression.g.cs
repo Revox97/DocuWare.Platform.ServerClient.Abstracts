@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TrashBinSelectListExpression Obj { get; } = obj;
 
-        public string ValuePrefix
-        {
-            get => Obj.ValuePrefix;
-            set => Obj.ValuePrefix = value;
-        }
-
-        public ITrashBinExpression Expression
-        {
-            get => new TrashBinExpression(Obj.Expression);
-            set => Obj.Expression = ((TrashBinExpression)value).Obj;
-        }
-
         public string FieldName
         {
             get => Obj.FieldName;

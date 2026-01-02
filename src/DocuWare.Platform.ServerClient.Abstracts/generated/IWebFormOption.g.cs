@@ -6,6 +6,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string Label { get; set; }
 		bool Checked { get; set; }
-		bool CheckedSpecified { get; set; }
     }
 }

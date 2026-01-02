@@ -36,8 +36,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsDocumentName = value;
         }
 
-		public async string ToString() => Obj.ToString();
+		public string ToString() => Obj.ToString();
 
-		public async DocuWare.Platform.ServerClient.ItemChoiceType GetItemChoiceType() => Obj.GetItemChoiceType();
+		public DocuWare.Platform.ServerClient.ItemChoiceType GetItemChoiceType() => Obj.GetItemChoiceType();
     }
 }

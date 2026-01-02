@@ -6,18 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.UserInfo Obj { get; } = obj;
 
-        public IUser User
-        {
-            get => new User(Obj.User);
-            set => Obj.User = ((User)value).Obj;
-        }
-
-        public ILoginInfo LoginInfo
-        {
-            get => new LoginInfo(Obj.LoginInfo);
-            set => Obj.LoginInfo = ((LoginInfo)value).Obj;
-        }
-
         public Link[] Links
         {
             get => Obj.Links;
@@ -26,34 +14,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public string ValidateRelationLink => Obj.ValidateRelationLink;
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async string PostToValidateRelationForString(IUserValidation dataToSend) => Obj.PostToValidateRelationForString(dataToSend);
+		public string PostToValidateRelationForString(IUserValidation dataToSend) => Obj.PostToValidateRelationForString(((UserValidation)dataToSend).Obj);
 
-        public async Task<DeserializedHttpResponse<string>> PostToValidateRelationForStringAsync(IUserValidation dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToValidateRelationForStringAsync(dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> PostToValidateRelationForStringAsync(IUserValidation dataToSend) => await Obj.PostToValidateRelationForStringAsync(((UserValidation)dataToSend).Obj);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<string>> PostToValidateRelationForStringAsync(CancellationToken cancellationToken, IUserValidation dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToValidateRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<string>> PostToValidateRelationForStringAsync(CancellationToken cancellationToken, IUserValidation dataToSend) => await Obj.PostToValidateRelationForStringAsync(cancellationToken, ((UserValidation)dataToSend).Obj);
     }
 }

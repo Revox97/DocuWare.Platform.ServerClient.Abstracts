@@ -41,11 +41,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.Date;
             set => Obj.Date = value;
         }
-
-        public bool DateSpecified
-        {
-            get => Obj.DateSpecified;
-            set => Obj.DateSpecified = value;
-        }
     }
 }

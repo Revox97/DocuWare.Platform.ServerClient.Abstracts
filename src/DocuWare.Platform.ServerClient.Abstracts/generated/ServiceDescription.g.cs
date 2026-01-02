@@ -12,28 +12,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public IServiceDescriptionTests Tests
-        {
-            get => new ServiceDescriptionTests(Obj.Tests);
-            set => Obj.Tests = ((ServiceDescriptionTests)value).Obj;
-        }
-
-        public IServiceDescriptionDocumentation Documentation
-        {
-            get => new ServiceDescriptionDocumentation(Obj.Documentation);
-            set => Obj.Documentation = ((ServiceDescriptionDocumentation)value).Obj;
-        }
-
         public List<UriTemplateDescription> Resources
         {
             get => Obj.Resources;
             set => Obj.Resources = value;
-        }
-
-        public IServiceDescriptionStatistics Statistics
-        {
-            get => new ServiceDescriptionStatistics(Obj.Statistics);
-            set => Obj.Statistics = ((ServiceDescriptionStatistics)value).Obj;
         }
 
         public string Version
@@ -42,45 +24,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Version = value;
         }
 
-        public string OrganizationsRelationLink => Obj.OrganizationsRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string LoginRelationLink => Obj.LoginRelationLink;
-
-        public string GuestLoginRelationLink => Obj.GuestLoginRelationLink;
-
-        public string WindowsLoginRelationLink => Obj.WindowsLoginRelationLink;
-
-        public string ChangePasswordRelationLink => Obj.ChangePasswordRelationLink;
-
-        public string ResetPasswordRelationLink => Obj.ResetPasswordRelationLink;
-
-        public string TokenLoginRelationLink => Obj.TokenLoginRelationLink;
-
-        public string TrustedLoginRelationLink => Obj.TrustedLoginRelationLink;
-
-        public string JwtLoginRelationLink => Obj.JwtLoginRelationLink;
-
-        public string LogoutRelationLink => Obj.LogoutRelationLink;
-
-        public string DisconnectRelationLink => Obj.DisconnectRelationLink;
-
-        public string LoginCookieRelationLink => Obj.LoginCookieRelationLink;
-
-        public string UriTemplatesRelationLink => Obj.UriTemplatesRelationLink;
-
-        public string AdhocRenderingRelationLink => Obj.AdhocRenderingRelationLink;
-
-        public string RootSchemaRelationLink => Obj.RootSchemaRelationLink;
-
-        public string LogRelationLink => Obj.LogRelationLink;
-
-        public string PermanentUrlRelationLink => Obj.PermanentUrlRelationLink;
-
-        public string IdentityServiceInfoRelationLink => Obj.IdentityServiceInfoRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Organizations GetOrganizationsFromOrganizationsRelation() => new Organizations(Obj.GetOrganizationsFromOrganizationsRelation());
+        public IOrganizations GetOrganizationsFromOrganizationsRelation() => new Organizations(Obj.GetOrganizationsFromOrganizationsRelation());
 
         public async Task<DeserializedHttpResponse<IOrganizations>> GetOrganizationsFromOrganizationsRelationAsync()
         {
@@ -92,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Organizations>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IOrganizations>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IOrganizations>> GetOrganizationsFromOrganizationsRelationAsync(CancellationToken cancellationToken)
@@ -105,514 +51,118 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Organizations>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IOrganizations>(temp).ConfigureAwait(false);
         }
 
-		public async Stream GetStreamFromLoginRelation() => Obj.GetStreamFromLoginRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLoginRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLoginRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream GetStreamFromLoginRelation() => Obj.GetStreamFromLoginRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLoginRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLoginRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLoginRelationAsync() => await Obj.GetStreamFromLoginRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLoginRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromLoginRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream PostToLoginRelationForStream(Stream dataToSend) => Obj.PostToLoginRelationForStream(dataToSend);
 
-		public async Stream PostToLoginRelationForStream(Stream dataToSend) => Obj.PostToLoginRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToLoginRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToLoginRelationForStreamAsync(Stream dataToSend) => await Obj.PostToLoginRelationForStreamAsync(dataToSend);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToLoginRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> PostToLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToLoginRelationForStreamAsync(cancellationToken, dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public Stream GetStreamFromGuestLoginRelation() => Obj.GetStreamFromGuestLoginRelation();
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromGuestLoginRelationAsync() => await Obj.GetStreamFromGuestLoginRelationAsync();
 
-		public async Stream GetStreamFromGuestLoginRelation() => Obj.GetStreamFromGuestLoginRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromGuestLoginRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromGuestLoginRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromGuestLoginRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromGuestLoginRelationAsync(cancellationToken);
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromGuestLoginRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromGuestLoginRelationAsync(cancellationToken).ConfigureAwait(false);
+		public Stream PostToGuestLoginRelationForStream(Stream dataToSend) => Obj.PostToGuestLoginRelationForStream(dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> PostToGuestLoginRelationForStreamAsync(Stream dataToSend) => await Obj.PostToGuestLoginRelationForStreamAsync(dataToSend);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToGuestLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToGuestLoginRelationForStreamAsync(cancellationToken, dataToSend);
 
-		public async Stream PostToGuestLoginRelationForStream(Stream dataToSend) => Obj.PostToGuestLoginRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToGuestLoginRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToGuestLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public string GetStringFromWindowsLoginRelation() => Obj.GetStringFromWindowsLoginRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToGuestLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToGuestLoginRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> GetStringFromWindowsLoginRelationAsync() => await Obj.GetStringFromWindowsLoginRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<string>> GetStringFromWindowsLoginRelationAsync(CancellationToken cancellationToken) => await Obj.GetStringFromWindowsLoginRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public string PostToWindowsLoginRelationForString(Stream dataToSend) => Obj.PostToWindowsLoginRelationForString(dataToSend);
 
-		public async string GetStringFromWindowsLoginRelation() => Obj.GetStringFromWindowsLoginRelation();
-
-        public async Task<DeserializedHttpResponse<string>> GetStringFromWindowsLoginRelationAsync()
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromWindowsLoginRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<string>> PostToWindowsLoginRelationForStringAsync(Stream dataToSend) => await Obj.PostToWindowsLoginRelationForStringAsync(dataToSend);
 
-        public async Task<DeserializedHttpResponse<string>> GetStringFromWindowsLoginRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromWindowsLoginRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> PostToWindowsLoginRelationForStringAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToWindowsLoginRelationForStringAsync(cancellationToken, dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
+		public Stream GetStreamFromChangePasswordRelation() => Obj.GetStreamFromChangePasswordRelation();
 
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromChangePasswordRelationAsync() => await Obj.GetStreamFromChangePasswordRelationAsync();
 
-		public async string PostToWindowsLoginRelationForString(Stream dataToSend) => Obj.PostToWindowsLoginRelationForString(dataToSend);
-
-        public async Task<DeserializedHttpResponse<string>> PostToWindowsLoginRelationForStringAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToWindowsLoginRelationForStringAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromChangePasswordRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromChangePasswordRelationAsync(cancellationToken);
 
-        public async Task<DeserializedHttpResponse<string>> PostToWindowsLoginRelationForStringAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<string> result = await Obj.PostToWindowsLoginRelationForStringAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public Stream PostToChangePasswordRelationForStream(Stream dataToSend) => Obj.PostToChangePasswordRelationForStream(dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> PostToChangePasswordRelationForStreamAsync(Stream dataToSend) => await Obj.PostToChangePasswordRelationForStreamAsync(dataToSend);
 
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToChangePasswordRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToChangePasswordRelationForStreamAsync(cancellationToken, dataToSend);
 
-		public async Stream GetStreamFromChangePasswordRelation() => Obj.GetStreamFromChangePasswordRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromChangePasswordRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromChangePasswordRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream GetStreamFromResetPasswordRelation() => Obj.GetStreamFromResetPasswordRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromChangePasswordRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromChangePasswordRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResetPasswordRelationAsync() => await Obj.GetStreamFromResetPasswordRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResetPasswordRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromResetPasswordRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream PostToResetPasswordRelationForStream(Stream dataToSend) => Obj.PostToResetPasswordRelationForStream(dataToSend);
 
-		public async Stream PostToChangePasswordRelationForStream(Stream dataToSend) => Obj.PostToChangePasswordRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToChangePasswordRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToChangePasswordRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToResetPasswordRelationForStreamAsync(Stream dataToSend) => await Obj.PostToResetPasswordRelationForStreamAsync(dataToSend);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToChangePasswordRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToChangePasswordRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> PostToResetPasswordRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToResetPasswordRelationForStreamAsync(cancellationToken, dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public Stream GetStreamFromTokenLoginRelation() => Obj.GetStreamFromTokenLoginRelation();
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTokenLoginRelationAsync() => await Obj.GetStreamFromTokenLoginRelationAsync();
 
-		public async Stream GetStreamFromResetPasswordRelation() => Obj.GetStreamFromResetPasswordRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResetPasswordRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromResetPasswordRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTokenLoginRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromTokenLoginRelationAsync(cancellationToken);
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromResetPasswordRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromResetPasswordRelationAsync(cancellationToken).ConfigureAwait(false);
+		public Stream PostToTokenLoginRelationForStream(Stream dataToSend) => Obj.PostToTokenLoginRelationForStream(dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> PostToTokenLoginRelationForStreamAsync(Stream dataToSend) => await Obj.PostToTokenLoginRelationForStreamAsync(dataToSend);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToTokenLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToTokenLoginRelationForStreamAsync(cancellationToken, dataToSend);
 
-		public async Stream PostToResetPasswordRelationForStream(Stream dataToSend) => Obj.PostToResetPasswordRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToResetPasswordRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToResetPasswordRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream GetStreamFromTrustedLoginRelation() => Obj.GetStreamFromTrustedLoginRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToResetPasswordRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToResetPasswordRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTrustedLoginRelationAsync() => await Obj.GetStreamFromTrustedLoginRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTrustedLoginRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromTrustedLoginRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream PostToTrustedLoginRelationForStream(Stream dataToSend) => Obj.PostToTrustedLoginRelationForStream(dataToSend);
 
-		public async Stream GetStreamFromTokenLoginRelation() => Obj.GetStreamFromTokenLoginRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTokenLoginRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromTokenLoginRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToTrustedLoginRelationForStreamAsync(Stream dataToSend) => await Obj.PostToTrustedLoginRelationForStreamAsync(dataToSend);
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTokenLoginRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromTokenLoginRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> PostToTrustedLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToTrustedLoginRelationForStreamAsync(cancellationToken, dataToSend);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public Stream PostToJwtLoginRelationForStream(Stream dataToSend) => Obj.PostToJwtLoginRelationForStream(dataToSend);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToJwtLoginRelationForStreamAsync(Stream dataToSend) => await Obj.PostToJwtLoginRelationForStreamAsync(dataToSend);
 
-		public async Stream PostToTokenLoginRelationForStream(Stream dataToSend) => Obj.PostToTokenLoginRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToTokenLoginRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToTokenLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> PostToJwtLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend) => await Obj.PostToJwtLoginRelationForStreamAsync(cancellationToken, dataToSend);
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToTokenLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToTokenLoginRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public Stream GetStreamFromLogoutRelation() => Obj.GetStreamFromLogoutRelation();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLogoutRelationAsync() => await Obj.GetStreamFromLogoutRelationAsync();
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLogoutRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromLogoutRelationAsync(cancellationToken);
 
-		public async Stream GetStreamFromTrustedLoginRelation() => Obj.GetStreamFromTrustedLoginRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTrustedLoginRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromTrustedLoginRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public Stream GetStreamFromDisconnectRelation() => Obj.GetStreamFromDisconnectRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromTrustedLoginRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromTrustedLoginRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDisconnectRelationAsync() => await Obj.GetStreamFromDisconnectRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDisconnectRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromDisconnectRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public string GetStringFromLoginCookieRelation() => Obj.GetStringFromLoginCookieRelation();
 
-		public async Stream PostToTrustedLoginRelationForStream(Stream dataToSend) => Obj.PostToTrustedLoginRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToTrustedLoginRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToTrustedLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public async Task<DeserializedHttpResponse<string>> GetStringFromLoginCookieRelationAsync() => await Obj.GetStringFromLoginCookieRelationAsync();
 
-        public async Task<DeserializedHttpResponse<Stream>> PostToTrustedLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToTrustedLoginRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> GetStringFromLoginCookieRelationAsync(CancellationToken cancellationToken) => await Obj.GetStringFromLoginCookieRelationAsync(cancellationToken);
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream PostToJwtLoginRelationForStream(Stream dataToSend) => Obj.PostToJwtLoginRelationForStream(dataToSend);
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToJwtLoginRelationForStreamAsync(Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToJwtLoginRelationForStreamAsync(dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> PostToJwtLoginRelationForStreamAsync(CancellationToken cancellationToken, Stream dataToSend)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.PostToJwtLoginRelationForStreamAsync(cancellationToken, dataToSend).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream GetStreamFromLogoutRelation() => Obj.GetStreamFromLogoutRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLogoutRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLogoutRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromLogoutRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromLogoutRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async Stream GetStreamFromDisconnectRelation() => Obj.GetStreamFromDisconnectRelation();
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDisconnectRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromDisconnectRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromDisconnectRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromDisconnectRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async string GetStringFromLoginCookieRelation() => Obj.GetStringFromLoginCookieRelation();
-
-        public async Task<DeserializedHttpResponse<string>> GetStringFromLoginCookieRelationAsync()
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromLoginCookieRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<string>> GetStringFromLoginCookieRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromLoginCookieRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public AdhocRenderingFiles GetAdhocRenderingFilesFromAdhocRenderingRelation() => new AdhocRenderingFiles(Obj.GetAdhocRenderingFilesFromAdhocRenderingRelation());
+        public IAdhocRenderingFiles GetAdhocRenderingFilesFromAdhocRenderingRelation() => new AdhocRenderingFiles(Obj.GetAdhocRenderingFilesFromAdhocRenderingRelation());
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFiles>> GetAdhocRenderingFilesFromAdhocRenderingRelationAsync()
         {
@@ -624,7 +174,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFiles>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFiles>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFiles>> GetAdhocRenderingFilesFromAdhocRenderingRelationAsync(CancellationToken cancellationToken)
@@ -637,10 +187,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFiles>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFiles>(temp).ConfigureAwait(false);
         }
 
-        public AdhocRenderingFile PostToAdhocRenderingRelationForAdhocRenderingFile(string requestedContentType, Stream dataToSend) => new AdhocRenderingFile(Obj.PostToAdhocRenderingRelationForAdhocRenderingFile(requestedContentType, dataToSend));
+        public IAdhocRenderingFile PostToAdhocRenderingRelationForAdhocRenderingFile(string requestedContentType, Stream dataToSend) => new AdhocRenderingFile(Obj.PostToAdhocRenderingRelationForAdhocRenderingFile(requestedContentType, dataToSend));
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> PostToAdhocRenderingRelationForAdhocRenderingFileAsync(string requestedContentType, Stream dataToSend)
         {
@@ -652,7 +202,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IAdhocRenderingFile>> PostToAdhocRenderingRelationForAdhocRenderingFileAsync(CancellationToken cancellationToken, string requestedContentType, Stream dataToSend)
@@ -665,66 +215,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<AdhocRenderingFile>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IAdhocRenderingFile>(temp).ConfigureAwait(false);
         }
 
-		public async Stream GetStreamFromRootSchemaRelation() => Obj.GetStreamFromRootSchemaRelation();
+		public Stream GetStreamFromRootSchemaRelation() => Obj.GetStreamFromRootSchemaRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromRootSchemaRelationAsync()
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromRootSchemaRelationAsync().ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromRootSchemaRelationAsync() => await Obj.GetStreamFromRootSchemaRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<Stream>> GetStreamFromRootSchemaRelationAsync(CancellationToken cancellationToken) => await Obj.GetStreamFromRootSchemaRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
+		public string GetStringFromPermanentUrlRelation() => Obj.GetStringFromPermanentUrlRelation();
 
-        public async Task<DeserializedHttpResponse<Stream>> GetStreamFromRootSchemaRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<Stream> result = await Obj.GetStreamFromRootSchemaRelationAsync(cancellationToken).ConfigureAwait(false);
+		public async Task<DeserializedHttpResponse<string>> GetStringFromPermanentUrlRelationAsync() => await Obj.GetStringFromPermanentUrlRelationAsync();
 
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new Stream(result)),
-                StatusCode = result.StatusCode
-            };
+		public async Task<DeserializedHttpResponse<string>> GetStringFromPermanentUrlRelationAsync(CancellationToken cancellationToken) => await Obj.GetStringFromPermanentUrlRelationAsync(cancellationToken);
 
-            return await DeserializedHttpResponse.CreateAsync<Stream>(temp).ConfigureAwait(false);
-        }
-
-		public async string GetStringFromPermanentUrlRelation() => Obj.GetStringFromPermanentUrlRelation();
-
-        public async Task<DeserializedHttpResponse<string>> GetStringFromPermanentUrlRelationAsync()
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromPermanentUrlRelationAsync().ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public async Task<DeserializedHttpResponse<string>> GetStringFromPermanentUrlRelationAsync(CancellationToken cancellationToken)
-        {
-            DeserializedHttpResponse<string> result = await Obj.GetStringFromPermanentUrlRelationAsync(cancellationToken).ConfigureAwait(false);
-
-            HttpResponseMessage temp = new()
-            {
-                Content = JsonContent.Create(new string(result)),
-                StatusCode = result.StatusCode
-            };
-
-            return await DeserializedHttpResponse.CreateAsync<string>(temp).ConfigureAwait(false);
-        }
-
-        public IdentityServiceInfo GetIdentityServiceInfoFromIdentityServiceInfoRelation() => new IdentityServiceInfo(Obj.GetIdentityServiceInfoFromIdentityServiceInfoRelation());
+        public IIdentityServiceInfo GetIdentityServiceInfoFromIdentityServiceInfoRelation() => new IdentityServiceInfo(Obj.GetIdentityServiceInfoFromIdentityServiceInfoRelation());
 
         public async Task<DeserializedHttpResponse<IIdentityServiceInfo>> GetIdentityServiceInfoFromIdentityServiceInfoRelationAsync()
         {
@@ -736,7 +242,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IdentityServiceInfo>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IIdentityServiceInfo>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IIdentityServiceInfo>> GetIdentityServiceInfoFromIdentityServiceInfoRelationAsync(CancellationToken cancellationToken)
@@ -749,7 +255,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<IdentityServiceInfo>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IIdentityServiceInfo>(temp).ConfigureAwait(false);
         }
     }
 }

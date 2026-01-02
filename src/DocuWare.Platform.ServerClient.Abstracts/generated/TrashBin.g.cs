@@ -12,21 +12,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string DocumentsRelationLink => Obj.DocumentsRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string QueryDocumentsRelationLink => Obj.QueryDocumentsRelationLink;
-
-        public string CountDocumentsRelationLink => Obj.CountDocumentsRelationLink;
-
-        public string SelectListsRelationLink => Obj.SelectListsRelationLink;
-
-        public string BatchRestoreRelationLink => Obj.BatchRestoreRelationLink;
-
-        public string BatchDeleteRelationLink => Obj.BatchDeleteRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromDocumentsRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromDocumentsRelation());
+        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromDocumentsRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromDocumentsRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromDocumentsRelationAsync()
         {
@@ -38,7 +26,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromDocumentsRelationAsync(CancellationToken cancellationToken)
@@ -51,14 +39,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public TrashBinDocumentsTableResult PostToQueryDocumentsRelationForTrashBinDocumentsTableResult(ITrashBinQuery dataToSend) => new TrashBinDocumentsTableResult(Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResult(dataToSend));
+        public ITrashBinDocumentsTableResult PostToQueryDocumentsRelationForTrashBinDocumentsTableResult(ITrashBinQuery dataToSend) => new TrashBinDocumentsTableResult(Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResult(((TrashBinQuery)dataToSend).Obj));
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(ITrashBinQuery dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(((TrashBinQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -66,12 +54,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(CancellationToken cancellationToken, ITrashBinQuery dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult> result = await Obj.PostToQueryDocumentsRelationForTrashBinDocumentsTableResultAsync(cancellationToken, ((TrashBinQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -79,10 +67,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public CountResult GetCountResultFromCountDocumentsRelation() => new CountResult(Obj.GetCountResultFromCountDocumentsRelation());
+        public ICountResult GetCountResultFromCountDocumentsRelation() => new CountResult(Obj.GetCountResultFromCountDocumentsRelation());
 
         public async Task<DeserializedHttpResponse<ICountResult>> GetCountResultFromCountDocumentsRelationAsync()
         {
@@ -94,7 +82,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<CountResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ICountResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ICountResult>> GetCountResultFromCountDocumentsRelationAsync(CancellationToken cancellationToken)
@@ -107,10 +95,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<CountResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ICountResult>(temp).ConfigureAwait(false);
         }
 
-        public TypedSelectListResult GetTypedSelectListResultFromSelectListsRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromSelectListsRelation());
+        public ITypedSelectListResult GetTypedSelectListResultFromSelectListsRelation() => new TypedSelectListResult(Obj.GetTypedSelectListResultFromSelectListsRelation());
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelectListsRelationAsync()
         {
@@ -122,7 +110,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> GetTypedSelectListResultFromSelectListsRelationAsync(CancellationToken cancellationToken)
@@ -135,14 +123,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public TypedSelectListResult PostToSelectListsRelationForTypedSelectListResult(ITrashBinSelectListExpression dataToSend) => new TypedSelectListResult(Obj.PostToSelectListsRelationForTypedSelectListResult(dataToSend));
+        public ITypedSelectListResult PostToSelectListsRelationForTypedSelectListResult(ITrashBinSelectListExpression dataToSend) => new TypedSelectListResult(Obj.PostToSelectListsRelationForTypedSelectListResult(((TrashBinSelectListExpression)dataToSend).Obj));
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> PostToSelectListsRelationForTypedSelectListResultAsync(ITrashBinSelectListExpression dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TypedSelectListResult> result = await Obj.PostToSelectListsRelationForTypedSelectListResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TypedSelectListResult> result = await Obj.PostToSelectListsRelationForTypedSelectListResultAsync(((TrashBinSelectListExpression)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -150,12 +138,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITypedSelectListResult>> PostToSelectListsRelationForTypedSelectListResultAsync(CancellationToken cancellationToken, ITrashBinSelectListExpression dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TypedSelectListResult> result = await Obj.PostToSelectListsRelationForTypedSelectListResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.TypedSelectListResult> result = await Obj.PostToSelectListsRelationForTypedSelectListResultAsync(cancellationToken, ((TrashBinSelectListExpression)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -163,14 +151,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TypedSelectListResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITypedSelectListResult>(temp).ConfigureAwait(false);
         }
 
-        public BatchRestoreResult PostToBatchRestoreRelationForBatchRestoreResult(IBatchRestoreDocumentsSource dataToSend) => new BatchRestoreResult(Obj.PostToBatchRestoreRelationForBatchRestoreResult(dataToSend));
+        public IBatchRestoreResult PostToBatchRestoreRelationForBatchRestoreResult(IBatchRestoreDocumentsSource dataToSend) => new BatchRestoreResult(Obj.PostToBatchRestoreRelationForBatchRestoreResult(((BatchRestoreDocumentsSource)dataToSend).Obj));
 
         public async Task<DeserializedHttpResponse<IBatchRestoreResult>> PostToBatchRestoreRelationForBatchRestoreResultAsync(IBatchRestoreDocumentsSource dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchRestoreResult> result = await Obj.PostToBatchRestoreRelationForBatchRestoreResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchRestoreResult> result = await Obj.PostToBatchRestoreRelationForBatchRestoreResultAsync(((BatchRestoreDocumentsSource)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -178,12 +166,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<BatchRestoreResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IBatchRestoreResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IBatchRestoreResult>> PostToBatchRestoreRelationForBatchRestoreResultAsync(CancellationToken cancellationToken, IBatchRestoreDocumentsSource dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchRestoreResult> result = await Obj.PostToBatchRestoreRelationForBatchRestoreResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchRestoreResult> result = await Obj.PostToBatchRestoreRelationForBatchRestoreResultAsync(cancellationToken, ((BatchRestoreDocumentsSource)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -191,14 +179,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<BatchRestoreResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IBatchRestoreResult>(temp).ConfigureAwait(false);
         }
 
-        public BatchDeleteResult PostToBatchDeleteRelationForBatchDeleteResult(IBatchDeleteDocumentsSource dataToSend) => new BatchDeleteResult(Obj.PostToBatchDeleteRelationForBatchDeleteResult(dataToSend));
+        public IBatchDeleteResult PostToBatchDeleteRelationForBatchDeleteResult(IBatchDeleteDocumentsSource dataToSend) => new BatchDeleteResult(Obj.PostToBatchDeleteRelationForBatchDeleteResult(((BatchDeleteDocumentsSource)dataToSend).Obj));
 
         public async Task<DeserializedHttpResponse<IBatchDeleteResult>> PostToBatchDeleteRelationForBatchDeleteResultAsync(IBatchDeleteDocumentsSource dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchDeleteResult> result = await Obj.PostToBatchDeleteRelationForBatchDeleteResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchDeleteResult> result = await Obj.PostToBatchDeleteRelationForBatchDeleteResultAsync(((BatchDeleteDocumentsSource)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -206,12 +194,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<BatchDeleteResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IBatchDeleteResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IBatchDeleteResult>> PostToBatchDeleteRelationForBatchDeleteResultAsync(CancellationToken cancellationToken, IBatchDeleteDocumentsSource dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchDeleteResult> result = await Obj.PostToBatchDeleteRelationForBatchDeleteResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.BatchDeleteResult> result = await Obj.PostToBatchDeleteRelationForBatchDeleteResultAsync(cancellationToken, ((BatchDeleteDocumentsSource)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -219,7 +207,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<BatchDeleteResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IBatchDeleteResult>(temp).ConfigureAwait(false);
         }
     }
 }

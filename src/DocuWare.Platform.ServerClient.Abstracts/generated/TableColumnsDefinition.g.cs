@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TableColumnsDefinition Obj { get; } = obj;
 
-        public ITableColumnOptions ColumnOptions
-        {
-            get => new TableColumnOptions(Obj.ColumnOptions);
-            set => Obj.ColumnOptions = ((TableColumnOptions)value).Obj;
-        }
-
         public string Label
         {
             get => Obj.Label;

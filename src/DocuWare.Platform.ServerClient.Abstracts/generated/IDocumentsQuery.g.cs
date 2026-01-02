@@ -5,19 +5,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDocumentsQuery
     {
 		bool ForceRefresh { get; set; }
-		string Expression { get; set; }
 		List<string> Fields { get; set; }
 		List<ISortedField> SortOrder { get; set; }
 		Link[] Links { get; set; }
 		bool ExcludeSystemFields { get; set; }
 		bool IncludeSuggestions { get; set; }
 		bool CalculateTotalCount { get; set; }
-		string ResultRelationLink { get; }
-		string DialogExpressionRelationLink { get; }
-		string TableResultRelationLink { get; }
-		string TableDialogExpressionRelationLink { get; }
-		string IdsResultRelationLink { get; }
-		string BatchUpdateRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocumentsQueryResult GetDocumentsQueryResultFromResultRelation();

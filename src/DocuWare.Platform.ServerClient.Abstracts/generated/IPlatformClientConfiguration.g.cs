@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IPlatformClientConfiguration
     {
-		ProductInfoHeaderValue DefaultProductInfoHeader { get; set; }
 
 		string GetHostId();
 		void AddProductInfoHeaderValueOfExecutingApplication(HttpHeaderValueCollection<ProductInfoHeaderValue> userAgent);

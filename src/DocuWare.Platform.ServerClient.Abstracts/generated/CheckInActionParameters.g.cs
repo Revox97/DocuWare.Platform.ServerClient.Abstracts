@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.CheckInActionParameters Obj { get; } = obj;
 
-        public IDocumentVersion DocumentVersion
-        {
-            get => new DocumentVersion(Obj.DocumentVersion);
-            set => Obj.DocumentVersion = ((DocumentVersion)value).Obj;
-        }
-
         public DocuWare.Platform.ServerClient.CheckInReturnDocument CheckInReturnDocument
         {
             get => Obj.CheckInReturnDocument;

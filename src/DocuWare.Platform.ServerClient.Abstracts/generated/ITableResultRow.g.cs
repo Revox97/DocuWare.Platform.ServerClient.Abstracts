@@ -10,20 +10,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<ISuggestionTableField> TableFieldSuggestions { get; set; }
 		int Id { get; set; }
 		bool AnnotationsPreview { get; set; }
-		string SelfRelationLink { get; }
-		string FieldsRelationLink { get; }
-		string SuggestionsRelationLink { get; }
-		string TableFieldsSuggestionsRelationLink { get; }
-		string ClippedDocumentsRelationLink { get; }
-		string SectionsRelationLink { get; }
-		string ThumbnailRelationLink { get; }
-		string ThumbnailWithoutAnnotationRelationLink { get; }
-		string AnnotationAsSvgRelationLink { get; }
-		string LowQualityImageRelationLink { get; }
-		string LockRelationLink { get; }
-		string RightsRelationLink { get; }
-		string IntellixRelationLink { get; }
-		string TextshotPreviewRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocument GetDocumentFromSelfRelation();

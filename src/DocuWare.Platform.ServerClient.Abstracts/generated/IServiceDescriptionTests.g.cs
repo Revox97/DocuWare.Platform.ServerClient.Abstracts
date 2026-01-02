@@ -5,10 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IServiceDescriptionTests
     {
 		Link[] Links { get; set; }
-		string HtmlTestClientRelationLink { get; }
-		string ReflectStampPlacementRelationLink { get; }
-		string ReflectDialogQueryRelationLink { get; }
-		string QueryStringRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromHtmlTestClientRelation();

@@ -7,9 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<object> Items { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }
-		string DocumentRelationLink { get; }
-		string LowQualityImageRelationLink { get; }
-		string AnnotationAsSvgRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocument GetDocumentFromDocumentRelation();

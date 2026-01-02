@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<INotification> Notification { get; set; }
 		Link[] Links { get; set; }
 		int Timeout { get; set; }
-		string SelfRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		INotifications GetNotificationsFromSelfRelation();

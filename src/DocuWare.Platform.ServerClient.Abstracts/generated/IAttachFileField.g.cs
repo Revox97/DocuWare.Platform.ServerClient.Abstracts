@@ -4,22 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IAttachFileField
     {
-		string FileTypes { get; set; }
-		int MaxFileSize { get; set; }
-		int MinFileCount { get; set; }
-		int MaxFileCount { get; set; }
-		bool ShowFileInfo { get; set; }
 		List<IAttachFileInfo> AttachFileInfos { get; set; }
-		string Value { get; set; }
-		string Type { get; set; }
-		bool Hidden { get; set; }
-		bool Readonly { get; set; }
-		bool Required { get; set; }
-		string Hint { get; set; }
-		string ValidationID { get; set; }
-		string ID { get; set; }
-		string Label { get; set; }
-		IPosition Position { get; set; }
-		string BehaviorID { get; set; }
     }
 }

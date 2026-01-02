@@ -5,29 +5,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IServiceDescription
     {
 		Link[] Links { get; set; }
-		IServiceDescriptionTests Tests { get; set; }
-		IServiceDescriptionDocumentation Documentation { get; set; }
 		List<UriTemplateDescription> Resources { get; set; }
-		IServiceDescriptionStatistics Statistics { get; set; }
 		string Version { get; set; }
-		string OrganizationsRelationLink { get; }
-		string LoginRelationLink { get; }
-		string GuestLoginRelationLink { get; }
-		string WindowsLoginRelationLink { get; }
-		string ChangePasswordRelationLink { get; }
-		string ResetPasswordRelationLink { get; }
-		string TokenLoginRelationLink { get; }
-		string TrustedLoginRelationLink { get; }
-		string JwtLoginRelationLink { get; }
-		string LogoutRelationLink { get; }
-		string DisconnectRelationLink { get; }
-		string LoginCookieRelationLink { get; }
-		string UriTemplatesRelationLink { get; }
-		string AdhocRenderingRelationLink { get; }
-		string RootSchemaRelationLink { get; }
-		string LogRelationLink { get; }
-		string PermanentUrlRelationLink { get; }
-		string IdentityServiceInfoRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IOrganizations GetOrganizationsFromOrganizationsRelation();

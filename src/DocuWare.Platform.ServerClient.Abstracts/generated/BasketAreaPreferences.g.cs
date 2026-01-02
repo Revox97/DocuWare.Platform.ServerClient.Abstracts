@@ -29,11 +29,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.SelectedInstanceIndex;
             set => Obj.SelectedInstanceIndex = value;
         }
-
-        public bool SelectedInstanceIndexSpecified
-        {
-            get => Obj.SelectedInstanceIndexSpecified;
-            set => Obj.SelectedInstanceIndexSpecified = value;
-        }
     }
 }

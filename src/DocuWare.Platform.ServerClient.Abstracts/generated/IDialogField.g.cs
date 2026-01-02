@@ -7,8 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IDialogFieldBase> DialogTableFieldColumns { get; set; }
 		bool UsedAsDocumentName { get; set; }
 		bool IsHierarchy { get; set; }
-		string Mask { get; set; }
-		string MaskErrorText { get; set; }
 		string SampleEditText { get; set; }
 		List<IDocumentIndexFieldValue> PrefillValue { get; set; }
 		List<DocuWare.Platform.ServerClient.DynamicValueType> DynamicPrefillValue { get; set; }
@@ -31,7 +29,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SequenceId { get; set; }
 		bool SelectListsAssigned { get; set; }
 		bool CalculateSum { get; set; }
-		string SimpleSelectListRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
     }

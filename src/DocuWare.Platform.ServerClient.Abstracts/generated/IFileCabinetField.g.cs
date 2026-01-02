@@ -7,8 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IFileCabinetFieldBase> TableFieldColumns { get; set; }
 		bool UsedAsDocumentName { get; set; }
 		Link[] Links { get; set; }
-		string FixedEntry { get; set; }
-		string FieldInfoText { get; set; }
 		DocuWare.Platform.ServerClient.FileCabinetFieldScope Scope { get; set; }
 		DocuWare.Platform.ServerClient.DWFieldType DWFieldType { get; set; }
 		int Length { get; set; }
@@ -18,7 +16,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool DropLeadingBlanks { get; set; }
 		bool NotEmpty { get; set; }
 		int Precision { get; set; }
-		string SelectListRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
     }

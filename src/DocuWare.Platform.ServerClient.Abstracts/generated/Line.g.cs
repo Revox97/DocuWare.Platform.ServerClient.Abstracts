@@ -18,34 +18,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.bold = value;
         }
 
-        public bool boldSpecified
-        {
-            get => Obj.boldSpecified;
-            set => Obj.boldSpecified = value;
-        }
-
         public int fontSize
         {
             get => Obj.fontSize;
             set => Obj.fontSize = value;
         }
 
-        public bool fontSizeSpecified
-        {
-            get => Obj.fontSizeSpecified;
-            set => Obj.fontSizeSpecified = value;
-        }
-
         public int BaseLine
         {
             get => Obj.BaseLine;
             set => Obj.BaseLine = value;
-        }
-
-        public bool BaseLineSpecified
-        {
-            get => Obj.BaseLineSpecified;
-            set => Obj.BaseLineSpecified = value;
         }
 
         public int L

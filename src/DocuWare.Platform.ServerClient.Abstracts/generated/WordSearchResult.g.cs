@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.WordSearchResult Obj { get; } = obj;
 
-        public string Search
-        {
-            get => Obj.Search;
-            set => Obj.Search = value;
-        }
-
         public List<IWordSearchResultPageHit> PageHits
         {
             get => Obj.PageHits.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();
@@ -24,11 +18,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public WordSearchResult GetWordSearchResultFromNextRelation() => new WordSearchResult(Obj.GetWordSearchResultFromNextRelation());
+        public IWordSearchResult GetWordSearchResultFromNextRelation() => new WordSearchResult(Obj.GetWordSearchResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IWordSearchResult>> GetWordSearchResultFromNextRelationAsync()
         {
@@ -40,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWordSearchResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IWordSearchResult>> GetWordSearchResultFromNextRelationAsync(CancellationToken cancellationToken)
@@ -53,7 +45,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<WordSearchResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IWordSearchResult>(temp).ConfigureAwait(false);
         }
     }
 }

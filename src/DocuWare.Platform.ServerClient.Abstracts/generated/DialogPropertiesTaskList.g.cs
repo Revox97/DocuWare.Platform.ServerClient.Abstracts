@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.DialogPropertiesTaskList Obj { get; } = obj;
 
-        public IDialogExpression Conditions
-        {
-            get => new DialogExpression(Obj.Conditions);
-            set => Obj.Conditions = ((DialogExpression)value).Obj;
-        }
-
         public string ConditionString
         {
             get => Obj.ConditionString;
@@ -36,22 +30,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.AutoRefreshPeriod = value;
         }
 
-        public bool AutoRefreshPeriodSpecified
-        {
-            get => Obj.AutoRefreshPeriodSpecified;
-            set => Obj.AutoRefreshPeriodSpecified = value;
-        }
-
         public List<IResultDialogFunction> Functions
         {
             get => Obj.Functions.Select(x => new ResultDialogFunction(x) as IResultDialogFunction).ToList();
             set => Obj.Functions = value.Select(x => ((ResultDialogFunction)x).Obj).ToList();
-        }
-
-        public IViewerDialog ViewerDialog
-        {
-            get => new ViewerDialog(Obj.ViewerDialog);
-            set => Obj.ViewerDialog = ((ViewerDialog)value).Obj;
         }
 
         public List<ISortedField> SortOrder

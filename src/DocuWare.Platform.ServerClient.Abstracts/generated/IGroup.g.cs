@@ -8,8 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Id { get; set; }
 		string Name { get; set; }
 		bool Active { get; set; }
-		string SelfRelationLink { get; }
-		string UsersRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IGroup GetGroupFromSelfRelation();

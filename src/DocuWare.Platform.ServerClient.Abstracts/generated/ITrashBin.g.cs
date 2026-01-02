@@ -5,12 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ITrashBin
     {
 		Link[] Links { get; set; }
-		string DocumentsRelationLink { get; }
-		string QueryDocumentsRelationLink { get; }
-		string CountDocumentsRelationLink { get; }
-		string SelectListsRelationLink { get; }
-		string BatchRestoreRelationLink { get; }
-		string BatchDeleteRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromDocumentsRelation();

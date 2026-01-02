@@ -30,11 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.BytesWritten = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public UploadedFileChunk GetUploadedFileChunkFromNextRelation() => new UploadedFileChunk(Obj.GetUploadedFileChunkFromNextRelation());
+        public IUploadedFileChunk GetUploadedFileChunkFromNextRelation() => new UploadedFileChunk(Obj.GetUploadedFileChunkFromNextRelation());
 
         public async Task<DeserializedHttpResponse<IUploadedFileChunk>> GetUploadedFileChunkFromNextRelationAsync()
         {
@@ -46,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<UploadedFileChunk>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IUploadedFileChunk>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IUploadedFileChunk>> GetUploadedFileChunkFromNextRelationAsync(CancellationToken cancellationToken)
@@ -59,7 +57,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<UploadedFileChunk>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IUploadedFileChunk>(temp).ConfigureAwait(false);
         }
     }
 }

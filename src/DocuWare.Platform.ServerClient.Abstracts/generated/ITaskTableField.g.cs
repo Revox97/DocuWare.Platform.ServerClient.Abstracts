@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ITaskTableField
     {
 		List<ITaskTableColumn> Columns { get; set; }
-		ITaskTableFieldInitialValues InitialValues { get; set; }
 		string FieldName { get; set; }
 		bool Mandatory { get; set; }
 		bool IsReadOnly { get; set; }

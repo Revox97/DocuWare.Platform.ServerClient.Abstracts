@@ -5,13 +5,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public class UnicornAttribute(SDK.UnicornAttribute obj) : IUnicornAttribute
     {
         internal SDK.UnicornAttribute Obj { get; } = obj;
-
-        public string MinumumVersion
-        {
-            get => Obj.MinumumVersion;
-            set => Obj.MinumumVersion = value;
-        }
-
-        public object TypeId => Obj.TypeId;
     }
 }

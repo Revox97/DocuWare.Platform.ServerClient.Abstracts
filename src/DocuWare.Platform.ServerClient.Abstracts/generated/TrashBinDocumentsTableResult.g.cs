@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TrashBinDocumentsTableResult Obj { get; } = obj;
 
-        public ICountPlusValue Count
-        {
-            get => new CountPlusValue(Obj.Count);
-            set => Obj.Count = ((CountPlusValue)value).Obj;
-        }
-
         public List<ITrashBinTableHeader> Headers
         {
             get => Obj.Headers.Select(x => new TrashBinTableHeader(x) as ITrashBinTableHeader).ToList();
@@ -36,17 +30,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.TimeStamp = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string PrevRelationLink => Obj.PrevRelationLink;
-
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string FirstRelationLink => Obj.FirstRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromNextRelation());
+        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromNextRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromNextRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromNextRelationAsync()
         {
@@ -58,7 +44,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromNextRelationAsync(CancellationToken cancellationToken)
@@ -71,10 +57,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromPrevRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromPrevRelation());
+        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromPrevRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromPrevRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromPrevRelationAsync()
         {
@@ -86,7 +72,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromPrevRelationAsync(CancellationToken cancellationToken)
@@ -99,10 +85,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromSelfRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromSelfRelation());
+        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromSelfRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromSelfRelationAsync()
         {
@@ -114,7 +100,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -127,10 +113,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
-        public TrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromFirstRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromFirstRelation());
+        public ITrashBinDocumentsTableResult GetTrashBinDocumentsTableResultFromFirstRelation() => new TrashBinDocumentsTableResult(Obj.GetTrashBinDocumentsTableResultFromFirstRelation());
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromFirstRelationAsync()
         {
@@ -142,7 +128,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<ITrashBinDocumentsTableResult>> GetTrashBinDocumentsTableResultFromFirstRelationAsync(CancellationToken cancellationToken)
@@ -155,7 +141,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<TrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<ITrashBinDocumentsTableResult>(temp).ConfigureAwait(false);
         }
     }
 }

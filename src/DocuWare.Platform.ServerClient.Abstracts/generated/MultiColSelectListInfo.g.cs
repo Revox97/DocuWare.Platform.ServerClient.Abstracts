@@ -36,11 +36,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Kind = value;
         }
 
-        public string ValuesRelationLink => Obj.ValuesRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public MultiColSelectListValuesResult GetMultiColSelectListValuesResultFromValuesRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromValuesRelation());
+        public IMultiColSelectListValuesResult GetMultiColSelectListValuesResultFromValuesRelation() => new MultiColSelectListValuesResult(Obj.GetMultiColSelectListValuesResultFromValuesRelation());
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromValuesRelationAsync()
         {
@@ -52,7 +50,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> GetMultiColSelectListValuesResultFromValuesRelationAsync(CancellationToken cancellationToken)
@@ -65,14 +63,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
-        public MultiColSelectListValuesResult PostToValuesRelationForMultiColSelectListValuesResult(IMultiColSelectListValuesQuery dataToSend) => new MultiColSelectListValuesResult(Obj.PostToValuesRelationForMultiColSelectListValuesResult(dataToSend));
+        public IMultiColSelectListValuesResult PostToValuesRelationForMultiColSelectListValuesResult(IMultiColSelectListValuesQuery dataToSend) => new MultiColSelectListValuesResult(Obj.PostToValuesRelationForMultiColSelectListValuesResult(((MultiColSelectListValuesQuery)dataToSend).Obj));
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> PostToValuesRelationForMultiColSelectListValuesResultAsync(IMultiColSelectListValuesQuery dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.PostToValuesRelationForMultiColSelectListValuesResultAsync(dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.PostToValuesRelationForMultiColSelectListValuesResultAsync(((MultiColSelectListValuesQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -80,12 +78,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IMultiColSelectListValuesResult>> PostToValuesRelationForMultiColSelectListValuesResultAsync(CancellationToken cancellationToken, IMultiColSelectListValuesQuery dataToSend)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.PostToValuesRelationForMultiColSelectListValuesResultAsync(cancellationToken, dataToSend).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.MultiColSelectListValuesResult> result = await Obj.PostToValuesRelationForMultiColSelectListValuesResultAsync(cancellationToken, ((MultiColSelectListValuesQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -93,7 +91,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<MultiColSelectListValuesResult>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IMultiColSelectListValuesResult>(temp).ConfigureAwait(false);
         }
     }
 }

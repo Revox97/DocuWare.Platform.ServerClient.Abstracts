@@ -5,13 +5,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public class LobsterAttribute(SDK.LobsterAttribute obj) : ILobsterAttribute
     {
         internal SDK.LobsterAttribute Obj { get; } = obj;
-
-        public string MinumumVersion
-        {
-            get => Obj.MinumumVersion;
-            set => Obj.MinumumVersion = value;
-        }
-
-        public object TypeId => Obj.TypeId;
     }
 }

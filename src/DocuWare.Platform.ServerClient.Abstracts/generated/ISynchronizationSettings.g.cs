@@ -4,7 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ISynchronizationSettings
     {
-		string MediaType { get; }
 		List<IFieldMapping> FieldMappings { get; set; }
 		DocuWare.Platform.ServerClient.SynchronizationOperation SynchronizationOperation { get; set; }
 		int Id { get; set; }

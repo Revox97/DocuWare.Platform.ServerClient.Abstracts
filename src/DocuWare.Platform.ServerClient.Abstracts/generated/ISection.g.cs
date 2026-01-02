@@ -5,8 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ISection
     {
 		List<DocuWare.Platform.ServerClient.SignatureStatus> SignatureStatus { get; set; }
-		IPages Pages { get; set; }
-		IPages Thumbnails { get; set; }
 		IUploadedFileChunk FileChunk { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }
@@ -18,20 +16,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DateTime ContentModified { get; set; }
 		bool HasTextAnnotation { get; set; }
 		bool AnnotationsPreview { get; set; }
-		string DocumentRelationLink { get; }
-		string DeepZoomImageRelationLink { get; }
-		string DeepZoomImageWithAnnotationRelationLink { get; }
-		string PositionsRelationLink { get; }
-		string TextshotRelationLink { get; }
-		string ContentRelationLink { get; }
-		string FileDownloadRelationLink { get; }
-		string SelfRelationLink { get; }
-		string ThumbnailRelationLink { get; }
-		string IconRelationLink { get; }
-		string TextAnnotationRelationLink { get; }
-		string PagesBlockRelationLink { get; }
-		string AnnotationAsSvgRelationLink { get; }
-		string AppPropertiesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocument GetDocumentFromDocumentRelation();

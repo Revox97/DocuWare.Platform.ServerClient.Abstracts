@@ -14,8 +14,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string DocumentName { get; set; }
 		DocuWare.Platform.ServerClient.RequestExecutionStateEnum ExecutionState { get; set; }
 		string TakenDecisionName { get; set; }
-		string SelfRelationLink { get; }
-		string HistoryRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IOwnWorkflow GetOwnWorkflowFromSelfRelation();

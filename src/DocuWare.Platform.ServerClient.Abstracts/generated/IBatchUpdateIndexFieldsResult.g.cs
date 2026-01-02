@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<IBatchUpdateResultItem> Item { get; set; }
 		Link[] Links { get; set; }
 		int SuccessCount { get; set; }
-		string NextRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IBatchUpdateIndexFieldsResult PostToNextRelationForBatchUpdateIndexFieldsResult(IBatchUpdateProcessData dataToSend);

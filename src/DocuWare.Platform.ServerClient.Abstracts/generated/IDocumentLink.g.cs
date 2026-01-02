@@ -10,8 +10,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool IsInvalid { get; set; }
 		string TargetFileCabinet { get; set; }
 		string TargetResultList { get; set; }
-		string ResultRelationLink { get; }
-		string ResultDialogRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocumentsQueryResult GetDocumentsQueryResultFromResultRelation();

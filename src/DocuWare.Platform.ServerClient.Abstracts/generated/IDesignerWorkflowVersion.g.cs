@@ -7,8 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		int InstanceCount { get; set; }
-		string SelfRelationLink { get; }
-		string InstancesRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDesignerWorkflowVersion GetDesignerWorkflowVersionFromSelfRelation();

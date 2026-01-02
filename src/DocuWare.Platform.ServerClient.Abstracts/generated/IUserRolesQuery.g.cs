@@ -6,7 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		string UserId { get; set; }
 		bool Active { get; set; }
-		bool ActiveSpecified { get; set; }
 		string Type { get; set; }
 		string Name { get; set; }
     }

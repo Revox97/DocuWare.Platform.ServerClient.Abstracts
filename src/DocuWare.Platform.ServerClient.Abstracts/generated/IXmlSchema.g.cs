@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string Name { get; set; }
 		string TargetNamespace { get; set; }
-		string SchemaRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromSchemaRelation();

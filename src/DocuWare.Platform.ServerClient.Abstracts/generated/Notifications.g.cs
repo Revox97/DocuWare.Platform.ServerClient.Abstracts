@@ -24,11 +24,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Timeout = value;
         }
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Notifications GetNotificationsFromSelfRelation() => new Notifications(Obj.GetNotificationsFromSelfRelation());
+        public INotifications GetNotificationsFromSelfRelation() => new Notifications(Obj.GetNotificationsFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromSelfRelationAsync()
         {
@@ -40,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<INotifications>> GetNotificationsFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -53,7 +51,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Notifications>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<INotifications>(temp).ConfigureAwait(false);
         }
     }
 }

@@ -6,18 +6,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.InputDocument Obj { get; } = obj;
 
-        public string MediaType => Obj.MediaType;
-
         public List<IDocumentIndexField> Fields
         {
             get => Obj.Fields.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
             set => Obj.Fields = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
-        }
-
-        public IInputFlags Flags
-        {
-            get => new InputFlags(Obj.Flags);
-            set => Obj.Flags = ((InputFlags)value).Obj;
         }
 
         public Link[] Links
@@ -32,17 +24,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Sections = value.Select(x => ((InputSection)x).Obj).ToList();
         }
 
-        public IUploadedFileChunk FileChunk
-        {
-            get => new UploadedFileChunk(Obj.FileChunk);
-            set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
-        }
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-		public async void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
-
-        public Document GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
+        public IDocument GetDocumentFromSelfRelation() => new Document(Obj.GetDocumentFromSelfRelation());
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync()
         {
@@ -54,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
         }
 
         public async Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync(CancellationToken cancellationToken)
@@ -67,7 +51,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
                 StatusCode = result.StatusCode
             };
 
-            return await DeserializedHttpResponse.CreateAsync<Document>(temp).ConfigureAwait(false);
+            return await DeserializedHttpResponse.CreateAsync<IDocument>(temp).ConfigureAwait(false);
         }
     }
 }

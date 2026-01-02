@@ -5,13 +5,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public class PorcupineAttribute(SDK.PorcupineAttribute obj) : IPorcupineAttribute
     {
         internal SDK.PorcupineAttribute Obj { get; } = obj;
-
-        public string MinumumVersion
-        {
-            get => Obj.MinumumVersion;
-            set => Obj.MinumumVersion = value;
-        }
-
-        public object TypeId => Obj.TypeId;
     }
 }

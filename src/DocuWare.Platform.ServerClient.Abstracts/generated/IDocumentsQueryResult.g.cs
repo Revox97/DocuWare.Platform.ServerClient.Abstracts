@@ -4,22 +4,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocumentsQueryResult
     {
-		ICountPlusValue Count { get; set; }
 		List<IDocument> Items { get; set; }
 		Link[] Links { get; set; }
 		string Title { get; set; }
 		string OrganizationGuid { get; set; }
 		string FileCabinetId { get; set; }
 		DateTime TimeStamp { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
-		string FeedRelationLink { get; }
-		string DownloadRelationLink { get; }
-		string BatchUpdateRelationLink { get; }
-		string CreateUserDefinedSearchRelationLink { get; }
-		string ExportDocumentsRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDocumentsQueryResult GetDocumentsQueryResultFromNextRelation();

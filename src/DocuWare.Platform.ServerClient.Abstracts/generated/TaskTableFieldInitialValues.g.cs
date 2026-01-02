@@ -6,12 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal SDK.TaskTableFieldInitialValues Obj { get; } = obj;
 
-        public IDocumentIndexFieldTable DocumentIndexFieldTable
-        {
-            get => new DocumentIndexFieldTable(Obj.DocumentIndexFieldTable);
-            set => Obj.DocumentIndexFieldTable = ((DocumentIndexFieldTable)value).Obj;
-        }
-
         public DocuWare.Platform.ServerClient.TaskTableFieldJoinTypeEnum TaskTableFieldJoinType
         {
             get => Obj.TaskTableFieldJoinType;
