@@ -46,6 +46,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string template = File.ReadAllText("Templates/RealDocuWare.template");
             string methodList = string.Empty;
 
+            bool isFirst = true;
+
             for (int i = 0; i < methods.Length; i++)
             {
                 MethodInfo method = methods[i];
@@ -61,11 +63,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameters();
                 string async = returnTypeName.StartsWith("Task") ? "async " : string.Empty;
 
-                string result = returnTypeDefinition.Category == TypeCategory.Primitive
-                    ? $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}) => {(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters});"
-                    : $"public {async}{returnTypeName} {method.Name}({parameterDefinitions}){StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}return new {typeName}({(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters}));{StringConstants.LineEndingWithTwoTabs}}}";
+                string result = isFirst ? string.Empty : StringConstants.LineEnding;
+                isFirst = false;
 
-                methodList += $"{StringConstants.LineEnding}{StringConstants.LineEndingWithTwoTabs}{result}"; 
+                result += returnTypeDefinition.Category == TypeCategory.Primitive
+                    ? $"{StringConstants.LineEndingWithTwoTabs}public {async}{returnTypeName} {method.Name}({parameterDefinitions}) => {(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters});"
+                    : $"{StringConstants.LineEndingWithTwoTabs}public {async}{returnTypeName} {method.Name}({parameterDefinitions}){StringConstants.LineEndingWithTwoTabs}{{{StringConstants.LineEndingWithThreeTabs}return new {typeName}({(!string.IsNullOrEmpty(async) ? "await " : string.Empty)}SDK.ServiceConnection.{method.Name}({parameters}));{StringConstants.LineEndingWithTwoTabs}}}";
+
+                methodList += result; 
             }
 
             template = template.Replace("{0}", methodList);

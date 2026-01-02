@@ -6,7 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public class RealDocuWare()
     {
-
 		public async Task<IServiceConnection> CreateAsync(Uri serviceUri, string userName, string password, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent)
 		{
 			return new ServiceConnection(await SDK.ServiceConnection.CreateAsync(serviceUri, userName, password, organization, licenseType, httpClientHandler, userAgent));
