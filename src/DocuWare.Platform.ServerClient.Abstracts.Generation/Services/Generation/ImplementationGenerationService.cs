@@ -6,8 +6,6 @@ using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Templates;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
-// TODO HANDLE ENUMS
-
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
     internal class ImplementationGenerationService : IGenerationService

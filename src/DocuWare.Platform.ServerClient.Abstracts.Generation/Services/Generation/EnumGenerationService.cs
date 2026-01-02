@@ -21,9 +21,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateEnumValues(Type type)
         {
-            Array enumValues = type.GetEnumValues();
             string result = string.Empty;
 
+            Array enumValues = type.GetEnumValues();
             IEnumerator enumerator = enumValues.GetEnumerator();
             bool hasNext = enumerator.MoveNext();
 

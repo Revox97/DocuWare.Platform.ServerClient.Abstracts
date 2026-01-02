@@ -18,9 +18,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public async Task<IOrganization[]> GetOrganizationsAsync() => await Obj.GetOrganizationsAsync();
 
-        public IT GetXml(string uri) => new T(Obj.GetXml(uri));
+        public T GetXml<T, IT>(string uri) => Obj.GetXml<typeof(IT)>(uri) as T;
 
-        public async Task<DeserializedHttpResponse<IT>> GetXmlAsync(string uri)
+        public async Task<DeserializedHttpResponse<T>> GetXmlAsync(string uri)
         {
             DeserializedHttpResponse<DocuWare.Platform.ServerClient.T> result = await Obj.GetXmlAsync(uri).ConfigureAwait(false);
 

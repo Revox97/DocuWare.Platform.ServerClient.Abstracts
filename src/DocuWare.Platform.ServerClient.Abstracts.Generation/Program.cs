@@ -2,6 +2,8 @@
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation;
 
 // TODO HANDLE DocuWare.Platform.ServerClient.Extensions
+// TODO HANDLE GENERIC CALLS Call<T>...
+// TODO HANDLE Abstract types
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation
 {

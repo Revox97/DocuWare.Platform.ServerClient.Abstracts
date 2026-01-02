@@ -7,6 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		dotted = 2,
 		thick = 3,
 		dash = 4,
-		double = 5
+		Double = 5
     }
 }
