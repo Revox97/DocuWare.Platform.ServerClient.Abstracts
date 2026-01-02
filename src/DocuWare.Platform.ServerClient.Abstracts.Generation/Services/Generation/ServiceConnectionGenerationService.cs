@@ -2,6 +2,7 @@
 using System.Text;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Contracts;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions;
+using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
@@ -25,7 +26,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             {
                 MethodInfo method = methods[i];
 
-                string returnTypeName = method.ReturnType.GetParsedName();
+                TypeDef returnTypeDefinition = method.ReturnType.GetTypeDefinition();
+                string returnTypeName = returnTypeDefinition.GetReturnTypeName();
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
@@ -48,7 +50,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             {
                 MethodInfo method = methods[i];
 
-                string returnTypeName = method.ReturnType.GetParsedName();
+                TypeDef returnTypeDefinition = method.ReturnType.GetTypeDefinition();
+                string returnTypeName = returnTypeDefinition.GetReturnTypeName();
                 string parameterDefinitions = method.GetParsedParameterDefinitions();
                 string parameters = method.GetParsedParameters();
                 string async = returnTypeName.StartsWith("Task") ? "async " : string.Empty;
