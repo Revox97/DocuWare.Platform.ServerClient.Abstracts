@@ -2,11 +2,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public enum LineStyle
     {
-		none = 0,
-		single = 1,
-		dotted = 2,
-		thick = 3,
-		dash = 4,
+		None = 0,
+		Single = 1,
+		Dotted = 2,
+		Thick = 3,
+		Dash = 4,
 		Double = 5
     }
 }

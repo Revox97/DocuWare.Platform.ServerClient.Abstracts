@@ -29,7 +29,17 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
             while (hasNext)
             {
-                result += $"{StringConstants.LineEndingWithTwoTabs}{enumerator.Current} = {(int)enumerator.Current}";
+                if (type.Name.Equals("LineStyle"))
+                {
+                    // TODO Check for cleaner way, temp fix to avoid keyword issues
+                    string value = enumerator.Current.ToString()![0].ToString().ToUpper() + enumerator.Current.ToString()!.Substring(1);
+                    result += $"{StringConstants.LineEndingWithTwoTabs}{value} = {(int)enumerator.Current}";
+                }
+                else
+                {
+                    result += $"{StringConstants.LineEndingWithTwoTabs}{enumerator.Current} = {(int)enumerator.Current}";
+                }
+
                 hasNext = enumerator.MoveNext();
 
                 if (hasNext)

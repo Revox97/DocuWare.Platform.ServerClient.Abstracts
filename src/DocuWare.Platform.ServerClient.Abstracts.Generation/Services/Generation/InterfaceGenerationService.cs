@@ -11,6 +11,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
     {
         public void Generate(Type type)
         {
+            // TODO verify wether something is lost
+            if (type.IsAbstract || type.Name.EndsWith("Extensions"))
+                return;
+
             string interfaceName = $"I{type.Name}";
             Console.WriteLine($"Generating {interfaceName}.cs");
             string template = File.ReadAllText("Templates/Interface.template");
