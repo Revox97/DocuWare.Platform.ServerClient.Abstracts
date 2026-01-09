@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<DWProductTypes> TargetProducts
         {
-            get => Obj.TargetProducts;
-            set => Obj.TargetProducts = value;
+            get => Obj.TargetProducts.ConvertAll(o => (DWProductTypes)o);
+            set => Obj.TargetProducts = value.ConvertAll(v => (DocuWare.Platform.ServerClient.DWProductTypes)v);
         }
 
         public TokenUsage Usage

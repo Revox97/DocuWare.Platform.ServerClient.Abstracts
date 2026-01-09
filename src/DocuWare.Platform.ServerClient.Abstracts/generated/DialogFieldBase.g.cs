@@ -20,8 +20,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<DynamicValueType> DynamicPrefillValue
         {
-            get => Obj.DynamicPrefillValue;
-            set => Obj.DynamicPrefillValue = value;
+            get => Obj.DynamicPrefillValue.ConvertAll(o => (DynamicValueType)o);
+            set => Obj.DynamicPrefillValue = value.ConvertAll(v => (DocuWare.Platform.ServerClient.DynamicValueType)v);
         }
 
         public List<ISelectListInfo> SelectListInfos

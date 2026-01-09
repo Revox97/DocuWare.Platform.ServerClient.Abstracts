@@ -14,8 +14,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<ConfigurationRight> ConfigurationRights
         {
-            get => Obj.ConfigurationRights;
-            set => Obj.ConfigurationRights = value;
+            get => Obj.ConfigurationRights.ConvertAll(o => (ConfigurationRight)o);
+            set => Obj.ConfigurationRights = value.ConvertAll(v => (DocuWare.Platform.ServerClient.ConfigurationRight)v);
         }
 
         public IExtendedConfigurationRights ExtendedConfigurationRights

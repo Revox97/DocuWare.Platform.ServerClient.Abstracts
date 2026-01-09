@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<SignatureStatus> SignatureStatus
         {
-            get => Obj.SignatureStatus;
-            set => Obj.SignatureStatus = value;
+            get => Obj.SignatureStatus.ConvertAll(o => (SignatureStatus)o);
+            set => Obj.SignatureStatus = value.ConvertAll(v => (DocuWare.Platform.ServerClient.SignatureStatus)v);
         }
 
         public IUploadedFileChunk FileChunk
@@ -180,7 +180,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<IDocumentContent>> GetDocumentContentFromTextshotRelationAsync()
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentContent> result = await Obj.GetDocumentContentFromTextshotRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Content.DocumentContent> result = await Obj.GetDocumentContentFromTextshotRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -193,7 +193,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<IDocumentContent>> GetDocumentContentFromTextshotRelationAsync(CancellationToken cancellationToken)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DocumentContent> result = await Obj.GetDocumentContentFromTextshotRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Content.DocumentContent> result = await Obj.GetDocumentContentFromTextshotRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

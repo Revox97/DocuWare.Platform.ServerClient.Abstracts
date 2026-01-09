@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<Right> Right
         {
-            get => Obj.Right;
-            set => Obj.Right = value;
+            get => Obj.Right.ConvertAll(o => (Right)o);
+            set => Obj.Right = value.ConvertAll(v => (DocuWare.Platform.ServerClient.Right)v);
         }
     }
 }

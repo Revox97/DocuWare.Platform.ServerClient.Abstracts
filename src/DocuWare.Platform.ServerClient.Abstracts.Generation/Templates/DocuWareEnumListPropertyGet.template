@@ -1,0 +1,1 @@
+        public {interfaceType} {name} => Obj.{name}.ConvertAll(o => ({type}o);

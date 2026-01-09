@@ -1,0 +1,5 @@
+        public {interfaceType} {name}
+        {
+            get => Obj.{name}.ConvertAll(o => ({targetType})o);
+            set => Obj.{name} = value.ConvertAll(v => ({type})v);
+        }

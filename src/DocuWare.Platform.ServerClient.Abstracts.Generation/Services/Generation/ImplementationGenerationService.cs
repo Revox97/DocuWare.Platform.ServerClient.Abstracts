@@ -46,6 +46,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 typeName = "System.Collections.IDictionary";
 
             bool isList = typeDefinition.Category is TypeCategory.List;
+            bool isDwEnumList = isList && typeDefinition.NestedType!.Category is TypeCategory.Enum && typeDefinition.NestedType.FullName.StartsWith("DocuWare.Platform.ServerClient");
 
             bool isDocuWareType = isList
                 ? typeDefinition.NestedType is not null && typeDefinition.NestedType.Category is TypeCategory.DocuWare
@@ -59,14 +60,19 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             {
                 if (hasSetter)
                 {
-                    if (isList)
+                    if (isDwEnumList)
+                        propertyList += TemplateService.GetDocuWareEnumListGetSetPropertyImplementation(typeName, name);
+                    else if (isList)
                         propertyList += TemplateService.GetDocuWareListGetSetPropertyImplementation(typeName, name);
                     else
                         propertyList += TemplateService.GetDocuWareGetSetPropertyImplementation(typeName, name);
                 }
                 else
                 {
-                    if (isList)
+                    if (isDwEnumList)
+                        propertyList += TemplateService.GetDocuWareEnumListGetPropertyImplementation(typeName, name);
+                        // Enum imp here
+                    else if (isList)
                         propertyList += TemplateService.GetDocuWareListGetPropertyImplementation(typeName, name);
                     else
                         propertyList += TemplateService.GetDocuWareGetPropertyImplementation(typeName, name);
@@ -86,9 +92,19 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             }
 
             if (hasSetter)
-                propertyList += TemplateService.GetNormalGetSetPropertyImplementation(typeName, name);
+            {
+                if (isDwEnumList)
+                    propertyList += TemplateService.GetDocuWareEnumListGetSetPropertyImplementation(typeName, name);
+                else
+                    propertyList += TemplateService.GetNormalGetSetPropertyImplementation(typeName, name);
+            }
             else
-                propertyList += TemplateService.GetNormalGetPropertyImplementation(typeName, name);
+            {
+                if (isDwEnumList)
+                    propertyList += TemplateService.GetDocuWareEnumListGetPropertyImplementation(typeName, name);
+                else
+                    propertyList += TemplateService.GetNormalGetPropertyImplementation(typeName, name);
+            }
         }
 
         private static string GenerateMethods(Type type)
@@ -182,7 +198,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
                 if (innerMostChild.Category is TypeCategory.DocuWare)
                 {
-                    result = result.Replace("{5}", $"DeserializedHttpResponse<DocuWare.Platform.ServerClient.{innerMostChild.GetTypeName()}>");
+                    result = result.Replace("{5}", $"DeserializedHttpResponse<{innerMostChild.FullName}>");
                     result = result.Replace("{6}", $"I{innerMostChild.GetTypeName()}");
                 }
                 else

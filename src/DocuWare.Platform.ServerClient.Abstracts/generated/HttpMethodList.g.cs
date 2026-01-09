@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<HttpMethod> Method
         {
-            get => Obj.Method;
-            set => Obj.Method = value;
+            get => Obj.Method.ConvertAll(o => (HttpMethod)o);
+            set => Obj.Method = value.ConvertAll(v => (DocuWare.Platform.ServerClient.HttpMethod)v);
         }
 
         public bool IsComplete

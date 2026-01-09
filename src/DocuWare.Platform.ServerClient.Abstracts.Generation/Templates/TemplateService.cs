@@ -66,6 +66,22 @@
             }
         } = null!;
 
+        public static string DocuWareEnumListPropertyGet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareEnumListPropertyGet.template");
+            }
+        } = null!;
+
+        public static string DocuWareEnumListPropertyGetSet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareEnumListPropertyGetSet.template");
+            }
+        } = null!;
+
         public static string DocuWareEnumPropertyGet
         {
             get
@@ -110,6 +126,16 @@
         internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name)
         {
             return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+        }
+
+        internal static string GetDocuWareEnumListGetPropertyImplementation(string type, string name)
+        {
+            return DocuWareEnumListPropertyGet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5.. ^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
+        }
+
+        internal static string GetDocuWareEnumListGetSetPropertyImplementation(string type, string name)
+        {
+            return DocuWareEnumListPropertyGetSet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5.. ^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
         }
 
         internal static string GetDocuWareEnumGetPropertyImplementation(string type, string name)

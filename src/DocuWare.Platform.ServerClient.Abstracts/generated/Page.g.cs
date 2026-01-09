@@ -66,7 +66,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<IPageContent>> GetPageContentFromTextshotRelationAsync()
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.PageContent> result = await Obj.GetPageContentFromTextshotRelationAsync().ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Content.PageContent> result = await Obj.GetPageContentFromTextshotRelationAsync().ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -79,7 +79,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public async Task<DeserializedHttpResponse<IPageContent>> GetPageContentFromTextshotRelationAsync(CancellationToken cancellationToken)
         {
-            DeserializedHttpResponse<DocuWare.Platform.ServerClient.PageContent> result = await Obj.GetPageContentFromTextshotRelationAsync(cancellationToken).ConfigureAwait(false);
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Content.PageContent> result = await Obj.GetPageContentFromTextshotRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

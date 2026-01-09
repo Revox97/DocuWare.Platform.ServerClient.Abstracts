@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<DialogTypes> DialogTypes
         {
-            get => Obj.DialogTypes;
-            set => Obj.DialogTypes = value;
+            get => Obj.DialogTypes.ConvertAll(o => (DialogTypes)o);
+            set => Obj.DialogTypes = value.ConvertAll(v => (DocuWare.Platform.ServerClient.DialogTypes)v);
         }
     }
 }

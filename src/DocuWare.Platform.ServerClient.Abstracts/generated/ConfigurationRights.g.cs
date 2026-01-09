@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<ConfigurationRight> ConfigurationRight
         {
-            get => Obj.ConfigurationRight;
-            set => Obj.ConfigurationRight = value;
+            get => Obj.ConfigurationRight.ConvertAll(o => (ConfigurationRight)o);
+            set => Obj.ConfigurationRight = value.ConvertAll(v => (DocuWare.Platform.ServerClient.ConfigurationRight)v);
         }
     }
 }
