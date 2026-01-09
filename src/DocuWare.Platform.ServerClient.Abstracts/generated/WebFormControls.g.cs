@@ -8,7 +8,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<IWebFormControl> WebFormControl
         {
-            get => Obj.WebFormControl.Select(x => new WebFormControl(x) as IWebFormControl).ToList();
+            get => Obj.WebFormControl.Select(x => new Abstracts.IWebFormFieldWebFormField(x) as WebFormControl).ToList();
             set => Obj.WebFormControl = value.Select(x => ((WebFormControl)x).Obj).ToList();
         }
     }

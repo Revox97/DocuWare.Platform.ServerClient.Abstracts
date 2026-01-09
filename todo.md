@@ -13,3 +13,4 @@
     - [x] GetXmlAsync uses generic types, which need handling
 - [ ] FormInfo + IFormInfo + WebFromControls + IWebFormControls
     - [ ] WebFormControl is abstract and needs special treatment
+- [x] Double nested docuware type lists

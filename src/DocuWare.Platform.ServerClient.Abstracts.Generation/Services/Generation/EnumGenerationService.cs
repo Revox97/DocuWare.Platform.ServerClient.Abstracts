@@ -32,7 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 if (type.Name.Equals("LineStyle"))
                 {
                     // TODO Check for cleaner way, temp fix to avoid keyword issues
-                    string value = enumerator.Current.ToString()![0].ToString().ToUpper() + enumerator.Current.ToString()!.Substring(1);
+                    string value = string.Concat(enumerator.Current.ToString()![0].ToString().ToUpper(), enumerator.Current.ToString()!.AsSpan(1));
                     result += $"{StringConstants.LineEndingWithTwoTabs}{value} = {(int)enumerator.Current}";
                 }
                 else

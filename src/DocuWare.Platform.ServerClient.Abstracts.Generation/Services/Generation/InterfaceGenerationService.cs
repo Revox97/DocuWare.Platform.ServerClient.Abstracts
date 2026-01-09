@@ -59,7 +59,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         private static string GenerateMethods(Type type)
         {
             MethodInfo[] methods = [.. type.GetMethods(BindingFlags.Instance | BindingFlags.Public).Where(m => !m.IsSpecialName)];
-
             string methodList = string.Empty;
 
             for (int i = 0; i < methods.Length; i++)
