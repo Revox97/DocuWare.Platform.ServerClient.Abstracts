@@ -10,6 +10,14 @@
             }
         } = null!;
 
+        public static string SyncDocuWareEnumMethod
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/SyncDocuWareEnumMethod.template");
+            }
+        } = null!;
+
         public static string AsyncDocuWareMethod
         {
             get
@@ -97,6 +105,16 @@
                 return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareEnumPropertyGetSet.template");
             }
         } = null!;
+
+        internal static string GetSyncDocuWareMethodImplementation(string returnType, string type, string name, string parameters, string parametersToSend)
+        {
+            return SyncDocuWareMethod.Replace("{0}", returnType).Replace("{1}", name).Replace("{2}", parameters).Replace("{3}", type).Replace("{4}", parametersToSend);
+        }
+
+        internal static string GetSyncDocuWareEnumMethodImplementation(string type, string name, string parameters, string parametersToSend)
+        {
+            return SyncDocuWareEnumMethod.Replace("{type}", type).Replace("{name}", name).Replace("{params}", parameters).Replace("{paramsToSend}", parametersToSend);
+        }
 
         internal static string GetNormalGetPropertyImplementation(string type, string name)
         {

@@ -38,6 +38,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
 		public override string ToString() => Obj.ToString();
 
-		public ItemChoiceType GetItemChoiceType() => Obj.GetItemChoiceType();
+        public ItemChoiceType GetItemChoiceType() => (ItemChoiceType)(Obj.GetItemChoiceType());
     }
 }

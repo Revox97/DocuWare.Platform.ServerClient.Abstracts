@@ -151,12 +151,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             TypeDef typeDef = method.ReturnType.GetTypeDefinition();
             string returnTypeName = typeDef.GetReturnTypeName();
             string typeName = typeDef.GetTypeName();
-            bool isDocuWareType = typeDef.Category is TypeCategory.DocuWare;
             string parameters = method.GetParsedParameterDefinitions();
             string paramsToSent = method.GetParsedParameters();
 
+            bool isDocuWareType = typeDef.Category is TypeCategory.DocuWare;
             if (isDocuWareType)
-                return TemplateService.SyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{3}", typeName).Replace("{4}", paramsToSent);
+                return TemplateService.GetSyncDocuWareMethodImplementation(returnTypeName, typeName, method.Name, parameters, paramsToSent);
+
+            bool isDocuWareEnumType = typeDef.Category is TypeCategory.Enum && typeDef.FullName.StartsWith("DocuWare.Platform.ServerClient");
+            if (isDocuWareEnumType)
+                return TemplateService.GetSyncDocuWareEnumMethodImplementation(returnTypeName, method.Name, parameters, paramsToSent);
 
             return $"\t\tpublic {returnTypeName} {method.Name}({parameters}) => Obj.{method.Name}({paramsToSent});";
         }
