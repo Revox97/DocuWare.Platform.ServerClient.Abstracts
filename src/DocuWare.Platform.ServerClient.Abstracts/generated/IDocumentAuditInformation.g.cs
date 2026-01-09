@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAuditInformation
+    public interface IDocumentAuditInformation{3}
     {
 		List<IDocumentAuditEvent> Events { get; set; }
 		Link[] Links { get; set; }

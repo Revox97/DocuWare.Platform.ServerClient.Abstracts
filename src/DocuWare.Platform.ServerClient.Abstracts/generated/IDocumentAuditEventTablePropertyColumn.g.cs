@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAuditEventTablePropertyColumn
+    public interface IDocumentAuditEventTablePropertyColumn{3}
     {
 		string Name { get; set; }
 		DWFieldType Type { get; set; }

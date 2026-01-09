@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ILineEntry
+    public interface ILineEntry: IEntryBase
     {
 		bool Arrow { get; set; }
 		string Type { get; set; }

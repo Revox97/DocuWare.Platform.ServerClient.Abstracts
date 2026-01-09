@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUser
+    public interface IUser{3}
     {
 		string DefaultWebBasket { get; set; }
 		Link[] Links { get; set; }

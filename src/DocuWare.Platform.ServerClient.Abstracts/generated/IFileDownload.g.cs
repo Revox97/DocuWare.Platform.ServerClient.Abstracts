@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFileDownload
+    public interface IFileDownload: IFileDownloadBase
     {
 		FileDownloadType TargetFileType { get; set; }
 		bool DirectDownload { get; set; }

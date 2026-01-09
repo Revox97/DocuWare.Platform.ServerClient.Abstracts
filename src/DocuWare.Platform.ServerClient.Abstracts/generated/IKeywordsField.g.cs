@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IKeywordsField
+    public interface IKeywordsField: ITaskTextField
     {
 		int Length { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }

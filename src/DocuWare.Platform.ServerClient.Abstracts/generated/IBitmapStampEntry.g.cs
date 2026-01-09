@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBitmapStampEntry
+    public interface IBitmapStampEntry: IStampBase
     {
 		Byte[] PngData { get; set; }
 		int DpiX { get; set; }

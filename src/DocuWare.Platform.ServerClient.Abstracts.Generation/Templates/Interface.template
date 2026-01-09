@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface {0}{1}
+    public interface {0}{1}{3}
     {{2}
     }
 }

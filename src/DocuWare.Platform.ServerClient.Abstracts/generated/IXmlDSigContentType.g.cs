@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IXmlDSigContentType
+    public interface IXmlDSigContentType{3}
     {
 		List<IXmlDSigContentType> Nodes { get; set; }
 		XmlDSigStatusType Status { get; set; }

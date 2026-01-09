@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestDialogQuery
+    public interface IRequestDialogQuery{3}
     {
 		List<DialogTypes> DialogTypes { get; set; }
     }

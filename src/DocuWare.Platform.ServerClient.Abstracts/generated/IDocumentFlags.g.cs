@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentFlags
+    public interface IDocumentFlags{3}
     {
 		bool IsCold { get; set; }
 		bool IsDBRecord { get; set; }

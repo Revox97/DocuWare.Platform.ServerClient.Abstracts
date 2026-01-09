@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDecisionStampPlacement
+    public interface IDecisionStampPlacement: IStampPlacement
     {
 		string WorkflowId { get; set; }
 		string InstanceId { get; set; }

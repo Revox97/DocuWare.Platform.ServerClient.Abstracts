@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IPageContent
+    public interface IPageContent{3}
     {
 		List<IRectangleBase> Items { get; set; }
 		List<IBarCodeZone> BarCodes { get; set; }

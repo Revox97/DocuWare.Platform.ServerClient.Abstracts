@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBatchDeleteFailedResultItem
+    public interface IBatchDeleteFailedResultItem{3}
     {
     }
 }

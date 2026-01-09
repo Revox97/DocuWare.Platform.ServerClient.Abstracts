@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IServiceDescription
+    public interface IServiceDescription{3}
     {
 		Link[] Links { get; set; }
 		List<UriTemplateDescription> Resources { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDeleteEntry
+    public interface IDeleteEntry: IEntryBase
     {
 		string Type { get; set; }
 		string Color { get; set; }

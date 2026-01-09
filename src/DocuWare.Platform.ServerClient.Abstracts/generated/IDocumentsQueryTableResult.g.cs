@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentsQueryTableResult
+    public interface IDocumentsQueryTableResult{3}
     {
 		List<ITableResultHeader> Headers { get; set; }
 		List<ITableResultRow> Rows { get; set; }

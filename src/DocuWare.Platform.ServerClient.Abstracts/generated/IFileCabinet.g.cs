@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFileCabinet
+    public interface IFileCabinet{3}
     {
 		Link[] Links { get; set; }
 		List<IFileCabinetField> Fields { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ILinkForm
+    public interface ILinkForm: IBaseForm
     {
 		string Url { get; set; }
 		FormTypeEnum FormFieldType { get; set; }

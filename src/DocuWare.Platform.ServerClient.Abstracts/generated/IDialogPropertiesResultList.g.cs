@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogPropertiesResultList
+    public interface IDialogPropertiesResultList: IDialogProperties
     {
 		List<IResultDialogFunction> Functions { get; set; }
 		List<ISortedField> SortOrder { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRectangleBase
+    public interface IRectangleBase{3}
     {
 		int L { get; set; }
 		int T { get; set; }

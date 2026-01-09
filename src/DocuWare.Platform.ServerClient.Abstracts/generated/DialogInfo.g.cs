@@ -66,7 +66,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Type = (DocuWare.Platform.ServerClient.DialogTypes)value;
         }
 
-		public string ToString() => Obj.ToString();
+		public override string ToString() => Obj.ToString();
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 

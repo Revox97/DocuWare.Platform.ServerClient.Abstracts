@@ -17,17 +17,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 return;
 
             Console.WriteLine($"Generating {type.Name}.cs");
-
-            string template = File.ReadAllText("Templates/Implementation.template");
             TypeDef typeDefinition = type.GetTypeDefinition();
+            string template = File.ReadAllText("Templates/Implementation.template");
             template = template.Replace("{0}", typeDefinition.GetTypeName()).Replace("{1}", typeDefinition.GetReturnTypeName()).Replace("{3}", typeDefinition.FullName);
 
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
+            template = template.Replace("{2}", propertyList + methodList);
 
-            string result = propertyList + methodList;
-
-            template = template.Replace("{2}", result);
             using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{type.Name}.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
@@ -127,6 +124,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateSynchronous(MethodInfo method)
         {
+            if (method.Name.Equals("ToString"))
+                return "\t\tpublic override string ToString() => Obj.ToString();";
+
             TypeDef typeDef = method.ReturnType.GetTypeDefinition();
             string returnTypeName = typeDef.GetReturnTypeName();
             string typeName = typeDef.GetTypeName();
@@ -134,9 +134,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string parameters = method.GetParsedParameterDefinitions();
             string paramsToSent = method.GetParsedParameters();
 
-            return isDocuWareType
-                ? TemplateService.SyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{3}", typeName).Replace("{4}", paramsToSent)
-                : $"\t\tpublic {returnTypeName} {method.Name}({parameters}) => Obj.{method.Name}({paramsToSent});";
+            if (isDocuWareType)
+                return TemplateService.SyncDocuWareMethod.Replace("{0}", returnTypeName).Replace("{1}", method.Name).Replace("{2}", parameters).Replace("{3}", typeName).Replace("{4}", paramsToSent);
+
+            return $"\t\tpublic {returnTypeName} {method.Name}({parameters}) => Obj.{method.Name}({paramsToSent});";
         }
 
         private static string GenerateAsynchronous(MethodInfo method)

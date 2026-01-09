@@ -36,6 +36,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Item = value;
         }
 
-		public string ToString() => Obj.ToString();
+		public override string ToString() => Obj.ToString();
     }
 }

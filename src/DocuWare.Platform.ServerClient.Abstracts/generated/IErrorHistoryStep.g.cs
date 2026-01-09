@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IErrorHistoryStep
+    public interface IErrorHistoryStep{3}
     {
 		string ErrorMessage { get; set; }
 		string FullErrorMessage { get; set; }

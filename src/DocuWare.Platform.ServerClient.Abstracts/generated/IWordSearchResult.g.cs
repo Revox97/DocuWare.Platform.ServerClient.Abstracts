@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWordSearchResult
+    public interface IWordSearchResult{3}
     {
 		List<IWordSearchResultPageHit> PageHits { get; set; }
 		Link[] Links { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogFieldBase
+    public interface IDialogFieldBase{3}
     {
 		string SampleEditText { get; set; }
 		List<IDocumentIndexFieldValue> PrefillValue { get; set; }

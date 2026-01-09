@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISuggestionValue
+    public interface ISuggestionValue: IDocumentIndexFieldValueBase
     {
 		object Item { get; set; }
     }

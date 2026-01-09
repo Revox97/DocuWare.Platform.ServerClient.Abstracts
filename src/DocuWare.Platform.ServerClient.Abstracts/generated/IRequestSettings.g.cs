@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestSettings
+    public interface IRequestSettings{3}
     {
 		List<IRequestDecisionSettings> Decisions { get; set; }
 		List<IAssignedItem> AssignedItem { get; set; }

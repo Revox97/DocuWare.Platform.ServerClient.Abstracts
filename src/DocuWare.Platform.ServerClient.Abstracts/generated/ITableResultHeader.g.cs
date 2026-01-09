@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITableResultHeader
+    public interface ITableResultHeader{3}
     {
 		string FieldName { get; set; }
 		string Type { get; set; }

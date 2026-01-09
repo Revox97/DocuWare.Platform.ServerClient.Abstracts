@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITaskDateTimeField
+    public interface ITaskDateTimeField: ICommonFormField
     {
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }

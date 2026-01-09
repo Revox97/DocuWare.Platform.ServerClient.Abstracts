@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITasksQuery
+    public interface ITasksQuery{3}
     {
 		List<string> Instances { get; set; }
 		List<IColumnSortOrder> SortOrder { get; set; }

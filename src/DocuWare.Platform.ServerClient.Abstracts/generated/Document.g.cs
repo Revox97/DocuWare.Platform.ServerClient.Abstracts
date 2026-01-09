@@ -144,7 +144,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ExternalContentLocation = value;
         }
 
-		public string ToString() => Obj.ToString();
+		public override string ToString() => Obj.ToString();
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 

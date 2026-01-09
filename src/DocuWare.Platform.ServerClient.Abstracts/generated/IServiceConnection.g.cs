@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IServiceConnection
+    public interface IServiceConnection{3}
     {
 
 		void ReplaceHttpClient(IServiceConnection otherServiceConnection);

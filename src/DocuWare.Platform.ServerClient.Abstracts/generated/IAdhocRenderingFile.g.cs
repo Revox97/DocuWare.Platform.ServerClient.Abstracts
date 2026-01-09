@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAdhocRenderingFile
+    public interface IAdhocRenderingFile{3}
     {
 		List<IKeyValuePair> MetaData { get; set; }
 		Link[] Links { get; set; }

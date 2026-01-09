@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICommonFormField
+    public interface ICommonFormField: IBaseForm
     {
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }

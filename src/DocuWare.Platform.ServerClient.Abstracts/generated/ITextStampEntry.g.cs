@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITextStampEntry
+    public interface ITextStampEntry: IStampBase
     {
 		StampSignatureType Signature { get; set; }
 		string UserName { get; set; }

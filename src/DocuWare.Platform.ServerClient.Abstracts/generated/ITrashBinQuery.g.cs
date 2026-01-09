@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITrashBinQuery
+    public interface ITrashBinQuery{3}
     {
 		List<ISortedField> SortOrder { get; set; }
 		int Start { get; set; }

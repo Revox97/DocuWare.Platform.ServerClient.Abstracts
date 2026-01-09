@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISelectListInfo
+    public interface ISelectListInfo{3}
     {
 		Link[] Links { get; set; }
 		string Guid { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IMultiValueField
+    public interface IMultiValueField: ICommonFormField
     {
 		bool IsMultiselect { get; set; }
 		List<ISelectListFilter> SelectListFilters { get; set; }

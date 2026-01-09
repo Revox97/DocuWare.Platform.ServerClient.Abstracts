@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogExpression
+    public interface IDialogExpression: IResultListQuery
     {
 		List<IDialogExpressionCondition> Condition { get; set; }
 		List<string> AdditionalCabinets { get; set; }

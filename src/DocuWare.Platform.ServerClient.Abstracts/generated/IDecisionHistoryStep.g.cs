@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDecisionHistoryStep
+    public interface IDecisionHistoryStep{3}
     {
 		List<IHistoryField> InputFields { get; set; }
 		List<IHistoryField> Assignments { get; set; }

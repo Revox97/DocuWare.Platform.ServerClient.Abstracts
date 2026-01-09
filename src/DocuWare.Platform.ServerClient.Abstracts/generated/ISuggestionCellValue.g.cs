@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISuggestionCellValue
+    public interface ISuggestionCellValue: ISuggestionValue
     {
 		string TextFallback { get; set; }
 		Decimal DecimalFallback { get; set; }

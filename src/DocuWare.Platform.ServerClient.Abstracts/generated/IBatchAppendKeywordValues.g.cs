@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBatchAppendKeywordValues
+    public interface IBatchAppendKeywordValues{3}
     {
 		List<int> DocId { get; set; }
 		List<string> Keyword { get; set; }

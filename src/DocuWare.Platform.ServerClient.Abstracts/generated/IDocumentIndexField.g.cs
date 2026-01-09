@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentIndexField
+    public interface IDocumentIndexField: IDocumentIndexFieldValueBase
     {
 		string FieldName { get; set; }
 		string FieldLabel { get; set; }

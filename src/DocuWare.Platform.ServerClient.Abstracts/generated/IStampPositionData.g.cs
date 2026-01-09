@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStampPositionData
+    public interface IStampPositionData: IConfirmedData
     {
 		List<IConfirmedField> ConfirmedFields { get; set; }
     }

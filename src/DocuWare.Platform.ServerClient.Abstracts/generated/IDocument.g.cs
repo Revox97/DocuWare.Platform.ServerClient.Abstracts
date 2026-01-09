@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocument
+    public interface IDocument{3}
     {
 		List<IDocumentIndexField> Fields { get; set; }
 		List<ISuggestionField> Suggestions { get; set; }

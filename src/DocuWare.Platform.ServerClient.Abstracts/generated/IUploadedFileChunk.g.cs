@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUploadedFileChunk
+    public interface IUploadedFileChunk{3}
     {
 		Link[] Links { get; set; }
 		bool Finished { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDecision
+    public interface IDecision{3}
     {
 		List<ITaskFormField> TaskFormField { get; set; }
 		Link[] Links { get; set; }

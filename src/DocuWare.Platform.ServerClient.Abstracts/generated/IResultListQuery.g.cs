@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IResultListQuery
+    public interface IResultListQuery{3}
     {
 		List<ISortedField> SortOrder { get; set; }
 		List<string> AdditionalResultFields { get; set; }

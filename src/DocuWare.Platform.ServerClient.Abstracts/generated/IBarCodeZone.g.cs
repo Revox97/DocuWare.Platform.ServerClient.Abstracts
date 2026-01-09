@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBarCodeZone
+    public interface IBarCodeZone: IRectangleBase
     {
 		string BarcodeType { get; set; }
 		int L { get; set; }

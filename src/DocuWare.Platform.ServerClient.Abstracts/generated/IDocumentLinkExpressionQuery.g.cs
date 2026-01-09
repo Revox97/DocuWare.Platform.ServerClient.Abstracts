@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentLinkExpressionQuery
+    public interface IDocumentLinkExpressionQuery{3}
     {
 		List<ISortedField> SortOrder { get; set; }
 		List<string> ResultFields { get; set; }

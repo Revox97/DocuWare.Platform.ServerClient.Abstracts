@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IInstanceHistory
+    public interface IInstanceHistory{3}
     {
 		Link[] Links { get; set; }
 		List<IHistoryStep> HistorySteps { get; set; }

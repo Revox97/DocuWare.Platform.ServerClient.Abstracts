@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBaseForm
+    public interface IBaseForm{3}
     {
 		FormTypeEnum FormFieldType { get; set; }
 		string Label { get; set; }

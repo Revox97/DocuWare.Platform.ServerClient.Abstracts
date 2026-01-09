@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWebClientLayout
+    public interface IWebClientLayout{3}
     {
 		LayoutMode Mode { get; set; }
     }

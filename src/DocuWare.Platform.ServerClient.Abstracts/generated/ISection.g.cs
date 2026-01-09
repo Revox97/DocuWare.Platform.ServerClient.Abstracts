@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISection
+    public interface ISection{3}
     {
 		List<SignatureStatus> SignatureStatus { get; set; }
 		IUploadedFileChunk FileChunk { get; set; }

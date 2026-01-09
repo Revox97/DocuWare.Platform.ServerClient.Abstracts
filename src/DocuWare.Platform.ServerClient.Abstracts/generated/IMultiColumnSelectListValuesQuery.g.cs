@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IMultiColumnSelectListValuesQuery
+    public interface IMultiColumnSelectListValuesQuery: ISelectListValuesQuery
     {
 		List<IMultiColumnSelectListExpressionCondition> Condition { get; set; }
 		DialogExpressionOperation Operation { get; set; }

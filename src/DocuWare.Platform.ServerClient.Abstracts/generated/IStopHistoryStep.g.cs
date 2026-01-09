@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStopHistoryStep
+    public interface IStopHistoryStep{3}
     {
 		string UserName { get; set; }
 		string DocumentUserVersion { get; set; }

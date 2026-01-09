@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAdditionalOrganizationInfo
+    public interface IAdditionalOrganizationInfo{3}
     {
 		List<string> CompanyNames { get; set; }
 		List<string> AddressLines { get; set; }

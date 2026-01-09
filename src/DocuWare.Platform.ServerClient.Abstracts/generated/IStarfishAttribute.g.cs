@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStarfishAttribute
+    public interface IStarfishAttribute: IMinimalVersionAttribute
     {
     }
 }

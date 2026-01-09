@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IReassignHistoryStep
+    public interface IReassignHistoryStep{3}
     {
 		List<string> RecipientsName { get; set; }
 		string Subject { get; set; }

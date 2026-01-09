@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IInputDocument
+    public interface IInputDocument{3}
     {
 		List<IDocumentIndexField> Fields { get; set; }
 		Link[] Links { get; set; }
