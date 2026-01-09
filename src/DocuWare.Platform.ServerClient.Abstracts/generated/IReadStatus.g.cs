@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IReadStatus{3}
+    public interface IReadStatus
     {
 		bool IsRead { get; set; }
     }

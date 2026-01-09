@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IViewerToolbar{3}
+    public interface IViewerToolbar
     {
 		List<IViewerToolbarControl> Controls { get; set; }
 		ViewerToolbarType Type { get; set; }

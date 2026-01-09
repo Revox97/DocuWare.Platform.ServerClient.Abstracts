@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICFSStatisticGeneral{3}
+    public interface ICFSStatisticGeneral
     {
 		List<ICFSStatisticSpecific> StatisticSpecific { get; set; }
 		string CustomerID { get; set; }

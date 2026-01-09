@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentsQueryResult{3}
+    public interface IDocumentsQueryResult
     {
 		List<IDocument> Items { get; set; }
 		Link[] Links { get; set; }

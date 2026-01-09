@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITrashBinDocumentsTableResult{3}
+    public interface ITrashBinDocumentsTableResult
     {
 		List<ITrashBinTableHeader> Headers { get; set; }
 		List<ITrashBinTableRow> Rows { get; set; }

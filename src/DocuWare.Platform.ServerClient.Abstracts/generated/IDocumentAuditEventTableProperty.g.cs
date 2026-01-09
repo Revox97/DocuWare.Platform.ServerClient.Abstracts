@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAuditEventTableProperty{3}
+    public interface IDocumentAuditEventTableProperty
     {
 		List<IDocumentAuditEventTablePropertyColumn> Column { get; set; }
 		List<List<string>> OldValues { get; set; }

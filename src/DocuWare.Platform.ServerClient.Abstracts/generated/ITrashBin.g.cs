@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITrashBin{3}
+    public interface ITrashBin
     {
 		Link[] Links { get; set; }
 

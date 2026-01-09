@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IContentTypeMapping{3}
+    public interface IContentTypeMapping
     {
 
 		string GetContentTypeFromFileExtension(string fileExt);

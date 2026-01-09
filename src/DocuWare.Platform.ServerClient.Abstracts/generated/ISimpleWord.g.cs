@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISimpleWord{3}
+    public interface ISimpleWord
     {
 		int L { get; set; }
 		int T { get; set; }

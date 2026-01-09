@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAssignDataHistoryStep{3}
+    public interface IAssignDataHistoryStep
     {
 		List<IHistoryField> Fields { get; set; }
 		List<IFileCabinetHistoryField> FileCabinetFields { get; set; }

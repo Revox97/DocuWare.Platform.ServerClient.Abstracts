@@ -17,13 +17,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string interfaceName = $"I{type.Name}";
             Console.WriteLine($"Generating {interfaceName}.cs");
             string template = File.ReadAllText("Templates/Interface.template");
-            template = template.Replace("{0}", interfaceName).Replace("{1}", string.Empty);
-
-            if (type.BaseType is not null && type.BaseType != typeof(object))
-            {
-                TypeDef baseDefinition = type.BaseType.GetTypeDefinition();
-                template = template.Replace("{3}", $": {baseDefinition.GetReturnTypeName()}");
-            }
+            template = template.Replace("{0}", interfaceName).Replace("{1}", string.Empty).Replace("{3}", string.Empty);
 
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
@@ -72,7 +66,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             {
                 MethodInfo method = methods[i];
 
-                if (method.DeclaringType != type)
+                if (method.DeclaringType != type || method.Name.Equals("ToString"))
                     continue;
 
                 string returnTypeName = method.ReturnType.GetTypeDefinition().GetReturnTypeName();

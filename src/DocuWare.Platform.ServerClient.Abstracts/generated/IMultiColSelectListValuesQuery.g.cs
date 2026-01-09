@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IMultiColSelectListValuesQuery{3}
+    public interface IMultiColSelectListValuesQuery
     {
 		List<IMultiColSelectListExpressionCondition> Condition { get; set; }
 		string StartsWithColumn { get; set; }

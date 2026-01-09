@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITaskTableFieldInitialValues{3}
+    public interface ITaskTableFieldInitialValues
     {
 		TaskTableFieldJoinTypeEnum TaskTableFieldJoinType { get; set; }
     }

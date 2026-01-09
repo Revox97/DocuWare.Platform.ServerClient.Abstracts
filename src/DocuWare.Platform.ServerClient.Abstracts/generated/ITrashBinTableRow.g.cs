@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITrashBinTableRow{3}
+    public interface ITrashBinTableRow
     {
 		List<object> Items { get; set; }
 		Link[] Links { get; set; }

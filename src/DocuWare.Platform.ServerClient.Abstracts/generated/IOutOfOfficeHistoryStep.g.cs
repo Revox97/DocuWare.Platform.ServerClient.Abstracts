@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IOutOfOfficeHistoryStep{3}
+    public interface IOutOfOfficeHistoryStep
     {
 		string NewUser { get; set; }
 		string OutOfOfficeUser { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISectionAnnotationsPlacement{3}
+    public interface ISectionAnnotationsPlacement
     {
 		IAnnotationsPlacement AnnotationsPlacement { get; set; }
 		int SectionNumber { get; set; }

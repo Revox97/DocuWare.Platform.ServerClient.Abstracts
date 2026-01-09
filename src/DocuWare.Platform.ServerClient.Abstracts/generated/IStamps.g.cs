@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStamps{3}
+    public interface IStamps
     {
 		List<IStamp> Stamp { get; set; }
 

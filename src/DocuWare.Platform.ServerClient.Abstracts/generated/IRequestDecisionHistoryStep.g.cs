@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestDecisionHistoryStep{3}
+    public interface IRequestDecisionHistoryStep
     {
 		List<IHistoryField> InputFields { get; set; }
 		string DocumentUserVersion { get; set; }

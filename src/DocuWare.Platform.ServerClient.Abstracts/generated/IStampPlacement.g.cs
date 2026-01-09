@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStampPlacement{3}
+    public interface IStampPlacement
     {
 		List<IFormFieldValue> Field { get; set; }
 		string StampId { get; set; }

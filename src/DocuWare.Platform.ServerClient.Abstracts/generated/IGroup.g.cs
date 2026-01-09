@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IGroup{3}
+    public interface IGroup
     {
 		Link[] Links { get; set; }
 		string Id { get; set; }

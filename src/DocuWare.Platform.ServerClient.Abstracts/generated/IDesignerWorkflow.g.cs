@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDesignerWorkflow{3}
+    public interface IDesignerWorkflow
     {
 		Link[] Links { get; set; }
 		string Id { get; set; }

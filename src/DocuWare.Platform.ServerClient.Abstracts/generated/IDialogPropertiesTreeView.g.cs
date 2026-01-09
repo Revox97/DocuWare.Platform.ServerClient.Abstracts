@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogPropertiesTreeView: IDialogProperties
+    public interface IDialogPropertiesTreeView : IDialogProperties
     {
 		Link[] Links { get; set; }
 		string StoreDialogId { get; set; }

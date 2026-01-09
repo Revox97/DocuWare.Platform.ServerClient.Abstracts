@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDecisionsStampSettings{3}
+    public interface IDecisionsStampSettings
     {
 		List<IDecision> DecisionStamps { get; set; }
 		string WorkflowId { get; set; }

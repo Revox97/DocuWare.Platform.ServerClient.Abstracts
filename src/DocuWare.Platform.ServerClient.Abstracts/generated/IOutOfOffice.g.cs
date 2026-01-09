@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IOutOfOffice{3}
+    public interface IOutOfOffice
     {
 		bool IsOutOfOffice { get; set; }
 		DateTime StartDateTime { get; set; }

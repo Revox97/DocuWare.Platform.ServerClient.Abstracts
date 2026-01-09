@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IIdentityServiceInfoConnectionData{3}
+    public interface IIdentityServiceInfoConnectionData
     {
     }
 }

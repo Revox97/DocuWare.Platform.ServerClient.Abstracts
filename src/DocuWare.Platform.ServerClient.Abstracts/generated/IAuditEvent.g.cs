@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAuditEvent{3}
+    public interface IAuditEvent
     {
 		string Id { get; set; }
 		string Event { get; set; }

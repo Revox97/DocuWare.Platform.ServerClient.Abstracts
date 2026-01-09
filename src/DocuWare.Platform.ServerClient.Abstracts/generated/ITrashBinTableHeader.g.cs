@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITrashBinTableHeader{3}
+    public interface ITrashBinTableHeader
     {
 		string FieldName { get; set; }
 		string Type { get; set; }

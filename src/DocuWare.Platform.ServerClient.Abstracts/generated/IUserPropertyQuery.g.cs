@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUserPropertyQuery{3}
+    public interface IUserPropertyQuery
     {
 		string Id { get; set; }
 		bool Active { get; set; }

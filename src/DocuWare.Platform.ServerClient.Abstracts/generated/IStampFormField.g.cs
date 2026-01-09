@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStampFormField{3}
+    public interface IStampFormField
     {
 		Link[] Links { get; set; }
 		string Name { get; set; }

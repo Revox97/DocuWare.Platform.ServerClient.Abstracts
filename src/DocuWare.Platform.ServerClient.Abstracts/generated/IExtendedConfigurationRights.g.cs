@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IExtendedConfigurationRights{3}
+    public interface IExtendedConfigurationRights
     {
 		bool Forms { get; set; }
     }

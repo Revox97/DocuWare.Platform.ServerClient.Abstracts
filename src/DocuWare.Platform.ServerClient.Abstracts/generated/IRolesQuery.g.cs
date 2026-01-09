@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRolesQuery{3}
+    public interface IRolesQuery
     {
 		bool Active { get; set; }
 		string Name { get; set; }

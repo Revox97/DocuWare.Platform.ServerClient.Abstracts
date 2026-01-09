@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IPageData{3}
+    public interface IPageData
     {
 		IDWRectangle ContentArea { get; set; }
 		int DpiX { get; set; }

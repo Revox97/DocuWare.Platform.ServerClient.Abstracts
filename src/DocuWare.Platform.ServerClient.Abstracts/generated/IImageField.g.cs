@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IImageField: IWebFormField
+    public interface IImageField : IWebFormField
     {
     }
 }

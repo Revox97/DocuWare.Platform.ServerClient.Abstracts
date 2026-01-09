@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IPage{3}
+    public interface IPage
     {
 		Link[] Links { get; set; }
 		int PageNum { get; set; }

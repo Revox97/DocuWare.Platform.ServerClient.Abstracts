@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAnnotationRectangle{3}
+    public interface IAnnotationRectangle
     {
 		double Left { get; set; }
 		double Top { get; set; }

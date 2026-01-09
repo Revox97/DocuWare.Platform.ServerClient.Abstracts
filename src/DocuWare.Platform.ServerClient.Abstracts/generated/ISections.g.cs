@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISections{3}
+    public interface ISections
     {
 		List<ISection> Section { get; set; }
 

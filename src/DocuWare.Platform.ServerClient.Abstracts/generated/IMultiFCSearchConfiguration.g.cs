@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IMultiFCSearchConfiguration{3}
+    public interface IMultiFCSearchConfiguration
     {
 		List<string> FcIds { get; set; }
 		string Name { get; set; }

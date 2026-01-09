@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISaveTemplateInput{3}
+    public interface ISaveTemplateInput
     {
 		List<IFormTemplate> Templates { get; set; }
     }

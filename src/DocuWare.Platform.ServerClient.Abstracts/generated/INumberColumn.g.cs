@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface INumberColumn{3}
+    public interface INumberColumn
     {
 		int Precision { get; set; }
     }

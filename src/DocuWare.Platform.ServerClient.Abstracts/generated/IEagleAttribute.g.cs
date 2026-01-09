@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IEagleAttribute: IMinimalVersionAttribute
+    public interface IEagleAttribute : IMinimalVersionAttribute
     {
     }
 }

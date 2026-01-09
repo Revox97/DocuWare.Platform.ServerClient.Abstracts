@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISelectListValuesQuery{3}
+    public interface ISelectListValuesQuery
     {
 		int Start { get; set; }
 		int Count { get; set; }

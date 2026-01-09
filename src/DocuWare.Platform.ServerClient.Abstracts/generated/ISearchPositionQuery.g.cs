@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISearchPositionQuery{3}
+    public interface ISearchPositionQuery
     {
 		bool IgnoreCase { get; set; }
 		bool WholeWord { get; set; }

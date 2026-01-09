@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITableResultRow{3}
+    public interface ITableResultRow
     {
 		List<object> Items { get; set; }
 		Link[] Links { get; set; }

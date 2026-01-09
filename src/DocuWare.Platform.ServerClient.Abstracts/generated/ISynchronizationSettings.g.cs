@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISynchronizationSettings{3}
+    public interface ISynchronizationSettings
     {
 		List<IFieldMapping> FieldMappings { get; set; }
 		SynchronizationOperation SynchronizationOperation { get; set; }

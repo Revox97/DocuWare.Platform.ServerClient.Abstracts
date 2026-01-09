@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IOrganizations{3}
+    public interface IOrganizations
     {
 		List<IOrganization> Organization { get; set; }
 

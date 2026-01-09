@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IMultiColSelectListValuesResult{3}
+    public interface IMultiColSelectListValuesResult
     {
 		List<IMultiColSelectListColumn> Columns { get; set; }
 		List<IMultiColSelectListRow> Rows { get; set; }

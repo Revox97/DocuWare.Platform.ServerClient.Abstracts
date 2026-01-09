@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentsQuery{3}
+    public interface IDocumentsQuery
     {
 		bool ForceRefresh { get; set; }
 		List<string> Fields { get; set; }

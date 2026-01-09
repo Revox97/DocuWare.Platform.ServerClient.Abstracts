@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAuditEventProperty{3}
+    public interface IDocumentAuditEventProperty
     {
 		string PropertyName { get; set; }
 		string OldValue { get; set; }

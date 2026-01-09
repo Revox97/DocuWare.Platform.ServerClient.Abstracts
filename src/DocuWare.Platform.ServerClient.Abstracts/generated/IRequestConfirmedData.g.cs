@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestConfirmedData{3}
+    public interface IRequestConfirmedData
     {
 		int DecisionId { get; set; }
 		string Comment { get; set; }

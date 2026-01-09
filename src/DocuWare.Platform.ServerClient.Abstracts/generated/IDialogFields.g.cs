@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogFields{3}
+    public interface IDialogFields
     {
 		List<IDialogField> Field { get; set; }
 

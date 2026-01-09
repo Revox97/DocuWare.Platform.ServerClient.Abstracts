@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IContentDivideOperationInfo{3}
+    public interface IContentDivideOperationInfo
     {
 		List<int> Pages { get; set; }
 		List<string> ResultNames { get; set; }

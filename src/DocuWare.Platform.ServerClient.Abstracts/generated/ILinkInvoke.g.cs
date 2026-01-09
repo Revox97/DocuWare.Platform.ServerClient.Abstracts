@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ILinkInvoke{3}
+    public interface ILinkInvoke
     {
 		HttpMethod Verb { get; set; }
     }

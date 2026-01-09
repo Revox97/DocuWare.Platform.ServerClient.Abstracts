@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDateTimeConstant{3}
+    public interface IDateTimeConstant
     {
 		DateTime? Value { get; set; }
     }

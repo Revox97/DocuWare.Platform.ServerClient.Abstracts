@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITextHistoryFieldOptions{3}
+    public interface ITextHistoryFieldOptions
     {
 		int Length { get; set; }
     }

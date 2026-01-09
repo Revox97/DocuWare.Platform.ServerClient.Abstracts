@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBatchUpdateIndexFieldsResult{3}
+    public interface IBatchUpdateIndexFieldsResult
     {
 		List<IBatchUpdateResultItem> Item { get; set; }
 		Link[] Links { get; set; }

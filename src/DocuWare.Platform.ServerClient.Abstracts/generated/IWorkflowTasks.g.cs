@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWorkflowTasks{3}
+    public interface IWorkflowTasks
     {
 		Link[] Links { get; set; }
 		List<IWorkflowTask> Task { get; set; }

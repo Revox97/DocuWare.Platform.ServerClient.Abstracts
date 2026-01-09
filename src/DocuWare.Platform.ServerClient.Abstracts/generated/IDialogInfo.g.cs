@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogInfo{3}
+    public interface IDialogInfo
     {
 		Link[] Links { get; set; }
 		string Id { get; set; }
@@ -15,7 +15,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool IsDefault { get; set; }
 		DialogTypes Type { get; set; }
 
-		string ToString();
 		void SetProxy(HttpClientProxy proxy);
 		IDialog GetDialogFromSelfRelation();
 		Task<DeserializedHttpResponse<IDialog>> GetDialogFromSelfRelationAsync();

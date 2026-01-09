@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITypedSelectListResult{3}
+    public interface ITypedSelectListResult
     {
 		List<IDocumentIndexFieldValue> Value { get; set; }
 		Link[] Links { get; set; }

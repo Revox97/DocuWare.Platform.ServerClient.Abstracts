@@ -12,10 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
     {
         public void Generate(Type type)
         {
-            // TODO verify wether something is lost
-            if (type.IsAbstract || type.Name.EndsWith("Extensions"))
-                return;
-
             Console.WriteLine($"Generating {type.Name}.cs");
             TypeDef typeDefinition = type.GetTypeDefinition();
             string template = File.ReadAllText("Templates/Implementation.template");
@@ -44,9 +40,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
             string typeName = typeDefinition.GetReturnTypeName();
-
-            if (typeName.Contains("AnnotationTools"))
-                Console.WriteLine();
 
             // TODO improve to a more general approach
             if (typeName.Equals("IDictionary"))
@@ -100,14 +93,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateMethods(Type type)
         {
-            MethodInfo[] methods = [.. type.GetMethods(BindingFlags.Instance | BindingFlags.Public).Where(m => !m.IsSpecialName)];
             string methodList = string.Empty;
+            MethodInfo[] methods = [.. type.GetMethods(BindingFlags.Instance | BindingFlags.Public).Where(m => !m.IsSpecialName || (m.IsVirtual && m.Name.Contains("SetProxy")))];
 
             for (int i = 0; i < methods.Length; i++)
             {
                 MethodInfo method = methods[i];
 
-                if (method.DeclaringType != type)
+                if (method.DeclaringType != type && (method.DeclaringType != type.BaseType || (method.DeclaringType == typeof(object) || method.DeclaringType == typeof(Exception))))
                     continue;
 
                 string returnTypeName = method.ReturnType.GetParsedName();
@@ -126,6 +119,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             if (method.Name.Equals("ToString"))
                 return "\t\tpublic override string ToString() => Obj.ToString();";
+
+            if (method.Name.Equals("SetProxy"))
+                return "\t\tpublic void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);";
 
             TypeDef typeDef = method.ReturnType.GetTypeDefinition();
             string returnTypeName = typeDef.GetReturnTypeName();

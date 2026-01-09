@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAnnotations{3}
+    public interface IDocumentAnnotations
     {
 		List<ISectionAnnotation> Annotations { get; set; }
     }

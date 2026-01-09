@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUserRolesQuery{3}
+    public interface IUserRolesQuery
     {
 		string UserId { get; set; }
 		bool Active { get; set; }

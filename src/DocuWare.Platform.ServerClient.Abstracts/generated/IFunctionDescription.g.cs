@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFunctionDescription{3}
+    public interface IFunctionDescription
     {
 		List<IParameterDescription> Parameter { get; set; }
 		string Name { get; set; }

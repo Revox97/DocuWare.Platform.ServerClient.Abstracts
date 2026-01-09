@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICopyTemplateInput{3}
+    public interface ICopyTemplateInput
     {
 		string TemplateGUID { get; set; }
     }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUserInfo{3}
+    public interface IUserInfo
     {
 		Link[] Links { get; set; }
 		string ValidateRelationLink { get; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IInstance{3}
+    public interface IInstance
     {
 		string Id { get; set; }
     }

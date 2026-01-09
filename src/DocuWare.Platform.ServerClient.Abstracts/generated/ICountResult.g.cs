@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICountResult{3}
+    public interface ICountResult
     {
 		List<ICountResultItem> Group { get; set; }
 		DateTime TimeStamp { get; set; }

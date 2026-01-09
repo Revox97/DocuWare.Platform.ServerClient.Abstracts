@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocument{3}
+    public interface IDocument
     {
 		List<IDocumentIndexField> Fields { get; set; }
 		List<ISuggestionField> Suggestions { get; set; }
@@ -28,7 +28,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		VersionManagementStatus VersionStatus { get; set; }
 		string ExternalContentLocation { get; set; }
 
-		string ToString();
 		void SetProxy(HttpClientProxy proxy);
 		IDocument GetDocumentFromSelfRelation();
 		Task<DeserializedHttpResponse<IDocument>> GetDocumentFromSelfRelationAsync();

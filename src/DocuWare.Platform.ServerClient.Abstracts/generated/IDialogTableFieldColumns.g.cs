@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogTableFieldColumns{3}
+    public interface IDialogTableFieldColumns
     {
 		List<IDialogFieldBase> DialogTableFieldColumn { get; set; }
 

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISpacerField: IWebFormField
+    public interface ISpacerField : IWebFormField
     {
     }
 }

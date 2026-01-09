@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IViewerPreferences{3}
+    public interface IViewerPreferences
     {
 		List<IAnnotationToolSettings> Annotations { get; set; }
 		List<IViewerToolbar> Toolbars { get; set; }

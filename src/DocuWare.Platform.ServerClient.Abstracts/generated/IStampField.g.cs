@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStampField{3}
+    public interface IStampField
     {
 		string Name { get; set; }
 		DWFieldType DWType { get; set; }

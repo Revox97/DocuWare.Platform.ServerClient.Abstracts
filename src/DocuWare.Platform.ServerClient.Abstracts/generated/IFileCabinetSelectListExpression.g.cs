@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFileCabinetSelectListExpression{3}
+    public interface IFileCabinetSelectListExpression
     {
 		string FieldName { get; set; }
 		int Count { get; set; }

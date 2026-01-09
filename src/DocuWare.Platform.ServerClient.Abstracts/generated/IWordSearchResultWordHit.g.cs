@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWordSearchResultWordHit{3}
+    public interface IWordSearchResultWordHit
     {
 		int L { get; set; }
 		int T { get; set; }

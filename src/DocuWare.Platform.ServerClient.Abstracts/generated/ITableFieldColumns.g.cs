@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITableFieldColumns{3}
+    public interface ITableFieldColumns
     {
 		List<IFileCabinetFieldBase> TableFieldColumn { get; set; }
 

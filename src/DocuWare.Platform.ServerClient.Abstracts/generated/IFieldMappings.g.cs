@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFieldMappings{3}
+    public interface IFieldMappings
     {
 		List<IFieldMapping> Mapping { get; set; }
     }

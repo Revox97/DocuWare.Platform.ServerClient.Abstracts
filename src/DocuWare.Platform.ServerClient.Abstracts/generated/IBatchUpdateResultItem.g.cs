@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBatchUpdateResultItem{3}
+    public interface IBatchUpdateResultItem
     {
 
 		void SetProxy(HttpClientProxy proxy);

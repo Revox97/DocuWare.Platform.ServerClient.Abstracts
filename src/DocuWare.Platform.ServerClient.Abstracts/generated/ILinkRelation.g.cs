@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ILinkRelation{3}
+    public interface ILinkRelation
     {
 		List<ILinkInvoke> Invoke { get; set; }
 		string Name { get; set; }

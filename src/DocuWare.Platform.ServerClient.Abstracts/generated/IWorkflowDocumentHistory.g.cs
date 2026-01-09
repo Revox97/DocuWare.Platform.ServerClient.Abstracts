@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWorkflowDocumentHistory{3}
+    public interface IWorkflowDocumentHistory
     {
 		List<IInstanceHistory> InstanceHistory { get; set; }
 

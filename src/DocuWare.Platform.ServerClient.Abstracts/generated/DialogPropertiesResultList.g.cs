@@ -35,5 +35,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.ShowCheckedOutDocumens;
             set => Obj.ShowCheckedOutDocumens = value;
         }
+
+		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

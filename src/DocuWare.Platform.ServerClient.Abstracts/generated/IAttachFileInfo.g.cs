@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAttachFileInfo{3}
+    public interface IAttachFileInfo
     {
     }
 }

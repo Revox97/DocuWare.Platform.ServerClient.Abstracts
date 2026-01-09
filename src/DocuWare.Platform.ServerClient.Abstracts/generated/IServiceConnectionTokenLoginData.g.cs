@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IServiceConnectionTokenLoginData: IServiceConnectionLicenseBoundData
+    public interface IServiceConnectionTokenLoginData : IServiceConnectionLicenseBoundData
     {
     }
 }

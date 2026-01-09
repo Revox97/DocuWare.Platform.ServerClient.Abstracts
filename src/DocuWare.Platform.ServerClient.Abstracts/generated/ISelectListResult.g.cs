@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISelectListResult{3}
+    public interface ISelectListResult
     {
 		List<string> Value { get; set; }
 		List<IDocumentIndexFieldValue> TypedValue { get; set; }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IUserValidation{3}
+    public interface IUserValidation
     {
 		string Password { get; set; }
     }

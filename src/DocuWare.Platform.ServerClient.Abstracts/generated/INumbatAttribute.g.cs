@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface INumbatAttribute: IMinimalVersionAttribute
+    public interface INumbatAttribute : IMinimalVersionAttribute
     {
     }
 }

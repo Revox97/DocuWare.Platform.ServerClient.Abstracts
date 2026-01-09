@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestStartHistoryStep{3}
+    public interface IRequestStartHistoryStep
     {
 		string RequestText { get; set; }
 		string UserName { get; set; }

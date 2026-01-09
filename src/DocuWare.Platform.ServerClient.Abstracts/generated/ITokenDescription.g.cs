@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITokenDescription{3}
+    public interface ITokenDescription
     {
 		List<DWProductTypes> TargetProducts { get; set; }
 		TokenUsage Usage { get; set; }

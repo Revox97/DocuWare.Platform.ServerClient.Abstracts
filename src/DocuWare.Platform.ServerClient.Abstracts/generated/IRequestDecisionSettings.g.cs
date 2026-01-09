@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestDecisionSettings{3}
+    public interface IRequestDecisionSettings
     {
 		int Id { get; set; }
 		string Label { get; set; }

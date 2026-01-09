@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBaseTaskOperations{3}
+    public interface IBaseTaskOperations
     {
 		Link[] Links { get; set; }
 

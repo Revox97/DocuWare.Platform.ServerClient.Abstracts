@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ISubstitutionLists{3}
+    public interface ISubstitutionLists
     {
 		List<ISubstitutionList> Item { get; set; }
 

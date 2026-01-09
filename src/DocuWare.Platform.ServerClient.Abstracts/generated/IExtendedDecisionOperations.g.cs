@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IExtendedDecisionOperations{3}
+    public interface IExtendedDecisionOperations
     {
 		Link[] Links { get; set; }
 

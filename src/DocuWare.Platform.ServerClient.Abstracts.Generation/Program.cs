@@ -29,7 +29,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
                 enumGenerationService.Generate(enumTypes[i]);
 
             InstanceGenerationService instanceGenerationService = new();
-            Type[] types = [.. assembly.GetExportedTypes().Where(t => t.IsClass && (t.GetConstructors().Length > 0 || t.Name.Contains("ServiceConnection")))]; // Avoid any static types
+            Type[] types = [.. assembly.GetExportedTypes().Where(t => t.IsClass)];
 
             for (int i = 0; i < types.Length; i++)
                 instanceGenerationService.Generate(types[i]);

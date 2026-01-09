@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFileCabinetTransferInfo{3}
+    public interface IFileCabinetTransferInfo
     {
 		List<int> SourceDocId { get; set; }
 		string SourceFileCabinetId { get; set; }

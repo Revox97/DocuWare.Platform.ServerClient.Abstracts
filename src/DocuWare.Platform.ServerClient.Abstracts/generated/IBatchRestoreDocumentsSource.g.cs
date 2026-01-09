@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IBatchRestoreDocumentsSource{3}
+    public interface IBatchRestoreDocumentsSource
     {
 		List<string> Id { get; set; }
     }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDialogInfos{3}
+    public interface IDialogInfos
     {
 		List<IDialogInfo> Dialog { get; set; }
 		Link[] Links { get; set; }

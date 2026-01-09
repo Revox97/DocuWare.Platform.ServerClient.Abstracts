@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IExportSettings{3}
+    public interface IExportSettings
     {
 		bool IncludeDataFiles { get; set; }
 		bool ExportHistory { get; set; }

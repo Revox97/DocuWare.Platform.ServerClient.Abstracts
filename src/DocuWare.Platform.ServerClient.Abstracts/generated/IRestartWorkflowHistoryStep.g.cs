@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRestartWorkflowHistoryStep{3}
+    public interface IRestartWorkflowHistoryStep
     {
 		List<IHistoryField> Fields { get; set; }
 		string ErrorMessage { get; set; }

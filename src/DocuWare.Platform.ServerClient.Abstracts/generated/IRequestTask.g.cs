@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IRequestTask{3}
+    public interface IRequestTask
     {
 		Link[] Links { get; set; }
 		List<IRequestDecision> Decisions { get; set; }

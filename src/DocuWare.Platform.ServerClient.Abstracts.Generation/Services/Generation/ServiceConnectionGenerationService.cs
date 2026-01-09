@@ -19,7 +19,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             Console.WriteLine("Generating IDocuWare");
             MethodInfo[] methods = type.GetMethods(BindingFlags.Static | BindingFlags.Public);
             string template = File.ReadAllText("Templates/Interface.template");
-            template = template.Replace("{0}", "IDocuWare").Replace("{1}", string.Empty);
+            template = template.Replace("{0}", "IDocuWare").Replace("{1}", string.Empty).Replace("{3}", string.Empty);
             string methodList = string.Empty;
 
             for (int i = 0; i < methods.Length; i++)

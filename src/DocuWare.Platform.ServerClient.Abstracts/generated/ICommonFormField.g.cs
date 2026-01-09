@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICommonFormField: IBaseForm
+    public interface ICommonFormField : IBaseForm
     {
 		List<ISelectListFilter> SelectListFilters { get; set; }
 		bool Mandatory { get; set; }
@@ -13,8 +13,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SelectListGuid { get; set; }
 		string SelectListColumn { get; set; }
 		bool IsHiddenInStamp { get; set; }
-		FormTypeEnum FormFieldType { get; set; }
-		string Label { get; set; }
-		int Id { get; set; }
     }
 }

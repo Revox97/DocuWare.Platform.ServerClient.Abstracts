@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IAppendActionDocuments{3}
+    public interface IAppendActionDocuments
     {
 		List<int> Documents { get; set; }
     }

@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWorkflowStampsSettings{3}
+    public interface IWorkflowStampsSettings
     {
 		bool UseFrame { get; set; }
 		bool UseDate { get; set; }

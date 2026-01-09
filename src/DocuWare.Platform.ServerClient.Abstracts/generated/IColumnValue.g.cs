@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IColumnValue{3}
+    public interface IColumnValue
     {
 		string Id { get; set; }
     }

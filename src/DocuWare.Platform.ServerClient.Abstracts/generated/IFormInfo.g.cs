@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFormInfo{3}
+    public interface IFormInfo
     {
 		List<IWebFormControl> Fields { get; set; }
 		List<IBehavior> Behaviors { get; set; }

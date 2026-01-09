@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IStampBase: IEntryBase
+    public interface IStampBase : IEntryBase
     {
 		StampSignatureType Signature { get; set; }
 		string UserName { get; set; }
@@ -12,11 +12,5 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool ShowDate { get; set; }
 		bool ShowTime { get; set; }
 		string SigScopeInfo { get; set; }
-		string Type { get; set; }
-		string Color { get; set; }
-		int Rotation { get; set; }
-		bool Transparent { get; set; }
-		int StrokeWidth { get; set; }
-		string Id { get; set; }
     }
 }

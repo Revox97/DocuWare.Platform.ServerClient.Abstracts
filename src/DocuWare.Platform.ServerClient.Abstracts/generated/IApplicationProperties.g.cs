@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IApplicationProperties{3}
+    public interface IApplicationProperties
     {
 		List<IApplicationProperty> ApplicationProperties1 { get; set; }
     }

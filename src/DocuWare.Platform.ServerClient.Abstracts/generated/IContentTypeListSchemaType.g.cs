@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IContentTypeListSchemaType{3}
+    public interface IContentTypeListSchemaType
     {
 		string IntroducedIn { get; set; }
 		XmlQualifiedName Value { get; set; }

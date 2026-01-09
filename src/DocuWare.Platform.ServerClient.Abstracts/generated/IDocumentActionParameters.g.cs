@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentActionParameters{3}
+    public interface IDocumentActionParameters
     {
     }
 }

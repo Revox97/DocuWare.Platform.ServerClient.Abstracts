@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ICandidateInfo{3}
+    public interface ICandidateInfo
     {
 		List<ICandidate> Candidates { get; set; }
     }

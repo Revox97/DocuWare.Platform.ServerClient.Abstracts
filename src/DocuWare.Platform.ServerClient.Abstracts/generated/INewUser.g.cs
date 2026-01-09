@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface INewUser{3}
+    public interface INewUser
     {
 		string Name { get; set; }
 		string DbName { get; set; }

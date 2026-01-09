@@ -1,9 +1,10 @@
 **Missing implementation**
-- documentation comments
-- Handling of generic methods e.g GetXml<T>()
-- Handling of extension methods
-- Handling of abstract types (WebFormControl)
-- Handle ToString overloads correctly
+- [ ] documentation comments
+- [ ] Handling of generic methods e.g GetXml<T>()
+- [ ] Handling of extension methods
+- [ ] Handling of abstract types (WebFormControl)
+- [x] Handle ToString overloads correctly
+- [ ] Handle inheritance by according interface structure
 
 **Open Issues**
 - [ ] ServiceConnection + IServiceConnection

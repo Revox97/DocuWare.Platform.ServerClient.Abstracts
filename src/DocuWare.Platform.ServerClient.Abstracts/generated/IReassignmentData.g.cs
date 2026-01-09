@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IReassignmentData{3}
+    public interface IReassignmentData
     {
 		List<IAssignedItem> ReassignmentList { get; set; }
 		string Subject { get; set; }

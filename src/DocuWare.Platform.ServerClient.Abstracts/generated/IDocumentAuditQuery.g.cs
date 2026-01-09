@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocumentAuditQuery{3}
+    public interface IDocumentAuditQuery
     {
 		int Start { get; set; }
 		int Count { get; set; }

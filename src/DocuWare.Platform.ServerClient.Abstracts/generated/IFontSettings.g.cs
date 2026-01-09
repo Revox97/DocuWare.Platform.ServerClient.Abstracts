@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IFontSettings{3}
+    public interface IFontSettings
     {
 		string Name { get; set; }
 		string Size { get; set; }

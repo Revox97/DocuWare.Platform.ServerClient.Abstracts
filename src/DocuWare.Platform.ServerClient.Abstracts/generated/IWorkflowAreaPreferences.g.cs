@@ -2,11 +2,8 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IWorkflowAreaPreferences: IContentAreaPreferences
+    public interface IWorkflowAreaPreferences : IContentAreaPreferences
     {
 		List<IWorkInstance> ControllerInstances { get; set; }
-		List<IWorkInstance> Instances { get; set; }
-		WorkAreaType AreaType { get; set; }
-		int SelectedInstanceIndex { get; set; }
     }
 }

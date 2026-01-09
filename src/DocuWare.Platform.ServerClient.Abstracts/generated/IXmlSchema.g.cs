@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IXmlSchema{3}
+    public interface IXmlSchema
     {
 		Link[] Links { get; set; }
 		string Name { get; set; }

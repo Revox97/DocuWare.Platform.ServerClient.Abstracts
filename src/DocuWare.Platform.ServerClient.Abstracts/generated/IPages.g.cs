@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IPages{3}
+    public interface IPages
     {
 		List<IPage> Page { get; set; }
 		Link[] Links { get; set; }

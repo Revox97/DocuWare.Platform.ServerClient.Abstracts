@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IDocuWare{3}
+    public interface IDocuWare
     {
 		Task<IServiceConnection> CreateAsync(Uri serviceUri, string userName, string password, string organization, DocuWare.Platform.ServerClient.DWProductTypes? licenseType, HttpMessageHandler httpClientHandler, ProductInfoHeaderValue[] userAgent);
 		Task<IServiceConnection> CreateAsync(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionData);

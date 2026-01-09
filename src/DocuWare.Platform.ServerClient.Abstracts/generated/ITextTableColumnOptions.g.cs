@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface ITextTableColumnOptions{3}
+    public interface ITextTableColumnOptions
     {
 		int Length { get; set; }
     }

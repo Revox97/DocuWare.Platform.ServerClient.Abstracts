@@ -2,7 +2,7 @@ using DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public interface IOwnWorkflow{3}
+    public interface IOwnWorkflow
     {
 		Link[] Links { get; set; }
 		List<IRequestDataDecision> TakenDecision { get; set; }
