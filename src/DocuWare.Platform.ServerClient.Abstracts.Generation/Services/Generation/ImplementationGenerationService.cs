@@ -117,6 +117,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     methodList += $"{GenerateSynchronous(method)}";
             }
 
+            // TODO improve in the future to search for method in nested types. Workaround for now.
+            if (type.Name.Equals("DialogPropertiesTaskList"))
+                methodList += $"{StringConstants.LineEnding}{StringConstants.LineEnding}\t\tpublic void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);";
+
             return methodList;
         }
 

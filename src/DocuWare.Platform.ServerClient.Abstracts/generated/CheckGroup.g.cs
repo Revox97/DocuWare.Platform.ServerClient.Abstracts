@@ -14,7 +14,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<List<IWebFormOption>> OptionsRows
         {
-            get => Obj.OptionsRows;
+            get => Obj.OptionsRows.All(l => new List<WebFormOption>(l.ConvertAll(a => new WebFormOption(a)).ToList());
             set => Obj.OptionsRows = value;
         }
 
