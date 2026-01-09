@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "DocuWare.Platform.ServerClient.Abstracts.Generation": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

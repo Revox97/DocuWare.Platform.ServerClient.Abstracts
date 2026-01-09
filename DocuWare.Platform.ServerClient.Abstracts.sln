@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuWare.Platform.ServerCli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuWare.Platform.ServerClient.Abstracts.Generation", "src\DocuWare.Platform.ServerClient.Abstracts.Generation\DocuWare.Platform.ServerClient.Abstracts.Generation.csproj", "{1E30073D-E22E-D5CA-065F-B4BDCA3F96CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestImplementation", "TestImplementation\TestImplementation.csproj", "{0DE1B155-D225-448F-A0B0-8825B705A8A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{1E30073D-E22E-D5CA-065F-B4BDCA3F96CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E30073D-E22E-D5CA-065F-B4BDCA3F96CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E30073D-E22E-D5CA-065F-B4BDCA3F96CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE1B155-D225-448F-A0B0-8825B705A8A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE1B155-D225-448F-A0B0-8825B705A8A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE1B155-D225-448F-A0B0-8825B705A8A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE1B155-D225-448F-A0B0-8825B705A8A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
