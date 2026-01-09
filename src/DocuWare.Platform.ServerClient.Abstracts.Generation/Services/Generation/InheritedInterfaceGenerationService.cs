@@ -74,6 +74,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     continue;
 
                 string returnTypeName = method.ReturnType.GetTypeDefinition().GetReturnTypeName();
+
+                // Filters generic methods, might need implementation in the future
+                if (method.IsGenericMethodDefinition)
+                    continue;
+
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 

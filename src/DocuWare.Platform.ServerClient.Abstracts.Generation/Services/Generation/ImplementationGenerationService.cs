@@ -104,6 +104,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     continue;
 
                 string returnTypeName = method.ReturnType.GetParsedName();
+
+                // Filters generic methods, might need implementation in the future
+                if (method.IsGenericMethodDefinition)
+                    continue;
+
                 methodList += $"{StringConstants.LineEnding}{StringConstants.LineEnding}";
 
                 if (returnTypeName.StartsWith("Task"))
@@ -150,6 +155,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 innerMostChild = innerMostChild.NestedType;
 
             bool isDwType = innerMostChild is not null && innerMostChild.Category is TypeCategory.DocuWare;
+
+            if (returnTypeName.Equals("Task<IOrganization[]>"))
+                return $"\t\tpublic async {returnTypeName} {method.Name}({parameters}) => (await Obj.GetOrganizationsAsync()).ToList().ConvertAll(o => new Organization(o)).ToArray();";
 
             return isDwType && returnTypeName.Contains("DeserializedHttpResponse<")
                 ? GenerateAsyncDeserializedHttpResponseMethod(returnType, typeName, returnTypeName, method, parameters, paramsToSent)
