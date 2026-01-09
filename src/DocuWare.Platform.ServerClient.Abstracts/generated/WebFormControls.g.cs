@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<IWebFormControl> WebFormControl
         {
-            get => Obj.WebFormControl.Select(x => new Abstracts.IWebFormFieldWebFormField(x) as WebFormControl).ToList();
-            set => Obj.WebFormControl = value.Select(x => ((WebFormControl)x).Obj).ToList();
+            get => throw new NotSupportedException("This feature is currently not available, it will be implemented with a future version");
+            set => throw new NotSupportedException("This feature is currently not available, it will be implemented with a future version");
         }
     }
 }
