@@ -37,6 +37,9 @@
     <None Update="Templates\DocuWareListPropertyGet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Templates\DoubleNestedDocuWareListGetSetProperty.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\Enum.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

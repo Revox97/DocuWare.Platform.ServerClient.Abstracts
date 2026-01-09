@@ -81,6 +81,13 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 return;
             }
 
+            bool isDoubleNestedDocuWareType = typeDefinition.Category is TypeCategory.List && typeDefinition.NestedType!.Category is TypeCategory.List && typeDefinition.NestedType!.NestedType!.Category is TypeCategory.DocuWare;
+            if (isDoubleNestedDocuWareType)
+            {
+                propertyList += TemplateService.GetDoubleNestedDocuWareListGetSetPropertyImplementation(typeName, property.Name);
+                return;
+            }
+
             if (typeDefinition.Category is TypeCategory.Enum && typeDefinition.FullName.StartsWith("DocuWare.Platform"))
             {
                 if (hasSetter)

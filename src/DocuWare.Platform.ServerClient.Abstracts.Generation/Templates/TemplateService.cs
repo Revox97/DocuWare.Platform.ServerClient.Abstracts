@@ -74,6 +74,14 @@
             }
         } = null!;
 
+        public static string DoubleNestedDocuWareListPropertyGetSet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/DoubleNestedDocuWareListGetSetProperty.template");
+            }
+        } = null!;
+
         public static string DocuWareEnumListPropertyGet
         {
             get
@@ -144,6 +152,11 @@
         internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name)
         {
             return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+        }
+
+        internal static string GetDoubleNestedDocuWareListGetSetPropertyImplementation(string type, string name)
+        {
+            return DoubleNestedDocuWareListPropertyGetSet.Replace("{returnType}", type[10..^2]).Replace("{name}", name).Replace("{type}", type[11..^2]);
         }
 
         internal static string GetDocuWareEnumListGetPropertyImplementation(string type, string name)
