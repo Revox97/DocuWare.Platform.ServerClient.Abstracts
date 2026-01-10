@@ -8,8 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public List<IWebFormControl> Fields
         {
-            get => throw new NotSupportedException("This feature is currently not available, it will be implemented with a future version");
-            set => throw new NotSupportedException("This feature is currently not available, it will be implemented with a future version");
+            get => throw new NotSupportedException("This property is not supported in the Abstracts library at the moment. Use SDK library for this functionality.");
+            set => throw new NotSupportedException("This property is not supported in the Abstracts library at the moment. Use SDK library for this functionality.");
         }
 
         public List<IBehavior> Behaviors
