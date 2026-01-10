@@ -1,5 +1,5 @@
 ﻿# DocuWare.Platform.ServerClient.Abstracts
-[![Release](https://img.shields.io/badge/Release-0.1.0.0-blue)](https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts)
+[![Release](https://img.shields.io/badge/Release-0.1.1.0-blue)](https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts/blob/master/LICENSE)
 
 **DocuWare.Platform.ServerClient.Abstracts** is a wrapper for the [DocuWare.Platform.ServerClient](https://www.nuget.org/packages/DocuWare.Platform.ServerClient) library, which allows mocking its types for testing without additional boilerplate.
