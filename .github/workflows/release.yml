@@ -9,13 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
+    - name: Version
+      run: |
+        echo "Version: ${github.ref_name}"
     - name: Checkout
       uses: actions/checkout@v4
     - name: Extract version
       id: version
       run: |
-        VERSION=${GITHUB_REF_NAME#v}
-        echo "VERSION=$VERSION" >> $GITHUB_ENV"
+        VERSION=${github.ref_name}
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
