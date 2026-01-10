@@ -9,6 +9,15 @@
     <Version>$(Version)</Version>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
   </ItemGroup>
