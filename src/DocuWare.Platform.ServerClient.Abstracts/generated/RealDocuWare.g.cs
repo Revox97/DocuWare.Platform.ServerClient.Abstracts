@@ -4,7 +4,7 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RealDocuWare()
+    public class RealDocuWare() : IDocuWare
     {
 		public async Task<IServiceConnection> CreateAsync(Uri serviceUri, string userName, string password, string? organization = null, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpMessageHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null)
 		{
