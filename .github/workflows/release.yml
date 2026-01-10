@@ -11,13 +11,13 @@ jobs:
     steps:
     - name: Version
       run: |
-        echo "Version: ${github.ref_name}"
+        echo "Version: ${{ github.ref_name }}"
     - name: Checkout
       uses: actions/checkout@v4
     - name: Extract version
       id: version
       run: |
-        VERSION=${github.ref_name}
+        VERSION=${{ github.ref_name }}
     - name: Setup .NET SDK
       uses: actions/setup-dotnet@v4
       with:
@@ -32,7 +32,7 @@ jobs:
 
     - name: Pack (NuGet + Symbols)
       run: |
-        dotnet pack \
+        dotnet pack src/DocuWare.Platform.ServerClient.Abstracts \
           -c Release \
           --no-build \
           -p:Version=${{ env.VERSION }} \
