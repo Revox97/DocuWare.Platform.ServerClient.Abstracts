@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ISuggestionValue : IDocumentIndexFieldValueBase
     {
+		IPointAndShootInfo Source { get; set; }
     }
 }

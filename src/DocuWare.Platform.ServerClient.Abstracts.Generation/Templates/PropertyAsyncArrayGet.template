@@ -1,0 +1,1 @@
+        public {type} {name} => Task.Run(async () => (await Obj.{name}).ToList().Select(o => ({targetType})new {baseTargetType}(o)).ToArray());

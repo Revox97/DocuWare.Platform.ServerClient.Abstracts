@@ -4,5 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IFileCabinetHistoryField : IHistoryField
     {
+		string FileCabinetName { get; set; }
+		string DocId { get; set; }
     }
 }

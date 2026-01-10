@@ -6,6 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WorkflowStampsSettings Obj { get; } = obj;
 
+        public IFont InfoFontFamily
+        {
+            get => new Font(Obj.InfoFontFamily);
+            set => Obj.InfoFontFamily = ((Font)value).Obj;
+        }
+
+        public IFont StampFont
+        {
+            get => new Font(Obj.StampFont);
+            set => Obj.StampFont = ((Font)value).Obj;
+        }
+
         public bool UseFrame
         {
             get => Obj.UseFrame;

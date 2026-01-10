@@ -12,10 +12,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Field = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
         }
 
+        public string StoreDialogId
+        {
+            get => Obj.StoreDialogId;
+            set => Obj.StoreDialogId = value;
+        }
+
         public int? BatchSize
         {
             get => Obj.BatchSize;
             set => Obj.BatchSize = value;
+        }
+
+        public bool BreakOnError
+        {
+            get => Obj.BreakOnError;
+            set => Obj.BreakOnError = value;
         }
 
         public bool ForceUpdate

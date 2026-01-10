@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IPage
     {
+		IPageData Data { get; set; }
 		Link[] Links { get; set; }
 		int PageNum { get; set; }
 		bool HasAnnotation { get; set; }

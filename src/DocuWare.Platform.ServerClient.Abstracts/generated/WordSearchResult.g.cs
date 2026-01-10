@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WordSearchResult Obj { get; } = obj;
 
+        public string Search
+        {
+            get => Obj.Search;
+            set => Obj.Search = value;
+        }
+
         public List<IWordSearchResultPageHit> PageHits
         {
             get => Obj.PageHits.Select(x => new WordSearchResultPageHit(x) as IWordSearchResultPageHit).ToList();

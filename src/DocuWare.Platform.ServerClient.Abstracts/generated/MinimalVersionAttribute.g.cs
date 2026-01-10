@@ -6,6 +6,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.MinimalVersionAttribute Obj { get; } = obj;
 
+        public string MinumumVersion
+        {
+            get => Obj.MinumumVersion;
+            set => Obj.MinumumVersion = value;
+        }
+
+        public object TypeId => Obj.TypeId;
+
 		public bool Equals(object obj) => Obj.Equals(obj);
 
 		public int GetHashCode() => Obj.GetHashCode();

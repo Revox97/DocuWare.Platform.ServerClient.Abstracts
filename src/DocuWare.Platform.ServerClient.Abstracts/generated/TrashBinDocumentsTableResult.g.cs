@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult Obj { get; } = obj;
 
+        public ICountPlusValue Count
+        {
+            get => new CountPlusValue(Obj.Count);
+            set => Obj.Count = ((CountPlusValue)value).Obj;
+        }
+
         public List<ITrashBinTableHeader> Headers
         {
             get => Obj.Headers.Select(x => new TrashBinTableHeader(x) as ITrashBinTableHeader).ToList();

@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IToggleBehaviorAction : IBehaviorAction
     {
+		bool Enabled { get; set; }
     }
 }

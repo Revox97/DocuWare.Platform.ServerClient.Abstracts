@@ -55,6 +55,12 @@
     <None Update="Templates\DocuWarePropertyGet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Templates\PropertyArrayGet.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\PropertyAsyncArrayGet.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\PropertyGetSet.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

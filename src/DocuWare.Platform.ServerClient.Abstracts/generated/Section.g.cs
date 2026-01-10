@@ -12,6 +12,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.SignatureStatus = value.ConvertAll(v => (DocuWare.Platform.ServerClient.SignatureStatus)v);
         }
 
+        public IPages Pages
+        {
+            get => new Pages(Obj.Pages);
+            set => Obj.Pages = ((Pages)value).Obj;
+        }
+
+        public IPages Thumbnails
+        {
+            get => new Pages(Obj.Thumbnails);
+            set => Obj.Thumbnails = ((Pages)value).Obj;
+        }
+
         public IUploadedFileChunk FileChunk
         {
             get => new UploadedFileChunk(Obj.FileChunk);

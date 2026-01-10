@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.UserPropertyQuery Obj { get; } = obj;
 
+        public IOutOfOffice OutOfOffice
+        {
+            get => new OutOfOffice(Obj.OutOfOffice);
+            set => Obj.OutOfOffice = ((OutOfOffice)value).Obj;
+        }
+
         public string Id
         {
             get => Obj.Id;

@@ -4,5 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IBatchUpdateProcess
     {
+		IBatchUpdateSource Source { get; set; }
+		IBatchUpdateProcessData Data { get; set; }
     }
 }

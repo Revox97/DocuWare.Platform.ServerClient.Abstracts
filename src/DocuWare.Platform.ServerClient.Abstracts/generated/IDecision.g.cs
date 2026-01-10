@@ -5,6 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDecision
     {
 		List<ITaskFormField> TaskFormField { get; set; }
+		IDecisionOperations DecisionOperations { get; set; }
 		Link[] Links { get; set; }
 		int Id { get; set; }
 		string Description { get; set; }

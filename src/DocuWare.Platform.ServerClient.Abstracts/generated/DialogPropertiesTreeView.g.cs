@@ -24,8 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Icon = value;
         }
 
-        public string StoreDialogRelationLink => Obj.StoreDialogRelationLink;
-
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
         public IDialog GetDialogFromStoreDialogRelation() => new Dialog(Obj.GetDialogFromStoreDialogRelation());

@@ -6,6 +6,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.TaskOperations Obj { get; } = obj;
 
+        public IBaseTaskOperations BaseTaskOperations
+        {
+            get => new BaseTaskOperations(Obj.BaseTaskOperations);
+            set => Obj.BaseTaskOperations = ((BaseTaskOperations)value).Obj;
+        }
+
+        public IExtendedControllerOperations ExtendedControllerOperations
+        {
+            get => new ExtendedControllerOperations(Obj.ExtendedControllerOperations);
+            set => Obj.ExtendedControllerOperations = ((ExtendedControllerOperations)value).Obj;
+        }
+
+        public IExtendedUserOperations ExtendedUserOperations
+        {
+            get => new ExtendedUserOperations(Obj.ExtendedUserOperations);
+            set => Obj.ExtendedUserOperations = ((ExtendedUserOperations)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

@@ -6,6 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.StampPlacement Obj { get; } = obj;
 
+        public IPolyLineEntry Strokes
+        {
+            get => new PolyLineEntry(Obj.Strokes);
+            set => Obj.Strokes = ((PolyLineEntry)value).Obj;
+        }
+
+        public IDWPoint Location
+        {
+            get => new DWPoint(Obj.Location);
+            set => Obj.Location = ((DWPoint)value).Obj;
+        }
+
         public List<IFormFieldValue> Field
         {
             get => Obj.Field.Select(x => new FormFieldValue(x) as IFormFieldValue).ToList();

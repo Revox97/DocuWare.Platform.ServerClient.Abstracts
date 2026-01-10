@@ -27,7 +27,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
         private static string GenerateProperties(Type type)
         {
-            PropertyInfo[] properties = [.. type.GetProperties(BindingFlags.Instance | BindingFlags.Public).Where(p => p.CustomAttributes.Any(a => a.AttributeType != typeof(XmlIgnoreAttribute)))];
+            PropertyInfo[] properties = [.. type.GetProperties(BindingFlags.Instance | BindingFlags.Public).Where(p => !p.CustomAttributes.Any(a => a.AttributeType == typeof(XmlIgnoreAttribute)))];
             string propertyList = string.Empty;
 
             for (int i = 0; i < properties.Length; i++)
@@ -36,6 +36,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             return propertyList;
         }
 
+        // TODO Handle in seperate class for cleaner code - This is quit messy atm
         private static void GenerateProperty(PropertyInfo property, ref string propertyList)
         {
             TypeDef typeDefinition = property.PropertyType.GetTypeDefinition();
@@ -45,12 +46,15 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             if (typeName.Equals("IDictionary"))
                 typeName = "System.Collections.IDictionary";
 
+            bool isAsync = typeDefinition.Category is TypeCategory.Generic && typeDefinition.Name.StartsWith("Task<");
+            bool isArray = (isAsync && typeDefinition.NestedType is not null && typeDefinition.NestedType.Name.EndsWith("[]")) || typeDefinition.Name.EndsWith("[]");
             bool isList = typeDefinition.Category is TypeCategory.List;
             bool isDwEnumList = isList && typeDefinition.NestedType!.Category is TypeCategory.Enum && typeDefinition.NestedType.FullName.StartsWith("DocuWare.Platform.ServerClient");
 
-            bool isDocuWareType = isList
-                ? typeDefinition.NestedType is not null && typeDefinition.NestedType.Category is TypeCategory.DocuWare
-                : typeDefinition.Category is TypeCategory.DocuWare;
+            bool isDocuWareType =
+                (isList && typeDefinition.NestedType is not null && typeDefinition.NestedType.Category is TypeCategory.DocuWare) ||
+                (isArray && (typeDefinition.NestedType is not null && typeDefinition.NestedType.Category is TypeCategory.DocuWare || typeDefinition.Category is TypeCategory.DocuWare)) ||
+                typeDefinition.Category is TypeCategory.DocuWare;
 
             string name = property.Name;
             bool hasSetter = property.GetSetMethod() is not null;
@@ -61,21 +65,46 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 if (hasSetter)
                 {
                     if (isDwEnumList)
+                    {
                         propertyList += TemplateService.GetDocuWareEnumListGetSetPropertyImplementation(typeName, name);
+                    }
+                    else if (isArray)
+                    {
+                        if (isAsync)
+                            propertyList += TemplateService.GetDocuWareAsyncArrayGetPropertyImplementation(typeName, name);
+                        else
+                            propertyList += TemplateService.GetDocuWareArrayGetPropertyImplementation(typeName, name);
+                    }
                     else if (isList)
+                    {
                         propertyList += TemplateService.GetDocuWareListGetSetPropertyImplementation(typeName, name);
+                    }
                     else
+                    {
                         propertyList += TemplateService.GetDocuWareGetSetPropertyImplementation(typeName, name);
+                    }
                 }
                 else
                 {
                     if (isDwEnumList)
+                    {
                         propertyList += TemplateService.GetDocuWareEnumListGetPropertyImplementation(typeName, name);
-                        // Enum imp here
+                    }
                     else if (isList)
+                    {
                         propertyList += TemplateService.GetDocuWareListGetPropertyImplementation(typeName, name);
+                    }
+                    else if (isArray)
+                    {
+                        if (isAsync)
+                            propertyList += TemplateService.GetDocuWareAsyncArrayGetPropertyImplementation(typeName, name);
+                        else
+                            propertyList += TemplateService.GetDocuWareArrayGetPropertyImplementation(typeName, name);
+                    }
                     else
+                    {
                         propertyList += TemplateService.GetDocuWareGetPropertyImplementation(typeName, name);
+                    }
                 }
 
                 return;

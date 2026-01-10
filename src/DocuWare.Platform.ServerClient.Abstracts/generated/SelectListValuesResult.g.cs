@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.SelectListValuesResult Obj { get; } = obj;
 
+        public ISingleColumnSelectListValues SingleColumn
+        {
+            get => new SingleColumnSelectListValues(Obj.SingleColumn);
+            set => Obj.SingleColumn = ((SingleColumnSelectListValues)value).Obj;
+        }
+
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

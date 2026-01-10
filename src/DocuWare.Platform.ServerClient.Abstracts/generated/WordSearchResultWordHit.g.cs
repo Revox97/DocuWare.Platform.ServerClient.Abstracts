@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.WordSearchResultWordHit Obj { get; } = obj;
 
+        public string Text
+        {
+            get => Obj.Text;
+            set => Obj.Text = value;
+        }
+
         public int L
         {
             get => Obj.L;

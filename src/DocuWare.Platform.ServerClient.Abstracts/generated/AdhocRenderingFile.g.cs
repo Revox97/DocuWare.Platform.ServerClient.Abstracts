@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.MetaData = value.Select(x => ((KeyValuePair)x).Obj).ToList();
         }
 
+        public IPages Pages
+        {
+            get => new Pages(Obj.Pages);
+            set => Obj.Pages = ((Pages)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

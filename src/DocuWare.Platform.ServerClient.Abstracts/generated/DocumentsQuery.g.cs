@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ForceRefresh = value;
         }
 
+        public string Expression
+        {
+            get => Obj.Expression;
+            set => Obj.Expression = value;
+        }
+
         public List<string> Fields
         {
             get => Obj.Fields;

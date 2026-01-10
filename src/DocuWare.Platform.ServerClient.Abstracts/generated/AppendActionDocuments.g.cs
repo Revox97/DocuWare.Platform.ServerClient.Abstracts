@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.AppendActionDocuments Obj { get; } = obj;
 
+        public string SourceCabinetId
+        {
+            get => Obj.SourceCabinetId;
+            set => Obj.SourceCabinetId = value;
+        }
+
         public List<int> Documents
         {
             get => Obj.Documents;

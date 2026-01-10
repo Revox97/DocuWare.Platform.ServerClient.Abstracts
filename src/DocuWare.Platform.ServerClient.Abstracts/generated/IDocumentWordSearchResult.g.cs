@@ -4,6 +4,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocumentWordSearchResult
     {
+		bool FoundInAnnotations { get; set; }
+		string Search { get; set; }
 		List<IDocumentWordSearchResultSectionHits> SectionHits { get; set; }
 		Link[] Links { get; set; }
 

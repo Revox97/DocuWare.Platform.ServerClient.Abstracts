@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITaskTableFieldInitialValues
     {
+		IDocumentIndexFieldTable DocumentIndexFieldTable { get; set; }
 		TaskTableFieldJoinTypeEnum TaskTableFieldJoinType { get; set; }
     }
 }

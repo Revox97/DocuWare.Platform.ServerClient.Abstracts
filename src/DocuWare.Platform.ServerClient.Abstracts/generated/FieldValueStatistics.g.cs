@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.FieldValueStatistics Obj { get; } = obj;
 
+        public IDocumentIndexFieldValue Value
+        {
+            get => new DocumentIndexFieldValue(Obj.Value);
+            set => Obj.Value = ((DocumentIndexFieldValue)value).Obj;
+        }
+
         public long Count
         {
             get => Obj.Count;

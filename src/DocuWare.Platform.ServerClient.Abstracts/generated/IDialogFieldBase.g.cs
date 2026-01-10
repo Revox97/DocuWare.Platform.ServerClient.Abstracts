@@ -4,6 +4,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDialogFieldBase
     {
+		string Mask { get; set; }
+		string MaskErrorText { get; set; }
 		string SampleEditText { get; set; }
 		List<IDocumentIndexFieldValue> PrefillValue { get; set; }
 		List<DynamicValueType> DynamicPrefillValue { get; set; }

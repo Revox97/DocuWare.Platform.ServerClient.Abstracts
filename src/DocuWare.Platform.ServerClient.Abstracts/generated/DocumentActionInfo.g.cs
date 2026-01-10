@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentActionInfo Obj { get; } = obj;
 
+        public IDocumentActionParameters DocumentActionParameters
+        {
+            get => new DocumentActionParameters(Obj.DocumentActionParameters);
+            set => Obj.DocumentActionParameters = ((DocumentActionParameters)value).Obj;
+        }
+
         public DocumentAction DocumentAction
         {
             get => (DocumentAction)Obj.DocumentAction;

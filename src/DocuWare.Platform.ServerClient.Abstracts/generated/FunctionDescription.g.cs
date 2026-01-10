@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Parameter = value.Select(x => ((ParameterDescription)x).Obj).ToList();
         }
 
+        public string Description
+        {
+            get => Obj.Description;
+            set => Obj.Description = value;
+        }
+
         public string Name
         {
             get => Obj.Name;

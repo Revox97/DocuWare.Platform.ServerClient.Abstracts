@@ -6,6 +6,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		Link[] Links { get; set; }
 		List<IFileCabinetField> Fields { get; set; }
+		List<Right> Rights { get; set; }
+		IExtendedUserRights ExtendedUserRights { get; set; }
 		string Color { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }

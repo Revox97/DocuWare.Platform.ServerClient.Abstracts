@@ -18,6 +18,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ResultFields = value;
         }
 
+        public IFunctionExpression Expression
+        {
+            get => new FunctionExpression(Obj.Expression);
+            set => Obj.Expression = ((FunctionExpression)value).Obj;
+        }
+
         public int Start
         {
             get => Obj.Start;

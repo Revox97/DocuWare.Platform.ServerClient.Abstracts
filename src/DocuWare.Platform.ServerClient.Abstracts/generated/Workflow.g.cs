@@ -12,6 +12,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
+        public IColumnsDefinition ColumnDefinition
+        {
+            get => new ColumnsDefinition(Obj.ColumnDefinition);
+            set => Obj.ColumnDefinition = ((ColumnsDefinition)value).Obj;
+        }
+
+        public IWorkflowBehaviorOptions WorkflowBehaviorOptions
+        {
+            get => new WorkflowBehaviorOptions(Obj.WorkflowBehaviorOptions);
+            set => Obj.WorkflowBehaviorOptions = ((WorkflowBehaviorOptions)value).Obj;
+        }
+
         public string Id
         {
             get => Obj.Id;

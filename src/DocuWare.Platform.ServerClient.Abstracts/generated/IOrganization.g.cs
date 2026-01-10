@@ -4,6 +4,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IOrganization
     {
+		IAdditionalOrganizationInfo AdditionalInfo { get; set; }
+		ICalendar Calendar { get; set; }
+		IOrganizationCulture Culture { get; set; }
 		Link[] Links { get; set; }
 		List<ConfigurationRight> ConfigurationRights { get; set; }
 		IExtendedConfigurationRights ExtendedConfigurationRights { get; set; }

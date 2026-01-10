@@ -5,7 +5,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface ICheckOutResult
     {
 		Link[] Links { get; set; }
-		string ContentRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromContentRelation();

@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.AdhocRenderingQuery Obj { get; } = obj;
 
+        public IDWSize Size
+        {
+            get => new DWSize(Obj.Size);
+            set => Obj.Size = ((DWSize)value).Obj;
+        }
+
         public int Page
         {
             get => Obj.Page;

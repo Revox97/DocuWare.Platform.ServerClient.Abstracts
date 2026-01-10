@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Functions = value.Select(x => ((ResultDialogFunction)x).Obj).ToList();
         }
 
+        public IViewerDialog ViewerDialog
+        {
+            get => new ViewerDialog(Obj.ViewerDialog);
+            set => Obj.ViewerDialog = ((ViewerDialog)value).Obj;
+        }
+
         public List<ISortedField> SortOrder
         {
             get => Obj.SortOrder.Select(x => new SortedField(x) as ISortedField).ToList();

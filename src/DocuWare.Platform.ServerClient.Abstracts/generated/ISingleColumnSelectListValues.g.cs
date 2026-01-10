@@ -7,10 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		List<string> Value { get; set; }
 		List<IDocumentIndexFieldValue> TypedValue { get; set; }
 		Link[] Links { get; set; }
-		string NextRelationLink { get; }
-		string PrevRelationLink { get; }
-		string SelfRelationLink { get; }
-		string FirstRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		ISingleColumnSelectListValues GetSingleColumnSelectListValuesFromNextRelation();

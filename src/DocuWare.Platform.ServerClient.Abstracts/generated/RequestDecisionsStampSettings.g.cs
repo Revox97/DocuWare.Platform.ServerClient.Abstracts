@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.RequestDecisionsStampSettings Obj { get; } = obj;
 
+        public IWorkflowStampsSettings StampsSettings
+        {
+            get => new WorkflowStampsSettings(Obj.StampsSettings);
+            set => Obj.StampsSettings = ((WorkflowStampsSettings)value).Obj;
+        }
+
         public List<IDecision> DecisionStamps
         {
             get => Obj.DecisionStamps.Select(x => new Decision(x) as IDecision).ToList();

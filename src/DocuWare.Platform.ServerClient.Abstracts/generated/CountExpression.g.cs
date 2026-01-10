@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.CountExpression Obj { get; } = obj;
 
+        public IDialogExpression DialogExpression
+        {
+            get => new DialogExpression(Obj.DialogExpression);
+            set => Obj.DialogExpression = ((DialogExpression)value).Obj;
+        }
+
         public string FieldName
         {
             get => Obj.FieldName;

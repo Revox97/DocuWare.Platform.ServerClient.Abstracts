@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDialogPropertiesTaskList : IDialogPropertiesResultList
     {
+		IDialogExpression Conditions { get; set; }
 		string ConditionString { get; set; }
 		bool Private { get; set; }
 		bool AutoRefresh { get; set; }

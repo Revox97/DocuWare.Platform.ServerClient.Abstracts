@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.HistoryStep Obj { get; } = obj;
 
+        public IHistoryStepInfo Info
+        {
+            get => new HistoryStepInfo(Obj.Info);
+            set => Obj.Info = ((HistoryStepInfo)value).Obj;
+        }
+
         public int StepNumber
         {
             get => Obj.StepNumber;

@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.FileCabinetSelectListExpression Obj { get; } = obj;
 
+        public string ValuePrefix
+        {
+            get => Obj.ValuePrefix;
+            set => Obj.ValuePrefix = value;
+        }
+
         public string FieldName
         {
             get => Obj.FieldName;

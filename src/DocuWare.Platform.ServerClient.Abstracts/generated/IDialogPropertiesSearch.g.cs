@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDialogPropertiesSearch : IDialogProperties
     {
+		ILogicalOperator LogicalOperator { get; set; }
     }
 }

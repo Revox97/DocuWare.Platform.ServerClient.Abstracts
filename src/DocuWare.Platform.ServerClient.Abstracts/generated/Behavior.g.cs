@@ -12,6 +12,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Conditions = value.Select(x => ((BehaviorCondition)x).Obj).ToList();
         }
 
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
+
+        public string Description
+        {
+            get => Obj.Description;
+            set => Obj.Description = value;
+        }
+
+        public string BehaviorID
+        {
+            get => Obj.BehaviorID;
+            set => Obj.BehaviorID = value;
+        }
+
         public List<IBehaviorAction> PassActions
         {
             get => Obj.PassActions.Select(x => new BehaviorAction(x) as IBehaviorAction).ToList();

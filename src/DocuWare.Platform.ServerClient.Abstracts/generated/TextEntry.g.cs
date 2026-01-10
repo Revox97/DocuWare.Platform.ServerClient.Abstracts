@@ -6,6 +6,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.TextEntry Obj { get; } = obj;
 
+        public IFont Font
+        {
+            get => new Font(Obj.Font);
+            set => Obj.Font = ((Font)value).Obj;
+        }
+
+        public string Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
+
+        public IAnnotationRectangle Location
+        {
+            get => new AnnotationRectangle(Obj.Location);
+            set => Obj.Location = ((AnnotationRectangle)value).Obj;
+        }
+
+        public ICreatedInfo Created
+        {
+            get => new CreatedInfo(Obj.Created);
+            set => Obj.Created = ((CreatedInfo)value).Obj;
+        }
+
         public string Type
         {
             get => Obj.Type;

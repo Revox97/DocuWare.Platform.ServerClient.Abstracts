@@ -5,6 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDocumentsQuery
     {
 		bool ForceRefresh { get; set; }
+		string Expression { get; set; }
 		List<string> Fields { get; set; }
 		List<ISortedField> SortOrder { get; set; }
 		Link[] Links { get; set; }

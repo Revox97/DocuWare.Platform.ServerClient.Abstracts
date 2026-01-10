@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentIndexField Obj { get; } = obj;
 
+        public IPointAndShootInfo PointAndShootInfo
+        {
+            get => new PointAndShootInfo(Obj.PointAndShootInfo);
+            set => Obj.PointAndShootInfo = ((PointAndShootInfo)value).Obj;
+        }
+
         public string FieldName
         {
             get => Obj.FieldName;
