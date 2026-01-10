@@ -4,7 +4,7 @@ using SDK = DocuWare.Platform.ServerClient;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RealDocuWare()
+    public class RealDocuWare() : IDocuWare
     {{0}
     }
 }
