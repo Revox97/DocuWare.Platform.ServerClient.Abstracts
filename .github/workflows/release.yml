@@ -21,7 +21,7 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore
-      run: dotnet restore
+      run: dotnet restore src/DocuWare.Platform.ServerClient.Abstracts/DocuWare.Platform.ServerClient.Abstracts.csproj
 
     - name: Build
       run: dotnet build src/DocuWare.Platform.ServerClient.Abstracts/DocuWare.Platform.ServerClient.Abstracts.csproj --no-restore -c Release -p:Version=$VERSION
