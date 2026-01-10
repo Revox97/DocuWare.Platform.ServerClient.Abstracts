@@ -9,7 +9,7 @@
 ❗ If you have any issues with the SDK itself, please contact [DocuWare support](https://support.docuware.com)
 
 ## installation
-Install the following NuGet package into your project: [NuGet](https://www.nuget.org)
+Install the following NuGet package into your project: [NuGet]([https://www.nuget.org](https://www.nuget.org/packages/DocuWare.Platform.ServerClient.Abstracts)
 
 ## Usage
 To start include the following namespace into your .cs file:
