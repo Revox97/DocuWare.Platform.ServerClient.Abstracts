@@ -6,6 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DialogFieldBase Obj { get; } = obj;
 
+        public string Mask
+        {
+            get => Obj.Mask;
+            set => Obj.Mask = value;
+        }
+
+        public string MaskErrorText
+        {
+            get => Obj.MaskErrorText;
+            set => Obj.MaskErrorText = value;
+        }
+
         public string SampleEditText
         {
             get => Obj.SampleEditText;

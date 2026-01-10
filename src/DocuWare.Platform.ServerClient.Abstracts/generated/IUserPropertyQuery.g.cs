@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IUserPropertyQuery
     {
+		IOutOfOffice OutOfOffice { get; set; }
 		string Id { get; set; }
 		bool Active { get; set; }
 		string FirstName { get; set; }

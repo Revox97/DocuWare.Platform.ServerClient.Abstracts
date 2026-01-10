@@ -7,7 +7,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		string StoreDialogId { get; set; }
 		string Icon { get; set; }
-		string StoreDialogRelationLink { get; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IDialog GetDialogFromStoreDialogRelation();

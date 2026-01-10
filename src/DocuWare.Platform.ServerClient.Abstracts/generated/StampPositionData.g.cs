@@ -6,6 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.StampPositionData Obj { get; } = obj;
 
+        public string SectionId
+        {
+            get => Obj.SectionId;
+            set => Obj.SectionId = value;
+        }
+
+        public int Page
+        {
+            get => Obj.Page;
+            set => Obj.Page = value;
+        }
+
         public List<IConfirmedField> ConfirmedFields
         {
             get => Obj.ConfirmedFields.Select(x => new ConfirmedField(x) as IConfirmedField).ToList();

@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IHistoryStep
     {
+		IHistoryStepInfo Info { get; set; }
 		int StepNumber { get; set; }
 		DateTime StepDate { get; set; }
 		string ActivityName { get; set; }

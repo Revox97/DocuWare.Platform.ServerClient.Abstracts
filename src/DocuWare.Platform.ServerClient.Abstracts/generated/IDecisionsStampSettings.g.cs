@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDecisionsStampSettings
     {
+		IWorkflowStampsSettings StampsSettings { get; set; }
 		List<IDecision> DecisionStamps { get; set; }
 		string WorkflowId { get; set; }
 		string InstanceId { get; set; }

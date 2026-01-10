@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.SuggestionCellValue Obj { get; } = obj;
 
+        public IPointAndShootInfo HighlightRectangle
+        {
+            get => new PointAndShootInfo(Obj.HighlightRectangle);
+            set => Obj.HighlightRectangle = ((PointAndShootInfo)value).Obj;
+        }
+
         public string TextFallback
         {
             get => Obj.TextFallback;
@@ -40,6 +46,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Mapped;
             set => Obj.Mapped = value;
+        }
+
+        public IPointAndShootInfo Source
+        {
+            get => new PointAndShootInfo(Obj.Source);
+            set => Obj.Source = ((PointAndShootInfo)value).Obj;
         }
 
         public object Item

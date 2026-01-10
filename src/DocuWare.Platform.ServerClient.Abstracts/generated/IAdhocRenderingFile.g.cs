@@ -5,6 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IAdhocRenderingFile
     {
 		List<IKeyValuePair> MetaData { get; set; }
+		IPages Pages { get; set; }
 		Link[] Links { get; set; }
 		string Id { get; set; }
 		int PageCount { get; set; }

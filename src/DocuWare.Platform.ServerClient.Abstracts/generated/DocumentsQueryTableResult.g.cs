@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentsQueryTableResult Obj { get; } = obj;
 
+        public ICountPlusValue Count
+        {
+            get => new CountPlusValue(Obj.Count);
+            set => Obj.Count = ((CountPlusValue)value).Obj;
+        }
+
         public List<ITableResultHeader> Headers
         {
             get => Obj.Headers.Select(x => new TableResultHeader(x) as ITableResultHeader).ToList();

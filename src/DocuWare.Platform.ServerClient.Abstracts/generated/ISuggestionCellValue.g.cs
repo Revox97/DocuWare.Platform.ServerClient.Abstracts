@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ISuggestionCellValue : ISuggestionValue
     {
+		IPointAndShootInfo HighlightRectangle { get; set; }
 		string TextFallback { get; set; }
 		Decimal DecimalFallback { get; set; }
 		DateTime DateFallback { get; set; }

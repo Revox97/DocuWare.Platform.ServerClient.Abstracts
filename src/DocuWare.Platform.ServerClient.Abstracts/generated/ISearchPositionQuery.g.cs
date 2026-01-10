@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ISearchPositionQuery
     {
+		string Phrase { get; set; }
 		bool IgnoreCase { get; set; }
 		bool WholeWord { get; set; }
 		int StartPage { get; set; }

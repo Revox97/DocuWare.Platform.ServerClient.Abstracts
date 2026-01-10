@@ -6,10 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.LineEntry Obj { get; } = obj;
 
+        public IAnnotationPoint From
+        {
+            get => new AnnotationPoint(Obj.From);
+            set => Obj.From = ((AnnotationPoint)value).Obj;
+        }
+
+        public IAnnotationPoint To
+        {
+            get => new AnnotationPoint(Obj.To);
+            set => Obj.To = ((AnnotationPoint)value).Obj;
+        }
+
         public bool Arrow
         {
             get => Obj.Arrow;
             set => Obj.Arrow = value;
+        }
+
+        public ICreatedInfo Created
+        {
+            get => new CreatedInfo(Obj.Created);
+            set => Obj.Created = ((CreatedInfo)value).Obj;
         }
 
         public string Type

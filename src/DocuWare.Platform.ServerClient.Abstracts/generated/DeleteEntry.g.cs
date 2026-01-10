@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DeleteEntry Obj { get; } = obj;
 
+        public ICreatedInfo Created
+        {
+            get => new CreatedInfo(Obj.Created);
+            set => Obj.Created = ((CreatedInfo)value).Obj;
+        }
+
         public string Type
         {
             get => Obj.Type;

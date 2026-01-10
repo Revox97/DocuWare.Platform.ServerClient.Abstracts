@@ -5,5 +5,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public class BehaviorAction(DocuWare.Platform.ServerClient.BehaviorAction obj) : IBehaviorAction
     {
         internal DocuWare.Platform.ServerClient.BehaviorAction Obj { get; } = obj;
+
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
     }
 }

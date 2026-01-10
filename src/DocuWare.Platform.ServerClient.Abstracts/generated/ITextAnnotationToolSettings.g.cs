@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ITextAnnotationToolSettings : IAnnotationToolSettings
     {
+		IFontSettings FontSettings { get; set; }
     }
 }

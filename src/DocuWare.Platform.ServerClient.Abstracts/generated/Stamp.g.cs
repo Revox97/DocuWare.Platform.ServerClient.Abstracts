@@ -18,6 +18,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Fields = value.Select(x => ((StampField)x).Obj).ToList();
         }
 
+        public IFont HeadFont
+        {
+            get => new Font(Obj.HeadFont);
+            set => Obj.HeadFont = ((Font)value).Obj;
+        }
+
         public object Item
         {
             get => Obj.Item;

@@ -24,14 +24,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string NextRelationLink => Obj.NextRelationLink;
-
-        public string PrevRelationLink => Obj.PrevRelationLink;
-
-        public string SelfRelationLink => Obj.SelfRelationLink;
-
-        public string FirstRelationLink => Obj.FirstRelationLink;
-
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
         public ISelectListResult GetSelectListResultFromNextRelation() => new SelectListResult(Obj.GetSelectListResultFromNextRelation());

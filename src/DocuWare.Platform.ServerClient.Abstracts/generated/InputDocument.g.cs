@@ -6,10 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.InputDocument Obj { get; } = obj;
 
+        public string MediaType => Obj.MediaType;
+
         public List<IDocumentIndexField> Fields
         {
             get => Obj.Fields.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
             set => Obj.Fields = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
+        }
+
+        public IInputFlags Flags
+        {
+            get => new InputFlags(Obj.Flags);
+            set => Obj.Flags = ((InputFlags)value).Obj;
         }
 
         public Link[] Links
@@ -22,6 +30,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Sections.Select(x => new InputSection(x) as IInputSection).ToList();
             set => Obj.Sections = value.Select(x => ((InputSection)x).Obj).ToList();
+        }
+
+        public IUploadedFileChunk FileChunk
+        {
+            get => new UploadedFileChunk(Obj.FileChunk);
+            set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

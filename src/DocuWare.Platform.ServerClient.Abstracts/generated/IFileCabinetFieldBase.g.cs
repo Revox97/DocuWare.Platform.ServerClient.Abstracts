@@ -5,6 +5,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IFileCabinetFieldBase
     {
 		Link[] Links { get; set; }
+		string FixedEntry { get; set; }
+		string FieldInfoText { get; set; }
 		FileCabinetFieldScope Scope { get; set; }
 		DWFieldType DWFieldType { get; set; }
 		int Length { get; set; }

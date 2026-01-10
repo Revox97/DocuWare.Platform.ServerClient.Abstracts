@@ -5,7 +5,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IServiceDescription
     {
 		Link[] Links { get; set; }
+		IServiceDescriptionTests Tests { get; set; }
+		IServiceDescriptionDocumentation Documentation { get; set; }
 		List<UriTemplateDescription> Resources { get; set; }
+		IServiceDescriptionStatistics Statistics { get; set; }
 		string Version { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);

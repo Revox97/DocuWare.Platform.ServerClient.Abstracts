@@ -24,6 +24,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
+        public string FixedEntry
+        {
+            get => Obj.FixedEntry;
+            set => Obj.FixedEntry = value;
+        }
+
+        public string FieldInfoText
+        {
+            get => Obj.FieldInfoText;
+            set => Obj.FieldInfoText = value;
+        }
+
         public FileCabinetFieldScope Scope
         {
             get => (FileCabinetFieldScope)Obj.Scope;

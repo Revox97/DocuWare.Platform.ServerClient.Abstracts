@@ -12,8 +12,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
-        public string ContentRelationLink => Obj.ContentRelationLink;
-
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
 		public Stream GetStreamFromContentRelation() => Obj.GetStreamFromContentRelation();

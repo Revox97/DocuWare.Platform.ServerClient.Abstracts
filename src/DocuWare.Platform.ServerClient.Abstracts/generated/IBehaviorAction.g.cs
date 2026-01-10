@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IBehaviorAction
     {
+		string Name { get; set; }
     }
 }

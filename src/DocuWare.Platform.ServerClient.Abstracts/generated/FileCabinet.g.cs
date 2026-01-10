@@ -18,6 +18,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Fields = value.Select(x => ((FileCabinetField)x).Obj).ToList();
         }
 
+        public List<Right> Rights
+        {
+            get => Obj.Rights.ConvertAll(o => (Right)o);
+            set => Obj.Rights = value.ConvertAll(v => (DocuWare.Platform.ServerClient.Right)v);
+        }
+
+        public IExtendedUserRights ExtendedUserRights
+        {
+            get => new ExtendedUserRights(Obj.ExtendedUserRights);
+            set => Obj.ExtendedUserRights = ((ExtendedUserRights)value).Obj;
+        }
+
         public string Color
         {
             get => Obj.Color;

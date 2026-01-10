@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.SearchPositionQuery Obj { get; } = obj;
 
+        public string Phrase
+        {
+            get => Obj.Phrase;
+            set => Obj.Phrase = value;
+        }
+
         public bool IgnoreCase
         {
             get => Obj.IgnoreCase;

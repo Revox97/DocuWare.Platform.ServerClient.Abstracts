@@ -6,10 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Document Obj { get; } = obj;
 
+        public string MediaType => Obj.MediaType;
+
         public List<IDocumentIndexField> Fields
         {
             get => Obj.Fields.Select(x => new DocumentIndexField(x) as IDocumentIndexField).ToList();
             set => Obj.Fields = value.Select(x => ((DocumentIndexField)x).Obj).ToList();
+        }
+
+        public IChecksumInfo ChecksumInfo
+        {
+            get => new ChecksumInfo(Obj.ChecksumInfo);
+            set => Obj.ChecksumInfo = ((ChecksumInfo)value).Obj;
         }
 
         public List<ISuggestionField> Suggestions
@@ -22,6 +30,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.TableFieldSuggestions.Select(x => new SuggestionTableField(x) as ISuggestionTableField).ToList();
             set => Obj.TableFieldSuggestions = value.Select(x => ((SuggestionTableField)x).Obj).ToList();
+        }
+
+        public IDocumentFlags Flags
+        {
+            get => new DocumentFlags(Obj.Flags);
+            set => Obj.Flags = ((DocumentFlags)value).Obj;
+        }
+
+        public IDocumentVersion Version
+        {
+            get => new DocumentVersion(Obj.Version);
+            set => Obj.Version = ((DocumentVersion)value).Obj;
         }
 
         public List<IDocumentContent> TextShot
@@ -40,6 +60,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Sections.Select(x => new Section(x) as ISection).ToList();
             set => Obj.Sections = value.Select(x => ((Section)x).Obj).ToList();
+        }
+
+        public XElementWrapper Preview
+        {
+            get => Obj.Preview;
+            set => Obj.Preview = value;
+        }
+
+        public string ContentType
+        {
+            get => Obj.ContentType;
+            set => Obj.ContentType = value;
+        }
+
+        public IUploadedFileChunk FileChunk
+        {
+            get => new UploadedFileChunk(Obj.FileChunk);
+            set => Obj.FileChunk = ((UploadedFileChunk)value).Obj;
         }
 
         public List<IDocumentApplicationProperty> ApplicationProperties

@@ -12,10 +12,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
+        public IServiceDescriptionTests Tests
+        {
+            get => new ServiceDescriptionTests(Obj.Tests);
+            set => Obj.Tests = ((ServiceDescriptionTests)value).Obj;
+        }
+
+        public IServiceDescriptionDocumentation Documentation
+        {
+            get => new ServiceDescriptionDocumentation(Obj.Documentation);
+            set => Obj.Documentation = ((ServiceDescriptionDocumentation)value).Obj;
+        }
+
         public List<UriTemplateDescription> Resources
         {
             get => Obj.Resources;
             set => Obj.Resources = value;
+        }
+
+        public IServiceDescriptionStatistics Statistics
+        {
+            get => new ServiceDescriptionStatistics(Obj.Statistics);
+            set => Obj.Statistics = ((ServiceDescriptionStatistics)value).Obj;
         }
 
         public string Version

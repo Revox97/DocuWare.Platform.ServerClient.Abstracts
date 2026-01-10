@@ -82,6 +82,22 @@
             }
         } = null!;
 
+        public static string DocuWareArrayPropertyGet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyArrayGet.template");
+            }
+        } = null!;
+
+        public static string DocuWareAsyncArrayPropertyGet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/PropertyAsyncArrayGet.template");
+            }
+        } = null!;
+
         public static string DocuWareEnumListPropertyGet
         {
             get
@@ -152,6 +168,16 @@
         internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name)
         {
             return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+        }
+
+        internal static string GetDocuWareArrayGetPropertyImplementation(string type, string name)
+        {
+            return DocuWareArrayPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]).Replace("{baseTargetType}", type[1..^2]);
+        }
+
+        internal static string GetDocuWareAsyncArrayGetPropertyImplementation(string type, string name)
+        {
+            return DocuWareAsyncArrayPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[5..^3]).Replace("{baseTargetType}", type[6..^3]);
         }
 
         internal static string GetDoubleNestedDocuWareListGetSetPropertyImplementation(string type, string name)

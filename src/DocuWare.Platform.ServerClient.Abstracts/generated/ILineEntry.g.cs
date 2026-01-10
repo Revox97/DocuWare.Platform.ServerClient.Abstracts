@@ -4,6 +4,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ILineEntry : IEntryBase
     {
+		IAnnotationPoint From { get; set; }
+		IAnnotationPoint To { get; set; }
 		bool Arrow { get; set; }
     }
 }

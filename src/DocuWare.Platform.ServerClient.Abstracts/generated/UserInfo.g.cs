@@ -6,13 +6,23 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.UserInfo Obj { get; } = obj;
 
+        public IUser User
+        {
+            get => new User(Obj.User);
+            set => Obj.User = ((User)value).Obj;
+        }
+
+        public ILoginInfo LoginInfo
+        {
+            get => new LoginInfo(Obj.LoginInfo);
+            set => Obj.LoginInfo = ((LoginInfo)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;
             set => Obj.Links = value;
         }
-
-        public string ValidateRelationLink => Obj.ValidateRelationLink;
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 

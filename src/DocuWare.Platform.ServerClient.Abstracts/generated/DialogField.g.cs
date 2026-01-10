@@ -24,6 +24,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.IsHierarchy = value;
         }
 
+        public string Mask
+        {
+            get => Obj.Mask;
+            set => Obj.Mask = value;
+        }
+
+        public string MaskErrorText
+        {
+            get => Obj.MaskErrorText;
+            set => Obj.MaskErrorText = value;
+        }
+
         public string SampleEditText
         {
             get => Obj.SampleEditText;

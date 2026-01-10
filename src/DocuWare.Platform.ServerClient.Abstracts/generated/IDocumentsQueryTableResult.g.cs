@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocumentsQueryTableResult
     {
+		ICountPlusValue Count { get; set; }
 		List<ITableResultHeader> Headers { get; set; }
 		List<ITableResultRow> Rows { get; set; }
 		Link[] Links { get; set; }

@@ -31,6 +31,7 @@
     <Using Include="System.Net" />
     <Using Include="System.Net.Http.Headers" />
     <Using Include="System.Net.Http.Json" />
+    <Using Include="System.Reflection" />
     <Using Include="System.Xml" />
   </ItemGroup>
 

@@ -12,6 +12,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Fields = value.Select(x => ((DialogField)x).Obj).ToList();
         }
 
+        public IDocumentsQuery Query
+        {
+            get => new DocumentsQuery(Obj.Query);
+            set => Obj.Query = ((DocumentsQuery)value).Obj;
+        }
+
+        public IDialogProperties Properties
+        {
+            get => new DialogProperties(Obj.Properties);
+            set => Obj.Properties = ((DialogProperties)value).Obj;
+        }
+
+        public IIntellixFieldAssignments IntellixFieldAssignments
+        {
+            get => new IntellixFieldAssignments(Obj.IntellixFieldAssignments);
+            set => Obj.IntellixFieldAssignments = ((IntellixFieldAssignments)value).Obj;
+        }
+
         public bool HasValidation
         {
             get => Obj.HasValidation;

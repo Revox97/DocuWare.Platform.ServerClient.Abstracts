@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.FormFieldValue Obj { get; } = obj;
 
+        public IDocumentIndexFieldValue TypedValue
+        {
+            get => new DocumentIndexFieldValue(Obj.TypedValue);
+            set => Obj.TypedValue = ((DocumentIndexFieldValue)value).Obj;
+        }
+
         public string Name
         {
             get => Obj.Name;

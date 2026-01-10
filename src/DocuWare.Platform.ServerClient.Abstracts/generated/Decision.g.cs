@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.TaskFormField = value.Select(x => ((TaskFormField)x).Obj).ToList();
         }
 
+        public IDecisionOperations DecisionOperations
+        {
+            get => new DecisionOperations(Obj.DecisionOperations);
+            set => Obj.DecisionOperations = ((DecisionOperations)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

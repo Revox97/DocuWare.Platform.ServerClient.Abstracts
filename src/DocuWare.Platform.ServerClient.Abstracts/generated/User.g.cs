@@ -6,10 +6,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.User Obj { get; } = obj;
 
+        public string EMail
+        {
+            get => Obj.EMail;
+            set => Obj.EMail = value;
+        }
+
         public string DefaultWebBasket
         {
             get => Obj.DefaultWebBasket;
             set => Obj.DefaultWebBasket = value;
+        }
+
+        public IOutOfOffice OutOfOffice
+        {
+            get => new OutOfOffice(Obj.OutOfOffice);
+            set => Obj.OutOfOffice = ((OutOfOffice)value).Obj;
+        }
+
+        public IRegionalSettings RegionalSettings
+        {
+            get => new RegionalSettings(Obj.RegionalSettings);
+            set => Obj.RegionalSettings = ((RegionalSettings)value).Obj;
         }
 
         public Link[] Links

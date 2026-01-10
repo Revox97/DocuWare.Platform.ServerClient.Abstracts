@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ConfirmedField Obj { get; } = obj;
 
+        public IWFFormFieldValue Value
+        {
+            get => new WFFormFieldValue(Obj.Value);
+            set => Obj.Value = ((WFFormFieldValue)value).Obj;
+        }
+
         public int Id
         {
             get => Obj.Id;

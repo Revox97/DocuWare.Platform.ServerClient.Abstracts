@@ -6,6 +6,16 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ServiceConnection Obj { get; } = obj;
 
+        public HttpClient HttpClient => Obj.HttpClient;
+
+        public HttpClientProxy Proxy => Obj.Proxy;
+
+        public IServiceDescription ServiceDescription => new ServiceDescription(Obj.ServiceDescription);
+
+        public IOrganization[] Organizations => [.. Obj.Organizations.Select(o => new Organization(o))];
+
+        public Task<IOrganization[]> OrganizationsAsync => Task.Run(async () => (await Obj.OrganizationsAsync).ToList().Select(o => (IOrganization)new Organization(o)).ToArray());
+
 		public void ReplaceHttpClient(IServiceConnection otherServiceConnection) => Obj.ReplaceHttpClient(((ServiceConnection)otherServiceConnection).Obj);
 
 		public void ReplaceHttpClient(HttpClient httpClient) => Obj.ReplaceHttpClient(httpClient);

@@ -6,5 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		int? MinLength { get; set; }
 		int? MaxLength { get; set; }
+		PredefinedEntryType PredefinedEntry { get; set; }
+		string PredefinedCustomEntry { get; set; }
     }
 }

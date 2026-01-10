@@ -4,5 +4,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface ICellZone : IRectangleBase
     {
+		ITextZone TextZone { get; set; }
     }
 }

@@ -6,6 +6,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentWordSearchResult Obj { get; } = obj;
 
+        public bool FoundInAnnotations
+        {
+            get => Obj.FoundInAnnotations;
+            set => Obj.FoundInAnnotations = value;
+        }
+
+        public string Search
+        {
+            get => Obj.Search;
+            set => Obj.Search = value;
+        }
+
         public List<IDocumentWordSearchResultSectionHits> SectionHits
         {
             get => Obj.SectionHits.Select(x => new DocumentWordSearchResultSectionHits(x) as IDocumentWordSearchResultSectionHits).ToList();

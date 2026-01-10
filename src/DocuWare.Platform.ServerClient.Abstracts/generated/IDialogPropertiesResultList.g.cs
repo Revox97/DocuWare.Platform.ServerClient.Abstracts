@@ -5,6 +5,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDialogPropertiesResultList : IDialogProperties
     {
 		List<IResultDialogFunction> Functions { get; set; }
+		IViewerDialog ViewerDialog { get; set; }
 		List<ISortedField> SortOrder { get; set; }
 		LetterCase DefaultListTextLetterCase { get; set; }
 		bool DisplayFirstDocument { get; set; }

@@ -12,6 +12,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ControllerInstances = value.Select(x => ((WorkInstance)x).Obj).ToList();
         }
 
+        public string SelectedControllerInstanceGuid
+        {
+            get => Obj.SelectedControllerInstanceGuid;
+            set => Obj.SelectedControllerInstanceGuid = value;
+        }
+
+        public string SelectedInstanceGuid
+        {
+            get => Obj.SelectedInstanceGuid;
+            set => Obj.SelectedInstanceGuid = value;
+        }
+
         public List<IWorkInstance> Instances
         {
             get => Obj.Instances.Select(x => new WorkInstance(x) as IWorkInstance).ToList();

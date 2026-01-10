@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Page Obj { get; } = obj;
 
+        public IPageData Data
+        {
+            get => new PageData(Obj.Data);
+            set => Obj.Data = ((PageData)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

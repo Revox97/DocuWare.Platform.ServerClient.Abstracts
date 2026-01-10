@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.ColumnValue Obj { get; } = obj;
 
+        public ITaskFieldValue Value
+        {
+            get => new TaskFieldValue(Obj.Value);
+            set => Obj.Value = ((TaskFieldValue)value).Obj;
+        }
+
         public string Id
         {
             get => Obj.Id;

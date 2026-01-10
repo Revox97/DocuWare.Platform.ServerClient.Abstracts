@@ -5,6 +5,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IWorkflow
     {
 		Link[] Links { get; set; }
+		IColumnsDefinition ColumnDefinition { get; set; }
+		IWorkflowBehaviorOptions WorkflowBehaviorOptions { get; set; }
 		string Id { get; set; }
 		string Name { get; set; }
 		int TaskCount { get; set; }

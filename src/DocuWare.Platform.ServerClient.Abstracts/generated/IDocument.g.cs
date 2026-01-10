@@ -4,12 +4,19 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IDocument
     {
+		string MediaType { get; }
 		List<IDocumentIndexField> Fields { get; set; }
+		IChecksumInfo ChecksumInfo { get; set; }
 		List<ISuggestionField> Suggestions { get; set; }
 		List<ISuggestionTableField> TableFieldSuggestions { get; set; }
+		IDocumentFlags Flags { get; set; }
+		IDocumentVersion Version { get; set; }
 		List<IDocumentContent> TextShot { get; set; }
 		Link[] Links { get; set; }
 		List<ISection> Sections { get; set; }
+		XElementWrapper Preview { get; set; }
+		string ContentType { get; set; }
+		IUploadedFileChunk FileChunk { get; set; }
 		List<IDocumentApplicationProperty> ApplicationProperties { get; set; }
 		string FileCabinetId { get; set; }
 		string OrganizationGuid { get; set; }

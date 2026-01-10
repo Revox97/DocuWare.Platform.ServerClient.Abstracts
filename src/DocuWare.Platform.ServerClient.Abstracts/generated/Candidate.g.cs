@@ -6,6 +6,66 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Content.Candidate Obj { get; } = obj;
 
+        public string Type
+        {
+            get => Obj.Type;
+            set => Obj.Type = value;
+        }
+
+        public string OriginalValue
+        {
+            get => Obj.OriginalValue;
+            set => Obj.OriginalValue = value;
+        }
+
+        public string FoundValue
+        {
+            get => Obj.FoundValue;
+            set => Obj.FoundValue = value;
+        }
+
+        public int L
+        {
+            get => Obj.L;
+            set => Obj.L = value;
+        }
+
+        public int T
+        {
+            get => Obj.T;
+            set => Obj.T = value;
+        }
+
+        public int W
+        {
+            get => Obj.W;
+            set => Obj.W = value;
+        }
+
+        public int H
+        {
+            get => Obj.H;
+            set => Obj.H = value;
+        }
+
+        public int Line
+        {
+            get => Obj.Line;
+            set => Obj.Line = value;
+        }
+
+        public int Index
+        {
+            get => Obj.Index;
+            set => Obj.Index = value;
+        }
+
+        public int Length
+        {
+            get => Obj.Length;
+            set => Obj.Length = value;
+        }
+
         public object Item
         {
             get => Obj.Item;

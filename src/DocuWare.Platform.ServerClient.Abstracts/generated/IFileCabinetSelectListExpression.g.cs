@@ -4,6 +4,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IFileCabinetSelectListExpression
     {
+		string ValuePrefix { get; set; }
 		string FieldName { get; set; }
 		int Count { get; set; }
 		int Start { get; set; }

@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.DocumentAuditEvent Obj { get; } = obj;
 
+        public IAuditEvent AuditEvent
+        {
+            get => new AuditEvent(Obj.AuditEvent);
+            set => Obj.AuditEvent = ((AuditEvent)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

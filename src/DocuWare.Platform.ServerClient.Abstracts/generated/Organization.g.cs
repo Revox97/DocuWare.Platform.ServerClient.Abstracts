@@ -6,6 +6,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.Organization Obj { get; } = obj;
 
+        public IAdditionalOrganizationInfo AdditionalInfo
+        {
+            get => new AdditionalOrganizationInfo(Obj.AdditionalInfo);
+            set => Obj.AdditionalInfo = ((AdditionalOrganizationInfo)value).Obj;
+        }
+
+        public ICalendar Calendar
+        {
+            get => new Calendar(Obj.Calendar);
+            set => Obj.Calendar = ((Calendar)value).Obj;
+        }
+
+        public IOrganizationCulture Culture
+        {
+            get => new OrganizationCulture(Obj.Culture);
+            set => Obj.Culture = ((OrganizationCulture)value).Obj;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;
