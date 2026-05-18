@@ -8,15 +8,39 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
     {
         public void Generate(Type type)
         {
-            bool hasBaseType = type.BaseType is not null && type.BaseType.GetTypeDefinition().Category == TypeCategory.DocuWare;
+            bool hasBaseType = type.BaseType is not null && type.BaseType.GetTypeDefinition().Category is TypeCategory.DocuWare or TypeCategory.Interface;
+            string namespaceName = type.Namespace ?? string.Empty;
+            string? namespaceExtension = null;
+
+            if (!namespaceName.StartsWith("DocuWare.Platform.ServerClient"))
+            {
+                string[] namespaceValues = namespaceName.Split('.');
+                int indexServerClient = Array.FindIndex(namespaceValues, x => x.Equals("DocuWare", StringComparison.OrdinalIgnoreCase));
+
+                namespaceExtension = string.Join('.', namespaceValues[(indexServerClient + 1)..]);
+            }
+            else if (!namespaceName.EndsWith("ServerClient"))
+            {
+                string[] namespaceValues = namespaceName.Split('.');
+                int indexServerClient = Array.FindIndex(namespaceValues, x => x.Equals("ServerClient", StringComparison.OrdinalIgnoreCase));
+
+                namespaceExtension = string.Join('.', namespaceValues[(indexServerClient + 1)..]);
+            }
 
             if (hasBaseType)
-                new InheritedInterfaceGenerationService().Generate(type);
+            {
+                if (type.BaseType!.IsAbstract)
+                    new InterfaceGenerationService(namespaceExtension).Generate(type.BaseType!);
+
+                new InheritedInterfaceGenerationService(namespaceExtension).Generate(type);
+            }
             else
-                new InterfaceGenerationService().Generate(type);
+            {
+                new InterfaceGenerationService(namespaceExtension).Generate(type);
+            }
 
             if (!type.IsAbstract && !type.Name.EndsWith("Extensions"))
-                new ImplementationGenerationService().Generate(type);
+                new ImplementationGenerationService(namespaceExtension).Generate(type);
         }
     }
 }

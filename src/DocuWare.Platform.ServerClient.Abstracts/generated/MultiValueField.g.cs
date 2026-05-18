@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiValueField(DocuWare.Platform.ServerClient.MultiValueField obj) : IMultiValueField
+    public class MultiValueField(SDK.MultiValueField obj) : IMultiValueField
     {
-        internal DocuWare.Platform.ServerClient.MultiValueField Obj { get; } = obj;
+        internal SDK.MultiValueField Obj { get; } = obj;
 
         public bool IsMultiselect
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountResult(DocuWare.Platform.ServerClient.CountResult obj) : ICountResult
+    public class CountResult(SDK.CountResult obj) : ICountResult
     {
-        internal DocuWare.Platform.ServerClient.CountResult Obj { get; } = obj;
+        internal SDK.CountResult Obj { get; } = obj;
 
         public List<ICountResultItem> Group
         {
@@ -28,6 +32,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.OrganizationGuid;
             set => Obj.OrganizationGuid = value;
+        }
+
+        public string LastAccessUser
+        {
+            get => Obj.LastAccessUser;
+            set => Obj.LastAccessUser = value;
         }
     }
 }

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TimeoutHistoryStep(DocuWare.Platform.ServerClient.TimeoutHistoryStep obj) : ITimeoutHistoryStep
+    public class TimeoutHistoryStep(SDK.TimeoutHistoryStep obj) : ITimeoutHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.TimeoutHistoryStep Obj { get; } = obj;
+        internal SDK.TimeoutHistoryStep Obj { get; } = obj;
 
         public string OutputName
         {

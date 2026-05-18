@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ToggleBehaviorAction(DocuWare.Platform.ServerClient.ToggleBehaviorAction obj) : IToggleBehaviorAction
+    public class ToggleBehaviorAction(SDK.ToggleBehaviorAction obj) : IToggleBehaviorAction
     {
-        internal DocuWare.Platform.ServerClient.ToggleBehaviorAction Obj { get; } = obj;
+        internal SDK.ToggleBehaviorAction Obj { get; } = obj;
 
         public bool Enabled
         {

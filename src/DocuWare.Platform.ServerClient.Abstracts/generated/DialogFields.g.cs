@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogFields(DocuWare.Platform.ServerClient.DialogFields obj) : IDialogFields
+    public class DialogFields(SDK.DialogFields obj) : IDialogFields
     {
-        internal DocuWare.Platform.ServerClient.DialogFields Obj { get; } = obj;
+        internal SDK.DialogFields Obj { get; } = obj;
 
         public List<IDialogField> Field
         {

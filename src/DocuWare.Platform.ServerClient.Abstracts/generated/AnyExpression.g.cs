@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AnyExpression(DocuWare.Platform.ServerClient.AnyExpression obj) : IAnyExpression
+    public class AnyExpression(SDK.AnyExpression obj) : IAnyExpression
     {
-        internal DocuWare.Platform.ServerClient.AnyExpression Obj { get; } = obj;
+        internal SDK.AnyExpression Obj { get; } = obj;
 
         public object Item
         {

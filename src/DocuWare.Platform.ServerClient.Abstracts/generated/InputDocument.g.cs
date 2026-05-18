@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class InputDocument(DocuWare.Platform.ServerClient.InputDocument obj) : IInputDocument
+    public class InputDocument(SDK.InputDocument obj) : IInputDocument
     {
-        internal DocuWare.Platform.ServerClient.InputDocument Obj { get; } = obj;
+        internal SDK.InputDocument Obj { get; } = obj;
 
         public string MediaType => Obj.MediaType;
 

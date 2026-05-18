@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Document(DocuWare.Platform.ServerClient.Document obj) : IDocument
+    public class Document(SDK.Document obj) : IDocument
     {
-        internal DocuWare.Platform.ServerClient.Document Obj { get; } = obj;
+        internal SDK.Document Obj { get; } = obj;
 
         public string MediaType => Obj.MediaType;
 
@@ -1088,6 +1092,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             };
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
+        }
+
+        public ISections PutToReorderSectionsRelationForSections(IReorderSectionsRequest dataToSend) => new Sections(Obj.PutToReorderSectionsRelationForSections(((ReorderSectionsRequest)dataToSend).Obj));
+
+        public async Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(IReorderSectionsRequest dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Sections> result = await Obj.PutToReorderSectionsRelationForSectionsAsync(((ReorderSectionsRequest)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Sections(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<ISections>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(CancellationToken cancellationToken, IReorderSectionsRequest dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Sections> result = await Obj.PutToReorderSectionsRelationForSectionsAsync(cancellationToken, ((ReorderSectionsRequest)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Sections(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<ISections>(temp).ConfigureAwait(false);
         }
     }
 }

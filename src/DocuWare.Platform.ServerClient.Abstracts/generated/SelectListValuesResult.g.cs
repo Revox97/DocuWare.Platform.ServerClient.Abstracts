@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListValuesResult(DocuWare.Platform.ServerClient.SelectListValuesResult obj) : ISelectListValuesResult
+    public class SelectListValuesResult(SDK.SelectListValuesResult obj) : ISelectListValuesResult
     {
-        internal DocuWare.Platform.ServerClient.SelectListValuesResult Obj { get; } = obj;
+        internal SDK.SelectListValuesResult Obj { get; } = obj;
 
         public ISingleColumnSelectListValues SingleColumn
         {

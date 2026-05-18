@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerWaitingInstances(DocuWare.Platform.ServerClient.DesignerWaitingInstances obj) : IDesignerWaitingInstances
+    public class DesignerWaitingInstances(SDK.DesignerWaitingInstances obj) : IDesignerWaitingInstances
     {
-        internal DocuWare.Platform.ServerClient.DesignerWaitingInstances Obj { get; } = obj;
+        internal SDK.DesignerWaitingInstances Obj { get; } = obj;
 
         public List<IDesignerWaitingInstance> DesignerWaitingInstance
         {

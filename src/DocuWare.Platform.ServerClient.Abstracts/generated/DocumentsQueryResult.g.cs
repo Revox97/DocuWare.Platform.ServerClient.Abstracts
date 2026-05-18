@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQueryResult(DocuWare.Platform.ServerClient.DocumentsQueryResult obj) : IDocumentsQueryResult
+    public class DocumentsQueryResult(SDK.DocumentsQueryResult obj) : IDocumentsQueryResult
     {
-        internal DocuWare.Platform.ServerClient.DocumentsQueryResult Obj { get; } = obj;
+        internal SDK.DocumentsQueryResult Obj { get; } = obj;
 
         public ICountPlusValue Count
         {
@@ -40,6 +44,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.FileCabinetId;
             set => Obj.FileCabinetId = value;
+        }
+
+        public string LastAccessUser
+        {
+            get => Obj.LastAccessUser;
+            set => Obj.LastAccessUser = value;
         }
 
         public DateTime TimeStamp

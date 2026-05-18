@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IntegerList(DocuWare.Platform.ServerClient.IntegerList obj) : IIntegerList
+    public class IntegerList(SDK.IntegerList obj) : IIntegerList
     {
-        internal DocuWare.Platform.ServerClient.IntegerList Obj { get; } = obj;
+        internal SDK.IntegerList Obj { get; } = obj;
 
         public List<int> Int
         {

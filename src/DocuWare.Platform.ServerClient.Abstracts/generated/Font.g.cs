@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Font(DocuWare.Platform.ServerClient.Font obj) : IFont
+    public class Font(SDK.Font obj) : IFont
     {
-        internal DocuWare.Platform.ServerClient.Font Obj { get; } = obj;
+        internal SDK.Font Obj { get; } = obj;
 
         public string FontName
         {

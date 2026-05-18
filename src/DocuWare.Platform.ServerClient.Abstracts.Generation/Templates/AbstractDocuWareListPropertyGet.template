@@ -1,0 +1,15 @@
+        public {type} {name}
+        {
+            get
+            {
+                List<{interfaceType}> fields = [];
+
+                foreach(SDK.{targetType} formField in Obj.Fields)
+                {
+                    Type type = formField.GetType();
+                    fields.Add(type.GetConstructor(BindingFlags.Public, [typeof(SDK.{targetType})]).Invoke([formField]) as IWebFormControl);
+                }
+
+                return fields;
+            }
+        }

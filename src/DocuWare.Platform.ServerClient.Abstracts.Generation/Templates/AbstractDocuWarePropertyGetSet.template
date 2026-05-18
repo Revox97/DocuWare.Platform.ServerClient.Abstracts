@@ -1,0 +1,17 @@
+        public {type} {name}
+        {
+            get
+            {
+                Type type = Obj.{name}.GetType();
+                return type.GetConstructor(BindingFlags.Public, [typeof(SDK.{targetType})]).Invoke([Obj.{name}]) as {type};
+            }
+            set
+            {
+                Type type = value.GetType();
+
+                PropertyInfo objPropertyInfo = type.GetProperty("Obj");
+                SDK.{targetType} obj = objPropertyInfo.GetValue(value) as SDK.{targetType};
+
+                Obj.{name} = obj;
+            }
+        }

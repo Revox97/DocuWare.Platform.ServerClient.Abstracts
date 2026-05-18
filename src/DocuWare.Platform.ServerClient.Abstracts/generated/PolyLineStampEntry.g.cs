@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PolyLineStampEntry(DocuWare.Platform.ServerClient.PolyLineStampEntry obj) : IPolyLineStampEntry
+    public class PolyLineStampEntry(SDK.PolyLineStampEntry obj) : IPolyLineStampEntry
     {
-        internal DocuWare.Platform.ServerClient.PolyLineStampEntry Obj { get; } = obj;
+        internal SDK.PolyLineStampEntry Obj { get; } = obj;
 
         public List<IStroke> Stroke
         {

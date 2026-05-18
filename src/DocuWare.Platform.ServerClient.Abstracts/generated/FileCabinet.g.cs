@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinet(DocuWare.Platform.ServerClient.FileCabinet obj) : IFileCabinet
+    public class FileCabinet(SDK.FileCabinet obj) : IFileCabinet
     {
-        internal DocuWare.Platform.ServerClient.FileCabinet Obj { get; } = obj;
+        internal SDK.FileCabinet Obj { get; } = obj;
 
         public Link[] Links
         {
@@ -526,6 +530,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomSearchRelationAsync(CancellationToken cancellationToken)
         {
             DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomSearchRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Dialog(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+        }
+
+        public IDialog GetDialogFromCustomInfoRelation() => new Dialog(Obj.GetDialogFromCustomInfoRelation());
+
+        public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync()
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomInfoRelationAsync().ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Dialog(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync(CancellationToken cancellationToken)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomInfoRelationAsync(cancellationToken).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

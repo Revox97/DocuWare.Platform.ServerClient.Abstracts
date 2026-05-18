@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PorcupineAttribute(DocuWare.Platform.ServerClient.PorcupineAttribute obj) : IPorcupineAttribute
+    public class PorcupineAttribute(SDK.PorcupineAttribute obj) : IPorcupineAttribute
     {
-        internal DocuWare.Platform.ServerClient.PorcupineAttribute Obj { get; } = obj;
+        internal SDK.PorcupineAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

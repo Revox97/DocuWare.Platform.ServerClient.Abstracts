@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class KeywordsField(DocuWare.Platform.ServerClient.KeywordsField obj) : IKeywordsField
+    public class KeywordsField(SDK.KeywordsField obj) : IKeywordsField
     {
-        internal DocuWare.Platform.ServerClient.KeywordsField Obj { get; } = obj;
+        internal SDK.KeywordsField Obj { get; } = obj;
 
         public IFieldMask FieldMask
         {

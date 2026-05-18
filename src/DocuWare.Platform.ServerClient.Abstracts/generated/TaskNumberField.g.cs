@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskNumberField(DocuWare.Platform.ServerClient.TaskNumberField obj) : ITaskNumberField
+    public class TaskNumberField(SDK.TaskNumberField obj) : ITaskNumberField
     {
-        internal DocuWare.Platform.ServerClient.TaskNumberField Obj { get; } = obj;
+        internal SDK.TaskNumberField Obj { get; } = obj;
 
         public int Precision
         {

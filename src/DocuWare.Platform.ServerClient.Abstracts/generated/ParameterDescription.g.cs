@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ParameterDescription(DocuWare.Platform.ServerClient.ParameterDescription obj) : IParameterDescription
+    public class ParameterDescription(SDK.ParameterDescription obj) : IParameterDescription
     {
-        internal DocuWare.Platform.ServerClient.ParameterDescription Obj { get; } = obj;
+        internal SDK.ParameterDescription Obj { get; } = obj;
 
         public string Name
         {

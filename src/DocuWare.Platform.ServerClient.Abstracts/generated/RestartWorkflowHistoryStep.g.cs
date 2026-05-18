@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RestartWorkflowHistoryStep(DocuWare.Platform.ServerClient.RestartWorkflowHistoryStep obj) : IRestartWorkflowHistoryStep
+    public class RestartWorkflowHistoryStep(SDK.RestartWorkflowHistoryStep obj) : IRestartWorkflowHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.RestartWorkflowHistoryStep Obj { get; } = obj;
+        internal SDK.RestartWorkflowHistoryStep Obj { get; } = obj;
 
         public List<IHistoryField> Fields
         {

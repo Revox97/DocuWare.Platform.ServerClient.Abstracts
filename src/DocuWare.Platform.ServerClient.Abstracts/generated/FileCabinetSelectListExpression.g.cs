@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetSelectListExpression(DocuWare.Platform.ServerClient.FileCabinetSelectListExpression obj) : IFileCabinetSelectListExpression
+    public class FileCabinetSelectListExpression(SDK.FileCabinetSelectListExpression obj) : IFileCabinetSelectListExpression
     {
-        internal DocuWare.Platform.ServerClient.FileCabinetSelectListExpression Obj { get; } = obj;
+        internal SDK.FileCabinetSelectListExpression Obj { get; } = obj;
 
         public string ValuePrefix
         {

@@ -1,0 +1,41 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.Exceptions
+{
+    public class ClientTimeoutException(SDK.Exceptions.ClientTimeoutException obj) : IClientTimeoutException
+    {
+        internal SDK.Exceptions.ClientTimeoutException Obj { get; } = obj;
+
+        public MethodBase TargetSite => Obj.TargetSite;
+
+        public string Message => Obj.Message;
+
+        public System.Collections.IDictionary Data => Obj.Data;
+
+        public Exception InnerException => Obj.InnerException;
+
+        public string HelpLink
+        {
+            get => Obj.HelpLink;
+            set => Obj.HelpLink = value;
+        }
+
+        public string Source
+        {
+            get => Obj.Source;
+            set => Obj.Source = value;
+        }
+
+        public int HResult
+        {
+            get => Obj.HResult;
+            set => Obj.HResult = value;
+        }
+
+        public string StackTrace => Obj.StackTrace;
+    }
+}

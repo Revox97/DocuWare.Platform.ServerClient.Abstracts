@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BatchRestoreDocumentsSource(DocuWare.Platform.ServerClient.BatchRestoreDocumentsSource obj) : IBatchRestoreDocumentsSource
+    public class BatchRestoreDocumentsSource(SDK.BatchRestoreDocumentsSource obj) : IBatchRestoreDocumentsSource
     {
-        internal DocuWare.Platform.ServerClient.BatchRestoreDocumentsSource Obj { get; } = obj;
+        internal SDK.BatchRestoreDocumentsSource Obj { get; } = obj;
 
         public List<string> Id
         {

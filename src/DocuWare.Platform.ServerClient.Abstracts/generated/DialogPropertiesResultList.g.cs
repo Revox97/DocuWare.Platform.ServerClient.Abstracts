@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesResultList(DocuWare.Platform.ServerClient.DialogPropertiesResultList obj) : IDialogPropertiesResultList
+    public class DialogPropertiesResultList(SDK.DialogPropertiesResultList obj) : IDialogPropertiesResultList
     {
-        internal DocuWare.Platform.ServerClient.DialogPropertiesResultList Obj { get; } = obj;
+        internal SDK.DialogPropertiesResultList Obj { get; } = obj;
 
         public List<IResultDialogFunction> Functions
         {

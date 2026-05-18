@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogExpressionCondition(DocuWare.Platform.ServerClient.DialogExpressionCondition obj) : IDialogExpressionCondition
+    public class DialogExpressionCondition(SDK.DialogExpressionCondition obj) : IDialogExpressionCondition
     {
-        internal DocuWare.Platform.ServerClient.DialogExpressionCondition Obj { get; } = obj;
+        internal SDK.DialogExpressionCondition Obj { get; } = obj;
 
         public List<string> Value
         {

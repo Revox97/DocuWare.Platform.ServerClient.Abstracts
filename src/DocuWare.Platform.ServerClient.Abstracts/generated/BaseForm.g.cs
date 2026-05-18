@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BaseForm(DocuWare.Platform.ServerClient.BaseForm obj) : IBaseForm
+    public class BaseForm(SDK.BaseForm obj) : IBaseForm
     {
-        internal DocuWare.Platform.ServerClient.BaseForm Obj { get; } = obj;
+        internal SDK.BaseForm Obj { get; } = obj;
 
         public FormTypeEnum FormFieldType
         {

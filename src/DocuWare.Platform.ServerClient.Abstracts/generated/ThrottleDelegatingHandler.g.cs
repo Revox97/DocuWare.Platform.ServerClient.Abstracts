@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ThrottleDelegatingHandler(DocuWare.Platform.ServerClient.ThrottleDelegatingHandler obj) : IThrottleDelegatingHandler
+    public class ThrottleDelegatingHandler(SDK.ThrottleDelegatingHandler obj) : IThrottleDelegatingHandler
     {
-        internal DocuWare.Platform.ServerClient.ThrottleDelegatingHandler Obj { get; } = obj;
+        internal SDK.ThrottleDelegatingHandler Obj { get; } = obj;
 
         public HttpMessageHandler InnerHandler
         {

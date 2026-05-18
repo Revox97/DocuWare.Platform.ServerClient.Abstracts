@@ -1,0 +1,20 @@
+using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public interface IWebClientPreferences : IApplicationPreferences
+    {
+		List<IWorkAreaPreferences> WorkAreas { get; set; }
+		IGeneralSettings GeneralSettings { get; set; }
+		IWebClientLayout WebClientLayout { get; set; }
+		IFavorites Favorites { get; set; }
+		IViewerPreferences Viewer { get; set; }
+		IMultiFCSearches MultiFCSearches { get; set; }
+		string LocalStorage { get; set; }
+		DateTime SurveyTimeStamp { get; set; }
+    }
+}

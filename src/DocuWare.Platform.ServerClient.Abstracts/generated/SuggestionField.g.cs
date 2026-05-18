@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionField(DocuWare.Platform.ServerClient.SuggestionField obj) : ISuggestionField
+    public class SuggestionField(SDK.SuggestionField obj) : ISuggestionField
     {
-        internal DocuWare.Platform.ServerClient.SuggestionField Obj { get; } = obj;
+        internal SDK.SuggestionField Obj { get; } = obj;
 
         public List<ISuggestionValue> Value
         {

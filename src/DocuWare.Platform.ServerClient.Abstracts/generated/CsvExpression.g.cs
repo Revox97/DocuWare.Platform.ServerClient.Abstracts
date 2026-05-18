@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CsvExpression(DocuWare.Platform.ServerClient.CsvExpression obj) : ICsvExpression
+    public class CsvExpression(SDK.CsvExpression obj) : ICsvExpression
     {
-        internal DocuWare.Platform.ServerClient.CsvExpression Obj { get; } = obj;
+        internal SDK.CsvExpression Obj { get; } = obj;
 
         public IDialogExpression DialogExpression
         {

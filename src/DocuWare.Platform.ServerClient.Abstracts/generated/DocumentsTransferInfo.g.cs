@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsTransferInfo(DocuWare.Platform.ServerClient.DocumentsTransferInfo obj) : IDocumentsTransferInfo
+    public class DocumentsTransferInfo(SDK.DocumentsTransferInfo obj) : IDocumentsTransferInfo
     {
-        internal DocuWare.Platform.ServerClient.DocumentsTransferInfo Obj { get; } = obj;
+        internal SDK.DocumentsTransferInfo Obj { get; } = obj;
 
         public List<IDocument> Documents
         {

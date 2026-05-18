@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionOperations(DocuWare.Platform.ServerClient.DecisionOperations obj) : IDecisionOperations
+    public class DecisionOperations(SDK.DecisionOperations obj) : IDecisionOperations
     {
-        internal DocuWare.Platform.ServerClient.DecisionOperations Obj { get; } = obj;
+        internal SDK.DecisionOperations Obj { get; } = obj;
 
         public IBaseDecisionOperations BaseDecisionOperations
         {

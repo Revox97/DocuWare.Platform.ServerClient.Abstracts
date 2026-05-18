@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionFormFieldValue(DocuWare.Platform.ServerClient.DecisionFormFieldValue obj) : IDecisionFormFieldValue
+    public class DecisionFormFieldValue(SDK.DecisionFormFieldValue obj) : IDecisionFormFieldValue
     {
-        internal DocuWare.Platform.ServerClient.DecisionFormFieldValue Obj { get; } = obj;
+        internal SDK.DecisionFormFieldValue Obj { get; } = obj;
 
         public int Id
         {

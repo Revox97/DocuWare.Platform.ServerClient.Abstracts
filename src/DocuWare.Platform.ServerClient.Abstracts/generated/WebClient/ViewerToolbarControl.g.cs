@@ -1,0 +1,31 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public class ViewerToolbarControl(SDK.WebClient.ViewerToolbarControl obj) : IViewerToolbarControl
+    {
+        internal SDK.WebClient.ViewerToolbarControl Obj { get; } = obj;
+
+        public ToolbarControlType Type
+        {
+            get => (ToolbarControlType)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.WebClient.ToolbarControlType)value;
+        }
+
+        public bool Checked
+        {
+            get => Obj.Checked;
+            set => Obj.Checked = value;
+        }
+
+        public ToolbarControlState State
+        {
+            get => (ToolbarControlState)Obj.State;
+            set => Obj.State = (DocuWare.Platform.ServerClient.WebClient.ToolbarControlState)value;
+        }
+    }
+}

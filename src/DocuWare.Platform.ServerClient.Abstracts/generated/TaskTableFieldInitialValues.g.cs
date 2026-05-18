@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableFieldInitialValues(DocuWare.Platform.ServerClient.TaskTableFieldInitialValues obj) : ITaskTableFieldInitialValues
+    public class TaskTableFieldInitialValues(SDK.TaskTableFieldInitialValues obj) : ITaskTableFieldInitialValues
     {
-        internal DocuWare.Platform.ServerClient.TaskTableFieldInitialValues Obj { get; } = obj;
+        internal SDK.TaskTableFieldInitialValues Obj { get; } = obj;
 
         public IDocumentIndexFieldTable DocumentIndexFieldTable
         {

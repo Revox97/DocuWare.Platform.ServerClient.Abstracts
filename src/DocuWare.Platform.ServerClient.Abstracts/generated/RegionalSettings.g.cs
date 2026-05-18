@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RegionalSettings(DocuWare.Platform.ServerClient.RegionalSettings obj) : IRegionalSettings
+    public class RegionalSettings(SDK.RegionalSettings obj) : IRegionalSettings
     {
-        internal DocuWare.Platform.ServerClient.RegionalSettings Obj { get; } = obj;
+        internal SDK.RegionalSettings Obj { get; } = obj;
 
         public string Language
         {

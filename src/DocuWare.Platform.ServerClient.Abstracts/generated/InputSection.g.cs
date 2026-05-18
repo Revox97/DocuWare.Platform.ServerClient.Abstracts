@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class InputSection(DocuWare.Platform.ServerClient.InputSection obj) : IInputSection
+    public class InputSection(SDK.InputSection obj) : IInputSection
     {
-        internal DocuWare.Platform.ServerClient.InputSection Obj { get; } = obj;
+        internal SDK.InputSection Obj { get; } = obj;
 
         public List<IApplicationProperty> ApplicationProperties
         {

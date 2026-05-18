@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IdentityServiceInfoConnectionData(DocuWare.Platform.ServerClient.IdentityServiceInfoConnectionData obj) : IIdentityServiceInfoConnectionData
+    public class IdentityServiceInfoConnectionData(SDK.IdentityServiceInfoConnectionData obj) : IIdentityServiceInfoConnectionData
     {
-        internal DocuWare.Platform.ServerClient.IdentityServiceInfoConnectionData Obj { get; } = obj;
+        internal SDK.IdentityServiceInfoConnectionData Obj { get; } = obj;
 
         public HttpMessageHandler HttpClientHandler
         {

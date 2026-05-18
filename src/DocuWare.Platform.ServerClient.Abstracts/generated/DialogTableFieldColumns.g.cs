@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogTableFieldColumns(DocuWare.Platform.ServerClient.DialogTableFieldColumns obj) : IDialogTableFieldColumns
+    public class DialogTableFieldColumns(SDK.DialogTableFieldColumns obj) : IDialogTableFieldColumns
     {
-        internal DocuWare.Platform.ServerClient.DialogTableFieldColumns Obj { get; } = obj;
+        internal SDK.DialogTableFieldColumns Obj { get; } = obj;
 
         public List<IDialogFieldBase> DialogTableFieldColumn
         {

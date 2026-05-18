@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -13,5 +17,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Backward { get; set; }
 		bool RangeSearch { get; set; }
 		bool Normalize { get; set; }
+		bool ExactPhrase { get; set; }
     }
 }

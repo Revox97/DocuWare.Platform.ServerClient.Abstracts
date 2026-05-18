@@ -1,15 +1,31 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerInstances(DocuWare.Platform.ServerClient.DesignerInstances obj) : IDesignerInstances
+    public class DesignerInstances(SDK.DesignerInstances obj) : IDesignerInstances
     {
-        internal DocuWare.Platform.ServerClient.DesignerInstances Obj { get; } = obj;
+        internal SDK.DesignerInstances Obj { get; } = obj;
 
         public List<IDesignerInstance> DesignerInstance
         {
             get => Obj.DesignerInstance.Select(x => new DesignerInstance(x) as IDesignerInstance).ToList();
             set => Obj.DesignerInstance = value.Select(x => ((DesignerInstance)x).Obj).ToList();
+        }
+
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
+
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EntryBase(DocuWare.Platform.ServerClient.EntryBase obj) : IEntryBase
+    public class EntryBase(SDK.EntryBase obj) : IEntryBase
     {
-        internal DocuWare.Platform.ServerClient.EntryBase Obj { get; } = obj;
+        internal SDK.EntryBase Obj { get; } = obj;
 
         public ICreatedInfo Created
         {

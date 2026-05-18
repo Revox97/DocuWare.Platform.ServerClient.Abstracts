@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestTask(DocuWare.Platform.ServerClient.RequestTask obj) : IRequestTask
+    public class RequestTask(SDK.RequestTask obj) : IRequestTask
     {
-        internal DocuWare.Platform.ServerClient.RequestTask Obj { get; } = obj;
+        internal SDK.RequestTask Obj { get; } = obj;
 
         public Link[] Links
         {

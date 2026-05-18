@@ -1,15 +1,25 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerWorkflow(DocuWare.Platform.ServerClient.DesignerWorkflow obj) : IDesignerWorkflow
+    public class DesignerWorkflow(SDK.DesignerWorkflow obj) : IDesignerWorkflow
     {
-        internal DocuWare.Platform.ServerClient.DesignerWorkflow Obj { get; } = obj;
+        internal SDK.DesignerWorkflow Obj { get; } = obj;
 
         public Link[] Links
         {
             get => Obj.Links;
             set => Obj.Links = value;
+        }
+
+        public IColumnsDefinition ColumnDefinition
+        {
+            get => new ColumnsDefinition(Obj.ColumnDefinition);
+            set => Obj.ColumnDefinition = ((ColumnsDefinition)value).Obj;
         }
 
         public string Id
@@ -28,6 +38,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.InstanceCount;
             set => Obj.InstanceCount = value;
+        }
+
+        public string FileCabinetId
+        {
+            get => Obj.FileCabinetId;
+            set => Obj.FileCabinetId = value;
+        }
+
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
@@ -78,6 +100,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         public async Task<DeserializedHttpResponse<IDesignerInstances>> GetDesignerInstancesFromInstancesRelationAsync(CancellationToken cancellationToken)
         {
             DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstances> result = await Obj.GetDesignerInstancesFromInstancesRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new DesignerInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
+        }
+
+        public IDesignerInstances PostToInstancesRelationForDesignerInstances(IInstancesQuery dataToSend) => new DesignerInstances(Obj.PostToInstancesRelationForDesignerInstances(((InstancesQuery)dataToSend).Obj));
+
+        public async Task<DeserializedHttpResponse<IDesignerInstances>> PostToInstancesRelationForDesignerInstancesAsync(IInstancesQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstances> result = await Obj.PostToInstancesRelationForDesignerInstancesAsync(((InstancesQuery)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new DesignerInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDesignerInstances>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IDesignerInstances>> PostToInstancesRelationForDesignerInstancesAsync(CancellationToken cancellationToken, IInstancesQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerInstances> result = await Obj.PostToInstancesRelationForDesignerInstancesAsync(cancellationToken, ((InstancesQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {
@@ -142,6 +192,90 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             };
 
             return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflowVersions>(temp).ConfigureAwait(false);
+        }
+
+        public IHistoryInstances GetHistoryInstancesFromHistoryInstancesRelation() => new HistoryInstances(Obj.GetHistoryInstancesFromHistoryInstancesRelation());
+
+        public async Task<DeserializedHttpResponse<IHistoryInstances>> GetHistoryInstancesFromHistoryInstancesRelationAsync()
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.HistoryInstances> result = await Obj.GetHistoryInstancesFromHistoryInstancesRelationAsync().ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new HistoryInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IHistoryInstances>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IHistoryInstances>> GetHistoryInstancesFromHistoryInstancesRelationAsync(CancellationToken cancellationToken)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.HistoryInstances> result = await Obj.GetHistoryInstancesFromHistoryInstancesRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new HistoryInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IHistoryInstances>(temp).ConfigureAwait(false);
+        }
+
+        public IHistoryInstances PostToHistoryInstancesRelationForHistoryInstances(IInstancesQuery dataToSend) => new HistoryInstances(Obj.PostToHistoryInstancesRelationForHistoryInstances(((InstancesQuery)dataToSend).Obj));
+
+        public async Task<DeserializedHttpResponse<IHistoryInstances>> PostToHistoryInstancesRelationForHistoryInstancesAsync(IInstancesQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.HistoryInstances> result = await Obj.PostToHistoryInstancesRelationForHistoryInstancesAsync(((InstancesQuery)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new HistoryInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IHistoryInstances>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IHistoryInstances>> PostToHistoryInstancesRelationForHistoryInstancesAsync(CancellationToken cancellationToken, IInstancesQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.HistoryInstances> result = await Obj.PostToHistoryInstancesRelationForHistoryInstancesAsync(cancellationToken, ((InstancesQuery)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new HistoryInstances(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IHistoryInstances>(temp).ConfigureAwait(false);
+        }
+
+        public IWorkflowInstancesCount GetWorkflowInstancesCountFromCountRelation() => new WorkflowInstancesCount(Obj.GetWorkflowInstancesCountFromCountRelation());
+
+        public async Task<DeserializedHttpResponse<IWorkflowInstancesCount>> GetWorkflowInstancesCountFromCountRelationAsync()
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowInstancesCount> result = await Obj.GetWorkflowInstancesCountFromCountRelationAsync().ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new WorkflowInstancesCount(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowInstancesCount>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IWorkflowInstancesCount>> GetWorkflowInstancesCountFromCountRelationAsync(CancellationToken cancellationToken)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.WorkflowInstancesCount> result = await Obj.GetWorkflowInstancesCountFromCountRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new WorkflowInstancesCount(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IWorkflowInstancesCount>(temp).ConfigureAwait(false);
         }
     }
 }

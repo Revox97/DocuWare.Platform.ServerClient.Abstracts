@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BehaviorAction(DocuWare.Platform.ServerClient.BehaviorAction obj) : IBehaviorAction
+    public class BehaviorAction(SDK.BehaviorAction obj) : IBehaviorAction
     {
-        internal DocuWare.Platform.ServerClient.BehaviorAction Obj { get; } = obj;
+        internal SDK.BehaviorAction Obj { get; } = obj;
 
         public string Name
         {

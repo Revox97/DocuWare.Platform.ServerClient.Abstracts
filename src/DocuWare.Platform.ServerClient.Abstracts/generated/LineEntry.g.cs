@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LineEntry(DocuWare.Platform.ServerClient.LineEntry obj) : ILineEntry
+    public class LineEntry(SDK.LineEntry obj) : ILineEntry
     {
-        internal DocuWare.Platform.ServerClient.LineEntry Obj { get; } = obj;
+        internal SDK.LineEntry Obj { get; } = obj;
 
         public IAnnotationPoint From
         {

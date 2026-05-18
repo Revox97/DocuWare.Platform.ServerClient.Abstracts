@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldValueStatisticsExpression(DocuWare.Platform.ServerClient.FieldValueStatisticsExpression obj) : IFieldValueStatisticsExpression
+    public class FieldValueStatisticsExpression(SDK.FieldValueStatisticsExpression obj) : IFieldValueStatisticsExpression
     {
-        internal DocuWare.Platform.ServerClient.FieldValueStatisticsExpression Obj { get; } = obj;
+        internal SDK.FieldValueStatisticsExpression Obj { get; } = obj;
 
         public string FieldName
         {

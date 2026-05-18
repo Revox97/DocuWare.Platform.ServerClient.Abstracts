@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -11,5 +15,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SystemNumber { get; set; }
 		string RuntimeVersion { get; set; }
 		string OrganizationType { get; set; }
+		bool IsAutoLogoutEnabled { get; set; }
+		string AutoLogoutTimeout { get; set; }
     }
 }

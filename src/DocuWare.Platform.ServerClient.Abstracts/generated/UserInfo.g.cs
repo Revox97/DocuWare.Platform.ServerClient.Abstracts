@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserInfo(DocuWare.Platform.ServerClient.UserInfo obj) : IUserInfo
+    public class UserInfo(SDK.UserInfo obj) : IUserInfo
     {
-        internal DocuWare.Platform.ServerClient.UserInfo Obj { get; } = obj;
+        internal SDK.UserInfo Obj { get; } = obj;
 
         public IUser User
         {

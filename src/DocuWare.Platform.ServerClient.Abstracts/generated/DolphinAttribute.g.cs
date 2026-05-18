@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DolphinAttribute(DocuWare.Platform.ServerClient.DolphinAttribute obj) : IDolphinAttribute
+    public class DolphinAttribute(SDK.DolphinAttribute obj) : IDolphinAttribute
     {
-        internal DocuWare.Platform.ServerClient.DolphinAttribute Obj { get; } = obj;
+        internal SDK.DolphinAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

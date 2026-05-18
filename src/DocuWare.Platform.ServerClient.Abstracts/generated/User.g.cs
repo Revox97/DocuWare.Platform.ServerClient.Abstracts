@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class User(DocuWare.Platform.ServerClient.User obj) : IUser
+    public class User(SDK.User obj) : IUser
     {
-        internal DocuWare.Platform.ServerClient.User Obj { get; } = obj;
+        internal SDK.User Obj { get; } = obj;
 
         public string EMail
         {
@@ -94,6 +98,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.ExternalProvider;
             set => Obj.ExternalProvider = value;
+        }
+
+        public bool ShouldUpdateActive
+        {
+            get => Obj.ShouldUpdateActive;
+            set => Obj.ShouldUpdateActive = value;
+        }
+
+        public string ExternalIdpUserId
+        {
+            get => Obj.ExternalIdpUserId;
+            set => Obj.ExternalIdpUserId = value;
+        }
+
+        public string ExternalIdp
+        {
+            get => Obj.ExternalIdp;
+            set => Obj.ExternalIdp = value;
+        }
+
+        public bool TwoStepVerificationEnabled
+        {
+            get => Obj.TwoStepVerificationEnabled;
+            set => Obj.TwoStepVerificationEnabled = value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

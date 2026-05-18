@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserDefinedSearchInfo(DocuWare.Platform.ServerClient.UserDefinedSearchInfo obj) : IUserDefinedSearchInfo
+    public class UserDefinedSearchInfo(SDK.UserDefinedSearchInfo obj) : IUserDefinedSearchInfo
     {
-        internal DocuWare.Platform.ServerClient.UserDefinedSearchInfo Obj { get; } = obj;
+        internal SDK.UserDefinedSearchInfo Obj { get; } = obj;
 
         public IDialogExpression DialogExpression
         {

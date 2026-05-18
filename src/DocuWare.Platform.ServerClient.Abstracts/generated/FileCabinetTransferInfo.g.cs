@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinetTransferInfo(DocuWare.Platform.ServerClient.FileCabinetTransferInfo obj) : IFileCabinetTransferInfo
+    public class FileCabinetTransferInfo(SDK.FileCabinetTransferInfo obj) : IFileCabinetTransferInfo
     {
-        internal DocuWare.Platform.ServerClient.FileCabinetTransferInfo Obj { get; } = obj;
+        internal SDK.FileCabinetTransferInfo Obj { get; } = obj;
 
         public List<int> SourceDocId
         {

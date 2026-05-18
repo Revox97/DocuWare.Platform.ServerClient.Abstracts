@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ConfigurationRights(DocuWare.Platform.ServerClient.ConfigurationRights obj) : IConfigurationRights
+    public class ConfigurationRights(SDK.ConfigurationRights obj) : IConfigurationRights
     {
-        internal DocuWare.Platform.ServerClient.ConfigurationRights Obj { get; } = obj;
+        internal SDK.ConfigurationRights Obj { get; } = obj;
 
         public List<ConfigurationRight> ConfigurationRight
         {

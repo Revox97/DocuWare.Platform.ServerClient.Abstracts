@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentActionInfo(DocuWare.Platform.ServerClient.DocumentActionInfo obj) : IDocumentActionInfo
+    public class DocumentActionInfo(SDK.DocumentActionInfo obj) : IDocumentActionInfo
     {
-        internal DocuWare.Platform.ServerClient.DocumentActionInfo Obj { get; } = obj;
+        internal SDK.DocumentActionInfo Obj { get; } = obj;
 
         public IDocumentActionParameters DocumentActionParameters
         {

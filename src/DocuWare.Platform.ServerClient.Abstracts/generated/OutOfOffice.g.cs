@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class OutOfOffice(DocuWare.Platform.ServerClient.OutOfOffice obj) : IOutOfOffice
+    public class OutOfOffice(SDK.OutOfOffice obj) : IOutOfOffice
     {
-        internal DocuWare.Platform.ServerClient.OutOfOffice Obj { get; } = obj;
+        internal SDK.OutOfOffice Obj { get; } = obj;
 
         public bool IsOutOfOffice
         {

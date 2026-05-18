@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionCellValue(DocuWare.Platform.ServerClient.SuggestionCellValue obj) : ISuggestionCellValue
+    public class SuggestionCellValue(SDK.SuggestionCellValue obj) : ISuggestionCellValue
     {
-        internal DocuWare.Platform.ServerClient.SuggestionCellValue Obj { get; } = obj;
+        internal SDK.SuggestionCellValue Obj { get; } = obj;
 
         public IPointAndShootInfo HighlightRectangle
         {

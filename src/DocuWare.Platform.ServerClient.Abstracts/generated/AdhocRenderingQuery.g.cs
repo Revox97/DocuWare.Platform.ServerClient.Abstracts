@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdhocRenderingQuery(DocuWare.Platform.ServerClient.AdhocRenderingQuery obj) : IAdhocRenderingQuery
+    public class AdhocRenderingQuery(SDK.AdhocRenderingQuery obj) : IAdhocRenderingQuery
     {
-        internal DocuWare.Platform.ServerClient.AdhocRenderingQuery Obj { get; } = obj;
+        internal SDK.AdhocRenderingQuery Obj { get; } = obj;
 
         public IDWSize Size
         {

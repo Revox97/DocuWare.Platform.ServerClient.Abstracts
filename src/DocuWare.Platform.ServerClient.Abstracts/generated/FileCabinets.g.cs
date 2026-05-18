@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileCabinets(DocuWare.Platform.ServerClient.FileCabinets obj) : IFileCabinets
+    public class FileCabinets(SDK.FileCabinets obj) : IFileCabinets
     {
-        internal DocuWare.Platform.ServerClient.FileCabinets Obj { get; } = obj;
+        internal SDK.FileCabinets Obj { get; } = obj;
 
         public List<IFileCabinet> FileCabinet
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldKeywords(DocuWare.Platform.ServerClient.DocumentIndexFieldKeywords obj) : IDocumentIndexFieldKeywords
+    public class DocumentIndexFieldKeywords(SDK.DocumentIndexFieldKeywords obj) : IDocumentIndexFieldKeywords
     {
-        internal DocuWare.Platform.ServerClient.DocumentIndexFieldKeywords Obj { get; } = obj;
+        internal SDK.DocumentIndexFieldKeywords Obj { get; } = obj;
 
         public List<string> Keyword
         {

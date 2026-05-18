@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StringConstant(DocuWare.Platform.ServerClient.StringConstant obj) : IStringConstant
+    public class StringConstant(SDK.StringConstant obj) : IStringConstant
     {
-        internal DocuWare.Platform.ServerClient.StringConstant Obj { get; } = obj;
+        internal SDK.StringConstant Obj { get; } = obj;
 
         public string Value
         {

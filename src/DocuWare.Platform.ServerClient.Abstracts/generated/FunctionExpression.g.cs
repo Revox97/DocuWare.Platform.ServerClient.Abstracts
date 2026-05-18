@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionExpression(DocuWare.Platform.ServerClient.FunctionExpression obj) : IFunctionExpression
+    public class FunctionExpression(SDK.FunctionExpression obj) : IFunctionExpression
     {
-        internal DocuWare.Platform.ServerClient.FunctionExpression Obj { get; } = obj;
+        internal SDK.FunctionExpression Obj { get; } = obj;
 
         public List<IAnyExpression> Parameter
         {

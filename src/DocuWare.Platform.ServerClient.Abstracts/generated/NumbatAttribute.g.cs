@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumbatAttribute(DocuWare.Platform.ServerClient.NumbatAttribute obj) : INumbatAttribute
+    public class NumbatAttribute(SDK.NumbatAttribute obj) : INumbatAttribute
     {
-        internal DocuWare.Platform.ServerClient.NumbatAttribute Obj { get; } = obj;
+        internal SDK.NumbatAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

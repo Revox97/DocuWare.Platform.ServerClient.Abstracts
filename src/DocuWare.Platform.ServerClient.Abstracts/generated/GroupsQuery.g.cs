@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GroupsQuery(DocuWare.Platform.ServerClient.GroupsQuery obj) : IGroupsQuery
+    public class GroupsQuery(SDK.GroupsQuery obj) : IGroupsQuery
     {
-        internal DocuWare.Platform.ServerClient.GroupsQuery Obj { get; } = obj;
+        internal SDK.GroupsQuery Obj { get; } = obj;
 
         public bool Active
         {

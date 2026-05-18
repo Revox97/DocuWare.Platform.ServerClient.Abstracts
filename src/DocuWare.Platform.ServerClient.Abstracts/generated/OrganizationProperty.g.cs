@@ -1,0 +1,25 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public class OrganizationProperty(SDK.OrganizationProperty obj) : IOrganizationProperty
+    {
+        internal SDK.OrganizationProperty Obj { get; } = obj;
+
+        public string Key
+        {
+            get => Obj.Key;
+            set => Obj.Key = value;
+        }
+
+        public string Value
+        {
+            get => Obj.Value;
+            set => Obj.Value = value;
+        }
+    }
+}

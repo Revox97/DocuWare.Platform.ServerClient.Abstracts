@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WebFormOptions(DocuWare.Platform.ServerClient.WebFormOptions obj) : IWebFormOptions
+    public class WebFormOptions(SDK.WebFormOptions obj) : IWebFormOptions
     {
-        internal DocuWare.Platform.ServerClient.WebFormOptions Obj { get; } = obj;
+        internal SDK.WebFormOptions Obj { get; } = obj;
 
         public List<IWebFormOption> WebFormOption
         {

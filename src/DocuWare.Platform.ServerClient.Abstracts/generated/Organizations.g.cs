@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Organizations(DocuWare.Platform.ServerClient.Organizations obj) : IOrganizations
+    public class Organizations(SDK.Organizations obj) : IOrganizations
     {
-        internal DocuWare.Platform.ServerClient.Organizations Obj { get; } = obj;
+        internal SDK.Organizations Obj { get; } = obj;
 
         public List<IOrganization> Organization
         {

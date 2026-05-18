@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportTemplateInput(DocuWare.Platform.ServerClient.ImportTemplateInput obj) : IImportTemplateInput
+    public class ImportTemplateInput(SDK.ImportTemplateInput obj) : IImportTemplateInput
     {
-        internal DocuWare.Platform.ServerClient.ImportTemplateInput Obj { get; } = obj;
+        internal SDK.ImportTemplateInput Obj { get; } = obj;
 
         public string FileName
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowStampsSettings(DocuWare.Platform.ServerClient.WorkflowStampsSettings obj) : IWorkflowStampsSettings
+    public class WorkflowStampsSettings(SDK.WorkflowStampsSettings obj) : IWorkflowStampsSettings
     {
-        internal DocuWare.Platform.ServerClient.WorkflowStampsSettings Obj { get; } = obj;
+        internal SDK.WorkflowStampsSettings Obj { get; } = obj;
 
         public IFont InfoFontFamily
         {

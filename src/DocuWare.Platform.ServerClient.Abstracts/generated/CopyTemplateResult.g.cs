@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CopyTemplateResult(DocuWare.Platform.ServerClient.CopyTemplateResult obj) : ICopyTemplateResult
+    public class CopyTemplateResult(SDK.CopyTemplateResult obj) : ICopyTemplateResult
     {
-        internal DocuWare.Platform.ServerClient.CopyTemplateResult Obj { get; } = obj;
+        internal SDK.CopyTemplateResult Obj { get; } = obj;
 
         public string TemplateGUID
         {

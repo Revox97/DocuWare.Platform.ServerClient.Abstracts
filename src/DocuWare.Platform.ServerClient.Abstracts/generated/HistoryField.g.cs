@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HistoryField(DocuWare.Platform.ServerClient.HistoryField obj) : IHistoryField
+    public class HistoryField(SDK.HistoryField obj) : IHistoryField
     {
-        internal DocuWare.Platform.ServerClient.HistoryField Obj { get; } = obj;
+        internal SDK.HistoryField Obj { get; } = obj;
 
         public IWFFormFieldValue Value
         {

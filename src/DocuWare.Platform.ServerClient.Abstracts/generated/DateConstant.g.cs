@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateConstant(DocuWare.Platform.ServerClient.DateConstant obj) : IDateConstant
+    public class DateConstant(SDK.DateConstant obj) : IDateConstant
     {
-        internal DocuWare.Platform.ServerClient.DateConstant Obj { get; } = obj;
+        internal SDK.DateConstant Obj { get; } = obj;
 
         public DateTime? Value
         {

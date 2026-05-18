@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UsersQuery(DocuWare.Platform.ServerClient.UsersQuery obj) : IUsersQuery
+    public class UsersQuery(SDK.UsersQuery obj) : IUsersQuery
     {
-        internal DocuWare.Platform.ServerClient.UsersQuery Obj { get; } = obj;
+        internal SDK.UsersQuery Obj { get; } = obj;
 
         public bool Active
         {

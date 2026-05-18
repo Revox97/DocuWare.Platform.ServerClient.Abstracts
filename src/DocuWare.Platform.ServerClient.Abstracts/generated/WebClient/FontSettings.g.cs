@@ -1,0 +1,49 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public class FontSettings(SDK.WebClient.FontSettings obj) : IFontSettings
+    {
+        internal SDK.WebClient.FontSettings Obj { get; } = obj;
+
+        public string Name
+        {
+            get => Obj.Name;
+            set => Obj.Name = value;
+        }
+
+        public string Size
+        {
+            get => Obj.Size;
+            set => Obj.Size = value;
+        }
+
+        public bool Bold
+        {
+            get => Obj.Bold;
+            set => Obj.Bold = value;
+        }
+
+        public bool Italic
+        {
+            get => Obj.Italic;
+            set => Obj.Italic = value;
+        }
+
+        public bool Underline
+        {
+            get => Obj.Underline;
+            set => Obj.Underline = value;
+        }
+
+        public bool Strikeout
+        {
+            get => Obj.Strikeout;
+            set => Obj.Strikeout = value;
+        }
+    }
+}

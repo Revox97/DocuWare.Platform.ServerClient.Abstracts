@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -10,9 +14,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Link[] Links { get; set; }
 		List<ConfigurationRight> ConfigurationRights { get; set; }
 		IExtendedConfigurationRights ExtendedConfigurationRights { get; set; }
+		List<IOrganizationProperty> CustomProperties { get; set; }
 		string Name { get; set; }
 		string Id { get; set; }
 		string Guid { get; set; }
+		bool IsTwoStepVerificationEnabled { get; set; }
+		bool IsTwoStepVerificationRequired { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IFileCabinets GetFileCabinetsFromFilecabinetsRelation();
@@ -84,6 +91,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		IDesignerWorkflows GetDesignerWorkflowsFromDesignerWorkflowsRelation();
 		Task<DeserializedHttpResponse<IDesignerWorkflows>> GetDesignerWorkflowsFromDesignerWorkflowsRelationAsync();
 		Task<DeserializedHttpResponse<IDesignerWorkflows>> GetDesignerWorkflowsFromDesignerWorkflowsRelationAsync(CancellationToken cancellationToken);
+		IDesignerWorkflows PostToDesignerWorkflowsRelationForDesignerWorkflows(IDesignerWorkflowsQuery dataToSend);
+		Task<DeserializedHttpResponse<IDesignerWorkflows>> PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(IDesignerWorkflowsQuery dataToSend);
+		Task<DeserializedHttpResponse<IDesignerWorkflows>> PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(CancellationToken cancellationToken, IDesignerWorkflowsQuery dataToSend);
 		IWorkflowRequests GetWorkflowRequestsFromWorkflowRequestsRelation();
 		Task<DeserializedHttpResponse<IWorkflowRequests>> GetWorkflowRequestsFromWorkflowRequestsRelationAsync();
 		Task<DeserializedHttpResponse<IWorkflowRequests>> GetWorkflowRequestsFromWorkflowRequestsRelationAsync(CancellationToken cancellationToken);

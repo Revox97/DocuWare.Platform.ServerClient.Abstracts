@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionDescriptions(DocuWare.Platform.ServerClient.FunctionDescriptions obj) : IFunctionDescriptions
+    public class FunctionDescriptions(SDK.FunctionDescriptions obj) : IFunctionDescriptions
     {
-        internal DocuWare.Platform.ServerClient.FunctionDescriptions Obj { get; } = obj;
+        internal SDK.FunctionDescriptions Obj { get; } = obj;
 
         public List<IFunctionDescription> Function
         {

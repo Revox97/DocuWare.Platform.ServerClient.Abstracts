@@ -13,7 +13,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 type += '?';
 
             return $"{type} {parameter.Name}{defaultValue}";
-            
+
         }
 
         private static string GetDefaultValue(ParameterInfo parameter)
@@ -29,7 +29,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 
                 if (defaultValue is bool)
                     return $" = {defaultValue.ToString()!.ToLower()}";
-                
+
                 return $" = {defaultValue}";
             }
 

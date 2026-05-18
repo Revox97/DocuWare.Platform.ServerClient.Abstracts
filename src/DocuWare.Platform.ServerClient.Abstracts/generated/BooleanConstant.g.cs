@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BooleanConstant(DocuWare.Platform.ServerClient.BooleanConstant obj) : IBooleanConstant
+    public class BooleanConstant(SDK.BooleanConstant obj) : IBooleanConstant
     {
-        internal DocuWare.Platform.ServerClient.BooleanConstant Obj { get; } = obj;
+        internal SDK.BooleanConstant Obj { get; } = obj;
 
         public bool? Value
         {

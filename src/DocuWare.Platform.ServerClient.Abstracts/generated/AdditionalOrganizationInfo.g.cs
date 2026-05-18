@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdditionalOrganizationInfo(DocuWare.Platform.ServerClient.AdditionalOrganizationInfo obj) : IAdditionalOrganizationInfo
+    public class AdditionalOrganizationInfo(SDK.AdditionalOrganizationInfo obj) : IAdditionalOrganizationInfo
     {
-        internal DocuWare.Platform.ServerClient.AdditionalOrganizationInfo Obj { get; } = obj;
+        internal SDK.AdditionalOrganizationInfo Obj { get; } = obj;
 
         public List<string> CompanyNames
         {
@@ -46,6 +50,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.OrganizationType;
             set => Obj.OrganizationType = value;
+        }
+
+        public bool IsAutoLogoutEnabled
+        {
+            get => Obj.IsAutoLogoutEnabled;
+            set => Obj.IsAutoLogoutEnabled = value;
+        }
+
+        public string AutoLogoutTimeout
+        {
+            get => Obj.AutoLogoutTimeout;
+            set => Obj.AutoLogoutTimeout = value;
         }
     }
 }

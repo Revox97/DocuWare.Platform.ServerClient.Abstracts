@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumberColumn(DocuWare.Platform.ServerClient.NumberColumn obj) : INumberColumn
+    public class NumberColumn(SDK.NumberColumn obj) : INumberColumn
     {
-        internal DocuWare.Platform.ServerClient.NumberColumn Obj { get; } = obj;
+        internal SDK.NumberColumn Obj { get; } = obj;
 
         public int Precision
         {

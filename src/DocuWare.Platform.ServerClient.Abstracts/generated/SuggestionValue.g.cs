@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionValue(DocuWare.Platform.ServerClient.SuggestionValue obj) : ISuggestionValue
+    public class SuggestionValue(SDK.SuggestionValue obj) : ISuggestionValue
     {
-        internal DocuWare.Platform.ServerClient.SuggestionValue Obj { get; } = obj;
+        internal SDK.SuggestionValue Obj { get; } = obj;
 
         public IPointAndShootInfo Source
         {

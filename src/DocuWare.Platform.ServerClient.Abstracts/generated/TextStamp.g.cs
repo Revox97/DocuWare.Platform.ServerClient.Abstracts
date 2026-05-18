@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextStamp(DocuWare.Platform.ServerClient.TextStamp obj) : ITextStamp
+    public class TextStamp(SDK.TextStamp obj) : ITextStamp
     {
-        internal DocuWare.Platform.ServerClient.TextStamp Obj { get; } = obj;
+        internal SDK.TextStamp Obj { get; } = obj;
 
         public IFont Font
         {

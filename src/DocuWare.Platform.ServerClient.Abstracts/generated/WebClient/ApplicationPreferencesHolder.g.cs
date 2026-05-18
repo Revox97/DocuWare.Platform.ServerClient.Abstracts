@@ -1,0 +1,19 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public class ApplicationPreferencesHolder(SDK.WebClient.ApplicationPreferencesHolder obj) : IApplicationPreferencesHolder
+    {
+        internal SDK.WebClient.ApplicationPreferencesHolder Obj { get; } = obj;
+
+        public IApplicationPreferences AppPrefs
+        {
+            get => new ApplicationPreferences(Obj.AppPrefs);
+            set => Obj.AppPrefs = ((ApplicationPreferences)value).Obj;
+        }
+    }
+}

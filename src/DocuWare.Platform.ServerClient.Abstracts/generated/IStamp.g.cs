@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -21,6 +25,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool CloseAfterStampSet { get; set; }
 		bool AutomaticallyOpenNextDocument { get; set; }
 		bool KeepStampActive { get; set; }
+		bool ShowUserName { get; set; }
+		bool ShowDate { get; set; }
+		bool ShowTime { get; set; }
+		bool ShowFrame { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
 		Stream GetStreamFromAsBitmapRelation();

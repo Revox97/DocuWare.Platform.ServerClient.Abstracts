@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -180,5 +184,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		IDocumentAuditInformation PostToAuditInformationRelationForDocumentAuditInformation(IDocumentAuditQuery dataToSend);
 		Task<DeserializedHttpResponse<IDocumentAuditInformation>> PostToAuditInformationRelationForDocumentAuditInformationAsync(IDocumentAuditQuery dataToSend);
 		Task<DeserializedHttpResponse<IDocumentAuditInformation>> PostToAuditInformationRelationForDocumentAuditInformationAsync(CancellationToken cancellationToken, IDocumentAuditQuery dataToSend);
+		ISections PutToReorderSectionsRelationForSections(IReorderSectionsRequest dataToSend);
+		Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(IReorderSectionsRequest dataToSend);
+		Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(CancellationToken cancellationToken, IReorderSectionsRequest dataToSend);
     }
 }

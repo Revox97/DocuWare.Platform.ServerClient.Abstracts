@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ResultListQuery(DocuWare.Platform.ServerClient.ResultListQuery obj) : IResultListQuery
+    public class ResultListQuery(SDK.ResultListQuery obj) : IResultListQuery
     {
-        internal DocuWare.Platform.ServerClient.ResultListQuery Obj { get; } = obj;
+        internal SDK.ResultListQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

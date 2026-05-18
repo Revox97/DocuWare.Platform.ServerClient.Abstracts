@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Position(DocuWare.Platform.ServerClient.Position obj) : IPosition
+    public class Position(SDK.Position obj) : IPosition
     {
-        internal DocuWare.Platform.ServerClient.Position Obj { get; } = obj;
+        internal SDK.Position Obj { get; } = obj;
 
         public int x
         {

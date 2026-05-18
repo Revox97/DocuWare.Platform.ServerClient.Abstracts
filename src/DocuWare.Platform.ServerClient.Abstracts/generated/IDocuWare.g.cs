@@ -1,4 +1,8 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
@@ -23,11 +27,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		Task<IServiceConnection> CreateWithWindowsAuthenticationAsync(Uri serviceUri, string userName, string password, string domain, IServiceConnectionLoginData serviceConnectionLoginData);
 		Task<IServiceConnection> CreateWithWindowsAuthenticationAsync(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionLoginData);
 		IServiceConnection Create(Uri serviceUri, string userName, string password, string? organization = null, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpMessageHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection Create(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionData);
 		IServiceConnection CreateTrusted(Uri serviceUri, string impersonatedUser, string trustedUser, string password, string? organization = null, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpMessageHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection CreateTrusted(Uri serviceUri, string impersonatedUser, string trustedUser, string password, IServiceConnectionLoginData serviceConnectionData);
 		IServiceConnection Create(Uri serviceUri, string token, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpMessageHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection Create(Uri serviceUri, string token, IServiceConnectionTokenLoginData serviceConnectionTokenLoginData);
 		IServiceConnection Create(Uri serviceUri, HttpMessageHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection Create(Uri serviceUri, IServiceConnectionTransportData serviceConnectionTransportData);
 		IServiceConnection CreateWithWindowsAuthentication(Uri serviceUri, ICredentials credentials, string? organization = null, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpClientHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection CreateWithWindowsAuthentication(Uri serviceUri, ICredentials credentials, IServiceConnectionLoginData serviceConnectionLoginData);
 		IServiceConnection CreateWithWindowsAuthentication(Uri serviceUri, string userName, string password, string? domain = null, string? organization = null, DocuWare.Platform.ServerClient.DWProductTypes? licenseType = null, HttpClientHandler? httpClientHandler = null, ProductInfoHeaderValue[]? userAgent = null);
+		IServiceConnection CreateWithWindowsAuthentication(Uri serviceUri, string userName, string password, IServiceConnectionLoginData serviceConnectionLoginData);
+		IServiceConnection CreateWithWindowsAuthentication(Uri serviceUri, string userName, string password, string domain, IServiceConnectionLoginData serviceConnectionLoginData);
 		void SetHostId(string hostId);
     }
 }

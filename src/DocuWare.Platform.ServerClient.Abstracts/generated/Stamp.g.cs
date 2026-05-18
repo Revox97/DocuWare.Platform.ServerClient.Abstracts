@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Stamp(DocuWare.Platform.ServerClient.Stamp obj) : IStamp
+    public class Stamp(SDK.Stamp obj) : IStamp
     {
-        internal DocuWare.Platform.ServerClient.Stamp Obj { get; } = obj;
+        internal SDK.Stamp Obj { get; } = obj;
 
         public List<IStampFormField> FormField
         {
@@ -106,6 +110,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.KeepStampActive;
             set => Obj.KeepStampActive = value;
+        }
+
+        public bool ShowUserName
+        {
+            get => Obj.ShowUserName;
+            set => Obj.ShowUserName = value;
+        }
+
+        public bool ShowDate
+        {
+            get => Obj.ShowDate;
+            set => Obj.ShowDate = value;
+        }
+
+        public bool ShowTime
+        {
+            get => Obj.ShowTime;
+            set => Obj.ShowTime = value;
+        }
+
+        public bool ShowFrame
+        {
+            get => Obj.ShowFrame;
+            set => Obj.ShowFrame = value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);

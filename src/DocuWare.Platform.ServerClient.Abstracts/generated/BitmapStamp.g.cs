@@ -1,10 +1,32 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BitmapStamp(DocuWare.Platform.ServerClient.BitmapStamp obj) : IBitmapStamp
+    public class BitmapStamp(SDK.BitmapStamp obj) : IBitmapStamp
     {
-        internal DocuWare.Platform.ServerClient.BitmapStamp Obj { get; } = obj;
+        internal SDK.BitmapStamp Obj { get; } = obj;
+
+        public string PngData
+        {
+            get => Obj.PngData;
+            set => Obj.PngData = value;
+        }
+
+        public float PngWidth
+        {
+            get => Obj.PngWidth;
+            set => Obj.PngWidth = value;
+        }
+
+        public float PngHeight
+        {
+            get => Obj.PngHeight;
+            set => Obj.PngHeight = value;
+        }
 
         public Link[] Links
         {

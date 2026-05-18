@@ -1,15 +1,25 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DesignerInstance(DocuWare.Platform.ServerClient.DesignerInstance obj) : IDesignerInstance
+    public class DesignerInstance(SDK.DesignerInstance obj) : IDesignerInstance
     {
-        internal DocuWare.Platform.ServerClient.DesignerInstance Obj { get; } = obj;
+        internal SDK.DesignerInstance Obj { get; } = obj;
 
         public Link[] Links
         {
             get => Obj.Links;
             set => Obj.Links = value;
+        }
+
+        public List<IColumnValue> ColumnValues
+        {
+            get => Obj.ColumnValues.Select(x => new ColumnValue(x) as IColumnValue).ToList();
+            set => Obj.ColumnValues = value.Select(x => ((ColumnValue)x).Obj).ToList();
         }
 
         public string Id
@@ -28,6 +38,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => (InstanceExecutionStateEnum)Obj.ExecutionState;
             set => Obj.ExecutionState = (DocuWare.Platform.ServerClient.InstanceExecutionStateEnum)value;
+        }
+
+        public string HibernationStateValue
+        {
+            get => Obj.HibernationStateValue;
+            set => Obj.HibernationStateValue = value;
         }
 
         public int DocId

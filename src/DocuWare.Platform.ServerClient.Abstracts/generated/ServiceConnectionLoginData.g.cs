@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceConnectionLoginData(DocuWare.Platform.ServerClient.ServiceConnectionLoginData obj) : IServiceConnectionLoginData
+    public class ServiceConnectionLoginData(SDK.ServiceConnectionLoginData obj) : IServiceConnectionLoginData
     {
-        internal DocuWare.Platform.ServerClient.ServiceConnectionLoginData Obj { get; } = obj;
+        internal SDK.ServiceConnectionLoginData Obj { get; } = obj;
 
         public string Organization
         {

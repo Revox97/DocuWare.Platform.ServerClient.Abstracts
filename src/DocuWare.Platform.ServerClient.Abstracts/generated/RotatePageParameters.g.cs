@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RotatePageParameters(DocuWare.Platform.ServerClient.RotatePageParameters obj) : IRotatePageParameters
+    public class RotatePageParameters(SDK.RotatePageParameters obj) : IRotatePageParameters
     {
-        internal DocuWare.Platform.ServerClient.RotatePageParameters Obj { get; } = obj;
+        internal SDK.RotatePageParameters Obj { get; } = obj;
 
         public int SectionNumber
         {

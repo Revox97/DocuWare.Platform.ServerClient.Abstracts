@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ConditionHistoryStep(DocuWare.Platform.ServerClient.ConditionHistoryStep obj) : IConditionHistoryStep
+    public class ConditionHistoryStep(SDK.ConditionHistoryStep obj) : IConditionHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.ConditionHistoryStep Obj { get; } = obj;
+        internal SDK.ConditionHistoryStep Obj { get; } = obj;
 
         public string OutputName
         {

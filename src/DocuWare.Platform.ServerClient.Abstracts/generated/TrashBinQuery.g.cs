@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinQuery(DocuWare.Platform.ServerClient.TrashBinQuery obj) : ITrashBinQuery
+    public class TrashBinQuery(SDK.TrashBinQuery obj) : ITrashBinQuery
     {
-        internal DocuWare.Platform.ServerClient.TrashBinQuery Obj { get; } = obj;
+        internal SDK.TrashBinQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

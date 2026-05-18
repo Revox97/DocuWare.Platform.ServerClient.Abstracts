@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class GeckoAttribute(DocuWare.Platform.ServerClient.GeckoAttribute obj) : IGeckoAttribute
+    public class GeckoAttribute(SDK.GeckoAttribute obj) : IGeckoAttribute
     {
-        internal DocuWare.Platform.ServerClient.GeckoAttribute Obj { get; } = obj;
+        internal SDK.GeckoAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

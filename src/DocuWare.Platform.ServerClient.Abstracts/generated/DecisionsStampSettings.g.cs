@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionsStampSettings(DocuWare.Platform.ServerClient.DecisionsStampSettings obj) : IDecisionsStampSettings
+    public class DecisionsStampSettings(SDK.DecisionsStampSettings obj) : IDecisionsStampSettings
     {
-        internal DocuWare.Platform.ServerClient.DecisionsStampSettings Obj { get; } = obj;
+        internal SDK.DecisionsStampSettings Obj { get; } = obj;
 
         public IWorkflowStampsSettings StampsSettings
         {

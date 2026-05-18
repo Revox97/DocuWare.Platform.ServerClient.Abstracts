@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ColumnValues(DocuWare.Platform.ServerClient.ColumnValues obj) : IColumnValues
+    public class ColumnValues(SDK.ColumnValues obj) : IColumnValues
     {
-        internal DocuWare.Platform.ServerClient.ColumnValues Obj { get; } = obj;
+        internal SDK.ColumnValues Obj { get; } = obj;
 
         public List<IColumnValue> ColumnValue
         {

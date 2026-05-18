@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinTableRow(DocuWare.Platform.ServerClient.TrashBinTableRow obj) : ITrashBinTableRow
+    public class TrashBinTableRow(SDK.TrashBinTableRow obj) : ITrashBinTableRow
     {
-        internal DocuWare.Platform.ServerClient.TrashBinTableRow Obj { get; } = obj;
+        internal SDK.TrashBinTableRow Obj { get; } = obj;
 
         public List<object> Items
         {

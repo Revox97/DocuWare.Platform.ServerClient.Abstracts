@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IdentityServiceInfo(DocuWare.Platform.ServerClient.IdentityServiceInfo obj) : IIdentityServiceInfo
+    public class IdentityServiceInfo(SDK.IdentityServiceInfo obj) : IIdentityServiceInfo
     {
-        internal DocuWare.Platform.ServerClient.IdentityServiceInfo Obj { get; } = obj;
+        internal SDK.IdentityServiceInfo Obj { get; } = obj;
 
         public string IdentityServiceUrl
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SynchronizationSettings(DocuWare.Platform.ServerClient.SynchronizationSettings obj) : ISynchronizationSettings
+    public class SynchronizationSettings(SDK.SynchronizationSettings obj) : ISynchronizationSettings
     {
-        internal DocuWare.Platform.ServerClient.SynchronizationSettings Obj { get; } = obj;
+        internal SDK.SynchronizationSettings Obj { get; } = obj;
 
         public string MediaType => Obj.MediaType;
 

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LobsterAttribute(DocuWare.Platform.ServerClient.LobsterAttribute obj) : ILobsterAttribute
+    public class LobsterAttribute(SDK.LobsterAttribute obj) : ILobsterAttribute
     {
-        internal DocuWare.Platform.ServerClient.LobsterAttribute Obj { get; } = obj;
+        internal SDK.LobsterAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

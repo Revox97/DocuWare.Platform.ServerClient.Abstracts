@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class XmlDSigContentType(DocuWare.Platform.ServerClient.XmlDSigContentType obj) : IXmlDSigContentType
+    public class XmlDSigContentType(SDK.XmlDSigContentType obj) : IXmlDSigContentType
     {
-        internal DocuWare.Platform.ServerClient.XmlDSigContentType Obj { get; } = obj;
+        internal SDK.XmlDSigContentType Obj { get; } = obj;
 
         public List<IXmlDSigContentType> Nodes
         {
