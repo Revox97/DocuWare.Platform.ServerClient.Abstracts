@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultipleConditionHistorySteps(DocuWare.Platform.ServerClient.MultipleConditionHistorySteps obj) : IMultipleConditionHistorySteps
+    public class MultipleConditionHistorySteps(SDK.MultipleConditionHistorySteps obj) : IMultipleConditionHistorySteps
     {
-        internal DocuWare.Platform.ServerClient.MultipleConditionHistorySteps Obj { get; } = obj;
+        internal SDK.MultipleConditionHistorySteps Obj { get; } = obj;
 
         public List<IConditionHistoryStep> Conditions
         {

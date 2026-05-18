@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class QuokkaAttribute(DocuWare.Platform.ServerClient.QuokkaAttribute obj) : IQuokkaAttribute
+    public class QuokkaAttribute(SDK.QuokkaAttribute obj) : IQuokkaAttribute
     {
-        internal DocuWare.Platform.ServerClient.QuokkaAttribute Obj { get; } = obj;
+        internal SDK.QuokkaAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

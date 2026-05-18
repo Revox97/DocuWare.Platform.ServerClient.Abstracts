@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListValuesToCheck(DocuWare.Platform.ServerClient.SelectListValuesToCheck obj) : ISelectListValuesToCheck
+    public class SelectListValuesToCheck(SDK.SelectListValuesToCheck obj) : ISelectListValuesToCheck
     {
-        internal DocuWare.Platform.ServerClient.SelectListValuesToCheck Obj { get; } = obj;
+        internal SDK.SelectListValuesToCheck Obj { get; } = obj;
 
         public List<ISelectListValueToCheck> Values
         {

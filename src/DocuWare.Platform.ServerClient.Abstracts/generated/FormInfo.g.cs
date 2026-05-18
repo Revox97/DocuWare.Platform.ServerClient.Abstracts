@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormInfo(DocuWare.Platform.ServerClient.FormInfo obj) : IFormInfo
+    public class FormInfo(SDK.FormInfo obj) : IFormInfo
     {
-        internal DocuWare.Platform.ServerClient.FormInfo Obj { get; } = obj;
+        internal SDK.FormInfo Obj { get; } = obj;
 
         public string ConfigId
         {

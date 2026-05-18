@@ -1,0 +1,31 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public class ContentAreaPreferences(SDK.WebClient.ContentAreaPreferences obj) : IContentAreaPreferences
+    {
+        internal SDK.WebClient.ContentAreaPreferences Obj { get; } = obj;
+
+        public List<IWorkInstance> Instances
+        {
+            get => Obj.Instances.Select(x => new WorkInstance(x) as IWorkInstance).ToList();
+            set => Obj.Instances = value.Select(x => ((WorkInstance)x).Obj).ToList();
+        }
+
+        public WorkAreaType AreaType
+        {
+            get => (WorkAreaType)Obj.AreaType;
+            set => Obj.AreaType = (DocuWare.Platform.ServerClient.WebClient.WorkAreaType)value;
+        }
+
+        public int SelectedInstanceIndex
+        {
+            get => Obj.SelectedInstanceIndex;
+            set => Obj.SelectedInstanceIndex = value;
+        }
+    }
+}

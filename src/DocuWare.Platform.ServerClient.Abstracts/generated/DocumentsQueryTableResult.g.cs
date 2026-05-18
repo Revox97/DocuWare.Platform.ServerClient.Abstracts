@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQueryTableResult(DocuWare.Platform.ServerClient.DocumentsQueryTableResult obj) : IDocumentsQueryTableResult
+    public class DocumentsQueryTableResult(SDK.DocumentsQueryTableResult obj) : IDocumentsQueryTableResult
     {
-        internal DocuWare.Platform.ServerClient.DocumentsQueryTableResult Obj { get; } = obj;
+        internal SDK.DocumentsQueryTableResult Obj { get; } = obj;
 
         public ICountPlusValue Count
         {

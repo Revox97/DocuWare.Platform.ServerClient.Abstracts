@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
-using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
+﻿using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
 using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions

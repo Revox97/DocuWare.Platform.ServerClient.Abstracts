@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogInfo(DocuWare.Platform.ServerClient.DialogInfo obj) : IDialogInfo
+    public class DialogInfo(SDK.DialogInfo obj) : IDialogInfo
     {
-        internal DocuWare.Platform.ServerClient.DialogInfo Obj { get; } = obj;
+        internal SDK.DialogInfo Obj { get; } = obj;
 
         public Link[] Links
         {

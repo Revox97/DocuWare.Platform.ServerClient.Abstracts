@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LogicalOperator(DocuWare.Platform.ServerClient.LogicalOperator obj) : ILogicalOperator
+    public class LogicalOperator(SDK.LogicalOperator obj) : ILogicalOperator
     {
-        internal DocuWare.Platform.ServerClient.LogicalOperator Obj { get; } = obj;
+        internal SDK.LogicalOperator Obj { get; } = obj;
 
         public DialogExpressionOperation DefaultOperator
         {

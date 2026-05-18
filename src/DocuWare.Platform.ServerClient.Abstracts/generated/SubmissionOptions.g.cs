@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubmissionOptions(DocuWare.Platform.ServerClient.SubmissionOptions obj) : ISubmissionOptions
+    public class SubmissionOptions(SDK.SubmissionOptions obj) : ISubmissionOptions
     {
-        internal DocuWare.Platform.ServerClient.SubmissionOptions Obj { get; } = obj;
+        internal SDK.SubmissionOptions Obj { get; } = obj;
 
         public string SubmissionMessage
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkRelations(DocuWare.Platform.ServerClient.LinkRelations obj) : ILinkRelations
+    public class LinkRelations(SDK.LinkRelations obj) : ILinkRelations
     {
-        internal DocuWare.Platform.ServerClient.LinkRelations Obj { get; } = obj;
+        internal SDK.LinkRelations Obj { get; } = obj;
 
         public List<ILinkRelation> Relation
         {

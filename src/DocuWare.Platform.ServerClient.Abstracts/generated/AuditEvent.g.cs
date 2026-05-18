@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AuditEvent(DocuWare.Platform.ServerClient.AuditEvent obj) : IAuditEvent
+    public class AuditEvent(SDK.AuditEvent obj) : IAuditEvent
     {
-        internal DocuWare.Platform.ServerClient.AuditEvent Obj { get; } = obj;
+        internal SDK.AuditEvent Obj { get; } = obj;
 
         public string Id
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StampPositionData(DocuWare.Platform.ServerClient.StampPositionData obj) : IStampPositionData
+    public class StampPositionData(SDK.StampPositionData obj) : IStampPositionData
     {
-        internal DocuWare.Platform.ServerClient.StampPositionData Obj { get; } = obj;
+        internal SDK.StampPositionData Obj { get; } = obj;
 
         public string SectionId
         {

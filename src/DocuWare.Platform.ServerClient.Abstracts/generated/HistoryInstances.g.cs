@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class HistoryInstances(DocuWare.Platform.ServerClient.HistoryInstances obj) : IHistoryInstances
+    public class HistoryInstances(SDK.HistoryInstances obj) : IHistoryInstances
     {
-        internal DocuWare.Platform.ServerClient.HistoryInstances Obj { get; } = obj;
+        internal SDK.HistoryInstances Obj { get; } = obj;
 
         public List<IHistoryInstance> HistoryInstance
         {

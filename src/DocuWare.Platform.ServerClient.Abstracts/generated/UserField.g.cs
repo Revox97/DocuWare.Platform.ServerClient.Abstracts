@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UserField(DocuWare.Platform.ServerClient.UserField obj) : IUserField
+    public class UserField(SDK.UserField obj) : IUserField
     {
-        internal DocuWare.Platform.ServerClient.UserField Obj { get; } = obj;
+        internal SDK.UserField Obj { get; } = obj;
 
         public bool IsMultiselect
         {

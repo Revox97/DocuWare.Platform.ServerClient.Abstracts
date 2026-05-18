@@ -8,20 +8,48 @@ using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
-    internal class ImplementationGenerationService : IGenerationService
+    internal class ImplementationGenerationService(string? namespaceExtension = null) : IGenerationService
     {
+        private readonly string? _namespace = namespaceExtension;
+
         public void Generate(Type type)
         {
             Console.WriteLine($"Generating {type.Name}.cs");
             TypeDef typeDefinition = type.GetTypeDefinition();
             string template = File.ReadAllText("Templates/Implementation.template");
-            template = template.Replace("{0}", typeDefinition.GetTypeName()).Replace("{1}", typeDefinition.GetReturnTypeName()).Replace("{3}", typeDefinition.FullName);
+
+            string fullNSName = typeDefinition.FullName.StartsWith("DocuWare.Platform.ServerClient")
+                ? typeDefinition.FullName.Replace("DocuWare.Platform.ServerClient", "SDK")
+                : typeDefinition.FullName;
+
+            template = template.Replace("{0}", typeDefinition.GetTypeName()).Replace("{1}", typeDefinition.GetReturnTypeName()).Replace("{3}", fullNSName);
+
+            template = _namespace is not null
+                ? template.Replace("{namespace}", $".{_namespace}")
+                : template.Replace("{namespace}", string.Empty);
 
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
             template = template.Replace("{2}", propertyList + methodList);
 
-            using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{type.Name}.g.cs"));
+            WriteFile(template, type.Name);
+        }
+
+        private void WriteFile(string template, string typeName)
+        {
+            string path = Paths.GenerationFolder;
+            if (_namespace is not null)
+            {
+                string[] nameSpaceBlocks = _namespace.Split('.');
+
+                for (int i = 0; i < nameSpaceBlocks.Length; i++)
+                    path = Path.Combine(path, nameSpaceBlocks[i]);
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+            }
+
+            using FileStream fStream = File.Create(Path.Combine(path, $"{typeName}.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
 
@@ -43,9 +71,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
             if (type.Name.StartsWith("List"))
                 type = type.GenericTypeArguments[0];
-
-            if (property.Name.Equals("Fields"))
-                Console.WriteLine();
 
             // IF PROPERTY TYPE IS ABSTRACT SPECIAL LOGIC IS NEEDED
             if (type is not null && type.IsAbstract)
@@ -94,7 +119,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                     }
                     else if (isList)
                     {
-                        propertyList += TemplateService.GetDocuWareListGetSetPropertyImplementation(typeName, name);
+                        propertyList += TemplateService.GetDocuWareListGetSetPropertyImplementation(typeName, name, property.PropertyType.GenericTypeArguments[0].Namespace ?? "");
                     }
                     else
                     {

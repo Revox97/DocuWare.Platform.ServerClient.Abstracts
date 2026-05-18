@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubstitutionRule(DocuWare.Platform.ServerClient.SubstitutionRule obj) : ISubstitutionRule
+    public class SubstitutionRule(SDK.SubstitutionRule obj) : ISubstitutionRule
     {
-        internal DocuWare.Platform.ServerClient.SubstitutionRule Obj { get; } = obj;
+        internal SDK.SubstitutionRule Obj { get; } = obj;
 
         public string Name
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DialogPropertiesSearch(DocuWare.Platform.ServerClient.DialogPropertiesSearch obj) : IDialogPropertiesSearch
+    public class DialogPropertiesSearch(SDK.DialogPropertiesSearch obj) : IDialogPropertiesSearch
     {
-        internal DocuWare.Platform.ServerClient.DialogPropertiesSearch Obj { get; } = obj;
+        internal SDK.DialogPropertiesSearch Obj { get; } = obj;
 
         public ILogicalOperator LogicalOperator
         {

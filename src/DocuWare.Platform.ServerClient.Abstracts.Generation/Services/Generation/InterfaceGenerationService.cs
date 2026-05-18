@@ -7,8 +7,10 @@ using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation
 {
-    internal class InterfaceGenerationService : IGenerationService
+    internal class InterfaceGenerationService(string? namespaceExtension = null) : IGenerationService
     {
+        private readonly string? _namespace = namespaceExtension;
+
         public void Generate(Type type)
         {
             if (type.Name.EndsWith("Extensions"))
@@ -23,16 +25,37 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             string template = File.ReadAllText("Templates/Interface.template");
             template = template.Replace("{0}", interfaceName).Replace("{1}", string.Empty).Replace("{3}", string.Empty);
 
+            template = _namespace is not null
+                ? template.Replace("{namespace}", $".{_namespace}")
+                : template.Replace("{namespace}", string.Empty);
+
             string propertyList = GenerateProperties(type);
             string methodList = GenerateMethods(type);
 
             string result = propertyList + (methodList != string.Empty ? StringConstants.LineEnding : string.Empty) + methodList;
 
             template = template.Replace("{2}", result);
-            using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{interfaceName}.g.cs"));
-            fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
+            WriteFile(template, interfaceName);
 
             GeneratedInterfaces.Interfaces.Add(interfaceName);
+        }
+
+        private void WriteFile(string template, string interfaceName)
+        {
+            string path = Paths.GenerationFolder;
+            if (_namespace is not null)
+            {
+                string[] nameSpaceBlocks = _namespace.Split('.');
+
+                for (int i = 0; i < nameSpaceBlocks.Length; i++)
+                    path = Path.Combine(path, nameSpaceBlocks[i]);
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+            }
+
+            using FileStream fStream = File.Create(Path.Combine(path, $"{interfaceName}.g.cs"));
+            fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
 
         private static string GenerateProperties(Type type)
@@ -56,7 +79,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 bool hasSetter = property.GetSetMethod() is not null;
                 string result = $"{returnTypeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
 
-                propertyList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
+                propertyList += $"{StringConstants.LineEndingWithTwoTabs}{result}";
             }
 
             return propertyList;
@@ -83,7 +106,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 string parameters = method.GetParsedParameterDefinitions();
                 string result = $"{returnTypeName} {method.Name}({parameters});";
 
-                methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}"; 
+                methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}";
             }
 
             return methodList;

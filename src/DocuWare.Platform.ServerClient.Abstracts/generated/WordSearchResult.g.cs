@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WordSearchResult(DocuWare.Platform.ServerClient.WordSearchResult obj) : IWordSearchResult
+    public class WordSearchResult(SDK.WordSearchResult obj) : IWordSearchResult
     {
-        internal DocuWare.Platform.ServerClient.WordSearchResult Obj { get; } = obj;
+        internal SDK.WordSearchResult Obj { get; } = obj;
 
         public string Search
         {

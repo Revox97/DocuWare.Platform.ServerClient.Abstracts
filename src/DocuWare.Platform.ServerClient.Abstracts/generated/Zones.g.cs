@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Zones(DocuWare.Platform.ServerClient.Zones obj) : IZones
+    public class Zones(SDK.Zones obj) : IZones
     {
-        internal DocuWare.Platform.ServerClient.Zones Obj { get; } = obj;
+        internal SDK.Zones Obj { get; } = obj;
 
         public List<IZone> Zone
         {

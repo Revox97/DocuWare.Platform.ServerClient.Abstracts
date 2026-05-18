@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FileDownloadPage(DocuWare.Platform.ServerClient.FileDownloadPage obj) : IFileDownloadPage
+    public class FileDownloadPage(SDK.FileDownloadPage obj) : IFileDownloadPage
     {
-        internal DocuWare.Platform.ServerClient.FileDownloadPage Obj { get; } = obj;
+        internal SDK.FileDownloadPage Obj { get; } = obj;
 
         public bool AutoPrint
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountPlusValue(DocuWare.Platform.ServerClient.CountPlusValue obj) : ICountPlusValue
+    public class CountPlusValue(SDK.CountPlusValue obj) : ICountPlusValue
     {
-        internal DocuWare.Platform.ServerClient.CountPlusValue Obj { get; } = obj;
+        internal SDK.CountPlusValue Obj { get; } = obj;
 
         public bool HasMore
         {

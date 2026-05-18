@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionStampPlacement(DocuWare.Platform.ServerClient.DecisionStampPlacement obj) : IDecisionStampPlacement
+    public class DecisionStampPlacement(SDK.DecisionStampPlacement obj) : IDecisionStampPlacement
     {
-        internal DocuWare.Platform.ServerClient.DecisionStampPlacement Obj { get; } = obj;
+        internal SDK.DecisionStampPlacement Obj { get; } = obj;
 
         public string WorkflowId
         {

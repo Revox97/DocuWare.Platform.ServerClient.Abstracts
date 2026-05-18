@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableResultRow(DocuWare.Platform.ServerClient.TableResultRow obj) : ITableResultRow
+    public class TableResultRow(SDK.TableResultRow obj) : ITableResultRow
     {
-        internal DocuWare.Platform.ServerClient.TableResultRow Obj { get; } = obj;
+        internal SDK.TableResultRow Obj { get; } = obj;
 
         public List<object> Items
         {

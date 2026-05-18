@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SuggestionTable(DocuWare.Platform.ServerClient.SuggestionTable obj) : ISuggestionTable
+    public class SuggestionTable(SDK.SuggestionTable obj) : ISuggestionTable
     {
-        internal DocuWare.Platform.ServerClient.SuggestionTable Obj { get; } = obj;
+        internal SDK.SuggestionTable Obj { get; } = obj;
 
         public List<ISuggestionCellValue> Cell
         {

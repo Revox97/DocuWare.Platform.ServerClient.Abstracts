@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class KoalaAttribute(DocuWare.Platform.ServerClient.KoalaAttribute obj) : IKoalaAttribute
+    public class KoalaAttribute(SDK.KoalaAttribute obj) : IKoalaAttribute
     {
-        internal DocuWare.Platform.ServerClient.KoalaAttribute Obj { get; } = obj;
+        internal SDK.KoalaAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

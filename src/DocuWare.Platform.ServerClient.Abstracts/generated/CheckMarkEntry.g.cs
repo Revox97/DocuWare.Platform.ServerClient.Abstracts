@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CheckMarkEntry(DocuWare.Platform.ServerClient.CheckMarkEntry obj) : ICheckMarkEntry
+    public class CheckMarkEntry(SDK.CheckMarkEntry obj) : ICheckMarkEntry
     {
-        internal DocuWare.Platform.ServerClient.CheckMarkEntry Obj { get; } = obj;
+        internal SDK.CheckMarkEntry Obj { get; } = obj;
 
         public IStroke Stroke
         {

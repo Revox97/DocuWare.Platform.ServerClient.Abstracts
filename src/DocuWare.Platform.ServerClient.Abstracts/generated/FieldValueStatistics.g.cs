@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldValueStatistics(DocuWare.Platform.ServerClient.FieldValueStatistics obj) : IFieldValueStatistics
+    public class FieldValueStatistics(SDK.FieldValueStatistics obj) : IFieldValueStatistics
     {
-        internal DocuWare.Platform.ServerClient.FieldValueStatistics Obj { get; } = obj;
+        internal SDK.FieldValueStatistics Obj { get; } = obj;
 
         public IDocumentIndexFieldValue Value
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CFSStatisticGeneral(DocuWare.Platform.ServerClient.CFSStatisticGeneral obj) : ICFSStatisticGeneral
+    public class CFSStatisticGeneral(SDK.CFSStatisticGeneral obj) : ICFSStatisticGeneral
     {
-        internal DocuWare.Platform.ServerClient.CFSStatisticGeneral Obj { get; } = obj;
+        internal SDK.CFSStatisticGeneral Obj { get; } = obj;
 
         public List<ICFSStatisticSpecific> StatisticSpecific
         {

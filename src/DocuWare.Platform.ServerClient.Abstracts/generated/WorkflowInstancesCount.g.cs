@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WorkflowInstancesCount(DocuWare.Platform.ServerClient.WorkflowInstancesCount obj) : IWorkflowInstancesCount
+    public class WorkflowInstancesCount(SDK.WorkflowInstancesCount obj) : IWorkflowInstancesCount
     {
-        internal DocuWare.Platform.ServerClient.WorkflowInstancesCount Obj { get; } = obj;
+        internal SDK.WorkflowInstancesCount Obj { get; } = obj;
 
         public int TasksCount
         {

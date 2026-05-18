@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DeleteTemplatesInput(DocuWare.Platform.ServerClient.DeleteTemplatesInput obj) : IDeleteTemplatesInput
+    public class DeleteTemplatesInput(SDK.DeleteTemplatesInput obj) : IDeleteTemplatesInput
     {
-        internal DocuWare.Platform.ServerClient.DeleteTemplatesInput Obj { get; } = obj;
+        internal SDK.DeleteTemplatesInput Obj { get; } = obj;
 
         public List<string> TemplateGUIDS
         {

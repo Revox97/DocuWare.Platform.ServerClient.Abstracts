@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextTableColumnOptions(DocuWare.Platform.ServerClient.TextTableColumnOptions obj) : ITextTableColumnOptions
+    public class TextTableColumnOptions(SDK.TextTableColumnOptions obj) : ITextTableColumnOptions
     {
-        internal DocuWare.Platform.ServerClient.TextTableColumnOptions Obj { get; } = obj;
+        internal SDK.TextTableColumnOptions Obj { get; } = obj;
 
         public int Length
         {

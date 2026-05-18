@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableFieldColumns(DocuWare.Platform.ServerClient.TableFieldColumns obj) : ITableFieldColumns
+    public class TableFieldColumns(SDK.TableFieldColumns obj) : ITableFieldColumns
     {
-        internal DocuWare.Platform.ServerClient.TableFieldColumns Obj { get; } = obj;
+        internal SDK.TableFieldColumns Obj { get; } = obj;
 
         public List<IFileCabinetFieldBase> TableFieldColumn
         {

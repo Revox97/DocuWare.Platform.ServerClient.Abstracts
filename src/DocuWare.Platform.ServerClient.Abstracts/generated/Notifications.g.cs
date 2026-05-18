@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Notifications(DocuWare.Platform.ServerClient.Notifications obj) : INotifications
+    public class Notifications(SDK.Notifications obj) : INotifications
     {
-        internal DocuWare.Platform.ServerClient.Notifications Obj { get; } = obj;
+        internal SDK.Notifications Obj { get; } = obj;
 
         public List<INotification> Notification
         {

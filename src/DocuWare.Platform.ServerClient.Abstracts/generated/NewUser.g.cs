@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NewUser(DocuWare.Platform.ServerClient.NewUser obj) : INewUser
+    public class NewUser(SDK.NewUser obj) : INewUser
     {
-        internal DocuWare.Platform.ServerClient.NewUser Obj { get; } = obj;
+        internal SDK.NewUser Obj { get; } = obj;
 
         public IRegionalSettings RegionalSettings
         {

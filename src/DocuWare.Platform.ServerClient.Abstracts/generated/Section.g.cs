@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Section(DocuWare.Platform.ServerClient.Section obj) : ISection
+    public class Section(SDK.Section obj) : ISection
     {
-        internal DocuWare.Platform.ServerClient.Section Obj { get; } = obj;
+        internal SDK.Section Obj { get; } = obj;
 
         public List<SignatureStatus> SignatureStatus
         {

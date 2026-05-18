@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DecisionHistoryStep(DocuWare.Platform.ServerClient.DecisionHistoryStep obj) : IDecisionHistoryStep
+    public class DecisionHistoryStep(SDK.DecisionHistoryStep obj) : IDecisionHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.DecisionHistoryStep Obj { get; } = obj;
+        internal SDK.DecisionHistoryStep Obj { get; } = obj;
 
         public List<IHistoryField> InputFields
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FunctionExpressionQuery(DocuWare.Platform.ServerClient.FunctionExpressionQuery obj) : IFunctionExpressionQuery
+    public class FunctionExpressionQuery(SDK.FunctionExpressionQuery obj) : IFunctionExpressionQuery
     {
-        internal DocuWare.Platform.ServerClient.FunctionExpressionQuery Obj { get; } = obj;
+        internal SDK.FunctionExpressionQuery Obj { get; } = obj;
 
         public List<ISortedField> SortOrder
         {

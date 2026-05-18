@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormInfoHeader(DocuWare.Platform.ServerClient.FormInfoHeader obj) : IFormInfoHeader
+    public class FormInfoHeader(SDK.FormInfoHeader obj) : IFormInfoHeader
     {
-        internal DocuWare.Platform.ServerClient.FormInfoHeader Obj { get; } = obj;
+        internal SDK.FormInfoHeader Obj { get; } = obj;
 
         public string Id
         {

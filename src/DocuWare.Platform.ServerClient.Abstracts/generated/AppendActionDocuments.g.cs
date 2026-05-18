@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AppendActionDocuments(DocuWare.Platform.ServerClient.AppendActionDocuments obj) : IAppendActionDocuments
+    public class AppendActionDocuments(SDK.AppendActionDocuments obj) : IAppendActionDocuments
     {
-        internal DocuWare.Platform.ServerClient.AppendActionDocuments Obj { get; } = obj;
+        internal SDK.AppendActionDocuments Obj { get; } = obj;
 
         public string SourceCabinetId
         {

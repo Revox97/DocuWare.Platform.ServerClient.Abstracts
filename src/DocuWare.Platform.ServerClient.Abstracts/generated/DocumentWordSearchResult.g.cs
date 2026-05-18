@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentWordSearchResult(DocuWare.Platform.ServerClient.DocumentWordSearchResult obj) : IDocumentWordSearchResult
+    public class DocumentWordSearchResult(SDK.DocumentWordSearchResult obj) : IDocumentWordSearchResult
     {
-        internal DocuWare.Platform.ServerClient.DocumentWordSearchResult Obj { get; } = obj;
+        internal SDK.DocumentWordSearchResult Obj { get; } = obj;
 
         public bool FoundInAnnotations
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SearchPositionQuery(DocuWare.Platform.ServerClient.SearchPositionQuery obj) : ISearchPositionQuery
+    public class SearchPositionQuery(SDK.SearchPositionQuery obj) : ISearchPositionQuery
     {
-        internal DocuWare.Platform.ServerClient.SearchPositionQuery Obj { get; } = obj;
+        internal SDK.SearchPositionQuery Obj { get; } = obj;
 
         public string Phrase
         {

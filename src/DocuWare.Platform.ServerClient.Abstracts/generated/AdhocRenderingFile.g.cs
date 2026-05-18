@@ -1,15 +1,19 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AdhocRenderingFile(DocuWare.Platform.ServerClient.AdhocRenderingFile obj) : IAdhocRenderingFile
+    public class AdhocRenderingFile(SDK.AdhocRenderingFile obj) : IAdhocRenderingFile
     {
-        internal DocuWare.Platform.ServerClient.AdhocRenderingFile Obj { get; } = obj;
+        internal SDK.AdhocRenderingFile Obj { get; } = obj;
 
         public List<IKeyValuePair> MetaData
         {
-            get => Obj.MetaData.Select(x => new KeyValuePair(x) as IKeyValuePair).ToList();
-            set => Obj.MetaData = value.Select(x => ((KeyValuePair)x).Obj).ToList();
+            get => Obj.MetaData.Select(x => new DocuWare.Platform.ServerClient.Abstracts.Content.KeyValuePair(x) as IKeyValuePair).ToList();
+            set => Obj.MetaData = value.Select(x => ((DocuWare.Platform.ServerClient.Abstracts.Content.KeyValuePair)x).Obj).ToList();
         }
 
         public IPages Pages

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormProperties(DocuWare.Platform.ServerClient.FormProperties obj) : IFormProperties
+    public class FormProperties(SDK.FormProperties obj) : IFormProperties
     {
-        internal DocuWare.Platform.ServerClient.FormProperties Obj { get; } = obj;
+        internal SDK.FormProperties Obj { get; } = obj;
 
         public int FormWidth
         {

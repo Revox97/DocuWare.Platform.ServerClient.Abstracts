@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Rights(DocuWare.Platform.ServerClient.Rights obj) : IRights
+    public class Rights(SDK.Rights obj) : IRights
     {
-        internal DocuWare.Platform.ServerClient.Rights Obj { get; } = obj;
+        internal SDK.Rights Obj { get; } = obj;
 
         public List<Right> Right
         {

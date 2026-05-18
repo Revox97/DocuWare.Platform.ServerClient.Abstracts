@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ReorderSectionsRequest(DocuWare.Platform.ServerClient.ReorderSectionsRequest obj) : IReorderSectionsRequest
+    public class ReorderSectionsRequest(SDK.ReorderSectionsRequest obj) : IReorderSectionsRequest
     {
-        internal DocuWare.Platform.ServerClient.ReorderSectionsRequest Obj { get; } = obj;
+        internal SDK.ReorderSectionsRequest Obj { get; } = obj;
 
         public List<string> SectionId
         {

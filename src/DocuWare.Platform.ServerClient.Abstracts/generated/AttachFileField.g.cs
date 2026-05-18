@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AttachFileField(DocuWare.Platform.ServerClient.AttachFileField obj) : IAttachFileField
+    public class AttachFileField(SDK.AttachFileField obj) : IAttachFileField
     {
-        internal DocuWare.Platform.ServerClient.AttachFileField Obj { get; } = obj;
+        internal SDK.AttachFileField Obj { get; } = obj;
 
         public string FileTypes
         {

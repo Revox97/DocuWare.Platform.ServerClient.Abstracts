@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableColumnsDefinition(DocuWare.Platform.ServerClient.TableColumnsDefinition obj) : ITableColumnsDefinition
+    public class TableColumnsDefinition(SDK.TableColumnsDefinition obj) : ITableColumnsDefinition
     {
-        internal DocuWare.Platform.ServerClient.TableColumnsDefinition Obj { get; } = obj;
+        internal SDK.TableColumnsDefinition Obj { get; } = obj;
 
         public ITableColumnOptions ColumnOptions
         {

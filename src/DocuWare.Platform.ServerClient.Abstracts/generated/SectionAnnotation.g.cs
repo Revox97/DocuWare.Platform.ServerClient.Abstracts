@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SectionAnnotation(DocuWare.Platform.ServerClient.SectionAnnotation obj) : ISectionAnnotation
+    public class SectionAnnotation(SDK.SectionAnnotation obj) : ISectionAnnotation
     {
-        internal DocuWare.Platform.ServerClient.SectionAnnotation Obj { get; } = obj;
+        internal SDK.SectionAnnotation Obj { get; } = obj;
 
         public List<ILayer> Annotation
         {

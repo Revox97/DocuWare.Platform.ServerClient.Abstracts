@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportConfigResult(DocuWare.Platform.ServerClient.ImportConfigResult obj) : IImportConfigResult
+    public class ImportConfigResult(SDK.ImportConfigResult obj) : IImportConfigResult
     {
-        internal DocuWare.Platform.ServerClient.ImportConfigResult Obj { get; } = obj;
+        internal SDK.ImportConfigResult Obj { get; } = obj;
 
         public string ConfigJSON
         {

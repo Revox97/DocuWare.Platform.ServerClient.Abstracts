@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ReassignmentData(DocuWare.Platform.ServerClient.ReassignmentData obj) : IReassignmentData
+    public class ReassignmentData(SDK.ReassignmentData obj) : IReassignmentData
     {
-        internal DocuWare.Platform.ServerClient.ReassignmentData Obj { get; } = obj;
+        internal SDK.ReassignmentData Obj { get; } = obj;
 
         public List<IAssignedItem> ReassignmentList
         {

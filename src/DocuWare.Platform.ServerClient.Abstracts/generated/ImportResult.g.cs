@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportResult(DocuWare.Platform.ServerClient.ImportResult obj) : IImportResult
+    public class ImportResult(SDK.ImportResult obj) : IImportResult
     {
-        internal DocuWare.Platform.ServerClient.ImportResult Obj { get; } = obj;
+        internal SDK.ImportResult Obj { get; } = obj;
 
         public List<IImportResultEntry> Results
         {

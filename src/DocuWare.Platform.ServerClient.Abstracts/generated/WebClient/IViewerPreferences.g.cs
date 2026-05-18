@@ -1,0 +1,18 @@
+using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public interface IViewerPreferences
+    {
+		List<IAnnotationToolSettings> Annotations { get; set; }
+		List<IViewerToolbar> Toolbars { get; set; }
+		string Id { get; set; }
+		ToolbarVisibility LeftToolbarState { get; set; }
+		ToolbarVisibility RightToolbarState { get; set; }
+		bool ExpandStatusbar { get; set; }
+    }
+}

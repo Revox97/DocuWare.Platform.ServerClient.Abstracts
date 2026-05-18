@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RadioGroup(DocuWare.Platform.ServerClient.RadioGroup obj) : IRadioGroup
+    public class RadioGroup(SDK.RadioGroup obj) : IRadioGroup
     {
-        internal DocuWare.Platform.ServerClient.RadioGroup Obj { get; } = obj;
+        internal SDK.RadioGroup Obj { get; } = obj;
 
         public List<IWebFormOption> Options
         {

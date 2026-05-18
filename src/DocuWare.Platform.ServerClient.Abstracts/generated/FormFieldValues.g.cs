@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormFieldValues(DocuWare.Platform.ServerClient.FormFieldValues obj) : IFormFieldValues
+    public class FormFieldValues(SDK.FormFieldValues obj) : IFormFieldValues
     {
-        internal DocuWare.Platform.ServerClient.FormFieldValues Obj { get; } = obj;
+        internal SDK.FormFieldValues Obj { get; } = obj;
 
         public List<IFormFieldValue> Field
         {

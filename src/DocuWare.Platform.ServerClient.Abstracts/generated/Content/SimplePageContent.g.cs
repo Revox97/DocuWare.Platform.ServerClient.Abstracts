@@ -1,0 +1,19 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.Content
+{
+    public class SimplePageContent(SDK.Content.SimplePageContent obj) : ISimplePageContent
+    {
+        internal SDK.Content.SimplePageContent Obj { get; } = obj;
+
+        public List<ISimpleWord> W
+        {
+            get => Obj.W.Select(x => new SimpleWord(x) as ISimpleWord).ToList();
+            set => Obj.W = value.Select(x => ((SimpleWord)x).Obj).ToList();
+        }
+    }
+}

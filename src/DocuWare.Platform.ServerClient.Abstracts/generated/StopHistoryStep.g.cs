@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StopHistoryStep(DocuWare.Platform.ServerClient.StopHistoryStep obj) : IStopHistoryStep
+    public class StopHistoryStep(SDK.StopHistoryStep obj) : IStopHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.StopHistoryStep Obj { get; } = obj;
+        internal SDK.StopHistoryStep Obj { get; } = obj;
 
         public string UserName
         {

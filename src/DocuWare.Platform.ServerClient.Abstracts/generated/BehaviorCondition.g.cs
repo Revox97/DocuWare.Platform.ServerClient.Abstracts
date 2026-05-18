@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BehaviorCondition(DocuWare.Platform.ServerClient.BehaviorCondition obj) : IBehaviorCondition
+    public class BehaviorCondition(SDK.BehaviorCondition obj) : IBehaviorCondition
     {
-        internal DocuWare.Platform.ServerClient.BehaviorCondition Obj { get; } = obj;
+        internal SDK.BehaviorCondition Obj { get; } = obj;
 
         public string FieldID
         {

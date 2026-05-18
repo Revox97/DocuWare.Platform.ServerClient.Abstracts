@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RectEntry(DocuWare.Platform.ServerClient.RectEntry obj) : IRectEntry
+    public class RectEntry(SDK.RectEntry obj) : IRectEntry
     {
-        internal DocuWare.Platform.ServerClient.RectEntry Obj { get; } = obj;
+        internal SDK.RectEntry Obj { get; } = obj;
 
         public IAnnotationRectangle Location
         {

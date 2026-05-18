@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TextField(DocuWare.Platform.ServerClient.TextField obj) : ITextField
+    public class TextField(SDK.TextField obj) : ITextField
     {
-        internal DocuWare.Platform.ServerClient.TextField Obj { get; } = obj;
+        internal SDK.TextField Obj { get; } = obj;
 
         public string FieldMaskErrorText
         {

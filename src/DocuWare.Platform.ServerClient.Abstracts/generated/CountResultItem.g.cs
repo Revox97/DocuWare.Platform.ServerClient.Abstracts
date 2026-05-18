@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountResultItem(DocuWare.Platform.ServerClient.CountResultItem obj) : ICountResultItem
+    public class CountResultItem(SDK.CountResultItem obj) : ICountResultItem
     {
-        internal DocuWare.Platform.ServerClient.CountResultItem Obj { get; } = obj;
+        internal SDK.CountResultItem Obj { get; } = obj;
 
         public string Name
         {

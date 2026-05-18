@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UploadTemplateResult(DocuWare.Platform.ServerClient.UploadTemplateResult obj) : IUploadTemplateResult
+    public class UploadTemplateResult(SDK.UploadTemplateResult obj) : IUploadTemplateResult
     {
-        internal DocuWare.Platform.ServerClient.UploadTemplateResult Obj { get; } = obj;
+        internal SDK.UploadTemplateResult Obj { get; } = obj;
 
         public string TemplateGUID
         {

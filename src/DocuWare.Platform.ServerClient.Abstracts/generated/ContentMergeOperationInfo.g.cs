@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentMergeOperationInfo(DocuWare.Platform.ServerClient.ContentMergeOperationInfo obj) : IContentMergeOperationInfo
+    public class ContentMergeOperationInfo(SDK.ContentMergeOperationInfo obj) : IContentMergeOperationInfo
     {
-        internal DocuWare.Platform.ServerClient.ContentMergeOperationInfo Obj { get; } = obj;
+        internal SDK.ContentMergeOperationInfo Obj { get; } = obj;
 
         public List<int> Documents
         {

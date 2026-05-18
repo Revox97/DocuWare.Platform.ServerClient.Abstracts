@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ExportQuery(DocuWare.Platform.ServerClient.ExportQuery obj) : IExportQuery
+    public class ExportQuery(SDK.ExportQuery obj) : IExportQuery
     {
-        internal DocuWare.Platform.ServerClient.ExportQuery Obj { get; } = obj;
+        internal SDK.ExportQuery Obj { get; } = obj;
 
         public IExportSettings Settings
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CountExpression(DocuWare.Platform.ServerClient.CountExpression obj) : ICountExpression
+    public class CountExpression(SDK.CountExpression obj) : ICountExpression
     {
-        internal DocuWare.Platform.ServerClient.CountExpression Obj { get; } = obj;
+        internal SDK.CountExpression Obj { get; } = obj;
 
         public IDialogExpression DialogExpression
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ServiceDescriptionDocumentation(DocuWare.Platform.ServerClient.ServiceDescriptionDocumentation obj) : IServiceDescriptionDocumentation
+    public class ServiceDescriptionDocumentation(SDK.ServiceDescriptionDocumentation obj) : IServiceDescriptionDocumentation
     {
-        internal DocuWare.Platform.ServerClient.ServiceDescriptionDocumentation Obj { get; } = obj;
+        internal SDK.ServiceDescriptionDocumentation Obj { get; } = obj;
 
         public Link[] Links
         {

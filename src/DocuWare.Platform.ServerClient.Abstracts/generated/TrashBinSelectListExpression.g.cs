@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinSelectListExpression(DocuWare.Platform.ServerClient.TrashBinSelectListExpression obj) : ITrashBinSelectListExpression
+    public class TrashBinSelectListExpression(SDK.TrashBinSelectListExpression obj) : ITrashBinSelectListExpression
     {
-        internal DocuWare.Platform.ServerClient.TrashBinSelectListExpression Obj { get; } = obj;
+        internal SDK.TrashBinSelectListExpression Obj { get; } = obj;
 
         public string ValuePrefix
         {

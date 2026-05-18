@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentsQuery(DocuWare.Platform.ServerClient.DocumentsQuery obj) : IDocumentsQuery
+    public class DocumentsQuery(SDK.DocumentsQuery obj) : IDocumentsQuery
     {
-        internal DocuWare.Platform.ServerClient.DocumentsQuery Obj { get; } = obj;
+        internal SDK.DocumentsQuery Obj { get; } = obj;
 
         public bool ForceRefresh
         {

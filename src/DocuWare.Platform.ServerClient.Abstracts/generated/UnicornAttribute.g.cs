@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UnicornAttribute(DocuWare.Platform.ServerClient.UnicornAttribute obj) : IUnicornAttribute
+    public class UnicornAttribute(SDK.UnicornAttribute obj) : IUnicornAttribute
     {
-        internal DocuWare.Platform.ServerClient.UnicornAttribute Obj { get; } = obj;
+        internal SDK.UnicornAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

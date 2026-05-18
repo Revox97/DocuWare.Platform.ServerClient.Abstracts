@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkForm(DocuWare.Platform.ServerClient.LinkForm obj) : ILinkForm
+    public class LinkForm(SDK.LinkForm obj) : ILinkForm
     {
-        internal DocuWare.Platform.ServerClient.LinkForm Obj { get; } = obj;
+        internal SDK.LinkForm Obj { get; } = obj;
 
         public string Url
         {

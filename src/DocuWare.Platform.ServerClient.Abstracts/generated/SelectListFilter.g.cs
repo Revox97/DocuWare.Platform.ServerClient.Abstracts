@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SelectListFilter(DocuWare.Platform.ServerClient.SelectListFilter obj) : ISelectListFilter
+    public class SelectListFilter(SDK.SelectListFilter obj) : ISelectListFilter
     {
-        internal DocuWare.Platform.ServerClient.SelectListFilter Obj { get; } = obj;
+        internal SDK.SelectListFilter Obj { get; } = obj;
 
         public string ColumnName
         {

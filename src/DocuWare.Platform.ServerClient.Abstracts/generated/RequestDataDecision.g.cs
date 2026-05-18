@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestDataDecision(DocuWare.Platform.ServerClient.RequestDataDecision obj) : IRequestDataDecision
+    public class RequestDataDecision(SDK.RequestDataDecision obj) : IRequestDataDecision
     {
-        internal DocuWare.Platform.ServerClient.RequestDataDecision Obj { get; } = obj;
+        internal SDK.RequestDataDecision Obj { get; } = obj;
 
         public string UserName
         {

@@ -1,0 +1,19 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.Content
+{
+    public class Words(SDK.Content.Words obj) : IWords
+    {
+        internal SDK.Content.Words Obj { get; } = obj;
+
+        public List<IWord> Wd
+        {
+            get => Obj.Wd.Select(x => new Word(x) as IWord).ToList();
+            set => Obj.Wd = value.Select(x => ((Word)x).Obj).ToList();
+        }
+    }
+}

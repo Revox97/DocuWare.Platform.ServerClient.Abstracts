@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class PolyLineEntry(DocuWare.Platform.ServerClient.PolyLineEntry obj) : IPolyLineEntry
+    public class PolyLineEntry(SDK.PolyLineEntry obj) : IPolyLineEntry
     {
-        internal DocuWare.Platform.ServerClient.PolyLineEntry Obj { get; } = obj;
+        internal SDK.PolyLineEntry Obj { get; } = obj;
 
         public IStroke Stroke
         {

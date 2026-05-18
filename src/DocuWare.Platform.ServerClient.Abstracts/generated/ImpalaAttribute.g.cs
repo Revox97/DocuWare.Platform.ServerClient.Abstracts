@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImpalaAttribute(DocuWare.Platform.ServerClient.ImpalaAttribute obj) : IImpalaAttribute
+    public class ImpalaAttribute(SDK.ImpalaAttribute obj) : IImpalaAttribute
     {
-        internal DocuWare.Platform.ServerClient.ImpalaAttribute Obj { get; } = obj;
+        internal SDK.ImpalaAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

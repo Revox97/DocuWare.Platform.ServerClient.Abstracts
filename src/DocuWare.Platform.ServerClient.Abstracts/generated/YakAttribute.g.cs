@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class YakAttribute(DocuWare.Platform.ServerClient.YakAttribute obj) : IYakAttribute
+    public class YakAttribute(SDK.YakAttribute obj) : IYakAttribute
     {
-        internal DocuWare.Platform.ServerClient.YakAttribute Obj { get; } = obj;
+        internal SDK.YakAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

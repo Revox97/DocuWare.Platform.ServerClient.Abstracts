@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class CrossMarkEntry(DocuWare.Platform.ServerClient.CrossMarkEntry obj) : ICrossMarkEntry
+    public class CrossMarkEntry(SDK.CrossMarkEntry obj) : ICrossMarkEntry
     {
-        internal DocuWare.Platform.ServerClient.CrossMarkEntry Obj { get; } = obj;
+        internal SDK.CrossMarkEntry Obj { get; } = obj;
 
         public IStroke Stroke
         {

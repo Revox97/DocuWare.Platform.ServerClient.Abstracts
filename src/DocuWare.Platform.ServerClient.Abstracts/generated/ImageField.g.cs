@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImageField(DocuWare.Platform.ServerClient.ImageField obj) : IImageField
+    public class ImageField(SDK.ImageField obj) : IImageField
     {
-        internal DocuWare.Platform.ServerClient.ImageField Obj { get; } = obj;
+        internal SDK.ImageField Obj { get; } = obj;
 
         public int OriginalImageWidth
         {

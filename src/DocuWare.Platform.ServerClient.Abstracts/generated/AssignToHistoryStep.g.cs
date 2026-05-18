@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AssignToHistoryStep(DocuWare.Platform.ServerClient.AssignToHistoryStep obj) : IAssignToHistoryStep
+    public class AssignToHistoryStep(SDK.AssignToHistoryStep obj) : IAssignToHistoryStep
     {
-        internal DocuWare.Platform.ServerClient.AssignToHistoryStep Obj { get; } = obj;
+        internal SDK.AssignToHistoryStep Obj { get; } = obj;
 
         public List<string> AssignedUsers
         {

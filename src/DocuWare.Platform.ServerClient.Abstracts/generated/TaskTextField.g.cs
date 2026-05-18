@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTextField(DocuWare.Platform.ServerClient.TaskTextField obj) : ITaskTextField
+    public class TaskTextField(SDK.TaskTextField obj) : ITaskTextField
     {
-        internal DocuWare.Platform.ServerClient.TaskTextField Obj { get; } = obj;
+        internal SDK.TaskTextField Obj { get; } = obj;
 
         public IFieldMask FieldMask
         {

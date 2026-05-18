@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class MultiLineTextField(DocuWare.Platform.ServerClient.MultiLineTextField obj) : IMultiLineTextField
+    public class MultiLineTextField(SDK.MultiLineTextField obj) : IMultiLineTextField
     {
-        internal DocuWare.Platform.ServerClient.MultiLineTextField Obj { get; } = obj;
+        internal SDK.MultiLineTextField Obj { get; } = obj;
 
         public int? MinLength
         {

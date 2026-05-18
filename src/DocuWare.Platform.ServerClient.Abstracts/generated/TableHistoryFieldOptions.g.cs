@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TableHistoryFieldOptions(DocuWare.Platform.ServerClient.TableHistoryFieldOptions obj) : ITableHistoryFieldOptions
+    public class TableHistoryFieldOptions(SDK.TableHistoryFieldOptions obj) : ITableHistoryFieldOptions
     {
-        internal DocuWare.Platform.ServerClient.TableHistoryFieldOptions Obj { get; } = obj;
+        internal SDK.TableHistoryFieldOptions Obj { get; } = obj;
 
         public List<ITableColumnsDefinition> TableColumnsDefinitions
         {

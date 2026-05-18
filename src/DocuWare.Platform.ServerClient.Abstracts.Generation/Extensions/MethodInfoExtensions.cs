@@ -15,7 +15,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 ParameterInfo parameter = parameters[i];
                 TypeDef paramTypeDef = parameter.ParameterType.GetTypeDefinition();
 
-                string returnTypeName = paramTypeDef.GetReturnTypeName(); 
+                string returnTypeName = paramTypeDef.GetReturnTypeName();
 
                 string parsedParameter = parameter.HasDefaultValue
                     ? $"{(returnTypeName.EndsWith('?') ? returnTypeName[..^1] : returnTypeName)}? {parameter.Name} = {(parameter.DefaultValue is null ? "null" : parameter.DefaultValue)}"

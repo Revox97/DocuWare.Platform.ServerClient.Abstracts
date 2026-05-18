@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class StarfishAttribute(DocuWare.Platform.ServerClient.StarfishAttribute obj) : IStarfishAttribute
+    public class StarfishAttribute(SDK.StarfishAttribute obj) : IStarfishAttribute
     {
-        internal DocuWare.Platform.ServerClient.StarfishAttribute Obj { get; } = obj;
+        internal SDK.StarfishAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class UploadedFileChunk(DocuWare.Platform.ServerClient.UploadedFileChunk obj) : IUploadedFileChunk
+    public class UploadedFileChunk(SDK.UploadedFileChunk obj) : IUploadedFileChunk
     {
-        internal DocuWare.Platform.ServerClient.UploadedFileChunk Obj { get; } = obj;
+        internal SDK.UploadedFileChunk Obj { get; } = obj;
 
         public Link[] Links
         {

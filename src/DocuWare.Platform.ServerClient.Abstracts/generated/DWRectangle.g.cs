@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DWRectangle(DocuWare.Platform.ServerClient.DWRectangle obj) : IDWRectangle
+    public class DWRectangle(SDK.DWRectangle obj) : IDWRectangle
     {
-        internal DocuWare.Platform.ServerClient.DWRectangle Obj { get; } = obj;
+        internal SDK.DWRectangle Obj { get; } = obj;
 
         public double Left
         {

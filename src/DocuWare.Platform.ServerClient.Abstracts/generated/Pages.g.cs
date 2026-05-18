@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Pages(DocuWare.Platform.ServerClient.Pages obj) : IPages
+    public class Pages(SDK.Pages obj) : IPages
     {
-        internal DocuWare.Platform.ServerClient.Pages Obj { get; } = obj;
+        internal SDK.Pages Obj { get; } = obj;
 
         public List<IPage> Page
         {

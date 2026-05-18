@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class BaseTaskOperations(DocuWare.Platform.ServerClient.BaseTaskOperations obj) : IBaseTaskOperations
+    public class BaseTaskOperations(SDK.BaseTaskOperations obj) : IBaseTaskOperations
     {
-        internal DocuWare.Platform.ServerClient.BaseTaskOperations Obj { get; } = obj;
+        internal SDK.BaseTaskOperations Obj { get; } = obj;
 
         public Link[] Links
         {

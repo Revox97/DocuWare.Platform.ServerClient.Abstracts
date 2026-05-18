@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class IntellixFieldAssignments(DocuWare.Platform.ServerClient.IntellixFieldAssignments obj) : IIntellixFieldAssignments
+    public class IntellixFieldAssignments(SDK.IntellixFieldAssignments obj) : IIntellixFieldAssignments
     {
-        internal DocuWare.Platform.ServerClient.IntellixFieldAssignments Obj { get; } = obj;
+        internal SDK.IntellixFieldAssignments Obj { get; } = obj;
 
         public List<IIntellixFieldMapping> Items
         {

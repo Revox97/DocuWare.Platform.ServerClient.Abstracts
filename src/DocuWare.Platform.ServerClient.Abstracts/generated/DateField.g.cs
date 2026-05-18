@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DateField(DocuWare.Platform.ServerClient.DateField obj) : IDateField
+    public class DateField(SDK.DateField obj) : IDateField
     {
-        internal DocuWare.Platform.ServerClient.DateField Obj { get; } = obj;
+        internal SDK.DateField Obj { get; } = obj;
 
         public string LocalValue
         {

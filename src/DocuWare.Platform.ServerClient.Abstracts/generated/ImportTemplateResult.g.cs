@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ImportTemplateResult(DocuWare.Platform.ServerClient.ImportTemplateResult obj) : IImportTemplateResult
+    public class ImportTemplateResult(SDK.ImportTemplateResult obj) : IImportTemplateResult
     {
-        internal DocuWare.Platform.ServerClient.ImportTemplateResult Obj { get; } = obj;
+        internal SDK.ImportTemplateResult Obj { get; } = obj;
 
         public string ConfigJSON
         {

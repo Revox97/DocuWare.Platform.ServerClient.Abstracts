@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Groups(DocuWare.Platform.ServerClient.Groups obj) : IGroups
+    public class Groups(SDK.Groups obj) : IGroups
     {
-        internal DocuWare.Platform.ServerClient.Groups Obj { get; } = obj;
+        internal SDK.Groups Obj { get; } = obj;
 
         public List<IGroup> Item
         {

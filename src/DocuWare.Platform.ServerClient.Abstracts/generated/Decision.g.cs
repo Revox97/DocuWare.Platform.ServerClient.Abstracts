@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Decision(DocuWare.Platform.ServerClient.Decision obj) : IDecision
+    public class Decision(SDK.Decision obj) : IDecision
     {
-        internal DocuWare.Platform.ServerClient.Decision Obj { get; } = obj;
+        internal SDK.Decision Obj { get; } = obj;
 
         public List<ITaskFormField> TaskFormField
         {

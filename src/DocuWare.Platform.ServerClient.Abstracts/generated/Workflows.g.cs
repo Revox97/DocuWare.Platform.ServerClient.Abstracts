@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class Workflows(DocuWare.Platform.ServerClient.Workflows obj) : IWorkflows
+    public class Workflows(SDK.Workflows obj) : IWorkflows
     {
-        internal DocuWare.Platform.ServerClient.Workflows Obj { get; } = obj;
+        internal SDK.Workflows Obj { get; } = obj;
 
         public List<IWorkflow> Workflow
         {

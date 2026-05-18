@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class ContentTypeList(DocuWare.Platform.ServerClient.ContentTypeList obj) : IContentTypeList
+    public class ContentTypeList(SDK.ContentTypeList obj) : IContentTypeList
     {
-        internal DocuWare.Platform.ServerClient.ContentTypeList Obj { get; } = obj;
+        internal SDK.ContentTypeList Obj { get; } = obj;
 
         public List<object> Items
         {

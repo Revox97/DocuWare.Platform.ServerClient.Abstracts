@@ -199,9 +199,16 @@
             return AbstractDocuWareListPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
         }
 
-        internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name)
+        internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name, string ns)
         {
-            return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+            string typeNameFormatted = type[6..^1];
+            if (typeNameFormatted.Equals("KeyValuePair"))
+            {
+                ns = ns.Replace("DocuWare.Platform.ServerClient", "DocuWare.Platform.ServerClient.Abstracts");
+                typeNameFormatted = $"{ns}.{typeNameFormatted}";
+            }
+
+            return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", typeNameFormatted).Replace("{interfaceType}", type[5..^1]);
         }
 
         internal static string GetAbstractDocuWareListGetSetPropertyImplementation(string type, string name)
@@ -226,12 +233,12 @@
 
         internal static string GetDocuWareEnumListGetPropertyImplementation(string type, string name)
         {
-            return DocuWareEnumListPropertyGet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5.. ^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
+            return DocuWareEnumListPropertyGet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5..^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
         }
 
         internal static string GetDocuWareEnumListGetSetPropertyImplementation(string type, string name)
         {
-            return DocuWareEnumListPropertyGetSet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5.. ^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
+            return DocuWareEnumListPropertyGetSet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5..^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
         }
 
         internal static string GetDocuWareEnumGetPropertyImplementation(string type, string name)

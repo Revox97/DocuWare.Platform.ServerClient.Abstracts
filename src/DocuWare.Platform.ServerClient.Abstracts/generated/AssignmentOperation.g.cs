@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class AssignmentOperation(DocuWare.Platform.ServerClient.AssignmentOperation obj) : IAssignmentOperation
+    public class AssignmentOperation(SDK.AssignmentOperation obj) : IAssignmentOperation
     {
-        internal DocuWare.Platform.ServerClient.AssignmentOperation Obj { get; } = obj;
+        internal SDK.AssignmentOperation Obj { get; } = obj;
 
         public List<string> Ids
         {

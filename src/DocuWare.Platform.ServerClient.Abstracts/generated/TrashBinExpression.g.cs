@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinExpression(DocuWare.Platform.ServerClient.TrashBinExpression obj) : ITrashBinExpression
+    public class TrashBinExpression(SDK.TrashBinExpression obj) : ITrashBinExpression
     {
-        internal DocuWare.Platform.ServerClient.TrashBinExpression Obj { get; } = obj;
+        internal SDK.TrashBinExpression Obj { get; } = obj;
 
         public List<ITrashBinCondition> Condition
         {

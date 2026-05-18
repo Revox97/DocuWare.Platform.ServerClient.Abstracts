@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WolfAttribute(DocuWare.Platform.ServerClient.WolfAttribute obj) : IWolfAttribute
+    public class WolfAttribute(SDK.WolfAttribute obj) : IWolfAttribute
     {
-        internal DocuWare.Platform.ServerClient.WolfAttribute Obj { get; } = obj;
+        internal SDK.WolfAttribute Obj { get; } = obj;
 
         public string MinumumVersion
         {

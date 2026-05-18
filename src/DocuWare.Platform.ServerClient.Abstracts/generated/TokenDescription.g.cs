@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TokenDescription(DocuWare.Platform.ServerClient.TokenDescription obj) : ITokenDescription
+    public class TokenDescription(SDK.TokenDescription obj) : ITokenDescription
     {
-        internal DocuWare.Platform.ServerClient.TokenDescription Obj { get; } = obj;
+        internal SDK.TokenDescription Obj { get; } = obj;
 
         public List<DWProductTypes> TargetProducts
         {

@@ -1,6 +1,10 @@
 using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
-namespace DocuWare.Platform.ServerClient.Abstracts
+namespace DocuWare.Platform.ServerClient.Abstracts{namespace}
 {
     public interface {0}{1}{3}
     {{2}

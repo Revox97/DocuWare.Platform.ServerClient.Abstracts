@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentlessTriggerData(DocuWare.Platform.ServerClient.DocumentlessTriggerData obj) : IDocumentlessTriggerData
+    public class DocumentlessTriggerData(SDK.DocumentlessTriggerData obj) : IDocumentlessTriggerData
     {
-        internal DocuWare.Platform.ServerClient.DocumentlessTriggerData Obj { get; } = obj;
+        internal SDK.DocumentlessTriggerData Obj { get; } = obj;
 
         public List<ITriggerVariable> TextVariables
         {

@@ -1,0 +1,25 @@
+using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public class AnnotationToolSettings(SDK.WebClient.AnnotationToolSettings obj) : IAnnotationToolSettings
+    {
+        internal SDK.WebClient.AnnotationToolSettings Obj { get; } = obj;
+
+        public AnnotationTools Type
+        {
+            get => (AnnotationTools)Obj.Type;
+            set => Obj.Type = (DocuWare.Platform.ServerClient.WebClient.AnnotationTools)value;
+        }
+
+        public string Color
+        {
+            get => Obj.Color;
+            set => Obj.Color = value;
+        }
+    }
+}

@@ -1,9 +1,13 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SaveTemplateResult(DocuWare.Platform.ServerClient.SaveTemplateResult obj) : ISaveTemplateResult
+    public class SaveTemplateResult(SDK.SaveTemplateResult obj) : ISaveTemplateResult
     {
-        internal DocuWare.Platform.ServerClient.SaveTemplateResult Obj { get; } = obj;
+        internal SDK.SaveTemplateResult Obj { get; } = obj;
     }
 }

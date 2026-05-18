@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskUniqueColumnsQuery(DocuWare.Platform.ServerClient.TaskUniqueColumnsQuery obj) : ITaskUniqueColumnsQuery
+    public class TaskUniqueColumnsQuery(SDK.TaskUniqueColumnsQuery obj) : ITaskUniqueColumnsQuery
     {
-        internal DocuWare.Platform.ServerClient.TaskUniqueColumnsQuery Obj { get; } = obj;
+        internal SDK.TaskUniqueColumnsQuery Obj { get; } = obj;
 
         public List<IColumnSortOrder> SortOrder
         {

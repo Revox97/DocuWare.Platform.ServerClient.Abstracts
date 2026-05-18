@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldMapping(DocuWare.Platform.ServerClient.FieldMapping obj) : IFieldMapping
+    public class FieldMapping(SDK.FieldMapping obj) : IFieldMapping
     {
-        internal DocuWare.Platform.ServerClient.FieldMapping Obj { get; } = obj;
+        internal SDK.FieldMapping Obj { get; } = obj;
 
         public List<IFieldMapping> ColumnMappings
         {

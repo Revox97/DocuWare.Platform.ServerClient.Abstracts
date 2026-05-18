@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DWSize(DocuWare.Platform.ServerClient.DWSize obj) : IDWSize
+    public class DWSize(SDK.DWSize obj) : IDWSize
     {
-        internal DocuWare.Platform.ServerClient.DWSize Obj { get; } = obj;
+        internal SDK.DWSize Obj { get; } = obj;
 
         public double Width
         {

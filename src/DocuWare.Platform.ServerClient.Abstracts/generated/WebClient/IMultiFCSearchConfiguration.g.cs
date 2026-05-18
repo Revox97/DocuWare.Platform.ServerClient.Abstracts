@@ -1,0 +1,17 @@
+using DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
+
+namespace DocuWare.Platform.ServerClient.Abstracts.WebClient
+{
+    public interface IMultiFCSearchConfiguration
+    {
+		List<string> FcIds { get; set; }
+		string Name { get; set; }
+		string SearchDialogID { get; set; }
+		string SearchDialogFCID { get; set; }
+		Guid Id { get; set; }
+    }
+}

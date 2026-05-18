@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentAuditQuery(DocuWare.Platform.ServerClient.DocumentAuditQuery obj) : IDocumentAuditQuery
+    public class DocumentAuditQuery(SDK.DocumentAuditQuery obj) : IDocumentAuditQuery
     {
-        internal DocuWare.Platform.ServerClient.DocumentAuditQuery Obj { get; } = obj;
+        internal SDK.DocumentAuditQuery Obj { get; } = obj;
 
         public int Start
         {

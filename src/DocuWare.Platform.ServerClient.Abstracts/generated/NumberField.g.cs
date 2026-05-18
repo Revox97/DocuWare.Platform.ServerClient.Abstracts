@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class NumberField(DocuWare.Platform.ServerClient.NumberField obj) : INumberField
+    public class NumberField(SDK.NumberField obj) : INumberField
     {
-        internal DocuWare.Platform.ServerClient.NumberField Obj { get; } = obj;
+        internal SDK.NumberField Obj { get; } = obj;
 
         public bool ForceDecimalPlaces
         {

@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentVersion(DocuWare.Platform.ServerClient.DocumentVersion obj) : IDocumentVersion
+    public class DocumentVersion(SDK.DocumentVersion obj) : IDocumentVersion
     {
-        internal DocuWare.Platform.ServerClient.DocumentVersion Obj { get; } = obj;
+        internal SDK.DocumentVersion Obj { get; } = obj;
 
         public int Major
         {

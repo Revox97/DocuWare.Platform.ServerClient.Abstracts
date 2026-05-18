@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SpacerField(DocuWare.Platform.ServerClient.SpacerField obj) : ISpacerField
+    public class SpacerField(SDK.SpacerField obj) : ISpacerField
     {
-        internal DocuWare.Platform.ServerClient.SpacerField Obj { get; } = obj;
+        internal SDK.SpacerField Obj { get; } = obj;
 
         public bool DisplayLine
         {

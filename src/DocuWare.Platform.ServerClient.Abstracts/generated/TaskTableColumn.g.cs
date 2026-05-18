@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TaskTableColumn(DocuWare.Platform.ServerClient.TaskTableColumn obj) : ITaskTableColumn
+    public class TaskTableColumn(SDK.TaskTableColumn obj) : ITaskTableColumn
     {
-        internal DocuWare.Platform.ServerClient.TaskTableColumn Obj { get; } = obj;
+        internal SDK.TaskTableColumn Obj { get; } = obj;
 
         public ITaskTableColumnBase BaseData
         {

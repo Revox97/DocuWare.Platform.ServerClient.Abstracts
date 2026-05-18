@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FieldValidations(DocuWare.Platform.ServerClient.FieldValidations obj) : IFieldValidations
+    public class FieldValidations(SDK.FieldValidations obj) : IFieldValidations
     {
-        internal DocuWare.Platform.ServerClient.FieldValidations Obj { get; } = obj;
+        internal SDK.FieldValidations Obj { get; } = obj;
 
         public List<ICustomFieldValidation> FieldValidation
         {

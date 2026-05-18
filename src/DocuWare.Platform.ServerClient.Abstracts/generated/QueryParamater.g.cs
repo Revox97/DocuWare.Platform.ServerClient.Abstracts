@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class QueryParamater(DocuWare.Platform.ServerClient.QueryParamater obj) : IQueryParamater
+    public class QueryParamater(SDK.QueryParamater obj) : IQueryParamater
     {
-        internal DocuWare.Platform.ServerClient.QueryParamater Obj { get; } = obj;
+        internal SDK.QueryParamater Obj { get; } = obj;
 
         public string Name
         {

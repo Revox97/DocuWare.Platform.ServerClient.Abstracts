@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class RequestConfirmedData(DocuWare.Platform.ServerClient.RequestConfirmedData obj) : IRequestConfirmedData
+    public class RequestConfirmedData(SDK.RequestConfirmedData obj) : IRequestConfirmedData
     {
-        internal DocuWare.Platform.ServerClient.RequestConfirmedData Obj { get; } = obj;
+        internal SDK.RequestConfirmedData Obj { get; } = obj;
 
         public int DecisionId
         {

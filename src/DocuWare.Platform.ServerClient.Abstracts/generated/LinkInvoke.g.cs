@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class LinkInvoke(DocuWare.Platform.ServerClient.LinkInvoke obj) : ILinkInvoke
+    public class LinkInvoke(SDK.LinkInvoke obj) : ILinkInvoke
     {
-        internal DocuWare.Platform.ServerClient.LinkInvoke Obj { get; } = obj;
+        internal SDK.LinkInvoke Obj { get; } = obj;
 
         public IContentTypeList Accepts
         {

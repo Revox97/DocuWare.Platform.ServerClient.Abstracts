@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class TrashBinDocumentsTableResult(DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult obj) : ITrashBinDocumentsTableResult
+    public class TrashBinDocumentsTableResult(SDK.TrashBinDocumentsTableResult obj) : ITrashBinDocumentsTableResult
     {
-        internal DocuWare.Platform.ServerClient.TrashBinDocumentsTableResult Obj { get; } = obj;
+        internal SDK.TrashBinDocumentsTableResult Obj { get; } = obj;
 
         public ICountPlusValue Count
         {

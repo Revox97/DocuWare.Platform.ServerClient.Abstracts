@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class DocumentIndexFieldTableRow(DocuWare.Platform.ServerClient.DocumentIndexFieldTableRow obj) : IDocumentIndexFieldTableRow
+    public class DocumentIndexFieldTableRow(SDK.DocumentIndexFieldTableRow obj) : IDocumentIndexFieldTableRow
     {
-        internal DocuWare.Platform.ServerClient.DocumentIndexFieldTableRow Obj { get; } = obj;
+        internal SDK.DocumentIndexFieldTableRow Obj { get; } = obj;
 
         public List<IDocumentIndexField> ColumnValue
         {

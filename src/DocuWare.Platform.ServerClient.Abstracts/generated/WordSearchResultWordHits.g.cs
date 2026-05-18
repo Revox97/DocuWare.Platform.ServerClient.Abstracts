@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class WordSearchResultWordHits(DocuWare.Platform.ServerClient.WordSearchResultWordHits obj) : IWordSearchResultWordHits
+    public class WordSearchResultWordHits(SDK.WordSearchResultWordHits obj) : IWordSearchResultWordHits
     {
-        internal DocuWare.Platform.ServerClient.WordSearchResultWordHits Obj { get; } = obj;
+        internal SDK.WordSearchResultWordHits Obj { get; } = obj;
 
         public List<IWordSearchResultWordHit> Wd
         {

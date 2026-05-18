@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SortedFieldsList(DocuWare.Platform.ServerClient.SortedFieldsList obj) : ISortedFieldsList
+    public class SortedFieldsList(SDK.SortedFieldsList obj) : ISortedFieldsList
     {
-        internal DocuWare.Platform.ServerClient.SortedFieldsList Obj { get; } = obj;
+        internal SDK.SortedFieldsList Obj { get; } = obj;
 
         public List<ISortedField> OrderBy
         {

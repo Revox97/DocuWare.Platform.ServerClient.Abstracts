@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class FormTemplate(DocuWare.Platform.ServerClient.FormTemplate obj) : IFormTemplate
+    public class FormTemplate(SDK.FormTemplate obj) : IFormTemplate
     {
-        internal DocuWare.Platform.ServerClient.FormTemplate Obj { get; } = obj;
+        internal SDK.FormTemplate Obj { get; } = obj;
 
         public string TemplateGUID
         {

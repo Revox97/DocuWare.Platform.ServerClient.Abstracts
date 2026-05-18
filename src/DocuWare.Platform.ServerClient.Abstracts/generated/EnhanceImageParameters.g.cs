@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class EnhanceImageParameters(DocuWare.Platform.ServerClient.EnhanceImageParameters obj) : IEnhanceImageParameters
+    public class EnhanceImageParameters(SDK.EnhanceImageParameters obj) : IEnhanceImageParameters
     {
-        internal DocuWare.Platform.ServerClient.EnhanceImageParameters Obj { get; } = obj;
+        internal SDK.EnhanceImageParameters Obj { get; } = obj;
 
         public int SectionNumber
         {

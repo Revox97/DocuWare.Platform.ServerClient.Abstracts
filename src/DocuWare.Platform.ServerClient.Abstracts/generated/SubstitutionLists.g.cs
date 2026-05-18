@@ -1,10 +1,14 @@
 using SDK = DocuWare.Platform.ServerClient;
+using DocuWare.Platform.ServerClient.Abstracts.Content;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.CircuitBreaker;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Resilience;
+using DocuWare.Platform.ServerClient.Abstracts.Policy.Retry;
 
 namespace DocuWare.Platform.ServerClient.Abstracts
 {
-    public class SubstitutionLists(DocuWare.Platform.ServerClient.SubstitutionLists obj) : ISubstitutionLists
+    public class SubstitutionLists(SDK.SubstitutionLists obj) : ISubstitutionLists
     {
-        internal DocuWare.Platform.ServerClient.SubstitutionLists Obj { get; } = obj;
+        internal SDK.SubstitutionLists Obj { get; } = obj;
 
         public List<ISubstitutionList> Item
         {
