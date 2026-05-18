@@ -6,6 +6,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		List<IHistoryField> Parameters { get; set; }
 		List<IHistoryField> Results { get; set; }
+		List<IConditionHistoryStep> Conditions { get; set; }
 		string Method { get; set; }
     }
 }

@@ -18,6 +18,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Results = value.Select(x => ((HistoryField)x).Obj).ToList();
         }
 
+        public List<IConditionHistoryStep> Conditions
+        {
+            get => Obj.Conditions.Select(x => new ConditionHistoryStep(x) as IConditionHistoryStep).ToList();
+            set => Obj.Conditions = value.Select(x => ((ConditionHistoryStep)x).Obj).ToList();
+        }
+
         public string Method
         {
             get => Obj.Method;

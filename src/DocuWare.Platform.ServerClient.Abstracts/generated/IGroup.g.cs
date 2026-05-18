@@ -16,5 +16,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		IUsers GetUsersFromUsersRelation();
 		Task<DeserializedHttpResponse<IUsers>> GetUsersFromUsersRelationAsync();
 		Task<DeserializedHttpResponse<IUsers>> GetUsersFromUsersRelationAsync(CancellationToken cancellationToken);
+		string PutToUsersRelationForString(IAssignmentOperation dataToSend);
+		Task<DeserializedHttpResponse<string>> PutToUsersRelationForStringAsync(IAssignmentOperation dataToSend);
+		Task<DeserializedHttpResponse<string>> PutToUsersRelationForStringAsync(CancellationToken cancellationToken, IAssignmentOperation dataToSend);
     }
 }

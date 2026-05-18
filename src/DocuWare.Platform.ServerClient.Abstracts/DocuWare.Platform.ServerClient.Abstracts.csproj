@@ -15,6 +15,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIconUrl>icon.png</PackageIconUrl>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +23,7 @@
     <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
+    <PackageReference Include="DocuWare.Platform.ServerClient" Version="16.11.1" />
   </ItemGroup>
 
   <ItemGroup>

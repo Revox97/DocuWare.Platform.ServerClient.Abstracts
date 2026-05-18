@@ -5,17 +5,33 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <StartupObject>DocuWare.Platform.ServerClient.Abstracts.Generation.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocuWare.Platform.ServerClient" Version="14.11.1" />
+    <PackageReference Include="DocuWare.Platform.ServerClient" Version="16.11.1" />
   </ItemGroup>
+
+  <Target Name="_ResolveCopyLocalNuGetPackageXmls" AfterTargets="ResolveReferences">
+    <ItemGroup>
+      <ReferenceCopyLocalPaths Include="@(ReferenceCopyLocalPaths->'%(RootDir)%(Directory)%(Filename).xml')" Condition="Exists('%(RootDir)%(Directory)%(Filename).xml')" />
+    </ItemGroup>
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\DocuWare.Platform.ServerClient.Abstracts\DocuWare.Platform.ServerClient.Abstracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Templates\AbstractDocuWareListPropertyGet.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\AbstractDocuWareListPropertyGetSet.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Templates\AbstractDocuWarePropertyGetSet.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Templates\AsyncDocuWareMethod.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

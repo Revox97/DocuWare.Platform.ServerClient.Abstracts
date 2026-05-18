@@ -59,5 +59,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.Normalize;
             set => Obj.Normalize = value;
         }
+
+        public bool ExactPhrase
+        {
+            get => Obj.ExactPhrase;
+            set => Obj.ExactPhrase = value;
+        }
     }
 }

@@ -11,5 +11,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string SystemNumber { get; set; }
 		string RuntimeVersion { get; set; }
 		string OrganizationType { get; set; }
+		bool IsAutoLogoutEnabled { get; set; }
+		string AutoLogoutTimeout { get; set; }
     }
 }

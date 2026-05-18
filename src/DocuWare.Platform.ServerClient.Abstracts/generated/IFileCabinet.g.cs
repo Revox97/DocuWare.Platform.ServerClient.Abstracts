@@ -69,6 +69,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		IDialog GetDialogFromCustomSearchRelation();
 		Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomSearchRelationAsync();
 		Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomSearchRelationAsync(CancellationToken cancellationToken);
+		IDialog GetDialogFromCustomInfoRelation();
+		Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync();
+		Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync(CancellationToken cancellationToken);
 		IDialogInfos GetDialogInfosFromResultTreesRelation();
 		Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromResultTreesRelationAsync();
 		Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromResultTreesRelationAsync(CancellationToken cancellationToken);

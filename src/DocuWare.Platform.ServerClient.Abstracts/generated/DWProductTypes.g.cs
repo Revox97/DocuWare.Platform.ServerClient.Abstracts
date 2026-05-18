@@ -34,6 +34,13 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		PublicForms = 29,
 		AutoIndex = 30,
 		DesktopApps = 31,
-		DocumentExtractionTool = 32
+		DocumentExtractionTool = 32,
+		Export = 33,
+		UserProvisioning = 34,
+		IntelligentInsights = 35,
+		EInvoicingService = 36,
+		EInvoicingConnector = 37,
+		IntelligentDocumentProcessing = 38,
+		IntegrationPlatform = 39
     }
 }

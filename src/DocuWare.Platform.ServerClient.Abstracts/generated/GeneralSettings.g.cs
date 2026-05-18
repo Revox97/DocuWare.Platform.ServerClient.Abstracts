@@ -17,5 +17,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.CreatedVersion;
             set => Obj.CreatedVersion = value;
         }
+
+        public bool DefaultLYClient
+        {
+            get => Obj.DefaultLYClient;
+            set => Obj.DefaultLYClient = value;
+        }
     }
 }

@@ -536,6 +536,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
         }
 
+        public IDialog GetDialogFromCustomInfoRelation() => new Dialog(Obj.GetDialogFromCustomInfoRelation());
+
+        public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync()
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomInfoRelationAsync().ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Dialog(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IDialog>> GetDialogFromCustomInfoRelationAsync(CancellationToken cancellationToken)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Dialog> result = await Obj.GetDialogFromCustomInfoRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Dialog(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDialog>(temp).ConfigureAwait(false);
+        }
+
         public IDialogInfos GetDialogInfosFromResultTreesRelation() => new DialogInfos(Obj.GetDialogInfosFromResultTreesRelation());
 
         public async Task<DeserializedHttpResponse<IDialogInfos>> GetDialogInfosFromResultTreesRelationAsync()

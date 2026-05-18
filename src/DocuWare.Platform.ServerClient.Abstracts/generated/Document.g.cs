@@ -1089,5 +1089,33 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IDocumentAuditInformation>(temp).ConfigureAwait(false);
         }
+
+        public ISections PutToReorderSectionsRelationForSections(IReorderSectionsRequest dataToSend) => new Sections(Obj.PutToReorderSectionsRelationForSections(((ReorderSectionsRequest)dataToSend).Obj));
+
+        public async Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(IReorderSectionsRequest dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Sections> result = await Obj.PutToReorderSectionsRelationForSectionsAsync(((ReorderSectionsRequest)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Sections(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<ISections>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(CancellationToken cancellationToken, IReorderSectionsRequest dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.Sections> result = await Obj.PutToReorderSectionsRelationForSectionsAsync(cancellationToken, ((ReorderSectionsRequest)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new Sections(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<ISections>(temp).ConfigureAwait(false);
+        }
     }
 }

@@ -6,6 +6,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.CheckInActionParameters Obj { get; } = obj;
 
+        public string MediaType => Obj.MediaType;
+
         public IDocumentVersion DocumentVersion
         {
             get => new DocumentVersion(Obj.DocumentVersion);

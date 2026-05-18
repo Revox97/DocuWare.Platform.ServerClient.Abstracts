@@ -5,9 +5,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     public interface IDesignerInstance
     {
 		Link[] Links { get; set; }
+		List<IColumnValue> ColumnValues { get; set; }
 		string Id { get; set; }
 		string WorkflowVersionId { get; set; }
 		InstanceExecutionStateEnum ExecutionState { get; set; }
+		string HibernationStateValue { get; set; }
 		int DocId { get; set; }
 		DateTime CreateDate { get; set; }
 

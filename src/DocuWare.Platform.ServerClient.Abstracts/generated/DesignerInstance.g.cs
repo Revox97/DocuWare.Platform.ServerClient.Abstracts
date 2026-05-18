@@ -12,6 +12,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Links = value;
         }
 
+        public List<IColumnValue> ColumnValues
+        {
+            get => Obj.ColumnValues.Select(x => new ColumnValue(x) as IColumnValue).ToList();
+            set => Obj.ColumnValues = value.Select(x => ((ColumnValue)x).Obj).ToList();
+        }
+
         public string Id
         {
             get => Obj.Id;
@@ -28,6 +34,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => (InstanceExecutionStateEnum)Obj.ExecutionState;
             set => Obj.ExecutionState = (DocuWare.Platform.ServerClient.InstanceExecutionStateEnum)value;
+        }
+
+        public string HibernationStateValue
+        {
+            get => Obj.HibernationStateValue;
+            set => Obj.HibernationStateValue = value;
         }
 
         public int DocId

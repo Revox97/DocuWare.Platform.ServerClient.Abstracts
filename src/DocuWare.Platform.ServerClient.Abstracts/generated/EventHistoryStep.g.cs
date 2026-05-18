@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.EventHistoryStep Obj { get; } = obj;
 
+        public List<IConditionHistoryStep> Conditions
+        {
+            get => Obj.Conditions.Select(x => new ConditionHistoryStep(x) as IConditionHistoryStep).ToList();
+            set => Obj.Conditions = value.Select(x => ((ConditionHistoryStep)x).Obj).ToList();
+        }
+
         public string FCName
         {
             get => Obj.FCName;

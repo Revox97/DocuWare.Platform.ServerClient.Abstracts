@@ -47,5 +47,17 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.OrganizationType;
             set => Obj.OrganizationType = value;
         }
+
+        public bool IsAutoLogoutEnabled
+        {
+            get => Obj.IsAutoLogoutEnabled;
+            set => Obj.IsAutoLogoutEnabled = value;
+        }
+
+        public string AutoLogoutTimeout
+        {
+            get => Obj.AutoLogoutTimeout;
+            set => Obj.AutoLogoutTimeout = value;
+        }
     }
 }

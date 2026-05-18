@@ -6,5 +6,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
 		WorkAreaType StartWith { get; set; }
 		string CreatedVersion { get; set; }
+		bool DefaultLYClient { get; set; }
     }
 }

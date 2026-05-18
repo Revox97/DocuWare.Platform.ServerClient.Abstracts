@@ -29,5 +29,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.OrganizationGuid;
             set => Obj.OrganizationGuid = value;
         }
+
+        public string LastAccessUser
+        {
+            get => Obj.LastAccessUser;
+            set => Obj.LastAccessUser = value;
+        }
     }
 }

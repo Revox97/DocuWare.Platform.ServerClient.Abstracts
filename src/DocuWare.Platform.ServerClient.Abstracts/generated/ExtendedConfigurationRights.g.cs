@@ -11,5 +11,29 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             get => Obj.Forms;
             set => Obj.Forms = value;
         }
+
+        public bool IntelligentInsights
+        {
+            get => Obj.IntelligentInsights;
+            set => Obj.IntelligentInsights = value;
+        }
+
+        public bool EInvoicingConnector
+        {
+            get => Obj.EInvoicingConnector;
+            set => Obj.EInvoicingConnector = value;
+        }
+
+        public bool EInvoicingService
+        {
+            get => Obj.EInvoicingService;
+            set => Obj.EInvoicingService = value;
+        }
+
+        public bool ConfigureIDP
+        {
+            get => Obj.ConfigureIDP;
+            set => Obj.ConfigureIDP = value;
+        }
     }
 }

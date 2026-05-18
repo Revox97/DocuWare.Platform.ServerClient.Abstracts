@@ -1,0 +1,31 @@
+        public {type} {name}
+        {
+            get
+            {
+                List<{interfaceType}> fields = [];
+
+                foreach(SDK.{targetType} formField in Obj.{name})
+                {
+                    Type type = formField.GetType();
+                    fields.Add(type.GetConstructor(BindingFlags.Public, [typeof(SDK.{targetType})]).Invoke([formField]) as {interfaceType});
+                }
+
+                return fields;
+            }
+            set
+            {
+                List<SDK.{targetType}> fields = [];
+
+                foreach({targetType} formField in value)
+                {
+                    Type type = formField.GetType();
+
+                    PropertyInfo objPropertyInfo = type.GetProperty("Obj");
+                    SDK.{targetType} obj = objPropertyInfo.GetValue(formField) as SDK.{targetType};
+
+                    fields.Add(obj);
+                }
+
+                Obj.{name} = fields;
+            }
+        }

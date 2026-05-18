@@ -16,18 +16,20 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
 
             Console.WriteLine("Starting generation of DocuWare.Platform.ServerClient.Abstracts");
             Console.WriteLine("Generating static types interface.");
-            new ServiceConnectionGenerationService().Generate(typeof(DocuWare.Platform.ServerClient.ServiceConnection));
+            new ServiceConnectionGenerationService().Generate(typeof(ServerClient.ServiceConnection));
 
             Console.WriteLine("Generating instance types.");
-            Assembly assembly = Assembly.GetAssembly(typeof(DocuWare.Platform.ServerClient.ServiceConnection))
+            Assembly assembly = Assembly.GetAssembly(typeof(ServerClient.ServiceConnection))
                 ?? throw new Exception("Assembly could not be loaded.");
 
+            // ENUMS
             EnumGenerationService enumGenerationService = new();
             Type[] enumTypes = [.. assembly.GetExportedTypes().Where(t => t.IsEnum)];
 
             for (int i = 0; i < enumTypes.Length; i++)
                 enumGenerationService.Generate(enumTypes[i]);
 
+            // INSTANCE TYPES
             InstanceGenerationService instanceGenerationService = new();
             Type[] types = [.. assembly.GetExportedTypes().Where(t => t.IsClass)];
 

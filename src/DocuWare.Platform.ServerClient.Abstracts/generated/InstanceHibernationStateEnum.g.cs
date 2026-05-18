@@ -1,0 +1,9 @@
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public enum InstanceHibernationStateEnum
+    {
+		None = 0,
+		Task = 1,
+		Wait = 2
+    }
+}

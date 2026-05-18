@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.OrganizationCulture Obj { get; } = obj;
 
+        public CalendarType DateAndNumberFormatCalendar
+        {
+            get => (CalendarType)Obj.DateAndNumberFormatCalendar;
+            set => Obj.DateAndNumberFormatCalendar = (DocuWare.Platform.ServerClient.CalendarType)value;
+        }
+
         public string Language
         {
             get => Obj.Language;

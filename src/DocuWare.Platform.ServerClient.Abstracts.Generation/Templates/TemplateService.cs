@@ -58,6 +58,14 @@
             }
         } = null!;
 
+        public static string AbstractDocuWarePropertyGetSet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/AbstractDocuWarePropertyGetSet.template");
+            }
+        } = null!;
+
         public static string DocuWareListPropertyGet
         {
             get
@@ -66,11 +74,27 @@
             }
         } = null!;
 
+        public static string AbstractDocuWareListPropertyGet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/AbstractDocuWareListPropertyGet.template");
+            }
+        } = null!;
+
         public static string DocuWareListPropertyGetSet
         {
             get
             {
                 return field ??= GetFileContentsWithoutLastLine("Templates/DocuWareListPropertyGetSet.template");
+            }
+        } = null!;
+
+        public static string AbstractDocuWareListPropertyGetSet
+        {
+            get
+            {
+                return field ??= GetFileContentsWithoutLastLine("Templates/AbstractDocuWareListPropertyGetSet.template");
             }
         } = null!;
 
@@ -160,14 +184,29 @@
             return DocuWarePropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]);
         }
 
+        internal static string GetAbstractDocuWareGetSetPropertyImplementation(string type, string name)
+        {
+            return AbstractDocuWarePropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]);
+        }
+
         internal static string GetDocuWareListGetPropertyImplementation(string type, string name)
         {
             return DocuWareListPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
         }
 
+        internal static string GetAbstractDocuWareListGetPropertyImplementation(string type, string name)
+        {
+            return AbstractDocuWareListPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+        }
+
         internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name)
         {
             return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
+        }
+
+        internal static string GetAbstractDocuWareListGetSetPropertyImplementation(string type, string name)
+        {
+            return AbstractDocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
         }
 
         internal static string GetDocuWareArrayGetPropertyImplementation(string type, string name)

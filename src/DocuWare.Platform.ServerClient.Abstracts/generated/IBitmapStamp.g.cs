@@ -4,6 +4,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 {
     public interface IBitmapStamp
     {
+		string PngData { get; set; }
+		float PngWidth { get; set; }
+		float PngHeight { get; set; }
 		Link[] Links { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);

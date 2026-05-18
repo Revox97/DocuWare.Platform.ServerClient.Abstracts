@@ -12,6 +12,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.DesignerInstance = value.Select(x => ((DesignerInstance)x).Obj).ToList();
         }
 
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
+
+        public DateTime TimeStamp
+        {
+            get => Obj.TimeStamp;
+            set => Obj.TimeStamp = value;
+        }
+
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
     }
 }

@@ -180,5 +180,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		IDocumentAuditInformation PostToAuditInformationRelationForDocumentAuditInformation(IDocumentAuditQuery dataToSend);
 		Task<DeserializedHttpResponse<IDocumentAuditInformation>> PostToAuditInformationRelationForDocumentAuditInformationAsync(IDocumentAuditQuery dataToSend);
 		Task<DeserializedHttpResponse<IDocumentAuditInformation>> PostToAuditInformationRelationForDocumentAuditInformationAsync(CancellationToken cancellationToken, IDocumentAuditQuery dataToSend);
+		ISections PutToReorderSectionsRelationForSections(IReorderSectionsRequest dataToSend);
+		Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(IReorderSectionsRequest dataToSend);
+		Task<DeserializedHttpResponse<ISections>> PutToReorderSectionsRelationForSectionsAsync(CancellationToken cancellationToken, IReorderSectionsRequest dataToSend);
     }
 }

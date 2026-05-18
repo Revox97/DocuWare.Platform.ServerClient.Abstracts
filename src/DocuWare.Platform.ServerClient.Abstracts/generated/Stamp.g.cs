@@ -108,6 +108,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.KeepStampActive = value;
         }
 
+        public bool ShowUserName
+        {
+            get => Obj.ShowUserName;
+            set => Obj.ShowUserName = value;
+        }
+
+        public bool ShowDate
+        {
+            get => Obj.ShowDate;
+            set => Obj.ShowDate = value;
+        }
+
+        public bool ShowTime
+        {
+            get => Obj.ShowTime;
+            set => Obj.ShowTime = value;
+        }
+
+        public bool ShowFrame
+        {
+            get => Obj.ShowFrame;
+            set => Obj.ShowFrame = value;
+        }
+
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
 		public Stream GetStreamFromAsBitmapRelation() => Obj.GetStreamFromAsBitmapRelation();

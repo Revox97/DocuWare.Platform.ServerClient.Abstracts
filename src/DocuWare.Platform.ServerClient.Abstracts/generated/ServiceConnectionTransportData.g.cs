@@ -12,10 +12,22 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.UserAgent = value;
         }
 
+        public string ApplicationContext
+        {
+            get => Obj.ApplicationContext;
+            set => Obj.ApplicationContext = value;
+        }
+
         public HttpMessageHandler HttpClientHandler
         {
             get => Obj.HttpClientHandler;
             set => Obj.HttpClientHandler = value;
+        }
+
+        public IResiliencePolicyOptions ResiliencePolicyOptions
+        {
+            get => new ResiliencePolicyOptions(Obj.ResiliencePolicyOptions);
+            set => Obj.ResiliencePolicyOptions = ((ResiliencePolicyOptions)value).Obj;
         }
 
         public StringWithQualityHeaderValue[] AcceptLanguage

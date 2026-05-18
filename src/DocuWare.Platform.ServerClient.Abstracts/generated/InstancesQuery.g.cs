@@ -1,0 +1,57 @@
+using SDK = DocuWare.Platform.ServerClient;
+
+namespace DocuWare.Platform.ServerClient.Abstracts
+{
+    public class InstancesQuery(DocuWare.Platform.ServerClient.InstancesQuery obj) : IInstancesQuery
+    {
+        internal DocuWare.Platform.ServerClient.InstancesQuery Obj { get; } = obj;
+
+        public List<string> Instances
+        {
+            get => Obj.Instances;
+            set => Obj.Instances = value;
+        }
+
+        public List<IColumnSortOrder> SortOrder
+        {
+            get => Obj.SortOrder.Select(x => new ColumnSortOrder(x) as IColumnSortOrder).ToList();
+            set => Obj.SortOrder = value.Select(x => ((ColumnSortOrder)x).Obj).ToList();
+        }
+
+        public List<IInstanceExpressionCondition> InstanceExpressionCondition
+        {
+            get => Obj.InstanceExpressionCondition.Select(x => new InstanceExpressionCondition(x) as IInstanceExpressionCondition).ToList();
+            set => Obj.InstanceExpressionCondition = value.Select(x => ((InstanceExpressionCondition)x).Obj).ToList();
+        }
+
+        public int Start
+        {
+            get => Obj.Start;
+            set => Obj.Start = value;
+        }
+
+        public int Count
+        {
+            get => Obj.Count;
+            set => Obj.Count = value;
+        }
+
+        public bool LoadColumnValues
+        {
+            get => Obj.LoadColumnValues;
+            set => Obj.LoadColumnValues = value;
+        }
+
+        public bool RemoveLinks
+        {
+            get => Obj.RemoveLinks;
+            set => Obj.RemoveLinks = value;
+        }
+
+        public InstanceExpressionOperation Operation
+        {
+            get => (InstanceExpressionOperation)Obj.Operation;
+            set => Obj.Operation = (DocuWare.Platform.ServerClient.InstanceExpressionOperation)value;
+        }
+    }
+}

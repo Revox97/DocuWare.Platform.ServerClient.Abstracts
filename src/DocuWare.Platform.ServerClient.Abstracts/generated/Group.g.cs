@@ -87,5 +87,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
             return await DeserializedHttpResponse.CreateAsync<IUsers>(temp).ConfigureAwait(false);
         }
+
+		public string PutToUsersRelationForString(IAssignmentOperation dataToSend) => Obj.PutToUsersRelationForString(((AssignmentOperation)dataToSend).Obj);
+
+		public async Task<DeserializedHttpResponse<string>> PutToUsersRelationForStringAsync(IAssignmentOperation dataToSend) => await Obj.PutToUsersRelationForStringAsync(((AssignmentOperation)dataToSend).Obj);
+
+		public async Task<DeserializedHttpResponse<string>> PutToUsersRelationForStringAsync(CancellationToken cancellationToken, IAssignmentOperation dataToSend) => await Obj.PutToUsersRelationForStringAsync(cancellationToken, ((AssignmentOperation)dataToSend).Obj);
     }
 }

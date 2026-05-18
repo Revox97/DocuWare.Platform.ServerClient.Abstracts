@@ -6,6 +6,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.NewUser Obj { get; } = obj;
 
+        public IRegionalSettings RegionalSettings
+        {
+            get => new RegionalSettings(Obj.RegionalSettings);
+            set => Obj.RegionalSettings = ((RegionalSettings)value).Obj;
+        }
+
         public string Name
         {
             get => Obj.Name;
@@ -46,6 +52,36 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.ExternalProvider;
             set => Obj.ExternalProvider = value;
+        }
+
+        public string ExternalIdpUserId
+        {
+            get => Obj.ExternalIdpUserId;
+            set => Obj.ExternalIdpUserId = value;
+        }
+
+        public string ExternalIdp
+        {
+            get => Obj.ExternalIdp;
+            set => Obj.ExternalIdp = value;
+        }
+
+        public string FirstName
+        {
+            get => Obj.FirstName;
+            set => Obj.FirstName = value;
+        }
+
+        public string LastName
+        {
+            get => Obj.LastName;
+            set => Obj.LastName = value;
+        }
+
+        public bool SkipCreatingDocumentTray
+        {
+            get => Obj.SkipCreatingDocumentTray;
+            set => Obj.SkipCreatingDocumentTray = value;
         }
     }
 }

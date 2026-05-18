@@ -15,6 +15,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 return;
 
             string interfaceName = $"I{type.Name}";
+            if (GeneratedInterfaces.Interfaces.Contains(interfaceName))
+                return;
+
             Console.WriteLine($"Generating {interfaceName}.cs");
             string template = File.ReadAllText("Templates/Interface.template");
             TypeDef baseType = type.BaseType!.GetTypeDefinition();
@@ -29,6 +32,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
             template = template.Replace("{2}", result);
             using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, $"{interfaceName}.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
+            GeneratedInterfaces.Interfaces.Add(interfaceName);
         }
 
         private static string GenerateProperties(Type type)

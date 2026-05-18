@@ -8,5 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		DateTime TimeStamp { get; set; }
 		string FileCabinetId { get; set; }
 		string OrganizationGuid { get; set; }
+		string LastAccessUser { get; set; }
     }
 }

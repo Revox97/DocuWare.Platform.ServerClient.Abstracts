@@ -42,6 +42,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.FileCabinetId = value;
         }
 
+        public string LastAccessUser
+        {
+            get => Obj.LastAccessUser;
+            set => Obj.LastAccessUser = value;
+        }
+
         public DateTime TimeStamp
         {
             get => Obj.TimeStamp;

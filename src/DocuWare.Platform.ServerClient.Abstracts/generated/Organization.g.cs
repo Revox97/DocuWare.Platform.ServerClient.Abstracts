@@ -42,6 +42,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ExtendedConfigurationRights = ((ExtendedConfigurationRights)value).Obj;
         }
 
+        public List<IOrganizationProperty> CustomProperties
+        {
+            get => Obj.CustomProperties.Select(x => new OrganizationProperty(x) as IOrganizationProperty).ToList();
+            set => Obj.CustomProperties = value.Select(x => ((OrganizationProperty)x).Obj).ToList();
+        }
+
         public string Name
         {
             get => Obj.Name;
@@ -58,6 +64,18 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         {
             get => Obj.Guid;
             set => Obj.Guid = value;
+        }
+
+        public bool IsTwoStepVerificationEnabled
+        {
+            get => Obj.IsTwoStepVerificationEnabled;
+            set => Obj.IsTwoStepVerificationEnabled = value;
+        }
+
+        public bool IsTwoStepVerificationRequired
+        {
+            get => Obj.IsTwoStepVerificationRequired;
+            set => Obj.IsTwoStepVerificationRequired = value;
         }
 
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
@@ -674,6 +692,34 @@ namespace DocuWare.Platform.ServerClient.Abstracts
         public async Task<DeserializedHttpResponse<IDesignerWorkflows>> GetDesignerWorkflowsFromDesignerWorkflowsRelationAsync(CancellationToken cancellationToken)
         {
             DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWorkflows> result = await Obj.GetDesignerWorkflowsFromDesignerWorkflowsRelationAsync(cancellationToken).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new DesignerWorkflows(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflows>(temp).ConfigureAwait(false);
+        }
+
+        public IDesignerWorkflows PostToDesignerWorkflowsRelationForDesignerWorkflows(IDesignerWorkflowsQuery dataToSend) => new DesignerWorkflows(Obj.PostToDesignerWorkflowsRelationForDesignerWorkflows(((DesignerWorkflowsQuery)dataToSend).Obj));
+
+        public async Task<DeserializedHttpResponse<IDesignerWorkflows>> PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(IDesignerWorkflowsQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWorkflows> result = await Obj.PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(((DesignerWorkflowsQuery)dataToSend).Obj).ConfigureAwait(false);
+
+            HttpResponseMessage temp = new()
+            {
+                Content = JsonContent.Create(new DesignerWorkflows(result)),
+                StatusCode = result.StatusCode
+            };
+
+            return await DeserializedHttpResponse.CreateAsync<IDesignerWorkflows>(temp).ConfigureAwait(false);
+        }
+
+        public async Task<DeserializedHttpResponse<IDesignerWorkflows>> PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(CancellationToken cancellationToken, IDesignerWorkflowsQuery dataToSend)
+        {
+            DeserializedHttpResponse<DocuWare.Platform.ServerClient.DesignerWorkflows> result = await Obj.PostToDesignerWorkflowsRelationForDesignerWorkflowsAsync(cancellationToken, ((DesignerWorkflowsQuery)dataToSend).Obj).ConfigureAwait(false);
 
             HttpResponseMessage temp = new()
             {

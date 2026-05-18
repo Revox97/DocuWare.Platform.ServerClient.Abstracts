@@ -10,6 +10,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string Title { get; set; }
 		string OrganizationGuid { get; set; }
 		string FileCabinetId { get; set; }
+		string LastAccessUser { get; set; }
 		DateTime TimeStamp { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);

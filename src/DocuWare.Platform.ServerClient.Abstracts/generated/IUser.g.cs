@@ -19,6 +19,10 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		string NetworkId { get; set; }
 		string ExternalId { get; set; }
 		string ExternalProvider { get; set; }
+		bool ShouldUpdateActive { get; set; }
+		string ExternalIdpUserId { get; set; }
+		string ExternalIdp { get; set; }
+		bool TwoStepVerificationEnabled { get; set; }
 
 		void SetProxy(HttpClientProxy proxy);
 		IUser GetUserFromSelfRelation();

@@ -8,8 +8,20 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 
         public IBatchUpdateSource Source
         {
-            get => throw new NotSupportedException("This property is not supported in the Abstracts library at the moment. Use SDK library for this functionality.");
-            set => throw new NotSupportedException("This property is not supported in the Abstracts library at the moment. Use SDK library for this functionality.");
+            get
+            {
+                Type type = Obj.Source.GetType();
+                return type.GetConstructor(BindingFlags.Public, [typeof(SDK.BatchUpdateSource)]).Invoke([Obj.Source]) as IBatchUpdateSource;
+            }
+            set
+            {
+                Type type = value.GetType();
+
+                PropertyInfo objPropertyInfo = type.GetProperty("Obj");
+                SDK.BatchUpdateSource obj = objPropertyInfo.GetValue(value) as SDK.BatchUpdateSource;
+
+                Obj.Source = obj;
+            }
         }
 
         public IBatchUpdateProcessData Data

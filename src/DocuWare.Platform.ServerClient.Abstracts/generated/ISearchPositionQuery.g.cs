@@ -13,5 +13,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts
 		bool Backward { get; set; }
 		bool RangeSearch { get; set; }
 		bool Normalize { get; set; }
+		bool ExactPhrase { get; set; }
     }
 }

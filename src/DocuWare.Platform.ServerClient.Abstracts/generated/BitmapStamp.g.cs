@@ -6,6 +6,24 @@ namespace DocuWare.Platform.ServerClient.Abstracts
     {
         internal DocuWare.Platform.ServerClient.BitmapStamp Obj { get; } = obj;
 
+        public string PngData
+        {
+            get => Obj.PngData;
+            set => Obj.PngData = value;
+        }
+
+        public float PngWidth
+        {
+            get => Obj.PngWidth;
+            set => Obj.PngWidth = value;
+        }
+
+        public float PngHeight
+        {
+            get => Obj.PngHeight;
+            set => Obj.PngHeight = value;
+        }
+
         public Link[] Links
         {
             get => Obj.Links;

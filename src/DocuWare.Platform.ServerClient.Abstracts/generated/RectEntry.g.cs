@@ -24,6 +24,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.Ellipse = value;
         }
 
+        public string FillColor
+        {
+            get => Obj.FillColor;
+            set => Obj.FillColor = value;
+        }
+
         public ICreatedInfo Created
         {
             get => new CreatedInfo(Obj.Created);

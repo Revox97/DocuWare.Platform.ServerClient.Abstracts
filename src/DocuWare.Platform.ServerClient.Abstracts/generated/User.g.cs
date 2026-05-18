@@ -96,6 +96,30 @@ namespace DocuWare.Platform.ServerClient.Abstracts
             set => Obj.ExternalProvider = value;
         }
 
+        public bool ShouldUpdateActive
+        {
+            get => Obj.ShouldUpdateActive;
+            set => Obj.ShouldUpdateActive = value;
+        }
+
+        public string ExternalIdpUserId
+        {
+            get => Obj.ExternalIdpUserId;
+            set => Obj.ExternalIdpUserId = value;
+        }
+
+        public string ExternalIdp
+        {
+            get => Obj.ExternalIdp;
+            set => Obj.ExternalIdp = value;
+        }
+
+        public bool TwoStepVerificationEnabled
+        {
+            get => Obj.TwoStepVerificationEnabled;
+            set => Obj.TwoStepVerificationEnabled = value;
+        }
+
 		public void SetProxy(HttpClientProxy proxy) => Obj.SetProxy(proxy);
 
         public IUser GetUserFromSelfRelation() => new User(Obj.GetUserFromSelfRelation());
