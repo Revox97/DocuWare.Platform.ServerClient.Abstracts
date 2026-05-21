@@ -8,6 +8,8 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 {
     internal class ServiceConnectionGenerationService : IGenerationService
     {
+        private const string DocumentationComment = "    /// <summary>Represents a DocuWare system at top level and provides methods to create service connections to the platform.</summary>\r\n";
+
         public void Generate(Type type)
         {
             GenerateInterface(type);
@@ -18,8 +20,14 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
         {
             Console.WriteLine("Generating IDocuWare");
             MethodInfo[] methods = type.GetMethods(BindingFlags.Static | BindingFlags.Public);
+
             string template = File.ReadAllText("Templates/Interface.template");
-            template = template.Replace("{0}", "IDocuWare").Replace("{1}", string.Empty).Replace("{3}", string.Empty).Replace("{namespace}", string.Empty);
+            template = template.Replace("{documentationComment}", DocumentationComment)
+                               .Replace("{name}", "IDocuWare")
+                               .Replace("{1}", string.Empty)
+                               .Replace("{baseType}", string.Empty)
+                               .Replace("{namespace}", string.Empty);
+
             string methodList = string.Empty;
 
             for (int i = 0; i < methods.Length; i++)
@@ -34,7 +42,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}";
             }
 
-            template = template.Replace("{2}", methodList);
+            template = template.Replace("{members}", methodList);
             using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, "IDocuWare.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));
         }
@@ -73,7 +81,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 methodList += result;
             }
 
-            template = template.Replace("{0}", methodList);
+            template = template.Replace("{members}", methodList);
             Directory.CreateDirectory("Generated");
             using FileStream fStream = File.Create(Path.Combine(Paths.GenerationFolder, "RealDocuWare.g.cs"));
             fStream.Write(Encoding.UTF8.GetBytes(template ?? string.Empty));

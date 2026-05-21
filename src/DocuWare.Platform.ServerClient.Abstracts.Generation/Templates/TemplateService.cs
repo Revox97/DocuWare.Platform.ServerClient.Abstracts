@@ -26,7 +26,7 @@
             }
         } = null!;
 
-        public static string PropertyGet
+        public static string PropertyGetTemplate
         {
             get
             {
@@ -34,7 +34,7 @@
             }
         } = null!;
 
-        public static string PropertyGetSet
+        public static string PropertyGetSetTemplate
         {
             get
             {
@@ -42,7 +42,7 @@
             }
         } = null!;
 
-        public static string DocuWarePropertyGet
+        public static string DocuWarePropertyGetTemplate
         {
             get
             {
@@ -50,7 +50,7 @@
             }
         } = null!;
 
-        public static string DocuWarePropertyGetSet
+        public static string DocuWarePropertyGetSetTemplate
         {
             get
             {
@@ -58,7 +58,7 @@
             }
         } = null!;
 
-        public static string AbstractDocuWarePropertyGetSet
+        public static string AbstractDocuWarePropertyGetSetTemplate
         {
             get
             {
@@ -66,7 +66,7 @@
             }
         } = null!;
 
-        public static string DocuWareListPropertyGet
+        public static string DocuWareListPropertyGetTemplate
         {
             get
             {
@@ -74,7 +74,7 @@
             }
         } = null!;
 
-        public static string AbstractDocuWareListPropertyGet
+        public static string AbstractDocuWareListPropertyGetTemplate
         {
             get
             {
@@ -82,7 +82,7 @@
             }
         } = null!;
 
-        public static string DocuWareListPropertyGetSet
+        public static string DocuWareListPropertyGetSetTemplate
         {
             get
             {
@@ -90,7 +90,7 @@
             }
         } = null!;
 
-        public static string AbstractDocuWareListPropertyGetSet
+        public static string AbstractDocuWareListPropertyGetSetTemplate
         {
             get
             {
@@ -98,7 +98,7 @@
             }
         } = null!;
 
-        public static string DoubleNestedDocuWareListPropertyGetSet
+        public static string DoubleNestedDocuWareListPropertyGetSetTemplate
         {
             get
             {
@@ -106,7 +106,7 @@
             }
         } = null!;
 
-        public static string DocuWareArrayPropertyGet
+        public static string DocuWareArrayPropertyGetTemplate
         {
             get
             {
@@ -114,7 +114,7 @@
             }
         } = null!;
 
-        public static string DocuWareAsyncArrayPropertyGet
+        public static string DocuWareAsyncArrayPropertyGetTemplate
         {
             get
             {
@@ -122,7 +122,7 @@
             }
         } = null!;
 
-        public static string DocuWareEnumListPropertyGet
+        public static string DocuWareEnumListPropertyGetTemplate
         {
             get
             {
@@ -130,7 +130,7 @@
             }
         } = null!;
 
-        public static string DocuWareEnumListPropertyGetSet
+        public static string DocuWareEnumListPropertyGetSetTemplate
         {
             get
             {
@@ -138,7 +138,7 @@
             }
         } = null!;
 
-        public static string DocuWareEnumPropertyGet
+        public static string DocuWareEnumPropertyGetTemplate
         {
             get
             {
@@ -146,7 +146,7 @@
             }
         } = null!;
 
-        public static string DocuWareEnumPropertyGetSet
+        public static string DocuWareEnumPropertyGetSetTemplate
         {
             get
             {
@@ -162,93 +162,6 @@
         internal static string GetSyncDocuWareEnumMethodImplementation(string type, string name, string parameters, string parametersToSend)
         {
             return SyncDocuWareEnumMethod.Replace("{type}", type).Replace("{name}", name).Replace("{params}", parameters).Replace("{paramsToSend}", parametersToSend);
-        }
-
-        internal static string GetNormalGetPropertyImplementation(string type, string name)
-        {
-            return PropertyGet.Replace("{type}", type).Replace("{name}", name);
-        }
-
-        internal static string GetNormalGetSetPropertyImplementation(string type, string name)
-        {
-            return PropertyGetSet.Replace("{type}", type).Replace("{name}", name);
-        }
-
-        internal static string GetDocuWareGetPropertyImplementation(string type, string name)
-        {
-            return DocuWarePropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]);
-        }
-
-        internal static string GetDocuWareGetSetPropertyImplementation(string type, string name)
-        {
-            return DocuWarePropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]);
-        }
-
-        internal static string GetAbstractDocuWareGetSetPropertyImplementation(string type, string name)
-        {
-            return AbstractDocuWarePropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]);
-        }
-
-        internal static string GetDocuWareListGetPropertyImplementation(string type, string name)
-        {
-            return DocuWareListPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
-        }
-
-        internal static string GetAbstractDocuWareListGetPropertyImplementation(string type, string name)
-        {
-            return AbstractDocuWareListPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
-        }
-
-        internal static string GetDocuWareListGetSetPropertyImplementation(string type, string name, string ns)
-        {
-            string typeNameFormatted = type[6..^1];
-            if (typeNameFormatted.Equals("KeyValuePair"))
-            {
-                ns = ns.Replace("DocuWare.Platform.ServerClient", "DocuWare.Platform.ServerClient.Abstracts");
-                typeNameFormatted = $"{ns}.{typeNameFormatted}";
-            }
-
-            return DocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", typeNameFormatted).Replace("{interfaceType}", type[5..^1]);
-        }
-
-        internal static string GetAbstractDocuWareListGetSetPropertyImplementation(string type, string name)
-        {
-            return AbstractDocuWareListPropertyGetSet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[6..^1]).Replace("{interfaceType}", type[5..^1]);
-        }
-
-        internal static string GetDocuWareArrayGetPropertyImplementation(string type, string name)
-        {
-            return DocuWareArrayPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[1..]).Replace("{baseTargetType}", type[1..^2]);
-        }
-
-        internal static string GetDocuWareAsyncArrayGetPropertyImplementation(string type, string name)
-        {
-            return DocuWareAsyncArrayPropertyGet.Replace("{type}", type).Replace("{name}", name).Replace("{targetType}", type[5..^3]).Replace("{baseTargetType}", type[6..^3]);
-        }
-
-        internal static string GetDoubleNestedDocuWareListGetSetPropertyImplementation(string type, string name)
-        {
-            return DoubleNestedDocuWareListPropertyGetSet.Replace("{returnType}", type[10..^2]).Replace("{name}", name).Replace("{type}", type[11..^2]);
-        }
-
-        internal static string GetDocuWareEnumListGetPropertyImplementation(string type, string name)
-        {
-            return DocuWareEnumListPropertyGet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5..^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
-        }
-
-        internal static string GetDocuWareEnumListGetSetPropertyImplementation(string type, string name)
-        {
-            return DocuWareEnumListPropertyGetSet.Replace("{type}", $"DocuWare.Platform.ServerClient.{type[5..^1]}").Replace("{name}", name).Replace("{targetType}", type[5..^1]).Replace("{interfaceType}", type);
-        }
-
-        internal static string GetDocuWareEnumGetPropertyImplementation(string type, string name)
-        {
-            return DocuWareEnumPropertyGet.Replace("{type}", type).Replace("{name}", name);
-        }
-
-        internal static string GetDocuWareEnumGetSetPropertyImplementation(string type, string targetType, string name)
-        {
-            return DocuWareEnumPropertyGetSet.Replace("{type}", type).Replace("{targetType}", targetType).Replace("{name}", name);
         }
 
         private static string GetFileContentsWithoutLastLine(string path)

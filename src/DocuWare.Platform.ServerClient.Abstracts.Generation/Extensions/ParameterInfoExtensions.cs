@@ -28,7 +28,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                     return $" = \"{defaultValue}\"";
 
                 if (defaultValue is bool)
-                    return $" = {defaultValue.ToString()!.ToLower()}";
+                    return $" = {defaultValue.ToString()?.ToLower() ?? "false"}";
 
                 return $" = {defaultValue}";
             }

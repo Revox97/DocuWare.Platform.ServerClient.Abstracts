@@ -5,10 +5,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
     internal static class MethodInfoExtensions
     {
+        private const int FirstParameterIndex = 0;
+
         internal static string GetParsedParameterDefinitions(this MethodInfo method)
         {
             ParameterInfo[] parameters = method.GetParameters();
-            string result = string.Empty;
+            string parameterDefinitions = string.Empty;
 
             for (int i = 0; i < parameters.Length; i++)
             {
@@ -18,16 +20,26 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                 string returnTypeName = paramTypeDef.GetReturnTypeName();
 
                 string parsedParameter = parameter.HasDefaultValue
-                    ? $"{(returnTypeName.EndsWith('?') ? returnTypeName[..^1] : returnTypeName)}? {parameter.Name} = {(parameter.DefaultValue is null ? "null" : parameter.DefaultValue)}"
-                    : $"{paramTypeDef.GetReturnTypeName()} {parameter.Name}";
+                    ? CreateParameterWithDefaultValue(returnTypeName, parameter)
+                    : CreateParameterWithoutDefaultValue(paramTypeDef, parameter);
 
-                if (i == 0)
-                    result += parsedParameter;
-                else
-                    result += $", {parsedParameter}";
+                bool isFirstParameter = i == FirstParameterIndex;
+                parameterDefinitions += isFirstParameter ? parsedParameter : $", {parsedParameter}";
             }
 
-            return result;
+            return parameterDefinitions;
+        }
+
+        private static string CreateParameterWithDefaultValue(string returnTypeName, ParameterInfo parameter)
+        {
+            string nullableReturnTypeName = returnTypeName.EndsWith('?') ? returnTypeName[..^1] : returnTypeName;
+            string defaultValue = parameter.DefaultValue is null ? "null" : parameter.DefaultValue.ToString() ?? "null";
+            return $"{nullableReturnTypeName}? {parameter.Name} = {defaultValue}";
+        }
+
+        private static string CreateParameterWithoutDefaultValue(TypeDef paramTypeDef, ParameterInfo parameter)
+        {
+            return $"{paramTypeDef.GetReturnTypeName()} {parameter.Name}";
         }
 
         internal static string GetParsedParameters(this MethodInfo method)
@@ -44,10 +56,11 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
                     ? $"(({paramType.GetTypeName()}){parameter.Name}).Obj"
                     : parameter.GetParsedParameters();
 
-                if (i == 0)
-                    result += parsedParameter;
-                else
-                    result += $", {parsedParameter}";
+                bool isFirstParameter = i == FirstParameterIndex;
+
+                result += isFirstParameter
+                    ? parsedParameter
+                    : $", {parsedParameter}";
             }
 
             return result;

@@ -3,7 +3,6 @@ using DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generation;
 
 // TODO HANDLE DocuWare.Platform.ServerClient.Extensions
 // TODO HANDLE GENERIC CALLS Call<T>...
-// TODO HANDLE Abstract types
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation
 {
@@ -11,13 +10,28 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
     {
         static void Main()
         {
+            DeleteExistingFiles();
+            GenerateTopLevelTypes();
+            GenerateInstanceTypes();
+
+            Console.WriteLine("Finished generation.");
+        }
+
+        private static void DeleteExistingFiles()
+        {
             Console.WriteLine("Deleting existing files.");
             Directory.EnumerateDirectories(Paths.GenerationFolder).ToList().ForEach(x => Directory.Delete(x, true));
+        }
 
+        private static void GenerateTopLevelTypes()
+        {
             Console.WriteLine("Starting generation of DocuWare.Platform.ServerClient.Abstracts");
             Console.WriteLine("Generating static types interface.");
             new ServiceConnectionGenerationService().Generate(typeof(ServerClient.ServiceConnection));
+        }
 
+        private static void GenerateInstanceTypes()
+        {
             Console.WriteLine("Generating instance types.");
             Assembly assembly = Assembly.GetAssembly(typeof(ServerClient.ServiceConnection))
                 ?? throw new Exception("Assembly could not be loaded.");
@@ -26,8 +40,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation
             GenerateInstances(assembly);
 
             // TODO Generate extensions
-
-            Console.WriteLine("Finished generation.");
         }
 
         private static void GenerateEnums(Assembly assembly)
