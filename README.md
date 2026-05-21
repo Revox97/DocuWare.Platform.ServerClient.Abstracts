@@ -32,8 +32,9 @@ Afterwards the library can be used as if using the DocuWare.Platform.ServerClien
 
 ## Limitations
 As this library is still in a pre-release state, not all types and methods of the DocuWare.Platform.ServerClient library are wrapped yet. If you are missing any functionality, please open an issue. Known limitations are as follows:
-- Missing documentation comments
 - Currently only **DocuWare.Platform.ServerClient** is available, **DocuWare.Platform.ServerClient.Extensions** functionality is missing
+- Static methods within types are not available
+- Generic methods are not yet available
 
 All missing functionality is planned to be added in a future release.
 
