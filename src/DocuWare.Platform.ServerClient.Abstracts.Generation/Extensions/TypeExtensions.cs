@@ -1,5 +1,4 @@
-﻿using DocuWare.Platform.ServerClient.Abstracts.Generation.Services;
-using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
+﻿using DocuWare.Platform.ServerClient.Abstracts.Generation.Wrapper;
 
 namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
 {
@@ -9,7 +8,6 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
         // TODO create type to contain all comments
         public static List<object> GetDocumentationComments(this Type t)
         {
-            DocumentationCommentsService.GetDocumentationComments(t);
             throw new NotImplementedException();
         }
 
@@ -106,10 +104,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Extensions
             return result;
         }
 
-        internal static Type[] GetSubTypes(this Type t)
-        {
-            return t.GenericTypeArguments;
-        }
+        internal static Type[] GetSubTypes(this Type t) => t.GenericTypeArguments;
 
         internal static bool IsDocuWareType(this Type t, bool checkForEnum = false)
         {

@@ -22,8 +22,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 return;
 
             Console.WriteLine($"Generating {interfaceName}.cs");
+            string documentationComment = DocumentationCommentsService.GetDocumentationCommentOfType(type);
             string template = File.ReadAllText("Templates/Interface.template");
-            template = template.Replace("{0}", interfaceName).Replace("{1}", string.Empty).Replace("{3}", string.Empty);
+            template = template.Replace("{documentationComment}", documentationComment)
+                               .Replace("{name}", interfaceName)
+                               .Replace("{1}", string.Empty)
+                               .Replace("{baseType}", string.Empty);
 
             template = _namespace is not null
                 ? template.Replace("{namespace}", $".{_namespace}")
@@ -34,7 +38,7 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
 
             string result = propertyList + (methodList != string.Empty ? StringConstants.LineEnding : string.Empty) + methodList;
 
-            template = template.Replace("{2}", result);
+            template = template.Replace("{members}", result);
             WriteFile(template, interfaceName);
 
             GeneratedInterfaces.Interfaces.Add(interfaceName);
@@ -74,10 +78,12 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 if (returnTypeName.Equals("IDictionary"))
                     returnTypeName = "System.Collections.IDictionary";
 
+                string documentationComment = DocumentationCommentsService.GetDocumentationCommentOfProperty(property);
+
                 string name = property.Name;
                 bool hasGetter = property.GetGetMethod() is not null;
                 bool hasSetter = property.GetSetMethod() is not null;
-                string result = $"{returnTypeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
+                string result = $"\r\n{documentationComment}\t\t{returnTypeName} {name} {{ {(hasGetter ? "get;" : string.Empty)}{(hasGetter && hasSetter ? " " : string.Empty)}{(hasSetter ? "set;" : string.Empty)} }}";
 
                 propertyList += $"{StringConstants.LineEndingWithTwoTabs}{result}";
             }
@@ -103,8 +109,9 @@ namespace DocuWare.Platform.ServerClient.Abstracts.Generation.Services.Generatio
                 if (method.IsGenericMethodDefinition)
                     continue;
 
+                string documentationComment = DocumentationCommentsService.GetDocumentationCommentOfMethod(method);
                 string parameters = method.GetParsedParameterDefinitions();
-                string result = $"{returnTypeName} {method.Name}({parameters});";
+                string result = $"\r\n{documentationComment}\t\t{returnTypeName} {method.Name}({parameters});";
 
                 methodList += $"{StringConstants.LineEndingWithTwoTabs}{result}";
             }
