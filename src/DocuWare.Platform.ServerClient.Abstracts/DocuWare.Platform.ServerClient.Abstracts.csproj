@@ -14,13 +14,13 @@
     <RepositoryUrl>https://github.com/Revox97/DocuWare.Platform.ServerClient.Abstracts</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIconUrl>icon.png</PackageIconUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-    <None Include="icon.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="." />
+    <None Include="icon.png" Pack="true" PackagePath="." />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DocuWare.Platform.ServerClient" Version="16.11.1" />
